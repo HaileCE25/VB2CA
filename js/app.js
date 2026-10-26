@@ -354,7 +354,11 @@
           <div class="small">LUYỆN TẬP</div>
           <h2>KIỂM TRA TRƯỚC KHI THI</h2>
         </div>
-        <div class="banner"><small>BÀI THI ĐĂNG KÝ</small><b>${esc(exam.code)}</b> <button class="btn-ghost" style="margin-left:8px;font-size:12px;vertical-align:middle" data-act="open-exams">Đổi đề</button> <button class="btn-ghost" style="margin-left:4px;font-size:12px;vertical-align:middle" data-act="open-theory">📖 Ôn lý thuyết</button></div>
+        <div class="banner"><small>BÀI THI ĐĂNG KÝ</small><b>${esc(exam.code)}</b></div>
+        <div style="display:flex;gap:8px;justify-content:center;margin-bottom:16px;flex-wrap:wrap">
+          <button class="btn-ghost" data-act="open-exams">📚 Thư viện 32 đề thi</button>
+          <button class="btn-ghost" data-act="open-theory">📖 Cẩm nang lý thuyết & Công thức</button>
+        </div>
 
         <div class="card accent">
           <h3>Cấu trúc đề thi của bạn</h3>
