@@ -368,6 +368,13 @@ body.dark .score { background: #153224; }
   .notice { position: static; }
   .info-grid { grid-template-columns: 1fr; }
   .tb-sbd, .pill { display: none; }
+  /* Gọn nhãn đồng hồ trên mobile */
+  .tb-timer small { font-size: 0; }
+  .tb-timer small::after { content: 'Còn lại'; font-size: 9px; letter-spacing: .4px; opacity: .8; }
+  /* Hiện badge khóa compact trên mobile */
+  .lock-sm { display: inline !important; }
+  /* Sheet phiếu trả lời kết quả — ít cột hơn */
+  .rv-sheet-grid { grid-template-columns: repeat(7, 1fr) !important; }
 }
 
 
@@ -411,3 +418,151 @@ body.dark .opt.wrongsel { background: #3b1717; }
 /* ---------- Gợi ý / lưu ý trong câu hỏi: xuống dòng riêng, chữ nhỏ, in nghiêng ---------- */
 .note { margin: 8px 0 2px 2px; padding: 7px 12px; border-left: 3px solid #d9a441; background: rgba(217, 164, 65, .10); border-radius: 0 6px 6px 0; font-size: .93em; line-height: 1.75; overflow-x: auto; }
 .q-hint { display: block; margin-top: 5px; font-size: .86em; font-style: italic; color: var(--muted); line-height: 1.6; }
+
+
+/* ========== Tính năng mới ========== */
+
+/* #1 + #3 — Tiến trình (đã làm X/Y câu) trong topbar */
+.tb-prog { font-size: 11px; color: rgba(255,255,255,.7); margin-left: 4px; font-weight: 400; }
+
+/* #1 — Compact lock badge chỉ hiện trên mobile */
+.lock-sm {
+  display: none;
+  background: rgba(255,255,255,.18);
+  border-radius: 10px;
+  padding: 1px 7px;
+  font-size: 11.5px;
+  white-space: nowrap;
+}
+
+/* #4 — Phiếu trả lời kết quả (màu đúng / sai / bỏ trống) */
+.rv-sheet-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 5px;
+  margin-bottom: 10px;
+}
+.rv-sheet-grid button {
+  border-radius: 4px;
+  padding: 5px 0;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1.5px solid;
+  cursor: pointer;
+  transition: opacity .15s;
+}
+.rv-sheet-grid button:hover { opacity: .8; }
+.rs-right  { background: #dcfce7; border-color: var(--green); color: #14532d; }
+.rs-wrong  { background: #fee2e2; border-color: var(--red);   color: #7f1d1d; }
+.rs-blank  { background: var(--field); border-color: #9ca3af; color: var(--muted); }
+body.dark .rs-right { background: #153224; }
+body.dark .rs-wrong { background: #3b1717; }
+
+/* #9 — Gợi ý lý thuyết theo chủ đề (bấm 💡 để mở) */
+.topic-hint {
+  display: none;
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-top: 6px;
+  line-height: 1.6;
+  border-left: 3px solid var(--yellow);
+  padding-left: 8px;
+  background: rgba(251,191,36,.07);
+  border-radius: 0 5px 5px 0;
+  padding: 5px 8px;
+}
+.topic-hint.open { display: block; }
+
+/* #2 — Điều hướng luyện tập (← Câu trước) */
+.p-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  gap: 8px;
+}
+.p-nav .pending { text-align: center; flex: 1; font-size: 13px; }
+.p-nav .btn-ghost { flex-shrink: 0; }
+
+/* #12 — In / xuất kết quả bài thi */
+@media print {
+  .topbar, .notice, .ime-fab, .btn-ghost, .btn-start,
+  .conn, .sheet, .rv-sheet-grid, .confirm-box .actions,
+  .lock-opt, [data-act="review"], [onclick] { display: none !important; }
+  .side { display: none !important; }
+  .page { max-width: none; padding: 10px; }
+  body { background: white; font-size: 13px; color: #000; }
+  .rv { break-inside: avoid; border-left-width: 3px; }
+  .score { border: 1.5px solid #aaa; }
+  .card { box-shadow: none; border: 1px solid #ddd; page-break-inside: avoid; }
+  .actions { display: none !important; }
+  h2, h3 { color: #000 !important; }
+}
+
+
+/* #6 — Thư viện đề thi */
+.exam-filter-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.exam-filter-btn {
+  border: 1px solid var(--line);
+  background: var(--card);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.exam-filter-btn.active {
+  background: var(--blue);
+  color: white;
+  border-color: var(--blue);
+  font-weight: 600;
+}
+.exam-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 12px;
+}
+.exam-item-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(15,23,42,.05);
+  transition: transform .15s, border-color .15s;
+}
+.exam-item-card:hover {
+  transform: translateY(-2px);
+  border-color: #93c5fd;
+}
+.exam-item-card.selected {
+  border: 2px solid var(--blue);
+  background: var(--blue-soft);
+}
+.exam-card-title {
+  font-weight: 700;
+  font-size: 14.5px;
+  margin-bottom: 4px;
+}
+.exam-card-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.exam-card-badge {
+  font-size: 11.5px;
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  width: fit-content;
+}
+.badge-done { background: #dcfce7; color: #14532d; }
+.badge-new  { background: var(--field); color: var(--muted); border: 1px solid var(--line); }

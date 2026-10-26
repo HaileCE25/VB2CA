@@ -40,6 +40,23 @@
   const SAMPLE = 'Kỳ thi đánh giá trên máy tính của Bộ Công an năm 2026';
   const IME_LABEL = { auto: 'Tự động', telex: 'Telex', vni: 'VNI', off: 'Bộ gõ ngoài' };
   const LETTERS = ['A', 'B', 'C', 'D'];
+
+  // #9 — Gợi ý ôn lý thuyết cho từng chủ đề (hiện trong trang thống kê)
+  const TOPIC_HINTS = {
+    vt: 'Định nghĩa độc lập tuyến tính; phương pháp khử Gauss–Jordan để tính hạng ma trận.',
+    mt: 'Công thức Sarrus và khai triển Laplace; ma trận nghịch đảo = adj(A) / det(A).',
+    he: 'Điều kiện vô nghiệm / vô số nghiệm / nghiệm duy nhất; Quy tắc Cramer.',
+    tr: 'Phương trình đặc trưng det(A − λI) = 0; tìm vectơ riêng từng trị riêng.',
+    gh: 'Giới hạn 1 phía; các hình thức vô định 0/0 và ∞/∞; quy tắc L\'Hôpital.',
+    dh: 'Quy tắc tích, thương, hàm hợp; tích phân từng phần và phương pháp đổi biến.',
+    nb: 'Đạo hàm riêng và vi phân toàn phần; điều kiện cực trị cục bộ qua ma trận Hessian.',
+    ch: 'Tiêu chuẩn D\'Alembert và Cauchy; bán kính hội tụ R = 1 / limsup |aₙ|^(1/n).',
+    v1: 'Phân ly biến số; dạng thuần nhất y\'=f(y/x); dạng Bernoulli y\'+P(x)y=Q(x)yⁿ.',
+    v2: 'Nghiệm TQ = nghiệm thuần nhất + nghiệm riêng; phương pháp hằng số biến thiên.',
+    tb: 'Đổi thứ tự tích phân (vẽ miền D); đổi biến sang tọa độ cực x=r cosθ, y=r sinθ.',
+    td: 'Tham số hóa đường cong; định lý Green: ∮ P dx+Q dy = ∬(∂Q/∂x − ∂P/∂y) dxdy.'
+  };
+
   const EXAMS = window.EXAMS || [];
   const app = document.getElementById('app');
   const modalRoot = document.getElementById('modal-root');
@@ -247,16 +264,20 @@
   }
   function topbar(part) {
     const p = S.profile;
+    const doneCount = items ? items.filter(isAnswered).length : 0;
+    const totalCount = items ? items.length : 0;
+    const progText = part === 2 ? `<span class="tb-prog" id="tb-prog">Đã làm: ${doneCount}/${totalCount}</span>` : '';
     return `
       <div class="topbar">
         <div class="tb-left">
           <div class="badge"><b>${esc(exam.code)}</b><small>${esc(exam.subject)}</small></div>
           <span class="tb-name">${esc(p.name)}</span>
           <span class="tb-sbd">${esc(p.sbd)}</span>
+          ${S.lock ? `<span class="lock-sm" id="lock-pill-sm">🔒 ${(S.viol || []).length}</span>` : ''}
         </div>
         <div class="tb-timer" id="timer">
           <small>THỜI GIAN CÒN LẠI — PHẦN ${part} (${part === 1 ? 'NLXH' : 'TN/TLN'})</small>
-          <span>🕒 <span id="timer-val">--:--</span></span>
+          <span>🕒 <span id="timer-val">--:--</span>${progText}</span>
         </div>
         <div class="tb-right">
           ${S.lock ? `<span class="pill" id="lock-pill">${lockText()}</span>` : ''}
@@ -313,7 +334,8 @@
             </div>
           </details>
           <div class="login-note">Chế độ luyện tập: nhập SBD và PIN bất kỳ để vào thi.</div>
-          <button class="btn-ghost btn-wide" type="button" data-act="open-stats">📊 Thống kê · Luyện theo chủ đề · Sổ câu sai${wrongCount() ? ' (' + wrongCount() + ')' : ''}</button>
+          <button class="btn-ghost btn-wide" type="button" data-act="open-exams" style="margin-top:10px">📚 Thư viện 32 đề thi & Tiến độ</button>
+          <button class="btn-ghost btn-wide" type="button" data-act="open-stats" style="margin-top:6px">📊 Thống kê · Luyện theo chủ đề · Sổ câu sai${wrongCount() ? ' (' + wrongCount() + ')' : ''}</button>
         </form>
       </div>`;
   }
@@ -331,7 +353,7 @@
           <div class="small">LUYỆN TẬP</div>
           <h2>KIỂM TRA TRƯỚC KHI THI</h2>
         </div>
-        <div class="banner"><small>BÀI THI ĐĂNG KÝ</small><b>${esc(exam.code)}</b></div>
+        <div class="banner"><small>BÀI THI ĐĂNG KÝ</small><b>${esc(exam.code)}</b> <button class="btn-ghost" style="margin-left:8px;font-size:12px;vertical-align:middle" data-act="open-exams">Đổi đề</button></div>
 
         <div class="card accent">
           <h3>Cấu trúc đề thi của bạn</h3>
@@ -480,8 +502,58 @@
         detail = `<div class="res"><b>${verdict}</b> · Bạn trả lời: <b>${done ? esc(S.answers[it.no]) : '—'}</b> · Đáp án: <b>${esc(it.answer[0])}</b></div>`;
       }
       const stem = it.group ? `<div class="exp">${it.group.stem}</div>` : '';
-      return `<div class="rv ${cls}"><b>Câu ${it.no}.</b> ${stem}${it.q}${detail}${explainHtml(it)}${reportBtn(it, st)}</div>`;
+      return `<div class="rv ${cls}" id="rv-q-${it.no}"><b>Câu ${it.no}.</b> ${stem}${it.q}${detail}${explainHtml(it)}${reportBtn(it, st)}</div>`;
     }).join('');
+  }
+
+  function resultSheetHtml() {
+    if (!items || !items.length) return '';
+    return `
+      <div class="sheet" style="margin-top:14px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:6px">
+          <h3 style="margin:0;font-size:15px">Phiếu tổng quan kết quả Phần 2</h3>
+          <small class="pending">Bấm vào ô câu để cuộn nhanh đến lời giải</small>
+        </div>
+        <div class="rv-sheet-grid">
+          ${items.map(it => {
+            const done = isAnswered(it), right = isCorrect(it);
+            const cls = !done ? 'rs-blank' : right ? 'rs-right' : 'rs-wrong';
+            return `<button type="button" class="${cls}" data-rv-goto="${it.no}" title="Câu ${it.no}: ${!done ? 'Chưa làm' : right ? 'Đúng' : 'Sai'}">${it.no}</button>`;
+          }).join('')}
+        </div>
+        <div class="legend">
+          <span><i style="background:#dcfce7;border-color:var(--green)"></i>Đúng (${items.filter(isCorrect).length})</span>
+          <span><i style="background:#fee2e2;border-color:var(--red)"></i>Sai (${items.filter(it => isAnswered(it) && !isCorrect(it)).length})</span>
+          <span><i style="background:var(--field);border-color:#9ca3af"></i>Chưa làm (${items.filter(it => !isAnswered(it)).length})</span>
+        </div>
+      </div>`;
+  }
+
+  function historyChartHtml(hist) {
+    if (!hist || hist.length < 2) return '';
+    const pts = hist.slice(-8);
+    const maxScore = Math.max.apply(null, pts.map(h => h.max || 70));
+    const w = 400, h = 90, padX = 24, padY = 16;
+    const step = (w - padX * 2) / (pts.length - 1);
+    const coords = pts.map((p, i) => {
+      const x = padX + i * step;
+      const y = h - padY - ((p.score / (p.max || maxScore)) * (h - padY * 2));
+      return { x, y, score: p.score };
+    });
+    const pathD = coords.map((c, i) => (i === 0 ? `M ${c.x} ${c.y}` : `L ${c.x} ${c.y}`)).join(' ');
+    const areaD = `${pathD} L ${coords[coords.length - 1].x} ${h - padY} L ${coords[0].x} ${h - padY} Z`;
+    return `
+      <div style="margin:12px 0 10px;padding:12px;background:var(--field);border-radius:8px">
+        <div style="font-size:12px;font-weight:600;margin-bottom:6px;color:var(--muted)">📈 Xu hướng điểm Phần 2 qua các lần thi gần đây:</div>
+        <svg viewBox="0 0 ${w} ${h}" style="width:100%;max-height:100px;overflow:visible">
+          <path d="${areaD}" fill="rgba(37,99,235,0.12)" />
+          <path d="${pathD}" fill="none" stroke="var(--blue)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+          ${coords.map(c => `
+            <circle cx="${c.x}" cy="${c.y}" r="3.5" fill="var(--blue)" />
+            <text x="${c.x}" y="${c.y - 6}" font-size="9" font-weight="bold" fill="var(--text)" text-anchor="middle">${fmtScore(c.score)}</text>
+          `).join('')}
+        </svg>
+      </div>`;
   }
 
   function viewResult() {
@@ -504,12 +576,14 @@
             <div class="pending">Đúng ${r.correct} / ${r.total} câu${r.auto ? ' · hệ thống tự nộp do hết giờ' : ''}</div>
           </div>
           ${lockSummary()}
-          <div class="wait">⏳ <b>Điểm Phần 1 — Tự luận (NLXH, tối đa ${exam.essayPoints} điểm): Chờ chấm</b><br>
+          ${resultSheetHtml()}
+          <div class="wait" style="margin-top:14px">⏳ <b>Điểm Phần 1 — Tự luận (NLXH, tối đa ${exam.essayPoints} điểm): Chờ chấm</b><br>
             Tổng điểm cuối cùng = Phần 1 + Phần 2 (tối đa ${exam.essayPoints + exam.testPoints} điểm). Ở bản luyện tập, phần tự luận do bạn tự đánh giá.</div>
           <h3>Bài làm tự luận (NLXH) — ${countWords(S.essay)} chữ</h3>
           <div class="essay-view">${esc(S.essay) || '<span class="pending">(Không có bài làm)</span>'}</div>
           <div class="actions">
             <button class="btn-start" data-act="review">Xem đáp án chi tiết</button>
+            <button class="btn-ghost" data-act="print-result">🖨️ In kết quả / PDF</button>
             <button class="btn-ghost" data-act="open-stats">Thống kê · Luyện theo chủ đề</button>
             <button class="btn-ghost" data-act="restart">Làm bài mới</button>
           </div>
@@ -517,8 +591,15 @@
         ${attemptTopics()}
         <div class="card" id="review" hidden><h3>Đáp án và lời giải Phần 2</h3>${reviewHtml()}</div>
         ${hist.length ? `<div class="card"><h3>Lịch sử luyện tập</h3>
-          <table class="history"><tr><th>Thời gian</th><th>Đề</th><th>Điểm Phần 2</th><th>Số câu đúng</th></tr>
-          ${hist.map(h => `<tr><td>${new Date(h.at).toLocaleString('vi-VN')}</td><td>${esc(h.title)}</td><td>${fmtScore(h.score)} / ${h.max}</td><td>${h.correct} / ${h.total}</td></tr>`).join('')}
+          ${historyChartHtml(history())}
+          <table class="history"><tr><th>Thời gian</th><th>Đề</th><th>Điểm Phần 2</th><th>Số câu đúng</th><th></th></tr>
+          ${hist.map(h => `<tr>
+            <td>${new Date(h.at).toLocaleString('vi-VN')}</td>
+            <td>${esc(h.title)}</td>
+            <td>${fmtScore(h.score)} / ${h.max}</td>
+            <td>${h.correct} / ${h.total}</td>
+            <td>${h.answers ? `<button class="btn-small" data-review-hist="${esc(h.id || '')}">Xem lại</button>` : ''}</td>
+          </tr>`).join('')}
           </table></div>` : ''}
       </div>`;
   }
@@ -596,7 +677,14 @@
           <table class="history topics">
             <tr><th>Chủ đề</th><th>Đúng</th><th>Tỉ lệ</th><th>Đang sai</th><th></th></tr>
             ${rows.map(r => `<tr>
-              <td>${esc(topicName(r.id))}<div class="pending">${pool[r.id] || 0} câu trong kho</div></td>
+              <td>
+                <div style="display:flex;align-items:center;gap:6px">
+                  <b>${esc(topicName(r.id))}</b>
+                  ${TOPIC_HINTS[r.id] ? `<button type="button" class="link-btn" data-toggle-hint="${r.id}" style="font-size:12px" title="Bấm để xem/ẩn gợi ý trọng tâm">💡 Gợi ý</button>` : ''}
+                </div>
+                <div class="pending">${pool[r.id] || 0} câu trong kho</div>
+                ${TOPIC_HINTS[r.id] ? `<div class="topic-hint" id="hint-${r.id}"><b>Trọng tâm:</b> ${esc(TOPIC_HINTS[r.id])}</div>` : ''}
+              </td>
               <td>${r.b ? r.a + ' / ' + r.b : '—'}</td>
               <td>${barHtml(r.p)}</td>
               <td>${wrongBy[r.id] || 0}</td>
@@ -618,6 +706,85 @@
             : '<p class="pending">Chưa có câu nào. Khi xem đáp án hoặc luyện tập, bấm “Báo câu này có vấn đề” ở câu bạn nghi ngờ.</p>'}
         </div>
         <div class="actions"><button class="btn-ghost" data-act="clear-stats">Xóa toàn bộ thống kê và sổ câu sai</button></div>
+      </div>`;
+  }
+
+  // ---------- Thư viện đề thi & Tiến độ ----------
+  let examFilter = 'all';
+  function viewExamList() {
+    const hist = history();
+    const doneExams = {};
+    hist.forEach(h => {
+      const id = h.examId || (h.title && h.title.includes('Đề số') ? 'ca1-so-' + (h.title.match(/Đề số (\d+)/) || ['','01'])[1] : null);
+      if (id) {
+        if (!doneExams[id] || doneExams[id].score < h.score) {
+          doneExams[id] = h;
+        }
+      }
+    });
+
+    const allList = [{
+      id: MIX_ID,
+      title: 'Đề trộn ngẫu nhiên',
+      code: 'CA1',
+      subject: 'Toán cao cấp',
+      desc: 'Sinh tự động mỗi lần một đề mới từ kho hơn 600 câu, giữ đúng ma trận Bộ Công an.'
+    }].concat(EXAMS);
+
+    const filtered = allList.filter(e => {
+      const isDone = !!doneExams[e.id];
+      if (examFilter === 'done') return isDone;
+      if (examFilter === 'todo') return !isDone && e.id !== MIX_ID;
+      return true;
+    });
+
+    const doneCount = Object.keys(doneExams).filter(id => id !== MIX_ID).length;
+    const back = S.profile ? '← Về màn hình chuẩn bị thi' : '← Về trang đăng nhập';
+
+    return `
+      <div class="page">
+        <div class="page-head">
+          <button class="btn-ghost" data-act="exams-back">${back}</button>
+          <div class="small">DANH SÁCH ĐỀ THI</div>
+          <h2>THƯ VIỆN ĐỀ THI & TIẾN ĐỘ</h2>
+        </div>
+
+        <div class="card accent">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+            <div>
+              <b style="font-size:16px">Tiến độ hoàn thành: ${doneCount} / ${EXAMS.length} đề</b>
+              <div class="pending">Chọn một đề bất kỳ để vào luyện tập hoặc thi thử</div>
+            </div>
+            <div class="bar" style="width:160px;height:12px">
+              <i class="high" style="width:${Math.round(doneCount * 100 / (EXAMS.length || 1))}%"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="exam-filter-bar">
+          <button class="exam-filter-btn ${examFilter === 'all' ? 'active' : ''}" data-filter-exam="all">Tất cả (${allList.length})</button>
+          <button class="exam-filter-btn ${examFilter === 'todo' ? 'active' : ''}" data-filter-exam="todo">Chưa làm (${EXAMS.length - doneCount})</button>
+          <button class="exam-filter-btn ${examFilter === 'done' ? 'active' : ''}" data-filter-exam="done">Đã làm (${doneCount})</button>
+        </div>
+
+        <div class="exam-cards-grid">
+          ${filtered.map(e => {
+            const h = doneExams[e.id];
+            const isSel = S.examId === e.id;
+            return `
+              <div class="exam-item-card ${isSel ? 'selected' : ''}">
+                <div>
+                  <div class="exam-card-title">${esc(e.title)}</div>
+                  <div class="exam-card-sub">${esc(e.desc || (e.code + ' · ' + e.subject))}</div>
+                  ${h ? `<span class="exam-card-badge badge-done">✔ Cao nhất: ${fmtScore(h.score)} / ${h.max} (${h.correct}/${h.total} câu)</span>`
+                      : `<span class="exam-card-badge badge-new">${e.id === MIX_ID ? '★ Vô hạn đề' : '○ Chưa làm'}</span>`}
+                </div>
+                <button class="btn-start" style="padding:7px 12px;font-size:13px;width:100%;margin-top:10px" data-select-exam="${esc(e.id)}">
+                  ${isSel ? '✔ Đang chọn đề này' : 'Chọn đề này'}
+                </button>
+              </div>`;
+          }).join('')}
+        </div>
       </div>`;
   }
 
@@ -690,10 +857,17 @@
         <div class="exp">Nguồn: ${esc(refLabel(ref))}</div>
         ${reportBtn(it, st)}
       </div>
-      <div class="actions"><button class="btn-start" data-act="p-next">${P.i + 1 < n ? 'Câu tiếp theo ➜' : 'Xem kết quả lượt luyện'}</button></div>`;
+      <div class="actions">
+        ${P.i > 0 ? '<button class="btn-ghost" data-act="p-prev">← Câu trước</button>' : ''}
+        <button class="btn-start" data-act="p-next">${P.i + 1 < n ? 'Câu tiếp theo ➜' : 'Xem kết quả lượt luyện'}</button>
+      </div>`;
     return `<div class="page">${head}
       <div class="exam-like">
-        <div class="pending" style="margin-bottom:8px">Câu ${P.i + 1} / ${n} · ${esc(topicName(it.topic))}</div>
+        <div class="p-nav">
+          <button class="btn-ghost" data-act="p-prev" ${P.i > 0 ? '' : 'disabled'}>← Câu trước</button>
+          <span class="pending">Câu ${P.i + 1} / ${n} · ${esc(topicName(it.topic))}</span>
+          <button class="btn-ghost" data-act="p-next" ${P.i + 1 < n ? '' : 'disabled'}>Câu sau →</button>
+        </div>
         ${it.group ? `<div class="group-stem"><small>Thông tin chung</small>${it.group.stem}</div>` : ''}
         <div class="q"><div class="q-text">${it.q}</div>${body}</div>
         ${feedback}
@@ -753,6 +927,8 @@
     save();
     const pill = document.getElementById('lock-pill');
     if (pill) pill.textContent = lockText();
+    const pillSm = document.getElementById('lock-pill-sm');
+    if (pillSm) pillSm.textContent = '🔒 ' + (S.viol || []).length;
   }
   function checkLock() {   // gọi sau mỗi lần vẽ lại màn hình (kể cả khi tải lại trang giữa bài thi)
     if (!locked()) { hideGuard(); return; }
@@ -800,9 +976,9 @@
     setExam();
     applyPrefs();
     closeModal();
-    const free = S.screen === 'stats' || S.screen === 'practice';   // hai màn hình này không cần đăng nhập
+    const free = S.screen === 'stats' || S.screen === 'practice' || S.screen === 'exams';   // các màn hình này không cần đăng nhập
     if (!exam || (!S.profile && !free)) S.screen = 'login';
-    const views = { login: viewLogin, precheck: viewPrecheck, p1: viewPart1, p2: viewPart2, result: viewResult, stats: viewStats, practice: viewPractice };
+    const views = { login: viewLogin, precheck: viewPrecheck, p1: viewPart1, p2: viewPart2, result: viewResult, stats: viewStats, practice: viewPractice, exams: viewExamList };
     app.innerHTML = views[S.screen]();
     typeset(app);
     if (S.screen === 'precheck') updatePrecheck();
@@ -857,6 +1033,8 @@
       box.querySelector('.short-box').classList.toggle('filled', isAnswered(it));
     }
     document.getElementById('s-' + no).className = sheetClass(it);
+    const prog = document.getElementById('tb-prog');
+    if (prog && items) prog.textContent = `Đã làm: ${items.filter(isAnswered).length}/${items.length}`;
   }
 
   // ---------- Chuyển phần / nộp bài ----------
@@ -884,7 +1062,21 @@
     saveStats(st);
     S.result = { correct, total: items.length, score: correct * exam.testPoints / items.length, auto: !!auto };
     const hist = history();
-    hist.push({ at: Date.now(), title: exam.title, score: S.result.score, max: exam.testPoints, correct, total: items.length });
+    const entryId = 'hist_' + Date.now();
+    hist.push({
+      id: entryId,
+      at: Date.now(),
+      title: exam.title,
+      examId: exam.id,
+      mix: S.mix ? JSON.parse(JSON.stringify(S.mix)) : null,
+      score: S.result.score,
+      max: exam.testPoints,
+      correct,
+      total: items.length,
+      answers: Object.assign({}, S.answers),
+      essay: S.essay,
+      perm: Object.assign({}, S.perm || {})
+    });
     try { localStorage.setItem(LS_HISTORY, JSON.stringify(hist.slice(-50))); } catch (e) { /* bỏ qua */ }
     leaveLock();
     go('result');
@@ -908,9 +1100,12 @@
   // ---------- Sự kiện ----------
   const actions = {
     logout() { leaveLock(); S.profile = null; go('login'); },
+    'open-exams'() { go('exams'); },
+    'exams-back'() { go(S.profile ? 'precheck' : 'login'); },
     'open-stats'() { go('stats'); },
     'stats-back'() { go(S.result && S.profile ? 'result' : 'login'); },
     'p-quit'() { go('stats'); },
+    'p-prev'() { if (S.practice && S.practice.i > 0) { S.practice.i--; go('practice'); } },
     'p-next'() { S.practice.i++; go('practice'); },
     'p-check'() {
       const el = document.getElementById('p-short');
@@ -968,6 +1163,11 @@
       if (btn) btn.textContent = el.hidden ? 'Xem đáp án chi tiết' : 'Ẩn đáp án chi tiết';
       if (!el.hidden) el.scrollIntoView();
     },
+    'print-result'() {
+      const el = document.getElementById('review');
+      if (el) el.hidden = false;
+      window.print();
+    },
     restart() {
       leaveLock();
       const keep = { profile: S.profile, examId: S.examId, imeMode: S.imeMode, fs: S.fs, dark: S.dark, lock: S.lock };
@@ -990,6 +1190,59 @@
     }
     const goto = e.target.closest('[data-goto]');
     if (goto) { document.getElementById('q-' + goto.dataset.goto).scrollIntoView(); return; }
+
+    const rvg = e.target.closest('[data-rv-goto]');
+    if (rvg) {
+      const el = document.getElementById('review');
+      if (el && el.hidden) {
+        el.hidden = false;
+        const btn = document.querySelector('[data-act="review"]');
+        if (btn) btn.textContent = 'Ẩn đáp án chi tiết';
+      }
+      const targetQ = document.getElementById('rv-q-' + rvg.dataset.rvGoto);
+      if (targetQ) targetQ.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+
+    const rh = e.target.closest('[data-review-hist]');
+    if (rh) {
+      const id = rh.dataset.reviewHist;
+      const h = history().find(x => x.id === id);
+      if (h && h.answers) {
+        S.examId = h.examId || (h.title && h.title.includes('trộn') ? MIX_ID : S.examId);
+        S.mix = h.mix || null;
+        S.answers = Object.assign({}, h.answers);
+        S.essay = h.essay || '';
+        S.perm = Object.assign({}, h.perm || {});
+        S.result = { correct: h.correct, total: h.total, score: h.score, auto: false };
+        go('result');
+      }
+      return;
+    }
+
+    const th = e.target.closest('[data-toggle-hint]');
+    if (th) {
+      const el = document.getElementById('hint-' + th.dataset.toggleHint);
+      if (el) el.classList.toggle('open');
+      return;
+    }
+
+    const fe = e.target.closest('[data-filter-exam]');
+    if (fe) {
+      examFilter = fe.dataset.filterExam;
+      render();
+      return;
+    }
+
+    const se = e.target.closest('[data-select-exam]');
+    if (se) {
+      const id = se.dataset.selectExam;
+      S.examId = id;
+      if (id === MIX_ID) S.mix = newMix();
+      save();
+      go(S.profile ? 'precheck' : 'login');
+      return;
+    }
 
     const pt = e.target.closest('[data-practice-topic]');
     if (pt) {
@@ -1019,7 +1272,20 @@
   });
 
   app.addEventListener('keydown', e => {
-    if (e.key === 'Enter' && e.target.id === 'p-short') { e.preventDefault(); actions['p-check'](); }
+    if (e.key === 'Enter' && e.target.id === 'p-short') { e.preventDefault(); actions['p-check'](); return; }
+    if (S.screen === 'practice' && !['input', 'textarea'].includes((e.target.tagName || '').toLowerCase())) {
+      if (e.key === 'ArrowLeft') { actions['p-prev'](); return; }
+      if (e.key === 'ArrowRight' || e.key === 'Enter') { actions['p-next'](); return; }
+      const keyMap = { '1': 0, '2': 1, '3': 2, '4': 3, 'a': 0, 'b': 1, 'c': 2, 'd': 3 };
+      const idx = keyMap[(e.key || '').toLowerCase()];
+      if (idx !== undefined && S.practice) {
+        const P = S.practice, ref = P.refs[P.i];
+        if (ref && REF[ref] && REF[ref].item.type === 'mcq' && P.ans[ref] === undefined) {
+          const ord = P.perm[ref] || REF[ref].item.options.map((o, i) => i);
+          if (ord[idx] !== undefined) answerPractice(ord[idx]);
+        }
+      }
+    }
   });
 
   let essayTimer;
