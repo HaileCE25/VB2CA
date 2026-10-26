@@ -335,6 +335,7 @@
           </details>
           <div class="login-note">Chế độ luyện tập: nhập SBD và PIN bất kỳ để vào thi.</div>
           <button class="btn-ghost btn-wide" type="button" data-act="open-exams" style="margin-top:10px">📚 Thư viện 32 đề thi & Tiến độ</button>
+          <button class="btn-ghost btn-wide" type="button" data-act="open-theory" style="margin-top:6px">📖 Cẩm nang lý thuyết & Công thức trọng tâm</button>
           <button class="btn-ghost btn-wide" type="button" data-act="open-stats" style="margin-top:6px">📊 Thống kê · Luyện theo chủ đề · Sổ câu sai${wrongCount() ? ' (' + wrongCount() + ')' : ''}</button>
         </form>
       </div>`;
@@ -353,7 +354,7 @@
           <div class="small">LUYỆN TẬP</div>
           <h2>KIỂM TRA TRƯỚC KHI THI</h2>
         </div>
-        <div class="banner"><small>BÀI THI ĐĂNG KÝ</small><b>${esc(exam.code)}</b> <button class="btn-ghost" style="margin-left:8px;font-size:12px;vertical-align:middle" data-act="open-exams">Đổi đề</button></div>
+        <div class="banner"><small>BÀI THI ĐĂNG KÝ</small><b>${esc(exam.code)}</b> <button class="btn-ghost" style="margin-left:8px;font-size:12px;vertical-align:middle" data-act="open-exams">Đổi đề</button> <button class="btn-ghost" style="margin-left:4px;font-size:12px;vertical-align:middle" data-act="open-theory">📖 Ôn lý thuyết</button></div>
 
         <div class="card accent">
           <h3>Cấu trúc đề thi của bạn</h3>
@@ -670,6 +671,7 @@
           <button class="btn-ghost" data-act="stats-back">${back}</button>
           <div class="small">LUYỆN TẬP</div>
           <h2>THỐNG KÊ VÀ LUYỆN THEO CHỦ ĐỀ</h2>
+          <div style="margin-top:8px"><button class="btn-ghost" data-act="open-theory" style="font-size:13px">📖 Mở Cẩm nang lý thuyết & Công thức trọng tâm</button></div>
         </div>
         <div class="card accent">
           <h3>Tỉ lệ làm đúng theo chủ đề</h3>
@@ -785,6 +787,95 @@
               </div>`;
           }).join('')}
         </div>
+      </div>`;
+  }
+
+
+  // ---------- Khu Ôn Lý Thuyết & Công Thức Trọng Tâm ----------
+  let theoryCat = 'all';
+  let theoryQuery = '';
+
+  function viewTheory() {
+    const TD = window.THEORY_DATA || { categories: [], topics: {} };
+    const q = theoryQuery.trim().toLowerCase();
+
+    let topicIds = TOP.order.slice();
+    if (theoryCat !== 'all') {
+      const catObj = TD.categories.find(c => c.id === theoryCat);
+      if (catObj) topicIds = catObj.topics.slice();
+    }
+
+    if (q) {
+      topicIds = topicIds.filter(id => {
+        const top = TD.topics[id];
+        if (!top) return false;
+        if (top.title.toLowerCase().includes(q) || topicName(id).toLowerCase().includes(q)) return true;
+        if (top.formulas && top.formulas.some(f => f.name.toLowerCase().includes(q) || f.content.toLowerCase().includes(q))) return true;
+        if (top.traps && top.traps.some(t => t.toLowerCase().includes(q))) return true;
+        return false;
+      });
+    }
+
+    const backText = S.profile ? '← Về màn hình trước' : '← Về trang đăng nhập';
+
+    return `
+      <div class="page">
+        <div class="page-head">
+          <button class="btn-ghost" data-act="theory-back">${backText}</button>
+          <div class="small">TÀI LIỆU ÔN THI VB2 CA1</div>
+          <h2>CẨM NANG LÝ THUYẾT & CÔNG THỨC TRỌNG TÂM</h2>
+        </div>
+
+        <div class="theory-search-wrap">
+          <input class="theory-search-input" id="theory-search" placeholder="🔍 Tìm công thức, định lý, từ khóa (ví dụ: Cramer, Green, trị riêng, Maclaurin...)" value="${esc(theoryQuery)}">
+        </div>
+
+        <div class="theory-tabs">
+          <button class="theory-tab-btn ${theoryCat === 'all' ? 'active' : ''}" data-theory-cat="all">Tất cả (${TOP.order.length} chuyên đề)</button>
+          ${TD.categories.map(c => `
+            <button class="theory-tab-btn ${theoryCat === c.id ? 'active' : ''}" data-theory-cat="${c.id}">${esc(c.name)} (${c.topics.length})</button>
+          `).join('')}
+        </div>
+
+        ${!topicIds.length ? `
+          <div class="card" style="text-align:center;padding:30px 20px">
+            <div style="font-size:32px;margin-bottom:8px">🔍</div>
+            <b>Không tìm thấy công thức nào khớp với từ khóa "${esc(theoryQuery)}"</b>
+            <div class="pending" style="margin-top:6px">Thử tìm kiếm với từ khóa khác hoặc bấm nút "Tất cả" ở trên.</div>
+          </div>
+        ` : topicIds.map(id => {
+          const top = TD.topics[id];
+          if (!top) return '';
+          return `
+            <div class="theory-topic-card" id="theory-${id}">
+              <div class="theory-topic-head">
+                <div class="theory-topic-title">
+                  <span>${esc(top.title)}</span>
+                  <span class="theory-badge">${esc(top.badge || 'Toán cao cấp')}</span>
+                </div>
+                <button class="btn-small" data-practice-topic="${id}">🎯 Luyện 10 câu chuyên đề này</button>
+              </div>
+
+              ${top.formulas && top.formulas.length ? `
+                <div class="formula-section-title">📌 Công thức & Định lý cốt lõi</div>
+                ${top.formulas.map(f => `
+                  <div class="formula-box">
+                    <b class="f-name">• ${f.name}</b>
+                    <div>${f.content}</div>
+                  </div>
+                `).join('')}
+              ` : ''}
+
+              ${top.traps && top.traps.length ? `
+                <div class="trap-box">
+                  <b class="t-title">⚠️ Bẫy đề thi & Lưu ý sống còn:</b>
+                  <ul class="trap-list">
+                    ${top.traps.map(t => `<li>${t}</li>`).join('')}
+                  </ul>
+                </div>
+              ` : ''}
+            </div>`;
+        }).join('')}
       </div>`;
   }
 
@@ -976,9 +1067,9 @@
     setExam();
     applyPrefs();
     closeModal();
-    const free = S.screen === 'stats' || S.screen === 'practice' || S.screen === 'exams';   // các màn hình này không cần đăng nhập
+    const free = S.screen === 'stats' || S.screen === 'practice' || S.screen === 'exams' || S.screen === 'theory';   // các màn hình này không cần đăng nhập
     if (!exam || (!S.profile && !free)) S.screen = 'login';
-    const views = { login: viewLogin, precheck: viewPrecheck, p1: viewPart1, p2: viewPart2, result: viewResult, stats: viewStats, practice: viewPractice, exams: viewExamList };
+    const views = { login: viewLogin, precheck: viewPrecheck, p1: viewPart1, p2: viewPart2, result: viewResult, stats: viewStats, practice: viewPractice, exams: viewExamList, theory: viewTheory };
     app.innerHTML = views[S.screen]();
     typeset(app);
     if (S.screen === 'precheck') updatePrecheck();
@@ -1101,6 +1192,8 @@
   const actions = {
     logout() { leaveLock(); S.profile = null; go('login'); },
     'open-exams'() { go('exams'); },
+    'open-theory'() { go('theory'); },
+    'theory-back'() { go(S.profile ? (S.result ? 'result' : 'precheck') : 'login'); },
     'exams-back'() { go(S.profile ? 'precheck' : 'login'); },
     'open-stats'() { go('stats'); },
     'stats-back'() { go(S.result && S.profile ? 'result' : 'login'); },
@@ -1227,6 +1320,13 @@
       return;
     }
 
+    const tc = e.target.closest('[data-theory-cat]');
+    if (tc) {
+      theoryCat = tc.dataset.theoryCat;
+      render();
+      return;
+    }
+
     const fe = e.target.closest('[data-filter-exam]');
     if (fe) {
       examFilter = fe.dataset.filterExam;
@@ -1291,6 +1391,14 @@
   let essayTimer;
   app.addEventListener('input', e => {
     const t = e.target;
+    if (t.id === 'theory-search') {
+      theoryQuery = t.value;
+      const pos = t.selectionStart;
+      render();
+      const el = document.getElementById('theory-search');
+      if (el) { el.focus(); el.setSelectionRange(pos, pos); }
+      return;
+    }
     if (t.id === 'ime-test') { updatePrecheck(); return; }
     if (t.id === 'essay') {
       S.essay = t.value;

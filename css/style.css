@@ -566,3 +566,130 @@ body.dark .rs-wrong { background: #3b1717; }
 }
 .badge-done { background: #dcfce7; color: #14532d; }
 .badge-new  { background: var(--field); color: var(--muted); border: 1px solid var(--line); }
+
+
+/* ========== Khu Ôn Lý Thuyết & Công Thức (Theory Hub) ========== */
+.theory-search-wrap {
+  margin-bottom: 16px;
+}
+.theory-search-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+  font-size: 14px;
+  color: var(--text);
+  box-shadow: 0 1px 3px rgba(15,23,42,.05);
+}
+.theory-search-input:focus {
+  border-color: var(--blue);
+  outline: none;
+}
+.theory-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  margin-bottom: 16px;
+}
+.theory-tab-btn {
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 7px 14px;
+  font-size: 13px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all .15s;
+}
+.theory-tab-btn.active {
+  background: var(--blue);
+  color: white;
+  border-color: var(--blue);
+  font-weight: 600;
+}
+.theory-topic-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 4px rgba(15,23,42,.06);
+}
+.theory-topic-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+}
+.theory-topic-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.theory-badge {
+  font-size: 11px;
+  background: var(--blue-soft);
+  color: var(--blue);
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.formula-section-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 12px 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+body.dark .formula-section-title { color: #93c5fd; }
+.formula-box {
+  background: var(--field);
+  border-left: 3.5px solid var(--blue);
+  border-radius: 0 8px 8px 0;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  line-height: 1.8;
+  font-size: 14px;
+  overflow-x: auto;
+}
+.formula-box b.f-name {
+  color: var(--blue);
+  display: block;
+  font-size: 13.5px;
+  margin-bottom: 4px;
+}
+.trap-box {
+  background: rgba(245, 158, 11, 0.08);
+  border-left: 3.5px solid #d97706;
+  border-radius: 0 8px 8px 0;
+  padding: 10px 14px;
+  margin-top: 10px;
+  font-size: 13.5px;
+  line-height: 1.65;
+}
+.trap-box b.t-title {
+  color: #b45309;
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13.5px;
+}
+.trap-list {
+  margin: 0;
+  padding-left: 18px;
+}
+.trap-list li {
+  margin-bottom: 4px;
+}
