@@ -802,6 +802,11 @@
   function viewTheory() {
     const TD = window.THEORY_DATA || { categories: [], topics: {} };
     const q = theoryQuery.trim().toLowerCase();
+    const addedFormulas = window.THEORY_FORMULA_ADDITIONS || {};
+    const formulaPractice = window.THEORY_FORMULA_PRACTICE || {};
+
+    const formulasFor = id => (TD.topics[id].formulas || []).concat(addedFormulas[id] || []);
+    const exercisesFor = (id, formula) => formula.examples || (formulaPractice[id] || {})[formula.name] || [];
 
     let topicIds = TOP.order.slice();
     if (theoryCat !== 'all') {
@@ -814,12 +819,24 @@
         const top = TD.topics[id];
         if (!top) return false;
         if (top.title.toLowerCase().includes(q) || topicName(id).toLowerCase().includes(q)) return true;
-        if (top.formulas && top.formulas.some(f => f.name.toLowerCase().includes(q) || f.content.toLowerCase().includes(q))) return true;
+        if (top.theory && top.theory.some(t => t.title.toLowerCase().includes(q) || t.text.toLowerCase().includes(q))) return true;
+        const deep = (window.THEORY_DEEP_DATA || {})[id] || [];
+        if (deep.some(section => section.title.toLowerCase().includes(q) || section.content.toLowerCase().includes(q))) return true;
+        const formulaMatches = formulasFor(id).some(f =>
+          f.name.toLowerCase().includes(q) || f.content.toLowerCase().includes(q) ||
+          exercisesFor(id, f).some(ex =>
+            (ex.level || '').toLowerCase().includes(q) || ex.problem.toLowerCase().includes(q) || ex.solution.toLowerCase().includes(q)
+          )
+        );
+        if (formulaMatches) return true;
+        const examples = (top.examples || []).concat(((window.THEORY_EXTRA_EXAMPLES || {})[id] || []));
+        if (examples.some(ex => ex.title.toLowerCase().includes(q) || ex.problem.toLowerCase().includes(q) || ex.solution.toLowerCase().includes(q))) return true;
         if (top.traps && top.traps.some(t => t.toLowerCase().includes(q))) return true;
         return false;
       });
     }
 
+    const topicCount = Object.keys(TD.topics).length;
     const backText = S.profile ? '← Về màn hình trước' : '← Về trang đăng nhập';
 
     return `
@@ -827,15 +844,27 @@
         <div class="page-head">
           <button class="btn-ghost" data-act="theory-back">${backText}</button>
           <div class="small">TÀI LIỆU ÔN THI VB2 CA1</div>
-          <h2>CẨM NANG LÝ THUYẾT & CÔNG THỨC TRỌNG TÂM</h2>
+          <h2>CẨM NANG LÝ THUYẾT, ĐỊNH LÝ & PHƯƠNG PHÁP GIẢI</h2>
         </div>
 
         <div class="theory-search-wrap">
-          <input class="theory-search-input" id="theory-search" placeholder="🔍 Tìm công thức, định lý, từ khóa (ví dụ: Cramer, Green, trị riêng, Maclaurin...)" value="${esc(theoryQuery)}">
+          <input class="theory-search-input" id="theory-search" placeholder="🔍 Tìm kiếm công thức, định lý, ví dụ, từ khóa (ví dụ: Gauss, Leontief, Cramer, Green, Hessian...)" value="${esc(theoryQuery)}">
         </div>
 
+        <div class="theory-outline">
+          <div class="theory-outline-head">
+            <b>Đề cương: ${topicCount} chuyên đề trong ${TD.categories.length} nhóm kiến thức</b>
+            <span>${topicIds.length} chuyên đề đang hiển thị</span>
+          </div>
+          <nav class="theory-outline-links" aria-label="Mục lục chuyên đề">
+            ${topicIds.map(id => `<a href="#theory-${id}">${esc(topicName(id))}</a>`).join('')}
+          </nav>
+          <div class="theory-outline-note">Các nút nhóm bên dưới dùng để lọc nội dung; mở “Tất cả” để xem toàn bộ đề cương.</div>
+        </div>
+
+        <div class="formula-section-title">Lọc theo nhóm kiến thức</div>
         <div class="theory-tabs">
-          <button class="theory-tab-btn ${theoryCat === 'all' ? 'active' : ''}" data-theory-cat="all">Tất cả (${TOP.order.length} chuyên đề)</button>
+          <button class="theory-tab-btn ${theoryCat === 'all' ? 'active' : ''}" data-theory-cat="all">Tất cả (${topicCount} chuyên đề)</button>
           ${TD.categories.map(c => `
             <button class="theory-tab-btn ${theoryCat === c.id ? 'active' : ''}" data-theory-cat="${c.id}">${esc(c.name)} (${c.topics.length})</button>
           `).join('')}
@@ -844,12 +873,16 @@
         ${!topicIds.length ? `
           <div class="card" style="text-align:center;padding:30px 20px">
             <div style="font-size:32px;margin-bottom:8px">🔍</div>
-            <b>Không tìm thấy công thức nào khớp với từ khóa "${esc(theoryQuery)}"</b>
+            <b>Không tìm thấy nội dung nào khớp với từ khóa "${esc(theoryQuery)}"</b>
             <div class="pending" style="margin-top:6px">Thử tìm kiếm với từ khóa khác hoặc bấm nút "Tất cả" ở trên.</div>
           </div>
         ` : topicIds.map(id => {
           const top = TD.topics[id];
           if (!top) return '';
+          const formulas = formulasFor(id);
+          const knowledge = (top.theory || []).map(section => ({ title: section.title, content: section.text }))
+            .concat((window.THEORY_DEEP_DATA || {})[id] || []);
+          const examples = (top.examples || []).concat(((window.THEORY_EXTRA_EXAMPLES || {})[id] || []));
           return `
             <div class="theory-topic-card" id="theory-${id}">
               <div class="theory-topic-head">
@@ -860,19 +893,60 @@
                 <button class="btn-small" data-practice-topic="${id}">🎯 Luyện 10 câu chuyên đề này</button>
               </div>
 
-              ${top.formulas && top.formulas.length ? `
-                <div class="formula-section-title">📌 Công thức & Định lý cốt lõi</div>
-                ${top.formulas.map(f => `
+              ${knowledge.length ? `
+                <div class="formula-section-title">📖 1. Kiến thức, định lý & phương pháp</div>
+                ${knowledge.map((section, idx) => `
+                  <div class="concept-box">
+                    <b class="c-title">${idx + 1}. ${section.title}</b>
+                    <div>${section.content}</div>
+                  </div>
+                `).join('')}
+              ` : ''}
+
+              ${formulas.length ? `
+                <div class="formula-section-title">📌 2. Công thức & thuật toán</div>
+                ${formulas.map(f => `
                   <div class="formula-box">
                     <b class="f-name">• ${f.name}</b>
                     <div>${f.content}</div>
+                    ${exercisesFor(id, f).length ? `
+                      <div class="formula-exercises">
+                        <b class="formula-exercises-title">Bài tập vận dụng</b>
+                        ${exercisesFor(id, f).map((ex, exIdx) => `
+                          <div class="formula-exercise">
+                            <div><span class="exercise-level">${esc(ex.level || (exIdx ? 'Vận dụng cao' : 'Vận dụng'))}</span> ${ex.problem}</div>
+                            <details>
+                              <summary>Xem lời giải</summary>
+                              <div class="formula-exercise-solution">${ex.solution}</div>
+                            </details>
+                          </div>
+                        `).join('')}
+                      </div>
+                    ` : ''}
+                  </div>
+                `).join('')}
+              ` : ''}
+
+              ${examples.length ? `
+                <div class="formula-section-title">💡 3. Ví dụ có lời giải</div>
+                ${examples.map((ex, idx) => `
+                  <div class="example-card">
+                    <div class="example-head">
+                      <span>${ex.title || ('Ví dụ ' + (idx + 1))}</span>
+                    </div>
+                    <div class="example-prob">
+                      <b>Bài toán:</b> ${ex.problem}
+                    </div>
+                    <div class="example-sol">
+                      ${ex.solution}
+                    </div>
                   </div>
                 `).join('')}
               ` : ''}
 
               ${top.traps && top.traps.length ? `
+                <div class="formula-section-title">⚠️ 4. Lỗi thường gặp & lưu ý</div>
                 <div class="trap-box">
-                  <b class="t-title">⚠️ Bẫy đề thi & Lưu ý sống còn:</b>
                   <ul class="trap-list">
                     ${top.traps.map(t => `<li>${t}</li>`).join('')}
                   </ul>
