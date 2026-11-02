@@ -4,6 +4,7 @@
   const LS_STATS = 'vb2ca_stats_v1';
   const LS_SEEN = 'vb2ca_seen_v1';
   const TOP = window.TOPICS || { names: {}, order: [], slots: [] };
+  const PRACTICE_BANK_TARGET = 150;
 
   // Các đề từng mang mã ca1-vd-NN / ca1-nc-NN nay là ca1-so-NN: chuyển dữ liệu đã lưu (đề đang chọn, sổ câu sai, câu đã báo lỗi)
   (function migrateIds() {
@@ -169,6 +170,29 @@
   EXAMS.forEach(ex => {
     ALL[ex.id] = itemsOf(ex);
     ALL[ex.id].forEach(it => { REF[it.ref] = { item: it, exam: ex }; });
+  });
+  const practicePoolCounts = {};
+  Object.keys(REF).forEach(ref => {
+    const topic = REF[ref].item.topic;
+    practicePoolCounts[topic] = (practicePoolCounts[topic] || 0) + 1;
+  });
+  (window.PRACTICE_BANK || []).forEach(source => {
+    const topic = source.topic;
+    if (!TOP.order.includes(topic)) throw new Error('Unknown practice-bank topic: ' + topic);
+    if ((practicePoolCounts[topic] || 0) >= PRACTICE_BANK_TARGET) return;
+    const ref = 'practice-bank-' + source.id;
+    const item = Object.assign({}, source, {
+      no: (practicePoolCounts[topic] || 0) + 1,
+      ref,
+      type: source.options ? 'mcq' : 'short'
+    });
+    REF[ref] = { item, exam: { title: 'Ngân hàng bổ sung · ' + (TOP.names[topic] || topic) } };
+    practicePoolCounts[topic] = item.no;
+  });
+  TOP.order.forEach(topic => {
+    if ((practicePoolCounts[topic] || 0) < PRACTICE_BANK_TARGET) {
+      throw new Error('Practice bank for "' + topic + '" has fewer than ' + PRACTICE_BANK_TARGET + ' questions');
+    }
   });
 
   function setExam() {

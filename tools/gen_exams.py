@@ -4,6 +4,8 @@
 #   python tools/gen_exams.py            sinh lại toàn bộ đề và cập nhật index.html
 #   python tools/gen_exams.py --check    chỉ sinh thử và kiểm tra, không ghi file
 #   thêm --serial để chạy tuần tự trong một tiến trình (chậm hơn, dễ dò lỗi hơn)
+#   python tools/gen_practice_bank.py    bổ sung câu theo ma trận để mỗi chủ đề có ít nhất 150 câu luyện
+#   python tools/gen_practice_bank.py --check    kiểm tra kho câu bổ sung mà không ghi file
 #
 # Các file trong thư mục:
 #   g_core.py    khung chung (định dạng LaTeX, tạo câu hỏi, lời giải từng dòng)
