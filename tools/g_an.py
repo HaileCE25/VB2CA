@@ -225,9 +225,20 @@ def s13(rng, k):
     n_all, n_ext = len(pts), sum(1 for c in cls if c > 0)
     hint = r" (Điểm dừng là điểm mà $f'_x = f'_y = 0$. Tại điểm dừng, đặt $A = f''_{xx},\ B = f''_{xy},\ C = f''_{yy}$: nếu $AC - B^2 > 0$ thì đó là điểm cực trị, nếu $AC - B^2 < 0$ thì không phải.)"
     poly = f.is_polynomial()
+    fxx, fxy, fyy = diff(f, x, 2), diff(f, x, y), diff(f, y, 2)
+    hessian_work = []
+    for (px, py), det in zip(pts, cls):
+        A_, B_, C_ = (sp.simplify(h.subs({x: px, y: py})) for h in (fxx, fxy, fyy))
+        kind = ('cực trị' if det > 0 else 'điểm yên ngựa')
+        hessian_work.append(
+            r"$(%s;%s):\ A=f''_{xx}=%s,\ B=f''_{xy}=%s,\ C=f''_{yy}=%s; "
+            r"AC-B^2=(%s)(%s)-(%s)^2=%s\Rightarrow %s$"
+            % (tx(px), tx(py), tx(A_), tx(B_), tx(C_), tx(A_), tx(C_),
+               tx(B_), tx(det), kind))
     ex = steps(T(r"$f'_x = <fx>,\quad f'_y = <fy>$", fx=sp.expand(diff(f, x)) if poly else sp.factor(diff(f, x)), fy=sp.expand(diff(f, y)) if poly else sp.factor(diff(f, y))),
-               "Giải hệ $f'_x = f'_y = 0$ được các điểm dừng: " + ', '.join('$%s$' % vec(p) for p in pts),
-               'Giá trị $AC - B^2$ tại các điểm đó lần lượt: ' + ', '.join('$%s$' % tx(c) for c in cls),
+               "Giải hệ $f'_x=f'_y=0$ (thay lần lượt vào hai phương trình) được các điểm dừng: " + ', '.join('$%s$' % vec(p) for p in pts),
+               T(r"$f''_{xx}=<A>,\quad f''_{xy}=<B>,\quad f''_{yy}=<C>$", A=sp.factor(fxx), B=sp.factor(fxy), C=sp.factor(fyy)),
+               *hessian_work,
                T('Số điểm dừng: $<n>$; số điểm cực trị (có $AC - B^2 > 0$): $<e>$', n=n_all, e=n_ext))
     v = k % 3
     head = T(r'Cho hàm số $f(x,y) = <f>$. ', f=sp.expand(f) if f.is_polynomial() else f)
@@ -276,7 +287,37 @@ def s14(rng, k):
     want_conv = k % 2 == 0
     ok = conv if want_conv else 4 - conv
     q = 'Xét bốn chuỗi số dương ' + listing([s for s, _ in pick]) + '. Dùng các tiêu chuẩn so sánh, D’Alembert, Cauchy hoặc tiêu chuẩn tích phân, hãy cho biết có bao nhiêu chuỗi ' + ('hội tụ' if want_conv else 'phân kỳ') + ' trong bốn chuỗi trên?'
-    ex = steps(*['Chuỗi thứ %d: $%s$ $\\Rightarrow$ %s' % (i + 1, R14[P14.index(it_)], 'hội tụ' if it_[1] else 'phân kỳ') for i, it_ in enumerate(pick)],
+    def worked_series(item):
+        idx = P14.index(item)
+        work = [
+            r'$u_n=\dfrac{n+1}{n^3+2}\sim\dfrac{n}{n^3}=\dfrac1{n^2}$; so sánh giới hạn với $\sum 1/n^2$ cho hội tụ.',
+            r'$\dfrac{u_{n+1}}{u_n}=\dfrac{2^{n+1}/(n+1)!}{2^n/n!}=\dfrac2{n+1}\to0<1$; chuỗi hội tụ.',
+            r'$f(x)=1/(x\ln x)$ giảm dương trên $[2,\infty)$ và $\int_2^B\frac{dx}{x\ln x}=\ln\ln B-\ln\ln2\to\infty$; chuỗi phân kỳ.',
+            r'$\sin(1/n)\sim1/n$ khi $n\to\infty$; chuỗi tương đương chuỗi điều hòa nên phân kỳ.',
+            r'$\sqrt[n]{u_n}=\sqrt[n]{(n/(2n+1))^n}=n/(2n+1)\to1/2<1$; chuỗi hội tụ.',
+            r'$u_n=1/\sqrt{n(n+1)}\sim1/n$; so sánh giới hạn với chuỗi điều hòa cho phân kỳ.',
+            r'$\dfrac{u_{n+1}}{u_n}=\dfrac{(n+1)^2/3^{n+1}}{n^2/3^n}=\dfrac{(n+1)^2}{3n^2}\to1/3<1$; chuỗi hội tụ.',
+            r'$\ln n\le\sqrt n$ với $n$ đủ lớn nên $0\le\ln n/n^2\le1/n^{3/2}$; chuỗi hội tụ.',
+            r'$\dfrac{u_{n+1}}{u_n}=\dfrac{((n+1)!)^2/(2n+2)!}{(n!)^2/(2n)!}=\dfrac{(n+1)^2}{(2n+1)(2n+2)}\to1/4<1$; hội tụ.',
+            r'$1-\cos(1/n)\sim\frac1{2n^2}$; so sánh giới hạn với $1/n^2$ cho hội tụ.',
+            r'$\sqrt[n]{n}\to1$, do đó $u_n=1/(n\sqrt[n]n)\sim1/n$; phân kỳ.',
+            r'$u_n=n/(n^2+1)\sim1/n$; so sánh giới hạn với $1/n$ cho phân kỳ.',
+            r'$u_n=1/\sqrt{n^3+1}\sim1/n^{3/2}$; so sánh giới hạn với chuỗi $p$-series $p=3/2>1$ cho hội tụ.',
+            r'$\dfrac{u_{n+1}}{u_n}=\dfrac{(n+1)!/(n+1)^{n+1}}{n!/n^n}=(n/(n+1))^n\to e^{-1}<1$; hội tụ.',
+            r'$u_n=\dfrac{3^n}{2^n+n}\sim(3/2)^n$, nên $u_n\not\to0$; chuỗi phân kỳ.',
+            r'$0<\arctan n<\pi/2$, nên $0<\arctan(n)/n^2<\pi/(2n^2)$; chuỗi hội tụ.',
+            r'$\ln(1+1/n)\sim1/n$; so sánh giới hạn với chuỗi điều hòa cho phân kỳ.',
+            r'$\int_2^B\frac{dx}{x\ln^2x}=[-1/\ln x]_2^B\to1/\ln2<\infty$; theo tiêu chuẩn tích phân chuỗi hội tụ.',
+            r'$\sqrt n/(n+1)\sim1/\sqrt n$; chuỗi $p$ với $p=1/2$ phân kỳ.',
+            r'$\sqrt[n]{u_n}=(2n+1)/(3n+2)\to2/3<1$; chuỗi hội tụ.',
+            r'$(n+2)/(2n^2+1)\sim1/(2n)$; so sánh giới hạn với chuỗi điều hòa cho phân kỳ.',
+            r'$u_n=5^n/(n4^n)=(5/4)^n/n\not\to0$; chuỗi phân kỳ.',
+            r'$\tan(1/n^2)\sim1/n^2$; chuỗi hội tụ theo so sánh giới hạn.',
+            r'$\dfrac{u_{n+1}}{u_n}=\dfrac{2n+3}{3(2n+1)}\to1/3<1$; chuỗi hội tụ.',
+        ][idx]
+        return 'Chuỗi thứ %d: %s Kết luận: %s.' % (
+            pick.index(item) + 1, work, 'hội tụ' if item[1] else 'phân kỳ')
+    ex = steps(*[worked_series(it_) for it_ in pick],
                'Số chuỗi %s: $%d$' % ('hội tụ' if want_conv else 'phân kỳ', ok))
     return NQ(q, ok, [v_ for v_ in (0, 1, 2, 3, 4) if v_ != ok], ex)
 
@@ -287,13 +328,42 @@ def s15(rng, k):
         p, eps, e_s = rng.choice([(2, R(1, 100), '0{,}01'), (1, R(1, 1000), '0{,}001'), (3, R(1, 1000), '0{,}001'), (2, R(1, 10000), '0{,}0001'), (3, R(1, 125), '0{,}008'), (1, R(1, 100), '0{,}01')])
         ok = math.ceil(float(eps) ** (-1.0 / p) - 1e-9) - 1
         q = T(r'Xét chuỗi đan dấu $S = \displaystyle\sum_{n=1}^{+\infty}\dfrac{(-1)^{n+1}}{<np>}$ và gọi $S_n$ là tổng riêng thứ $n$. Theo đánh giá sai số của chuỗi Leibniz, $|S - S_n| \le a_{n+1}$ với $a_n = \dfrac{1}{<np>}$. Số $n$ nhỏ nhất để đánh giá này bảo đảm $|S - S_n| \le <e>$ là', np='n' if p == 1 else 'n^{%d}' % p, e=e_s)
-        ex = T(r'$\dfrac{1}{<d>} \le <e> \Leftrightarrow n + 1 \ge <m>$.', d='n+1' if p == 1 else '(n+1)^{%d}' % p, e=e_s, m=ok + 1)
+        threshold = float(eps) ** (-1.0 / p)
+        ex = steps(T(r'Leibniz: $|S-S_n|\le a_{n+1}=\dfrac1{(n+1)^{<p>}}$. Muốn sai số không quá $\varepsilon=<eps>$, cần $\dfrac1{(n+1)^{<p>}}\le<eps>$.',
+                     p=p, eps=e_s),
+                   T(r'Biến đổi bất đẳng thức: $(n+1)^{<p>}\ge<den> \Rightarrow n+1\ge<root>\approx<decimal>$.',
+                     p=p, den=R(1, eps), root=R(1, eps) ** R(1, p),
+                     decimal=vn(threshold, 4).rstrip('0').rstrip(',').replace(',', '{,}')),
+                   T(r'$n$ nguyên nên $n\ge<ok>$; số nguyên nhỏ nhất là $n=<ok>$.', ok=ok))
         return NQ(q, ok, [ok + 1, ok - 1, 10 * ok + 9, ok + 2], ex)
     pick = rng.sample(P15, 4)
     conv, absc = sum(c for _, c, _ in pick), sum(a for _, _, a in pick)
     kind, ok = [('hội tụ', conv), ('hội tụ tuyệt đối', absc), ('bán hội tụ (hội tụ nhưng không hội tụ tuyệt đối)', conv - absc)][v]
     q = 'Xét bốn chuỗi đan dấu ' + listing([s for s, _, _ in pick]) + '. Có bao nhiêu chuỗi ' + kind + ' trong bốn chuỗi trên?'
-    ex = steps(*['Chuỗi thứ %d: %s $\\Rightarrow$ %s' % (i + 1, R15[P15.index(it_)], 'hội tụ tuyệt đối' if it_[2] else 'bán hội tụ' if it_[1] else 'phân kỳ') for i, it_ in enumerate(pick)],
+    def worked_alternating(item, number):
+        idx = P15.index(item)
+        detail = [
+            r'$a_n=1/n\downarrow0$ nên Leibniz cho hội tụ; $\sum|u_n|=\sum1/n$ phân kỳ, do đó bán hội tụ.',
+            r'$a_n=n^{-3/2}\downarrow0$ và $\sum|u_n|=\sum n^{-3/2}$ hội tụ ($p=3/2>1$), nên hội tụ tuyệt đối.',
+            r'$|u_n|=n/(n+1)\to1\ne0$, điều kiện cần không thỏa; phân kỳ.',
+            r'$a_n=1/\ln(n+1)\downarrow0$ nên Leibniz hội tụ; $\ln(n+1)<n$ nên $a_n>1/n$, vì vậy chuỗi trị tuyệt đối phân kỳ: bán hội tụ.',
+            r'$a_n=\ln n/n\downarrow0$ khi $n\ge3$, nên Leibniz hội tụ; $\ln n\ge1$ khi $n\ge3$ cho $a_n\ge1/n$, nên không hội tụ tuyệt đối.',
+            r'$a_n=\sin(1/n)\downarrow0$ nên Leibniz hội tụ; $\sin(1/n)\sim1/n$ khiến chuỗi trị tuyệt đối phân kỳ: bán hội tụ.',
+            r'$a_n=n^{-1/3}\downarrow0$ nên Leibniz hội tụ; chuỗi trị tuyệt đối là $p$-series $p=1/3\le1$, phân kỳ: bán hội tụ.',
+            r'$\sum|u_n|=\sum1/n^2$ hội tụ ($p=2>1$), nên hội tụ tuyệt đối.',
+            r'$\dfrac{|u_{n+1}|}{|u_n|}=\dfrac{n+1}{2^{n+1}}\dfrac{2^n}{n}=\dfrac{n+1}{2n}\to1/2<1$, nên hội tụ tuyệt đối.',
+            r'$|u_n|=(n+1)/(3n-1)\to1/3\ne0$, nên phân kỳ.',
+            r'$0<1/(n^2+1)\le1/n^2$; so sánh với $\sum1/n^2$ chứng minh hội tụ tuyệt đối.',
+            r'$a_n=1/\sqrt{n+1}\downarrow0$ nên Leibniz hội tụ; trị tuyệt đối là $p$-series $p=1/2\le1$, nên chỉ hội tụ có điều kiện.',
+            r'$|u_n|=n^2/(n^2+1)\to1\ne0$, nên phân kỳ.',
+            r'$\sum|u_n|=\sum1/n!$; tỉ số $|u_{n+1}|/|u_n|=1/(n+1)\to0<1$, nên hội tụ tuyệt đối.',
+            r'$a_n=1/(2n+1)\downarrow0$ nên Leibniz hội tụ; $a_n\sim1/(2n)$ nên trị tuyệt đối phân kỳ, do đó bán hội tụ.',
+            r'$0<1-\cos(1/n)\sim1/(2n^2)$; so sánh với $\sum1/n^2$ cho hội tụ tuyệt đối.',
+        ][idx]
+        classification = ('hội tụ tuyệt đối' if item[2] else
+                          'bán hội tụ' if item[1] else 'phân kỳ')
+        return 'Chuỗi thứ %d: %s Kết luận: %s.' % (number, detail, classification)
+    ex = steps(*[worked_alternating(it_, i + 1) for i, it_ in enumerate(pick)],
                'Số chuỗi %s: $%d$' % (kind.split(' (')[0], ok))
     return NQ(q, ok, [v_ for v_ in (conv, absc, conv - absc, 4 - conv, 0, 1, 2, 3, 4) if v_ != ok], ex)
 
@@ -340,12 +410,49 @@ def s16(rng, k):
         wrongs = [(rng.choice(ODE[t_]), t_) for t_ in rng.sample(others, 3)]
     name, ex = ODE_Q[target]
     part = lambda e: r'$\dfrac{\partial P}{\partial y} = %s$, $\dfrac{\partial Q}{\partial x} = %s$' % PART[e]
-    lines = ['<b>Đúng:</b> $%s$ — %s' % (ok, ex.rstrip('.') + ((': ' + part(ok)) if target == 'exa' else ''))]
+    def show_classification(e, category):
+        if category == 'exa' or category == 'nex':
+            py, qx = PART[e]
+            return (r'$P=%s,\ Q=%s$: $\partial P/\partial y=%s$ và '
+                    r'$\partial Q/\partial x=%s$; %s.'
+                    % (e.split('dx')[0].strip('r\''), e.split('+ (')[-1].split(')dy')[0],
+                       py, qx, 'bằng nhau, nên toàn phần' if category == 'exa' else 'khác nhau, nên không toàn phần'))
+        if category == 'lin':
+            work = {
+                ODE['lin'][0]: r'Đã ở dạng $y'+r"'"+r'+x^2y=\sin x$: $p(x)=x^2,\ q(x)=\sin x$.',
+                ODE['lin'][1]: r"Chia cho $x\ne0$: $y'-\dfrac2x y=x^2$, đúng dạng $y'+p(x)y=q(x)$.",
+                ODE['lin'][2]: r"Đã ở dạng $y'+(\tan x)y=\cos x$, bậc nhất tuyến tính theo $y,y'$.",
+            }
+            return work[e]
+        if category == 'ber':
+            work = {
+                ODE['ber'][0]: r"$y'+\dfrac1x y=xy^3$: dạng Bernoulli với $\alpha=3$.",
+                ODE['ber'][1]: r"$y'-y=xy^2$: dạng Bernoulli với $\alpha=2$.",
+                ODE['ber'][2]: r"Chia cho $x\ne0$: $y'+\dfrac1x y=\dfrac{\ln x}{x}y^2$, Bernoulli với $\alpha=2$.",
+            }
+            return work[e]
+        if category == 'hom':
+            work = {
+                ODE['hom'][0]: r'$\dfrac{x+y}{x-y}=\dfrac{1+y/x}{1-y/x}$, nên vế phải chỉ phụ thuộc $y/x$.',
+                ODE['hom'][1]: r'$\dfrac yx+\tan(y/x)$ chỉ phụ thuộc tỉ số $y/x$.',
+                ODE['hom'][2]: r"Chia cho $x$: $y'=y/x+\sqrt{1+(y/x)^2}$; phụ thuộc duy nhất vào $y/x$.",
+            }
+            return work[e]
+        work = {
+            ODE['sep'][0]: r'$e^{x-y}=e^x e^{-y}$ nên $e^y\,dy=e^x\,dx$.',
+            ODE['sep'][1]: r'$\dfrac{dy}{1+y^2}=\dfrac{dx}{1+x^2}$, tách được biến.',
+            ODE['sep'][2]: r'$\dfrac{dy}{1+y^2}=(1+x)\,dx$, tách được biến.',
+        }
+        return work[e]
+
+    lines = ['<b>Đúng:</b> $%s$ — %s; %s' %
+             (ok, ex.rstrip('.'), show_classification(ok, target))]
     for w, t_ in wrongs:
         if t_ == 'nex':
-            lines.append('<b>Sai:</b> $%s$ — %s, hai đạo hàm riêng khác nhau' % (w, part(w)))
+            lines.append('<b>Sai:</b> $%s$ — %s' % (w, show_classification(w, t_)))
         else:
-            lines.append('<b>Sai:</b> $%s$ — %s, không thuộc dạng đang hỏi' % (w, TYPE_WHY[t_]))
+            lines.append('<b>Sai:</b> $%s$ — %s; đây là %s, không phải dạng đang hỏi.' %
+                         (w, show_classification(w, t_), TYPE_WHY[t_]))
     return Q('Phương trình nào sau đây là ' + name + '?', '$%s$.' % ok, ['$%s$.' % w for w, _ in wrongs], steps(*lines))
 
 
@@ -754,7 +861,57 @@ S34 = [
 
 
 def pool(P):
-    return lambda rng, k: Q(*P[k % len(P)])
+    power_series_work = [
+        r'$\sum_{n\ge1}x^n=\frac{x}{1-x}$. Differentiate: $\sum n x^{n-1}=\frac1{(1-x)^2}$; nhân $x$: $\sum n x^n=\frac{x}{(1-x)^2}$.',
+        r'$\sum_{n\ge1}x^n=\frac{x}{1-x}$. Tích phân từ $0$ đến $x$: $\sum_{n\ge1}\frac{x^n}{n}=\int_0^x\frac{t}{1-t}\,dt=-\ln(1-x)$.',
+        r'$\sum_{n\ge0}(-1)^nt^{2n}=\frac1{1+t^2}$. Tích phân từ $0$ đến $x$: $\sum_{n\ge0}\frac{(-1)^nx^{2n+1}}{2n+1}=\int_0^x\frac{dt}{1+t^2}=\arctan x$.',
+        r'Đặt $D=x\frac d{dx}$. Từ $\sum_{n\ge0}x^n=(1-x)^{-1}$, $D$ lần một cho $\sum nx^n=\frac{x}{(1-x)^2}$; lần hai cho $\sum n^2x^n=x\frac d{dx}\frac{x}{(1-x)^2}=\frac{x(1+x)}{(1-x)^3}$.',
+        r'$\sum_{n\ge0}x^{n+1}=\frac{x}{1-x}$. Lấy đạo hàm hai vế: $\sum_{n\ge0}(n+1)x^n=\left(\frac{x}{1-x}\right)^\prime=\frac{(1-x)+x}{(1-x)^2}=\frac1{(1-x)^2}$.',
+        r'$\sum_{n\ge0}(-1)^nt^n=\frac1{1+t}$. Tích phân $t$ từ $0$ đến $x$: $\sum_{n\ge0}\frac{(-1)^nx^{n+1}}{n+1}=\ln(1+x)$; đặt lại chỉ số $m=n+1$ được chuỗi đề bài.',
+        r'$\sum_{n\ge2}n(n-1)x^{n-2}=\left((1-x)^{-1}\right)^{\prime\prime}=\frac2{(1-x)^3}$. Nhân $x^2$: $\sum_{n\ge2}n(n-1)x^n=\frac{2x^2}{(1-x)^3}$.',
+        r'$\sum_{n\ge0}x^{2n}=\frac1{1-x^2}$. Tích phân từ $0$ đến $x$: $\sum_{n\ge0}\frac{x^{2n+1}}{2n+1}=\frac12\ln\frac{1+x}{1-x}$.',
+        r'$\sum_{n\ge0}(n+1)t^n=\frac1{(1-t)^2}$. Thay $t=-x$: $\sum_{n\ge0}(-1)^n(n+1)x^n=\frac1{(1+x)^2}$.',
+        r'$\frac1{n(n+1)}=\frac1n-\frac1{n+1}$. Do đó $\sum_{n\ge1}\frac{x^{n+1}}{n(n+1)}=x[-\ln(1-x)]-\sum_{n\ge1}\frac{x^{n+1}}{n+1}= -x\ln(1-x)-[-\ln(1-x)-x]=x+(1-x)\ln(1-x)$.',
+    ]
+    separable_work = [
+        r'$y^\prime=e^xe^{-y}\Rightarrow e^y\,dy=e^x\,dx$. Tích phân: $\int e^y\,dy=\int e^x\,dx$, nên $e^y=e^x+C$.',
+        r'$\dfrac{dy}{y}=\dfrac{x\,dx}{1+x^2}$. Tích phân: $\ln|y|=\frac12\ln(1+x^2)+C$; hấp thụ hằng số sau khi mũ hóa được $y=C\sqrt{1+x^2}$.',
+        r'$\dfrac{dy}{1+y^2}=\dfrac{dx}{1+x^2}$. Tích phân hai vế cho $\arctan y=\arctan x+C$.',
+        r'$\dfrac{dy}{y\ln y}=\dfrac{dx}{x}$. Đặt $u=\ln y$, khi đó $du=dy/y$: $\ln|\ln y|=\ln x+C$, tương đương $\ln y=C_1x$ và $y=e^{C_1x}$.',
+        r'$\dfrac{dy}{1+y^2}=2x\,dx$. Tích phân: $\arctan y=x^2+C$, do đó $y=\tan(x^2+C)$.',
+        r'$\dfrac{dy}{y^2}=\cos x\,dx$. Tích phân: $-\dfrac1y=\sin x+C$, suy ra $y=-1/(\sin x+C)$; nghiệm bị chia mất $y=0$ cũng cần kể.',
+        r'$e^y\,dy=x\,dx$. Tích phân: $e^y=\dfrac{x^2}{2}+C$.',
+        r'$y\,dy=\dfrac{e^x}{1+e^x}\,dx$. Tích phân: $\frac{y^2}{2}=\ln(1+e^x)+C$, nhân $2$: $y^2=2\ln(1+e^x)+C_1$.',
+        r'$\dfrac{dy}{y}=\dfrac{dx}{\tan x}=\cot x\,dx$. Tích phân: $\ln|y|=\ln|\sin x|+C$, nên $y=C\sin x$.',
+        r'$\dfrac{dy}{y}=\dfrac{2x\,dx}{1+x^2}$. Tích phân: $\ln|y|=\ln(1+x^2)+C$, nên $y=C(1+x^2)$.',
+    ]
+    linear_work = [
+        r'$\left(\frac yx\right)^\prime=\frac{xy^\prime-y}{x^2}=1$. Tích phân: $y/x=x+C$, vậy $y=x^2+Cx$.',
+        r'Đặt $y=ux$, $y^\prime=u^\prime x+u$. Thế vào $y^\prime=1+y/x=1+u$: $u^\prime x=1$, nên $u=\ln|x|+C$ và $y=x\ln|x|+Cx$.',
+        r'Nhân phương trình với $e^{-x}$: $(ye^{-x})^\prime=e^x e^{-x}=1$. Tích phân: $ye^{-x}=x+C$, vậy $y=(x+C)e^x$.',
+        r'Chia cho $\cos^2x$: $y^\prime/\cos x+y\tan x=1/\cos^2x$, tức $(y/\cos x)^\prime=1/\cos^2x$. Tích phân: $y/\cos x=\tan x+C$, nên $y=\sin x+C\cos x$.',
+        r'Nhân tử tích phân $e^{x^2}$: $(ye^{x^2})^\prime=2xe^{x^2}$. Tích phân: $ye^{x^2}=e^{x^2}+C$, nên $y=1+Ce^{-x^2}$.',
+        r'Chia cho $x$: $y^\prime+2y/x=4x$. Nhân tử tích phân $x^2$: $(x^2y)^\prime=4x^3$. Tích phân: $x^2y=x^4+C$, nên $y=x^2+C/x^2$.',
+        r'Nhân tử tích phân $e^x$: $(ye^x)^\prime=xe^x$. Vì $\int xe^x dx=(x-1)e^x$, ta có $ye^x=(x-1)e^x+C$, nên $y=x-1+Ce^{-x}$.',
+        r'Nhân hai vế với $\cos x$: $(y\cos x)^\prime=1$. Tích phân: $y\cos x=x+C$, nên $y=(x+C)/\cos x$.',
+        r'Đặt $y=ux$, $y^\prime=u^\prime x+u$. Khi đó $u^\prime=u^2/x$; tách biến $du/u^2=dx/x$, nên $-1/u=\ln x+C$ và $y=-x/(\ln x+C)$.',
+        r'Chia cho $x$: $y^\prime-3y/x=x^2$. Nhân tử tích phân $x^{-3}$: $(y/x^3)^\prime=1/x$. Tích phân: $y/x^3=\ln x+C$, vậy $y=x^3(\ln x+C)$.',
+    ]
+
+    def generate(rng, k):
+        i = k % len(P)
+        question, answer, choices, note = P[i]
+        if P is S32:
+            explanation = power_series_work[i]
+        elif P is S33:
+            explanation = separable_work[i]
+        elif P is S34:
+            explanation = linear_work[i]
+        else:
+            explanation = note
+        return Q(question, answer, choices, explanation)
+
+    return generate
 
 
 s32, s33, s34 = pool(S32), pool(S33), pool(S34)
@@ -817,26 +974,42 @@ def s36(rng, k):
     if v == 0:
         ok = R(32 * a ** 3, 9)
         q = T(r'Trong mặt phẳng $Oxy$, cho miền $D = \{(x,y): x^2 + y^2 \le <c>x\}$. Chuyển sang tọa độ cực (khi đó biên của $D$ là $r = <c>\cos\varphi$), giá trị của tích phân $\displaystyle\iint_D \sqrt{x^2 + y^2}\,dxdy$ bằng', c=2 * a)
-        return NQ(q, ok, [ok / 2, R(8 * a ** 3, 3), ok * 3, R(16 * a ** 3, 3)], T(r'$\displaystyle\int_{-\pi/2}^{\pi/2}d\varphi\int_0^{<c>\cos\varphi} r^2\,dr = \dfrac{<e>}{3}\int_{-\pi/2}^{\pi/2}\cos^3\varphi\,d\varphi$ và $\displaystyle\int_{-\pi/2}^{\pi/2}\cos^3\varphi\,d\varphi = \dfrac43$.', c=2 * a, e=8 * a ** 3))
+        return NQ(q, ok, [ok / 2, R(8 * a ** 3, 3), ok * 3, R(16 * a ** 3, 3)], steps(
+            r'$x=r\cos\varphi,\ y=r\sin\varphi$, nên $\sqrt{x^2+y^2}=r$, $dxdy=r\,dr\,d\varphi$; biên $r^2\le2ar\cos\varphi$ cho $-\pi/2\le\varphi\le\pi/2$, $0\le r\le2a\cos\varphi$.',
+            T(r'$\displaystyle I=\int_{-\pi/2}^{\pi/2}\int_0^{<c>\cos\varphi}r^2\,dr\,d\varphi=\dfrac{<c>^3}{3}\int_{-\pi/2}^{\pi/2}\cos^3\varphi\,d\varphi$.', c=2 * a),
+            r'$\int_{-\pi/2}^{\pi/2}\cos^3\varphi\,d\varphi=2\int_0^{\pi/2}\cos\varphi(1-\sin^2\varphi)\,d\varphi=2[\,u-u^3/3\,]_0^1=4/3$ (đặt $u=\sin\varphi$).',
+            T(r'$I=\dfrac{<c3>}{3}\cdot\dfrac43=<ok>$.', c3=(2 * a) ** 3, ok=ok)))
     if v == 1:
         b = a + rng.choice([1, 2])
         ok = R(b ** 4 - a ** 4, 8)
         q = T(r'Cho miền $D = \{(x,y): <a2> \le x^2 + y^2 \le <b2>,\ x \ge 0,\ y \ge 0\}$. Giá trị của tích phân $\displaystyle\iint_D xy\,dxdy$ bằng', a2=a * a, b2=b * b)
-        return NQ(q, ok, [ok * 2, ok / 2, R(b ** 4, 8), R(b ** 2 - a ** 2, 4)], T(r'$\displaystyle\int_0^{\pi/2}\sin\varphi\cos\varphi\,d\varphi\int_<a>^<b> r^3\,dr = \dfrac12\cdot\dfrac{<b>^4 - <a>^4}{4}$.', a=a, b=b))
+        return NQ(q, ok, [ok * 2, ok / 2, R(b ** 4, 8), R(b ** 2 - a ** 2, 4)], steps(
+            r'Polar coordinates give $xy=r^2\cos\varphi\sin\varphi$ and $dxdy=r\,dr\,d\varphi$; the quarter-annulus has $a\le r\le b$, $0\le\varphi\le\pi/2$.',
+            T(r'$\displaystyle I=\left(\int_0^{\pi/2}\sin\varphi\cos\varphi\,d\varphi\right)\left(\int_<a>^<b>r^3\,dr\right)=\dfrac12\left[\dfrac{r^4}{4}\right]_<a>^<b>$.', a=a, b=b),
+            T(r'$I=\dfrac12\cdot\dfrac{<b4>-<a4>}{4}=<ok>$.', a4=a ** 4, b4=b ** 4, ok=ok)))
     if v == 2:
         c = rng.choice([1, 2, 3, 4])
         ok = pi * (exp(c) - 1)
         q = T(r'Cho miền $D = \{(x,y): x^2 + y^2 \le <c>\}$. Giá trị của tích phân $\displaystyle\iint_D e^{x^2 + y^2}\,dxdy$ bằng', c=c)
-        return NQ(q, ok, [pi * exp(c), 2 * ok, ok / 2, pi * (exp(c) + 1)], T(r'$\displaystyle\int_0^{2\pi}d\varphi\int_0^{\sqrt{<c>}} re^{r^2}\,dr = 2\pi\cdot\dfrac{e^{<c>} - 1}{2}$.', c=c))
+        return NQ(q, ok, [pi * exp(c), 2 * ok, ok / 2, pi * (exp(c) + 1)], steps(
+            T(r'Đổi sang cực: $0\le r\le\sqrt{<c>}$, $0\le\varphi\le2\pi$, $dxdy=r\,dr\,d\varphi$.', c=c),
+            T(r'Đặt $u=r^2$, $du=2r\,dr$: $\displaystyle I=2\pi\int_0^{\sqrt{<c>}}re^{r^2}\,dr=\pi\int_0^{<c>}e^u\,du=\pi[e^u]_0^{<c>}$.', c=c),
+            T(r'$I=\pi(e^{<c>}-1)=<ok>$.', c=c, ok=ok)))
     if v == 3:
         a, b = rng.choice([(2, 3), (1, 2), (3, 1), (2, 1), (1, 3), (3, 2)])
         ok = pi * R(a * b * (a * a + b * b), 4)
         q = T(r'Cho miền $D = \left\{(x,y): \dfrac{x^2}{<a2>} + \dfrac{y^2}{<b2>} \le 1\right\}$. Dùng phép đổi biến $x = <a>r\cos\varphi,\ y = <b>r\sin\varphi$ (Jacobian bằng $<j>r$), giá trị của tích phân $\displaystyle\iint_D (x^2 + y^2)\,dxdy$ bằng',
               a2=a * a, b2=b * b, a='' if a == 1 else a, b='' if b == 1 else b, j=a * b)
-        return NQ(q, ok, [ok / (a * b) if a * b > 1 else ok * 2, ok * 2 if a * b > 1 else ok / 2, pi * R(a * a + b * b, 2), pi * a * b], T(r'$\displaystyle\int_0^{2\pi}\!\!\int_0^1 (<a2>\cos^2\varphi + <b2>\sin^2\varphi)\,<j>r^3\,dr\,d\varphi = \dfrac{<j>}{4}\cdot\pi(<a2> + <b2>)$.', a2=a * a, b2=b * b, j=a * b))
+        return NQ(q, ok, [ok / (a * b) if a * b > 1 else ok * 2, ok * 2 if a * b > 1 else ok / 2, pi * R(a * a + b * b, 2), pi * a * b], steps(
+            T(r'Đặt $x=<a>r\cos\varphi$, $y=<b>r\sin\varphi$; Jacobian $=<j>r$, $0\le r\le1$, $0\le\varphi\le2\pi$. Khi đó $x^2+y^2=r^2(<a2>\cos^2\varphi+<b2>\sin^2\varphi)$.', a='' if a == 1 else a, b='' if b == 1 else b, a2=a * a, b2=b * b, j=a * b),
+            r'$\int_0^1r^3\,dr=1/4$, $\int_0^{2\pi}\cos^2\varphi\,d\varphi=\int_0^{2\pi}\sin^2\varphi\,d\varphi=\pi$.',
+            T(r'$I=\dfrac{<j>\pi}{4}(<a2>+<b2>)=\dfrac{<ab>\pi}{4}(<a2>+<b2>)=<ok>$.', j=a * b, a2=a * a, b2=b * b, ab=a * b, ok=ok)))
     ok = R(2 * a ** 3, 3)
     q = T(r'Cho $D$ là nửa hình tròn $\{(x,y): x^2 + y^2 \le <a2>,\ y \ge 0\}$. Giá trị của tích phân $\displaystyle\iint_D y\,dxdy$ bằng', a2=a * a)
-    return NQ(q, ok, [ok * 2, R(a ** 3, 3), pi * R(a ** 3, 3), pi * R(a * a, 2)], T(r'$\displaystyle\int_0^{\pi}\sin\varphi\,d\varphi\int_0^<a> r^2\,dr = 2\cdot\dfrac{<a>^3}{3}$.', a=a))
+    return NQ(q, ok, [ok * 2, R(a ** 3, 3), pi * R(a ** 3, 3), pi * R(a * a, 2)], steps(
+        T(r'Polar coordinates on the upper semicircle: $0\le r\le<a>$, $0\le\varphi\le\pi$; $y=r\sin\varphi$ and $dxdy=r\,dr\,d\varphi$, so integrand becomes $r^2\sin\varphi$.', a=a),
+        T(r'$\displaystyle I=\left(\int_0^\pi\sin\varphi\,d\varphi\right)\left(\int_0^{<a>}r^2\,dr\right)=(1-\cos\pi)\left[\frac{r^3}{3}\right]_0^{<a>}$.', a=a),
+        T(r'$I=2\cdot\dfrac{<a3>}{3}=<ok>$.', a3=a ** 3, ok=ok)))
 
 
 def s37(rng, k):
@@ -844,24 +1017,39 @@ def s37(rng, k):
     if v == 0:
         ok = pi * R(a ** 6, 3)
         q = T(r'Cho $V$ là miền giới hạn bởi mặt $z = x^2 + y^2$ và mặt phẳng $z = <a2>$. Giá trị của tích phân $\displaystyle\iiint_V z\,dxdydz$ bằng', a2=a * a)
-        return NQ(q, ok, [ok / 2, pi * R(a ** 6, 4), ok * 2, pi * R(a ** 6, 2)], T(r'Tọa độ trụ: $\displaystyle\int_0^{2\pi}d\varphi\int_0^<a> r\cdot\dfrac{<a4> - r^4}{2}\,dr$.', a=a, a4=a ** 4))
+        return NQ(q, ok, [ok / 2, pi * R(a ** 6, 4), ok * 2, pi * R(a ** 6, 2)], steps(
+            T(r'Trong tọa độ trụ, $0\le r\le<a>$, $r^2\le z\le<a2>$, $dV=r\,dz\,dr\,d\varphi$; tích phân theo $z$: $\int_{r^2}^{<a2>}z\,dz=\dfrac{<a4>-r^4}{2}$.', a=a, a2=a ** 2, a4=a ** 4),
+            T(r'$\displaystyle I=2\pi\int_0^{<a>}r\frac{<a4>-r^4}{2}\,dr=\pi\left[\frac{<a4>r^2}{2}-\frac{r^6}{6}\right]_0^{<a>}$.', a=a, a4=a ** 4),
+            T(r'$I=\pi\left(\dfrac{<a6>}{2}-\dfrac{<a6>}{6}\right)=\dfrac{\pi<a6>}{3}=<ok>$.', a6=a ** 6, ok=ok)))
     if v == 1:
         ok = pi * R(a ** 4, 4)
         q = T(r'Cho $V = \{(x,y,z): x^2 + y^2 + z^2 \le <a2>,\ z \ge 0\}$. Giá trị của tích phân $\displaystyle\iiint_V z\,dxdydz$ bằng', a2=a * a)
-        return NQ(q, ok, [ok * 2, ok / 2, pi * R(2 * a ** 3, 3), pi * R(a ** 4, 3)], T(r'Tọa độ cầu: $\displaystyle\int_0^{2\pi}d\varphi\int_0^{\pi/2}\cos\theta\sin\theta\,d\theta\int_0^<a>\rho^3\,d\rho = 2\pi\cdot\dfrac12\cdot\dfrac{<a>^4}{4}$.', a=a))
+        return NQ(q, ok, [ok * 2, ok / 2, pi * R(2 * a ** 3, 3), pi * R(a ** 4, 3)], steps(
+            T(r'Spherical coordinates: $z=\rho\cos\theta$, $dV=\rho^2\sin\theta\,d\rho\,d\theta\,d\varphi$; hence $z\,dV=\rho^3\cos\theta\sin\theta\,d\rho\,d\theta\,d\varphi$.', a=a),
+            T(r'$\int_0^{2\pi}d\varphi=2\pi$, $\int_0^{\pi/2}\cos\theta\sin\theta\,d\theta=[\sin^2\theta/2]_0^{\pi/2}=1/2$, $\int_0^{<a>}\rho^3d\rho=<a4>/4$.', a=a, a4=a ** 4),
+            T(r'$I=2\pi\cdot\dfrac12\cdot\dfrac{<a4>}{4}=<ok>$.', a4=a ** 4, ok=ok)))
     if v == 2:
         a = rng.choice([1, 2, 3, 4])
         ok = R(a ** 4, 24)
         q = T(r'Cho $V$ là tứ diện giới hạn bởi các mặt phẳng $x = 0,\ y = 0,\ z = 0$ và $x + y + z = <a>$. Giá trị của tích phân $\displaystyle\iiint_V x\,dxdydz$ bằng', a=a)
-        return NQ(q, ok, [R(a ** 4, 6), R(a ** 4, 12), R(a ** 3, 6), R(a ** 4, 120)], T(r'$\displaystyle\int_0^<a> x\cdot\dfrac{(<a> - x)^2}{2}\,dx = \dfrac{<a>^4}{24}$.', a=a))
+        return NQ(q, ok, [R(a ** 4, 6), R(a ** 4, 12), R(a ** 3, 6), R(a ** 4, 120)], steps(
+            T(r'Với $x$ cố định, tam giác $y,z\ge0$, $y+z\le<a>-x$ có diện tích $\frac12(<a>-x)^2$. Vì vậy $I=\int_0^{<a>}x\cdot\frac{(<a>-x)^2}{2}\,dx$.', a=a),
+            T(r'Khai triển: $I=\frac12\int_0^{<a>}(<a2>x-2<a>x^2+x^3)\,dx=\frac12[<a2>x^2/2-2<a>x^3/3+x^4/4]_0^{<a>}$' , a=a, a2=a ** 2),
+            T(r'$I=<a4>/4-<a4>/3+<a4>/8=<ok>$.', a4=a ** 4, ok=ok)))
     if v == 3:
         ok = pi * R(a ** 5, 10)
         q = T(r'Cho $V$ là miền giới hạn bởi mặt nón $z = \sqrt{x^2 + y^2}$ và mặt phẳng $z = <a>$. Giá trị của tích phân $\displaystyle\iiint_V (x^2 + y^2)\,dxdydz$ bằng', a=a)
-        return NQ(q, ok, [ok / 2, ok * 2, pi * R(a ** 5, 6), pi * R(a ** 5, 5) * 2], T(r'Tọa độ trụ: $\displaystyle\int_0^{2\pi}d\varphi\int_0^<a> r^3(<a> - r)\,dr = 2\pi\cdot\dfrac{<a>^5}{20}$.', a=a))
+        return NQ(q, ok, [ok / 2, ok * 2, pi * R(a ** 5, 6), pi * R(a ** 5, 5) * 2], steps(
+            T(r'Tọa độ trụ: $r=\sqrt{x^2+y^2}$, $0\le r\le<a>$, $r\le z\le<a>$, $dV=r\,dz\,dr\,d\varphi$. Sau khi tích phân theo $z$, biểu thức là $r^2(<a>-r)r=r^3(<a>-r)$.', a=a),
+            T(r'$\displaystyle I=2\pi\int_0^{<a>}(<a>r^3-r^4)\,dr=2\pi\left[\frac{<a>r^4}{4}-\frac{r^5}{5}\right]_0^{<a>}$.', a=a),
+            T(r'$I=2\pi(<a5>/4-<a5>/5)=\pi<a5>/10=<ok>$.', a5=a ** 5, ok=ok)))
     a, b, c = rng.choice([(1, 2, 3), (2, 1, 2), (2, 3, 1), (1, 1, 2), (3, 2, 2), (2, 2, 1)])
     ok = integrate(x + y * z, (x, 0, a), (y, 0, b), (z, 0, c))
     q = T(r'Trong hệ trục tọa độ $Oxyz$, cho miền $V = \{(x,y,z): 0 \le x \le <a>;\ 0 \le y \le <b>;\ 0 \le z \le <c>\}$. Giá trị của tích phân $\displaystyle\iiint_V (x + yz)\,dxdydz$ bằng', a=a, b=b, c=c)
-    return NQ(q, ok, [R(a * a * b * c, 2), R(a * b * b * c * c, 4), ok * 2, R(a * a, 2) + R(b * b * c * c, 4)], T(r'$\dfrac{<a>^2}{2}\cdot<b>\cdot<c> + <a>\cdot\dfrac{<b>^2}{2}\cdot\dfrac{<c>^2}{2} = <ok>$.', a=a, b=b, c=c, ok=ok))
+    return NQ(q, ok, [R(a * a * b * c, 2), R(a * b * b * c * c, 4), ok * 2, R(a * a, 2) + R(b * b * c * c, 4)], steps(
+        T(r'$\displaystyle I=\int_0^{<c>}\int_0^{<b>}\int_0^{<a>}(x+yz)\,dx\,dy\,dz$. Tích phân trong: $\int_0^{<a>}(x+yz)\,dx=<a2>/2+<a>yz$.', a=a, b=b, c=c, a2=a * a),
+        T(r'Tách tích phân: $\dfrac{<a2><b><c>}{2}+<a>\left(\int_0^{<b>}y\,dy\right)\left(\int_0^{<c>}z\,dz\right)=\dfrac{<a2><b><c>}{2}+\dfrac{<a><b2><c2>}{4}$.', a=a, b=b, c=c, a2=a * a, b2=b * b, c2=c * c),
+        T(r'$I=<ok>$.', ok=ok)))
 
 
 def s38(rng, k):
@@ -870,30 +1058,39 @@ def s38(rng, k):
         a = rng.choice([1, 2, 3, 4, 5] if k < 20 else [6, 7, 8])
         ok = R(a ** 3, 2)
         q = T(r'Cho $L$ là cung tròn $x^2 + y^2 = <a2>$ nằm trong góc phần tư thứ nhất. Dùng tham số hóa $x = <a>\cos t,\ y = <a>\sin t$, giá trị của tích phân $\displaystyle\int_L xy\,ds$ bằng', a2=a * a, a='' if a == 1 else a)
-        return NQ(q, ok, [R(a * a, 2), a ** 3, R(a ** 3, 4), pi * R(a ** 3, 4)], T(r'$ds = <a>\,dt$: $\displaystyle\int_0^{\pi/2} <a>^3\sin t\cos t\,dt = \dfrac{<a>^3}{2}$.', a=a))
+        return NQ(q, ok, [R(a * a, 2), a ** 3, R(a ** 3, 4), pi * R(a ** 3, 4)], steps(
+            T(r'$x=a\cos t,\ y=a\sin t$, $0\le t\le\pi/2$; $ds=\sqrt{(-a\sin t)^2+(a\cos t)^2}\,dt=<a>\,dt$ and $xy=<a2>\sin t\cos t$.', a=a, a2=a * a),
+            T(r'$\displaystyle I=<a3>\int_0^{\pi/2}\sin t\cos t\,dt=<a3>\left[\frac{\sin^2t}{2}\right]_0^{\pi/2}=\frac{<a3>}{2}=<ok>$.', a3=a ** 3, ok=ok)))
     if v == 1:
         (x1, y1), (dx, dy) = rng.choice([(0, 0), (1, 0), (0, 1), (1, 1)]), rng.choice([(3, 4), (4, 3), (6, 8), (5, 12)])
         p, qq = rng.choice([(1, 1), (2, 1), (1, 2), (3, 1)])
         ln = sp.sqrt(dx * dx + dy * dy)
         ok = ln * (p * (x1 + R(dx, 2)) + qq * (y1 + R(dy, 2)))
         q = T(r'Trong mặt phẳng $Oxy$, cho $L$ là đoạn thẳng nối từ $A(<x1>;<y1>)$ đến $B(<x2>;<y2>)$. Giá trị của tích phân $\displaystyle\int_L (<e>)\,ds$ bằng', x1=x1, y1=y1, x2=x1 + dx, y2=y1 + dy, e=p * x + qq * y)
-        ex = T(r'Tham số hóa $x = <x1> + <dx>t,\ y = <y1> + <dy>t$, $0 \le t \le 1$, $ds = <l>\,dt$; hàm dưới dấu tích phân bậc nhất nên tích phân bằng độ dài đoạn thẳng nhân giá trị tại trung điểm.', x1=x1, dx=dx, y1=y1, dy=dy, l=ln)
+        ex = steps(T(r'Tham số hóa $x=<x1>+<dx>t,\ y=<y1>+<dy>t$, $0\le t\le1$; $ds=\sqrt{<dx>^2+<dy>^2}\,dt=<l>\,dt$.', x1=x1, dx=dx, y1=y1, dy=dy, l=ln),
+                   T(r'$px+qy=p(<x1>+<dx>t)+q(<y1>+<dy>t)=<c>+<m>t$. Do đó $\displaystyle I=<l>\int_0^1(<c>+<m>t)\,dt=<l>(<c>+<m>/2)=<ok>$.', l=ln, c=p * x1 + qq * y1, m=p * dx + qq * dy, ok=ok))
         return NQ(q, ok, [ok / ln, ok * 2, ln * (p * (x1 + dx) + qq * (y1 + dy)), ok / 2], ex)
     if v == 2:
         a, b = rng.choice([(3, 4), (4, 3), (1, 1), (6, 8), (5, 12)])
         ln = sp.sqrt(a * a + b * b)
         ok = 2 * pi ** 2 * b * ln
         q = T(r'Cho $L$ là một vòng của đường xoắn ốc $x = <a>\cos t,\ y = <a>\sin t,\ z = <b>t$ với $0 \le t \le 2\pi$. Giá trị của tích phân $\displaystyle\int_L z\,ds$ bằng', a='' if a == 1 else a, b='' if b == 1 else b)
-        ex = T(r'$ds = \sqrt{<a>^2 + <b>^2}\,dt = <l>\,dt$; $\displaystyle\int_0^{2\pi} <b>t\cdot<l>\,dt$.', a=a, b=b, l=ln)
+        ex = steps(T(r'$x^\prime=-<a>\sin t,\ y^\prime=<a>\cos t,\ z^\prime=<b>$; hence $ds=\sqrt{(-<a>\sin t)^2+(<a>\cos t)^2+<b>^2}\,dt=<l>\,dt$.', a=a, b=b, l=ln),
+                   T(r'$\displaystyle I=\int_0^{2\pi}<b>t\cdot<l>\,dt=<b><l>\left[\frac{t^2}{2}\right]_0^{2\pi}=2\pi^2<b><l>=<ok>$.', b=b, l=ln, ok=ok))
         return NQ(q, ok, [2 * pi ** 2 * b, ok / 2, ok * 2, 2 * pi * b * ln], ex)
     if v == 3:
         a, c = rng.choice([1, 2, 3]), rng.choice([1, 2, 3, 5])
         ok = 2 * pi * a * (a * a + c)
         q = T(r'Một sợi dây mảnh có dạng đường tròn $L: x^2 + y^2 = <a2>$ với mật độ khối lượng tại mỗi điểm là $\rho(x,y) = x^2 + y^2 + <c>$. Khối lượng của sợi dây, tức $\displaystyle\oint_L \rho\,ds$, bằng', a2=a * a, c=c)
-        return NQ(q, ok, [pi * a * a * (a * a + c), 2 * pi * (a * a + c), ok / 2, 2 * pi * a * c], T(r'Trên $L$, $\rho = <a2> + <c>$ là hằng số nên khối lượng bằng $(<a2> + <c>)\cdot2\pi\cdot<a>$.', a2=a * a, c=c, a=a))
+        return NQ(q, ok, [pi * a * a * (a * a + c), 2 * pi * (a * a + c), ok / 2, 2 * pi * a * c], steps(
+            T(r'Trên $L$, $x^2+y^2=<a2>$ nên $\rho=<a2>+<c>$ không đổi. Tham số hóa $x=<a>\cos t$, $y=<a>\sin t$, $0\le t\le2\pi$, cho $ds=<a>\,dt$.', a2=a * a, c=c, a=a),
+            T(r'$\displaystyle M=\int_0^{2\pi}(<a2>+<c>)<a>\,dt=2\pi<a>(<a2>+<c>)=<ok>$.', a2=a * a, c=c, a=a, ok=ok)))
     x1, yv, ok = rng.choice([(r'\sqrt3', r'\dfrac32', R(7, 3)), (r'2\sqrt2', '4', R(26, 3)), (r'\sqrt8', '4', R(26, 3)), (r'\sqrt{15}', r'\dfrac{15}{2}', R(63, 3))] if k < 20 else [(r'2\sqrt6', '12', R(124, 3)), (r'\sqrt{35}', r'\dfrac{35}{2}', R(215, 3))])
     q = T(r'Cho $L$ là cung parabol $y = \dfrac{x^2}{2}$ đi từ $O(0;0)$ đến $A\left(<x1>;<y>\right)$. Giá trị của tích phân $\displaystyle\int_L x\,ds$ bằng', x1=x1, y=yv)
-    return NQ(q, ok, [ok + R(1, 3), ok / 2, ok * R(3, 2), ok - 1], T(r'$ds = \sqrt{1 + x^2}\,dx$; $\displaystyle\int_0^{<x1>} x\sqrt{1 + x^2}\,dx = \dfrac{(1 + x^2)^{3/2}}{3}\Big|_0^{<x1>}$.', x1=x1))
+    return NQ(q, ok, [ok + R(1, 3), ok / 2, ok * R(3, 2), ok - 1], steps(
+        T(r'Đặt $x=t,\ y=t^2/2$ với $0\le t\le<x1>$; $ds=\sqrt{(dx/dt)^2+(dy/dt)^2}\,dt=\sqrt{1+t^2}\,dt$, nên $x\,ds=t\sqrt{1+t^2}\,dt$.', x1=x1),
+        T(r'Đặt $u=1+t^2$, $du=2t\,dt$: $\displaystyle I=\frac12\int_1^{1+<x1>^2}u^{1/2}\,du=\frac13[u^{3/2}]_1^{1+<x1>^2}$.', x1=x1),
+        T(r'$I=\dfrac{(1+<x1>^2)^{3/2}-1}{3}=<ok>$.', x1=x1, ok=ok)))
 
 
 def s39(rng, k):
@@ -902,7 +1099,8 @@ def s39(rng, k):
         c, d, Rr = rng.choice([1, 2, 3]), rng.choice([1, 2, 3]), rng.choice([1, 2, 3])
         ok = (c + d) * pi * Rr * Rr
         q = T(r'Một chất điểm chuyển động đúng một vòng theo chiều ngược kim đồng hồ trên đường tròn $x^2 + y^2 = <R2>$ (đơn vị: mét) dưới tác dụng của lực $\vec F = (<P>;\ <Q>)$ (đơn vị: Niu tơn). Công của lực sinh ra, tức $\displaystyle\oint P\,dx + Q\,dy$, bằng', R2=Rr * Rr, P=-c * y, Q=d * x)
-        ex = T(r'Công thức Green: $\displaystyle\iint_{x^2+y^2\le<R2>}\left(\dfrac{\partial Q}{\partial x} - \dfrac{\partial P}{\partial y}\right)dxdy = <s>\cdot\pi\cdot<R2>$.', R2=Rr * Rr, s=c + d)
+        ex = steps(T(r'$P=-<c>y,\ Q=<d>x$, do đó $\partial Q/\partial x=<d>$, $\partial P/\partial y=-<c>$ và hiệu bằng $<s>$.', c=c, d=d, s=c + d),
+                   T(r'Green: $\oint_C P\,dx+Q\,dy=\iint_{x^2+y^2\le<R2>}<s>\,dA=<s>\cdot\pi<R2>$.', R2=Rr * Rr, s=c + d))
         return NQ(q, ok, [abs(d - c) * pi * Rr * Rr if c != d else 0, (c + d) * 2 * pi * Rr, ok * 2, ok / 2], ex)
     if v == 1:
         a, b = rng.choice([1, 2, 3]), rng.choice([1, 2, 3])
@@ -910,24 +1108,37 @@ def s39(rng, k):
         ok = integrate(P.subs(y, x ** 2) + Qf.subs(y, x ** 2) * 2 * x, (x, 0, 1))
         q = T(r'Cho $L$ là cung parabol $y = x^2$ đi từ $O(0;0)$ đến $A(1;1)$. Giá trị của tích phân $\displaystyle\int_L (<P>)\,dx + (<Q>)\,dy$ bằng', P=P, Q=Qf)
         line = integrate(P.subs(y, x) + Qf.subs(y, x), (x, 0, 1))
-        return NQ(q, ok, [line, ok + R(1, 3), ok - R(1, 3), ok * 2], T(r'Thay $y = x^2,\ dy = 2x\,dx$: $\displaystyle\int_0^1\left[<e>\right]dx = <ok>$.', e=sp.expand(P.subs(y, x ** 2) + Qf.subs(y, x ** 2) * 2 * x), ok=ok))
+        return NQ(q, ok, [line, ok + R(1, 3), ok - R(1, 3), ok * 2], steps(
+            T(r'Tham số hóa $x=t,\ y=t^2$ ($0\le t\le1$), nên $dy=2t\,dt$. Khi đó $P\,dx+Q\,dy=[<e>]dt$.', e=sp.expand(P.subs(y, x ** 2) + Qf.subs(y, x ** 2) * 2 * x)),
+            T(r'Khai triển: $\displaystyle I=\int_0^1(<e>)\,dt=[<primitive>]_0^1=<ok>$.', e=sp.expand(P.subs(y, x ** 2) + Qf.subs(y, x ** 2) * 2 * x),
+              primitive=integrate(P.subs(y, x ** 2) + Qf.subs(y, x ** 2) * 2 * x, x), ok=ok)))
     if v == 2:
         a, b, (p, qq) = rng.choice([1, 2, 3]), rng.choice([1, 2]), rng.choice([(1, 2), (2, 1), (2, 2), (1, 1), (3, 1)])
         u = x ** 2 * y + a * x + b * y ** 3
         ok = u.subs({x: p, y: qq})
         q = T(r'Cho $L$ là một đường cong trơn bất kỳ đi từ $O(0;0)$ đến $A(<p>;<q>)$. Biết biểu thức dưới dấu tích phân là vi phân toàn phần của một hàm $u(x,y)$, giá trị của tích phân $\displaystyle\int_L (<P>)\,dx + (<Q>)\,dy$ bằng', p=p, q=qq, P=diff(u, x), Q=diff(u, y))
-        return NQ(q, ok, [ok - a * p, p * p * qq + b * qq ** 3 + a, ok + p, 2 * ok], T(r'Tích phân không phụ thuộc đường đi; $u = <u>$ và kết quả bằng $u(<p>;<q>) - u(0;0)$.', u=u, p=p, q=qq))
+        return NQ(q, ok, [ok - a * p, p * p * qq + b * qq ** 3 + a, ok + p, 2 * ok], steps(
+            T(r'$P=u_x=<ux>$, $Q=u_y=<uy>$, nên $P\,dx+Q\,dy=du$.', ux=diff(u, x), uy=diff(u, y)),
+            T(r'Áp dụng định lý cơ bản cho tích phân đường: $\int_Ldu=u(A)-u(O)=u(<p>;<q>)-u(0;0)$.', p=p, q=qq),
+            T(r'$u(<p>;<q>)=<ok>$, còn $u(0;0)=0$, nên tích phân bằng $<ok>$.', p=p, q=qq, ok=ok)))
     if v == 3:
         a, b, Rr = rng.choice([1, 2]), rng.choice([1, 2, 3]), rng.choice([1, 2])
         ok = 3 * (a + b) * pi * R(Rr ** 4, 4)
         q = T(r'Cho $C$ là đường tròn $x^2 + y^2 = <R2>$ lấy theo chiều ngược chiều kim đồng hồ. Dùng công thức Green, giá trị của tích phân $\displaystyle\oint_C (<P>)\,dx + (<Q>)\,dy$ bằng', R2=Rr * Rr, P=x ** 2 - a * y ** 3, Q=b * x ** 3 + y ** 2)
-        ex = T(r'$\displaystyle\iint_{x^2+y^2\le<R2>}(<e>)\,dxdy = (<s>)\cdot\dfrac{\pi\cdot<R>^4}{4}$.', R2=Rr * Rr, e=3 * b * x ** 2 + 3 * a * y ** 2, s=3 * a + 3 * b, R=Rr)
+        ex = steps(T(r'$P=x^2-<a>y^3,\ Q=<b>x^3+y^2$: $\partial Q/\partial x=3<b>x^2$, $\partial P/\partial y=-3<a>y^2$.', a=a, b=b),
+                   T(r'Green cho $C$ ngược chiều kim đồng hồ: $\oint_C P\,dx+Q\,dy=\iint_D(3<b>x^2+3<a>y^2)\,dA$.', a=a, b=b),
+                   T(r'Đối xứng cực: $\iint_Dx^2dA=\iint_Dy^2dA=\int_0^{2\pi}\int_0^{<R>}r^3(\cos^2\varphi)\,dr\,d\varphi=\pi<R>^4/4$.', R=Rr),
+                   T(r'$I=3(<a>+<b>)\pi<R>^4/4=<ok>$.', a=a, b=b, R=Rr, ok=ok))
         return NQ(q, ok, [ok * 2, ok / 2, 3 * (a + b) * pi * Rr * Rr, 0], ex)
     (x1, y1), (x2, y2) = rng.choice([((0, 0), (2, 1)), ((1, 0), (3, 2)), ((0, 1), (2, 3)), ((1, 1), (3, 2)), ((0, 0), (3, 1))])
     u = x ** 2 / 2 + x * y - y ** 2 / 2
     ok = u.subs({x: x2, y: y2}) - u.subs({x: x1, y: y1})
     q = T(r'Một chất điểm di chuyển theo đoạn thẳng từ $A(<x1>;<y1>)$ đến $B(<x2>;<y2>)$ (đơn vị: mét) dưới tác dụng của lực $\vec F = (x + y;\ x - y)$ (đơn vị: Niu tơn). Công của lực, tức $\displaystyle\int_{AB} (x + y)\,dx + (x - y)\,dy$, bằng', x1=x1, y1=y1, x2=x2, y2=y2)
-    return NQ(q, ok, [-ok, u.subs({x: x2, y: y2}), ok + 1, ok * 2], r'$\dfrac{\partial P}{\partial y} = \dfrac{\partial Q}{\partial x} = 1$ nên trường lực có thế $u = \dfrac{x^2}{2} + xy - \dfrac{y^2}{2}$; công bằng $u(B) - u(A)$.')
+    return NQ(q, ok, [-ok, u.subs({x: x2, y: y2}), ok + 1, ok * 2], steps(
+        r'$P=x+y,\ Q=x-y$; $\partial P/\partial y=1=\partial Q/\partial x$, nên tồn tại thế $u$.',
+        r'Tích phân $P$ theo $x$: $u=x^2/2+xy+g(y)$. Lấy $u_y=x+g^\prime(y)=Q=x-y$ nên $g^\prime(y)=-y$, $g(y)=-y^2/2$.',
+        T(r'$\displaystyle W=u(B)-u(A)=\left[\frac{x^2}{2}+xy-\frac{y^2}{2}\right]_{(<x1>;<y1>)}^{(<x2>;<y2>)}=<uB>-(<uA>)=<ok>$.',
+          x1=x1, y1=y1, x2=x2, y2=y2, uB=u.subs({x: x2, y: y2}), uA=u.subs({x: x1, y: y1}), ok=ok)))
 
 
 # ---------- Câu 43–45: nhóm câu hỏi hàm nhiều biến ----------

@@ -40,7 +40,7 @@
     "$6$."
    ],
    "answer": 0,
-   "explain": "Có 4 hệ một véc tơ và 3 hệ hai véc tơ độc lập tuyến tính<br>Kết quả: $7$",
+   "explain": "Cả 4 véc tơ đều khác véc tơ không nên có 4 hệ một véc tơ độc lập.<br>$(u_1,u_2):\\ (\\Delta_{12})=(-24)$.<br>$(u_1,u_3):\\ (\\Delta_{12})=(24)$.<br>$(u_1,u_4):\\ (\\Delta_{12})=(-12)$.<br>$(u_2,u_3):\\ (\\Delta_{12})=(0)$.<br>$(u_2,u_4):\\ (\\Delta_{12})=(0)$.<br>$(u_3,u_4):\\ (\\Delta_{12})=(0)$.<br>Tổng số hệ con độc lập tuyến tính: $4+3+0=7$.",
    "note": "Một véc tơ khác không luôn độc lập tuyến tính; hai véc tơ độc lập khi không cùng phương; trong $\\mathbb{R}^n$ không có hệ độc lập nào nhiều hơn $n$ véc tơ."
   },
   {
@@ -99,7 +99,7 @@
     "$1620$."
    ],
    "answer": 0,
-   "explain": "$\\left(3\\right)^{4}\\cdot\\det A\\cdot\\dfrac{1}{\\det B}\\cdot\\det A = \\dfrac{324}{5}$<br>Kết quả: $64.8$",
+   "explain": "$\\det(3A^TB^{-1}A)=(3)^{4}\\det(A^T)\\det(B^{-1})\\det(A)$.<br>$=(3)^{4}\\cdot-2\\cdot\\dfrac{1}{5}\\cdot-2$.<br>$=\\dfrac{324}{5}$.",
    "note": "$\\det(kA) = k^n\\det A$, $\\det\\left(A^{-1}\\right) = \\dfrac{1}{\\det A}$, $\\det\\left(A^T\\right) = \\det A$, $\\det(AB) = \\det A\\cdot\\det B$."
   },
   {
@@ -170,7 +170,7 @@
     "$3$."
    ],
    "answer": 0,
-   "explain": "$f'_x = 3 x^{2} - 6 y - 39,\\quad f'_y = - 6 x + 2 y + 18$<br>Giải hệ $f'_x = f'_y = 0$ được các điểm dừng: $(1;-6)$, $(5;6)$<br>Giá trị $AC - B^2$ tại các điểm đó lần lượt: $-24$, $24$<br>Số điểm dừng: $2$; số điểm cực trị (có $AC - B^2 > 0$): $1$",
+   "explain": "$f'_x = 3 x^{2} - 6 y - 39,\\quad f'_y = - 6 x + 2 y + 18$<br>Giải hệ $f'_x=f'_y=0$ (thay lần lượt vào hai phương trình) được các điểm dừng: $(1;-6)$, $(5;6)$<br>$f''_{xx}=6 x,\\quad f''_{xy}=-6,\\quad f''_{yy}=2$<br>$(1;-6):\\ A=f''_{xx}=6,\\ B=f''_{xy}=-6,\\ C=f''_{yy}=2; AC-B^2=(6)(2)-(-6)^2=-24\\Rightarrow điểm yên ngựa$<br>$(5;6):\\ A=f''_{xx}=30,\\ B=f''_{xy}=-6,\\ C=f''_{yy}=2; AC-B^2=(30)(2)-(-6)^2=24\\Rightarrow cực trị$<br>Số điểm dừng: $2$; số điểm cực trị (có $AC - B^2 > 0$): $1$",
    "note": "Giải đủ hệ $f'_x = f'_y = 0$ (đừng bỏ sót nghiệm), rồi xét dấu $AC - B^2$ tại từng điểm dừng."
   },
   {
@@ -193,7 +193,7 @@
     "$99$."
    ],
    "answer": 0,
-   "explain": "$\\dfrac{1}{(n+1)^{3}} \\le 0{,}001 \\Leftrightarrow n + 1 \\ge 10$<br>Kết quả: $9$",
+   "explain": "Leibniz: $|S-S_n|\\le a_{n+1}=\\dfrac1{(n+1)^{3}}$. Muốn sai số không quá $\\varepsilon=0{,}001$, cần $\\dfrac1{(n+1)^{3}}\\le0{,}001$.<br>Biến đổi bất đẳng thức: $(n+1)^{3}\\ge1000 \\Rightarrow n+1\\ge10\\approx10$.<br>$n$ nguyên nên $n\\ge9$; số nguyên nhỏ nhất là $n=9$.",
    "note": "Leibniz: $a_n$ giảm về 0 thì chuỗi đan dấu hội tụ; hội tụ tuyệt đối phải xét thêm $\\sum a_n$; nếu $a_n \\not\\to 0$ thì chuỗi phân kỳ."
   },
   {
@@ -205,7 +205,7 @@
     "$(y\\cos x + 2x)dx + (\\sin x - 2y)dy = 0$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> $y' = \\dfrac{x + y}{x - y}$ — Vế phải viết được thành hàm của $\\dfrac{y}{x}$, tức dạng $y' = f\\left(\\dfrac{y}{x}\\right)$<br><b>Sai:</b> $y' = e^{x - y}$ — là phương trình có biến số phân ly (tách được $x$ và $y$ về hai vế), không thuộc dạng đang hỏi<br><b>Sai:</b> $y' + \\dfrac{y}{x} = xy^3$ — là phương trình Bernoulli (có số hạng $y^{\\alpha}$ với $\\alpha \\ne 0, 1$ ở vế phải), không thuộc dạng đang hỏi<br><b>Sai:</b> $(y\\cos x + 2x)dx + (\\sin x - 2y)dy = 0$ — là phương trình vi phân toàn phần, không thuộc dạng đang hỏi"
+   "explain": "<b>Đúng:</b> $y' = \\dfrac{x + y}{x - y}$ — Vế phải viết được thành hàm của $\\dfrac{y}{x}$, tức dạng $y' = f\\left(\\dfrac{y}{x}\\right)$; $\\dfrac{x+y}{x-y}=\\dfrac{1+y/x}{1-y/x}$, nên vế phải chỉ phụ thuộc $y/x$.<br><b>Sai:</b> $y' = e^{x - y}$ — $e^{x-y}=e^x e^{-y}$ nên $e^y\\,dy=e^x\\,dx$.; đây là là phương trình có biến số phân ly (tách được $x$ và $y$ về hai vế), không phải dạng đang hỏi.<br><b>Sai:</b> $y' + \\dfrac{y}{x} = xy^3$ — $y'+\\dfrac1x y=xy^3$: dạng Bernoulli với $\\alpha=3$.; đây là là phương trình Bernoulli (có số hạng $y^{\\alpha}$ với $\\alpha \\ne 0, 1$ ở vế phải), không phải dạng đang hỏi.<br><b>Sai:</b> $(y\\cos x + 2x)dx + (\\sin x - 2y)dy = 0$ — $P=(y\\cos x + 2x),\\ Q=\\sin x - 2y$: $\\partial P/\\partial y=\\cos x$ và $\\partial Q/\\partial x=\\cos x$; bằng nhau, nên toàn phần.; đây là là phương trình vi phân toàn phần, không phải dạng đang hỏi."
   },
   {
    "q": "Gọi $y = y(x)$ là nghiệm của phương trình $y' + y\\cot x = 2\\cos x$ trên khoảng $(0;\\pi)$ thỏa mãn $y\\left(\\dfrac{\\pi}{2}\\right) = 4$. Giá trị của $y\\left(\\dfrac{\\pi}{6}\\right)$ bằng",
@@ -276,7 +276,7 @@
     "$1930$."
    ],
    "answer": 0,
-   "explain": "Vật liệu cần dùng $AX = (120;150)^T$, chi phí $1920$; doanh thu $2200$; lợi nhuận $280$<br>Kết quả: $280$",
+   "explain": "Vật liệu cần dùng: $AX=\\begin{pmatrix}4 & 1 & 3 \\\\ 3 & 4 & 2\\end{pmatrix}(10;20;20)^T=(120;150)^T$.<br>Chi phí vật liệu: $6\\cdot120+8\\cdot150=1920$.<br>Doanh thu: $40\\cdot10+40\\cdot20+50\\cdot20=2200$.<br>Lợi nhuận: $2200-1920=280$.",
    "note": "Kiểm tra cỡ ma trận trước khi nhân (số cột của ma trận trước bằng số hàng của ma trận sau); với mô hình Leontief giải $(I - A)X = D$."
   },
   {
@@ -359,7 +359,7 @@
     "$10$."
    ],
    "answer": 0,
-   "explain": "Hệ: $x + y + z = 170$; $60x + 90y + 150z = 14100$; $x - y - z = 30$. Giải được $(100;40;30)$<br>Kết quả: $30$",
+   "explain": "Hệ phương trình: $\\begin{cases}x+y+z=170\\\\60x+90y+150z=14100\\\\x-y-z=30\\end{cases}$.<br>Ma trận bổ sung ban đầu: $$\\left(\\begin{array}{rrr|r}1 & 1 & 1 & 170\\\\ 60 & 90 & 150 & 14100\\\\ 1 & -1 & -1 & 30\\end{array}\\right)$$<br>$R_2 \\leftarrow R_2 - (60)R_1$: $$\\left(\\begin{array}{rrr|r}1 & 1 & 1 & 170\\\\ 0 & 30 & 90 & 3900\\\\ 1 & -1 & -1 & 30\\end{array}\\right)$$<br>$R_3 \\leftarrow R_3 - (1)R_1$: $$\\left(\\begin{array}{rrr|r}1 & 1 & 1 & 170\\\\ 0 & 30 & 90 & 3900\\\\ 0 & -2 & -2 & -140\\end{array}\\right)$$<br>$R_2 \\leftarrow \\dfrac{1}{30}R_2$: $$\\left(\\begin{array}{rrr|r}1 & 1 & 1 & 170\\\\ 0 & 1 & 3 & 130\\\\ 0 & -2 & -2 & -140\\end{array}\\right)$$<br>$R_1 \\leftarrow R_1 - (1)R_2$: $$\\left(\\begin{array}{rrr|r}1 & 0 & -2 & 40\\\\ 0 & 1 & 3 & 130\\\\ 0 & -2 & -2 & -140\\end{array}\\right)$$<br>$R_3 \\leftarrow R_3 - (-2)R_2$: $$\\left(\\begin{array}{rrr|r}1 & 0 & -2 & 40\\\\ 0 & 1 & 3 & 130\\\\ 0 & 0 & 4 & 120\\end{array}\\right)$$<br>$R_3 \\leftarrow \\dfrac{1}{4}R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & -2 & 40\\\\ 0 & 1 & 3 & 130\\\\ 0 & 0 & 1 & 30\\end{array}\\right)$$<br>$R_1 \\leftarrow R_1 - (-2)R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 100\\\\ 0 & 1 & 3 & 130\\\\ 0 & 0 & 1 & 30\\end{array}\\right)$$<br>$R_2 \\leftarrow R_2 - (3)R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 100\\\\ 0 & 1 & 0 & 40\\\\ 0 & 0 & 1 & 30\\end{array}\\right)$$<br>$(x,y,z)=(100,40,30)$; số vé VIP đã bán: $z=30$.",
    "note": "Lập hệ phương trình từ điều kiện của bài toán (cung bằng cầu, hoặc dùng hết nguyên liệu) rồi giải bằng phép khử Gauss."
   },
   {
@@ -395,7 +395,7 @@
     "$\\dfrac{x}{1-x^2}$."
    ],
    "answer": 0,
-   "explain": "Tích phân từng số hạng chuỗi $\\sum x^{2n} = \\dfrac{1}{1-x^2} = \\dfrac12\\left(\\dfrac{1}{1-x} + \\dfrac{1}{1+x}\\right)$.",
+   "explain": "$\\sum_{n\\ge0}x^{2n}=\\frac1{1-x^2}$. Tích phân từ $0$ đến $x$: $\\sum_{n\\ge0}\\frac{x^{2n+1}}{2n+1}=\\frac12\\ln\\frac{1+x}{1-x}$.",
    "note": "Đạo hàm hoặc tích phân từng số hạng của $\\displaystyle\\sum x^n = \\dfrac{1}{1 - x}$ để có các chuỗi liên quan; chỉ đúng khi $|x| < 1$."
   },
   {
@@ -407,7 +407,7 @@
     "$y^2 = 2e^x + C$."
    ],
    "answer": 0,
-   "explain": "$y\\,dy = \\dfrac{e^x\\,dx}{1 + e^x}$.",
+   "explain": "$y\\,dy=\\dfrac{e^x}{1+e^x}\\,dx$. Tích phân: $\\frac{y^2}{2}=\\ln(1+e^x)+C$, nhân $2$: $y^2=2\\ln(1+e^x)+C_1$.",
    "note": "Tách biến: đưa $y$ về một vế, $x$ về một vế rồi lấy tích phân; hằng số $C$ chỉ cần viết ở một vế."
   },
   {
@@ -419,7 +419,7 @@
     "$y = \\dfrac{x + C}{\\sin x}$."
    ],
    "answer": 0,
-   "explain": "$\\left(y\\cos x\\right)' = 1$.",
+   "explain": "Nhân hai vế với $\\cos x$: $(y\\cos x)^\\prime=1$. Tích phân: $y\\cos x=x+C$, nên $y=(x+C)/\\cos x$.",
    "note": "Tuyến tính: nhân thừa số tích phân $e^{\\int p\\,dx}$; đẳng cấp: đặt $y = ux$."
   },
   {
@@ -455,7 +455,7 @@
     "$\\dfrac{2}{15}$."
    ],
    "answer": 0,
-   "explain": "$\\displaystyle\\int_0^2 x\\cdot\\dfrac{(2 - x)^2}{2}\\,dx = \\dfrac{2^4}{24}$<br>Kết quả: $\\dfrac{2}{3}$",
+   "explain": "Với $x$ cố định, tam giác $y,z\\ge0$, $y+z\\le2-x$ có diện tích $\\frac12(2-x)^2$. Vì vậy $I=\\int_0^{2}x\\cdot\\frac{(2-x)^2}{2}\\,dx$.<br>Khai triển: $I=\\frac12\\int_0^{2}(4x-22x^2+x^3)\\,dx=\\frac12[4x^2/2-22x^3/3+x^4/4]_0^{2}$<br>$I=16/4-16/3+16/8=\\dfrac{2}{3}$.",
    "note": "Tọa độ trụ hợp với paraboloid, mặt nón; tọa độ cầu hợp với hình cầu; không quên định thức Jacobi."
   },
   {
@@ -467,7 +467,7 @@
     "$80 \\pi^{2}$."
    ],
    "answer": 0,
-   "explain": "$ds = \\sqrt{3^2 + 4^2}\\,dt = 5\\,dt$; $\\displaystyle\\int_0^{2\\pi} 4t\\cdot5\\,dt$<br>Kết quả: $40 \\pi^{2}$",
+   "explain": "$x^\\prime=-3\\sin t,\\ y^\\prime=3\\cos t,\\ z^\\prime=4$; hence $ds=\\sqrt{(-3\\sin t)^2+(3\\cos t)^2+4^2}\\,dt=5\\,dt$.<br>$\\displaystyle I=\\int_0^{2\\pi}4t\\cdot5\\,dt=45\\left[\\frac{t^2}{2}\\right]_0^{2\\pi}=2\\pi^245=40 \\pi^{2}$.",
    "note": "Tích phân đường loại một: $ds = \\sqrt{x'^2 + y'^2}\\,dt$, không phụ thuộc chiều đi trên đường cong."
   },
   {
@@ -570,7 +570,7 @@
     "4.5",
     "9/2"
    ],
-   "explain": "$A = \\begin{pmatrix}2 & 4 & 6 \\\\ 4 & 6 & 9 \\\\ 6 & 9 & 12\\end{pmatrix}$, $\\det A = 6$; kết quả bằng $\\dfrac{(\\det A)^2}{2^3}$ $= \\dfrac{9}{2}$<br>Đáp số: $4{,}5$",
+   "explain": "$$A=\\begin{pmatrix}2 & 4 & 6 \\\\ 4 & 6 & 9 \\\\ 6 & 9 & 12\\end{pmatrix},\\quad \\det A=(2)\\big((6)(12)-(9)(9)\\big)-(4)\\big((4)(12)-(9)(6)\\big)+(6)\\big((4)(9)-(6)(6)\\big)$$<br>$=-18 + 24 + 0=6$.<br>$\\det\\left(\\dfrac12A^TA\\right)=\\dfrac{1}{2^3}\\det(A^T)\\det(A)=\\dfrac{(\\det A)^2}{8}=\\dfrac{6^2}{8}=\\dfrac{9}{2}$.",
    "note": "Viết ma trận ra từ công thức của $a_{ij}$, rồi dùng $\\det\\left(A^T\\right) = \\det A$ và $\\det(AB) = \\det A\\cdot\\det B$."
   },
   {

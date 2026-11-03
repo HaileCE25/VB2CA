@@ -28,7 +28,7 @@
     "$13$."
    ],
    "answer": 0,
-   "explain": "$v = au_1 + bu_2 + cu_3 \\Leftrightarrow \\begin{cases}2 a + b + 4 c = 19\\\\ 2 a + 2 b + c = 8\\\\ 3 a + 3 b + 4 c = 22\\end{cases}$<br>Giải hệ bằng phép khử Gauss: $a = 1,\\ b = 1,\\ c = 4$<br>$a + 3 b + 2 c = 12$",
+   "explain": "$$v = au_1 + bu_2 + cu_3 \\Leftrightarrow \\begin{cases}2 a + b + 4 c = 19\\\\ 2 a + 2 b + c = 8\\\\ 3 a + 3 b + 4 c = 22\\end{cases}$$<br>Ma trận bổ sung ban đầu: $$\\left(\\begin{array}{rrr|r}2 & 1 & 4 & 19\\\\ 2 & 2 & 1 & 8\\\\ 3 & 3 & 4 & 22\\end{array}\\right)$$<br>$R_1 \\leftarrow \\dfrac{1}{2}R_1$: $$\\left(\\begin{array}{rrr|r}1 & \\dfrac{1}{2} & 2 & \\dfrac{19}{2}\\\\ 2 & 2 & 1 & 8\\\\ 3 & 3 & 4 & 22\\end{array}\\right)$$<br>$R_2 \\leftarrow R_2 - (2)R_1$: $$\\left(\\begin{array}{rrr|r}1 & \\dfrac{1}{2} & 2 & \\dfrac{19}{2}\\\\ 0 & 1 & -3 & -11\\\\ 3 & 3 & 4 & 22\\end{array}\\right)$$<br>$R_3 \\leftarrow R_3 - (3)R_1$: $$\\left(\\begin{array}{rrr|r}1 & \\dfrac{1}{2} & 2 & \\dfrac{19}{2}\\\\ 0 & 1 & -3 & -11\\\\ 0 & \\dfrac{3}{2} & -2 & - \\dfrac{13}{2}\\end{array}\\right)$$<br>$R_1 \\leftarrow R_1 - (\\dfrac{1}{2})R_2$: $$\\left(\\begin{array}{rrr|r}1 & 0 & \\dfrac{7}{2} & 15\\\\ 0 & 1 & -3 & -11\\\\ 0 & \\dfrac{3}{2} & -2 & - \\dfrac{13}{2}\\end{array}\\right)$$<br>$R_3 \\leftarrow R_3 - (\\dfrac{3}{2})R_2$: $$\\left(\\begin{array}{rrr|r}1 & 0 & \\dfrac{7}{2} & 15\\\\ 0 & 1 & -3 & -11\\\\ 0 & 0 & \\dfrac{5}{2} & 10\\end{array}\\right)$$<br>$R_3 \\leftarrow \\dfrac{1}{\\dfrac{5}{2}}R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & \\dfrac{7}{2} & 15\\\\ 0 & 1 & -3 & -11\\\\ 0 & 0 & 1 & 4\\end{array}\\right)$$<br>$R_1 \\leftarrow R_1 - (\\dfrac{7}{2})R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 1\\\\ 0 & 1 & -3 & -11\\\\ 0 & 0 & 1 & 4\\end{array}\\right)$$<br>$R_2 \\leftarrow R_2 - (-3)R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 1\\\\ 0 & 1 & 0 & 1\\\\ 0 & 0 & 1 & 4\\end{array}\\right)$$<br>$\\begin{cases}a=1\\\\b=1\\\\c=4\\end{cases}$<br>$1\\cdot1 + 3\\cdot1 + 2\\cdot4 = 12$.",
    "note": "Viết đẳng thức véc tơ theo từng tọa độ để được hệ phương trình tuyến tính; với phương trình véc tơ, chuyển vế như phương trình số."
   },
   {
@@ -40,7 +40,7 @@
     "$9$."
    ],
    "answer": 0,
-   "explain": "$xu_1 + yu_2 = -u_3$; viết theo từng tọa độ được hệ ba phương trình hai ẩn<br>Giải hai phương trình đầu (phương trình thứ ba nghiệm đúng): $x = -3,\\ y = 3$<br>$x\\cdot y = -9$",
+   "explain": "$xu_1+yu_2=-u_3$ theo từng tọa độ: $\\begin{cases}- 2 x - y = 3\\\\- x - 2 y = -3\\\\2 x - 2 y = -12\\end{cases}$<br>Nghiệm là $x=-3,\\ y=3$; kiểm tra tọa độ thứ ba: $-12=-12$<br>$x\\cdot y = -9$",
    "note": "Chuyển $u_3$ sang vế phải thì đổi dấu: $xu_1 + yu_2 = -u_3$."
   },
   {
@@ -52,7 +52,7 @@
     "$1$."
    ],
    "answer": 0,
-   "explain": "$u_3 = 2 u_{1} - u_{2}$; $u_4 = - 2 u_{1} + u_{2}$; $u_5 = 2 u_{1} + u_{2}$; còn $u_1, u_2$ độc lập tuyến tính nên hạng bằng 2<br>Kết quả: $2$",
+   "explain": "$u_3 = 2 u_{1} - u_{2}$<br>$u_4 = - 2 u_{1} + u_{2}$<br>$u_5 = 2 u_{1} + u_{2}$<br>Với các cột 1,2, $\\det \\begin{pmatrix}-2 & -1 \\\\ 1 & -2\\end{pmatrix}=5\\ne 0$ nên hệ véc tơ $u_1, u_2$ độc lập tuyến tính.<br>Các véc tơ còn lại là tổ hợp tuyến tính đã nêu; do đó hạng không vượt quá 2.<br>Vậy $\\operatorname{rank}(S)=2$.",
    "note": "Hạng = số hàng khác không của dạng bậc thang; số véc tơ thừa = số véc tơ $-$ hạng."
   },
   {
@@ -76,7 +76,7 @@
     "$2$."
    ],
    "answer": 0,
-   "explain": "$\\det A = \\left(m - 4\\right) \\left(m + 2\\right)^{2}$<br>$\\det A = 0 \\Leftrightarrow m \\in \\{-2;4\\}$<br>Đoạn $[-6;6]$ có $13$ số nguyên, trong đó $2$ số làm định thức bằng 0<br>Số giá trị cần tìm: $13 - 2 = 11$",
+   "explain": "$$A=\\begin{pmatrix}m & -2 & -2 \\\\ -2 & m & -2 \\\\ -2 & -2 & m\\end{pmatrix},\\quad \\det A=(m)\\big((m)(m)-(-2)(-2)\\big)-(-2)\\big((-2)(m)-(-2)(-2)\\big)+(-2)\\big((-2)(-2)-(m)(-2)\\big)$$<br>$\\det A=m^{3} - 12 m - 16$.<br>$\\det A=\\left(m - 4\\right) \\left(m + 2\\right)^{2}$.<br>$\\det A=0 \\Leftrightarrow m \\in \\{-2;4\\}$.<br>Đoạn $[-6;6]$ có $13$ số nguyên, trong đó $2$ số làm định thức bằng 0<br>Số giá trị cần tìm: $13 - 2 = 11$",
    "note": "$A$ khả nghịch $\\Leftrightarrow \\det A \\ne 0$: đếm các số nguyên trong đoạn rồi trừ các nghiệm của $\\det A = 0$ nằm trong đoạn."
   },
   {
@@ -99,7 +99,7 @@
     "$4$."
    ],
    "answer": 0,
-   "explain": "Nhân hai vế với $A^{-1}$ được $A = 2I$, nên $\\det A = \\left(2\\right)^{3}$<br>Kết quả: $8$",
+   "explain": "$A^2=2A \\Rightarrow A^2-2A=0 \\Rightarrow A(A-2I)=0$.<br>$A$ khả nghịch nên nhân bên trái với $A^{-1}$:<br>$A-2I=0 \\Rightarrow A=2I$.<br>$\\det A=\\det(2I)=(2)^{3}\\det I=(2)^{3}$.<br>$=8$.",
    "note": "$\\det(kA) = k^n\\det A$, $\\det\\left(A^{-1}\\right) = \\dfrac{1}{\\det A}$, $\\det\\left(A^T\\right) = \\det A$, $\\det(AB) = \\det A\\cdot\\det B$."
   },
   {
@@ -171,7 +171,7 @@
     "$3$."
    ],
    "answer": 0,
-   "explain": "$f'_x = 3 x^{2} + 3 y^{2} - 15,\\quad f'_y = 6 x y - 12$<br>Giải hệ $f'_x = f'_y = 0$ được các điểm dừng: $(-2;-1)$, $(-1;-2)$, $(1;2)$, $(2;1)$<br>Giá trị $AC - B^2$ tại các điểm đó lần lượt: $108$, $-108$, $-108$, $108$<br>Số điểm dừng: $4$; số điểm cực trị (có $AC - B^2 > 0$): $2$",
+   "explain": "$f'_x = 3 x^{2} + 3 y^{2} - 15,\\quad f'_y = 6 x y - 12$<br>Giải hệ $f'_x=f'_y=0$ (thay lần lượt vào hai phương trình) được các điểm dừng: $(-2;-1)$, $(-1;-2)$, $(1;2)$, $(2;1)$<br>$f''_{xx}=6 x,\\quad f''_{xy}=6 y,\\quad f''_{yy}=6 x$<br>$(-2;-1):\\ A=f''_{xx}=-12,\\ B=f''_{xy}=-6,\\ C=f''_{yy}=-12; AC-B^2=(-12)(-12)-(-6)^2=108\\Rightarrow cực trị$<br>$(-1;-2):\\ A=f''_{xx}=-6,\\ B=f''_{xy}=-12,\\ C=f''_{yy}=-6; AC-B^2=(-6)(-6)-(-12)^2=-108\\Rightarrow điểm yên ngựa$<br>$(1;2):\\ A=f''_{xx}=6,\\ B=f''_{xy}=12,\\ C=f''_{yy}=6; AC-B^2=(6)(6)-(12)^2=-108\\Rightarrow điểm yên ngựa$<br>$(2;1):\\ A=f''_{xx}=12,\\ B=f''_{xy}=6,\\ C=f''_{yy}=12; AC-B^2=(12)(12)-(6)^2=108\\Rightarrow cực trị$<br>Số điểm dừng: $4$; số điểm cực trị (có $AC - B^2 > 0$): $2$",
    "note": "Giải đủ hệ $f'_x = f'_y = 0$ (đừng bỏ sót nghiệm), rồi xét dấu $AC - B^2$ tại từng điểm dừng."
   },
   {
@@ -183,7 +183,7 @@
     "$3$."
    ],
    "answer": 0,
-   "explain": "Chuỗi thứ 1: $\\displaystyle\\int_2^{+\\infty}\\dfrac{dx}{x\\ln x} = \\left[\\ln\\ln x\\right]_2^{+\\infty} = +\\infty$ $\\Rightarrow$ phân kỳ<br>Chuỗi thứ 2: $u_n \\sim \\dfrac{1}{n^2}$ $\\Rightarrow$ hội tụ<br>Chuỗi thứ 3: $u_n \\sim \\dfrac{1}{2n^2}$ $\\Rightarrow$ hội tụ<br>Chuỗi thứ 4: $u_n = \\dfrac1n\\left(\\dfrac54\\right)^n \\not\\to 0$ $\\Rightarrow$ phân kỳ<br>Số chuỗi hội tụ: $2$",
+   "explain": "Chuỗi thứ 1: $f(x)=1/(x\\ln x)$ giảm dương trên $[2,\\infty)$ và $\\int_2^B\\frac{dx}{x\\ln x}=\\ln\\ln B-\\ln\\ln2\\to\\infty$; chuỗi phân kỳ. Kết luận: phân kỳ.<br>Chuỗi thứ 2: $u_n=\\dfrac{n+1}{n^3+2}\\sim\\dfrac{n}{n^3}=\\dfrac1{n^2}$; so sánh giới hạn với $\\sum 1/n^2$ cho hội tụ. Kết luận: hội tụ.<br>Chuỗi thứ 3: $1-\\cos(1/n)\\sim\\frac1{2n^2}$; so sánh giới hạn với $1/n^2$ cho hội tụ. Kết luận: hội tụ.<br>Chuỗi thứ 4: $u_n=5^n/(n4^n)=(5/4)^n/n\\not\\to0$; chuỗi phân kỳ. Kết luận: phân kỳ.<br>Số chuỗi hội tụ: $2$",
    "note": "So sánh với $\\sum\\dfrac{1}{n^\\alpha}$ (hội tụ khi $\\alpha > 1$); có $n!$ hoặc $a^n$ thì dùng D’Alembert; có lũy thừa bậc $n$ thì dùng Cauchy."
   },
   {
@@ -195,7 +195,7 @@
     "$1$."
    ],
    "answer": 0,
-   "explain": "Chuỗi thứ 1: $\\frac{|u_{n+1}|}{|u_n|} \\to \\frac12 < 1$ $\\Rightarrow$ hội tụ tuyệt đối<br>Chuỗi thứ 2: $\\sum\\frac{1}{n^{3/2}}$ hội tụ $\\Rightarrow$ hội tụ tuyệt đối<br>Chuỗi thứ 3: $\\frac1n \\downarrow 0$ (Leibniz), $\\sum\\frac1n$ phân kỳ $\\Rightarrow$ bán hội tụ<br>Chuỗi thứ 4: $\\sin\\frac1n \\downarrow 0$ (Leibniz), $\\sin\\frac1n \\sim \\frac1n$ $\\Rightarrow$ bán hội tụ<br>Số chuỗi bán hội tụ: $2$",
+   "explain": "Chuỗi thứ 1: $\\dfrac{|u_{n+1}|}{|u_n|}=\\dfrac{n+1}{2^{n+1}}\\dfrac{2^n}{n}=\\dfrac{n+1}{2n}\\to1/2<1$, nên hội tụ tuyệt đối. Kết luận: hội tụ tuyệt đối.<br>Chuỗi thứ 2: $a_n=n^{-3/2}\\downarrow0$ và $\\sum|u_n|=\\sum n^{-3/2}$ hội tụ ($p=3/2>1$), nên hội tụ tuyệt đối. Kết luận: hội tụ tuyệt đối.<br>Chuỗi thứ 3: $a_n=1/n\\downarrow0$ nên Leibniz cho hội tụ; $\\sum|u_n|=\\sum1/n$ phân kỳ, do đó bán hội tụ. Kết luận: bán hội tụ.<br>Chuỗi thứ 4: $a_n=\\sin(1/n)\\downarrow0$ nên Leibniz hội tụ; $\\sin(1/n)\\sim1/n$ khiến chuỗi trị tuyệt đối phân kỳ: bán hội tụ. Kết luận: bán hội tụ.<br>Số chuỗi bán hội tụ: $2$",
    "note": "Leibniz: $a_n$ giảm về 0 thì chuỗi đan dấu hội tụ; hội tụ tuyệt đối phải xét thêm $\\sum a_n$; nếu $a_n \\not\\to 0$ thì chuỗi phân kỳ."
   },
   {
@@ -207,7 +207,7 @@
     "$y' = \\dfrac{x + y}{x - y}$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> $xy' + y = y^2\\ln x$ — Dạng $y' + p(x)y = q(x)y^{\\alpha}$<br><b>Sai:</b> $(3x^2 + 2xy^2)dx + (2x^2y + 4y^3)dy = 0$ — là phương trình vi phân toàn phần, không thuộc dạng đang hỏi<br><b>Sai:</b> $y' = e^{x - y}$ — là phương trình có biến số phân ly (tách được $x$ và $y$ về hai vế), không thuộc dạng đang hỏi<br><b>Sai:</b> $y' = \\dfrac{x + y}{x - y}$ — là phương trình đẳng cấp (vế phải chỉ phụ thuộc $\\dfrac{y}{x}$), không thuộc dạng đang hỏi"
+   "explain": "<b>Đúng:</b> $xy' + y = y^2\\ln x$ — Dạng $y' + p(x)y = q(x)y^{\\alpha}$; Chia cho $x\\ne0$: $y'+\\dfrac1x y=\\dfrac{\\ln x}{x}y^2$, Bernoulli với $\\alpha=2$.<br><b>Sai:</b> $(3x^2 + 2xy^2)dx + (2x^2y + 4y^3)dy = 0$ — $P=(3x^2 + 2xy^2),\\ Q=2x^2y + 4y^3$: $\\partial P/\\partial y=4xy$ và $\\partial Q/\\partial x=4xy$; bằng nhau, nên toàn phần.; đây là là phương trình vi phân toàn phần, không phải dạng đang hỏi.<br><b>Sai:</b> $y' = e^{x - y}$ — $e^{x-y}=e^x e^{-y}$ nên $e^y\\,dy=e^x\\,dx$.; đây là là phương trình có biến số phân ly (tách được $x$ và $y$ về hai vế), không phải dạng đang hỏi.<br><b>Sai:</b> $y' = \\dfrac{x + y}{x - y}$ — $\\dfrac{x+y}{x-y}=\\dfrac{1+y/x}{1-y/x}$, nên vế phải chỉ phụ thuộc $y/x$.; đây là là phương trình đẳng cấp (vế phải chỉ phụ thuộc $\\dfrac{y}{x}$), không phải dạng đang hỏi."
   },
   {
    "q": "Gọi $y = y(x)$ là nghiệm của phương trình $y' - \\dfrac{3y}{x} = 2x^{3}$ $(x > 0)$ thỏa mãn $y(1) = 2$. Giá trị của $y(2)$ bằng",
@@ -277,7 +277,7 @@
     "$1250$."
    ],
    "answer": 0,
-   "explain": "Số linh kiện: $C\\cdot(20;20;10)^T = (170;100)^T$; nguyên liệu: $R\\cdot(170;100)^T = (610;470;780)^T$, tổng bằng $1860$<br>Kết quả: $1860$",
+   "explain": "Số linh kiện cần: $C(20;20;10)^T=\\begin{pmatrix}4 & 4 & 1 \\\\ 1 & 3 & 2\\end{pmatrix}(20;20;10)^T=(170;100)^T$.<br>Số nguyên liệu cần: $R(170;100)^T=\\begin{pmatrix}3 & 1 \\\\ 1 & 3 \\\\ 4 & 1\\end{pmatrix}(170;100)^T=(610;470;780)^T$.<br>Tổng lượng nguyên liệu: $610+470+780=1860$.",
    "note": "Kiểm tra cỡ ma trận trước khi nhân (số cột của ma trận trước bằng số hàng của ma trận sau); với mô hình Leontief giải $(I - A)X = D$."
   },
   {
@@ -289,7 +289,7 @@
     "$m = 2$."
    ],
    "answer": 0,
-   "explain": "Ba tọa độ đầu của hàng 3 bằng $2$ lần hàng 1 cộng $2$ lần hàng 2, nên hạng bằng 2 khi và chỉ khi phần tử cuối cũng thỏa mãn hệ thức đó: $m = 0$; ngược lại hạng bằng 3<br>Kết quả: $m = 0$",
+   "explain": "$R_3 \\leftarrow R_3 - 2R_1 - 2R_2$.<br>$A = \\begin{pmatrix}1 & -1 & 3 & 1 \\\\ 3 & -1 & 3 & -1 \\\\ 8 & -4 & 12 & m\\end{pmatrix} \\xrightarrow{R_3 \\leftarrow R_3 - 2R_1 - 2R_2} \\begin{pmatrix}1 & -1 & 3 & 1 \\\\ 3 & -1 & 3 & -1 \\\\ 0 & 0 & 0 & m\\end{pmatrix}$.<br>$\\det \\begin{pmatrix}1 & -1 \\\\ 3 & -1\\end{pmatrix} = 2 \\ne 0$, nên hai hàng đầu độc lập tuyến tính.<br>$m = 0 \\Rightarrow R_3 = (0,0,0,0) \\Rightarrow \\operatorname{rank}(A)=2$.<br>$m \\ne 0 \\Rightarrow R_3 = (0,0,0,m) \\ne (0,0,0,0) \\Rightarrow \\operatorname{rank}(A)=3$.<br><b>Kết quả:</b> $m = 0$.",
    "note": "Đưa về dạng bậc thang; hạng giảm đúng khi hàng cuối thành hàng không, điều kiện đó cho giá trị của $m$."
   },
   {
@@ -313,7 +313,7 @@
     "$8$."
    ],
    "answer": 0,
-   "explain": "Hệ thuần nhất có nghiệm không tầm thường khi định thức hệ số bằng 0: $\\left(m - 4\\right) \\left(m + 2\\right) = 0 \\Leftrightarrow m \\in \\{-2;4\\}$<br>Kết quả: $-8$",
+   "explain": "$\\det A=m^{2} - 2 m - 8=\\left(m - 4\\right) \\left(m + 2\\right)$.<br>$\\det A=0 \\Leftrightarrow \\left(m - 4\\right) \\left(m + 2\\right)=0 \\Leftrightarrow m\\in\\{-2;4\\}$.<br>Các nghiệm là -2 và 4; tích cần tìm: $-2\\cdot4=-8$.",
    "note": "Xét hàng cuối sau khi khử: hệ số bằng 0 mà vế phải khác 0 thì vô nghiệm; cả hai bằng 0 thì vô số nghiệm; hệ số khác 0 thì nghiệm duy nhất."
   },
   {
@@ -361,7 +361,7 @@
     "$410$."
    ],
    "answer": 0,
-   "explain": "Thế $T$ vào $C$ rồi vào phương trình đầu: $Y^* = 1025,\\ T^* = 205,\\ C^* = 715$<br>Kết quả: $715$",
+   "explain": "$T=tY\\Rightarrow C=c_0+b(Y-tY)=100+\\dfrac{3}{4}(1-\\dfrac{1}{5})Y$.<br>$Y=C+I_0+G_0\\Rightarrow [1-\\dfrac{3}{4}(1-\\dfrac{1}{5})]Y=100+150+160$.<br>$Y=\\dfrac{410}{1-\\dfrac{3}{4}(1-\\dfrac{1}{5})}=1025$.<br>$T=tY=\\dfrac{1}{5}\\cdot1025=205,\\qquad C=c_0+b(Y-T)=100+\\dfrac{3}{4}(1025-205)=715$.",
    "note": "Lập hệ phương trình từ điều kiện của bài toán (cung bằng cầu, hoặc dùng hết nguyên liệu) rồi giải bằng phép khử Gauss."
   },
   {
@@ -397,7 +397,7 @@
     "$\\dfrac{2x^2}{(1-x)^2}$."
    ],
    "answer": 0,
-   "explain": "Đạo hàm hai lần $\\sum x^n = \\dfrac{1}{1-x}$ được $\\sum n(n-1)x^{n-2} = \\dfrac{2}{(1-x)^3}$, rồi nhân với $x^2$.",
+   "explain": "$\\sum_{n\\ge2}n(n-1)x^{n-2}=\\left((1-x)^{-1}\\right)^{\\prime\\prime}=\\frac2{(1-x)^3}$. Nhân $x^2$: $\\sum_{n\\ge2}n(n-1)x^n=\\frac{2x^2}{(1-x)^3}$.",
    "note": "Đạo hàm hoặc tích phân từng số hạng của $\\displaystyle\\sum x^n = \\dfrac{1}{1 - x}$ để có các chuỗi liên quan; chỉ đúng khi $|x| < 1$."
   },
   {
@@ -409,7 +409,7 @@
     "$y = \\dfrac{x^2}{2} + C$."
    ],
    "answer": 0,
-   "explain": "$e^y\\,dy = x\\,dx$.",
+   "explain": "$e^y\\,dy=x\\,dx$. Tích phân: $e^y=\\dfrac{x^2}{2}+C$.",
    "note": "Tách biến: đưa $y$ về một vế, $x$ về một vế rồi lấy tích phân; hằng số $C$ chỉ cần viết ở một vế."
   },
   {
@@ -421,7 +421,7 @@
     "$y = x + Ce^{-x}$."
    ],
    "answer": 0,
-   "explain": "$\\left(ye^{x}\\right)' = xe^x$.",
+   "explain": "Nhân tử tích phân $e^x$: $(ye^x)^\\prime=xe^x$. Vì $\\int xe^x dx=(x-1)e^x$, ta có $ye^x=(x-1)e^x+C$, nên $y=x-1+Ce^{-x}$.",
    "note": "Tuyến tính: nhân thừa số tích phân $e^{\\int p\\,dx}$; đẳng cấp: đặt $y = ux$."
   },
   {
@@ -445,7 +445,7 @@
     "$\\dfrac{\\pi \\left(e - 1\\right)}{2}$."
    ],
    "answer": 0,
-   "explain": "$\\displaystyle\\int_0^{2\\pi}d\\varphi\\int_0^{\\sqrt{1}} re^{r^2}\\,dr = 2\\pi\\cdot\\dfrac{e^{1} - 1}{2}$<br>Kết quả: $\\pi \\left(e - 1\\right)$",
+   "explain": "Đổi sang cực: $0\\le r\\le\\sqrt{1}$, $0\\le\\varphi\\le2\\pi$, $dxdy=r\\,dr\\,d\\varphi$.<br>Đặt $u=r^2$, $du=2r\\,dr$: $\\displaystyle I=2\\pi\\int_0^{\\sqrt{1}}re^{r^2}\\,dr=\\pi\\int_0^{1}e^u\\,du=\\pi[e^u]_0^{1}$.<br>$I=\\pi(e^{1}-1)=\\pi \\left(e - 1\\right)$.",
    "note": "Trong tọa độ cực $dxdy = r\\,dr\\,d\\varphi$; đường tròn $x^2 + y^2 = 2ax$ là $r = 2a\\cos\\varphi$ với $-\\dfrac{\\pi}{2} \\le \\varphi \\le \\dfrac{\\pi}{2}$."
   },
   {
@@ -457,7 +457,7 @@
     "$\\dfrac{16 \\pi}{3}$."
    ],
    "answer": 0,
-   "explain": "Tọa độ cầu: $\\displaystyle\\int_0^{2\\pi}d\\varphi\\int_0^{\\pi/2}\\cos\\theta\\sin\\theta\\,d\\theta\\int_0^2\\rho^3\\,d\\rho = 2\\pi\\cdot\\dfrac12\\cdot\\dfrac{2^4}{4}$<br>Kết quả: $4 \\pi$",
+   "explain": "Spherical coordinates: $z=\\rho\\cos\\theta$, $dV=\\rho^2\\sin\\theta\\,d\\rho\\,d\\theta\\,d\\varphi$; hence $z\\,dV=\\rho^3\\cos\\theta\\sin\\theta\\,d\\rho\\,d\\theta\\,d\\varphi$.<br>$\\int_0^{2\\pi}d\\varphi=2\\pi$, $\\int_0^{\\pi/2}\\cos\\theta\\sin\\theta\\,d\\theta=[\\sin^2\\theta/2]_0^{\\pi/2}=1/2$, $\\int_0^{2}\\rho^3d\\rho=16/4$.<br>$I=2\\pi\\cdot\\dfrac12\\cdot\\dfrac{16}{4}=4 \\pi$.",
    "note": "Tọa độ trụ hợp với paraboloid, mặt nón; tọa độ cầu hợp với hình cầu; không quên định thức Jacobi."
   },
   {
@@ -469,7 +469,7 @@
     "$60$."
    ],
    "answer": 0,
-   "explain": "Tham số hóa $x = 0 + 4t,\\ y = 1 + 3t$, $0 \\le t \\le 1$, $ds = 5\\,dt$; hàm dưới dấu tích phân bậc nhất nên tích phân bằng độ dài đoạn thẳng nhân giá trị tại trung điểm<br>Kết quả: $35$",
+   "explain": "Tham số hóa $x=0+4t,\\ y=1+3t$, $0\\le t\\le1$; $ds=\\sqrt{4^2+3^2}\\,dt=5\\,dt$.<br>$px+qy=p(<x1>+<dx>t)+q(<y1>+<dy>t)=2+10t$. Do đó $\\displaystyle I=5\\int_0^1(2+10t)\\,dt=5(2+10/2)=35$.",
    "note": "Tích phân đường loại một: $ds = \\sqrt{x'^2 + y'^2}\\,dt$, không phụ thuộc chiều đi trên đường cong."
   },
   {
@@ -481,7 +481,7 @@
     "$40$."
    ],
    "answer": 0,
-   "explain": "Tích phân không phụ thuộc đường đi; $u = x^{2} y + 2 x + 2 y^{3}$ và kết quả bằng $u(1;2) - u(0;0)$<br>Kết quả: $20$",
+   "explain": "$P=u_x=2 x y + 2$, $Q=u_y=x^{2} + 6 y^{2}$, nên $P\\,dx+Q\\,dy=du$.<br>Áp dụng định lý cơ bản cho tích phân đường: $\\int_Ldu=u(A)-u(O)=u(1;2)-u(0;0)$.<br>$u(1;2)=20$, còn $u(0;0)=0$, nên tích phân bằng $20$.",
    "note": "Tích phân đường loại hai: thay $y = y(x)$, $dy = y'dx$; với đường cong kín thì dùng công thức Green."
   }
  ],
@@ -498,7 +498,7 @@
       "$0$."
      ],
      "answer": 0,
-     "explain": "$A = 3I + (-2)J$ ($J$ là ma trận toàn số 1) có các trị riêng $3$ (bội 2) và $-3$<br>Kết quả: $-27$"
+     "explain": "$A=3I+-2J$, trong đó $J$ có các trị riêng $0,0,3$.<br>Các trị riêng của $A$: $3,3,3+3(-2)=-3$.<br>$\\det A=3\\cdot3\\cdot(-3)=-27$."
     },
     {
      "q": "Tổng tất cả các phần tử của ma trận nghịch đảo $A^{-1}$ bằng",
@@ -509,7 +509,7 @@
       "$-9$."
      ],
      "answer": 0,
-     "explain": "Véc tơ $(1;1;1)$ là véc tơ riêng ứng với trị riêng $-3$ nên tổng mỗi hàng của $A^{-1}$ bằng $\\dfrac{1}{-3}$; tổng tất cả bằng $-1$<br>Kết quả: $-1$"
+     "explain": "$A(1,1,1)^T=(-3)(1,1,1)^T$, nên $A^{-1}(1,1,1)^T=\\dfrac1{-3}(1,1,1)^T$.<br>Mỗi hàng của $A^{-1}$ có tổng $\\dfrac1{-3}$. Có 3 hàng nên tổng mọi phần tử bằng $3\\cdot\\dfrac1{-3}=\\dfrac3{-3}=-1$."
     },
     {
      "q": "Số chiều của không gian nghiệm của hệ $(A - 3I)X = 0$ (không gian riêng ứng với trị riêng $\\lambda = 3$) bằng",
@@ -520,7 +520,7 @@
       "$0$."
      ],
      "answer": 0,
-     "explain": "$A - 3I$ có hạng 1 nên số chiều bằng $3 - 1 = 2$<br>Kết quả: $2$",
+     "explain": "$A-3I=-2J=\\begin{pmatrix}-2 & -2 & -2 \\\\ -2 & -2 & -2 \\\\ -2 & -2 & -2\\end{pmatrix}$.<br>Ba hàng đều bằng $-2(1,1,1)$ nên $\\operatorname{rank}(A-3I)=1$.<br>Theo định lý hạng–không gian nghiệm: số chiều $=3-\\operatorname{rank}(A-aI)=3-1=2$.",
      "note": "Tổng các trị riêng bằng vết, tích các trị riêng bằng định thức của ma trận."
     }
    ]
@@ -587,7 +587,7 @@
    "answer": [
     "5"
    ],
-   "explain": "Đặt $t = x^2$: bán kính hội tụ theo $t$ bằng 25, tức $x^2 < 25$<br>$R = 5$",
+   "explain": "$\\sqrt[n]{|u_n|}=n^{1/n}x^2/25\\to x^2/25$; cần $x^2<25$, tức $|x|<5$, nên $R=5$.<br>$R = 5$",
    "note": "Chuỗi theo $x^k$: đặt $t = x^k$; bán kính theo $x$ là căn bậc $k$ của bán kính theo $t$."
   },
   {

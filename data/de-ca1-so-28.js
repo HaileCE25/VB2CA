@@ -40,7 +40,7 @@
     "$(2;2;2)$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> $(0;-1;3)$ — định thức của ba véc tơ $u_1, u_2$ và véc tơ này bằng $16 \\ne 0$ nên ba véc tơ độc lập tuyến tính<br><b>Sai:</b> $(2;-2;-2) = u_{1} - u_{2}$ là tổ hợp tuyến tính của $u_1, u_2$<br><b>Sai:</b> $(2;4;4) = u_{1} + 2 u_{2}$ là tổ hợp tuyến tính của $u_1, u_2$<br><b>Sai:</b> $(2;2;2) = u_{1} + u_{2}$ là tổ hợp tuyến tính của $u_1, u_2$"
+   "explain": "<b>Đúng:</b> Với $w=(0;-1;3)$, tính định thức theo hàng đầu: $\\det\\begin{pmatrix}2 & 0 & 0\\\\ 0 & 2 & 2\\\\ 0 & -1 & 3\\end{pmatrix}= 2(2\\cdot3-2\\cdot-1)-0(0\\cdot3-2\\cdot0)+0(0\\cdot-1-2\\cdot0)=16\\ne0$, nên ba véc tơ độc lập tuyến tính và tạo thành cơ sở<br><b>Sai:</b> $(2;-2;-2) = u_{1} - u_{2}$ là tổ hợp tuyến tính của $u_1, u_2$<br><b>Sai:</b> $(2;4;4) = u_{1} + 2 u_{2}$ là tổ hợp tuyến tính của $u_1, u_2$<br><b>Sai:</b> $(2;2;2) = u_{1} + u_{2}$ là tổ hợp tuyến tính của $u_1, u_2$"
   },
   {
    "q": "Trong không gian véc tơ $\\mathbb{R}^4$, cho hệ $S$ gồm $u_1 = (-1;1;-1;2),\\ u_2 = (-4;-8;6;-2),\\ u_3 = (3;3;-2;-1),\\ u_4 = (4;8;-6;2)$. Cần bổ sung vào $S$ ít nhất bao nhiêu véc tơ để hệ mới sinh ra toàn bộ $\\mathbb{R}^4$?",
@@ -87,7 +87,7 @@
     "$B$ không khả nghịch."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> $\\det B = k\\det A$ và $B$ khả nghịch. Nhân một hàng với $k$ thì định thức nhân với $k$; $k\\det A \\ne 0$ nên $B$ khả nghịch.<br><b>Sai:</b> $\\det B = k^n\\det A$. Hệ số $k^n$ chỉ xuất hiện khi nhân cả $n$ hàng với $k$, tức là xét $\\det(kA)$.<br><b>Sai:</b> $\\det B = \\det A$. Chỉ phép cộng bội của hàng khác vào một hàng mới giữ nguyên định thức.<br><b>Sai:</b> $B$ không khả nghịch. $\\det B = k\\det A \\ne 0$."
+   "explain": "<b>Đúng:</b> $\\det B = k\\det A$ và $B$ khả nghịch. Khai triển định thức theo hàng thứ nhất, mỗi số hạng của hàng đó được nhân $k$, nên $\\det B=k\\det A$. Do $k\\ne0$ và $\\det A\\ne0$, tích $k\\det A\\ne0$; vì vậy $B$ khả nghịch.<br><b>Sai:</b> $\\det B = k^n\\det A$. Hệ số $k^n$ chỉ xuất hiện khi nhân cả $n$ hàng với $k$, tức là xét $\\det(kA)$.<br><b>Sai:</b> $\\det B = \\det A$. Chỉ phép cộng bội của hàng khác vào một hàng mới giữ nguyên định thức.<br><b>Sai:</b> $B$ không khả nghịch. $\\det B = k\\det A \\ne 0$."
   },
   {
    "q": "Cho ma trận vuông cấp 4: $A = \\begin{pmatrix}0 & -1 & -3 & 3 \\\\ 3 & -1 & 3 & -1 \\\\ 0 & 0 & 3 & 4 \\\\ 0 & 0 & 0 & 2\\end{pmatrix}$. Nhận xét rằng $A$ có dạng khối tam giác $\\begin{pmatrix}P & Q\\\\ 0 & R\\end{pmatrix}$ với $P, R$ là các ma trận vuông cấp 2, định thức của $A$ bằng",
@@ -98,7 +98,7 @@
     "$-18$."
    ],
    "answer": 0,
-   "explain": "$\\det P = 3,\\quad \\det R = 6$<br>$\\det A = \\det P\\cdot\\det R = (3)\\cdot(6) = 18$",
+   "explain": "$P=\\begin{pmatrix}0 & -1 \\\\ 3 & -1\\end{pmatrix}$, khử hàng được $\\det P=3$; $R=\\begin{pmatrix}3 & 4 \\\\ 0 & 2\\end{pmatrix}$, khử hàng được $\\det R=6$.<br>Khai triển theo cấu trúc khối tam giác: $\\det A=\\det P\\det R=(3)(6)=18$.",
    "note": "Cộng bội của một hàng vào hàng khác không làm đổi định thức; đưa về dạng tam giác (hoặc tam giác khối) rồi nhân các phần tử (khối) trên đường chéo."
   },
   {
@@ -110,7 +110,7 @@
     "$1$."
    ],
    "answer": 0,
-   "explain": "Đặt $u = 3x$: $\\dfrac{1}{\\sin^2u} - \\dfrac{1}{u^2} = \\dfrac{u^2 - \\sin^2u}{u^2\\sin^2u}$<br>$\\sin^2u = \\left(u - \\dfrac{u^3}{6} + o(u^3)\\right)^2 = u^2 - \\dfrac{u^4}{3} + o(u^4)$<br>$\\lim = \\lim\\limits_{u\\to0}\\dfrac{u^4/3}{u^4} = \\dfrac{1}{3}$",
+   "explain": "Đặt $u=Ax$. Quy đồng: $\\dfrac1{\\sin^2u}-\\dfrac1{u^2}=\\dfrac{u^2-\\sin^2u}{u^2\\sin^2u}$.<br>$\\sin^2u=(u-\\dfrac{u^3}{6}+o(u^3))^2=u^2-\\dfrac{u^4}{3}+o(u^4)$; do đó $u^2-\\sin^2u=\\dfrac{u^4}{3}+o(u^4)$ và $u^2\\sin^2u=u^4+o(u^4)$.<br>$\\lim_{u\\to0}\\dfrac{u^4/3+o(u^4)}{u^4+o(u^4)}=\\dfrac13=\\dfrac{1}{3}$.",
    "note": "Khai triển tử và mẫu đến bậc đầu tiên khác 0; dừng sớm sẽ lại gặp dạng $\\dfrac00$."
   },
   {
@@ -122,7 +122,7 @@
     "$4$."
    ],
    "answer": 0,
-   "explain": "Tiệm cận đứng $x = -2$; khi $x \\to +\\infty$ thì $y \\to 1$, khi $x \\to -\\infty$ thì $y \\to -1$ nên có hai tiệm cận ngang $y = \\pm1$<br>Kết quả: $3$",
+   "explain": "Khi $x\\to-2$, tử số $\\sqrt{x^2+c}\\to\\sqrt{r^2+c}>0$ còn $x-r\\to0$, nên $x=-2$ là tiệm cận đứng. Khi $x\\to+\\infty$, $\\dfrac{\\sqrt{x^2+c}}{x-r}=\\dfrac{\\sqrt{1+c/x^2}}{1-r/x}\\to1$; khi $x\\to-\\infty$, viết $|x|=-x$ được $\\dfrac{\\sqrt{x^2+c}}{x-r}=\\dfrac{-\\sqrt{1+c/x^2}}{1-r/x}\\to-1$. Vậy có hai tiệm cận ngang $y=1$ và $y=-1$; tổng cộng $3$<br>Kết quả: $3$",
    "note": "Tiệm cận đứng: nghiệm của mẫu không bị rút gọn với tử; tiệm cận ngang: xét riêng $x \\to +\\infty$ và $x \\to -\\infty$ (với căn thức, hai phía có thể khác nhau)."
   },
   {
@@ -157,7 +157,7 @@
     "3%."
    ],
    "answer": 0,
-   "explain": "Gọi $u, v$ là hai đại lượng đo; lấy lôgarit: $\\ln V = \\pm2\\ln u \\pm 1\\ln v + \\text{hằng số}$<br>Vi phân hai vế, lấy trị tuyệt đối từng số hạng: $\\dfrac{\\Delta V}{V} \\le 2\\cdot\\dfrac{\\Delta u}{u} + 1\\cdot\\dfrac{\\Delta v}{v}$<br>$= 2\\cdot3\\% + 1\\cdot0{,}5\\% = 6{,}5\\%$",
+   "explain": "Từ công thức đã cho, viết dạng lũy thừa theo hai đại lượng đo: $\\ln V=C+2\\ln u+1\\ln v$ (hằng số $C$ không đổi).<br>Vi phân: $\\dfrac{dV}{V}=+2\\dfrac{du}{u}+1\\dfrac{dv}{v}$. Lấy trị tuyệt đối và dùng các cận đo: $\\dfrac{|\\DeltaV|}{|V|}\\le 2\\dfrac{|\\Delta u|}{u}+1\\dfrac{|\\Delta v|}{v}$.<br>$= 2\\cdot3\\% + 1\\cdot0{,}5\\% = 6{,}5\\%$.",
    "note": "Lấy lôgarit rồi vi phân: sai số tương đối của tích, thương bằng tổng các sai số tương đối nhân với trị tuyệt đối của số mũ."
   },
   {
@@ -169,7 +169,7 @@
     "$81$."
    ],
    "answer": 0,
-   "explain": "$L = xy - \\lambda(3 x + y - 18)$<br>$L'_x = y - 3 \\lambda = 0,\\quad L'_y = x - \\lambda = 0 \\Rightarrow y = 3 \\lambda,\\ x = \\lambda$<br>Thay vào ràng buộc: $6 \\lambda = 18 \\Rightarrow \\lambda = 3$<br>$x = 3,\\ y = 9$, $S_{\\max} = 27$",
+   "explain": "$L=xy-\\lambda(3x+1y-18)$. $L_x=y-3\\lambda=0$ và $L_y=x-1\\lambda=0$, vì thế $y=3\\lambda$, $x=1\\lambda$.<br>Thay vào ràng buộc: $3\\lambda+3\\lambda=2(3)(1)\\lambda=18$, nên $\\lambda=\\dfrac{18}{2(3)(1)}$.<br>$x=\\dfrac{18}{23}$, $y=\\dfrac{18}{21}$. Vậy $S_{\\max}=xy=\\dfrac{18}{23}\\cdot\\dfrac{18}{21}=\\dfrac{324}{431}=27$.",
    "note": "Rút một biến từ điều kiện, hoặc dùng $\\nabla f = \\lambda\\nabla g$; nhớ kiểm tra đó là giá trị lớn nhất hay nhỏ nhất."
   },
   {
@@ -181,7 +181,7 @@
     "$C = 1$ và chuỗi phân kỳ."
    ],
    "answer": 0,
-   "explain": "$\\sqrt[n]{u_n} = \\dfrac{4n + 1}{3n + 2} \\to \\dfrac{4}{3}$<br>$C > 1$ nên theo tiêu chuẩn Cauchy chuỗi phân kỳ",
+   "explain": "$u_n=\\left(\\dfrac{4n+1}{3n+2}\\right)^n$; do đó $\\sqrt[n]{u_n}=\\dfrac{4n+1}{3n+2}\\to\\dfrac{4}{3}$<br>$C > 1$ nên theo tiêu chuẩn Cauchy chuỗi phân kỳ",
    "note": "Tiêu chuẩn Cauchy: lấy căn bậc $n$ làm mất số mũ $n$; số mũ $2n$ thì còn lại bình phương."
   },
   {
@@ -193,7 +193,7 @@
     "$999$."
    ],
    "answer": 0,
-   "explain": "$\\dfrac{1}{n+1} \\le 0{,}01 \\Leftrightarrow n + 1 \\ge 100$<br>Kết quả: $99$",
+   "explain": "Leibniz: $|S-S_n|\\le a_{n+1}=\\dfrac1{(n+1)^{1}}$. Muốn sai số không quá $\\varepsilon=0{,}01$, cần $\\dfrac1{(n+1)^{1}}\\le0{,}01$.<br>Biến đổi bất đẳng thức: $(n+1)^{1}\\ge100 \\Rightarrow n+1\\ge100\\approx100$.<br>$n$ nguyên nên $n\\ge99$; số nguyên nhỏ nhất là $n=99$.",
    "note": "Leibniz: $a_n$ giảm về 0 thì chuỗi đan dấu hội tụ; hội tụ tuyệt đối phải xét thêm $\\sum a_n$; nếu $a_n \\not\\to 0$ thì chuỗi phân kỳ."
   },
   {
@@ -205,7 +205,7 @@
     "$y' = \\dfrac{y}{x} + \\tan\\dfrac{y}{x}$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> $y' = e^{x - y}$ — Viết được dưới dạng $g(y)\\,dy = h(x)\\,dx$<br><b>Sai:</b> $y' - y = xy^2$ — là phương trình Bernoulli (có số hạng $y^{\\alpha}$ với $\\alpha \\ne 0, 1$ ở vế phải), không thuộc dạng đang hỏi<br><b>Sai:</b> $xy' - 2y = x^3$ — là phương trình tuyến tính cấp một (bậc nhất đối với $y$ và $y'$), không thuộc dạng đang hỏi<br><b>Sai:</b> $y' = \\dfrac{y}{x} + \\tan\\dfrac{y}{x}$ — là phương trình đẳng cấp (vế phải chỉ phụ thuộc $\\dfrac{y}{x}$), không thuộc dạng đang hỏi"
+   "explain": "<b>Đúng:</b> $y' = e^{x - y}$ — Viết được dưới dạng $g(y)\\,dy = h(x)\\,dx$; $e^{x-y}=e^x e^{-y}$ nên $e^y\\,dy=e^x\\,dx$.<br><b>Sai:</b> $y' - y = xy^2$ — $y'-y=xy^2$: dạng Bernoulli với $\\alpha=2$.; đây là là phương trình Bernoulli (có số hạng $y^{\\alpha}$ với $\\alpha \\ne 0, 1$ ở vế phải), không phải dạng đang hỏi.<br><b>Sai:</b> $xy' - 2y = x^3$ — Chia cho $x\\ne0$: $y'-\\dfrac2x y=x^2$, đúng dạng $y'+p(x)y=q(x)$.; đây là là phương trình tuyến tính cấp một (bậc nhất đối với $y$ và $y'$), không phải dạng đang hỏi.<br><b>Sai:</b> $y' = \\dfrac{y}{x} + \\tan\\dfrac{y}{x}$ — $\\dfrac yx+\\tan(y/x)$ chỉ phụ thuộc tỉ số $y/x$.; đây là là phương trình đẳng cấp (vế phải chỉ phụ thuộc $\\dfrac{y}{x}$), không phải dạng đang hỏi."
   },
   {
    "q": "Đường cong tích phân của phương trình vi phân toàn phần $(4 x + y)\\,dx + (x + 4 y)\\,dy = 0$ đi qua điểm $M(-1;2)$ là một đường elip. Elip này cắt tia $Ox$ (phần $x > 0$ của trục hoành) tại điểm có hoành độ bằng",
@@ -228,7 +228,7 @@
     "$2251$."
    ],
    "answer": 0,
-   "explain": "$P(0) = \\dfrac{4500}{1 + A} = 500 \\Rightarrow A = 8$<br>$e^{-kt} = e^{-\\frac{\\ln 2}{3}\\cdot9} = 2^{-3} = \\dfrac{1}{8}$<br>$P(9) = \\dfrac{4500}{1 + \\frac{8}{8}} = 2250$",
+   "explain": "$P(0)=\\dfrac{M}{1+A}=P_0$; nhân chéo $M=P_0(1+A)$ nên $A=\\dfrac{M}{P_0}-1=8$.<br>$kt=\\dfrac{\\ln2}{3}(9)=3\\ln2$, vì thế $e^{-kt}=e^{-3\\ln2}=2^{-3}=\\dfrac1{8}$.<br>$P(9)=\\dfrac{4500}{1+\\frac{8}{8}}=\\dfrac{4500\\cdot8}{8+8}=\\dfrac{36000}{16}=2250$.",
    "note": "Thay $t = 0$ để tìm hằng số trong công thức nghiệm; với $k = \\dfrac{\\ln 2}{T}$ thì $e^{-kT} = \\dfrac12$."
   },
   {
@@ -251,7 +251,7 @@
     "$\\displaystyle\\int_{0}^{2\\pi}d\\varphi\\int_{1}^{3} f(r\\cos\\varphi, r\\sin\\varphi)\\,r\\,dr$."
    ],
    "answer": 0,
-   "explain": "$1 \\le r^2 \\le 9 \\Leftrightarrow 1 \\le r \\le 3$<br>Điều kiện $x \\le 0$ ứng với $\\pi/2 \\le \\varphi \\le 3\\pi/2$<br>Jacobian của phép đổi biến bằng $r$: $dxdy = r\\,dr\\,d\\varphi$",
+   "explain": "$1 \\le r^2 \\le 9 \\Leftrightarrow 1 \\le r \\le 3$<br>$x\\le0\\Leftrightarrow\\cos\\varphi\\le0\\Rightarrow\\pi/2\\le\\varphi\\le3\\pi/2$<br>$dxdy=\\left|\\dfrac{\\partial(x,y)}{\\partial(r,\\varphi)}\\right|dr\\,d\\varphi=r\\,dr\\,d\\varphi$<br>Vậy tích phân được viết: $\\displaystyle\\int_{\\pi/2}^{3\\pi/2}d\\varphi\\int_{1}^{3}f(r\\cos\\varphi,r\\sin\\varphi)\\,r\\,dr$",
    "note": "Cận của $r$ là căn bậc hai của các số ở hai vế; không quên định thức Jacobi $r$."
   },
   {
@@ -263,7 +263,7 @@
     "$\\dfrac{81 \\pi}{4}$."
    ],
    "answer": 0,
-   "explain": "$I = \\displaystyle\\int_0^{2\\pi}d\\varphi\\int_0^{\\dfrac{\\pi}{6}}\\cos\\theta\\sin\\theta\\,d\\theta\\int_0^{3}\\rho^3\\,d\\rho$<br>$= 2\\pi\\cdot\\dfrac{\\sin^2\\dfrac{\\pi}{6}}{2}\\cdot\\dfrac{81}{4} = \\dfrac{81 \\pi}{16}$",
+   "explain": "Vì $z=\\rho\\cos\\theta$ và $dV=\\rho^2\\sin\\theta\\,d\\rho\\,d\\theta\\,d\\varphi$, $I=\\displaystyle\\int_0^{2\\pi}d\\varphi\\int_0^{\\dfrac{\\pi}{6}}\\cos\\theta\\sin\\theta\\,d\\theta\\int_0^{3}\\rho^3\\,d\\rho$.<br>Các tích phân bằng $2\\pi$, $[\\sin^2\\theta/2]_0^{\\dfrac{\\pi}{6}}=\\sin^2\\dfrac{\\pi}{6}/2$, và $[\\rho^4/4]_0^{3}=81/4$. Vậy $I=2\\pi\\cdot\\dfrac{\\sin^2\\dfrac{\\pi}{6}}{2}\\cdot\\dfrac{81}{4}=\\dfrac{81 \\pi}{16}$.",
    "note": "Góc $\\theta$ tính từ trục $Oz$: mặt nón $z = c\\sqrt{x^2 + y^2}$ ứng với $\\tan\\theta = \\dfrac1c$."
   },
   {
@@ -275,7 +275,7 @@
     "$700$."
    ],
    "answer": 0,
-   "explain": "Gọi $x$ là số khách quen của X khi ổn định; lượng rời X bằng lượng đến X: $30\\%\\cdot x = 40\\%\\cdot(2100 - x)$<br>$70x = 84000 \\Rightarrow x = 1200$",
+   "explain": "Gọi $x$ là số khách quen của X ở trạng thái ổn định. Lượng rời X là 30% của $x$; lượng chuyển từ Y sang X là 40% của $2100-x$. Cân bằng cho $\\dfrac{30}{100}x=\\dfrac{40}{100}(2100-x)$.<br>Nhân với $100$: $30x=40(2100-x)=84000-40x$, nên $(70)x=84000$ và $x=\\dfrac{84000}{70}=1200$.",
    "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu."
   },
   {
@@ -287,7 +287,7 @@
     "$m \\ne 8$."
    ],
    "answer": 0,
-   "explain": "Ba tọa độ đầu của hàng 3 bằng $2$ lần hàng 1 cộng $1$ lần hàng 2, nên hạng bằng 2 khi và chỉ khi phần tử cuối cũng thỏa mãn hệ thức đó: $m = 7$; ngược lại hạng bằng 3.",
+   "explain": "$R_3 \\leftarrow R_3 - 2R_1 - R_2$.<br>$A = \\begin{pmatrix}1 & 2 & 3 & 2 \\\\ 3 & -1 & 3 & 3 \\\\ 5 & 3 & 9 & m\\end{pmatrix} \\xrightarrow{R_3 \\leftarrow R_3 - 2R_1 - R_2} \\begin{pmatrix}1 & 2 & 3 & 2 \\\\ 3 & -1 & 3 & 3 \\\\ 0 & 0 & 0 & m - 7\\end{pmatrix}$.<br>$\\det \\begin{pmatrix}1 & 2 \\\\ 3 & -1\\end{pmatrix} = -7 \\ne 0$, nên hai hàng đầu độc lập tuyến tính.<br>$m = 7 \\Rightarrow R_3 = (0,0,0,0) \\Rightarrow \\operatorname{rank}(A)=2$.<br>$m \\ne 7 \\Rightarrow R_3 = (0,0,0,m - 7) \\ne (0,0,0,0) \\Rightarrow \\operatorname{rank}(A)=3$.<br><b>Kết quả:</b> $m = 7$.",
    "note": "Đưa về dạng bậc thang; hạng giảm đúng khi hàng cuối thành hàng không, điều kiện đó cho giá trị của $m$."
   },
   {
@@ -299,7 +299,7 @@
     "$\\begin{pmatrix}-3 & -3 \\\\ -3 & -3\\end{pmatrix}$."
    ],
    "answer": 0,
-   "explain": "$X = A^{-1}B$; kết quả $X = \\begin{pmatrix}3 & 3 \\\\ 3 & 3\\end{pmatrix}$.",
+   "explain": "$AX=B \\Rightarrow X=A^{-1}B$.<br>$A^{-1}=\\begin{pmatrix}-1 & -1 \\\\ 2 & 1\\end{pmatrix},\\qquad A^{-1}B=\\begin{pmatrix}3 & 3 \\\\ 3 & 3\\end{pmatrix}$.<br>Kiểm tra: $A\\begin{pmatrix}3 & 3 \\\\ 3 & 3\\end{pmatrix}=\\begin{pmatrix}6 & 6 \\\\ -9 & -9\\end{pmatrix}$.",
    "note": "$AX = B \\Rightarrow X = A^{-1}B$ (nhân bên trái); $XA = B \\Rightarrow X = BA^{-1}$ (nhân bên phải); không được đổi thứ tự."
   },
   {
@@ -335,7 +335,7 @@
     "$-3$."
    ],
    "answer": 0,
-   "explain": "Nhánh trái $g(x) = \\cos{\\left(2 x \\right)}$: $g(0) = 1,\\ g'(0) = 0,\\ g''(0) = -4$<br>Nhánh phải $h(x) = ax^2 + bx + d$: $h(0) = d,\\ h'(0) = b,\\ h''(0) = 2a$<br>$d = 1,\\ b = 0,\\ 2a = -4 \\Rightarrow a = -2$<br>$a + b + d = -1$",
+   "explain": "Nhánh trái $g(x)=\\cos{\\left(2 x \\right)}$ có $g(0)=1$, $g^\\prime(0)=0$, $g^{\\prime\\prime}(0)=-4$ (tính đạo hàm rồi thế $x=0$).<br>Nhánh phải $h(x)=ax^2+bx+d$: $h(0)=d$, $h^\\prime(x)=2ax+b$ nên $h^\\prime(0)=b$, $h^{\\prime\\prime}(x)=2a$ nên $h^{\\prime\\prime}(0)=2a$. Để ghép khả vi cấp hai, đặt lần lượt $h(0)=g(0)$, $h^\\prime(0)=g^\\prime(0)$, $h^{\\prime\\prime}(0)=g^{\\prime\\prime}(0)$.<br>$d=1,\\ b=0,\\ 2a=-4$, do đó $a=-2$.<br>Thay các hệ số đã tìm vào biểu thức cần tính: $a + b + d=-1$.",
    "note": "Có đạo hàm cấp hai tại điểm nối: giá trị, đạo hàm cấp một và đạo hàm cấp hai ở hai phía đều phải khớp nhau."
   },
   {
@@ -347,7 +347,7 @@
     "$\\dfrac{4}{3}$."
    ],
    "answer": 0,
-   "explain": "Từng phần hai lần: $I = \\left[-\\dfrac{1}{4}e^{-3x}\\cos 4x\\right]_0^{+\\infty} - \\dfrac{3}{4}\\displaystyle\\int_0^{+\\infty}e^{-3x}\\cos 4x\\,dx = \\dfrac{1}{4} - \\dfrac{9}{16}I$<br>$I\\left(1 + \\dfrac{9}{16}\\right) = \\dfrac{1}{4} \\Rightarrow I = \\dfrac{4}{25}$",
+   "explain": "Đặt $I=\\int_0^\\infty e^{-ax}\\sin bx\\,dx$, $J=\\int_0^\\infty e^{-ax}\\cos bx\\,dx$. Từng phần cho $I=[-e^{-ax}\\cos bx/b]_0^\\infty-(a/b)J=1/b-(a/b)J$.<br>Từng phần với $J$: $J=[e^{-ax}\\sin bx/b]_0^\\infty+(a/b)I=(a/b)I$. Thế vào phương trình đầu: $I=1/b-(a^2/b^2)I$, nên $I(1+a^2/b^2)=1/b$ và $I=b/(a^2+b^2)=\\dfrac{4}{25}$.",
    "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$."
   },
   {
@@ -359,7 +359,7 @@
     "$5$."
    ],
    "answer": 0,
-   "explain": "Hệ: $x + y + z = 160$; $40x + 60y + 100z = 8000$; $x - y - z = 40$. Giải được $(100;50;10)$<br>Kết quả: $10$",
+   "explain": "Hệ phương trình: $\\begin{cases}x+y+z=160\\\\40x+60y+100z=8000\\\\x-y-z=40\\end{cases}$.<br>Ma trận bổ sung ban đầu: $$\\left(\\begin{array}{rrr|r}1 & 1 & 1 & 160\\\\ 40 & 60 & 100 & 8000\\\\ 1 & -1 & -1 & 40\\end{array}\\right)$$<br>$R_2 \\leftarrow R_2 - (40)R_1$: $$\\left(\\begin{array}{rrr|r}1 & 1 & 1 & 160\\\\ 0 & 20 & 60 & 1600\\\\ 1 & -1 & -1 & 40\\end{array}\\right)$$<br>$R_3 \\leftarrow R_3 - (1)R_1$: $$\\left(\\begin{array}{rrr|r}1 & 1 & 1 & 160\\\\ 0 & 20 & 60 & 1600\\\\ 0 & -2 & -2 & -120\\end{array}\\right)$$<br>$R_2 \\leftarrow \\dfrac{1}{20}R_2$: $$\\left(\\begin{array}{rrr|r}1 & 1 & 1 & 160\\\\ 0 & 1 & 3 & 80\\\\ 0 & -2 & -2 & -120\\end{array}\\right)$$<br>$R_1 \\leftarrow R_1 - (1)R_2$: $$\\left(\\begin{array}{rrr|r}1 & 0 & -2 & 80\\\\ 0 & 1 & 3 & 80\\\\ 0 & -2 & -2 & -120\\end{array}\\right)$$<br>$R_3 \\leftarrow R_3 - (-2)R_2$: $$\\left(\\begin{array}{rrr|r}1 & 0 & -2 & 80\\\\ 0 & 1 & 3 & 80\\\\ 0 & 0 & 4 & 40\\end{array}\\right)$$<br>$R_3 \\leftarrow \\dfrac{1}{4}R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & -2 & 80\\\\ 0 & 1 & 3 & 80\\\\ 0 & 0 & 1 & 10\\end{array}\\right)$$<br>$R_1 \\leftarrow R_1 - (-2)R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 100\\\\ 0 & 1 & 3 & 80\\\\ 0 & 0 & 1 & 10\\end{array}\\right)$$<br>$R_2 \\leftarrow R_2 - (3)R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 100\\\\ 0 & 1 & 0 & 50\\\\ 0 & 0 & 1 & 10\\end{array}\\right)$$<br>$(x,y,z)=(100,50,10)$; số vé VIP đã bán: $z=10$.",
    "note": "Lập hệ phương trình từ điều kiện của bài toán (cung bằng cầu, hoặc dùng hết nguyên liệu) rồi giải bằng phép khử Gauss."
   },
   {
@@ -395,7 +395,7 @@
     "$e^{- \\dfrac{1}{3}}$."
    ],
    "answer": 0,
-   "explain": "$\\displaystyle\\sum_{n\\ge0}\\dfrac{x^n}{n!} = e^x$ tại $x = -3$<br>Vậy tổng của chuỗi bằng $e^{-3}$",
+   "explain": "$\\sum_{n\\ge0}\\frac{(-3)^n}{n!}=e^{-3}$ (thay $x=-3$ vào $\\sum x^n/n!$).<br>Vậy tổng của chuỗi bằng $e^{-3}$",
    "note": "Nhận ra chuỗi quen thuộc ($e^x$, $\\ln(1 + x)$, $\\arctan x$, ...) rồi thay giá trị $x$ thích hợp."
   },
   {
@@ -407,7 +407,7 @@
     "$- \\dfrac{1}{2} + e$."
    ],
    "answer": 0,
-   "explain": "Tách biến: $\\dfrac{dy}{1+y} = \\cos x\\,dx \\Rightarrow \\ln|1+y| = \\sin x + C$<br>$y(0) = 1 \\Rightarrow y = 2 e^{\\sin{\\left(x \\right)}} - 1$<br>$y\\left(\\dfrac{\\pi}{2}\\right) = 2 e - 1$",
+   "explain": "Tách biến rồi tích phân hai vế: $\\dfrac{dy}{1+y} = \\cos x\\,dx \\Rightarrow \\ln|1+y| = \\sin x + C$<br>$x=0,y=1$: $\\ln(1+y)=\\sin x+C$ gives $\\ln2=0+C$, so $C=\\ln2$.<br>Từ $C$ vừa tìm và điều kiện đầu, nghiệm tường minh là $y=2 e^{\\sin{\\left(x \\right)}} - 1$.<br>Thay $x=\\dfrac{\\pi}{2}$ vào nghiệm: $y(\\dfrac{\\pi}{2})=2 e - 1=2 e - 1$.",
    "note": "Tìm nghiệm tổng quát trước, rồi dùng điều kiện đầu để xác định $C$ (và dấu của căn nếu có)."
   },
   {
@@ -467,7 +467,7 @@
     "$1 + 20 \\pi$."
    ],
    "answer": 0,
-   "explain": "Trên $L$, $\\rho = 4 + 1$ là hằng số nên khối lượng bằng $(4 + 1)\\cdot2\\pi\\cdot2$<br>Kết quả: $20 \\pi$",
+   "explain": "Trên $L$, $x^2+y^2=4$ nên $\\rho=4+1$ không đổi. Tham số hóa $x=2\\cos t$, $y=2\\sin t$, $0\\le t\\le2\\pi$, cho $ds=2\\,dt$.<br>$\\displaystyle M=\\int_0^{2\\pi}(4+1)2\\,dt=2\\pi2(4+1)=20 \\pi$.",
    "note": "Tích phân đường loại một: $ds = \\sqrt{x'^2 + y'^2}\\,dt$, không phụ thuộc chiều đi trên đường cong."
   },
   {
@@ -569,7 +569,7 @@
    "answer": [
     "4"
    ],
-   "explain": "$\\det A = m^{3} - 2 m = m \\left(m^{2} - 2\\right)$<br>$m^{3} - 2 m = 56 \\Leftrightarrow \\left(m - 4\\right) \\left(m^{2} + 4 m + 14\\right) = 0$<br>Nghiệm nguyên dương duy nhất: $m = 4$",
+   "explain": "Khai triển định thức: $\\det A=m^{3} - 2 m=m \\left(m^{2} - 2\\right)$<br>Đặt $\\det A=56$: $\\left(m - 4\\right) \\left(m^{2} + 4 m + 14\\right)=0$, có nghiệm $m=4,\\ -2 - \\sqrt{10} i,\\ \\sqrt{10} i - 2$<br>Lọc nghiệm nguyên dương trong tập trên: $m=4$",
    "note": "Lập $\\det A$ theo $m$ rồi giải phương trình; chỉ nhận nghiệm nguyên dương."
   },
   {

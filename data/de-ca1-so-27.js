@@ -28,7 +28,7 @@
     "$7$."
    ],
    "answer": 0,
-   "explain": "$\\langle u, v\\rangle = (-1)\\cdot m + m\\cdot(-1) + (-2)\\cdot(1) = - 2 m - 2$<br>$u \\perp v \\Leftrightarrow - 2 m - 2 = 0 \\Leftrightarrow m = -1$<br>$u + v = (-2;-2;-1)$<br>$|u + v|^2 = (-2)^2 + (-2)^2 + (-1)^2 = 9$",
+   "explain": "$\\langle u, v\\rangle = (-1)m + m(-1) + (-2)(1) = (-2)m + (-2)(1) = 0$<br>$(-2)m = -(-2)(1) \\Rightarrow m = \\dfrac{- (-2)(1)}{-2} = -1$<br>$u + v = ((-1) + (-1);\\ (-1) + (-1);\\ (-2) + (1)) = (-2;-2;-1)$<br>$|u + v|^2 = (-2)^2 + (-2)^2 + (-1)^2 = 4 + 4 + 1 = 9$",
    "note": "$u \\perp v \\Leftrightarrow \\langle u, v\\rangle = 0$; khi đó $|u + v|^2 = |u|^2 + |v|^2$."
   },
   {
@@ -40,7 +40,7 @@
     "$6$."
    ],
    "answer": 0,
-   "explain": "Có $C_5^2 = 10$ hệ con gồm 2 véc tơ, trong đó 3 hệ phụ thuộc tuyến tính<br>Kết quả: $7$",
+   "explain": "Số hệ con cần xét: $C_5^2=10$.<br>$\\det\\begin{pmatrix}0 & 1\\\\-3 & 3\\end{pmatrix}=3$.<br>$\\det\\begin{pmatrix}0 & 1\\\\-1 & 1\\end{pmatrix}=1$.<br>$\\det\\begin{pmatrix}0 & 1\\\\-1 & 2\\end{pmatrix}=1$.<br>$\\det\\begin{pmatrix}0 & 1\\\\-6 & 6\\end{pmatrix}=6$.<br>$\\det\\begin{pmatrix}-3 & 3\\\\-1 & 1\\end{pmatrix}=0$.<br>$\\det\\begin{pmatrix}-3 & 3\\\\-1 & 2\\end{pmatrix}=-3$.<br>$\\det\\begin{pmatrix}-3 & 3\\\\-6 & 6\\end{pmatrix}=0$.<br>$\\det\\begin{pmatrix}-1 & 1\\\\-1 & 2\\end{pmatrix}=-1$.<br>$\\det\\begin{pmatrix}-1 & 1\\\\-6 & 6\\end{pmatrix}=0$.<br>$\\det\\begin{pmatrix}-1 & 2\\\\-6 & 6\\end{pmatrix}=6$.<br>Hệ là cơ sở khi định thức khác 0; có 7 định thức khác 0 nên có 7 cơ sở.",
    "note": "Một véc tơ khác không luôn độc lập tuyến tính; hai véc tơ độc lập khi không cùng phương; trong $\\mathbb{R}^n$ không có hệ độc lập nào nhiều hơn $n$ véc tơ."
   },
   {
@@ -52,7 +52,7 @@
     "$5$."
    ],
    "answer": 0,
-   "explain": "Biến đổi sơ cấp trên hàng: $A \\to \\begin{pmatrix}1 & -4 & -1 & -1 & -4 \\\\ 0 & 3 & 2 & -1 & 3 \\\\ 0 & 0 & 10 & -14 & 12 \\\\ 0 & 0 & 0 & 0 & 0\\end{pmatrix}$<br>$\\operatorname{rank}A = 3$<br>Số chiều không gian nghiệm $= 5 - 3 = 2$",
+   "explain": "Khử Gauss cho dạng bậc thang: $A \\to \\begin{pmatrix}1 & -4 & -1 & -1 & -4 \\\\ 0 & 3 & 2 & -1 & 3 \\\\ 0 & 0 & 10 & -14 & 12 \\\\ 0 & 0 & 0 & 0 & 0\\end{pmatrix}$; có 3 hàng khác không nên hạng là 3.<br>Với $5$ ẩn và hạng 3, số ẩn tự do (số chiều hạt nhân) $= 5 - 3 = 2$.",
    "note": "Số chiều không gian nghiệm của $AX = 0$ bằng số ẩn trừ hạng của $A$."
   },
   {
@@ -64,7 +64,7 @@
     "$8$."
    ],
    "answer": 0,
-   "explain": "$A^2 = \\begin{pmatrix}2 & 6 \\\\ -3 & -1\\end{pmatrix}$<br>$A^3 = A^2\\cdot A = \\begin{pmatrix}-2 & 10 \\\\ -5 & -7\\end{pmatrix}$<br>Phần tử hàng 1, cột 2 của $A^{3}$: $10$",
+   "explain": "Với $\\operatorname{tr}A=3$ và $\\det A=4$, Cayley–Hamilton cho $A^2-(3)A+(4)I=0$, tức $A^2=3A-4I=\\begin{pmatrix}2 & 6 \\\\ -3 & -1\\end{pmatrix}$<br>Nhân đẳng thức $A^2=\\begin{pmatrix}2 & 6 \\\\ -3 & -1\\end{pmatrix}$ với $A$: $A^3=A^2A=\\begin{pmatrix}-2 & 10 \\\\ -5 & -7\\end{pmatrix}$; do đó phần tử $(1,2)$ của $A^3$ là 10.<br>Phần tử hàng 1, cột 2 của $A^3$ là $10$.",
    "note": "Dùng hệ thức $A^2 = pA + qI$ để hạ bậc dần ($A^3 = A\\cdot A^2$), không cần nhân ma trận nhiều lần."
   },
   {
@@ -88,7 +88,7 @@
     "Hệ $S$ là một cơ sở của $\\mathbb{R}^n$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> Mọi hệ con khác rỗng của $S$ đều độc lập tuyến tính. Một hệ thức tuyến tính không tầm thường của hệ con cũng là hệ thức không tầm thường của $S$ (các hệ số còn lại bằng 0).<br><b>Sai:</b> Thêm một véc tơ bất kỳ vào $S$ thì hệ mới vẫn độc lập tuyến tính. Thêm chính véc tơ $u_1 + u_2$ (hoặc véc tơ không) thì hệ mới phụ thuộc tuyến tính.<br><b>Sai:</b> $k = n$. Chỉ có $k \\le n$; chẳng hạn một véc tơ khác không trong $\\mathbb{R}^3$ là hệ độc lập tuyến tính với $k = 1$.<br><b>Sai:</b> Hệ $S$ là một cơ sở của $\\mathbb{R}^n$. Chỉ đúng khi $k = n$."
+   "explain": "<b>Đúng:</b> Mọi hệ con khác rỗng của $S$ đều độc lập tuyến tính. Giả sử một hệ con có $\\sum_{i\\in J}c_i u_i=0$. Gán $c_i=0$ cho mọi chỉ số không thuộc $J$; ta được hệ thức $\\sum_{i=1}^k c_i u_i=0$ trong $S$. Vì $S$ độc lập nên mọi $c_i=0$, do đó hệ con cũng độc lập.<br><b>Sai:</b> Thêm một véc tơ bất kỳ vào $S$ thì hệ mới vẫn độc lập tuyến tính. Thêm chính véc tơ $u_1 + u_2$ (hoặc véc tơ không) thì hệ mới phụ thuộc tuyến tính.<br><b>Sai:</b> $k = n$. Chỉ có $k \\le n$; chẳng hạn một véc tơ khác không trong $\\mathbb{R}^3$ là hệ độc lập tuyến tính với $k = 1$.<br><b>Sai:</b> Hệ $S$ là một cơ sở của $\\mathbb{R}^n$. Chỉ đúng khi $k = n$."
   },
   {
    "q": "Cho ma trận vuông cấp 4: $A = \\begin{pmatrix}6 & 3 & 3 & 3 \\\\ 3 & 6 & 3 & 3 \\\\ 3 & 3 & 6 & 3 \\\\ 3 & 3 & 3 & 6\\end{pmatrix}$. Bằng cách cộng tất cả các hàng vào hàng thứ nhất rồi khử, định thức của $A$ bằng",
@@ -99,7 +99,7 @@
     "$1215$."
    ],
    "answer": 0,
-   "explain": "$h_1 \\to h_1 + h_2 + h_3 + h_4$: hàng 1 trở thành $(15;15;15;15)$, rút $15$ ra ngoài định thức<br>$h_i \\to h_i - (3)h_1\\ (i = 2,3,4)$: được ma trận tam giác có đường chéo $1;\\ 3;\\ 3;\\ 3$<br>$\\det A = (15)\\cdot(3)^3 = 405$",
+   "explain": "$h_1 \\to h_1+h_2+h_3+h_4$: mỗi phần tử hàng 1 bằng $a+4b=15$. Rút $15$ khỏi hàng này để hàng đầu thành $(1,1,1,1)$, đồng thời nhân định thức với thừa số $15$.<br>Với hàng đầu $(1,1,1,1)$, thực hiện $h_i\\to h_i-(3)h_1$ với $i=2,3,4$: các phần tử ngoài đường chéo thành $b-b=0$, còn mỗi phần tử đường chéo dưới bằng $(a+b)-b=a$. Đường chéo là $1,3,3,3$.<br>$\\det A = (15)\\cdot(3)^3 = 405$",
    "note": "Cộng bội của một hàng vào hàng khác không làm đổi định thức; đưa về dạng tam giác (hoặc tam giác khối) rồi nhân các phần tử (khối) trên đường chéo."
   },
   {
@@ -111,7 +111,7 @@
     "$0$."
    ],
    "answer": 0,
-   "explain": "Đặt $u = 2x$: $e^{u} - 1 = u + \\dfrac{u^2}{2} + o(u^2),\\quad \\sin u = u + o(u^2)$<br>$e^{u} - 1 - \\sin u = \\dfrac{u^2}{2} + o(u^2) = \\dfrac{4x^2}{2} + o(x^2)$<br>$\\lim = \\dfrac{4}{2} = 2$",
+   "explain": "Đặt $u=Ax$: $e^u-1=u+\\dfrac{u^2}{2}+o(u^2)$ và $\\sin u=u+o(u^2)$.<br>$(e^u-1)-\\sin u=(u+\\dfrac{u^2}{2}+o(u^2))-(u+o(u^2))=\\dfrac{u^2}{2}+o(u^2)=\\dfrac{A^2x^2}{2}+o(x^2)$.<br>Chia cả tử và mẫu cho $x^2$: $\\lim=\\dfrac{A^2/2+o(1)}{1}=\\dfrac{4}{2}=2$.",
    "note": "Khai triển tử và mẫu đến bậc đầu tiên khác 0; dừng sớm sẽ lại gặp dạng $\\dfrac00$."
   },
   {
@@ -123,7 +123,7 @@
     "$4$."
    ],
    "answer": 0,
-   "explain": "$y = \\dfrac{2 \\left(x - 4\\right)}{\\left(x - 1\\right) \\left(x + 1\\right)}$<br>Có hai tiệm cận đứng $x = -1,\\ x = 1$, tiệm cận ngang $y = 0$<br>Tổng cộng: $3$ đường tiệm cận",
+   "explain": "Phân tích rồi khử nhân tử chung: $y=\\dfrac{2 \\left(x - 4\\right)}{\\left(x - 1\\right) \\left(x + 1\\right)}=\\dfrac{2 \\left(x - 4\\right)}{\\left(x - 1\\right) \\left(x + 1\\right)}$.<br>Kiểm tra điểm làm mẫu bằng $0$: Tại $x=-1$, tử khác $0$; mẫu tiến về $0$ nên có TCĐ $x=-1$.; Tại $x=1$, tử khác $0$; mẫu tiến về $0$ nên có TCĐ $x=1$..<br>Chia đa thức: $\\dfrac{2 x - 8}{x^{2} - 1}=0+\\dfrac{2 x - 8}{x^{2} - 1}$. Vì số hạng dư tiến về $0$, tiệm cận ngang là $y=<q>$.<br>Số đường tiệm cận: 3.",
    "note": "Tiệm cận đứng: nghiệm của mẫu không bị rút gọn với tử; tiệm cận ngang: xét riêng $x \\to +\\infty$ và $x \\to -\\infty$ (với căn thức, hai phía có thể khác nhau)."
   },
   {
@@ -135,7 +135,7 @@
     "$6$."
    ],
    "answer": 0,
-   "explain": "$\\sin{\\left(3 x \\right)} = 3x - \\dfrac{9}{2}x^{3} + o(x^{3})$<br>$\\cos{\\left(x \\right)} = 1 - \\dfrac{1}{2}x^{2} + o(x^{3})$<br>Nhân lại, gom theo bậc: $f(x) = 3x - 6x^{3} + o(x^{3})$<br>Hệ số của $x^{3}$: $-6$",
+   "explain": "$\\sin{\\left(3 x \\right)} = 3x - \\dfrac{9}{2}x^{3} + o(x^{3})$<br>$\\cos{\\left(x \\right)} = 1 - \\dfrac{1}{2}x^{2} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=3x - 6x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $-6$.",
    "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$."
   },
   {
@@ -159,7 +159,7 @@
     "3%."
    ],
    "answer": 0,
-   "explain": "Gọi $u, v$ là hai đại lượng đo; lấy lôgarit: $\\ln m = \\pm3\\ln u \\pm 1\\ln v + \\text{hằng số}$<br>Vi phân hai vế, lấy trị tuyệt đối từng số hạng: $\\dfrac{\\Delta m}{m} \\le 3\\cdot\\dfrac{\\Delta u}{u} + 1\\cdot\\dfrac{\\Delta v}{v}$<br>$= 3\\cdot0{,}5\\% + 1\\cdot2\\% = 3{,}5\\%$",
+   "explain": "Từ công thức đã cho, viết dạng lũy thừa theo hai đại lượng đo: $\\ln m=C+3\\ln u+1\\ln v$ (hằng số $C$ không đổi).<br>Vi phân: $\\dfrac{dm}{m}=+3\\dfrac{du}{u}+1\\dfrac{dv}{v}$. Lấy trị tuyệt đối và dùng các cận đo: $\\dfrac{|\\Deltam|}{|m|}\\le 3\\dfrac{|\\Delta u|}{u}+1\\dfrac{|\\Delta v|}{v}$.<br>$= 3\\cdot0{,}5\\% + 1\\cdot2\\% = 3{,}5\\%$.",
    "note": "Lấy lôgarit rồi vi phân: sai số tương đối của tích, thương bằng tổng các sai số tương đối nhân với trị tuyệt đối của số mũ."
   },
   {
@@ -171,7 +171,7 @@
     "$625$."
    ],
    "answer": 0,
-   "explain": "$L = x^2 + y^2 - \\lambda(3 x + 4 y - 25)$<br>$L'_x = 2x - 3 \\lambda = 0,\\quad L'_y = 2y - 4 \\lambda = 0 \\Rightarrow x = \\dfrac{3 \\lambda}{2},\\ y = 2 \\lambda$<br>Thay vào ràng buộc: $\\dfrac{25 \\lambda}{2} = 25 \\Rightarrow \\lambda = 2$<br>$(x;y) = \\left(3;4\\right)$, $f_{\\min} = 25$",
+   "explain": "$L=x^2+y^2-\\lambda(3x+4y-25)$. Từ $L_x=2x-3\\lambda=0$ và $L_y=2y-4\\lambda=0$, ta có $x=\\dfrac{3\\lambda}{2}$, $y=\\dfrac{4\\lambda}{2}$.<br>Thay vào ràng buộc: $\\dfrac{9\\lambda}{2}+\\dfrac{16\\lambda}{2}=\\dfrac{(9+16)\\lambda}{2}=25$, nên $\\lambda=\\dfrac{225}{25}$.<br>$(x,y)=(\\dfrac{325}{25},\\dfrac{425}{25})$. Khi đó $x^2+y^2=\\dfrac{9625+16625}{625}=\\dfrac{625(9+16)}{625}=\\dfrac{625}{25}=25$.",
    "note": "Rút một biến từ điều kiện, hoặc dùng $\\nabla f = \\lambda\\nabla g$; nhớ kiểm tra đó là giá trị lớn nhất hay nhỏ nhất."
   },
   {
@@ -183,7 +183,7 @@
     "$2$."
    ],
    "answer": 0,
-   "explain": "Chuỗi thứ 1: $u_n \\le \\dfrac{\\pi}{2n^2}$ $\\Rightarrow$ hội tụ<br>Chuỗi thứ 2: $\\sqrt[n]{u_n} = \\dfrac{n}{2n+1} \\to \\dfrac12 < 1$ $\\Rightarrow$ hội tụ<br>Chuỗi thứ 3: $\\dfrac{u_{n+1}}{u_n} \\to \\dfrac13 < 1$ $\\Rightarrow$ hội tụ<br>Chuỗi thứ 4: $u_n \\sim \\dfrac1n$ $\\Rightarrow$ phân kỳ<br>Số chuỗi hội tụ: $3$",
+   "explain": "Chuỗi thứ 1: $0<\\arctan n<\\pi/2$, nên $0<\\arctan(n)/n^2<\\pi/(2n^2)$; chuỗi hội tụ. Kết luận: hội tụ.<br>Chuỗi thứ 2: $\\sqrt[n]{u_n}=\\sqrt[n]{(n/(2n+1))^n}=n/(2n+1)\\to1/2<1$; chuỗi hội tụ. Kết luận: hội tụ.<br>Chuỗi thứ 3: $\\dfrac{u_{n+1}}{u_n}=\\dfrac{(n+1)^2/3^{n+1}}{n^2/3^n}=\\dfrac{(n+1)^2}{3n^2}\\to1/3<1$; chuỗi hội tụ. Kết luận: hội tụ.<br>Chuỗi thứ 4: $u_n=n/(n^2+1)\\sim1/n$; so sánh giới hạn với $1/n$ cho phân kỳ. Kết luận: phân kỳ.<br>Số chuỗi hội tụ: $3$",
    "note": "So sánh với $\\sum\\dfrac{1}{n^\\alpha}$ (hội tụ khi $\\alpha > 1$); có $n!$ hoặc $a^n$ thì dùng D’Alembert; có lũy thừa bậc $n$ thì dùng Cauchy."
   },
   {
@@ -195,7 +195,7 @@
     "$0$."
    ],
    "answer": 0,
-   "explain": "Chuỗi thứ 1: $|u_n| \\to \\frac13 \\ne 0$ $\\Rightarrow$ phân kỳ<br>Chuỗi thứ 2: $\\frac{|u_{n+1}|}{|u_n|} \\to \\frac12 < 1$ $\\Rightarrow$ hội tụ tuyệt đối<br>Chuỗi thứ 3: $\\frac{1}{2n+1} \\downarrow 0$ (Leibniz), $\\frac{1}{2n+1} \\sim \\frac{1}{2n}$ $\\Rightarrow$ bán hội tụ<br>Chuỗi thứ 4: $\\frac{1}{\\ln(n+1)} \\downarrow 0$ (Leibniz), $\\frac{1}{\\ln(n+1)} > \\frac1n$ $\\Rightarrow$ bán hội tụ<br>Số chuỗi bán hội tụ: $2$",
+   "explain": "Chuỗi thứ 1: $|u_n|=(n+1)/(3n-1)\\to1/3\\ne0$, nên phân kỳ. Kết luận: phân kỳ.<br>Chuỗi thứ 2: $\\dfrac{|u_{n+1}|}{|u_n|}=\\dfrac{n+1}{2^{n+1}}\\dfrac{2^n}{n}=\\dfrac{n+1}{2n}\\to1/2<1$, nên hội tụ tuyệt đối. Kết luận: hội tụ tuyệt đối.<br>Chuỗi thứ 3: $a_n=1/(2n+1)\\downarrow0$ nên Leibniz hội tụ; $a_n\\sim1/(2n)$ nên trị tuyệt đối phân kỳ, do đó bán hội tụ. Kết luận: bán hội tụ.<br>Chuỗi thứ 4: $a_n=1/\\ln(n+1)\\downarrow0$ nên Leibniz hội tụ; $\\ln(n+1)<n$ nên $a_n>1/n$, vì vậy chuỗi trị tuyệt đối phân kỳ: bán hội tụ. Kết luận: bán hội tụ.<br>Số chuỗi bán hội tụ: $2$",
    "note": "Leibniz: $a_n$ giảm về 0 thì chuỗi đan dấu hội tụ; hội tụ tuyệt đối phải xét thêm $\\sum a_n$; nếu $a_n \\not\\to 0$ thì chuỗi phân kỳ."
   },
   {
@@ -218,7 +218,7 @@
     "$8$."
    ],
    "answer": 0,
-   "explain": "Đặt $z = \\dfrac1y \\Rightarrow z' = -\\dfrac{y'}{y^2}$; chia phương trình cho $-y^2$:<br>$z' - \\dfrac{z}{x} = - x$<br>$\\left(\\dfrac{z}{x}\\right)' = -1 \\Rightarrow z = x(C - x)$<br>$y(1) = \\dfrac{1}{C - 1} = \\dfrac{1}{5} \\Rightarrow C = 6$<br>$y(2) = \\dfrac{1}{2(6 - 2)} = \\dfrac{1}{8}$",
+   "explain": "Đặt $z=1/y$, do đó $y^\\prime=-z^\\prime/z^2$. Thay vào $y^\\prime+y/x=1xy^2$ rồi nhân với $-1$: $z^\\prime-z/x=-1x$.<br>Chia cho $x$: $(z/x)^\\prime=(xz^\\prime-z)/x^2=-1$. Tích phân hai vế: $z/x=-1x+C$, tức $z=x(C-1x)$.<br>$y(1)=1/z(1)=1/(C-1)=\\dfrac{1}{5}$ nên $C-1=1/\\dfrac{1}{5}=5$ và $C=6$.<br>$z(2)=2(C-21)=2(6-2)=8$; vậy $y(2)=1/z(2)=\\dfrac{1}{8}$.",
    "note": "Bernoulli: đặt $z = y^{1-\\alpha}$; với $\\alpha = 2$ là $z = \\dfrac1y$, khi đó $z' = -\\dfrac{y'}{y^2}$."
   },
   {
@@ -230,7 +230,7 @@
     "$901$."
    ],
    "answer": 0,
-   "explain": "$P(0) = \\dfrac{1800}{1 + A} = 200 \\Rightarrow A = 8$<br>$e^{-kt} = e^{-\\frac{\\ln 2}{3}\\cdot9} = 2^{-3} = \\dfrac{1}{8}$<br>$P(9) = \\dfrac{1800}{1 + \\frac{8}{8}} = 900$",
+   "explain": "$P(0)=\\dfrac{M}{1+A}=P_0$; nhân chéo $M=P_0(1+A)$ nên $A=\\dfrac{M}{P_0}-1=8$.<br>$kt=\\dfrac{\\ln2}{3}(9)=3\\ln2$, vì thế $e^{-kt}=e^{-3\\ln2}=2^{-3}=\\dfrac1{8}$.<br>$P(9)=\\dfrac{1800}{1+\\frac{8}{8}}=\\dfrac{1800\\cdot8}{8+8}=\\dfrac{14400}{16}=900$.",
    "note": "Thay $t = 0$ để tìm hằng số trong công thức nghiệm; với $k = \\dfrac{\\ln 2}{T}$ thì $e^{-kT} = \\dfrac12$."
   },
   {
@@ -242,7 +242,7 @@
     "$3 - \\pi$."
    ],
    "answer": 0,
-   "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^* = x(a\\cos 2x + b\\sin 2x)\\ \\Rightarrow\\ y^{*\\prime\\prime} + 4y^* = -4a\\sin 2x + 4b\\cos 2x$<br>So sánh với vế phải $16\\cos 2x$: $a = 0,\\ b = 4$<br>$y = C_1\\cos 2x + C_2\\sin 2x + 4x\\sin 2x$<br>$y(0) = C_1 = 1;\\quad y'(0) = 2 C_{2} = 6 \\Rightarrow C_2 = 3$<br>$y\\left(\\dfrac{\\pi}{4}\\right) = 3 + 4\\cdot\\dfrac{\\pi}{4} = 3 + \\pi$",
+   "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^*=x(a\\cos 2x + b\\sin 2x)$. Tính đạo hàm hai lần và cộng $4y^*$: $y^{*\\prime\\prime}+4y^*=-4a\\sin 2x + 4b\\cos 2x$.<br>Đối chiếu hệ số với vế phải $16\\cos 2x$: hệ số của $\\sin(wx)$ bằng $-2wa=0$ nên $a=0$; hệ số của $\\cos(wx)$ là $2wb=c$, do đó $b=\\dfrac{c}{2w}=4$.<br>$y = C_1\\cos 2x + C_2\\sin 2x + 4x\\sin 2x$<br>$y(0)=C_1=1$. Also $y^\\prime(0)=wC_2=6$, so $C_2=3$.<br>At $x_0=\\dfrac{\\pi}{2w}$, $\\cos(wx_0)=0$ and $\\sin(wx_0)=1$. Thus the homogeneous part is $3$ and the particular part is $4\\cdot\\dfrac{\\pi}{2w}=\\pi$; hence $y(x_0)=3+\\pi=3 + \\pi$.",
    "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$)."
   },
   {
@@ -254,7 +254,7 @@
     "$- \\dfrac{1 - e}{2 e} + 1$."
    ],
    "answer": 0,
-   "explain": "Đổi thứ tự lấy tích phân; tích phân trong tính được ngay, còn lại: $I = \\displaystyle\\int_{0}^{1} x e^{- x^{2}}\\,dx$<br>$= \\left[- \\dfrac{e^{- x^{2}}}{2}\\right]_{0}^{1} = - \\dfrac{1 - e}{2 e}$",
+   "explain": "Miền ban đầu được mô tả rồi đảo cận như sau: $0\\le y\\le1,\\ y\\le x\\le1$ becomes $0\\le x\\le1,\\ 0\\le y\\le x$. Khi đó tích phân trong theo biến còn lại cho $I=\\displaystyle\\int_{0}^{1}x e^{- x^{2}}\\,dx$.<br>Tính nguyên hàm: $I=\\left[- \\dfrac{e^{- x^{2}}}{2}\\right]_{0}^{1}=- \\dfrac{1}{2 e}-- \\dfrac{1}{2}=- \\dfrac{1 - e}{2 e}$.",
    "note": "Sau khi đổi thứ tự, tích phân trong tạo ra đúng thừa số cần thiết để tích phân còn lại tính được bằng đổi biến."
   },
   {
@@ -266,7 +266,7 @@
     "$\\dfrac{9 \\pi}{2}$."
    ],
    "answer": 0,
-   "explain": "$V = \\displaystyle\\int_0^{2\\pi}d\\varphi\\int_0^{\\dfrac{\\pi}{3}}\\sin\\theta\\,d\\theta\\int_0^{3}\\rho^2\\,d\\rho$<br>$= 2\\pi\\cdot\\left(1 - \\cos\\dfrac{\\pi}{3}\\right)\\cdot\\dfrac{27}{3} = 9 \\pi$",
+   "explain": "$V=\\displaystyle\\int_0^{2\\pi}d\\varphi\\int_0^{\\dfrac{\\pi}{3}}\\sin\\theta\\,d\\theta\\int_0^{3}\\rho^2\\,d\\rho$. Các tích phân lần lượt bằng $2\\pi$, $[-\\cos\\theta]_0^{\\dfrac{\\pi}{3}}=1-\\cos\\dfrac{\\pi}{3}$ và $[\\rho^3/3]_0^{3}=27/3$.<br>$V=2\\pi(1-\\cos\\dfrac{\\pi}{3})\\dfrac{27}{3}=9 \\pi$.",
    "note": "Góc $\\theta$ tính từ trục $Oz$: mặt nón $z = c\\sqrt{x^2 + y^2}$ ứng với $\\tan\\theta = \\dfrac1c$."
   },
   {
@@ -278,7 +278,7 @@
     "$560$."
    ],
    "answer": 0,
-   "explain": "Gọi $x$ là số người dùng của X khi ổn định; lượng rời X bằng lượng đến X: $20\\%\\cdot x = 30\\%\\cdot(1200 - x)$<br>$50x = 36000 \\Rightarrow x = 720$",
+   "explain": "Gọi $x$ là số người dùng của X ở trạng thái ổn định. Lượng rời X là 20% của $x$; lượng chuyển từ Y sang X là 30% của $1200-x$. Cân bằng cho $\\dfrac{20}{100}x=\\dfrac{30}{100}(1200-x)$.<br>Nhân với $100$: $20x=30(1200-x)=36000-30x$, nên $(50)x=36000$ và $x=\\dfrac{36000}{50}=720$.",
    "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu."
   },
   {
@@ -326,7 +326,7 @@
     "$\\dfrac{17}{6}$."
    ],
    "answer": 0,
-   "explain": "$e^{u} = 1 + u + \\dfrac{u^2}{2} + \\dfrac{u^3}{6} + o(u^3)$, $u = x$<br>Tử số $= (1 - a)x + (\\dfrac{1}{2} - b)x^2 + \\dfrac{1}{6}x^3 + o(x^3)$<br>Giới hạn hữu hạn $\\Leftrightarrow a = 1,\\ b = \\dfrac{1}{2}$; khi đó $L = \\dfrac{1}{6}$<br>Giá trị cần tính: $3$",
+   "explain": "$e^{u} = 1 + u + \\dfrac{u^2}{2} + \\dfrac{u^3}{6} + o(u^3)$, với $u=x$, ta có $u^2=1x^2$ và $u^3=1x^3$.<br>Tử số sau khai triển là $(1-a)x+(\\dfrac{1}{2}-b)x^2+(\\dfrac{1}{6})x^3+o(x^3)$. Chia cho $x^3$: $\\dfrac{1-a}{x^2}+\\dfrac{\\dfrac{1}{2}-b}{x}+\\dfrac{1}{6}+o(1)$.<br>Để giới hạn hữu hạn, các hệ số phân kỳ triệt tiêu: $a=1$ và $b=\\dfrac{1}{2}$; hệ số còn lại cho $L=\\dfrac{1}{6}$.<br>1+2(\\dfrac{1}{2})+6(\\dfrac{1}{6})=1+1+1=3",
    "note": "Trong khai triển Maclaurin của tử, mọi hệ số có bậc thấp hơn bậc của mẫu phải bằng 0; hệ số cùng bậc với mẫu cho giá trị $L$."
   },
   {
@@ -338,7 +338,7 @@
     "$-1$."
    ],
    "answer": 0,
-   "explain": "Nhánh trái $g(x) = \\ln\\left(2 x + 1\\right)$: $g(0) = 0,\\ g'(0) = 2,\\ g''(0) = -4$<br>Nhánh phải $h(x) = ax^2 + bx + d$: $h(0) = d,\\ h'(0) = b,\\ h''(0) = 2a$<br>$d = 0,\\ b = 2,\\ 2a = -4 \\Rightarrow a = -2$<br>$2a + b = -2$",
+   "explain": "Nhánh trái $g(x)=\\ln\\left(2 x + 1\\right)$ có $g(0)=0$, $g^\\prime(0)=2$, $g^{\\prime\\prime}(0)=-4$ (tính đạo hàm rồi thế $x=0$).<br>Nhánh phải $h(x)=ax^2+bx+d$: $h(0)=d$, $h^\\prime(x)=2ax+b$ nên $h^\\prime(0)=b$, $h^{\\prime\\prime}(x)=2a$ nên $h^{\\prime\\prime}(0)=2a$. Để ghép khả vi cấp hai, đặt lần lượt $h(0)=g(0)$, $h^\\prime(0)=g^\\prime(0)$, $h^{\\prime\\prime}(0)=g^{\\prime\\prime}(0)$.<br>$d=0,\\ b=2,\\ 2a=-4$, do đó $a=-2$.<br>Thay các hệ số đã tìm vào biểu thức cần tính: $2a + b=-2$.",
    "note": "Có đạo hàm cấp hai tại điểm nối: giá trị, đạo hàm cấp một và đạo hàm cấp hai ở hai phía đều phải khớp nhau."
   },
   {
@@ -350,7 +350,7 @@
     "$\\dfrac{1}{3}$."
    ],
    "answer": 0,
-   "explain": "$\\dfrac{1}{x(x + 3)} = \\dfrac{1}{3}\\left(\\dfrac1x - \\dfrac{1}{x + 3}\\right)$<br>$I = \\dfrac{1}{3}\\left[\\ln\\dfrac{x}{x + 3}\\right]_1^{+\\infty} = \\dfrac{1}{3}\\left(0 - \\ln\\dfrac{1}{4}\\right) = \\dfrac{2 \\ln 2}{3}$",
+   "explain": "Phân tích phân thức: $\\dfrac1{x(x+3)}=\\dfrac1{3}\\left(\\dfrac1x-\\dfrac1{x+3}\\right)$ vì $\\dfrac{(x+3)-x}{3x(x+3)}=\\dfrac1{x(x+3)}$.<br>$I_R=\\dfrac1{3}\\left[\\ln x-\\ln(x+3)\\right]_1^R=\\dfrac1{3}\\ln\\dfrac{4R}{R+3}\\to\\dfrac1{3}\\ln4=\\dfrac{2 \\ln 2}{3}$.",
    "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$."
   },
   {
@@ -362,7 +362,7 @@
     "$260$."
    ],
    "answer": 0,
-   "explain": "Thế $T$ vào $C$ rồi vào phương trình đầu: $Y^* = 650,\\ T^* = 130,\\ C^* = 450$<br>Kết quả: $130$",
+   "explain": "$T=tY\\Rightarrow C=c_0+b(Y-tY)=60+\\dfrac{3}{4}(1-\\dfrac{1}{5})Y$.<br>$Y=C+I_0+G_0\\Rightarrow [1-\\dfrac{3}{4}(1-\\dfrac{1}{5})]Y=60+100+100$.<br>$Y=\\dfrac{260}{1-\\dfrac{3}{4}(1-\\dfrac{1}{5})}=650$.<br>$T=tY=\\dfrac{1}{5}\\cdot650=130,\\qquad C=c_0+b(Y-T)=60+\\dfrac{3}{4}(650-130)=450$.",
    "note": "Lập hệ phương trình từ điều kiện của bài toán (cung bằng cầu, hoặc dùng hết nguyên liệu) rồi giải bằng phép khử Gauss."
   },
   {
@@ -398,7 +398,7 @@
     "$- \\dfrac{1}{2}$."
    ],
    "answer": 0,
-   "explain": "$\\displaystyle\\sum_{n\\ge0}\\dfrac{(-1)^nx^{2n}}{(2n)!} = \\cos x$ tại $x = \\dfrac{\\pi}{3}$<br>Vậy tổng của chuỗi bằng $\\dfrac{1}{2}$",
+   "explain": "$\\sum_{n\\ge0}\\frac{(-1)^n(\\pi/3)^{2n}}{(2n)!}=\\cos(\\pi/3)=\\frac12$.<br>Vậy tổng của chuỗi bằng $\\dfrac{1}{2}$",
    "note": "Nhận ra chuỗi quen thuộc ($e^x$, $\\ln(1 + x)$, $\\arctan x$, ...) rồi thay giá trị $x$ thích hợp."
   },
   {
@@ -410,7 +410,7 @@
     "$6$."
    ],
    "answer": 0,
-   "explain": "Tách biến: $\\dfrac{dy}{y} = \\dfrac{2\\,dx}{x} \\Rightarrow \\ln|y| = 2\\ln x + C$<br>$y(1) = 3 \\Rightarrow y = 3 x^{2}$<br>$y\\left(2\\right) = 12$",
+   "explain": "Tách biến rồi tích phân hai vế: $\\dfrac{dy}{y} = \\dfrac{2\\,dx}{x} \\Rightarrow \\ln|y| = 2\\ln x + C$<br>$x=1,y=3$: $\\ln y=2\\ln x+C$ gives $\\ln3=0+C$, so $C=\\ln3$.<br>Từ $C$ vừa tìm và điều kiện đầu, nghiệm tường minh là $y=3 x^{2}$.<br>Thay $x=2$ vào nghiệm: $y(2)=12=12$.",
    "note": "Tìm nghiệm tổng quát trước, rồi dùng điều kiện đầu để xác định $C$ (và dấu của căn nếu có)."
   },
   {
@@ -458,7 +458,7 @@
     "$\\dfrac{872 \\pi}{3}$."
    ],
    "answer": 0,
-   "explain": "Tọa độ cầu: $I = \\displaystyle\\int_0^{2\\pi}d\\varphi\\int_0^{\\pi}\\sin\\theta\\,d\\theta\\int_{5}^{7}\\dfrac{\\rho^2}{\\rho^2}\\,d\\rho$<br>$= 2\\pi\\cdot2\\cdot(7 - 5) = 8 \\pi$",
+   "explain": "In tọa độ cầu, $\\frac1{x^2+y^2+z^2}dV=\\frac1{\\rho^2}\\rho^2\\sin\\theta\\,d\\rho d\\theta d\\varphi$, nên $I=\\int_0^{2\\pi}d\\varphi\\int_0^\\pi\\sin\\theta\\,d\\theta\\int_{5}^{7}1\\,d\\rho$.<br>Tích phân bán kính là $[\\,\\rho\\,]_{5}^{7}=7-5$; tích phân góc là $2\\pi\\cdot2$. Vậy $I=2\\pi\\cdot2\\cdot(7-5)=8 \\pi$.",
    "note": "Trong tọa độ cầu $\\sqrt{x^2 + y^2 + z^2} = \\rho$ và $dV = \\rho^2\\sin\\theta\\,d\\rho\\,d\\theta\\,d\\varphi$."
   },
   {
@@ -470,7 +470,7 @@
     "$624 \\pi^{2}$."
    ],
    "answer": 0,
-   "explain": "$ds = \\sqrt{5^2 + 12^2}\\,dt = 13\\,dt$; $\\displaystyle\\int_0^{2\\pi} 12t\\cdot13\\,dt$<br>Kết quả: $312 \\pi^{2}$",
+   "explain": "$x^\\prime=-5\\sin t,\\ y^\\prime=5\\cos t,\\ z^\\prime=12$; hence $ds=\\sqrt{(-5\\sin t)^2+(5\\cos t)^2+12^2}\\,dt=13\\,dt$.<br>$\\displaystyle I=\\int_0^{2\\pi}12t\\cdot13\\,dt=1213\\left[\\frac{t^2}{2}\\right]_0^{2\\pi}=2\\pi^21213=312 \\pi^{2}$.",
    "note": "Tích phân đường loại một: $ds = \\sqrt{x'^2 + y'^2}\\,dt$, không phụ thuộc chiều đi trên đường cong."
   },
   {

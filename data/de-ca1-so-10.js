@@ -28,7 +28,7 @@
     "$-7$."
    ],
    "answer": 0,
-   "explain": "$1u_1 - 1x + 2u_2 + 2x = u_3 \\Leftrightarrow x = u_3 - 1u_1 - 2u_2$<br>$u_3 - 1u_1 - 2u_2 = (0;0;-11)$<br>$x = (0;0;-11) \\Rightarrow x_1 + x_2 + x_3 = -11$",
+   "explain": "$1u_1 - 1x + 2u_2 + 2x = u_3 \\Leftrightarrow (2-1)x = u_3 - 1u_1 - 2u_2$.<br>$u_3 - 1u_1 - 2u_2 = (0;0;-11)$.<br>$x = \\dfrac{1}{1}(0;0;-11) = (0;0;-11)$.<br>$x_1+x_2+x_3 = (0) + (0) + (-11) = -11$.",
    "note": "Viết đẳng thức véc tơ theo từng tọa độ để được hệ phương trình tuyến tính; với phương trình véc tơ, chuyển vế như phương trình số."
   },
   {
@@ -40,7 +40,7 @@
     "$(2;3)$."
    ],
    "answer": 0,
-   "explain": "$v = xb_1 + yb_2 \\Leftrightarrow \\begin{cases}x + y = -1\\\\ - 2 x + 3 y = -13\\end{cases}$<br>Giải hệ: $x = 2,\\ y = -3$<br>Tọa độ của $v$ đối với $B$: $(2;-3)$",
+   "explain": "$v = xb_1 + yb_2 \\Leftrightarrow \\begin{cases}x + y = -1\\\\ - 2 x + 3 y = -13\\end{cases}$<br>Từ $v=(-1;-13)$, giải hệ trên được $x=2,\\ y=-3$; thay lại: $-1=-1,\\ -13=-13$<br>Tọa độ của $v$ đối với $B$: $(2;-3)$",
    "note": "Tọa độ đối với cơ sở $B$ là nghiệm của hệ $xb_1 + yb_2 = v$, không phải tọa độ thông thường của $v$."
   },
   {
@@ -52,7 +52,7 @@
     "$1$."
    ],
    "answer": 0,
-   "explain": "$u_3 = - u_{1} - u_{2}$; $u_4 = - u_{1} + 2 u_{2}$; $u_5 = 2 u_{1} - u_{2}$; còn $u_1, u_2$ độc lập tuyến tính nên hạng bằng 2<br>Kết quả: $2$",
+   "explain": "$u_3 = - u_{1} - u_{2}$<br>$u_4 = - u_{1} + 2 u_{2}$<br>$u_5 = 2 u_{1} - u_{2}$<br>Với các cột 1,2, $\\det \\begin{pmatrix}3 & 0 \\\\ 1 & -1\\end{pmatrix}=-3\\ne 0$ nên hệ véc tơ $u_1, u_2$ độc lập tuyến tính.<br>Các véc tơ còn lại là tổ hợp tuyến tính đã nêu; do đó hạng không vượt quá 2.<br>Vậy $\\operatorname{rank}(S)=2$.",
    "note": "Hạng = số hàng khác không của dạng bậc thang; số véc tơ thừa = số véc tơ $-$ hạng."
   },
   {
@@ -99,7 +99,7 @@
     "$16.0$."
    ],
    "answer": 0,
-   "explain": "$\\left(-2\\right)^{3}\\cdot\\dfrac{1}{\\det A}\\cdot(\\det B)^2 = -16$<br>Kết quả: $-16.0$",
+   "explain": "$\\det(-2A^{-1}B^2)=(-2)^{3}\\det(A^{-1})(\\det B)^2$.<br>$=(-2)^{3}\\cdot\\dfrac{1}{2}\\cdot(2)^2$.<br>$=-16$.",
    "note": "$\\det(kA) = k^n\\det A$, $\\det\\left(A^{-1}\\right) = \\dfrac{1}{\\det A}$, $\\det\\left(A^T\\right) = \\det A$, $\\det(AB) = \\det A\\cdot\\det B$."
   },
   {
@@ -170,7 +170,7 @@
     "$3$."
    ],
    "answer": 0,
-   "explain": "$f'_x = 6 x y - 12 x,\\quad f'_y = 3 x^{2} + 3 y^{2} - 12 y$<br>Giải hệ $f'_x = f'_y = 0$ được các điểm dừng: $(-2;2)$, $(0;0)$, $(0;4)$, $(2;2)$<br>Giá trị $AC - B^2$ tại các điểm đó lần lượt: $-144$, $144$, $144$, $-144$<br>Số điểm dừng: $4$; số điểm cực trị (có $AC - B^2 > 0$): $2$",
+   "explain": "$f'_x = 6 x y - 12 x,\\quad f'_y = 3 x^{2} + 3 y^{2} - 12 y$<br>Giải hệ $f'_x=f'_y=0$ (thay lần lượt vào hai phương trình) được các điểm dừng: $(-2;2)$, $(0;0)$, $(0;4)$, $(2;2)$<br>$f''_{xx}=6 \\left(y - 2\\right),\\quad f''_{xy}=6 x,\\quad f''_{yy}=6 \\left(y - 2\\right)$<br>$(-2;2):\\ A=f''_{xx}=0,\\ B=f''_{xy}=-12,\\ C=f''_{yy}=0; AC-B^2=(0)(0)-(-12)^2=-144\\Rightarrow điểm yên ngựa$<br>$(0;0):\\ A=f''_{xx}=-12,\\ B=f''_{xy}=0,\\ C=f''_{yy}=-12; AC-B^2=(-12)(-12)-(0)^2=144\\Rightarrow cực trị$<br>$(0;4):\\ A=f''_{xx}=12,\\ B=f''_{xy}=0,\\ C=f''_{yy}=12; AC-B^2=(12)(12)-(0)^2=144\\Rightarrow cực trị$<br>$(2;2):\\ A=f''_{xx}=0,\\ B=f''_{xy}=12,\\ C=f''_{yy}=0; AC-B^2=(0)(0)-(12)^2=-144\\Rightarrow điểm yên ngựa$<br>Số điểm dừng: $4$; số điểm cực trị (có $AC - B^2 > 0$): $2$",
    "note": "Giải đủ hệ $f'_x = f'_y = 0$ (đừng bỏ sót nghiệm), rồi xét dấu $AC - B^2$ tại từng điểm dừng."
   },
   {
@@ -182,7 +182,7 @@
     "$3$."
    ],
    "answer": 0,
-   "explain": "Chuỗi thứ 1: $\\sqrt[n]{u_n} = \\dfrac{n}{2n+1} \\to \\dfrac12 < 1$ $\\Rightarrow$ hội tụ<br>Chuỗi thứ 2: $u_n \\sim \\dfrac{1}{2n}$ $\\Rightarrow$ phân kỳ<br>Chuỗi thứ 3: $\\dfrac{u_{n+1}}{u_n} = \\dfrac{2}{n+1} \\to 0 < 1$ $\\Rightarrow$ hội tụ<br>Chuỗi thứ 4: $u_n \\le \\dfrac{1}{n^{3/2}}\\ (n \\text{ đủ lớn})$ $\\Rightarrow$ hội tụ<br>Số chuỗi phân kỳ: $1$",
+   "explain": "Chuỗi thứ 1: $\\sqrt[n]{u_n}=\\sqrt[n]{(n/(2n+1))^n}=n/(2n+1)\\to1/2<1$; chuỗi hội tụ. Kết luận: hội tụ.<br>Chuỗi thứ 2: $(n+2)/(2n^2+1)\\sim1/(2n)$; so sánh giới hạn với chuỗi điều hòa cho phân kỳ. Kết luận: phân kỳ.<br>Chuỗi thứ 3: $\\dfrac{u_{n+1}}{u_n}=\\dfrac{2^{n+1}/(n+1)!}{2^n/n!}=\\dfrac2{n+1}\\to0<1$; chuỗi hội tụ. Kết luận: hội tụ.<br>Chuỗi thứ 4: $\\ln n\\le\\sqrt n$ với $n$ đủ lớn nên $0\\le\\ln n/n^2\\le1/n^{3/2}$; chuỗi hội tụ. Kết luận: hội tụ.<br>Số chuỗi phân kỳ: $1$",
    "note": "So sánh với $\\sum\\dfrac{1}{n^\\alpha}$ (hội tụ khi $\\alpha > 1$); có $n!$ hoặc $a^n$ thì dùng D’Alembert; có lũy thừa bậc $n$ thì dùng Cauchy."
   },
   {
@@ -205,7 +205,7 @@
     "$2xy\\,dx + (y^2 - x^2)dy = 0$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> $(3x^2 + 2xy^2)dx + (2x^2y + 4y^3)dy = 0$ — Điều kiện $\\dfrac{\\partial P}{\\partial y} = \\dfrac{\\partial Q}{\\partial x}$ đối với $P\\,dx + Q\\,dy = 0$: $\\dfrac{\\partial P}{\\partial y} = 4xy$, $\\dfrac{\\partial Q}{\\partial x} = 4xy$<br><b>Sai:</b> $y\\,dx - x\\,dy = 0$ — $\\dfrac{\\partial P}{\\partial y} = 1$, $\\dfrac{\\partial Q}{\\partial x} = -1$, hai đạo hàm riêng khác nhau<br><b>Sai:</b> $(x^2 + y)dx + (y - x)dy = 0$ — $\\dfrac{\\partial P}{\\partial y} = 1$, $\\dfrac{\\partial Q}{\\partial x} = -1$, hai đạo hàm riêng khác nhau<br><b>Sai:</b> $2xy\\,dx + (y^2 - x^2)dy = 0$ — $\\dfrac{\\partial P}{\\partial y} = 2x$, $\\dfrac{\\partial Q}{\\partial x} = -2x$, hai đạo hàm riêng khác nhau"
+   "explain": "<b>Đúng:</b> $(3x^2 + 2xy^2)dx + (2x^2y + 4y^3)dy = 0$ — Điều kiện $\\dfrac{\\partial P}{\\partial y} = \\dfrac{\\partial Q}{\\partial x}$ đối với $P\\,dx + Q\\,dy = 0$; $P=(3x^2 + 2xy^2),\\ Q=2x^2y + 4y^3$: $\\partial P/\\partial y=4xy$ và $\\partial Q/\\partial x=4xy$; bằng nhau, nên toàn phần.<br><b>Sai:</b> $y\\,dx - x\\,dy = 0$ — $P=y\\,,\\ Q=y\\,dx - x\\,dy = 0$: $\\partial P/\\partial y=1$ và $\\partial Q/\\partial x=-1$; khác nhau, nên không toàn phần.<br><b>Sai:</b> $(x^2 + y)dx + (y - x)dy = 0$ — $P=(x^2 + y),\\ Q=y - x$: $\\partial P/\\partial y=1$ và $\\partial Q/\\partial x=-1$; khác nhau, nên không toàn phần.<br><b>Sai:</b> $2xy\\,dx + (y^2 - x^2)dy = 0$ — $P=2xy\\,,\\ Q=y^2 - x^2$: $\\partial P/\\partial y=2x$ và $\\partial Q/\\partial x=-2x$; khác nhau, nên không toàn phần."
   },
   {
    "q": "Gọi $y = y(x)$ là nghiệm của phương trình $(x^2 + 1)y' + 2xy = 8x^3$ thỏa mãn $y(0) = 1$. Giá trị của $y(1)$ bằng",
@@ -276,7 +276,7 @@
     "$400$."
    ],
    "answer": 0,
-   "explain": "Sau 1 tháng: $(390;710)$; sau 2 tháng: $(383;717)$ (nghìn khách của X và Y)<br>Kết quả: $383$",
+   "explain": "Sau tháng thứ nhất: $P\\begin{pmatrix}400\\\\700\\end{pmatrix}=\\begin{pmatrix}\\dfrac{4}{5} & \\dfrac{1}{10} \\\\ \\dfrac{1}{5} & \\dfrac{9}{10}\\end{pmatrix}(400;700)^T=(390;710)^T$ (nghìn khách).<br>Sau tháng thứ hai: $P(390;710)^T=\\begin{pmatrix}\\dfrac{4}{5} & \\dfrac{1}{10} \\\\ \\dfrac{1}{5} & \\dfrac{9}{10}\\end{pmatrix}(390;710)^T=(383;717)^T$ (nghìn khách).<br>Nhà mạng X có 383 nghìn khách.",
    "note": "Kiểm tra cỡ ma trận trước khi nhân (số cột của ma trận trước bằng số hàng của ma trận sau); với mô hình Leontief giải $(I - A)X = D$."
   },
   {
@@ -288,7 +288,7 @@
     "$m = 6$."
    ],
    "answer": 0,
-   "explain": "Ba tọa độ đầu của hàng 3 bằng $1$ lần hàng 1 cộng $2$ lần hàng 2, nên hạng bằng 2 khi và chỉ khi phần tử cuối cũng thỏa mãn hệ thức đó: $m = 7$; ngược lại hạng bằng 3<br>Kết quả: $m = 7$",
+   "explain": "$R_3 \\leftarrow R_3 - R_1 - 2R_2$.<br>$A = \\begin{pmatrix}1 & -1 & 0 & 1 \\\\ -1 & -1 & 2 & 3 \\\\ -1 & -3 & 4 & m\\end{pmatrix} \\xrightarrow{R_3 \\leftarrow R_3 - R_1 - 2R_2} \\begin{pmatrix}1 & -1 & 0 & 1 \\\\ -1 & -1 & 2 & 3 \\\\ 0 & 0 & 0 & m - 7\\end{pmatrix}$.<br>$\\det \\begin{pmatrix}1 & -1 \\\\ -1 & -1\\end{pmatrix} = -2 \\ne 0$, nên hai hàng đầu độc lập tuyến tính.<br>$m = 7 \\Rightarrow R_3 = (0,0,0,0) \\Rightarrow \\operatorname{rank}(A)=2$.<br>$m \\ne 7 \\Rightarrow R_3 = (0,0,0,m - 7) \\ne (0,0,0,0) \\Rightarrow \\operatorname{rank}(A)=3$.<br><b>Kết quả:</b> $m = 7$.",
    "note": "Đưa về dạng bậc thang; hạng giảm đúng khi hàng cuối thành hàng không, điều kiện đó cho giá trị của $m$."
   },
   {
@@ -360,7 +360,7 @@
     "$18$."
    ],
    "answer": 0,
-   "explain": "Gọi $x, y, z$ là số sản phẩm mỗi loại; giải hệ ba phương trình được $(10;10;10)$<br>Kết quả: $30$",
+   "explain": "Gọi $x,y,z$ lần lượt là số sản phẩm loại 1, 2, 3.<br>Hệ nguyên liệu: $\\begin{pmatrix}3 & 2 & 3 \\\\ 1 & 1 & 1 \\\\ 3 & 3 & 1\\end{pmatrix}\\begin{pmatrix}x\\\\y\\\\z\\end{pmatrix}=(80;30;70)^T$.<br>Ma trận bổ sung ban đầu: $$\\left(\\begin{array}{rrr|r}3 & 2 & 3 & 80\\\\ 1 & 1 & 1 & 30\\\\ 3 & 3 & 1 & 70\\end{array}\\right)$$<br>$R_1 \\leftarrow \\dfrac{1}{3}R_1$: $$\\left(\\begin{array}{rrr|r}1 & \\dfrac{2}{3} & 1 & \\dfrac{80}{3}\\\\ 1 & 1 & 1 & 30\\\\ 3 & 3 & 1 & 70\\end{array}\\right)$$<br>$R_2 \\leftarrow R_2 - (1)R_1$: $$\\left(\\begin{array}{rrr|r}1 & \\dfrac{2}{3} & 1 & \\dfrac{80}{3}\\\\ 0 & \\dfrac{1}{3} & 0 & \\dfrac{10}{3}\\\\ 3 & 3 & 1 & 70\\end{array}\\right)$$<br>$R_3 \\leftarrow R_3 - (3)R_1$: $$\\left(\\begin{array}{rrr|r}1 & \\dfrac{2}{3} & 1 & \\dfrac{80}{3}\\\\ 0 & \\dfrac{1}{3} & 0 & \\dfrac{10}{3}\\\\ 0 & 1 & -2 & -10\\end{array}\\right)$$<br>$R_2 \\leftarrow \\dfrac{1}{\\dfrac{1}{3}}R_2$: $$\\left(\\begin{array}{rrr|r}1 & \\dfrac{2}{3} & 1 & \\dfrac{80}{3}\\\\ 0 & 1 & 0 & 10\\\\ 0 & 1 & -2 & -10\\end{array}\\right)$$<br>$R_1 \\leftarrow R_1 - (\\dfrac{2}{3})R_2$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 1 & 20\\\\ 0 & 1 & 0 & 10\\\\ 0 & 1 & -2 & -10\\end{array}\\right)$$<br>$R_3 \\leftarrow R_3 - (1)R_2$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 1 & 20\\\\ 0 & 1 & 0 & 10\\\\ 0 & 0 & -2 & -20\\end{array}\\right)$$<br>$R_3 \\leftarrow \\dfrac{1}{-2}R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 1 & 20\\\\ 0 & 1 & 0 & 10\\\\ 0 & 0 & 1 & 10\\end{array}\\right)$$<br>$R_1 \\leftarrow R_1 - (1)R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 10\\\\ 0 & 1 & 0 & 10\\\\ 0 & 0 & 1 & 10\\end{array}\\right)$$<br>$(x,y,z)^T=(10;10;10)^T$; tổng sản phẩm: $10+10+10=30$.",
    "note": "Lập hệ phương trình từ điều kiện của bài toán (cung bằng cầu, hoặc dùng hết nguyên liệu) rồi giải bằng phép khử Gauss."
   },
   {
@@ -396,7 +396,7 @@
     "$(1-x)\\ln(1-x)$."
    ],
    "answer": 0,
-   "explain": "Tích phân từng số hạng chuỗi $\\sum_{n\\ge1}\\dfrac{x^n}{n} = -\\ln(1-x)$ từ $0$ đến $x$.",
+   "explain": "$\\frac1{n(n+1)}=\\frac1n-\\frac1{n+1}$. Do đó $\\sum_{n\\ge1}\\frac{x^{n+1}}{n(n+1)}=x[-\\ln(1-x)]-\\sum_{n\\ge1}\\frac{x^{n+1}}{n+1}= -x\\ln(1-x)-[-\\ln(1-x)-x]=x+(1-x)\\ln(1-x)$.",
    "note": "Đạo hàm hoặc tích phân từng số hạng của $\\displaystyle\\sum x^n = \\dfrac{1}{1 - x}$ để có các chuỗi liên quan; chỉ đúng khi $|x| < 1$."
   },
   {
@@ -408,7 +408,7 @@
     "$y = Ce^{x^2}$."
    ],
    "answer": 0,
-   "explain": "$\\dfrac{dy}{y} = \\dfrac{2x\\,dx}{1+x^2}$.",
+   "explain": "$\\dfrac{dy}{y}=\\dfrac{2x\\,dx}{1+x^2}$. Tích phân: $\\ln|y|=\\ln(1+x^2)+C$, nên $y=C(1+x^2)$.",
    "note": "Tách biến: đưa $y$ về một vế, $x$ về một vế rồi lấy tích phân; hằng số $C$ chỉ cần viết ở một vế."
   },
   {
@@ -420,7 +420,7 @@
     "$y = x^3(x + C)$."
    ],
    "answer": 0,
-   "explain": "$\\left(\\dfrac{y}{x^3}\\right)' = \\dfrac1x$.",
+   "explain": "Chia cho $x$: $y^\\prime-3y/x=x^2$. Nhân tử tích phân $x^{-3}$: $(y/x^3)^\\prime=1/x$. Tích phân: $y/x^3=\\ln x+C$, vậy $y=x^3(\\ln x+C)$.",
    "note": "Tuyến tính: nhân thừa số tích phân $e^{\\int p\\,dx}$; đẳng cấp: đặt $y = ux$."
   },
   {
@@ -444,7 +444,7 @@
     "$5 \\pi$."
    ],
    "answer": 0,
-   "explain": "$\\displaystyle\\int_0^{2\\pi}\\!\\!\\int_0^1 (9\\cos^2\\varphi + 1\\sin^2\\varphi)\\,3r^3\\,dr\\,d\\varphi = \\dfrac{3}{4}\\cdot\\pi(9 + 1)$<br>Kết quả: $\\dfrac{15 \\pi}{2}$",
+   "explain": "Đặt $x=3r\\cos\\varphi$, $y=r\\sin\\varphi$; Jacobian $=3r$, $0\\le r\\le1$, $0\\le\\varphi\\le2\\pi$. Khi đó $x^2+y^2=r^2(9\\cos^2\\varphi+1\\sin^2\\varphi)$.<br>$\\int_0^1r^3\\,dr=1/4$, $\\int_0^{2\\pi}\\cos^2\\varphi\\,d\\varphi=\\int_0^{2\\pi}\\sin^2\\varphi\\,d\\varphi=\\pi$.<br>$I=\\dfrac{3\\pi}{4}(9+1)=\\dfrac{3\\pi}{4}(9+1)=\\dfrac{15 \\pi}{2}$.",
    "note": "Trong tọa độ cực $dxdy = r\\,dr\\,d\\varphi$; đường tròn $x^2 + y^2 = 2ax$ là $r = 2a\\cos\\varphi$ với $-\\dfrac{\\pi}{2} \\le \\varphi \\le \\dfrac{\\pi}{2}$."
   },
   {
@@ -456,7 +456,7 @@
     "$\\dfrac{3}{2}$."
    ],
    "answer": 0,
-   "explain": "$\\dfrac{1^2}{2}\\cdot1\\cdot2 + 1\\cdot\\dfrac{1^2}{2}\\cdot\\dfrac{2^2}{2} = 2$<br>Kết quả: $2$",
+   "explain": "$\\displaystyle I=\\int_0^{2}\\int_0^{1}\\int_0^{1}(x+yz)\\,dx\\,dy\\,dz$. Tích phân trong: $\\int_0^{1}(x+yz)\\,dx=1/2+1yz$.<br>Tách tích phân: $\\dfrac{112}{2}+1\\left(\\int_0^{1}y\\,dy\\right)\\left(\\int_0^{2}z\\,dz\\right)=\\dfrac{112}{2}+\\dfrac{114}{4}$.<br>$I=2$.",
    "note": "Tọa độ trụ hợp với paraboloid, mặt nón; tọa độ cầu hợp với hình cầu; không quên định thức Jacobi."
   },
   {
@@ -468,7 +468,7 @@
     "$13$."
    ],
    "answer": 0,
-   "explain": "$ds = \\sqrt{1 + x^2}\\,dx$; $\\displaystyle\\int_0^{2\\sqrt2} x\\sqrt{1 + x^2}\\,dx = \\dfrac{(1 + x^2)^{3/2}}{3}\\Big|_0^{2\\sqrt2}$<br>Kết quả: $\\dfrac{26}{3}$",
+   "explain": "Đặt $x=t,\\ y=t^2/2$ với $0\\le t\\le2\\sqrt2$; $ds=\\sqrt{(dx/dt)^2+(dy/dt)^2}\\,dt=\\sqrt{1+t^2}\\,dt$, nên $x\\,ds=t\\sqrt{1+t^2}\\,dt$.<br>Đặt $u=1+t^2$, $du=2t\\,dt$: $\\displaystyle I=\\frac12\\int_1^{1+2\\sqrt2^2}u^{1/2}\\,du=\\frac13[u^{3/2}]_1^{1+2\\sqrt2^2}$.<br>$I=\\dfrac{(1+2\\sqrt2^2)^{3/2}-1}{3}=\\dfrac{26}{3}$.",
    "note": "Tích phân đường loại một: $ds = \\sqrt{x'^2 + y'^2}\\,dt$, không phụ thuộc chiều đi trên đường cong."
   },
   {
@@ -480,7 +480,7 @@
     "$0$."
    ],
    "answer": 0,
-   "explain": "$\\displaystyle\\iint_{x^2+y^2\\le4}(9 x^{2} + 6 y^{2})\\,dxdy = (15)\\cdot\\dfrac{\\pi\\cdot2^4}{4}$<br>Kết quả: $60 \\pi$",
+   "explain": "$P=x^2-2y^3,\\ Q=3x^3+y^2$: $\\partial Q/\\partial x=33x^2$, $\\partial P/\\partial y=-32y^2$.<br>Green cho $C$ ngược chiều kim đồng hồ: $\\oint_C P\\,dx+Q\\,dy=\\iint_D(33x^2+32y^2)\\,dA$.<br>Đối xứng cực: $\\iint_Dx^2dA=\\iint_Dy^2dA=\\int_0^{2\\pi}\\int_0^{2}r^3(\\cos^2\\varphi)\\,dr\\,d\\varphi=\\pi2^4/4$.<br>$I=3(2+3)\\pi2^4/4=60 \\pi$.",
    "note": "Tích phân đường loại hai: thay $y = y(x)$, $dy = y'dx$; với đường cong kín thì dùng công thức Green."
   }
  ],
@@ -586,7 +586,7 @@
    "answer": [
     "3"
    ],
-   "explain": "Đặt $t = x^3$: bán kính hội tụ theo $t$ bằng 27, tức $|x|^3 < 27$<br>$R = 3$",
+   "explain": "$\\sqrt[n]{|u_n|}=|x|^3/(27n^{1/(2n)})\\to|x|^3/27$; căn thức cho $|x|<3$, do đó bán kính $R=3$.<br>$R = 3$",
    "note": "Chuỗi theo $x^k$: đặt $t = x^k$; bán kính theo $x$ là căn bậc $k$ của bán kính theo $t$."
   },
   {

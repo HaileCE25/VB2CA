@@ -17,6 +17,66 @@ def unimod(rng):
     return A if rng.random() < .5 else A.T * Matrix([[0, 1], [-1, 0]])
 
 
+def gauss_steps(A, b):
+    """Return row-operation steps reducing the augmented system [A|b] to RREF."""
+    M = Matrix.hstack(Matrix(A), Matrix(b))
+    lines = [T(r'Ma trận bổ sung ban đầu: $$<M>$$', M=augmented_latex(M))]
+    pivot_row = 0
+    for col in range(M.cols - 1):
+        source = next((r for r in range(pivot_row, M.rows) if M[r, col] != 0), None)
+        if source is None:
+            continue
+        if source != pivot_row:
+            M.row_swap(source, pivot_row)
+            lines.append(T(r'$R_<a> \leftrightarrow R_<b>$: $$<M>$$',
+                           a=source + 1, b=pivot_row + 1, M=augmented_latex(M)))
+        pivot = M[pivot_row, col]
+        if pivot != 1:
+            M.row_op(pivot_row, lambda value, j: value / pivot)
+            lines.append(T(r'$R_<r> \leftarrow \dfrac{1}{<p>}R_<r>$: $$<M>$$',
+                           r=pivot_row + 1, p=tx(pivot), M=augmented_latex(M)))
+        for target in range(M.rows):
+            factor = M[target, col]
+            if target == pivot_row or factor == 0:
+                continue
+            M.row_op(target, lambda value, j: value - factor * M[pivot_row, j])
+            lines.append(T(r'$R_<t> \leftarrow R_<t> - (<f>)R_<p>$: $$<M>$$',
+                           t=target + 1, f=tx(factor), p=pivot_row + 1, M=augmented_latex(M)))
+        pivot_row += 1
+        if pivot_row == M.rows:
+            break
+    return lines
+
+
+def augmented_latex(M):
+    columns = 'r' * (M.cols - 1) + '|r'
+    rows = [r' & '.join(tx(M[i, j]) for j in range(M.cols)) for i in range(M.rows)]
+    return r'\left(\begin{array}{' + columns + '}' + r'\\ '.join(rows) + r'\end{array}\right)'
+
+
+def det3_expansion(A):
+    a, b, c = A[0, 0], A[0, 1], A[0, 2]
+    d, e, f = A[1, 0], A[1, 1], A[1, 2]
+    g, h, i = A[2, 0], A[2, 1], A[2, 2]
+    terms = [a * (e * i - f * h), -b * (d * i - f * g), c * (d * h - e * g)]
+    expansion = T(r'$$A=<A>,\quad \det A=(<a>)\big((<e>)(<i>)-(<f>)(<h>)\big)-(<b>)\big((<d>)(<i>)-(<f>)(<g>)\big)+(<c>)\big((<d>)(<h>)-(<e>)(<g>)\big)$$',
+                  A=pmat(A), a=a, b=b, c=c, d=d, e=e, f=f, g=g, h=h, i=i)
+    if any(term.free_symbols for term in terms):
+        return steps(expansion, T(r'$\det A=<det>$.', det=A.det()))
+    return steps(
+        expansion,
+        T(r'$=<t1><op2><t2><op3><t3>=<det>$.',
+          t1=terms[0], op2=' + ' if terms[1] >= 0 else ' - ', t2=abs(terms[1]),
+          op3=' + ' if terms[2] >= 0 else ' - ', t3=abs(terms[2]), det=A.det()))
+
+
+def det2_expansion(A):
+    a, b, c, d = A[0, 0], A[0, 1], A[1, 0], A[1, 1]
+    return steps(T(r'$\det <A>=(<a>)(<d>)-(<b>)(<c>)=<det>$.',
+                   A=pmat(A), a=a, b=b, c=c, d=d, det=A.det()),
+                 T(r'$=<factor>$.', factor=sp.factor(A.det())))
+
+
 # ---------- Câu 1: tổ hợp tuyến tính ----------
 def s1(rng, k):
     if k % 2 == 0:
@@ -38,16 +98,27 @@ def s1(rng, k):
         q = T(ctx[0] + r' lần lượt được cho bởi các véc tơ $u_1 = <u1>,\ u_2 = <u2>,\ u_3 = <u3>$ trong $\mathbb{R}^3$. ' + ctx[1] +
               r' $v = <v>$, tức là $v = au_1 + bu_2 + cu_3$. Giá trị của $<e>$ bằng',
               u1=vec(U.row(0)), u2=vec(U.row(1)), u3=vec(U.row(2)), v=vec(v), e=w[0] * a_ + w[1] * b_ + w[2] * c_)
-        ex = steps(r'$v = au_1 + bu_2 + cu_3 \Leftrightarrow \begin{cases}' + r'\\ '.join(tx(sp.Eq(U[0, i] * a_ + U[1, i] * b_ + U[2, i] * c_, v[i])) for i in range(3)) + r'\end{cases}$',
-                   T(r'Giải hệ bằng phép khử Gauss: $a = <a>,\ b = <b>,\ c = <c>$', a=coef[0], b=coef[1], c=coef[2]), T(r'$<e> = <ok>$', e=w[0] * a_ + w[1] * b_ + w[2] * c_, ok=ok))
+        equations = r'$$v = au_1 + bu_2 + cu_3 \Leftrightarrow \begin{cases}' + r'\\ '.join(
+            tx(sp.Eq(U[0, i] * a_ + U[1, i] * b_ + U[2, i] * c_, v[i])) for i in range(3)) + r'\end{cases}$$'
+        calculation = gauss_steps(U.T, Matrix(v).T)
+        expression = T(r'$<w1>\cdot<a> + <w2>\cdot<b> + <w3>\cdot<c> = <ok>$.',
+                       w1=w[0], w2=w[1], w3=w[2], a=coef[0], b=coef[1], c=coef[2], ok=ok)
+        ex = steps(equations, *calculation, T(r'$\begin{cases}a=<a>\\b=<b>\\c=<c>\end{cases}$',
+                                               a=coef[0], b=coef[1], c=coef[2]), expression)
         return NQ(q, ok, [sum(coef), sum(i * j for i, j in zip(coef, w[::-1])), ok + coef[0]], ex)
     al, be = rng.choice([(2, 3), (3, 4), (3, 2), (4, 3), (1, 2), (2, 1)])
     U = rmat(rng, 3, 3, -3, 4)
     xv = (U.row(2) - al * U.row(0) - be * U.row(1)) / (be - al)
     q = T(r'Trong không gian véc tơ $\mathbb{R}^3$, cho $u_1 = <u1>,\ u_2 = <u2>,\ u_3 = <u3>$. Gọi $x = (x_1;x_2;x_3)$ là véc tơ thỏa mãn $<al>(u_1 - x) + <be>(u_2 + x) = u_3$. Giá trị của $x_1 + x_2 + x_3$ bằng',
           u1=vec(U.row(0)), u2=vec(U.row(1)), u3=vec(U.row(2)), al=al, be=be)
-    ex = steps(T(r'$<al>u_1 - <al>x + <be>u_2 + <be>x = u_3 \Leftrightarrow <d> = u_3 - <al>u_1 - <be>u_2$', al=al, be=be, d=(be - al) * symbols('x')),
-               T(r'$u_3 - <al>u_1 - <be>u_2 = <w>$', al=al, be=be, w=vec(U.row(2) - al * U.row(0) - be * U.row(1))), T(r'$x = <x> \Rightarrow x_1 + x_2 + x_3 = <ok>$', x=vec(xv), ok=sum(xv)))
+    ex = steps(T(r'$<al>u_1 - <al>x + <be>u_2 + <be>x = u_3 \Leftrightarrow (<be>-<al>)x = u_3 - <al>u_1 - <be>u_2$.',
+                 al=al, be=be),
+               T(r'$u_3 - <al>u_1 - <be>u_2 = <w>$.', al=al, be=be,
+                 w=vec(U.row(2) - al * U.row(0) - be * U.row(1))),
+               T(r'$x = \dfrac{1}{<d>}<w> = <x>$.', d=be - al,
+                 w=vec(U.row(2) - al * U.row(0) - be * U.row(1)), x=vec(xv)),
+               T(r'$x_1+x_2+x_3 = (<x1>) + (<x2>) + (<x3>) = <ok>$.',
+                 x1=xv[0], x2=xv[1], x3=xv[2], ok=sum(xv)))
     wrong = (U.row(2) - al * U.row(0) - be * U.row(1)) / (be + al)
     return NQ(q, sum(xv), [-sum(xv), sum(U.row(2) - U.row(0) - U.row(1)), sum(wrong) if sum(wrong).is_integer else sum(xv) + 4], ex)
 
@@ -74,19 +145,47 @@ def s2(rng, k):
     rng.shuffle(vs)
     def cnt(sizes):
         return sum(1 for s in sizes for c in combinations(vs, s) if Matrix(c).rank() == s)
+    def pair_determinants():
+        out = []
+        for i, j in combinations(range(nvec), 2):
+            minors = [Matrix([[vs[i][a], vs[i][b_]], [vs[j][a], vs[j][b_]]]).det()
+                      for a, b_ in combinations(range(d), 2)]
+            labels = [r'\Delta_{%d%d}' % (a + 1, b_ + 1) for a, b_ in combinations(range(d), 2)]
+            out.append(T(r'$(u_<i>,u_<j>):\ (<ds>)=(<vals>)$.',
+                         i=i + 1, j=j + 1, ds=','.join(labels), vals=','.join(tx(v_) for v_ in minors)))
+        return out
+    def d_tuple_determinants(size):
+        out = []
+        for indices in combinations(range(nvec), size):
+            subset = Matrix([vs[i] for i in indices])
+            out.append(T(r'$\det\begin{pmatrix}<rows>\end{pmatrix}=<det>$.',
+                         rows=r'\\'.join(' & '.join(tx(value) for value in vs[i]) for i in indices),
+                         det=subset.det()))
+        return out
     names = r',\ '.join('u_%d%s' % (i + 1, vec(v)) for i, v in enumerate(vs))
     head = T(r'Trong không gian véc tơ $\mathbb{R}^<d>$, cho hệ véc tơ $S = \{<ns>\}$. ', d=d, ns=names)
     hint = ' (Lưu ý: hai véc tơ cùng phương thì phụ thuộc tuyến tính; hệ có số véc tơ lớn hơn số chiều của không gian luôn phụ thuộc tuyến tính.)'
     if k % 3 == 0:
         ok = cnt(range(1, d + 1))
         q = head + 'Có bao nhiêu hệ con khác rỗng của $S$ độc lập tuyến tính?' + hint
-        ex = T('Có <a> hệ một véc tơ và <b> hệ hai véc tơ độc lập tuyến tính.', a=cnt([1]), b=cnt([2]))
+        detail = [T(r'Cả <n> véc tơ đều khác véc tơ không nên có <n> hệ một véc tơ độc lập.',
+                    n=nvec)]
+        detail.extend(pair_determinants())
+        if d == 3:
+            detail.extend(d_tuple_determinants(3))
+        detail.append(T(r'Tổng số hệ con độc lập tuyến tính: $<singles>+<pairs>+<triples>=<ok>$.',
+                        singles=cnt([1]), pairs=cnt([2]),
+                        triples=cnt([3]) if d == 3 else 0, ok=ok))
+        ex = steps(*detail)
         cands = [2 ** nvec - 1, ok + 1, ok - 1, cnt([2])]
     else:
         ok = cnt([d])
         q = head + T(r'Có bao nhiêu hệ con gồm đúng <d> véc tơ của $S$ là cơ sở của $\mathbb{R}^<d>$?', d=d) + hint
         tot = len(list(combinations(vs, d)))
-        ex = T(r'Có $C_<n>^<d> = <t>$ hệ con gồm <d> véc tơ, trong đó <b> hệ phụ thuộc tuyến tính.', n=nvec, d=d, t=tot, b=tot - ok)
+        ex = steps(T(r'Số hệ con cần xét: $C_<n>^<d>=<t>$.', n=nvec, d=d, t=tot),
+                   *d_tuple_determinants(d),
+                   T(r'Hệ là cơ sở khi định thức khác 0; có <ok> định thức khác 0 nên có <ok> cơ sở.',
+                     ok=ok))
         cands = [tot, ok + 1, ok - 1, tot - ok]
     if not 3 <= ok <= 20:
         raise Retry
@@ -109,7 +208,22 @@ def s3(rng, k):
     if Matrix(vs).rank() != r:
         raise Retry
     names = r',\ '.join('u_%d = %s' % (i + 1, vec(v)) for i, v in enumerate(vs))
-    ex = '; '.join(notes) + T(r'; còn $<b>$ độc lập tuyến tính nên hạng bằng <r>.', b=', '.join('u_%d' % (i + 1) for i in range(r)), r=r)
+    cols = next(c for c in combinations(range(4), r)
+                if Matrix([[base[i][j] for j in c] for i in range(r)]).det() != 0)
+    minor = Matrix([[base[i][j] for j in cols] for i in range(r)])
+    rank_steps = [
+        *notes,
+        T(r'Với các cột <cols>, $\det <M>=<det>\ne 0$ nên hệ véc tơ $<base>$ độc lập tuyến tính.',
+          cols=','.join(str(j + 1) for j in cols), M=pmat(minor), det=minor.det(),
+          base=', '.join('u_%d' % (i + 1) for i in range(r))),
+        T(r'Các véc tơ còn lại là tổ hợp tuyến tính đã nêu; do đó hạng không vượt quá <r>.',
+          r=r),
+        T(r'Vậy $\operatorname{rank}(S)=<r>$.', r=r),
+    ]
+    if k % 2:
+        rank_steps.append(T(r'Cần bỏ ít nhất $5-<r>=<deleted>$ véc tơ để còn hệ độc lập tuyến tính.',
+                            r=r, deleted=5-r))
+    ex = steps(*rank_steps)
     if k % 2 == 0:
         q = T(r'Một trạm quan trắc ghi lại 5 bộ số liệu, mỗi bộ gồm 4 chỉ số và được xem như một véc tơ trong $\mathbb{R}^4$: $<ns>$. Một bộ số liệu là “thừa” nếu nó là tổ hợp tuyến tính của các bộ còn lại được giữ. Số lớn nhất các bộ số liệu có thể giữ lại sao cho chúng độc lập tuyến tính (tức là hạng của hệ véc tơ đã cho) bằng', ns=names)
         return NQ(q, r, [r + 1, 5, r - 1, 4], ex)
@@ -183,7 +297,21 @@ def s5(rng, k):
     ok = 2 * L + 1 - len(inside)
     name = 'C' if v == 2 else 'A'
     q = T(r'Cho ma trận <desc> ($m$ là tham số). Biết rằng một ma trận vuông khả nghịch khi và chỉ khi định thức của nó khác 0. Có bao nhiêu giá trị nguyên của $m$ thuộc đoạn $[<a>;<b>]$ để $<N>$ khả nghịch?', desc=desc, a=-L, b=L, N=name)
-    ex = steps(T(r'$\det <N> = <d>$', N=name, d=sp.factor(det)), T(r'$\det <N> = 0 \Leftrightarrow m \in \{<r>\}$', N=name, r=';'.join(str(r) for r in roots)),
+    if v == 0:
+        det_steps = [det3_expansion(A),
+                     T(r'$\det A=<factor>$.', factor=sp.factor(det))]
+    elif v == 1:
+        det_steps = [det3_expansion(A),
+                     T(r'$\det A=<factor>$.', factor=sp.factor(det))]
+    else:
+        det_steps = [
+            T(r'$\det C=\det A\det B$.',),
+            det2_expansion(A),
+            det2_expansion(B),
+            T(r'$\det C=<factor>$.', factor=sp.factor(det)),
+        ]
+    ex = steps(*det_steps,
+               T(r'$\det <N>=0 \Leftrightarrow m \in \{<r>\}$.', N=name, r=';'.join(str(r) for r in roots)),
                T(r'Đoạn $[<a>;<b>]$ có $<t>$ số nguyên, trong đó $<c>$ số làm định thức bằng 0', a=-L, b=L, t=2 * L + 1, c=len(inside)), T(r'Số giá trị cần tìm: $<t> - <c> = <ok>$', t=2 * L + 1, c=len(inside), ok=ok))
     return NQ(q, ok, [2 * L + 1, 2 * L + 1 - len(roots) - 1, 2 * L - len(inside), len(inside)], ex)
 
@@ -257,23 +385,39 @@ def s7(rng, k):
         p = rng.choice([2, 3])
         ok = c ** nn * d ** p / e
         q = T(r'Cho $A$, $B$ là hai ma trận vuông cấp <n> có $\det A = <d>$ và $\det B = <e>$. Giá trị của $\det\left(<c>A^{<p>}(B^T)^{-1}\right)$ bằng', n=nn, d=d, e=e, c=c, p=p) + hint
-        ex = T(r'$\left(<c>\right)^{<n>}\cdot(\det A)^{<p>}\cdot\dfrac{1}{\det B} = <ok>$.', c=c, n=nn, p=p, ok=ok)
+        ex = steps(T(r'$\det\left(<c>A^{<p>}(B^T)^{-1}\right)=(<c>)^{<n>}(\det A)^{<p>}\dfrac{1}{\det(B^T)}$.',
+                     c=c, n=nn, p=p),
+                   T(r'$=(<c>)^{<n>}\cdot(<d>)^{<p>}\cdot\dfrac{1}{<e>}$.',
+                     c=c, n=nn, d=d, p=p, e=e),
+                   T(r'$=<ok>$.', ok=ok))
         cands = [c * d ** p / e, c ** nn * d ** p * e, c ** nn * d * p / e, -ok]
     elif v == 1:
         ok = c ** nn * e ** 2 / d
         q = T(r'Cho $A$, $B$ là hai ma trận vuông cấp <n> có $\det A = <d>$ và $\det B = <e>$. Giá trị của $\det\left(<c>A^{-1}B^2\right)$ bằng', n=nn, d=d, e=e, c=c) + hint
-        ex = T(r'$\left(<c>\right)^{<n>}\cdot\dfrac{1}{\det A}\cdot(\det B)^2 = <ok>$.', c=c, n=nn, ok=ok)
+        ex = steps(T(r'$\det(<c>A^{-1}B^2)=(<c>)^{<n>}\det(A^{-1})(\det B)^2$.', c=c, n=nn),
+                   T(r'$=(<c>)^{<n>}\cdot\dfrac{1}{<d>}\cdot(<e>)^2$.',
+                     c=c, n=nn, d=d, e=e),
+                   T(r'$=<ok>$.', ok=ok))
         cands = [c * e ** 2 / d, c ** nn * e ** 2 * d, c ** nn * 2 * e / d, -ok]
     elif v == 2:
         c = rng.choice([2, 3, -2])
         ok = c ** nn
         q = T(r'Cho $A$ là ma trận vuông cấp <n> khả nghịch thỏa mãn $A^2 = <c>A$. Định thức của ma trận $A$ bằng', n=nn, c=c)
-        ex = T(r'Nhân hai vế với $A^{-1}$ được $A = <c>I$, nên $\det A = \left(<c>\right)^{<n>}$.', c=c, n=nn)
+        ex = steps(T(r'$A^2=<c>A \Rightarrow A^2-<c>A=0 \Rightarrow A(A-<c>I)=0$.', c=c),
+                   r'$A$ khả nghịch nên nhân bên trái với $A^{-1}$:',
+                   T(r'$A-<c>I=0 \Rightarrow A=<c>I$.', c=c),
+                   T(r'$\det A=\det(<c>I)=(<c>)^{<n>}\det I=(<c>)^{<n>}$.',
+                     c=c, n=nn),
+                   T(r'$=<ok>$.', ok=ok))
         cands = [c, c * nn, c ** 2, 0]
     else:
         ok = c ** nn * d ** 2 / e
         q = T(r'Cho $A$, $B$ là hai ma trận vuông cấp <n> có $\det A = <d>$ và $\det B = <e>$. Giá trị của $\det\left(<c>A^TB^{-1}A\right)$ bằng', n=nn, d=d, e=e, c=c) + hint
-        ex = T(r'$\left(<c>\right)^{<n>}\cdot\det A\cdot\dfrac{1}{\det B}\cdot\det A = <ok>$.', c=c, n=nn, ok=ok)
+        ex = steps(T(r'$\det(<c>A^TB^{-1}A)=(<c>)^{<n>}\det(A^T)\det(B^{-1})\det(A)$.',
+                     c=c, n=nn),
+                   T(r'$=(<c>)^{<n>}\cdot<d>\cdot\dfrac{1}{<e>}\cdot<d>$.',
+                     c=c, n=nn, d=d, e=e),
+                   T(r'$=<ok>$.', ok=ok))
         cands = [c * d ** 2 / e, c ** nn * d / e, c ** nn * d ** 2 * e, -ok]
     return NQ(q, ok, cands, ex)
 
@@ -288,7 +432,11 @@ def s22(rng, k):
         ok = (c * need)[0]
         q = T(r'Một hãng dùng 3 loại vật liệu để sản xuất 4 loại sản phẩm với ma trận định mức $A = <A>$, trong đó $a_{ij}$ là số đơn vị vật liệu loại $i$ cần để sản xuất 1 đơn vị sản phẩm loại $j$. Hãng dự định sản xuất lần lượt $<x>$ đơn vị sản phẩm các loại 1, 2, 3, 4. Biết giá mỗi đơn vị vật liệu loại 1, 2, 3 lần lượt là $<c>$ (đơn vị tiền), tổng chi phí vật liệu để thực hiện kế hoạch trên bằng',
               A=pmat(A), x=', '.join(str(i) for i in X), c=', '.join(str(i) for i in c))
-        ex = T(r'Nhu cầu vật liệu $AX = <n>^T$; chi phí bằng tích vô hướng với véc tơ giá: $<ok>$.', n=vec(need), ok=ok)
+        ex = steps(T(r'Sản lượng viết thành véc tơ cột: $X=<X>^T$.', X=vec(X)),
+                   T(r'Nhu cầu từng loại vật liệu: $AX=<A><X>^T=<n>^T$.', A=pmat(A), X=vec(X), n=vec(need)),
+                   T(r'Chi phí: $<c_1>\cdot<n_1>+<c_2>\cdot<n_2>+<c_3>\cdot<n_3>=<ok>$.',
+                     c_1=c[0], c_2=c[1], c_3=c[2],
+                     n_1=need[0], n_2=need[1], n_3=need[2], ok=ok))
         return NQ(q, ok, [sum(need), ok + c[0] * X[0], ok - need[2]], ex)
     if v == 1:
         Rm, Cm = rmat(rng, 3, 2, 1, 4), rmat(rng, 2, 3, 1, 4)
@@ -297,7 +445,12 @@ def s22(rng, k):
         raw = Rm * comp
         q = T(r'Một xưởng dùng 3 loại nguyên liệu để làm 2 loại linh kiện, rồi dùng linh kiện để lắp 3 loại sản phẩm. Ma trận $R = <R>$ cho số đơn vị nguyên liệu loại $i$ cần cho 1 linh kiện loại $j$; ma trận $C = <C>$ cho số linh kiện loại $i$ cần cho 1 sản phẩm loại $j$. Xưởng nhận đơn hàng gồm $<o>$ sản phẩm các loại 1, 2, 3. Tổng số đơn vị nguyên liệu (cả ba loại) cần dùng cho đơn hàng bằng',
               R=pmat(Rm), C=pmat(Cm), o=', '.join(str(i) for i in O))
-        ex = T(r'Số linh kiện: $C\cdot<o>^T = <c>^T$; nguyên liệu: $R\cdot<c>^T = <r>^T$, tổng bằng $<ok>$.', o=vec(O), c=vec(comp), r=vec(raw), ok=sum(raw))
+        ex = steps(T(r'Số linh kiện cần: $C<o>^T=<C><o>^T=<c>^T$.',
+                     C=pmat(Cm), o=vec(O), c=vec(comp)),
+                   T(r'Số nguyên liệu cần: $R<c>^T=<R><c>^T=<r>^T$.',
+                     R=pmat(Rm), c=vec(comp), r=vec(raw)),
+                   T(r'Tổng lượng nguyên liệu: $<r1>+<r2>+<r3>=<ok>$.',
+                     r1=raw[0], r2=raw[1], r3=raw[2], ok=sum(raw)))
         return NQ(q, sum(raw), [sum(comp), sum(Rm) * sum(O), sum(raw) - raw[0]], ex)
     if v == 2:
         A, X = rmat(rng, 2, 3, 1, 4), Matrix([rng.choice([10, 20, 30, 40]) for _ in range(3)])
@@ -308,7 +461,13 @@ def s22(rng, k):
             raise Retry
         q = T(r'Một hãng dùng 2 loại vật liệu để sản xuất 3 loại sản phẩm với ma trận định mức $A = <A>$ ($a_{ij}$ là số đơn vị vật liệu loại $i$ cần cho 1 đơn vị sản phẩm loại $j$). Hãng sản xuất và bán hết lần lượt $<x>$ đơn vị sản phẩm các loại; giá mỗi đơn vị vật liệu loại 1, 2 là $<c>$; giá bán mỗi đơn vị sản phẩm loại 1, 2, 3 là $<p>$ (cùng đơn vị tiền). Lợi nhuận (doanh thu trừ chi phí vật liệu) của hãng bằng',
               A=pmat(A), x=', '.join(str(i) for i in X), c=' và '.join(str(i) for i in cost), p=', '.join(str(i) for i in price))
-        ex = T(r'Vật liệu cần dùng $AX = <n>^T$, chi phí $<c>$; doanh thu $<r>$; lợi nhuận $<ok>$.', n=vec(need), c=cst, r=rev, ok=rev - cst)
+        ex = steps(T(r'Vật liệu cần dùng: $AX=<A><X>^T=<n>^T$.', A=pmat(A), X=vec(X), n=vec(need)),
+                   T(r'Chi phí vật liệu: $<c1>\cdot<n1>+<c2>\cdot<n2>=<cst>$.',
+                     c1=cost[0], c2=cost[1], n1=need[0], n2=need[1], cst=cst),
+                   T(r'Doanh thu: $<p1>\cdot<x1>+<p2>\cdot<x2>+<p3>\cdot<x3>=<rev>$.',
+                     p1=price[0], p2=price[1], p3=price[2],
+                     x1=X[0], x2=X[1], x3=X[2], rev=rev),
+                   T(r'Lợi nhuận: $<rev>-<cst>=<ok>$.', rev=rev, cst=cst, ok=rev - cst))
         return NQ(q, rev - cst, [rev, cst, rev - sum(need)], ex)
     if v == 3:
         A = Matrix([[R(rng.choice([1, 2, 3]), 10), R(rng.choice([2, 3, 4]), 10)], [R(rng.choice([2, 3, 4]), 10), R(rng.choice([1, 2]), 10)]])
@@ -318,7 +477,13 @@ def s22(rng, k):
             raise Retry
         q = T(r'Một nền kinh tế gồm 2 ngành có ma trận hệ số chi phí trực tiếp (mô hình cân đối liên ngành Leontief) $A = <A>$, trong đó $a_{ij}$ là giá trị sản phẩm ngành $i$ mà ngành $j$ cần dùng để làm ra 1 đơn vị giá trị sản phẩm của mình. Yêu cầu về sản phẩm cuối cùng của hai ngành lần lượt là $<d1>$ và $<d2>$. Biết véc tơ tổng sản lượng $X$ thỏa mãn $(I - A)X = D$, tổng giá trị sản lượng $x_1 + x_2$ của hai ngành bằng',
               A=r'\begin{pmatrix}%s & %s \\ %s & %s\end{pmatrix}' % tuple(vn(a, 1).replace(',', '{,}') for a in A), d1=D[0], d2=D[1])
-        ex = T(r'Giải hệ $(I - A)X = D$ được $x_1 = <a>,\ x_2 = <b>$.', a=X[0], b=X[1])
+        coef = I2 - A
+        ex = steps(T(r'$I-A=<M>$; do đó $\begin{pmatrix}<a11>&<a12>\\<a21>&<a22>\end{pmatrix}\begin{pmatrix}x_1\\x_2\end{pmatrix}=\begin{pmatrix}<d1>\\<d2>\end{pmatrix}$.',
+                     M=pmat(coef), a11=coef[0, 0], a12=coef[0, 1],
+                     a21=coef[1, 0], a22=coef[1, 1], d1=D[0], d2=D[1]),
+                   *gauss_steps(coef, D),
+                   T(r'$x_1=<a>,\quad x_2=<b>\Rightarrow x_1+x_2=<sum>$.',
+                     a=X[0], b=X[1], sum=sum(X)))
         return NQ(q, sum(X), [sum(D), X[0], X[1], sum(X) + sum(D)], ex)
     pa, pb = rng.choice([10, 20, 30]), rng.choice([10, 20, 40])
     a0, b0 = rng.choice([400, 500, 600, 800]), rng.choice([300, 400, 500, 700])
@@ -329,7 +494,11 @@ def s22(rng, k):
         raise Retry
     q = T(r'Thị trường viễn thông ở một địa phương có hai nhà mạng X và Y. Mỗi tháng có <pa>% khách hàng của X chuyển sang Y và <pb>% khách hàng của Y chuyển sang X; tổng số khách hàng không đổi. Hiện tại X có <a0> nghìn khách, Y có <b0> nghìn khách. Gọi $P = <P>$ là ma trận chuyển, khi đó số khách sau mỗi tháng được tính bằng cách nhân $P$ với véc tơ số khách tháng trước. Số khách hàng (nghìn người) của nhà mạng X sau 2 tháng bằng',
           pa=pa, pb=pb, a0=a0, b0=b0, P=r'\begin{pmatrix}%s & %s \\ %s & %s\end{pmatrix}' % tuple(vn(a, 1).replace(',', '{,}') for a in P))
-    ex = T(r'Sau 1 tháng: $<x1>$; sau 2 tháng: $<x2>$ (nghìn khách của X và Y).', x1=vec(x1), x2=vec(x2))
+    ex = steps(T(r'Sau tháng thứ nhất: $P\begin{pmatrix}<a>\\<b>\end{pmatrix}=<P><x1>^T=<r1>^T$ (nghìn khách).',
+                 a=a0, b=b0, P=pmat(P), x1=vec([a0, b0]), r1=vec(x1)),
+               T(r'Sau tháng thứ hai: $P<r1>^T=<P><x1>^T=<r2>^T$ (nghìn khách).',
+                 P=pmat(P), r1=vec(x1), x1=vec(x1), r2=vec(x2)),
+               T(r'Nhà mạng X có <x> nghìn khách.', x=x2[0]))
     return NQ(q, x2[0], [x1[0], x2[1], a0, x1[1]], ex)
 
 
@@ -343,7 +512,28 @@ def s23(rng, k):
     A = Matrix([r1, r2, r3[:3] + [m_]])
     if A.subs(m_, m0).rank() != 2 or A.subs(m_, m0 + 1).rank() != 3 or Matrix([r1[:3], r2[:3]]).rank() != 2:
         raise Retry
-    ex = T(r'Ba tọa độ đầu của hàng 3 bằng $<al>$ lần hàng 1 cộng $<be>$ lần hàng 2, nên hạng bằng 2 khi và chỉ khi phần tử cuối cũng thỏa mãn hệ thức đó: $m = <m0>$; ngược lại hạng bằng 3.', al=al, be=be, m0=m0)
+    minor_cols = next((i, j) for i, j in combinations(range(3), 2)
+                      if Matrix([[r1[i], r1[j]], [r2[i], r2[j]]]).det() != 0)
+    i, j = minor_cols
+    minor = Matrix([[r1[i], r1[j]], [r2[i], r2[j]]])
+    reduced = Matrix([r1, r2, [0, 0, 0, m_ - m0]])
+    operation = r'R_3 \leftarrow R_3' + ''.join(
+        (' + ' if coefficient > 0 else ' - ') +
+        ('' if abs(coefficient) == 1 else tx(abs(coefficient))) + 'R_%d' % row
+        for row, coefficient in ((1, -al), (2, -be)) if coefficient
+    )
+    last_entry = tx(m_ - m0)
+    ex = steps(
+        '$%s$.' % operation,
+        T(r'$A = <A> \xrightarrow{<op>} <B>$.',
+          A=pmat(A), B=pmat(reduced), op=operation),
+        T(r'$\det <M> = <d> \ne 0$, nên hai hàng đầu độc lập tuyến tính.',
+          M=pmat(minor), d=minor.det()),
+        T(r'$m = <m0> \Rightarrow R_3 = (0,0,0,0) \Rightarrow \operatorname{rank}(A)=2$.',
+          m0=m0),
+        T(r'$m \ne <m0> \Rightarrow R_3 = (0,0,0,<last>) \ne (0,0,0,0) \Rightarrow \operatorname{rank}(A)=3$.',
+          m0=m0, last=last_entry),
+        T(r'<b>Kết quả:</b> $m = <m0>$.', m0=m0))
     if k % 2 == 0:
         q = T(r'Cho ma trận $A = <A>$ với $m$ là tham số. Hạng của $A$ bằng 2 khi và chỉ khi', A=pmat(A))
         return NQ(q, m0, [m0 + 1, -m0, m0 - 1, r1[3] + r2[3]], ex, fmt=lambda v_: '$m = %s$' % tx(v_))
@@ -392,7 +582,33 @@ def s24(rng, k):
         raise Retry
     q = 'Cho các ma trận ' + given + '. Ma trận $X$ thỏa mãn ' + st + ' là'
     fm = lambda Z: '$' + pmat(Z) + '$.'
-    return Q(q, fm(X), [fm(w) for w in wrongs[:3]], sol + T('; kết quả $X = <X>$.', X=pmat(X)))
+    if v == 0:
+        ex = steps(r'$AX=B \Rightarrow X=A^{-1}B$.',
+                   T(r'$A^{-1}=<Ai>,\qquad A^{-1}B=<X>$.', Ai=pmat(A.inv()), X=pmat(A.inv() * B)),
+                   T(r'Kiểm tra: $A<X>=<B>$.', X=pmat(X), B=pmat(A * X)))
+    elif v == 1:
+        ex = steps(r'$XA=B \Rightarrow X=BA^{-1}$ (nhân $A^{-1}$ bên phải).',
+                   T(r'$A^{-1}=<Ai>,\qquad BA^{-1}=<X>$.', Ai=pmat(A.inv()), X=pmat(B * A.inv())),
+                   T(r'Kiểm tra: $<X>A=<B>$.', X=pmat(X), A=pmat(A), B=pmat(X * A)))
+    elif v == 2:
+        ex = steps(r'$AXB=C \Rightarrow X=A^{-1}CB^{-1}$ (nhân bên trái $A^{-1}$, bên phải $B^{-1}$).',
+                   T(r'$A^{-1}=<Ai>,\quad B^{-1}=<Bi>$.', Ai=pmat(A.inv()), Bi=pmat(B2.inv())),
+                   T(r'$X=A^{-1}CB^{-1}=<X>$.', X=pmat(A.inv() * C * B2.inv())),
+                   T(r'Kiểm tra: $A<X>B=<C>$.', X=pmat(X), B=pmat(B2), C=pmat(A * X * B2)))
+    elif v == 3:
+        ex = steps(r'$AX=X+B \Rightarrow (A-I)X=B$.',
+                   T(r'$A-I=<N>,\qquad B=<B>$.', N=pmat(N), B=pmat(B)),
+                   T(r'$X=(A-I)^{-1}B=<Ni><B>=<X>$.',
+                     Ni=pmat(N.inv()), B=pmat(B), X=pmat(N.inv() * B)),
+                   T(r'Kiểm tra: $<A><solx>=<rhsx>+<B>$.',
+                     A=pmat(A), solx=pmat(X), rhsx=pmat(X), B=pmat(B)))
+    else:
+        ex = steps(T(r'$<c>X+AX=B \Rightarrow (<c>I+A)X=B$.', c=c),
+                   T(r'$<c>I+A=<N>,\qquad B=<B>$.', c=c, N=pmat(N), B=pmat(B)),
+                   T(r'$X=(<c>I+A)^{-1}B=<Ni><B>=<X>$.',
+                     c=c, Ni=pmat(N.inv()), B=pmat(B), X=pmat(N.inv() * B)),
+                   T(r'Kiểm tra: $(<c>I+A)<X>=<B>$.', c=c, A=pmat(A), X=pmat(X), B=pmat(B)))
+    return Q(q, fm(X), [fm(w) for w in wrongs[:3]], ex)
 
 
 # ---------- Câu 25: hệ phương trình chứa tham số ----------
@@ -402,7 +618,11 @@ def s25(rng, k):
         A = Matrix([[1, 1, 1], [1, m_, a], [1, a, m_]])
         roots = sp.solve(A.det(), m_)
         q = T(r'Hệ phương trình thuần nhất $\begin{cases}x + y + z = 0\\ x + my <a>z = 0\\ x <a>y + mz = 0\end{cases}$ (với $x, y, z$ là ẩn) luôn có nghiệm tầm thường $(0;0;0)$. Tích tất cả các giá trị của $m$ để hệ có nghiệm không tầm thường bằng', a=('+ ' if a > 0 else '- ') + ('' if abs(a) == 1 else str(abs(a))))
-        ex = T(r'Hệ thuần nhất có nghiệm không tầm thường khi định thức hệ số bằng 0: $<d> = 0 \Leftrightarrow m \in \{<r>\}$.', d=sp.factor(A.det()), r=';'.join(str(r) for r in roots))
+        ex = steps(T(r'$\det A=<det>=<factor>$.', det=A.det(), factor=sp.factor(A.det())),
+                   T(r'$\det A=0 \Leftrightarrow <factor>=0 \Leftrightarrow m\in\{<roots>\}$.',
+                     factor=sp.factor(A.det()), roots=';'.join(str(root) for root in roots)),
+                   T(r'Các nghiệm là <r1> và <r2>; tích cần tìm: $<r1>\cdot<r2>=<ok>$.',
+                     r1=roots[0], r2=roots[1], ok=roots[0] * roots[1]))
         return NQ(q, roots[0] * roots[1], [roots[0] + roots[1], a, -roots[0] * roots[1], a * a], ex)
     p, qq, s, c = rng.randint(1, 3), rng.randint(-2, 2), rng.randint(1, 3), rng.choice([1, 2, 3])
     b1, b2 = rng.randint(1, 3), rng.randint(2, 6)
@@ -412,7 +632,23 @@ def s25(rng, k):
     lhs3 = tx(x + (p + 1) * y) + ' + ' + ('(m^2 %s %d)z' % ('+' if co >= 0 else '-', abs(co)) if co else 'm^2z')
     rhs3 = tx(m_ + (b2 - b1 - c))
     sysm = r'\begin{cases}%s\\ %s\\ %s = %s\end{cases}' % (tx(e1), tx(e2), lhs3, rhs3)
-    ex = T(r'Khử Gauss ($h_2 - 2h_1$ và $h_3 - h_1$, rồi trừ hai phương trình mới cho nhau) được $(m^2 - <c2>)z = m - <c>$: với $m = <c>$ hệ có vô số nghiệm, với $m = -<c>$ hệ vô nghiệm, các trường hợp còn lại hệ có nghiệm duy nhất.', c2=c * c, c=c)
+    rhs12 = b2 - 2 * b1
+    rhs3 = rhs12 - c
+    x_base = sp.expand(b1 - p * rhs12)
+    x_free = sp.expand(x_base + (p * s - qq) * symbols('t'))
+    x_unique = sp.factor(x_base + R(p * s - qq, 1) / (m_ + c))
+    y_free = sp.expand(rhs12 - s * symbols('t'))
+    y_unique = sp.factor(rhs12 - R(s, 1) / (m_ + c))
+    ex = steps(
+        T(r'$h_2-2h_1:\quad y+<s>z=<rhs>$.', s=s, rhs=rhs12),
+        T(r'$h_3-h_1:\quad y+(m^2+<s>-<c>^2)z=m<rhs3>$.',
+          s=s, c=c, rhs3=(' + ' if rhs3 >= 0 else ' - ') + str(abs(rhs3))),
+        T(r'Khử $y$: $(m^2-<c>^2)z=m-<c>\Leftrightarrow(m-<c>)(m+<c>)z=m-<c>$.', c=c),
+        T(r'$m=<c>\Rightarrow 0=0$: đặt $z=t$, $y=<y>$ và $x=<x>$. Vậy có vô số nghiệm.',
+          c=c, y=tx(y_free), x=tx(x_free)),
+        T(r'$m=-<c>\Rightarrow 0=-2\cdot<c>\ne0$: hệ vô nghiệm.', c=c),
+        T(r'$m\ne\pm<c>\Rightarrow z=\dfrac{1}{m+<c>},\quad y=<y>,\quad x=<x>$. Hệ có nghiệm duy nhất.',
+          c=c, y=tx(y_unique), x=tx(x_unique)))
     head = 'Cho hệ phương trình $' + sysm + '$ (với $x, y, z$ là ẩn, $m$ là tham số). '
     f = lambda s_: '$' + s_ + '$.'
     if k % 4 == 0:
@@ -441,7 +677,19 @@ def s29(rng, k):
         q = r'Khảo sát thị trường của 3 loại hàng hóa có liên quan được đánh số 1, 2, 3. Lượng cung $s_i$ và lượng cầu $d_i$ của hàng hóa thứ $i$ phụ thuộc vào giá $p_1, p_2, p_3$ của cả ba loại theo các hệ thức: $$' + syst + \
             r'.$$ Thị trường cân bằng khi $s_i = d_i$ với mọi $i = \overline{1,3}$. ' + \
             ('Tổng lượng cung của cả ba loại hàng hóa tại trạng thái cân bằng bằng' if ask_q else r'Gọi $p_1^*, p_2^*, p_3^*$ là các mức giá cân bằng, giá trị của $p_1^* + p_2^* + p_3^*$ bằng')
-        ex = T(r'Giải hệ $s_i = d_i$ được giá cân bằng $<p>$, lượng cung (cầu) tương ứng $<q>$.', p=vec(ps), q=vec(qty))
+        equilibrium = S - D
+        prices = Matrix(ps)
+        rhs = equilibrium * prices
+        ex = steps(T(r'Tại cân bằng, $s_i=d_i$. Trừ lượng cầu khỏi lượng cung theo từng loại: $(S-D)P=(S-D)<P0>^T$.',
+                     P0=vec(ps)),
+                   T(r'$S-D=<M>$, nên hệ giá là $<M>P=<rhs>^T$.',
+                     M=pmat(equilibrium), rhs=vec(rhs)),
+                   *gauss_steps(equilibrium, rhs),
+                   T(r'$P=<P>^T$; thay vào hàm cung hoặc cầu được $Q=<Q>^T$.',
+                     P=vec(ps), Q=vec(qty)),
+                   T(r'Tổng lượng cung/cầu: $<q1>+<q2>+<q3>=<sumq>$; tổng giá: $<p1>+<p2>+<p3>=<sump>$.',
+                     q1=qty[0], q2=qty[1], q3=qty[2], sumq=sum(qty),
+                     p1=ps[0], p2=ps[1], p3=ps[2], sump=sum(ps)))
         ok, other = (sum(qty), sum(ps)) if ask_q else (sum(ps), sum(qty))
         return NQ(q, ok, [other, ok + 5, ok - 5, ok + 10], ex)
     if v == 1:
@@ -452,7 +700,12 @@ def s29(rng, k):
         b = A * X
         q = T(r'Một xưởng sản xuất 3 loại sản phẩm từ 3 loại nguyên liệu I, II, III. Mỗi đơn vị sản phẩm loại 1, 2, 3 cần lần lượt $<r1>$ đơn vị nguyên liệu I; $<r2>$ đơn vị nguyên liệu II và $<r3>$ đơn vị nguyên liệu III. Kho hiện có $<b1>$, $<b2>$ và $<b3>$ đơn vị nguyên liệu I, II, III. Nếu xưởng lập kế hoạch dùng vừa hết cả ba loại nguyên liệu thì tổng số sản phẩm làm ra bằng',
               r1=', '.join(str(i) for i in A.row(0)), r2=', '.join(str(i) for i in A.row(1)), r3=', '.join(str(i) for i in A.row(2)), b1=b[0], b2=b[1], b3=b[2])
-        ex = T(r'Gọi $x, y, z$ là số sản phẩm mỗi loại; giải hệ ba phương trình được $<X>$.', X=vec(X))
+        ex = steps(r'Gọi $x,y,z$ lần lượt là số sản phẩm loại 1, 2, 3.',
+                   T(r'Hệ nguyên liệu: $<A>\begin{pmatrix}x\\y\\z\end{pmatrix}=<b>^T$.',
+                     A=pmat(A), b=vec(b)),
+                   *gauss_steps(A, b),
+                   T(r'$(x,y,z)^T=<X>^T$; tổng sản phẩm: $<x>+<y>+<z>=<sum>$.',
+                     X=vec(X), x=X[0], y=X[1], z=X[2], sum=sum(X)))
         return NQ(q, sum(X), [sum(X) + 10, sum(X) - 10, max(X) * 2, sum(b) // 10], ex)
     if v == 2:
         bb, tt = rng.choice([(R(8, 10), R(1, 4)), (R(3, 4), R(1, 5)), (R(9, 10), R(1, 3)), (R(4, 5), R(1, 2))])
@@ -466,14 +719,28 @@ def s29(rng, k):
         name, ok = [('mức thu nhập cân bằng $Y^*$', Y), ('mức tiêu dùng $C^*$ tại trạng thái cân bằng', C), ('số thuế $T^*$ tại trạng thái cân bằng', Tx)][which]
         q = T(r'Xét mô hình cân bằng thu nhập quốc dân: $Y = C + I_0 + G_0$; $C = <c0> + <b>(Y - T)$; $T = <t>Y$, trong đó $Y$ là thu nhập, $C$ là tiêu dùng, $T$ là thuế, đầu tư $I_0 = <I>$ và chi tiêu chính phủ $G_0 = <G>$. Giá trị của ' + name + ' bằng',
               c0=c0, b=vn(bb, 2).rstrip('0').replace(',', '{,}'), t=vn(tt, 2).rstrip('0').replace(',', '{,}') if tt.q != 3 else r'\dfrac13', I=I0, G=G0)
-        ex = T(r'Thế $T$ vào $C$ rồi vào phương trình đầu: $Y^* = <Y>,\ T^* = <T>,\ C^* = <C>$.', Y=Y, T=Tx, C=C)
+        ex = steps(
+            T(r'$T=tY\Rightarrow C=c_0+b(Y-tY)=<c0>+<b>(1-<t>)Y$.',
+              c0=c0, b=tx(bb), t=tx(tt)),
+            T(r'$Y=C+I_0+G_0\Rightarrow [1-<b>(1-<t>)]Y=<c0>+<I>+<G>$.',
+              b=tx(bb), t=tx(tt), c0=c0, I=I0, G=G0),
+            T(r'$Y=\dfrac{<total>}{1-<b>(1-<t>)}=<Y>$.',
+              total=c0 + I0 + G0, b=tx(bb), t=tx(tt), Y=Y),
+            T(r'$T=tY=<t>\cdot<Y>=<T>,\qquad C=c_0+b(Y-T)=<c0>+<b>(<Y>-<T>)=<C>$.',
+              t=tx(tt), Y=Y, T=Tx, c0=c0, b=tx(bb), C=C))
         return NQ(q, ok, [v_ for v_ in (Y, C, Tx, c0 + I0 + G0) if v_ != ok], ex)
     pr = rng.choice([(50, 80, 120), (40, 60, 100), (30, 50, 90), (60, 90, 150)])
     xs = [rng.choice([80, 100, 120, 150]), rng.choice([40, 50, 60, 70]), rng.choice([10, 20, 30])]
     N, rev, dd = sum(xs), sum(a * b for a, b in zip(pr, xs)), xs[0] - xs[1] - xs[2]
     q = T(r'Một đêm nhạc gây quỹ bán ba hạng vé: hạng thường giá <a> nghìn đồng, hạng trung giá <b> nghìn đồng và hạng VIP giá <c> nghìn đồng. Ban tổ chức bán được tổng cộng <N> vé, thu về <rev> nghìn đồng; số vé hạng thường nhiều hơn tổng số vé hai hạng còn lại là <dd> vé. Số vé hạng VIP đã bán bằng',
           a=pr[0], b=pr[1], c=pr[2], N=N, rev=rev, dd=dd)
-    ex = T(r'Hệ: $x + y + z = <N>$; $<a>x + <b>y + <c>z = <rev>$; $x - y - z = <dd>$. Giải được $<X>$.', N=N, a=pr[0], b=pr[1], c=pr[2], rev=rev, dd=dd, X=vec(xs))
+    coefficient = Matrix([[1, 1, 1], list(pr), [1, -1, -1]])
+    rhs = Matrix([N, rev, dd])
+    ex = steps(T(r'Hệ phương trình: $\begin{cases}x+y+z=<N>\\<a>x+<b>y+<c>z=<rev>\\x-y-z=<dd>\end{cases}$.',
+                 N=N, a=pr[0], b=pr[1], c=pr[2], rev=rev, dd=dd),
+               *gauss_steps(coefficient, rhs),
+               T(r'$(x,y,z)=(<x>,<y>,<z>)$; số vé VIP đã bán: $z=<z>$.',
+                 x=xs[0], y=xs[1], z=xs[2]))
     return NQ(q, xs[2], [xs[1], xs[2] + 10, xs[2] - 5, xs[1] - xs[2]], ex)
 
 
@@ -488,12 +755,34 @@ def g1(rng, k):
         A = a * I3 + b * sp.ones(3, 3)
         stem = T(r'Trong không gian véc tơ $\mathbb{R}^3$, cho hệ véc tơ $S = \{u_1<a>;\ u_2<b>;\ u_3<c>\}$. Gọi $A$ là ma trận có các dòng theo thứ tự là các véc tơ trong $S$ và $I$ là ma trận đơn vị cấp 3.', a=vec(A.row(0)), b=vec(A.row(1)), c=vec(A.row(2)))
         note = T(r'$A = <a>I + <b>J$ ($J$ là ma trận toàn số 1) có các trị riêng $<a>$ (bội 2) và $<l>$.', a=a, b='(%d)' % b if b < 0 else b, l=a + 3 * b)
-        qs = [NQ('Định thức của ma trận $A$ bằng', A.det(), [a ** 3, a + 3 * b, 0, a * a * (a + b)], note),
-              NQ('Tổng tất cả các phần tử của ma trận nghịch đảo $A^{-1}$ bằng', sum(A.inv()), [R(3, a), R(1, a + 3 * b), 3 * (a + 3 * b)], T(r'Véc tơ $(1;1;1)$ là véc tơ riêng ứng với trị riêng $<l>$ nên tổng mỗi hàng của $A^{-1}$ bằng $\dfrac{1}{<l>}$; tổng tất cả bằng $<s>$.', l=a + 3 * b, s=sum(A.inv())))]
+        qs = [NQ('Định thức của ma trận $A$ bằng', A.det(), [a ** 3, a + 3 * b, 0, a * a * (a + b)],
+                 steps(T(r'$A=<a>I+<b>J$, trong đó $J$ có các trị riêng $0,0,3$.',
+                         a=a, b=b),
+                       T(r'Các trị riêng của $A$: $<a>,<a>,<a>+3(<b>)=<l>$.',
+                         a=a, b=b, l=a + 3 * b),
+                       T(r'$\det A=<a>\cdot<a>\cdot(<l>)=<det>$.',
+                         a=a, l=a + 3 * b, det=A.det()))),
+              NQ('Tổng tất cả các phần tử của ma trận nghịch đảo $A^{-1}$ bằng', sum(A.inv()),
+                 [R(3, a), R(1, a + 3 * b), 3 * (a + 3 * b)],
+                 steps(T(r'$A(1,1,1)^T=(<l>)(1,1,1)^T$, nên $A^{-1}(1,1,1)^T=\dfrac1{<l>}(1,1,1)^T$.',
+                         l=a + 3 * b),
+                       T(r'Mỗi hàng của $A^{-1}$ có tổng $\dfrac1{<l>}$. Có 3 hàng nên tổng mọi phần tử bằng $3\cdot\dfrac1{<l>}=\dfrac3{<l>}=<s>$.',
+                         l=a + 3 * b, s=sum(A.inv()))))]
         if (k // 3) % 2 == 0:
-            qs.append(NQ('Gọi $X$ là tập hợp các trị riêng của $A$, tổng bình phương các phần tử của $X$ bằng', a * a + (a + 3 * b) ** 2, [2 * a * a + (a + 3 * b) ** 2, (2 * a + 3 * b) ** 2, a * a + (a + 3 * b)], note + ' Tập hợp không kể bội.'))
+            qs.append(NQ('Gọi $X$ là tập hợp các trị riêng của $A$, tổng bình phương các phần tử của $X$ bằng',
+                         a * a + (a + 3 * b) ** 2,
+                         [2 * a * a + (a + 3 * b) ** 2, (2 * a + 3 * b) ** 2, a * a + (a + 3 * b)],
+                         steps(T(r'$A$ có các trị riêng $<a>$ (lặp lại), $<l>$; tập $X$ không kể bội nên $X=\{<a>,<l>\}$.',
+                                 a=a, l=a + 3 * b),
+                               T(r'$\sum_{\lambda\in X}\lambda^2=<a>^2+(<l>)^2=<ok>$.',
+                                 a=a, l=a + 3 * b, ok=a * a + (a + 3 * b) ** 2))))
         else:
-            qs.append(NQ(T(r'Số chiều của không gian nghiệm của hệ $(A - <a>I)X = 0$ (không gian riêng ứng với trị riêng $\lambda = <a>$) bằng', a=a), 2, [1, 3, 0], T(r'$A - <a>I$ có hạng 1 nên số chiều bằng $3 - 1 = 2$.', a=a)))
+            qs.append(NQ(T(r'Số chiều của không gian nghiệm của hệ $(A - <a>I)X = 0$ (không gian riêng ứng với trị riêng $\lambda = <a>$) bằng', a=a),
+                         2, [1, 3, 0],
+                         steps(T(r'$A-<a>I=<b>J=<M>$.', a=a, b=b, M=pmat(b * sp.ones(3, 3))),
+                               T(r'Ba hàng đều bằng $<b>(1,1,1)$ nên $\operatorname{rank}(A-<a>I)=1$.',
+                                 a=a, b=b),
+                               r'Theo định lý hạng–không gian nghiệm: số chiều $=3-\operatorname{rank}(A-aI)=3-1=2$.')))
         return {'stem': stem, 'questions': qs}
     if v == 1:
         p, q_ = rng.choice([(1, 2), (3, 1), (2, 1), (4, 1), (1, 3), (3, 2)])
@@ -502,16 +791,47 @@ def g1(rng, k):
         stem = T(r'Cho ma trận $A = <A>$ và gọi $I$ là ma trận đơn vị cấp 3.', A=pmat(A))
         eig = sorted(set([p + q_, p - q_, r]))
         note = T(r'Các trị riêng của $A$ là $<a>$, $<b>$ và $<r>$.', a=p + q_, b=p - q_, r=r)
-        qs = [NQ('Định thức của ma trận $A$ bằng', A.det(), [r * (p * p + q_ * q_), p * p * r, -A.det(), p * p - q_ * q_], T(r'$\det A = <r>\cdot(<p>^2 - <q>^2)$.', r=r, p=p, q=q_))]
+        qs = [NQ('Định thức của ma trận $A$ bằng', A.det(),
+                 [r * (p * p + q_ * q_), p * p * r, -A.det(), p * p - q_ * q_],
+                 steps(T(r'$\det A=<r>\det\begin{pmatrix}<p>&<q>\\<q>&<p>\end{pmatrix}$.',
+                         r=r, p=p, q=q_),
+                       T(r'$\det A=<r>(<p>\cdot<p>-<q>\cdot<q>)=<r>((<p>-<q>)(<p>+<q>))=<det>$.',
+                         r=r, p=p, q=q_, det=A.det())))]
         if (k // 3) % 2 == 0:
             rk = (A - r * I3).rank()
-            qs.append(NQ(T(r'Hạng của ma trận $A - <r>I$ bằng', r='(%d)' % r if r < 0 else r), rk, [v_ for v_ in (1, 2, 3, 0) if v_ != rk], T(r'$A - <r>I = <B>$.', r='(%d)' % r if r < 0 else r, B=pmat(A - r * I3))))
+            shifted = A - r * I3
+            block_det = (p - r) ** 2 - q_ ** 2
+            qs.append(NQ(T(r'Hạng của ma trận $A - <r>I$ bằng', r='(%d)' % r if r < 0 else r),
+                         rk, [v_ for v_ in (1, 2, 3, 0) if v_ != rk],
+                         steps(T(r'$A-rI=<B>$.', r='(%d)' % r if r < 0 else r, B=pmat(shifted)),
+                               T(r'Khối cấp 2 có định thức $(<p>-<r>)^2-<q>^2=<d>$.',
+                                 p=p, r=r, q=q_, d=block_det),
+                               T(r'Khối này khác ma trận không; do đó hạng của khối là <rank>. Hàng/cột cuối bằng 0, suy ra $\operatorname{rank}(A-rI)=<rank>$.',
+                                 rank=rk)) ))
         else:
-            qs.append(NQ('Tổng các phần tử trên đường chéo chính của ma trận $A^{-1}$ bằng', A.inv().trace(), [R(1, p) * 2 + R(1, r), A.trace(), R(1, A.det())], T(r'$A^{-1}$ có các trị riêng là nghịch đảo các trị riêng của $A$; tổng bằng $<s>$.', s=A.inv().trace())))
+            qs.append(NQ('Tổng các phần tử trên đường chéo chính của ma trận $A^{-1}$ bằng',
+                         A.inv().trace(), [R(1, p) * 2 + R(1, r), A.trace(), R(1, A.det())],
+                         steps(T(r'$\det\begin{pmatrix}<p>&<q>\\<q>&<p>\end{pmatrix}=<p>^2-<q>^2=(<p>-<q>)(<p>+<q>)$.',
+                                 p=p, q=q_),
+                               T(r'$\operatorname{tr}(A^{-1})=\dfrac1{<l1>}+\dfrac1{<l2>}+\dfrac1{<r>}=<s>$.',
+                                 l1=p + q_, l2=p - q_, r=r, s=A.inv().trace()))))
         if (k // 3) % 2 == 0:
-            qs.append(Q(T(r'Véc tơ nào sau đây là véc tơ riêng của $A$ ứng với trị riêng $\lambda = <l>$?', l=p + q_), '$(1;1;0)$.', ['$(1;-1;0)$.', '$(0;0;1)$.', '$(1;1;1)$.'], T(r'$A(1;1;0)^T = (<l>;<l>;0)^T$.', l=p + q_)))
+            qs.append(Q(T(r'Véc tơ nào sau đây là véc tơ riêng của $A$ ứng với trị riêng $\lambda = <l>$?', l=p + q_),
+                        '$(1;1;0)$.', ['$(1;-1;0)$.', '$(0;0;1)$.', '$(1;1;1)$.'],
+                        steps(T(r'$A\begin{pmatrix}1\\1\\0\end{pmatrix}=\begin{pmatrix}<p>+<q>\\<q>+<p>\\0\end{pmatrix}=\begin{pmatrix}<l>\\<l>\\0\end{pmatrix}$.',
+                                p=p, q=q_, l=p + q_),
+                              T(r'$\begin{pmatrix}<l>\\<l>\\0\end{pmatrix}=<l>\begin{pmatrix}1\\1\\0\end{pmatrix}$; vậy véc tơ riêng là $(1;1;0)$.',
+                                l=p + q_))))
         else:
-            qs.append(NQ('Gọi $X$ là tập hợp các trị riêng của $A$, tổng bình phương các phần tử của $X$ bằng', sum(e * e for e in eig), [(p + q_) ** 2 + (p - q_) ** 2 + 2 * r * r, sum(eig) ** 2, sum(eig)], note + ' Tập hợp không kể bội.'))
+            qs.append(NQ('Gọi $X$ là tập hợp các trị riêng của $A$, tổng bình phương các phần tử của $X$ bằng',
+                         sum(e * e for e in eig),
+                         [(p + q_) ** 2 + (p - q_) ** 2 + 2 * r * r, sum(eig) ** 2, sum(eig)],
+                         steps(T(r'Khối cấp 2 có trị riêng $<p>+<q>=<l1>$ và $<p>-<q>=<l2>$; phần tử cuối cho trị riêng $<r>$.',
+                                 p=p, q=q_, l1=p + q_, l2=p - q_, r=r),
+                               T(r'Tập không kể bội: $X=\{<l1>,<l2>,<r>\}$.',
+                                 l1=p + q_, l2=p - q_, r=r),
+                               T(r'$\sum_{\lambda\in X}\lambda^2=(<l1>)^2+(<l2>)^2+(<r>)^2=<sum>$.',
+                                 l1=p + q_, l2=p - q_, r=r, sum=sum(e * e for e in eig)))))
         return {'stem': stem, 'questions': qs}
     u1, u2 = [rng.randint(-1, 3) for _ in range(3)], [rng.randint(-2, 3) for _ in range(3)]
     al, be = rint(rng, -2, 3, (0,)), rint(rng, -2, 2, (0,))
@@ -526,9 +846,27 @@ def g1(rng, k):
     stem = T(r'Trong không gian véc tơ $\mathbb{R}^3$, cho hệ véc tơ $S = \{u_1<a>;\ u_2<b>;\ u_3<c>\}$ với $m$ là tham số. Gọi $A$ là ma trận có các dòng theo thứ tự là các véc tơ trong $S$.', a=vec(u1), b=vec(u2), c=vec(u3[:2] + [m_]))
     fm = lambda v_: '$m = %s$' % tx(v_)
     d1 = d.subs(m_, m1)
-    qs = [NQ('Hệ $S$ phụ thuộc tuyến tính khi và chỉ khi', m0, [m1, -m0, m0 + 3, 0], T(r'$\det A = <d>$.', d=sp.factor(d)), fmt=fm),
-          NQ(T(r'Với $m = <m1>$, giá trị của $\det\left(<c>A^{-1}\right)$ bằng', m1=m1, c=c), R(c ** 3, d1), [R(c, d1), c ** 3 * d1, R(1, d1), -R(c ** 3, d1)], T(r'$\det A = <d1>$ nên $\det(<c>A^{-1}) = \dfrac{<c>^3}{<d1>}$.', d1=d1, c=c)),
-          NQ(T(r'Với $m = <m0>$, biết $u_3 = au_1 + bu_2$. Giá trị của $a\cdot b$ bằng', m0=m0), al * be, [al + be, -al * be, al - be, al * be + 1], T(r'Từ hai tọa độ đầu giải được $a = <a>,\ b = <b>$ (tọa độ thứ ba cũng thỏa mãn).', a=al, b=be))]
+    det_roots = sp.solve(d, m_)
+    qs = [NQ('Hệ $S$ phụ thuộc tuyến tính khi và chỉ khi', m0, [m1, -m0, m0 + 3, 0],
+             steps(T(r'$\det A=<det>=<factor>$.', det=d, factor=sp.factor(d)),
+                   T(r'$\det A=0\Leftrightarrow<factor>=0\Leftrightarrow m=<m0>$.',
+                     factor=sp.factor(d), m0=m0)), fmt=fm),
+          NQ(T(r'Với $m = <m1>$, giá trị của $\det\left(<c>A^{-1}\right)$ bằng', m1=m1, c=c),
+             R(c ** 3, d1), [R(c, d1), c ** 3 * d1, R(1, d1), -R(c ** 3, d1)],
+             steps(T(r'$\det A|_{m=<m1>}=<d1>\ne0$, nên $A$ khả nghịch.', m1=m1, d1=d1),
+                   T(r'$\det(<c>A^{-1})=<c>^3\det(A^{-1})=\dfrac{<c>^3}{\det A}=\dfrac{<c>^3}{<d1>}=<ans>$.',
+                     c=c, d1=d1, ans=R(c ** 3, d1)))),
+          NQ(T(r'Với $m = <m0>$, biết $u_3 = au_1 + bu_2$. Giá trị của $a\cdot b$ bằng', m0=m0),
+             al * be, [al + be, -al * be, al - be, al * be + 1],
+             steps(T(r'Tọa độ thứ nhất và hai của $u_3=au_1+bu_2$ cho hệ: $\begin{cases}<u11>a+<u21>b=<u31>\\<u12>a+<u22>b=<u32>\end{cases}$.',
+                     u11=u1[0], u21=u2[0], u31=u3[0],
+                     u12=u1[1], u22=u2[1], u32=u3[1]),
+                   T(r'Định thức hệ số: $<u11>\cdot<u22>-<u21>\cdot<u12>=<minor>\ne0$.',
+                     u11=u1[0], u22=u2[1], u21=u2[0], u12=u1[1],
+                     minor=u1[0] * u2[1] - u2[0] * u1[1]),
+                   T(r'Giải hệ được $a=<a>,\ b=<b>$. Kiểm tra tọa độ thứ ba: $<a>\cdot<u13>+<b>\cdot<u23>=<u33>$.',
+                     a=al, b=be, u13=u1[2], u23=u2[2], u33=u3[2]),
+                   T(r'$a\cdot b=<a>\cdot<b>=<ans>$.', a=al, b=be, ans=al * be)))]
     return {'stem': stem, 'questions': qs}
 
 
@@ -566,4 +904,17 @@ def s46(rng, k):
     if sp.nsimplify(ok).q > 4 or abs(ok) > 2000:
         raise Retry
     q = T(r'Cho $A = (a_{ij})$ là ma trận vuông cấp 3 với $a_{ij} = <f>$. Gọi $A^T$ là ma trận chuyển vị của $A$, tính $<e>$.', f=name, e=expr)
-    return SQ(q, short_num(ok), T(r'$A = <A>$, $\det A = <d>$; kết quả bằng ', A=pmat(A), d=d) + how + T(' $= <ok>$.', ok=ok))
+    det_calculation = det3_expansion(A)
+    if v == 0:
+        explanation = steps(det_calculation,
+                            T(r'$\det(<c>A^T)=<c>^3\det(A^T)=<c>^3\det A=<c>^3\cdot<d>=<ok>$.',
+                              c=c, d=d, ok=ok))
+    elif v == 1:
+        explanation = steps(det_calculation,
+                            T(r'$\det(<c>A^{-1})=<c>^3\det(A^{-1})=\dfrac{<c>^3}{\det A}=\dfrac{<c>^3}{<d>}=<ok>$.',
+                              c=c, d=d, ok=ok))
+    else:
+        explanation = steps(det_calculation,
+                            T(r'$\det\left(\dfrac12A^TA\right)=\dfrac{1}{2^3}\det(A^T)\det(A)=\dfrac{(\det A)^2}{8}=\dfrac{<d>^2}{8}=<ok>$.',
+                              d=d, ok=ok))
+    return SQ(q, short_num(ok), explanation)

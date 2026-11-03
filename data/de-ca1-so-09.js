@@ -40,7 +40,7 @@
     "$1$."
    ],
    "answer": 0,
-   "explain": "Có $C_4^2 = 6$ hệ con gồm 2 véc tơ, trong đó 1 hệ phụ thuộc tuyến tính<br>Kết quả: $5$",
+   "explain": "Số hệ con cần xét: $C_4^2=6$.<br>$\\det\\begin{pmatrix}2 & -2\\\\0 & -2\\end{pmatrix}=-4$.<br>$\\det\\begin{pmatrix}2 & -2\\\\0 & -1\\end{pmatrix}=-2$.<br>$\\det\\begin{pmatrix}2 & -2\\\\2 & -1\\end{pmatrix}=2$.<br>$\\det\\begin{pmatrix}0 & -2\\\\0 & -1\\end{pmatrix}=0$.<br>$\\det\\begin{pmatrix}0 & -2\\\\2 & -1\\end{pmatrix}=4$.<br>$\\det\\begin{pmatrix}0 & -1\\\\2 & -1\\end{pmatrix}=2$.<br>Hệ là cơ sở khi định thức khác 0; có 5 định thức khác 0 nên có 5 cơ sở.",
    "note": "Một véc tơ khác không luôn độc lập tuyến tính; hai véc tơ độc lập khi không cùng phương; trong $\\mathbb{R}^n$ không có hệ độc lập nào nhiều hơn $n$ véc tơ."
   },
   {
@@ -52,7 +52,7 @@
     "$0$."
    ],
    "answer": 0,
-   "explain": "$u_3 = - 2 u_{1} - u_{2}$; $u_4 = u_{1} - 2 u_{2}$; $u_5 = - 2 u_{1} + 2 u_{2}$; còn $u_1, u_2$ độc lập tuyến tính nên hạng bằng 2<br>Kết quả: $3$",
+   "explain": "$u_3 = - 2 u_{1} - u_{2}$<br>$u_4 = u_{1} - 2 u_{2}$<br>$u_5 = - 2 u_{1} + 2 u_{2}$<br>Với các cột 1,2, $\\det \\begin{pmatrix}2 & -1 \\\\ 0 & -1\\end{pmatrix}=-2\\ne 0$ nên hệ véc tơ $u_1, u_2$ độc lập tuyến tính.<br>Các véc tơ còn lại là tổ hợp tuyến tính đã nêu; do đó hạng không vượt quá 2.<br>Vậy $\\operatorname{rank}(S)=2$.<br>Cần bỏ ít nhất $5-2=3$ véc tơ để còn hệ độc lập tuyến tính.",
    "note": "Hạng = số hàng khác không của dạng bậc thang; số véc tơ thừa = số véc tơ $-$ hạng."
   },
   {
@@ -99,7 +99,7 @@
     "$6.4$."
    ],
    "answer": 0,
-   "explain": "$\\left(-2\\right)^{3}\\cdot(\\det A)^{2}\\cdot\\dfrac{1}{\\det B} = - \\dfrac{32}{5}$<br>Kết quả: $-6.4$",
+   "explain": "$\\det\\left(-2A^{2}(B^T)^{-1}\\right)=(-2)^{3}(\\det A)^{2}\\dfrac{1}{\\det(B^T)}$.<br>$=(-2)^{3}\\cdot(-2)^{2}\\cdot\\dfrac{1}{5}$.<br>$=- \\dfrac{32}{5}$.",
    "note": "$\\det(kA) = k^n\\det A$, $\\det\\left(A^{-1}\\right) = \\dfrac{1}{\\det A}$, $\\det\\left(A^T\\right) = \\det A$, $\\det(AB) = \\det A\\cdot\\det B$."
   },
   {
@@ -171,7 +171,7 @@
     "$0$."
    ],
    "answer": 0,
-   "explain": "$f'_x = - 2 x y - y^{2} + 2 y,\\quad f'_y = - x^{2} - 2 x y + 2 x$<br>Giải hệ $f'_x = f'_y = 0$ được các điểm dừng: $(0;0)$, $(0;2)$, $(\\dfrac{2}{3};\\dfrac{2}{3})$, $(2;0)$<br>Giá trị $AC - B^2$ tại các điểm đó lần lượt: $-4$, $-4$, $\\dfrac{4}{3}$, $-4$<br>Số điểm dừng: $4$; số điểm cực trị (có $AC - B^2 > 0$): $1$",
+   "explain": "$f'_x = - 2 x y - y^{2} + 2 y,\\quad f'_y = - x^{2} - 2 x y + 2 x$<br>Giải hệ $f'_x=f'_y=0$ (thay lần lượt vào hai phương trình) được các điểm dừng: $(0;0)$, $(0;2)$, $(\\dfrac{2}{3};\\dfrac{2}{3})$, $(2;0)$<br>$f''_{xx}=- 2 y,\\quad f''_{xy}=- 2 \\left(x + y - 1\\right),\\quad f''_{yy}=- 2 x$<br>$(0;0):\\ A=f''_{xx}=0,\\ B=f''_{xy}=2,\\ C=f''_{yy}=0; AC-B^2=(0)(0)-(2)^2=-4\\Rightarrow điểm yên ngựa$<br>$(0;2):\\ A=f''_{xx}=-4,\\ B=f''_{xy}=-2,\\ C=f''_{yy}=0; AC-B^2=(-4)(0)-(-2)^2=-4\\Rightarrow điểm yên ngựa$<br>$(\\dfrac{2}{3};\\dfrac{2}{3}):\\ A=f''_{xx}=- \\dfrac{4}{3},\\ B=f''_{xy}=- \\dfrac{2}{3},\\ C=f''_{yy}=- \\dfrac{4}{3}; AC-B^2=(- \\dfrac{4}{3})(- \\dfrac{4}{3})-(- \\dfrac{2}{3})^2=\\dfrac{4}{3}\\Rightarrow cực trị$<br>$(2;0):\\ A=f''_{xx}=0,\\ B=f''_{xy}=-2,\\ C=f''_{yy}=-4; AC-B^2=(0)(-4)-(-2)^2=-4\\Rightarrow điểm yên ngựa$<br>Số điểm dừng: $4$; số điểm cực trị (có $AC - B^2 > 0$): $1$",
    "note": "Giải đủ hệ $f'_x = f'_y = 0$ (đừng bỏ sót nghiệm), rồi xét dấu $AC - B^2$ tại từng điểm dừng."
   },
   {
@@ -183,7 +183,7 @@
     "với mọi số nguyên dương $q$."
    ],
    "answer": 0,
-   "explain": "$u_n \\sim \\dfrac{n^{3}}{n^q} = \\dfrac{1}{n^{q - 3}}$<br>Chuỗi $\\sum\\dfrac{1}{n^{s}}$ hội tụ $\\Leftrightarrow s > 1$, tức $q - 3 > 1$<br>$q$ nguyên nên $q \\ge 5$",
+   "explain": "$u_n=\\dfrac{n^{3}}{n^q+1}\\sim\\dfrac{n^{3}}{n^q}=\\dfrac1{n^{q-3}}$ khi $n\\to\\infty$<br>$\\sum u_n$ cùng tính hội tụ với chuỗi $p$-series $\\sum n^{-(q-3)}$; chuỗi này hội tụ khi $q-3>1$<br>Vì $q$ nguyên dương: $q>3+1\\Rightarrow q\\ge5$; nếu $q\\le3+1$ thì chuỗi phân kỳ",
    "note": "Chỉ so bậc của tử và mẫu: cần (bậc mẫu $-$ bậc tử) $> 1$; bằng đúng 1 thì vẫn phân kỳ."
   },
   {
@@ -195,7 +195,7 @@
     "$0$."
    ],
    "answer": 0,
-   "explain": "Chuỗi thứ 1: $\\frac{1}{\\sqrt[3]{n}} \\downarrow 0$ (Leibniz), $\\sum\\frac{1}{n^{1/3}}$ phân kỳ $\\Rightarrow$ bán hội tụ<br>Chuỗi thứ 2: $\\frac{\\ln n}{n} \\downarrow 0$ khi $n \\ge 3$ (Leibniz), $\\frac{\\ln n}{n} \\ge \\frac1n$ $\\Rightarrow$ bán hội tụ<br>Chuỗi thứ 3: $\\frac{1}{\\ln(n+1)} \\downarrow 0$ (Leibniz), $\\frac{1}{\\ln(n+1)} > \\frac1n$ $\\Rightarrow$ bán hội tụ<br>Chuỗi thứ 4: $\\sum\\frac{1}{n^2}$ hội tụ $\\Rightarrow$ hội tụ tuyệt đối<br>Số chuỗi hội tụ: $4$",
+   "explain": "Chuỗi thứ 1: $a_n=n^{-1/3}\\downarrow0$ nên Leibniz hội tụ; chuỗi trị tuyệt đối là $p$-series $p=1/3\\le1$, phân kỳ: bán hội tụ. Kết luận: bán hội tụ.<br>Chuỗi thứ 2: $a_n=\\ln n/n\\downarrow0$ khi $n\\ge3$, nên Leibniz hội tụ; $\\ln n\\ge1$ khi $n\\ge3$ cho $a_n\\ge1/n$, nên không hội tụ tuyệt đối. Kết luận: bán hội tụ.<br>Chuỗi thứ 3: $a_n=1/\\ln(n+1)\\downarrow0$ nên Leibniz hội tụ; $\\ln(n+1)<n$ nên $a_n>1/n$, vì vậy chuỗi trị tuyệt đối phân kỳ: bán hội tụ. Kết luận: bán hội tụ.<br>Chuỗi thứ 4: $\\sum|u_n|=\\sum1/n^2$ hội tụ ($p=2>1$), nên hội tụ tuyệt đối. Kết luận: hội tụ tuyệt đối.<br>Số chuỗi hội tụ: $4$",
    "note": "Leibniz: $a_n$ giảm về 0 thì chuỗi đan dấu hội tụ; hội tụ tuyệt đối phải xét thêm $\\sum a_n$; nếu $a_n \\not\\to 0$ thì chuỗi phân kỳ."
   },
   {
@@ -207,7 +207,7 @@
     "$y' - y = xy^2$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> $y' = (1 + x)(1 + y^2)$ — Viết được dưới dạng $g(y)\\,dy = h(x)\\,dx$<br><b>Sai:</b> $y' + y\\tan x = \\cos x$ — là phương trình tuyến tính cấp một (bậc nhất đối với $y$ và $y'$), không thuộc dạng đang hỏi<br><b>Sai:</b> $(3x^2 + 2xy^2)dx + (2x^2y + 4y^3)dy = 0$ — là phương trình vi phân toàn phần, không thuộc dạng đang hỏi<br><b>Sai:</b> $y' - y = xy^2$ — là phương trình Bernoulli (có số hạng $y^{\\alpha}$ với $\\alpha \\ne 0, 1$ ở vế phải), không thuộc dạng đang hỏi"
+   "explain": "<b>Đúng:</b> $y' = (1 + x)(1 + y^2)$ — Viết được dưới dạng $g(y)\\,dy = h(x)\\,dx$; $\\dfrac{dy}{1+y^2}=(1+x)\\,dx$, tách được biến.<br><b>Sai:</b> $y' + y\\tan x = \\cos x$ — Đã ở dạng $y'+(\\tan x)y=\\cos x$, bậc nhất tuyến tính theo $y,y'$.; đây là là phương trình tuyến tính cấp một (bậc nhất đối với $y$ và $y'$), không phải dạng đang hỏi.<br><b>Sai:</b> $(3x^2 + 2xy^2)dx + (2x^2y + 4y^3)dy = 0$ — $P=(3x^2 + 2xy^2),\\ Q=2x^2y + 4y^3$: $\\partial P/\\partial y=4xy$ và $\\partial Q/\\partial x=4xy$; bằng nhau, nên toàn phần.; đây là là phương trình vi phân toàn phần, không phải dạng đang hỏi.<br><b>Sai:</b> $y' - y = xy^2$ — $y'-y=xy^2$: dạng Bernoulli với $\\alpha=2$.; đây là là phương trình Bernoulli (có số hạng $y^{\\alpha}$ với $\\alpha \\ne 0, 1$ ở vế phải), không phải dạng đang hỏi."
   },
   {
    "q": "Gọi $y = y(x)$ là nghiệm của phương trình $xy' = y + 3x$ $(x > 0)$ thỏa mãn $y(1) = 3$. Giá trị của $y(e)$ bằng",
@@ -278,7 +278,7 @@
     "$400$."
    ],
    "answer": 0,
-   "explain": "Giải hệ $(I - A)X = D$ được $x_1 = 200,\\ x_2 = 400$<br>Kết quả: $600$",
+   "explain": "$I-A=\\begin{pmatrix}\\dfrac{4}{5} & - \\dfrac{1}{5} \\\\ - \\dfrac{1}{5} & \\dfrac{4}{5}\\end{pmatrix}$; do đó $\\begin{pmatrix}\\dfrac{4}{5}&- \\dfrac{1}{5}\\\\- \\dfrac{1}{5}&\\dfrac{4}{5}\\end{pmatrix}\\begin{pmatrix}x_1\\\\x_2\\end{pmatrix}=\\begin{pmatrix}80\\\\280\\end{pmatrix}$.<br>Ma trận bổ sung ban đầu: $$\\left(\\begin{array}{rr|r}\\dfrac{4}{5} & - \\dfrac{1}{5} & 80\\\\ - \\dfrac{1}{5} & \\dfrac{4}{5} & 280\\end{array}\\right)$$<br>$R_1 \\leftarrow \\dfrac{1}{\\dfrac{4}{5}}R_1$: $$\\left(\\begin{array}{rr|r}1 & - \\dfrac{1}{4} & 100\\\\ - \\dfrac{1}{5} & \\dfrac{4}{5} & 280\\end{array}\\right)$$<br>$R_2 \\leftarrow R_2 - (- \\dfrac{1}{5})R_1$: $$\\left(\\begin{array}{rr|r}1 & - \\dfrac{1}{4} & 100\\\\ 0 & \\dfrac{3}{4} & 300\\end{array}\\right)$$<br>$R_2 \\leftarrow \\dfrac{1}{\\dfrac{3}{4}}R_2$: $$\\left(\\begin{array}{rr|r}1 & - \\dfrac{1}{4} & 100\\\\ 0 & 1 & 400\\end{array}\\right)$$<br>$R_1 \\leftarrow R_1 - (- \\dfrac{1}{4})R_2$: $$\\left(\\begin{array}{rr|r}1 & 0 & 200\\\\ 0 & 1 & 400\\end{array}\\right)$$<br>$x_1=200,\\quad x_2=400\\Rightarrow x_1+x_2=600$.",
    "note": "Kiểm tra cỡ ma trận trước khi nhân (số cột của ma trận trước bằng số hàng của ma trận sau); với mô hình Leontief giải $(I - A)X = D$."
   },
   {
@@ -290,7 +290,7 @@
     "$m \\ne 0$."
    ],
    "answer": 0,
-   "explain": "Ba tọa độ đầu của hàng 3 bằng $2$ lần hàng 1 cộng $1$ lần hàng 2, nên hạng bằng 2 khi và chỉ khi phần tử cuối cũng thỏa mãn hệ thức đó: $m = -1$; ngược lại hạng bằng 3.",
+   "explain": "$R_3 \\leftarrow R_3 - 2R_1 - R_2$.<br>$A = \\begin{pmatrix}1 & 2 & -1 & -1 \\\\ 1 & 0 & 1 & 1 \\\\ 3 & 4 & -1 & m\\end{pmatrix} \\xrightarrow{R_3 \\leftarrow R_3 - 2R_1 - R_2} \\begin{pmatrix}1 & 2 & -1 & -1 \\\\ 1 & 0 & 1 & 1 \\\\ 0 & 0 & 0 & m + 1\\end{pmatrix}$.<br>$\\det \\begin{pmatrix}1 & 2 \\\\ 1 & 0\\end{pmatrix} = -2 \\ne 0$, nên hai hàng đầu độc lập tuyến tính.<br>$m = -1 \\Rightarrow R_3 = (0,0,0,0) \\Rightarrow \\operatorname{rank}(A)=2$.<br>$m \\ne -1 \\Rightarrow R_3 = (0,0,0,m + 1) \\ne (0,0,0,0) \\Rightarrow \\operatorname{rank}(A)=3$.<br><b>Kết quả:</b> $m = -1$.",
    "note": "Đưa về dạng bậc thang; hạng giảm đúng khi hàng cuối thành hàng không, điều kiện đó cho giá trị của $m$."
   },
   {
@@ -302,7 +302,7 @@
     "$\\begin{pmatrix}0 & -1 \\\\ -3 & 1\\end{pmatrix}$."
    ],
    "answer": 0,
-   "explain": "$(A - I)X = B$ với $A - I = \\begin{pmatrix}-1 & 1 \\\\ -3 & 2\\end{pmatrix}$, nên $X = (A - I)^{-1}B$; kết quả $X = \\begin{pmatrix}0 & 1 \\\\ 3 & -1\\end{pmatrix}$.",
+   "explain": "$AX=X+B \\Rightarrow (A-I)X=B$.<br>$A-I=\\begin{pmatrix}-1 & 1 \\\\ -3 & 2\\end{pmatrix},\\qquad B=\\begin{pmatrix}3 & -2 \\\\ 6 & -5\\end{pmatrix}$.<br>$X=(A-I)^{-1}B=\\begin{pmatrix}2 & -1 \\\\ 3 & -1\\end{pmatrix}\\begin{pmatrix}3 & -2 \\\\ 6 & -5\\end{pmatrix}=\\begin{pmatrix}0 & 1 \\\\ 3 & -1\\end{pmatrix}$.<br>Kiểm tra: $\\begin{pmatrix}0 & 1 \\\\ -3 & 3\\end{pmatrix}\\begin{pmatrix}0 & 1 \\\\ 3 & -1\\end{pmatrix}=\\begin{pmatrix}0 & 1 \\\\ 3 & -1\\end{pmatrix}+\\begin{pmatrix}3 & -2 \\\\ 6 & -5\\end{pmatrix}$.",
    "note": "$AX = B \\Rightarrow X = A^{-1}B$ (nhân bên trái); $XA = B \\Rightarrow X = BA^{-1}$ (nhân bên phải); không được đổi thứ tự."
   },
   {
@@ -314,7 +314,7 @@
     "$m = 0$."
    ],
    "answer": 0,
-   "explain": "Khử Gauss ($h_2 - 2h_1$ và $h_3 - h_1$, rồi trừ hai phương trình mới cho nhau) được $(m^2 - 1)z = m - 1$: với $m = 1$ hệ có vô số nghiệm, với $m = -1$ hệ vô nghiệm, các trường hợp còn lại hệ có nghiệm duy nhất.",
+   "explain": "$h_2-2h_1:\\quad y+2z=-2$.<br>$h_3-h_1:\\quad y+(m^2+2-1^2)z=m - 3$.<br>Khử $y$: $(m^2-1^2)z=m-1\\Leftrightarrow(m-1)(m+1)z=m-1$.<br>$m=1\\Rightarrow 0=0$: đặt $z=t$, $y=- 2 t - 2$ và $x=8 t + 9$. Vậy có vô số nghiệm.<br>$m=-1\\Rightarrow 0=-2\\cdot1\\ne0$: hệ vô nghiệm.<br>$m\\ne\\pm1\\Rightarrow z=\\dfrac{1}{m+1},\\quad y=- \\dfrac{2 \\left(m + 2\\right)}{m + 1},\\quad x=\\dfrac{9 m + 17}{m + 1}$. Hệ có nghiệm duy nhất.",
    "note": "Xét hàng cuối sau khi khử: hệ số bằng 0 mà vế phải khác 0 thì vô nghiệm; cả hai bằng 0 thì vô số nghiệm; hệ số khác 0 thì nghiệm duy nhất."
   },
   {
@@ -362,7 +362,7 @@
     "$75$."
    ],
    "answer": 0,
-   "explain": "Giải hệ $s_i = d_i$ được giá cân bằng $(30;30;20)$, lượng cung (cầu) tương ứng $(40;20;40)$<br>Kết quả: $80$",
+   "explain": "Tại cân bằng, $s_i=d_i$. Trừ lượng cầu khỏi lượng cung theo từng loại: $(S-D)P=(S-D)(30;30;20)^T$.<br>$S-D=\\begin{pmatrix}2 & -1 & 1 \\\\ -1 & 4 & 0 \\\\ 0 & 0 & 4\\end{pmatrix}$, nên hệ giá là $\\begin{pmatrix}2 & -1 & 1 \\\\ -1 & 4 & 0 \\\\ 0 & 0 & 4\\end{pmatrix}P=(50;90;80)^T$.<br>Ma trận bổ sung ban đầu: $$\\left(\\begin{array}{rrr|r}2 & -1 & 1 & 50\\\\ -1 & 4 & 0 & 90\\\\ 0 & 0 & 4 & 80\\end{array}\\right)$$<br>$R_1 \\leftarrow \\dfrac{1}{2}R_1$: $$\\left(\\begin{array}{rrr|r}1 & - \\dfrac{1}{2} & \\dfrac{1}{2} & 25\\\\ -1 & 4 & 0 & 90\\\\ 0 & 0 & 4 & 80\\end{array}\\right)$$<br>$R_2 \\leftarrow R_2 - (-1)R_1$: $$\\left(\\begin{array}{rrr|r}1 & - \\dfrac{1}{2} & \\dfrac{1}{2} & 25\\\\ 0 & \\dfrac{7}{2} & \\dfrac{1}{2} & 115\\\\ 0 & 0 & 4 & 80\\end{array}\\right)$$<br>$R_2 \\leftarrow \\dfrac{1}{\\dfrac{7}{2}}R_2$: $$\\left(\\begin{array}{rrr|r}1 & - \\dfrac{1}{2} & \\dfrac{1}{2} & 25\\\\ 0 & 1 & \\dfrac{1}{7} & \\dfrac{230}{7}\\\\ 0 & 0 & 4 & 80\\end{array}\\right)$$<br>$R_1 \\leftarrow R_1 - (- \\dfrac{1}{2})R_2$: $$\\left(\\begin{array}{rrr|r}1 & 0 & \\dfrac{4}{7} & \\dfrac{290}{7}\\\\ 0 & 1 & \\dfrac{1}{7} & \\dfrac{230}{7}\\\\ 0 & 0 & 4 & 80\\end{array}\\right)$$<br>$R_3 \\leftarrow \\dfrac{1}{4}R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & \\dfrac{4}{7} & \\dfrac{290}{7}\\\\ 0 & 1 & \\dfrac{1}{7} & \\dfrac{230}{7}\\\\ 0 & 0 & 1 & 20\\end{array}\\right)$$<br>$R_1 \\leftarrow R_1 - (\\dfrac{4}{7})R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 30\\\\ 0 & 1 & \\dfrac{1}{7} & \\dfrac{230}{7}\\\\ 0 & 0 & 1 & 20\\end{array}\\right)$$<br>$R_2 \\leftarrow R_2 - (\\dfrac{1}{7})R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 30\\\\ 0 & 1 & 0 & 30\\\\ 0 & 0 & 1 & 20\\end{array}\\right)$$<br>$P=(30;30;20)^T$; thay vào hàm cung hoặc cầu được $Q=(40;20;40)^T$.<br>Tổng lượng cung/cầu: $40+20+40=100$; tổng giá: $30+30+20=80$.",
    "note": "Lập hệ phương trình từ điều kiện của bài toán (cung bằng cầu, hoặc dùng hết nguyên liệu) rồi giải bằng phép khử Gauss."
   },
   {
@@ -398,7 +398,7 @@
     "$-\\dfrac{1}{(1+x)^2}$."
    ],
    "answer": 0,
-   "explain": "Thay $x$ bởi $-x$ trong $\\sum (n+1)x^n = \\dfrac{1}{(1-x)^2}$.",
+   "explain": "$\\sum_{n\\ge0}(n+1)t^n=\\frac1{(1-t)^2}$. Thay $t=-x$: $\\sum_{n\\ge0}(-1)^n(n+1)x^n=\\frac1{(1+x)^2}$.",
    "note": "Đạo hàm hoặc tích phân từng số hạng của $\\displaystyle\\sum x^n = \\dfrac{1}{1 - x}$ để có các chuỗi liên quan; chỉ đúng khi $|x| < 1$."
   },
   {
@@ -410,7 +410,7 @@
     "$y = C\\tan x$."
    ],
    "answer": 0,
-   "explain": "$\\dfrac{dy}{y} = \\dfrac{\\cos x}{\\sin x}dx$.",
+   "explain": "$\\dfrac{dy}{y}=\\dfrac{dx}{\\tan x}=\\cot x\\,dx$. Tích phân: $\\ln|y|=\\ln|\\sin x|+C$, nên $y=C\\sin x$.",
    "note": "Tách biến: đưa $y$ về một vế, $x$ về một vế rồi lấy tích phân; hằng số $C$ chỉ cần viết ở một vế."
   },
   {
@@ -422,7 +422,7 @@
     "$y = -\\dfrac{1}{\\ln x + C}$."
    ],
    "answer": 0,
-   "explain": "Đặt $y = ux$: $u'x = u^2 \\Rightarrow -\\dfrac1u = \\ln x + C$.",
+   "explain": "Đặt $y=ux$, $y^\\prime=u^\\prime x+u$. Khi đó $u^\\prime=u^2/x$; tách biến $du/u^2=dx/x$, nên $-1/u=\\ln x+C$ và $y=-x/(\\ln x+C)$.",
    "note": "Tuyến tính: nhân thừa số tích phân $e^{\\int p\\,dx}$; đẳng cấp: đặt $y = ux$."
   },
   {
@@ -458,7 +458,7 @@
     "$\\dfrac{\\pi}{6}$."
    ],
    "answer": 0,
-   "explain": "Tọa độ trụ: $\\displaystyle\\int_0^{2\\pi}d\\varphi\\int_0^1 r^3(1 - r)\\,dr = 2\\pi\\cdot\\dfrac{1^5}{20}$<br>Kết quả: $\\dfrac{\\pi}{10}$",
+   "explain": "Tọa độ trụ: $r=\\sqrt{x^2+y^2}$, $0\\le r\\le1$, $r\\le z\\le1$, $dV=r\\,dz\\,dr\\,d\\varphi$. Sau khi tích phân theo $z$, biểu thức là $r^2(1-r)r=r^3(1-r)$.<br>$\\displaystyle I=2\\pi\\int_0^{1}(1r^3-r^4)\\,dr=2\\pi\\left[\\frac{1r^4}{4}-\\frac{r^5}{5}\\right]_0^{1}$.<br>$I=2\\pi(1/4-1/5)=\\pi1/10=\\dfrac{\\pi}{10}$.",
    "note": "Tọa độ trụ hợp với paraboloid, mặt nón; tọa độ cầu hợp với hình cầu; không quên định thức Jacobi."
   },
   {
@@ -498,7 +498,7 @@
       "$-3$."
      ],
      "answer": 0,
-     "explain": "$\\det A = -1\\cdot(1^2 - 2^2)$<br>Kết quả: $3$"
+     "explain": "$\\det A=-1\\det\\begin{pmatrix}1&2\\\\2&1\\end{pmatrix}$.<br>$\\det A=-1(1\\cdot1-2\\cdot2)=-1((1-2)(1+2))=3$."
     },
     {
      "q": "Tổng các phần tử trên đường chéo chính của ma trận $A^{-1}$ bằng",
@@ -509,7 +509,7 @@
       "$- \\dfrac{2}{3}$."
      ],
      "answer": 0,
-     "explain": "$A^{-1}$ có các trị riêng là nghịch đảo các trị riêng của $A$; tổng bằng $- \\dfrac{5}{3}$<br>Kết quả: $- \\dfrac{5}{3}$"
+     "explain": "$\\det\\begin{pmatrix}1&2\\\\2&1\\end{pmatrix}=1^2-2^2=(1-2)(1+2)$.<br>$\\operatorname{tr}(A^{-1})=\\dfrac1{3}+\\dfrac1{-1}+\\dfrac1{-1}=- \\dfrac{5}{3}$."
     },
     {
      "q": "Gọi $X$ là tập hợp các trị riêng của $A$, tổng bình phương các phần tử của $X$ bằng",
@@ -520,7 +520,7 @@
       "$2$."
      ],
      "answer": 0,
-     "explain": "Các trị riêng của $A$ là $3$, $-1$ và $-1$. Tập hợp không kể bội<br>Kết quả: $10$",
+     "explain": "Khối cấp 2 có trị riêng $1+2=3$ và $1-2=-1$; phần tử cuối cho trị riêng $-1$.<br>Tập không kể bội: $X=\\{3,-1,-1\\}$.<br>$\\sum_{\\lambda\\in X}\\lambda^2=(3)^2+(-1)^2+(-1)^2=10$.",
      "note": "Tổng các trị riêng bằng vết, tích các trị riêng bằng định thức của ma trận."
     }
    ]
@@ -571,7 +571,7 @@
    "answer": [
     "16"
    ],
-   "explain": "$A = \\begin{pmatrix}2 & 2 & 2 \\\\ 3 & 4 & 4 \\\\ 6 & 7 & 8\\end{pmatrix}$, $\\det A = 2$; kết quả bằng $2^3\\cdot\\det A$ $= 16$<br>Đáp số: $16$",
+   "explain": "$$A=\\begin{pmatrix}2 & 2 & 2 \\\\ 3 & 4 & 4 \\\\ 6 & 7 & 8\\end{pmatrix},\\quad \\det A=(2)\\big((4)(8)-(4)(7)\\big)-(2)\\big((3)(8)-(4)(6)\\big)+(2)\\big((3)(7)-(4)(6)\\big)$$<br>$=8 + 0 - 6=2$.<br>$\\det(2A^T)=2^3\\det(A^T)=2^3\\det A=2^3\\cdot2=16$.",
    "note": "Viết ma trận ra từ công thức của $a_{ij}$, rồi dùng $\\det\\left(A^T\\right) = \\det A$ và $\\det(AB) = \\det A\\cdot\\det B$."
   },
   {
@@ -587,7 +587,7 @@
    "answer": [
     "2"
    ],
-   "explain": "Chuỗi hình học công bội $\\dfrac{x^4}{16}$, hội tụ khi $x^4 < 16$<br>$R = 2$",
+   "explain": "Đây là chuỗi hình học với công bội $q=x^4/16$. Điều kiện $|q|<1$ cho $x^4<16$, tương đương $|x|<2$; vậy $R=2$.<br>$R = 2$",
    "note": "Chuỗi theo $x^k$: đặt $t = x^k$; bán kính theo $x$ là căn bậc $k$ của bán kính theo $t$."
   },
   {

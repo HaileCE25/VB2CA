@@ -40,7 +40,7 @@
     "$2$."
    ],
    "answer": 0,
-   "explain": "$xu_1 + yu_2 = -u_3$; viết theo từng tọa độ được hệ ba phương trình hai ẩn<br>Giải hai phương trình đầu (phương trình thứ ba nghiệm đúng): $x = -2,\\ y = 1$<br>$x - y = -3$",
+   "explain": "$xu_1+yu_2=-u_3$ theo từng tọa độ: $\\begin{cases}2 x = -4\\\\x + 3 y = 1\\\\3 x - 2 y = -8\\end{cases}$<br>Nghiệm là $x=-2,\\ y=1$; kiểm tra tọa độ thứ ba: $-8=-8$<br>$x - y = -3$",
    "note": "Chuyển $u_3$ sang vế phải thì đổi dấu: $xu_1 + yu_2 = -u_3$."
   },
   {
@@ -52,7 +52,7 @@
     "$0$."
    ],
    "answer": 0,
-   "explain": "$u_4 = - 2 u_{1} - u_{3}$; $u_5 = u_{2} + 3 u_{3}$; còn $u_1, u_2, u_3$ độc lập tuyến tính nên hạng bằng 3<br>Kết quả: $2$",
+   "explain": "$u_4 = - 2 u_{1} - u_{3}$<br>$u_5 = u_{2} + 3 u_{3}$<br>Với các cột 1,2,3, $\\det \\begin{pmatrix}0 & 3 & 0 \\\\ 0 & 0 & 2 \\\\ 1 & -1 & 1\\end{pmatrix}=6\\ne 0$ nên hệ véc tơ $u_1, u_2, u_3$ độc lập tuyến tính.<br>Các véc tơ còn lại là tổ hợp tuyến tính đã nêu; do đó hạng không vượt quá 3.<br>Vậy $\\operatorname{rank}(S)=3$.<br>Cần bỏ ít nhất $5-3=2$ véc tơ để còn hệ độc lập tuyến tính.",
    "note": "Hạng = số hàng khác không của dạng bậc thang; số véc tơ thừa = số véc tơ $-$ hạng."
   },
   {
@@ -99,7 +99,7 @@
     "$9$."
    ],
    "answer": 0,
-   "explain": "Nhân hai vế với $A^{-1}$ được $A = 3I$, nên $\\det A = \\left(3\\right)^{4}$<br>Kết quả: $81$",
+   "explain": "$A^2=3A \\Rightarrow A^2-3A=0 \\Rightarrow A(A-3I)=0$.<br>$A$ khả nghịch nên nhân bên trái với $A^{-1}$:<br>$A-3I=0 \\Rightarrow A=3I$.<br>$\\det A=\\det(3I)=(3)^{4}\\det I=(3)^{4}$.<br>$=81$.",
    "note": "$\\det(kA) = k^n\\det A$, $\\det\\left(A^{-1}\\right) = \\dfrac{1}{\\det A}$, $\\det\\left(A^T\\right) = \\det A$, $\\det(AB) = \\det A\\cdot\\det B$."
   },
   {
@@ -170,7 +170,7 @@
     "$0$."
    ],
    "answer": 0,
-   "explain": "$f'_x = 3 - 3 x^{2},\\quad f'_y = 4 y^{3} - 4 y$<br>Giải hệ $f'_x = f'_y = 0$ được các điểm dừng: $(-1;-1)$, $(-1;0)$, $(-1;1)$, $(1;-1)$, $(1;0)$, $(1;1)$<br>Giá trị $AC - B^2$ tại các điểm đó lần lượt: $48$, $-24$, $48$, $-48$, $24$, $-48$<br>Số điểm dừng: $6$; số điểm cực trị (có $AC - B^2 > 0$): $3$",
+   "explain": "$f'_x = 3 - 3 x^{2},\\quad f'_y = 4 y^{3} - 4 y$<br>Giải hệ $f'_x=f'_y=0$ (thay lần lượt vào hai phương trình) được các điểm dừng: $(-1;-1)$, $(-1;0)$, $(-1;1)$, $(1;-1)$, $(1;0)$, $(1;1)$<br>$f''_{xx}=- 6 x,\\quad f''_{xy}=0,\\quad f''_{yy}=4 \\left(3 y^{2} - 1\\right)$<br>$(-1;-1):\\ A=f''_{xx}=6,\\ B=f''_{xy}=0,\\ C=f''_{yy}=8; AC-B^2=(6)(8)-(0)^2=48\\Rightarrow cực trị$<br>$(-1;0):\\ A=f''_{xx}=6,\\ B=f''_{xy}=0,\\ C=f''_{yy}=-4; AC-B^2=(6)(-4)-(0)^2=-24\\Rightarrow điểm yên ngựa$<br>$(-1;1):\\ A=f''_{xx}=6,\\ B=f''_{xy}=0,\\ C=f''_{yy}=8; AC-B^2=(6)(8)-(0)^2=48\\Rightarrow cực trị$<br>$(1;-1):\\ A=f''_{xx}=-6,\\ B=f''_{xy}=0,\\ C=f''_{yy}=8; AC-B^2=(-6)(8)-(0)^2=-48\\Rightarrow điểm yên ngựa$<br>$(1;0):\\ A=f''_{xx}=-6,\\ B=f''_{xy}=0,\\ C=f''_{yy}=-4; AC-B^2=(-6)(-4)-(0)^2=24\\Rightarrow cực trị$<br>$(1;1):\\ A=f''_{xx}=-6,\\ B=f''_{xy}=0,\\ C=f''_{yy}=8; AC-B^2=(-6)(8)-(0)^2=-48\\Rightarrow điểm yên ngựa$<br>Số điểm dừng: $6$; số điểm cực trị (có $AC - B^2 > 0$): $3$",
    "note": "Giải đủ hệ $f'_x = f'_y = 0$ (đừng bỏ sót nghiệm), rồi xét dấu $AC - B^2$ tại từng điểm dừng."
   },
   {
@@ -182,7 +182,7 @@
     "với mọi $p$."
    ],
    "answer": 0,
-   "explain": "Xét $\\displaystyle\\int_2^{+\\infty}\\dfrac{dx}{x\\ln^{p}x}$, đặt $t = \\ln x$: $\\displaystyle\\int_{\\ln 2}^{+\\infty}\\dfrac{dt}{t^{p}}$<br>Tích phân này hội tụ $\\Leftrightarrow p > 1$<br>Với $p = 1$: $\\displaystyle\\int\\dfrac{dt}{t} = \\ln t \\to +\\infty$ nên chuỗi phân kỳ",
+   "explain": "Xét tích phân thử $\\displaystyle\\int_2^{+\\infty}\\frac{dx}{x(\\ln x)^p}$. Đặt $t=\\ln x$, $dt=dx/x$, được $\\displaystyle\\int_{\\ln2}^{+\\infty}t^{-p}\\,dt$.<br>Với $p\\ne1$, $\\displaystyle\\int_{\\ln2}^{B}t^{-p}\\,dt=\\left[\\frac{t^{1-p}}{1-p}\\right]_{\\ln2}^{B}$. Khi $B\\to\\infty$, tích phân hữu hạn đúng khi $1-p<0$, tức $p>1$.<br>Với $p=1$, $\\displaystyle\\int_{\\ln2}^{B}\\frac{dt}{t}=\\ln B-\\ln(\\ln2)\\to+\\infty$; nếu $p<1$ thì $B^{1-p}/(1-p)\\to+\\infty$. Theo tiêu chuẩn tích phân, chuỗi hội tụ khi và chỉ khi $p>1$.",
    "note": "Trường hợp biên $p = 1$ phân kỳ: $\\sum\\dfrac{1}{n\\ln n}$ phân kỳ dù số hạng nhỏ hơn $\\dfrac1n$."
   },
   {
@@ -194,7 +194,7 @@
     "$0$."
    ],
    "answer": 0,
-   "explain": "Chuỗi thứ 1: $\\sin\\frac1n \\downarrow 0$ (Leibniz), $\\sin\\frac1n \\sim \\frac1n$ $\\Rightarrow$ bán hội tụ<br>Chuỗi thứ 2: $\\frac{1}{\\sqrt{n+1}} \\downarrow 0$ (Leibniz), $\\sum\\frac{1}{\\sqrt{n+1}}$ phân kỳ $\\Rightarrow$ bán hội tụ<br>Chuỗi thứ 3: $\\frac{|u_{n+1}|}{|u_n|} = \\frac{1}{n+1} \\to 0$ $\\Rightarrow$ hội tụ tuyệt đối<br>Chuỗi thứ 4: $\\frac{1}{\\sqrt[3]{n}} \\downarrow 0$ (Leibniz), $\\sum\\frac{1}{n^{1/3}}$ phân kỳ $\\Rightarrow$ bán hội tụ<br>Số chuỗi bán hội tụ: $3$",
+   "explain": "Chuỗi thứ 1: $a_n=\\sin(1/n)\\downarrow0$ nên Leibniz hội tụ; $\\sin(1/n)\\sim1/n$ khiến chuỗi trị tuyệt đối phân kỳ: bán hội tụ. Kết luận: bán hội tụ.<br>Chuỗi thứ 2: $a_n=1/\\sqrt{n+1}\\downarrow0$ nên Leibniz hội tụ; trị tuyệt đối là $p$-series $p=1/2\\le1$, nên chỉ hội tụ có điều kiện. Kết luận: bán hội tụ.<br>Chuỗi thứ 3: $\\sum|u_n|=\\sum1/n!$; tỉ số $|u_{n+1}|/|u_n|=1/(n+1)\\to0<1$, nên hội tụ tuyệt đối. Kết luận: hội tụ tuyệt đối.<br>Chuỗi thứ 4: $a_n=n^{-1/3}\\downarrow0$ nên Leibniz hội tụ; chuỗi trị tuyệt đối là $p$-series $p=1/3\\le1$, phân kỳ: bán hội tụ. Kết luận: bán hội tụ.<br>Số chuỗi bán hội tụ: $3$",
    "note": "Leibniz: $a_n$ giảm về 0 thì chuỗi đan dấu hội tụ; hội tụ tuyệt đối phải xét thêm $\\sum a_n$; nếu $a_n \\not\\to 0$ thì chuỗi phân kỳ."
   },
   {
@@ -206,7 +206,7 @@
     "$xy' + y = y^2\\ln x$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> $y' = \\dfrac{x + y}{x - y}$ — Vế phải viết được thành hàm của $\\dfrac{y}{x}$, tức dạng $y' = f\\left(\\dfrac{y}{x}\\right)$<br><b>Sai:</b> $y' = e^{x - y}$ — là phương trình có biến số phân ly (tách được $x$ và $y$ về hai vế), không thuộc dạng đang hỏi<br><b>Sai:</b> $(3x^2 + 2xy^2)dx + (2x^2y + 4y^3)dy = 0$ — là phương trình vi phân toàn phần, không thuộc dạng đang hỏi<br><b>Sai:</b> $xy' + y = y^2\\ln x$ — là phương trình Bernoulli (có số hạng $y^{\\alpha}$ với $\\alpha \\ne 0, 1$ ở vế phải), không thuộc dạng đang hỏi"
+   "explain": "<b>Đúng:</b> $y' = \\dfrac{x + y}{x - y}$ — Vế phải viết được thành hàm của $\\dfrac{y}{x}$, tức dạng $y' = f\\left(\\dfrac{y}{x}\\right)$; $\\dfrac{x+y}{x-y}=\\dfrac{1+y/x}{1-y/x}$, nên vế phải chỉ phụ thuộc $y/x$.<br><b>Sai:</b> $y' = e^{x - y}$ — $e^{x-y}=e^x e^{-y}$ nên $e^y\\,dy=e^x\\,dx$.; đây là là phương trình có biến số phân ly (tách được $x$ và $y$ về hai vế), không phải dạng đang hỏi.<br><b>Sai:</b> $(3x^2 + 2xy^2)dx + (2x^2y + 4y^3)dy = 0$ — $P=(3x^2 + 2xy^2),\\ Q=2x^2y + 4y^3$: $\\partial P/\\partial y=4xy$ và $\\partial Q/\\partial x=4xy$; bằng nhau, nên toàn phần.; đây là là phương trình vi phân toàn phần, không phải dạng đang hỏi.<br><b>Sai:</b> $xy' + y = y^2\\ln x$ — Chia cho $x\\ne0$: $y'+\\dfrac1x y=\\dfrac{\\ln x}{x}y^2$, Bernoulli với $\\alpha=2$.; đây là là phương trình Bernoulli (có số hạng $y^{\\alpha}$ với $\\alpha \\ne 0, 1$ ở vế phải), không phải dạng đang hỏi."
   },
   {
    "q": "Gọi $y = y(x)$ là nghiệm của phương trình $xy' = y + x$ $(x > 0)$ thỏa mãn $y(1) = 1$. Giá trị của $y(e)$ bằng",
@@ -277,7 +277,7 @@
     "$2020$."
    ],
    "answer": 0,
-   "explain": "Vật liệu cần dùng $AX = (80;100)^T$, chi phí $1360$; doanh thu $2200$; lợi nhuận $840$<br>Kết quả: $840$",
+   "explain": "Vật liệu cần dùng: $AX=\\begin{pmatrix}2 & 1 & 2 \\\\ 1 & 2 & 4\\end{pmatrix}(20;20;10)^T=(80;100)^T$.<br>Chi phí vật liệu: $7\\cdot80+8\\cdot100=1360$.<br>Doanh thu: $40\\cdot20+45\\cdot20+50\\cdot10=2200$.<br>Lợi nhuận: $2200-1360=840$.",
    "note": "Kiểm tra cỡ ma trận trước khi nhân (số cột của ma trận trước bằng số hàng của ma trận sau); với mô hình Leontief giải $(I - A)X = D$."
   },
   {
@@ -289,7 +289,7 @@
     "$m \\ne 5$."
    ],
    "answer": 0,
-   "explain": "Ba tọa độ đầu của hàng 3 bằng $2$ lần hàng 1 cộng $2$ lần hàng 2, nên hạng bằng 2 khi và chỉ khi phần tử cuối cũng thỏa mãn hệ thức đó: $m = 6$; ngược lại hạng bằng 3.",
+   "explain": "$R_3 \\leftarrow R_3 - 2R_1 - 2R_2$.<br>$A = \\begin{pmatrix}1 & 0 & 3 & 0 \\\\ 0 & -2 & 0 & 3 \\\\ 2 & -4 & 6 & m\\end{pmatrix} \\xrightarrow{R_3 \\leftarrow R_3 - 2R_1 - 2R_2} \\begin{pmatrix}1 & 0 & 3 & 0 \\\\ 0 & -2 & 0 & 3 \\\\ 0 & 0 & 0 & m - 6\\end{pmatrix}$.<br>$\\det \\begin{pmatrix}1 & 0 \\\\ 0 & -2\\end{pmatrix} = -2 \\ne 0$, nên hai hàng đầu độc lập tuyến tính.<br>$m = 6 \\Rightarrow R_3 = (0,0,0,0) \\Rightarrow \\operatorname{rank}(A)=2$.<br>$m \\ne 6 \\Rightarrow R_3 = (0,0,0,m - 6) \\ne (0,0,0,0) \\Rightarrow \\operatorname{rank}(A)=3$.<br><b>Kết quả:</b> $m = 6$.",
    "note": "Đưa về dạng bậc thang; hạng giảm đúng khi hàng cuối thành hàng không, điều kiện đó cho giá trị của $m$."
   },
   {
@@ -313,7 +313,7 @@
     "$m \\ne 2$."
    ],
    "answer": 0,
-   "explain": "Khử Gauss ($h_2 - 2h_1$ và $h_3 - h_1$, rồi trừ hai phương trình mới cho nhau) được $(m^2 - 4)z = m - 2$: với $m = 2$ hệ có vô số nghiệm, với $m = -2$ hệ vô nghiệm, các trường hợp còn lại hệ có nghiệm duy nhất.",
+   "explain": "$h_2-2h_1:\\quad y+3z=-2$.<br>$h_3-h_1:\\quad y+(m^2+3-2^2)z=m - 4$.<br>Khử $y$: $(m^2-2^2)z=m-2\\Leftrightarrow(m-2)(m+2)z=m-2$.<br>$m=2\\Rightarrow 0=0$: đặt $z=t$, $y=- 3 t - 2$ và $x=5 t + 4$. Vậy có vô số nghiệm.<br>$m=-2\\Rightarrow 0=-2\\cdot2\\ne0$: hệ vô nghiệm.<br>$m\\ne\\pm2\\Rightarrow z=\\dfrac{1}{m+2},\\quad y=- \\dfrac{2 m + 7}{m + 2},\\quad x=\\dfrac{4 m + 13}{m + 2}$. Hệ có nghiệm duy nhất.",
    "note": "Xét hàng cuối sau khi khử: hệ số bằng 0 mà vế phải khác 0 thì vô nghiệm; cả hai bằng 0 thì vô số nghiệm; hệ số khác 0 thì nghiệm duy nhất."
   },
   {
@@ -361,7 +361,7 @@
     "$360$."
    ],
    "answer": 0,
-   "explain": "Thế $T$ vào $C$ rồi vào phương trình đầu: $Y^* = 900,\\ T^* = 180,\\ C^* = 640$<br>Kết quả: $900$",
+   "explain": "$T=tY\\Rightarrow C=c_0+b(Y-tY)=100+\\dfrac{3}{4}(1-\\dfrac{1}{5})Y$.<br>$Y=C+I_0+G_0\\Rightarrow [1-\\dfrac{3}{4}(1-\\dfrac{1}{5})]Y=100+100+160$.<br>$Y=\\dfrac{360}{1-\\dfrac{3}{4}(1-\\dfrac{1}{5})}=900$.<br>$T=tY=\\dfrac{1}{5}\\cdot900=180,\\qquad C=c_0+b(Y-T)=100+\\dfrac{3}{4}(900-180)=640$.",
    "note": "Lập hệ phương trình từ điều kiện của bài toán (cung bằng cầu, hoặc dùng hết nguyên liệu) rồi giải bằng phép khử Gauss."
   },
   {
@@ -397,7 +397,7 @@
     "$\\dfrac{1}{1+x^2}$."
    ],
    "answer": 0,
-   "explain": "Tích phân từng số hạng chuỗi $\\sum (-1)^nx^{2n} = \\dfrac{1}{1+x^2}$.",
+   "explain": "$\\sum_{n\\ge0}(-1)^nt^{2n}=\\frac1{1+t^2}$. Tích phân từ $0$ đến $x$: $\\sum_{n\\ge0}\\frac{(-1)^nx^{2n+1}}{2n+1}=\\int_0^x\\frac{dt}{1+t^2}=\\arctan x$.",
    "note": "Đạo hàm hoặc tích phân từng số hạng của $\\displaystyle\\sum x^n = \\dfrac{1}{1 - x}$ để có các chuỗi liên quan; chỉ đúng khi $|x| < 1$."
   },
   {
@@ -409,7 +409,7 @@
     "$y = Cx$."
    ],
    "answer": 0,
-   "explain": "$\\dfrac{dy}{1+y^2} = \\dfrac{dx}{1+x^2}$.",
+   "explain": "$\\dfrac{dy}{1+y^2}=\\dfrac{dx}{1+x^2}$. Tích phân hai vế cho $\\arctan y=\\arctan x+C$.",
    "note": "Tách biến: đưa $y$ về một vế, $x$ về một vế rồi lấy tích phân; hằng số $C$ chỉ cần viết ở một vế."
   },
   {
@@ -421,7 +421,7 @@
     "$y = Ce^x + e^{2x}$."
    ],
    "answer": 0,
-   "explain": "$\\left(ye^{-x}\\right)' = 1$.",
+   "explain": "Nhân phương trình với $e^{-x}$: $(ye^{-x})^\\prime=e^x e^{-x}=1$. Tích phân: $ye^{-x}=x+C$, vậy $y=(x+C)e^x$.",
    "note": "Tuyến tính: nhân thừa số tích phân $e^{\\int p\\,dx}$; đẳng cấp: đặt $y = ux$."
   },
   {
@@ -457,7 +457,7 @@
     "$\\dfrac{9}{2}$."
    ],
    "answer": 0,
-   "explain": "$\\displaystyle\\int_0^3 x\\cdot\\dfrac{(3 - x)^2}{2}\\,dx = \\dfrac{3^4}{24}$<br>Kết quả: $\\dfrac{27}{8}$",
+   "explain": "Với $x$ cố định, tam giác $y,z\\ge0$, $y+z\\le3-x$ có diện tích $\\frac12(3-x)^2$. Vì vậy $I=\\int_0^{3}x\\cdot\\frac{(3-x)^2}{2}\\,dx$.<br>Khai triển: $I=\\frac12\\int_0^{3}(9x-23x^2+x^3)\\,dx=\\frac12[9x^2/2-23x^3/3+x^4/4]_0^{3}$<br>$I=81/4-81/3+81/8=\\dfrac{27}{8}$.",
    "note": "Tọa độ trụ hợp với paraboloid, mặt nón; tọa độ cầu hợp với hình cầu; không quên định thức Jacobi."
   },
   {
@@ -469,7 +469,7 @@
     "$4 \\sqrt{2} \\pi^{2}$."
    ],
    "answer": 0,
-   "explain": "$ds = \\sqrt{1^2 + 1^2}\\,dt = \\sqrt{2}\\,dt$; $\\displaystyle\\int_0^{2\\pi} 1t\\cdot\\sqrt{2}\\,dt$<br>Kết quả: $2 \\sqrt{2} \\pi^{2}$",
+   "explain": "$x^\\prime=-1\\sin t,\\ y^\\prime=1\\cos t,\\ z^\\prime=1$; hence $ds=\\sqrt{(-1\\sin t)^2+(1\\cos t)^2+1^2}\\,dt=\\sqrt{2}\\,dt$.<br>$\\displaystyle I=\\int_0^{2\\pi}1t\\cdot\\sqrt{2}\\,dt=1\\sqrt{2}\\left[\\frac{t^2}{2}\\right]_0^{2\\pi}=2\\pi^21\\sqrt{2}=2 \\sqrt{2} \\pi^{2}$.",
    "note": "Tích phân đường loại một: $ds = \\sqrt{x'^2 + y'^2}\\,dt$, không phụ thuộc chiều đi trên đường cong."
   },
   {
@@ -498,7 +498,7 @@
       "$15$."
      ],
      "answer": 0,
-     "explain": "$\\det A = -1\\cdot(4^2 - 1^2)$<br>Kết quả: $-15$"
+     "explain": "$\\det A=-1\\det\\begin{pmatrix}4&1\\\\1&4\\end{pmatrix}$.<br>$\\det A=-1(4\\cdot4-1\\cdot1)=-1((4-1)(4+1))=-15$."
     },
     {
      "q": "Hạng của ma trận $A - (-1)I$ bằng",
@@ -509,7 +509,7 @@
       "$0$."
      ],
      "answer": 0,
-     "explain": "$A - (-1)I = \\begin{pmatrix}5 & 1 & 0 \\\\ 1 & 5 & 0 \\\\ 0 & 0 & 0\\end{pmatrix}$<br>Kết quả: $2$"
+     "explain": "$A-rI=\\begin{pmatrix}5 & 1 & 0 \\\\ 1 & 5 & 0 \\\\ 0 & 0 & 0\\end{pmatrix}$.<br>Khối cấp 2 có định thức $(4--1)^2-1^2=24$.<br>Khối này khác ma trận không; do đó hạng của khối là 2. Hàng/cột cuối bằng 0, suy ra $\\operatorname{rank}(A-rI)=2$."
     },
     {
      "q": "Véc tơ nào sau đây là véc tơ riêng của $A$ ứng với trị riêng $\\lambda = 5$?",
@@ -520,7 +520,7 @@
       "$(1;1;1)$."
      ],
      "answer": 0,
-     "explain": "$A(1;1;0)^T = (5;5;0)^T$.",
+     "explain": "$A\\begin{pmatrix}1\\\\1\\\\0\\end{pmatrix}=\\begin{pmatrix}4+1\\\\1+4\\\\0\\end{pmatrix}=\\begin{pmatrix}5\\\\5\\\\0\\end{pmatrix}$.<br>$\\begin{pmatrix}5\\\\5\\\\0\\end{pmatrix}=5\\begin{pmatrix}1\\\\1\\\\0\\end{pmatrix}$; vậy véc tơ riêng là $(1;1;0)$.",
      "note": "Tổng các trị riêng bằng vết, tích các trị riêng bằng định thức của ma trận."
     }
    ]

@@ -650,12 +650,11 @@
     else { const w = st.wrong[it.ref] || { c: 0 }; w.c++; w.t = Date.now(); st.wrong[it.ref] = w; }
   }
   const topicName = id => TOP.names[id] || 'Khác';
-  // Lời giải nhiều bước (các bước ngăn nhau bằng <br> trong file đề) được trình bày mỗi bước một dòng
-  // Lời giải từng dòng, kèm phần "Lưu ý" ngắn (quy tắc cốt lõi hoặc chỗ hay nhầm) nếu câu hỏi có
+  // Mỗi dòng lời giải là một bước; lời giải ngắn cũng dùng cùng bố cục.
   const noteHtml = it => (it.note ? `<div class="note"><b>Lưu ý:</b> ${it.note}</div>` : '');
-  const explainHtml = it => (!it.explain ? noteHtml(it) : (it.explain.includes('<br>')
-    ? `<div class="exp"><b>Lời giải:</b><div class="steps">${it.explain.split('<br>').map(l => `<div>${l}</div>`).join('')}</div></div>`
-    : `<div class="exp"><b>Lời giải:</b> ${it.explain}</div>`) + noteHtml(it));
+  const explainHtml = it => (!it.explain ? noteHtml(it) : `<div class="exp"><b>Lời giải:</b><div class="steps">${
+    it.explain.split('<br>').map(l => `<div>${l}</div>`).join('')
+  }</div></div>` + noteHtml(it));
   const refLabel = ref => (REF[ref] ? `${REF[ref].exam.title} — Câu ${REF[ref].item.no}` : ref);
   const pct = (a, b) => (b ? Math.round(100 * a / b) : null);
   const barHtml = p => (p === null ? '<span class="pending">chưa có dữ liệu</span>'

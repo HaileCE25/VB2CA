@@ -40,7 +40,7 @@
     "$1$."
    ],
    "answer": 0,
-   "explain": "Có $C_4^3 = 4$ hệ con gồm 3 véc tơ, trong đó 1 hệ phụ thuộc tuyến tính<br>Kết quả: $3$",
+   "explain": "Số hệ con cần xét: $C_4^3=4$.<br>$\\det\\begin{pmatrix}2 & 1 & 2\\\\5 & 1 & 2\\\\2 & -1 & 0\\end{pmatrix}=-6$.<br>$\\det\\begin{pmatrix}2 & 1 & 2\\\\5 & 1 & 2\\\\3 & 0 & 0\\end{pmatrix}=0$.<br>$\\det\\begin{pmatrix}2 & 1 & 2\\\\2 & -1 & 0\\\\3 & 0 & 0\\end{pmatrix}=6$.<br>$\\det\\begin{pmatrix}5 & 1 & 2\\\\2 & -1 & 0\\\\3 & 0 & 0\\end{pmatrix}=6$.<br>Hệ là cơ sở khi định thức khác 0; có 3 định thức khác 0 nên có 3 cơ sở.",
    "note": "Một véc tơ khác không luôn độc lập tuyến tính; hai véc tơ độc lập khi không cùng phương; trong $\\mathbb{R}^n$ không có hệ độc lập nào nhiều hơn $n$ véc tơ."
   },
   {
@@ -99,7 +99,7 @@
     "$-81.0$."
    ],
    "answer": 0,
-   "explain": "$\\left(3\\right)^{3}\\cdot(\\det A)^{3}\\cdot\\dfrac{1}{\\det B} = -108$<br>Kết quả: $-108.0$",
+   "explain": "$\\det\\left(3A^{3}(B^T)^{-1}\\right)=(3)^{3}(\\det A)^{3}\\dfrac{1}{\\det(B^T)}$.<br>$=(3)^{3}\\cdot(-2)^{3}\\cdot\\dfrac{1}{2}$.<br>$=-108$.",
    "note": "$\\det(kA) = k^n\\det A$, $\\det\\left(A^{-1}\\right) = \\dfrac{1}{\\det A}$, $\\det\\left(A^T\\right) = \\det A$, $\\det(AB) = \\det A\\cdot\\det B$."
   },
   {
@@ -171,7 +171,7 @@
     "$0$."
    ],
    "answer": 0,
-   "explain": "$f'_x = 6 x y - 12 x,\\quad f'_y = 3 x^{2} + 3 y^{2} - 12 y$<br>Giải hệ $f'_x = f'_y = 0$ được các điểm dừng: $(-2;2)$, $(0;0)$, $(0;4)$, $(2;2)$<br>Giá trị $AC - B^2$ tại các điểm đó lần lượt: $-144$, $144$, $144$, $-144$<br>Số điểm dừng: $4$; số điểm cực trị (có $AC - B^2 > 0$): $2$",
+   "explain": "$f'_x = 6 x y - 12 x,\\quad f'_y = 3 x^{2} + 3 y^{2} - 12 y$<br>Giải hệ $f'_x=f'_y=0$ (thay lần lượt vào hai phương trình) được các điểm dừng: $(-2;2)$, $(0;0)$, $(0;4)$, $(2;2)$<br>$f''_{xx}=6 \\left(y - 2\\right),\\quad f''_{xy}=6 x,\\quad f''_{yy}=6 \\left(y - 2\\right)$<br>$(-2;2):\\ A=f''_{xx}=0,\\ B=f''_{xy}=-12,\\ C=f''_{yy}=0; AC-B^2=(0)(0)-(-12)^2=-144\\Rightarrow điểm yên ngựa$<br>$(0;0):\\ A=f''_{xx}=-12,\\ B=f''_{xy}=0,\\ C=f''_{yy}=-12; AC-B^2=(-12)(-12)-(0)^2=144\\Rightarrow cực trị$<br>$(0;4):\\ A=f''_{xx}=12,\\ B=f''_{xy}=0,\\ C=f''_{yy}=12; AC-B^2=(12)(12)-(0)^2=144\\Rightarrow cực trị$<br>$(2;2):\\ A=f''_{xx}=0,\\ B=f''_{xy}=12,\\ C=f''_{yy}=0; AC-B^2=(0)(0)-(12)^2=-144\\Rightarrow điểm yên ngựa$<br>Số điểm dừng: $4$; số điểm cực trị (có $AC - B^2 > 0$): $2$",
    "note": "Giải đủ hệ $f'_x = f'_y = 0$ (đừng bỏ sót nghiệm), rồi xét dấu $AC - B^2$ tại từng điểm dừng."
   },
   {
@@ -183,7 +183,7 @@
     "$3$."
    ],
    "answer": 0,
-   "explain": "Chuỗi thứ 1: $u_n \\sim \\dfrac1n$ $\\Rightarrow$ phân kỳ<br>Chuỗi thứ 2: $\\dfrac{u_{n+1}}{u_n} \\to \\dfrac13 < 1$ $\\Rightarrow$ hội tụ<br>Chuỗi thứ 3: $\\sqrt[n]{u_n} \\to \\dfrac23 < 1$ $\\Rightarrow$ hội tụ<br>Chuỗi thứ 4: $u_n \\sim \\dfrac{1}{n^2}$ $\\Rightarrow$ hội tụ<br>Số chuỗi phân kỳ: $1$",
+   "explain": "Chuỗi thứ 1: $u_n=n/(n^2+1)\\sim1/n$; so sánh giới hạn với $1/n$ cho phân kỳ. Kết luận: phân kỳ.<br>Chuỗi thứ 2: $\\dfrac{u_{n+1}}{u_n}=\\dfrac{2n+3}{3(2n+1)}\\to1/3<1$; chuỗi hội tụ. Kết luận: hội tụ.<br>Chuỗi thứ 3: $\\sqrt[n]{u_n}=(2n+1)/(3n+2)\\to2/3<1$; chuỗi hội tụ. Kết luận: hội tụ.<br>Chuỗi thứ 4: $\\tan(1/n^2)\\sim1/n^2$; chuỗi hội tụ theo so sánh giới hạn. Kết luận: hội tụ.<br>Số chuỗi phân kỳ: $1$",
    "note": "So sánh với $\\sum\\dfrac{1}{n^\\alpha}$ (hội tụ khi $\\alpha > 1$); có $n!$ hoặc $a^n$ thì dùng D’Alembert; có lũy thừa bậc $n$ thì dùng Cauchy."
   },
   {
@@ -195,7 +195,7 @@
     "$0$."
    ],
    "answer": 0,
-   "explain": "Chuỗi thứ 1: $|u_n| \\to 1 \\ne 0$ $\\Rightarrow$ phân kỳ<br>Chuỗi thứ 2: $\\sum\\frac{1}{n^2}$ hội tụ $\\Rightarrow$ hội tụ tuyệt đối<br>Chuỗi thứ 3: $\\frac1n \\downarrow 0$ (Leibniz), $\\sum\\frac1n$ phân kỳ $\\Rightarrow$ bán hội tụ<br>Chuỗi thứ 4: $\\frac{1}{\\ln(n+1)} \\downarrow 0$ (Leibniz), $\\frac{1}{\\ln(n+1)} > \\frac1n$ $\\Rightarrow$ bán hội tụ<br>Số chuỗi hội tụ: $3$",
+   "explain": "Chuỗi thứ 1: $|u_n|=n/(n+1)\\to1\\ne0$, điều kiện cần không thỏa; phân kỳ. Kết luận: phân kỳ.<br>Chuỗi thứ 2: $\\sum|u_n|=\\sum1/n^2$ hội tụ ($p=2>1$), nên hội tụ tuyệt đối. Kết luận: hội tụ tuyệt đối.<br>Chuỗi thứ 3: $a_n=1/n\\downarrow0$ nên Leibniz cho hội tụ; $\\sum|u_n|=\\sum1/n$ phân kỳ, do đó bán hội tụ. Kết luận: bán hội tụ.<br>Chuỗi thứ 4: $a_n=1/\\ln(n+1)\\downarrow0$ nên Leibniz hội tụ; $\\ln(n+1)<n$ nên $a_n>1/n$, vì vậy chuỗi trị tuyệt đối phân kỳ: bán hội tụ. Kết luận: bán hội tụ.<br>Số chuỗi hội tụ: $3$",
    "note": "Leibniz: $a_n$ giảm về 0 thì chuỗi đan dấu hội tụ; hội tụ tuyệt đối phải xét thêm $\\sum a_n$; nếu $a_n \\not\\to 0$ thì chuỗi phân kỳ."
   },
   {
@@ -278,7 +278,7 @@
     "$800$."
    ],
    "answer": 0,
-   "explain": "Sau 1 tháng: $(770;530)$; sau 2 tháng: $(746;554)$ (nghìn khách của X và Y)<br>Kết quả: $746$",
+   "explain": "Sau tháng thứ nhất: $P\\begin{pmatrix}800\\\\500\\end{pmatrix}=\\begin{pmatrix}\\dfrac{9}{10} & \\dfrac{1}{10} \\\\ \\dfrac{1}{10} & \\dfrac{9}{10}\\end{pmatrix}(800;500)^T=(770;530)^T$ (nghìn khách).<br>Sau tháng thứ hai: $P(770;530)^T=\\begin{pmatrix}\\dfrac{9}{10} & \\dfrac{1}{10} \\\\ \\dfrac{1}{10} & \\dfrac{9}{10}\\end{pmatrix}(770;530)^T=(746;554)^T$ (nghìn khách).<br>Nhà mạng X có 746 nghìn khách.",
    "note": "Kiểm tra cỡ ma trận trước khi nhân (số cột của ma trận trước bằng số hàng của ma trận sau); với mô hình Leontief giải $(I - A)X = D$."
   },
   {
@@ -314,7 +314,7 @@
     "$m \\ne 0$."
    ],
    "answer": 0,
-   "explain": "Khử Gauss ($h_2 - 2h_1$ và $h_3 - h_1$, rồi trừ hai phương trình mới cho nhau) được $(m^2 - 9)z = m - 3$: với $m = 3$ hệ có vô số nghiệm, với $m = -3$ hệ vô nghiệm, các trường hợp còn lại hệ có nghiệm duy nhất.",
+   "explain": "$h_2-2h_1:\\quad y+2z=-2$.<br>$h_3-h_1:\\quad y+(m^2+2-3^2)z=m - 5$.<br>Khử $y$: $(m^2-3^2)z=m-3\\Leftrightarrow(m-3)(m+3)z=m-3$.<br>$m=3\\Rightarrow 0=0$: đặt $z=t$, $y=- 2 t - 2$ và $x=t + 5$. Vậy có vô số nghiệm.<br>$m=-3\\Rightarrow 0=-2\\cdot3\\ne0$: hệ vô nghiệm.<br>$m\\ne\\pm3\\Rightarrow z=\\dfrac{1}{m+3},\\quad y=- \\dfrac{2 \\left(m + 4\\right)}{m + 3},\\quad x=\\dfrac{5 m + 16}{m + 3}$. Hệ có nghiệm duy nhất.",
    "note": "Xét hàng cuối sau khi khử: hệ số bằng 0 mà vế phải khác 0 thì vô nghiệm; cả hai bằng 0 thì vô số nghiệm; hệ số khác 0 thì nghiệm duy nhất."
   },
   {
@@ -362,7 +362,7 @@
     "$95$."
    ],
    "answer": 0,
-   "explain": "Giải hệ $s_i = d_i$ được giá cân bằng $(20;30;30)$, lượng cung (cầu) tương ứng $(40;40;20)$<br>Kết quả: $100$",
+   "explain": "Tại cân bằng, $s_i=d_i$. Trừ lượng cầu khỏi lượng cung theo từng loại: $(S-D)P=(S-D)(20;30;30)^T$.<br>$S-D=\\begin{pmatrix}5 & 1 & -1 \\\\ 0 & 5 & 0 \\\\ 0 & 1 & 4\\end{pmatrix}$, nên hệ giá là $\\begin{pmatrix}5 & 1 & -1 \\\\ 0 & 5 & 0 \\\\ 0 & 1 & 4\\end{pmatrix}P=(100;150;150)^T$.<br>Ma trận bổ sung ban đầu: $$\\left(\\begin{array}{rrr|r}5 & 1 & -1 & 100\\\\ 0 & 5 & 0 & 150\\\\ 0 & 1 & 4 & 150\\end{array}\\right)$$<br>$R_1 \\leftarrow \\dfrac{1}{5}R_1$: $$\\left(\\begin{array}{rrr|r}1 & \\dfrac{1}{5} & - \\dfrac{1}{5} & 20\\\\ 0 & 5 & 0 & 150\\\\ 0 & 1 & 4 & 150\\end{array}\\right)$$<br>$R_2 \\leftarrow \\dfrac{1}{5}R_2$: $$\\left(\\begin{array}{rrr|r}1 & \\dfrac{1}{5} & - \\dfrac{1}{5} & 20\\\\ 0 & 1 & 0 & 30\\\\ 0 & 1 & 4 & 150\\end{array}\\right)$$<br>$R_1 \\leftarrow R_1 - (\\dfrac{1}{5})R_2$: $$\\left(\\begin{array}{rrr|r}1 & 0 & - \\dfrac{1}{5} & 14\\\\ 0 & 1 & 0 & 30\\\\ 0 & 1 & 4 & 150\\end{array}\\right)$$<br>$R_3 \\leftarrow R_3 - (1)R_2$: $$\\left(\\begin{array}{rrr|r}1 & 0 & - \\dfrac{1}{5} & 14\\\\ 0 & 1 & 0 & 30\\\\ 0 & 0 & 4 & 120\\end{array}\\right)$$<br>$R_3 \\leftarrow \\dfrac{1}{4}R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & - \\dfrac{1}{5} & 14\\\\ 0 & 1 & 0 & 30\\\\ 0 & 0 & 1 & 30\\end{array}\\right)$$<br>$R_1 \\leftarrow R_1 - (- \\dfrac{1}{5})R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 20\\\\ 0 & 1 & 0 & 30\\\\ 0 & 0 & 1 & 30\\end{array}\\right)$$<br>$P=(20;30;30)^T$; thay vào hàm cung hoặc cầu được $Q=(40;40;20)^T$.<br>Tổng lượng cung/cầu: $40+40+20=100$; tổng giá: $20+30+30=80$.",
    "note": "Lập hệ phương trình từ điều kiện của bài toán (cung bằng cầu, hoặc dùng hết nguyên liệu) rồi giải bằng phép khử Gauss."
   },
   {
@@ -398,7 +398,7 @@
     "$\\dfrac{1}{(1+x)^2}$."
    ],
    "answer": 0,
-   "explain": "Đạo hàm từng số hạng chuỗi $\\sum_{n\\ge0} x^{n+1} = \\dfrac{x}{1-x}$.",
+   "explain": "$\\sum_{n\\ge0}x^{n+1}=\\frac{x}{1-x}$. Lấy đạo hàm hai vế: $\\sum_{n\\ge0}(n+1)x^n=\\left(\\frac{x}{1-x}\\right)^\\prime=\\frac{(1-x)+x}{(1-x)^2}=\\frac1{(1-x)^2}$.",
    "note": "Đạo hàm hoặc tích phân từng số hạng của $\\displaystyle\\sum x^n = \\dfrac{1}{1 - x}$ để có các chuỗi liên quan; chỉ đúng khi $|x| < 1$."
   },
   {
@@ -410,7 +410,7 @@
     "$y = \\arctan(x^2 + C)$."
    ],
    "answer": 0,
-   "explain": "$\\dfrac{dy}{1+y^2} = 2x\\,dx \\Rightarrow \\arctan y = x^2 + C$.",
+   "explain": "$\\dfrac{dy}{1+y^2}=2x\\,dx$. Tích phân: $\\arctan y=x^2+C$, do đó $y=\\tan(x^2+C)$.",
    "note": "Tách biến: đưa $y$ về một vế, $x$ về một vế rồi lấy tích phân; hằng số $C$ chỉ cần viết ở một vế."
   },
   {
@@ -422,7 +422,7 @@
     "$y = Ce^{-x^2}$."
    ],
    "answer": 0,
-   "explain": "$\\left(ye^{x^2}\\right)' = 2xe^{x^2}$.",
+   "explain": "Nhân tử tích phân $e^{x^2}$: $(ye^{x^2})^\\prime=2xe^{x^2}$. Tích phân: $ye^{x^2}=e^{x^2}+C$, nên $y=1+Ce^{-x^2}$.",
    "note": "Tuyến tính: nhân thừa số tích phân $e^{\\int p\\,dx}$; đẳng cấp: đặt $y = ux$."
   },
   {
@@ -458,7 +458,7 @@
     "$12$."
    ],
    "answer": 0,
-   "explain": "$\\dfrac{2^2}{2}\\cdot1\\cdot2 + 2\\cdot\\dfrac{1^2}{2}\\cdot\\dfrac{2^2}{2} = 6$<br>Kết quả: $6$",
+   "explain": "$\\displaystyle I=\\int_0^{2}\\int_0^{1}\\int_0^{2}(x+yz)\\,dx\\,dy\\,dz$. Tích phân trong: $\\int_0^{2}(x+yz)\\,dx=4/2+2yz$.<br>Tách tích phân: $\\dfrac{412}{2}+2\\left(\\int_0^{1}y\\,dy\\right)\\left(\\int_0^{2}z\\,dz\\right)=\\dfrac{412}{2}+\\dfrac{214}{4}$.<br>$I=6$.",
    "note": "Tọa độ trụ hợp với paraboloid, mặt nón; tọa độ cầu hợp với hình cầu; không quên định thức Jacobi."
   },
   {
@@ -470,7 +470,7 @@
     "$13$."
    ],
    "answer": 0,
-   "explain": "$ds = \\sqrt{1 + x^2}\\,dx$; $\\displaystyle\\int_0^{\\sqrt8} x\\sqrt{1 + x^2}\\,dx = \\dfrac{(1 + x^2)^{3/2}}{3}\\Big|_0^{\\sqrt8}$<br>Kết quả: $\\dfrac{26}{3}$",
+   "explain": "Đặt $x=t,\\ y=t^2/2$ với $0\\le t\\le\\sqrt8$; $ds=\\sqrt{(dx/dt)^2+(dy/dt)^2}\\,dt=\\sqrt{1+t^2}\\,dt$, nên $x\\,ds=t\\sqrt{1+t^2}\\,dt$.<br>Đặt $u=1+t^2$, $du=2t\\,dt$: $\\displaystyle I=\\frac12\\int_1^{1+\\sqrt8^2}u^{1/2}\\,du=\\frac13[u^{3/2}]_1^{1+\\sqrt8^2}$.<br>$I=\\dfrac{(1+\\sqrt8^2)^{3/2}-1}{3}=\\dfrac{26}{3}$.",
    "note": "Tích phân đường loại một: $ds = \\sqrt{x'^2 + y'^2}\\,dt$, không phụ thuộc chiều đi trên đường cong."
   },
   {
@@ -499,7 +499,7 @@
       "$m = -5$."
      ],
      "answer": 0,
-     "explain": "$\\det A = 4 \\left(m + 8\\right)$<br>Kết quả: $m = -8$"
+     "explain": "$\\det A=4 m + 32=4 \\left(m + 8\\right)$.<br>$\\det A=0\\Leftrightarrow4 \\left(m + 8\\right)=0\\Leftrightarrow m=-8$."
     },
     {
      "q": "Với $m = -7$, giá trị của $\\det\\left(2A^{-1}\\right)$ bằng",
@@ -510,7 +510,7 @@
       "$\\dfrac{1}{4}$."
      ],
      "answer": 0,
-     "explain": "$\\det A = 4$ nên $\\det(2A^{-1}) = \\dfrac{2^3}{4}$<br>Kết quả: $2$"
+     "explain": "$\\det A|_{m=-7}=4\\ne0$, nên $A$ khả nghịch.<br>$\\det(2A^{-1})=2^3\\det(A^{-1})=\\dfrac{2^3}{\\det A}=\\dfrac{2^3}{4}=2$."
     },
     {
      "q": "Với $m = -8$, biết $u_3 = au_1 + bu_2$. Giá trị của $a\\cdot b$ bằng",
@@ -521,7 +521,7 @@
       "$-3$."
      ],
      "answer": 0,
-     "explain": "Từ hai tọa độ đầu giải được $a = 2,\\ b = -2$ (tọa độ thứ ba cũng thỏa mãn)<br>Kết quả: $-4$",
+     "explain": "Tọa độ thứ nhất và hai của $u_3=au_1+bu_2$ cho hệ: $\\begin{cases}-1a+-1b=0\\\\3a+-1b=8\\end{cases}$.<br>Định thức hệ số: $-1\\cdot-1--1\\cdot3=4\\ne0$.<br>Giải hệ được $a=2,\\ b=-2$. Kiểm tra tọa độ thứ ba: $2\\cdot-1+-2\\cdot3=-8$.<br>$a\\cdot b=2\\cdot-2=-4$.",
      "note": "Tổng các trị riêng bằng vết, tích các trị riêng bằng định thức của ma trận."
     }
    ]
@@ -572,7 +572,7 @@
    "answer": [
     "-64"
    ],
-   "explain": "$A = \\begin{pmatrix}4 & 9 & 16 \\\\ 9 & 16 & 25 \\\\ 16 & 25 & 36\\end{pmatrix}$, $\\det A = -8$; kết quả bằng $2^3\\cdot\\det A$ $= -64$<br>Đáp số: $-64$",
+   "explain": "$$A=\\begin{pmatrix}4 & 9 & 16 \\\\ 9 & 16 & 25 \\\\ 16 & 25 & 36\\end{pmatrix},\\quad \\det A=(4)\\big((16)(36)-(25)(25)\\big)-(9)\\big((9)(36)-(25)(16)\\big)+(16)\\big((9)(25)-(16)(16)\\big)$$<br>$=-196 + 684 - 496=-8$.<br>$\\det(2A^T)=2^3\\det(A^T)=2^3\\det A=2^3\\cdot-8=-64$.",
    "note": "Viết ma trận ra từ công thức của $a_{ij}$, rồi dùng $\\det\\left(A^T\\right) = \\det A$ và $\\det(AB) = \\det A\\cdot\\det B$."
   },
   {
@@ -588,7 +588,7 @@
    "answer": [
     "3"
    ],
-   "explain": "Đặt $t = x^2$: bán kính hội tụ theo $t$ bằng 9, tức $x^2 < 9$<br>$R = 3$",
+   "explain": "$\\sqrt[n]{|u_n|}=x^2/(9n^{1/n})\\to x^2/9$; điều kiện trong miền hội tụ là $|x|<3$, do đó bán kính $R=3$.<br>$R = 3$",
    "note": "Chuỗi theo $x^k$: đặt $t = x^k$; bán kính theo $x$ là căn bậc $k$ của bán kính theo $t$."
   },
   {

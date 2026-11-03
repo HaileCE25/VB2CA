@@ -28,7 +28,7 @@
     "$19$."
    ],
    "answer": 0,
-   "explain": "$v = au_1 + bu_2 + cu_3 \\Leftrightarrow \\begin{cases}5 a + 2 b + 4 c = 35\\\\ 2 a + 3 b + 5 c = 32\\\\ a + 2 b + 3 c = 19\\end{cases}$<br>Giải hệ bằng phép khử Gauss: $a = 3,\\ b = 2,\\ c = 4$<br>$2 a + 3 b + c = 16$",
+   "explain": "$$v = au_1 + bu_2 + cu_3 \\Leftrightarrow \\begin{cases}5 a + 2 b + 4 c = 35\\\\ 2 a + 3 b + 5 c = 32\\\\ a + 2 b + 3 c = 19\\end{cases}$$<br>Ma trận bổ sung ban đầu: $$\\left(\\begin{array}{rrr|r}5 & 2 & 4 & 35\\\\ 2 & 3 & 5 & 32\\\\ 1 & 2 & 3 & 19\\end{array}\\right)$$<br>$R_1 \\leftarrow \\dfrac{1}{5}R_1$: $$\\left(\\begin{array}{rrr|r}1 & \\dfrac{2}{5} & \\dfrac{4}{5} & 7\\\\ 2 & 3 & 5 & 32\\\\ 1 & 2 & 3 & 19\\end{array}\\right)$$<br>$R_2 \\leftarrow R_2 - (2)R_1$: $$\\left(\\begin{array}{rrr|r}1 & \\dfrac{2}{5} & \\dfrac{4}{5} & 7\\\\ 0 & \\dfrac{11}{5} & \\dfrac{17}{5} & 18\\\\ 1 & 2 & 3 & 19\\end{array}\\right)$$<br>$R_3 \\leftarrow R_3 - (1)R_1$: $$\\left(\\begin{array}{rrr|r}1 & \\dfrac{2}{5} & \\dfrac{4}{5} & 7\\\\ 0 & \\dfrac{11}{5} & \\dfrac{17}{5} & 18\\\\ 0 & \\dfrac{8}{5} & \\dfrac{11}{5} & 12\\end{array}\\right)$$<br>$R_2 \\leftarrow \\dfrac{1}{\\dfrac{11}{5}}R_2$: $$\\left(\\begin{array}{rrr|r}1 & \\dfrac{2}{5} & \\dfrac{4}{5} & 7\\\\ 0 & 1 & \\dfrac{17}{11} & \\dfrac{90}{11}\\\\ 0 & \\dfrac{8}{5} & \\dfrac{11}{5} & 12\\end{array}\\right)$$<br>$R_1 \\leftarrow R_1 - (\\dfrac{2}{5})R_2$: $$\\left(\\begin{array}{rrr|r}1 & 0 & \\dfrac{2}{11} & \\dfrac{41}{11}\\\\ 0 & 1 & \\dfrac{17}{11} & \\dfrac{90}{11}\\\\ 0 & \\dfrac{8}{5} & \\dfrac{11}{5} & 12\\end{array}\\right)$$<br>$R_3 \\leftarrow R_3 - (\\dfrac{8}{5})R_2$: $$\\left(\\begin{array}{rrr|r}1 & 0 & \\dfrac{2}{11} & \\dfrac{41}{11}\\\\ 0 & 1 & \\dfrac{17}{11} & \\dfrac{90}{11}\\\\ 0 & 0 & - \\dfrac{3}{11} & - \\dfrac{12}{11}\\end{array}\\right)$$<br>$R_3 \\leftarrow \\dfrac{1}{- \\dfrac{3}{11}}R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & \\dfrac{2}{11} & \\dfrac{41}{11}\\\\ 0 & 1 & \\dfrac{17}{11} & \\dfrac{90}{11}\\\\ 0 & 0 & 1 & 4\\end{array}\\right)$$<br>$R_1 \\leftarrow R_1 - (\\dfrac{2}{11})R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 3\\\\ 0 & 1 & \\dfrac{17}{11} & \\dfrac{90}{11}\\\\ 0 & 0 & 1 & 4\\end{array}\\right)$$<br>$R_2 \\leftarrow R_2 - (\\dfrac{17}{11})R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 3\\\\ 0 & 1 & 0 & 2\\\\ 0 & 0 & 1 & 4\\end{array}\\right)$$<br>$\\begin{cases}a=3\\\\b=2\\\\c=4\\end{cases}$<br>$2\\cdot3 + 3\\cdot2 + 1\\cdot4 = 16$.",
    "note": "Viết đẳng thức véc tơ theo từng tọa độ để được hệ phương trình tuyến tính; với phương trình véc tơ, chuyển vế như phương trình số."
   },
   {
@@ -40,7 +40,7 @@
     "$11$."
    ],
    "answer": 0,
-   "explain": "Có 5 hệ một véc tơ và 7 hệ hai véc tơ độc lập tuyến tính<br>Kết quả: $12$",
+   "explain": "Cả 5 véc tơ đều khác véc tơ không nên có 5 hệ một véc tơ độc lập.<br>$(u_1,u_2):\\ (\\Delta_{12})=(0)$.<br>$(u_1,u_3):\\ (\\Delta_{12})=(-3)$.<br>$(u_1,u_4):\\ (\\Delta_{12})=(-3)$.<br>$(u_1,u_5):\\ (\\Delta_{12})=(0)$.<br>$(u_2,u_3):\\ (\\Delta_{12})=(1)$.<br>$(u_2,u_4):\\ (\\Delta_{12})=(1)$.<br>$(u_2,u_5):\\ (\\Delta_{12})=(0)$.<br>$(u_3,u_4):\\ (\\Delta_{12})=(1)$.<br>$(u_3,u_5):\\ (\\Delta_{12})=(1)$.<br>$(u_4,u_5):\\ (\\Delta_{12})=(1)$.<br>Tổng số hệ con độc lập tuyến tính: $5+7+0=12$.",
    "note": "Một véc tơ khác không luôn độc lập tuyến tính; hai véc tơ độc lập khi không cùng phương; trong $\\mathbb{R}^n$ không có hệ độc lập nào nhiều hơn $n$ véc tơ."
   },
   {
@@ -52,7 +52,7 @@
     "$1$."
    ],
    "answer": 0,
-   "explain": "$u_3 = u_{1} + 2 u_{2}$; $u_4 = - 2 u_{1} + 2 u_{2}$; $u_5 = - u_{1} + 3 u_{2}$; còn $u_1, u_2$ độc lập tuyến tính nên hạng bằng 2<br>Kết quả: $2$",
+   "explain": "$u_3 = u_{1} + 2 u_{2}$<br>$u_4 = - 2 u_{1} + 2 u_{2}$<br>$u_5 = - u_{1} + 3 u_{2}$<br>Với các cột 1,2, $\\det \\begin{pmatrix}-2 & 3 \\\\ -2 & -1\\end{pmatrix}=8\\ne 0$ nên hệ véc tơ $u_1, u_2$ độc lập tuyến tính.<br>Các véc tơ còn lại là tổ hợp tuyến tính đã nêu; do đó hạng không vượt quá 2.<br>Vậy $\\operatorname{rank}(S)=2$.",
    "note": "Hạng = số hàng khác không của dạng bậc thang; số véc tơ thừa = số véc tơ $-$ hạng."
   },
   {
@@ -76,7 +76,7 @@
     "$2$."
    ],
    "answer": 0,
-   "explain": "$\\det A = 5 \\left(m - 4\\right) \\left(m + 1\\right)$<br>$\\det A = 0 \\Leftrightarrow m \\in \\{-1;4\\}$<br>Đoạn $[-5;5]$ có $11$ số nguyên, trong đó $2$ số làm định thức bằng 0<br>Số giá trị cần tìm: $11 - 2 = 9$",
+   "explain": "$$A=\\begin{pmatrix}1 & 1 & 1 \\\\ -1 & 4 & m \\\\ 1 & 16 & m^{2}\\end{pmatrix},\\quad \\det A=(1)\\big((4)(m^{2})-(m)(16)\\big)-(1)\\big((-1)(m^{2})-(m)(1)\\big)+(1)\\big((-1)(16)-(4)(1)\\big)$$<br>$\\det A=5 m^{2} - 15 m - 20$.<br>$\\det A=5 \\left(m - 4\\right) \\left(m + 1\\right)$.<br>$\\det A=0 \\Leftrightarrow m \\in \\{-1;4\\}$.<br>Đoạn $[-5;5]$ có $11$ số nguyên, trong đó $2$ số làm định thức bằng 0<br>Số giá trị cần tìm: $11 - 2 = 9$",
    "note": "$A$ khả nghịch $\\Leftrightarrow \\det A \\ne 0$: đếm các số nguyên trong đoạn rồi trừ các nghiệm của $\\det A = 0$ nằm trong đoạn."
   },
   {
@@ -99,7 +99,7 @@
     "$-64.8$."
    ],
    "answer": 0,
-   "explain": "$\\left(3\\right)^{4}\\cdot(\\det A)^{2}\\cdot\\dfrac{1}{\\det B} = \\dfrac{324}{5}$<br>Kết quả: $64.8$",
+   "explain": "$\\det\\left(3A^{2}(B^T)^{-1}\\right)=(3)^{4}(\\det A)^{2}\\dfrac{1}{\\det(B^T)}$.<br>$=(3)^{4}\\cdot(-2)^{2}\\cdot\\dfrac{1}{5}$.<br>$=\\dfrac{324}{5}$.",
    "note": "$\\det(kA) = k^n\\det A$, $\\det\\left(A^{-1}\\right) = \\dfrac{1}{\\det A}$, $\\det\\left(A^T\\right) = \\det A$, $\\det(AB) = \\det A\\cdot\\det B$."
   },
   {
@@ -170,7 +170,7 @@
     "$3$."
    ],
    "answer": 0,
-   "explain": "$f'_x = - 2 x y - y^{2} + y,\\quad f'_y = - x^{2} - 2 x y + x$<br>Giải hệ $f'_x = f'_y = 0$ được các điểm dừng: $(0;0)$, $(0;1)$, $(\\dfrac{1}{3};\\dfrac{1}{3})$, $(1;0)$<br>Giá trị $AC - B^2$ tại các điểm đó lần lượt: $-1$, $-1$, $\\dfrac{1}{3}$, $-1$<br>Số điểm dừng: $4$; số điểm cực trị (có $AC - B^2 > 0$): $1$",
+   "explain": "$f'_x = - 2 x y - y^{2} + y,\\quad f'_y = - x^{2} - 2 x y + x$<br>Giải hệ $f'_x=f'_y=0$ (thay lần lượt vào hai phương trình) được các điểm dừng: $(0;0)$, $(0;1)$, $(\\dfrac{1}{3};\\dfrac{1}{3})$, $(1;0)$<br>$f''_{xx}=- 2 y,\\quad f''_{xy}=- 2 x - 2 y + 1,\\quad f''_{yy}=- 2 x$<br>$(0;0):\\ A=f''_{xx}=0,\\ B=f''_{xy}=1,\\ C=f''_{yy}=0; AC-B^2=(0)(0)-(1)^2=-1\\Rightarrow điểm yên ngựa$<br>$(0;1):\\ A=f''_{xx}=-2,\\ B=f''_{xy}=-1,\\ C=f''_{yy}=0; AC-B^2=(-2)(0)-(-1)^2=-1\\Rightarrow điểm yên ngựa$<br>$(\\dfrac{1}{3};\\dfrac{1}{3}):\\ A=f''_{xx}=- \\dfrac{2}{3},\\ B=f''_{xy}=- \\dfrac{1}{3},\\ C=f''_{yy}=- \\dfrac{2}{3}; AC-B^2=(- \\dfrac{2}{3})(- \\dfrac{2}{3})-(- \\dfrac{1}{3})^2=\\dfrac{1}{3}\\Rightarrow cực trị$<br>$(1;0):\\ A=f''_{xx}=0,\\ B=f''_{xy}=-1,\\ C=f''_{yy}=-2; AC-B^2=(0)(-2)-(-1)^2=-1\\Rightarrow điểm yên ngựa$<br>Số điểm dừng: $4$; số điểm cực trị (có $AC - B^2 > 0$): $1$",
    "note": "Giải đủ hệ $f'_x = f'_y = 0$ (đừng bỏ sót nghiệm), rồi xét dấu $AC - B^2$ tại từng điểm dừng."
   },
   {
@@ -182,7 +182,7 @@
     "$2$."
    ],
    "answer": 0,
-   "explain": "Chuỗi thứ 1: $u_n \\le \\dfrac{\\pi}{2n^2}$ $\\Rightarrow$ hội tụ<br>Chuỗi thứ 2: $\\dfrac{u_{n+1}}{u_n} = \\dfrac{2}{n+1} \\to 0 < 1$ $\\Rightarrow$ hội tụ<br>Chuỗi thứ 3: $u_n \\sim \\dfrac{1}{2n^2}$ $\\Rightarrow$ hội tụ<br>Chuỗi thứ 4: $u_n \\sim \\left(\\dfrac32\\right)^n \\not\\to 0$ $\\Rightarrow$ phân kỳ<br>Số chuỗi hội tụ: $3$",
+   "explain": "Chuỗi thứ 1: $0<\\arctan n<\\pi/2$, nên $0<\\arctan(n)/n^2<\\pi/(2n^2)$; chuỗi hội tụ. Kết luận: hội tụ.<br>Chuỗi thứ 2: $\\dfrac{u_{n+1}}{u_n}=\\dfrac{2^{n+1}/(n+1)!}{2^n/n!}=\\dfrac2{n+1}\\to0<1$; chuỗi hội tụ. Kết luận: hội tụ.<br>Chuỗi thứ 3: $1-\\cos(1/n)\\sim\\frac1{2n^2}$; so sánh giới hạn với $1/n^2$ cho hội tụ. Kết luận: hội tụ.<br>Chuỗi thứ 4: $u_n=\\dfrac{3^n}{2^n+n}\\sim(3/2)^n$, nên $u_n\\not\\to0$; chuỗi phân kỳ. Kết luận: phân kỳ.<br>Số chuỗi hội tụ: $3$",
    "note": "So sánh với $\\sum\\dfrac{1}{n^\\alpha}$ (hội tụ khi $\\alpha > 1$); có $n!$ hoặc $a^n$ thì dùng D’Alembert; có lũy thừa bậc $n$ thì dùng Cauchy."
   },
   {
@@ -194,7 +194,7 @@
     "$2$."
    ],
    "answer": 0,
-   "explain": "Chuỗi thứ 1: $\\frac{|u_{n+1}|}{|u_n|} \\to \\frac12 < 1$ $\\Rightarrow$ hội tụ tuyệt đối<br>Chuỗi thứ 2: $|u_n| \\le \\frac{1}{n^2}$ $\\Rightarrow$ hội tụ tuyệt đối<br>Chuỗi thứ 3: $\\sum\\frac{1}{n^2}$ hội tụ $\\Rightarrow$ hội tụ tuyệt đối<br>Chuỗi thứ 4: $|u_n| \\to 1 \\ne 0$ $\\Rightarrow$ phân kỳ<br>Số chuỗi hội tụ: $3$",
+   "explain": "Chuỗi thứ 1: $\\dfrac{|u_{n+1}|}{|u_n|}=\\dfrac{n+1}{2^{n+1}}\\dfrac{2^n}{n}=\\dfrac{n+1}{2n}\\to1/2<1$, nên hội tụ tuyệt đối. Kết luận: hội tụ tuyệt đối.<br>Chuỗi thứ 2: $0<1/(n^2+1)\\le1/n^2$; so sánh với $\\sum1/n^2$ chứng minh hội tụ tuyệt đối. Kết luận: hội tụ tuyệt đối.<br>Chuỗi thứ 3: $\\sum|u_n|=\\sum1/n^2$ hội tụ ($p=2>1$), nên hội tụ tuyệt đối. Kết luận: hội tụ tuyệt đối.<br>Chuỗi thứ 4: $|u_n|=n/(n+1)\\to1\\ne0$, điều kiện cần không thỏa; phân kỳ. Kết luận: phân kỳ.<br>Số chuỗi hội tụ: $3$",
    "note": "Leibniz: $a_n$ giảm về 0 thì chuỗi đan dấu hội tụ; hội tụ tuyệt đối phải xét thêm $\\sum a_n$; nếu $a_n \\not\\to 0$ thì chuỗi phân kỳ."
   },
   {
@@ -206,7 +206,7 @@
     "$(3x^2 + 2xy^2)dx + (2x^2y + 4y^3)dy = 0$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> $y' + y\\tan x = \\cos x$ — Dạng $y' + p(x)y = q(x)$: bậc nhất đối với $y$ và $y'$<br><b>Sai:</b> $y' = e^{x - y}$ — là phương trình có biến số phân ly (tách được $x$ và $y$ về hai vế), không thuộc dạng đang hỏi<br><b>Sai:</b> $y' - y = xy^2$ — là phương trình Bernoulli (có số hạng $y^{\\alpha}$ với $\\alpha \\ne 0, 1$ ở vế phải), không thuộc dạng đang hỏi<br><b>Sai:</b> $(3x^2 + 2xy^2)dx + (2x^2y + 4y^3)dy = 0$ — là phương trình vi phân toàn phần, không thuộc dạng đang hỏi"
+   "explain": "<b>Đúng:</b> $y' + y\\tan x = \\cos x$ — Dạng $y' + p(x)y = q(x)$: bậc nhất đối với $y$ và $y'$; Đã ở dạng $y'+(\\tan x)y=\\cos x$, bậc nhất tuyến tính theo $y,y'$.<br><b>Sai:</b> $y' = e^{x - y}$ — $e^{x-y}=e^x e^{-y}$ nên $e^y\\,dy=e^x\\,dx$.; đây là là phương trình có biến số phân ly (tách được $x$ và $y$ về hai vế), không phải dạng đang hỏi.<br><b>Sai:</b> $y' - y = xy^2$ — $y'-y=xy^2$: dạng Bernoulli với $\\alpha=2$.; đây là là phương trình Bernoulli (có số hạng $y^{\\alpha}$ với $\\alpha \\ne 0, 1$ ở vế phải), không phải dạng đang hỏi.<br><b>Sai:</b> $(3x^2 + 2xy^2)dx + (2x^2y + 4y^3)dy = 0$ — $P=(3x^2 + 2xy^2),\\ Q=2x^2y + 4y^3$: $\\partial P/\\partial y=4xy$ và $\\partial Q/\\partial x=4xy$; bằng nhau, nên toàn phần.; đây là là phương trình vi phân toàn phần, không phải dạng đang hỏi."
   },
   {
    "q": "Gọi $y = y(x)$ là nghiệm của phương trình $y' - \\dfrac{2y}{x} = x^{2}$ $(x > 0)$ thỏa mãn $y(1) = 5$. Giá trị của $y(2)$ bằng",
@@ -277,7 +277,7 @@
     "$1620$."
    ],
    "answer": 0,
-   "explain": "Nhu cầu vật liệu $AX = (180;120;120)^T$; chi phí bằng tích vô hướng với véc tơ giá: $1740$<br>Kết quả: $1740$",
+   "explain": "Sản lượng viết thành véc tơ cột: $X=(20;15;5;15)^T$.<br>Nhu cầu từng loại vật liệu: $AX=\\begin{pmatrix}4 & 1 & 5 & 4 \\\\ 2 & 3 & 1 & 2 \\\\ 1 & 2 & 5 & 3\\end{pmatrix}(20;15;5;15)^T=(180;120;120)^T$.<br>Chi phí: $3\\cdot180+5\\cdot120+5\\cdot120=1740$.",
    "note": "Kiểm tra cỡ ma trận trước khi nhân (số cột của ma trận trước bằng số hàng của ma trận sau); với mô hình Leontief giải $(I - A)X = D$."
   },
   {
@@ -289,7 +289,7 @@
     "$m = 4$."
    ],
    "answer": 0,
-   "explain": "Ba tọa độ đầu của hàng 3 bằng $-2$ lần hàng 1 cộng $2$ lần hàng 2, nên hạng bằng 2 khi và chỉ khi phần tử cuối cũng thỏa mãn hệ thức đó: $m = 0$; ngược lại hạng bằng 3<br>Kết quả: $m = 0$",
+   "explain": "$R_3 \\leftarrow R_3 + 2R_1 - 2R_2$.<br>$A = \\begin{pmatrix}1 & 1 & 2 & 2 \\\\ 3 & -2 & -1 & 2 \\\\ 4 & -6 & -6 & m\\end{pmatrix} \\xrightarrow{R_3 \\leftarrow R_3 + 2R_1 - 2R_2} \\begin{pmatrix}1 & 1 & 2 & 2 \\\\ 3 & -2 & -1 & 2 \\\\ 0 & 0 & 0 & m\\end{pmatrix}$.<br>$\\det \\begin{pmatrix}1 & 1 \\\\ 3 & -2\\end{pmatrix} = -5 \\ne 0$, nên hai hàng đầu độc lập tuyến tính.<br>$m = 0 \\Rightarrow R_3 = (0,0,0,0) \\Rightarrow \\operatorname{rank}(A)=2$.<br>$m \\ne 0 \\Rightarrow R_3 = (0,0,0,m) \\ne (0,0,0,0) \\Rightarrow \\operatorname{rank}(A)=3$.<br><b>Kết quả:</b> $m = 0$.",
    "note": "Đưa về dạng bậc thang; hạng giảm đúng khi hàng cuối thành hàng không, điều kiện đó cho giá trị của $m$."
   },
   {
@@ -301,7 +301,7 @@
     "$\\begin{pmatrix}-1 & 2 \\\\ -2 & 3\\end{pmatrix}$."
    ],
    "answer": 0,
-   "explain": "$X = A^{-1}B$; kết quả $X = \\begin{pmatrix}-1 & -2 \\\\ 2 & 3\\end{pmatrix}$.",
+   "explain": "$AX=B \\Rightarrow X=A^{-1}B$.<br>$A^{-1}=\\begin{pmatrix}3 & -1 \\\\ 7 & -2\\end{pmatrix},\\qquad A^{-1}B=\\begin{pmatrix}-1 & -2 \\\\ 2 & 3\\end{pmatrix}$.<br>Kiểm tra: $A\\begin{pmatrix}-1 & -2 \\\\ 2 & 3\\end{pmatrix}=\\begin{pmatrix}4 & 7 \\\\ 13 & 23\\end{pmatrix}$.",
    "note": "$AX = B \\Rightarrow X = A^{-1}B$ (nhân bên trái); $XA = B \\Rightarrow X = BA^{-1}$ (nhân bên phải); không được đổi thứ tự."
   },
   {
@@ -313,7 +313,7 @@
     "$m = 0$."
    ],
    "answer": 0,
-   "explain": "Khử Gauss ($h_2 - 2h_1$ và $h_3 - h_1$, rồi trừ hai phương trình mới cho nhau) được $(m^2 - 1)z = m - 1$: với $m = 1$ hệ có vô số nghiệm, với $m = -1$ hệ vô nghiệm, các trường hợp còn lại hệ có nghiệm duy nhất.",
+   "explain": "$h_2-2h_1:\\quad y+1z=-2$.<br>$h_3-h_1:\\quad y+(m^2+1-1^2)z=m - 3$.<br>Khử $y$: $(m^2-1^2)z=m-1\\Leftrightarrow(m-1)(m+1)z=m-1$.<br>$m=1\\Rightarrow 0=0$: đặt $z=t$, $y=- t - 2$ và $x=4 - t$. Vậy có vô số nghiệm.<br>$m=-1\\Rightarrow 0=-2\\cdot1\\ne0$: hệ vô nghiệm.<br>$m\\ne\\pm1\\Rightarrow z=\\dfrac{1}{m+1},\\quad y=- \\dfrac{2 m + 3}{m + 1},\\quad x=\\dfrac{4 m + 3}{m + 1}$. Hệ có nghiệm duy nhất.",
    "note": "Xét hàng cuối sau khi khử: hệ số bằng 0 mà vế phải khác 0 thì vô nghiệm; cả hai bằng 0 thì vô số nghiệm; hệ số khác 0 thì nghiệm duy nhất."
   },
   {
@@ -361,7 +361,7 @@
     "$75$."
    ],
    "answer": 0,
-   "explain": "Giải hệ $s_i = d_i$ được giá cân bằng $(15;40;25)$, lượng cung (cầu) tương ứng $(50;50;40)$<br>Kết quả: $80$",
+   "explain": "Tại cân bằng, $s_i=d_i$. Trừ lượng cầu khỏi lượng cung theo từng loại: $(S-D)P=(S-D)(15;40;25)^T$.<br>$S-D=\\begin{pmatrix}4 & 1 & -2 \\\\ 0 & 4 & -2 \\\\ 0 & -2 & 2\\end{pmatrix}$, nên hệ giá là $\\begin{pmatrix}4 & 1 & -2 \\\\ 0 & 4 & -2 \\\\ 0 & -2 & 2\\end{pmatrix}P=(50;110;-30)^T$.<br>Ma trận bổ sung ban đầu: $$\\left(\\begin{array}{rrr|r}4 & 1 & -2 & 50\\\\ 0 & 4 & -2 & 110\\\\ 0 & -2 & 2 & -30\\end{array}\\right)$$<br>$R_1 \\leftarrow \\dfrac{1}{4}R_1$: $$\\left(\\begin{array}{rrr|r}1 & \\dfrac{1}{4} & - \\dfrac{1}{2} & \\dfrac{25}{2}\\\\ 0 & 4 & -2 & 110\\\\ 0 & -2 & 2 & -30\\end{array}\\right)$$<br>$R_2 \\leftarrow \\dfrac{1}{4}R_2$: $$\\left(\\begin{array}{rrr|r}1 & \\dfrac{1}{4} & - \\dfrac{1}{2} & \\dfrac{25}{2}\\\\ 0 & 1 & - \\dfrac{1}{2} & \\dfrac{55}{2}\\\\ 0 & -2 & 2 & -30\\end{array}\\right)$$<br>$R_1 \\leftarrow R_1 - (\\dfrac{1}{4})R_2$: $$\\left(\\begin{array}{rrr|r}1 & 0 & - \\dfrac{3}{8} & \\dfrac{45}{8}\\\\ 0 & 1 & - \\dfrac{1}{2} & \\dfrac{55}{2}\\\\ 0 & -2 & 2 & -30\\end{array}\\right)$$<br>$R_3 \\leftarrow R_3 - (-2)R_2$: $$\\left(\\begin{array}{rrr|r}1 & 0 & - \\dfrac{3}{8} & \\dfrac{45}{8}\\\\ 0 & 1 & - \\dfrac{1}{2} & \\dfrac{55}{2}\\\\ 0 & 0 & 1 & 25\\end{array}\\right)$$<br>$R_1 \\leftarrow R_1 - (- \\dfrac{3}{8})R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 15\\\\ 0 & 1 & - \\dfrac{1}{2} & \\dfrac{55}{2}\\\\ 0 & 0 & 1 & 25\\end{array}\\right)$$<br>$R_2 \\leftarrow R_2 - (- \\dfrac{1}{2})R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 15\\\\ 0 & 1 & 0 & 40\\\\ 0 & 0 & 1 & 25\\end{array}\\right)$$<br>$P=(15;40;25)^T$; thay vào hàm cung hoặc cầu được $Q=(50;50;40)^T$.<br>Tổng lượng cung/cầu: $50+50+40=140$; tổng giá: $15+40+25=80$.",
    "note": "Lập hệ phương trình từ điều kiện của bài toán (cung bằng cầu, hoặc dùng hết nguyên liệu) rồi giải bằng phép khử Gauss."
   },
   {
@@ -397,7 +397,7 @@
     "$\\dfrac{x}{(1+x)^2}$."
    ],
    "answer": 0,
-   "explain": "Đạo hàm từng số hạng $\\sum x^n = \\dfrac{1}{1-x}$ rồi nhân với $x$.",
+   "explain": "$\\sum_{n\\ge1}x^n=\\frac{x}{1-x}$. Differentiate: $\\sum n x^{n-1}=\\frac1{(1-x)^2}$; nhân $x$: $\\sum n x^n=\\frac{x}{(1-x)^2}$.",
    "note": "Đạo hàm hoặc tích phân từng số hạng của $\\displaystyle\\sum x^n = \\dfrac{1}{1 - x}$ để có các chuỗi liên quan; chỉ đúng khi $|x| < 1$."
   },
   {
@@ -409,7 +409,7 @@
     "$e^{-y} = e^{-x} + C$."
    ],
    "answer": 0,
-   "explain": "$e^y\\,dy = e^x\\,dx$.",
+   "explain": "$y^\\prime=e^xe^{-y}\\Rightarrow e^y\\,dy=e^x\\,dx$. Tích phân: $\\int e^y\\,dy=\\int e^x\\,dx$, nên $e^y=e^x+C$.",
    "note": "Tách biến: đưa $y$ về một vế, $x$ về một vế rồi lấy tích phân; hằng số $C$ chỉ cần viết ở một vế."
   },
   {
@@ -421,7 +421,7 @@
     "$y = Cx^2 + x$."
    ],
    "answer": 0,
-   "explain": "$\\left(\\dfrac{y}{x}\\right)' = 1$.",
+   "explain": "$\\left(\\frac yx\\right)^\\prime=\\frac{xy^\\prime-y}{x^2}=1$. Tích phân: $y/x=x+C$, vậy $y=x^2+Cx$.",
    "note": "Tuyến tính: nhân thừa số tích phân $e^{\\int p\\,dx}$; đẳng cấp: đặt $y = ux$."
   },
   {
@@ -445,7 +445,7 @@
     "$\\dfrac{256}{3}$."
    ],
    "answer": 0,
-   "explain": "$\\displaystyle\\int_{-\\pi/2}^{\\pi/2}d\\varphi\\int_0^{4\\cos\\varphi} r^2\\,dr = \\dfrac{64}{3}\\int_{-\\pi/2}^{\\pi/2}\\cos^3\\varphi\\,d\\varphi$ và $\\displaystyle\\int_{-\\pi/2}^{\\pi/2}\\cos^3\\varphi\\,d\\varphi = \\dfrac43$<br>Kết quả: $\\dfrac{256}{9}$",
+   "explain": "$x=r\\cos\\varphi,\\ y=r\\sin\\varphi$, nên $\\sqrt{x^2+y^2}=r$, $dxdy=r\\,dr\\,d\\varphi$; biên $r^2\\le2ar\\cos\\varphi$ cho $-\\pi/2\\le\\varphi\\le\\pi/2$, $0\\le r\\le2a\\cos\\varphi$.<br>$\\displaystyle I=\\int_{-\\pi/2}^{\\pi/2}\\int_0^{4\\cos\\varphi}r^2\\,dr\\,d\\varphi=\\dfrac{4^3}{3}\\int_{-\\pi/2}^{\\pi/2}\\cos^3\\varphi\\,d\\varphi$.<br>$\\int_{-\\pi/2}^{\\pi/2}\\cos^3\\varphi\\,d\\varphi=2\\int_0^{\\pi/2}\\cos\\varphi(1-\\sin^2\\varphi)\\,d\\varphi=2[\\,u-u^3/3\\,]_0^1=4/3$ (đặt $u=\\sin\\varphi$).<br>$I=\\dfrac{64}{3}\\cdot\\dfrac43=\\dfrac{256}{9}$.",
    "note": "Trong tọa độ cực $dxdy = r\\,dr\\,d\\varphi$; đường tròn $x^2 + y^2 = 2ax$ là $r = 2a\\cos\\varphi$ với $-\\dfrac{\\pi}{2} \\le \\varphi \\le \\dfrac{\\pi}{2}$."
   },
   {
@@ -457,7 +457,7 @@
     "$\\dfrac{2 \\pi}{3}$."
    ],
    "answer": 0,
-   "explain": "Tọa độ trụ: $\\displaystyle\\int_0^{2\\pi}d\\varphi\\int_0^1 r\\cdot\\dfrac{1 - r^4}{2}\\,dr$<br>Kết quả: $\\dfrac{\\pi}{3}$",
+   "explain": "Trong tọa độ trụ, $0\\le r\\le1$, $r^2\\le z\\le1$, $dV=r\\,dz\\,dr\\,d\\varphi$; tích phân theo $z$: $\\int_{r^2}^{1}z\\,dz=\\dfrac{1-r^4}{2}$.<br>$\\displaystyle I=2\\pi\\int_0^{1}r\\frac{1-r^4}{2}\\,dr=\\pi\\left[\\frac{1r^2}{2}-\\frac{r^6}{6}\\right]_0^{1}$.<br>$I=\\pi\\left(\\dfrac{1}{2}-\\dfrac{1}{6}\\right)=\\dfrac{\\pi1}{3}=\\dfrac{\\pi}{3}$.",
    "note": "Tọa độ trụ hợp với paraboloid, mặt nón; tọa độ cầu hợp với hình cầu; không quên định thức Jacobi."
   },
   {
@@ -469,7 +469,7 @@
     "$\\dfrac{\\pi}{4}$."
    ],
    "answer": 0,
-   "explain": "$ds = 1\\,dt$: $\\displaystyle\\int_0^{\\pi/2} 1^3\\sin t\\cos t\\,dt = \\dfrac{1^3}{2}$<br>Kết quả: $\\dfrac{1}{2}$",
+   "explain": "$x=a\\cos t,\\ y=a\\sin t$, $0\\le t\\le\\pi/2$; $ds=\\sqrt{(-a\\sin t)^2+(a\\cos t)^2}\\,dt=1\\,dt$ and $xy=1\\sin t\\cos t$.<br>$\\displaystyle I=1\\int_0^{\\pi/2}\\sin t\\cos t\\,dt=1\\left[\\frac{\\sin^2t}{2}\\right]_0^{\\pi/2}=\\frac{1}{2}=\\dfrac{1}{2}$.",
    "note": "Tích phân đường loại một: $ds = \\sqrt{x'^2 + y'^2}\\,dt$, không phụ thuộc chiều đi trên đường cong."
   },
   {
@@ -481,7 +481,7 @@
     "$54 \\pi$."
    ],
    "answer": 0,
-   "explain": "Công thức Green: $\\displaystyle\\iint_{x^2+y^2\\le9}\\left(\\dfrac{\\partial Q}{\\partial x} - \\dfrac{\\partial P}{\\partial y}\\right)dxdy = 3\\cdot\\pi\\cdot9$<br>Kết quả: $27 \\pi$",
+   "explain": "$P=-1y,\\ Q=2x$, do đó $\\partial Q/\\partial x=2$, $\\partial P/\\partial y=-1$ và hiệu bằng $3$.<br>Green: $\\oint_C P\\,dx+Q\\,dy=\\iint_{x^2+y^2\\le9}3\\,dA=3\\cdot\\pi9$.",
    "note": "Tích phân đường loại hai: thay $y = y(x)$, $dy = y'dx$; với đường cong kín thì dùng công thức Green."
   }
  ],
@@ -498,7 +498,7 @@
       "$3$."
      ],
      "answer": 0,
-     "explain": "$A = -1I + 1J$ ($J$ là ma trận toàn số 1) có các trị riêng $-1$ (bội 2) và $2$<br>Kết quả: $2$"
+     "explain": "$A=-1I+1J$, trong đó $J$ có các trị riêng $0,0,3$.<br>Các trị riêng của $A$: $-1,-1,-1+3(1)=2$.<br>$\\det A=-1\\cdot-1\\cdot(2)=2$."
     },
     {
      "q": "Tổng tất cả các phần tử của ma trận nghịch đảo $A^{-1}$ bằng",
@@ -509,7 +509,7 @@
       "$6$."
      ],
      "answer": 0,
-     "explain": "Véc tơ $(1;1;1)$ là véc tơ riêng ứng với trị riêng $2$ nên tổng mỗi hàng của $A^{-1}$ bằng $\\dfrac{1}{2}$; tổng tất cả bằng $\\dfrac{3}{2}$<br>Kết quả: $\\dfrac{3}{2}$"
+     "explain": "$A(1,1,1)^T=(2)(1,1,1)^T$, nên $A^{-1}(1,1,1)^T=\\dfrac1{2}(1,1,1)^T$.<br>Mỗi hàng của $A^{-1}$ có tổng $\\dfrac1{2}$. Có 3 hàng nên tổng mọi phần tử bằng $3\\cdot\\dfrac1{2}=\\dfrac3{2}=\\dfrac{3}{2}$."
     },
     {
      "q": "Gọi $X$ là tập hợp các trị riêng của $A$, tổng bình phương các phần tử của $X$ bằng",
@@ -520,7 +520,7 @@
       "$3$."
      ],
      "answer": 0,
-     "explain": "$A = -1I + 1J$ ($J$ là ma trận toàn số 1) có các trị riêng $-1$ (bội 2) và $2$. Tập hợp không kể bội<br>Kết quả: $5$",
+     "explain": "$A$ có các trị riêng $-1$ (lặp lại), $2$; tập $X$ không kể bội nên $X=\\{-1,2\\}$.<br>$\\sum_{\\lambda\\in X}\\lambda^2=-1^2+(2)^2=5$.",
      "note": "Tổng các trị riêng bằng vết, tích các trị riêng bằng định thức của ma trận."
     }
    ]
@@ -572,7 +572,7 @@
     "2.25",
     "9/4"
    ],
-   "explain": "$A = \\begin{pmatrix}1 & 2 & 3 \\\\ 3 & 2 & 3 \\\\ 5 & 4 & 3\\end{pmatrix}$, $\\det A = 12$; kết quả bằng $\\dfrac{3^3}{\\det A}$ $= \\dfrac{9}{4}$<br>Đáp số: $2{,}25$",
+   "explain": "$$A=\\begin{pmatrix}1 & 2 & 3 \\\\ 3 & 2 & 3 \\\\ 5 & 4 & 3\\end{pmatrix},\\quad \\det A=(1)\\big((2)(3)-(3)(4)\\big)-(2)\\big((3)(3)-(3)(5)\\big)+(3)\\big((3)(4)-(2)(5)\\big)$$<br>$=-6 + 12 + 6=12$.<br>$\\det(3A^{-1})=3^3\\det(A^{-1})=\\dfrac{3^3}{\\det A}=\\dfrac{3^3}{12}=\\dfrac{9}{4}$.",
    "note": "Viết ma trận ra từ công thức của $a_{ij}$, rồi dùng $\\det\\left(A^T\\right) = \\det A$ và $\\det(AB) = \\det A\\cdot\\det B$."
   },
   {

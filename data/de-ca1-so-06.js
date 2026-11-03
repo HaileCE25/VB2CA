@@ -40,7 +40,7 @@
     "$(3;-4)$."
    ],
    "answer": 0,
-   "explain": "$v = xb_1 + yb_2 \\Leftrightarrow \\begin{cases}4 x - y = 8\\\\ 2 x + 2 y = 14\\end{cases}$<br>Giải hệ: $x = 3,\\ y = 4$<br>Tọa độ của $v$ đối với $B$: $(3;4)$",
+   "explain": "$v = xb_1 + yb_2 \\Leftrightarrow \\begin{cases}4 x - y = 8\\\\ 2 x + 2 y = 14\\end{cases}$<br>Từ $v=(8;14)$, giải hệ trên được $x=3,\\ y=4$; thay lại: $8=8,\\ 14=14$<br>Tọa độ của $v$ đối với $B$: $(3;4)$",
    "note": "Tọa độ đối với cơ sở $B$ là nghiệm của hệ $xb_1 + yb_2 = v$, không phải tọa độ thông thường của $v$."
   },
   {
@@ -52,7 +52,7 @@
     "$0$."
    ],
    "answer": 0,
-   "explain": "$u_4 = 2 u_{1} - 2 u_{2}$; $u_5 = - u_{1} - 2 u_{3}$; còn $u_1, u_2, u_3$ độc lập tuyến tính nên hạng bằng 3<br>Kết quả: $2$",
+   "explain": "$u_4 = 2 u_{1} - 2 u_{2}$<br>$u_5 = - u_{1} - 2 u_{3}$<br>Với các cột 1,2,3, $\\det \\begin{pmatrix}3 & -1 & -2 \\\\ -1 & 2 & 1 \\\\ 3 & 0 & 2\\end{pmatrix}=19\\ne 0$ nên hệ véc tơ $u_1, u_2, u_3$ độc lập tuyến tính.<br>Các véc tơ còn lại là tổ hợp tuyến tính đã nêu; do đó hạng không vượt quá 3.<br>Vậy $\\operatorname{rank}(S)=3$.<br>Cần bỏ ít nhất $5-3=2$ véc tơ để còn hệ độc lập tuyến tính.",
    "note": "Hạng = số hàng khác không của dạng bậc thang; số véc tơ thừa = số véc tơ $-$ hạng."
   },
   {
@@ -99,7 +99,7 @@
     "$- \\dfrac{1}{4}$."
    ],
    "answer": 0,
-   "explain": "$\\left(\\dfrac{1}{2}\\right)^{3}\\cdot\\dfrac{1}{\\det A}\\cdot(\\det B)^2 = \\dfrac{3}{8}$<br>Kết quả: $\\dfrac{3}{8}$",
+   "explain": "$\\det(\\dfrac{1}{2}A^{-1}B^2)=(\\dfrac{1}{2})^{3}\\det(A^{-1})(\\det B)^2$.<br>$=(\\dfrac{1}{2})^{3}\\cdot\\dfrac{1}{3}\\cdot(-3)^2$.<br>$=\\dfrac{3}{8}$.",
    "note": "$\\det(kA) = k^n\\det A$, $\\det\\left(A^{-1}\\right) = \\dfrac{1}{\\det A}$, $\\det\\left(A^T\\right) = \\det A$, $\\det(AB) = \\det A\\cdot\\det B$."
   },
   {
@@ -170,7 +170,7 @@
     "$0$."
    ],
    "answer": 0,
-   "explain": "$f'_x = 3 x^{2} - 3,\\quad f'_y = 3 y^{2} - 12$<br>Giải hệ $f'_x = f'_y = 0$ được các điểm dừng: $(-1;-2)$, $(-1;2)$, $(1;-2)$, $(1;2)$<br>Giá trị $AC - B^2$ tại các điểm đó lần lượt: $72$, $-72$, $-72$, $72$<br>Số điểm dừng: $4$; số điểm cực trị (có $AC - B^2 > 0$): $2$",
+   "explain": "$f'_x = 3 x^{2} - 3,\\quad f'_y = 3 y^{2} - 12$<br>Giải hệ $f'_x=f'_y=0$ (thay lần lượt vào hai phương trình) được các điểm dừng: $(-1;-2)$, $(-1;2)$, $(1;-2)$, $(1;2)$<br>$f''_{xx}=6 x,\\quad f''_{xy}=0,\\quad f''_{yy}=6 y$<br>$(-1;-2):\\ A=f''_{xx}=-6,\\ B=f''_{xy}=0,\\ C=f''_{yy}=-12; AC-B^2=(-6)(-12)-(0)^2=72\\Rightarrow cực trị$<br>$(-1;2):\\ A=f''_{xx}=-6,\\ B=f''_{xy}=0,\\ C=f''_{yy}=12; AC-B^2=(-6)(12)-(0)^2=-72\\Rightarrow điểm yên ngựa$<br>$(1;-2):\\ A=f''_{xx}=6,\\ B=f''_{xy}=0,\\ C=f''_{yy}=-12; AC-B^2=(6)(-12)-(0)^2=-72\\Rightarrow điểm yên ngựa$<br>$(1;2):\\ A=f''_{xx}=6,\\ B=f''_{xy}=0,\\ C=f''_{yy}=12; AC-B^2=(6)(12)-(0)^2=72\\Rightarrow cực trị$<br>Số điểm dừng: $4$; số điểm cực trị (có $AC - B^2 > 0$): $2$",
    "note": "Giải đủ hệ $f'_x = f'_y = 0$ (đừng bỏ sót nghiệm), rồi xét dấu $AC - B^2$ tại từng điểm dừng."
   },
   {
@@ -193,7 +193,7 @@
     "$0$."
    ],
    "answer": 0,
-   "explain": "Chuỗi thứ 1: $\\frac{1}{\\sqrt{n+1}} \\downarrow 0$ (Leibniz), $\\sum\\frac{1}{\\sqrt{n+1}}$ phân kỳ $\\Rightarrow$ bán hội tụ<br>Chuỗi thứ 2: $\\frac{1}{\\ln(n+1)} \\downarrow 0$ (Leibniz), $\\frac{1}{\\ln(n+1)} > \\frac1n$ $\\Rightarrow$ bán hội tụ<br>Chuỗi thứ 3: $\\frac{|u_{n+1}|}{|u_n|} = \\frac{1}{n+1} \\to 0$ $\\Rightarrow$ hội tụ tuyệt đối<br>Chuỗi thứ 4: $|u_n| \\to 1 \\ne 0$ $\\Rightarrow$ phân kỳ<br>Số chuỗi hội tụ tuyệt đối: $1$",
+   "explain": "Chuỗi thứ 1: $a_n=1/\\sqrt{n+1}\\downarrow0$ nên Leibniz hội tụ; trị tuyệt đối là $p$-series $p=1/2\\le1$, nên chỉ hội tụ có điều kiện. Kết luận: bán hội tụ.<br>Chuỗi thứ 2: $a_n=1/\\ln(n+1)\\downarrow0$ nên Leibniz hội tụ; $\\ln(n+1)<n$ nên $a_n>1/n$, vì vậy chuỗi trị tuyệt đối phân kỳ: bán hội tụ. Kết luận: bán hội tụ.<br>Chuỗi thứ 3: $\\sum|u_n|=\\sum1/n!$; tỉ số $|u_{n+1}|/|u_n|=1/(n+1)\\to0<1$, nên hội tụ tuyệt đối. Kết luận: hội tụ tuyệt đối.<br>Chuỗi thứ 4: $|u_n|=n^2/(n^2+1)\\to1\\ne0$, nên phân kỳ. Kết luận: phân kỳ.<br>Số chuỗi hội tụ tuyệt đối: $1$",
    "note": "Leibniz: $a_n$ giảm về 0 thì chuỗi đan dấu hội tụ; hội tụ tuyệt đối phải xét thêm $\\sum a_n$; nếu $a_n \\not\\to 0$ thì chuỗi phân kỳ."
   },
   {
@@ -205,7 +205,7 @@
     "$y' = (1 + x)(1 + y^2)$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> $y' + y\\tan x = \\cos x$ — Dạng $y' + p(x)y = q(x)$: bậc nhất đối với $y$ và $y'$<br><b>Sai:</b> $xy' + y = y^2\\ln x$ — là phương trình Bernoulli (có số hạng $y^{\\alpha}$ với $\\alpha \\ne 0, 1$ ở vế phải), không thuộc dạng đang hỏi<br><b>Sai:</b> $(2xy + 1)dx + (x^2 + 3y^2)dy = 0$ — là phương trình vi phân toàn phần, không thuộc dạng đang hỏi<br><b>Sai:</b> $y' = (1 + x)(1 + y^2)$ — là phương trình có biến số phân ly (tách được $x$ và $y$ về hai vế), không thuộc dạng đang hỏi"
+   "explain": "<b>Đúng:</b> $y' + y\\tan x = \\cos x$ — Dạng $y' + p(x)y = q(x)$: bậc nhất đối với $y$ và $y'$; Đã ở dạng $y'+(\\tan x)y=\\cos x$, bậc nhất tuyến tính theo $y,y'$.<br><b>Sai:</b> $xy' + y = y^2\\ln x$ — Chia cho $x\\ne0$: $y'+\\dfrac1x y=\\dfrac{\\ln x}{x}y^2$, Bernoulli với $\\alpha=2$.; đây là là phương trình Bernoulli (có số hạng $y^{\\alpha}$ với $\\alpha \\ne 0, 1$ ở vế phải), không phải dạng đang hỏi.<br><b>Sai:</b> $(2xy + 1)dx + (x^2 + 3y^2)dy = 0$ — $P=(2xy + 1),\\ Q=x^2 + 3y^2$: $\\partial P/\\partial y=2x$ và $\\partial Q/\\partial x=2x$; bằng nhau, nên toàn phần.; đây là là phương trình vi phân toàn phần, không phải dạng đang hỏi.<br><b>Sai:</b> $y' = (1 + x)(1 + y^2)$ — $\\dfrac{dy}{1+y^2}=(1+x)\\,dx$, tách được biến.; đây là là phương trình có biến số phân ly (tách được $x$ và $y$ về hai vế), không phải dạng đang hỏi."
   },
   {
    "q": "Nghiệm riêng của phương trình $(2xy + 2)dx + (x^2 + 6y)dy = 0$ thỏa mãn $y(1) = 1$ là",
@@ -275,7 +275,7 @@
     "$1575$."
    ],
    "answer": 0,
-   "explain": "Nhu cầu vật liệu $AX = (120;135;105)^T$; chi phí bằng tích vô hướng với véc tơ giá: $1680$<br>Kết quả: $1680$",
+   "explain": "Sản lượng viết thành véc tơ cột: $X=(10;5;15;10)^T$.<br>Nhu cầu từng loại vật liệu: $AX=\\begin{pmatrix}4 & 2 & 4 & 1 \\\\ 3 & 5 & 2 & 5 \\\\ 4 & 5 & 2 & 1\\end{pmatrix}(10;5;15;10)^T=(120;135;105)^T$.<br>Chi phí: $6\\cdot120+4\\cdot135+4\\cdot105=1680$.",
    "note": "Kiểm tra cỡ ma trận trước khi nhân (số cột của ma trận trước bằng số hàng của ma trận sau); với mô hình Leontief giải $(I - A)X = D$."
   },
   {
@@ -287,7 +287,7 @@
     "$m \\ne 2$."
    ],
    "answer": 0,
-   "explain": "Ba tọa độ đầu của hàng 3 bằng $1$ lần hàng 1 cộng $1$ lần hàng 2, nên hạng bằng 2 khi và chỉ khi phần tử cuối cũng thỏa mãn hệ thức đó: $m = 0$; ngược lại hạng bằng 3.",
+   "explain": "$R_3 \\leftarrow R_3 - R_1 - R_2$.<br>$A = \\begin{pmatrix}1 & 3 & 0 & 1 \\\\ 1 & 2 & -2 & -1 \\\\ 2 & 5 & -2 & m\\end{pmatrix} \\xrightarrow{R_3 \\leftarrow R_3 - R_1 - R_2} \\begin{pmatrix}1 & 3 & 0 & 1 \\\\ 1 & 2 & -2 & -1 \\\\ 0 & 0 & 0 & m\\end{pmatrix}$.<br>$\\det \\begin{pmatrix}1 & 3 \\\\ 1 & 2\\end{pmatrix} = -1 \\ne 0$, nên hai hàng đầu độc lập tuyến tính.<br>$m = 0 \\Rightarrow R_3 = (0,0,0,0) \\Rightarrow \\operatorname{rank}(A)=2$.<br>$m \\ne 0 \\Rightarrow R_3 = (0,0,0,m) \\ne (0,0,0,0) \\Rightarrow \\operatorname{rank}(A)=3$.<br><b>Kết quả:</b> $m = 0$.",
    "note": "Đưa về dạng bậc thang; hạng giảm đúng khi hàng cuối thành hàng không, điều kiện đó cho giá trị của $m$."
   },
   {
@@ -299,7 +299,7 @@
     "$\\begin{pmatrix}1 & 1 \\\\ -2 & -2\\end{pmatrix}$."
    ],
    "answer": 0,
-   "explain": "$X = A^{-1}CB^{-1}$; kết quả $X = \\begin{pmatrix}1 & -2 \\\\ 1 & -2\\end{pmatrix}$.",
+   "explain": "$AXB=C \\Rightarrow X=A^{-1}CB^{-1}$ (nhân bên trái $A^{-1}$, bên phải $B^{-1}$).<br>$A^{-1}=\\begin{pmatrix}0 & 1 \\\\ -1 & 1\\end{pmatrix},\\quad B^{-1}=\\begin{pmatrix}-3 & 2 \\\\ -2 & 1\\end{pmatrix}$.<br>$X=A^{-1}CB^{-1}=\\begin{pmatrix}1 & -2 \\\\ 1 & -2\\end{pmatrix}$.<br>Kiểm tra: $A\\begin{pmatrix}1 & -2 \\\\ 1 & -2\\end{pmatrix}B=\\begin{pmatrix}0 & 0 \\\\ -3 & 4\\end{pmatrix}$.",
    "note": "$AX = B \\Rightarrow X = A^{-1}B$ (nhân bên trái); $XA = B \\Rightarrow X = BA^{-1}$ (nhân bên phải); không được đổi thứ tự."
   },
   {
@@ -359,7 +359,7 @@
     "$27$."
    ],
    "answer": 0,
-   "explain": "Gọi $x, y, z$ là số sản phẩm mỗi loại; giải hệ ba phương trình được $(10;10;30)$<br>Kết quả: $50$",
+   "explain": "Gọi $x,y,z$ lần lượt là số sản phẩm loại 1, 2, 3.<br>Hệ nguyên liệu: $\\begin{pmatrix}1 & 1 & 3 \\\\ 1 & 2 & 1 \\\\ 3 & 1 & 2\\end{pmatrix}\\begin{pmatrix}x\\\\y\\\\z\\end{pmatrix}=(110;60;100)^T$.<br>Ma trận bổ sung ban đầu: $$\\left(\\begin{array}{rrr|r}1 & 1 & 3 & 110\\\\ 1 & 2 & 1 & 60\\\\ 3 & 1 & 2 & 100\\end{array}\\right)$$<br>$R_2 \\leftarrow R_2 - (1)R_1$: $$\\left(\\begin{array}{rrr|r}1 & 1 & 3 & 110\\\\ 0 & 1 & -2 & -50\\\\ 3 & 1 & 2 & 100\\end{array}\\right)$$<br>$R_3 \\leftarrow R_3 - (3)R_1$: $$\\left(\\begin{array}{rrr|r}1 & 1 & 3 & 110\\\\ 0 & 1 & -2 & -50\\\\ 0 & -2 & -7 & -230\\end{array}\\right)$$<br>$R_1 \\leftarrow R_1 - (1)R_2$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 5 & 160\\\\ 0 & 1 & -2 & -50\\\\ 0 & -2 & -7 & -230\\end{array}\\right)$$<br>$R_3 \\leftarrow R_3 - (-2)R_2$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 5 & 160\\\\ 0 & 1 & -2 & -50\\\\ 0 & 0 & -11 & -330\\end{array}\\right)$$<br>$R_3 \\leftarrow \\dfrac{1}{-11}R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 5 & 160\\\\ 0 & 1 & -2 & -50\\\\ 0 & 0 & 1 & 30\\end{array}\\right)$$<br>$R_1 \\leftarrow R_1 - (5)R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 10\\\\ 0 & 1 & -2 & -50\\\\ 0 & 0 & 1 & 30\\end{array}\\right)$$<br>$R_2 \\leftarrow R_2 - (-2)R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 10\\\\ 0 & 1 & 0 & 10\\\\ 0 & 0 & 1 & 30\\end{array}\\right)$$<br>$(x,y,z)^T=(10;10;30)^T$; tổng sản phẩm: $10+10+30=50$.",
    "note": "Lập hệ phương trình từ điều kiện của bài toán (cung bằng cầu, hoặc dùng hết nguyên liệu) rồi giải bằng phép khử Gauss."
   },
   {
@@ -395,7 +395,7 @@
     "$\\dfrac{x}{1+x}$."
    ],
    "answer": 0,
-   "explain": "Tích phân từng số hạng chuỗi $\\sum_{n\\ge0}(-1)^nx^n = \\dfrac{1}{1+x}$.",
+   "explain": "$\\sum_{n\\ge0}(-1)^nt^n=\\frac1{1+t}$. Tích phân $t$ từ $0$ đến $x$: $\\sum_{n\\ge0}\\frac{(-1)^nx^{n+1}}{n+1}=\\ln(1+x)$; đặt lại chỉ số $m=n+1$ được chuỗi đề bài.",
    "note": "Đạo hàm hoặc tích phân từng số hạng của $\\displaystyle\\sum x^n = \\dfrac{1}{1 - x}$ để có các chuỗi liên quan; chỉ đúng khi $|x| < 1$."
   },
   {
@@ -407,7 +407,7 @@
     "$y = Ce^{\\sin x}$."
    ],
    "answer": 0,
-   "explain": "$\\dfrac{dy}{y^2} = \\cos x\\,dx \\Rightarrow -\\dfrac1y = \\sin x + C$ (ngoài ra còn nghiệm $y = 0$).",
+   "explain": "$\\dfrac{dy}{y^2}=\\cos x\\,dx$. Tích phân: $-\\dfrac1y=\\sin x+C$, suy ra $y=-1/(\\sin x+C)$; nghiệm bị chia mất $y=0$ cũng cần kể.",
    "note": "Tách biến: đưa $y$ về một vế, $x$ về một vế rồi lấy tích phân; hằng số $C$ chỉ cần viết ở một vế."
   },
   {
@@ -419,7 +419,7 @@
     "$y = x^2 + \\dfrac{C}{x}$."
    ],
    "answer": 0,
-   "explain": "$\\left(x^2y\\right)' = 4x^3$.",
+   "explain": "Chia cho $x$: $y^\\prime+2y/x=4x$. Nhân tử tích phân $x^2$: $(x^2y)^\\prime=4x^3$. Tích phân: $x^2y=x^4+C$, nên $y=x^2+C/x^2$.",
    "note": "Tuyến tính: nhân thừa số tích phân $e^{\\int p\\,dx}$; đẳng cấp: đặt $y = ux$."
   },
   {
@@ -455,7 +455,7 @@
     "$486 \\pi$."
    ],
    "answer": 0,
-   "explain": "Tọa độ trụ: $\\displaystyle\\int_0^{2\\pi}d\\varphi\\int_0^3 r\\cdot\\dfrac{81 - r^4}{2}\\,dr$<br>Kết quả: $243 \\pi$",
+   "explain": "Trong tọa độ trụ, $0\\le r\\le3$, $r^2\\le z\\le9$, $dV=r\\,dz\\,dr\\,d\\varphi$; tích phân theo $z$: $\\int_{r^2}^{9}z\\,dz=\\dfrac{81-r^4}{2}$.<br>$\\displaystyle I=2\\pi\\int_0^{3}r\\frac{81-r^4}{2}\\,dr=\\pi\\left[\\frac{81r^2}{2}-\\frac{r^6}{6}\\right]_0^{3}$.<br>$I=\\pi\\left(\\dfrac{729}{2}-\\dfrac{729}{6}\\right)=\\dfrac{\\pi729}{3}=243 \\pi$.",
    "note": "Tọa độ trụ hợp với paraboloid, mặt nón; tọa độ cầu hợp với hình cầu; không quên định thức Jacobi."
   },
   {
@@ -467,7 +467,7 @@
     "$\\dfrac{27}{4}$."
    ],
    "answer": 0,
-   "explain": "$ds = 3\\,dt$: $\\displaystyle\\int_0^{\\pi/2} 3^3\\sin t\\cos t\\,dt = \\dfrac{3^3}{2}$<br>Kết quả: $\\dfrac{27}{2}$",
+   "explain": "$x=a\\cos t,\\ y=a\\sin t$, $0\\le t\\le\\pi/2$; $ds=\\sqrt{(-a\\sin t)^2+(a\\cos t)^2}\\,dt=3\\,dt$ and $xy=9\\sin t\\cos t$.<br>$\\displaystyle I=27\\int_0^{\\pi/2}\\sin t\\cos t\\,dt=27\\left[\\frac{\\sin^2t}{2}\\right]_0^{\\pi/2}=\\frac{27}{2}=\\dfrac{27}{2}$.",
    "note": "Tích phân đường loại một: $ds = \\sqrt{x'^2 + y'^2}\\,dt$, không phụ thuộc chiều đi trên đường cong."
   },
   {

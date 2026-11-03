@@ -28,7 +28,7 @@
     "$-18$."
    ],
    "answer": 0,
-   "explain": "$2u_1 - 2x + 3u_2 + 3x = u_3 \\Leftrightarrow x = u_3 - 2u_1 - 3u_2$<br>$u_3 - 2u_1 - 3u_2 = (-11;2;-13)$<br>$x = (-11;2;-13) \\Rightarrow x_1 + x_2 + x_3 = -22$",
+   "explain": "$2u_1 - 2x + 3u_2 + 3x = u_3 \\Leftrightarrow (3-2)x = u_3 - 2u_1 - 3u_2$.<br>$u_3 - 2u_1 - 3u_2 = (-11;2;-13)$.<br>$x = \\dfrac{1}{1}(-11;2;-13) = (-11;2;-13)$.<br>$x_1+x_2+x_3 = (-11) + (2) + (-13) = -22$.",
    "note": "Viết đẳng thức véc tơ theo từng tọa độ để được hệ phương trình tuyến tính; với phương trình véc tơ, chuyển vế như phương trình số."
   },
   {
@@ -40,7 +40,7 @@
     "$1$."
    ],
    "answer": 0,
-   "explain": "Có $C_4^2 = 6$ hệ con gồm 2 véc tơ, trong đó 1 hệ phụ thuộc tuyến tính<br>Kết quả: $5$",
+   "explain": "Số hệ con cần xét: $C_4^2=6$.<br>$\\det\\begin{pmatrix}3 & 9\\\\2 & 4\\end{pmatrix}=-6$.<br>$\\det\\begin{pmatrix}3 & 9\\\\1 & 3\\end{pmatrix}=0$.<br>$\\det\\begin{pmatrix}3 & 9\\\\1 & 1\\end{pmatrix}=-6$.<br>$\\det\\begin{pmatrix}2 & 4\\\\1 & 3\\end{pmatrix}=2$.<br>$\\det\\begin{pmatrix}2 & 4\\\\1 & 1\\end{pmatrix}=-2$.<br>$\\det\\begin{pmatrix}1 & 3\\\\1 & 1\\end{pmatrix}=-2$.<br>Hệ là cơ sở khi định thức khác 0; có 5 định thức khác 0 nên có 5 cơ sở.",
    "note": "Một véc tơ khác không luôn độc lập tuyến tính; hai véc tơ độc lập khi không cùng phương; trong $\\mathbb{R}^n$ không có hệ độc lập nào nhiều hơn $n$ véc tơ."
   },
   {
@@ -52,7 +52,7 @@
     "$1$."
    ],
    "answer": 0,
-   "explain": "$u_3 = u_{1} - 2 u_{2}$; $u_4 = - 2 u_{1} - 2 u_{2}$; $u_5 = 3 u_{1} + u_{2}$; còn $u_1, u_2$ độc lập tuyến tính nên hạng bằng 2<br>Kết quả: $2$",
+   "explain": "$u_3 = u_{1} - 2 u_{2}$<br>$u_4 = - 2 u_{1} - 2 u_{2}$<br>$u_5 = 3 u_{1} + u_{2}$<br>Với các cột 1,2, $\\det \\begin{pmatrix}-2 & 3 \\\\ 0 & -1\\end{pmatrix}=2\\ne 0$ nên hệ véc tơ $u_1, u_2$ độc lập tuyến tính.<br>Các véc tơ còn lại là tổ hợp tuyến tính đã nêu; do đó hạng không vượt quá 2.<br>Vậy $\\operatorname{rank}(S)=2$.",
    "note": "Hạng = số hàng khác không của dạng bậc thang; số véc tơ thừa = số véc tơ $-$ hạng."
   },
   {
@@ -99,7 +99,7 @@
     "$2$."
    ],
    "answer": 0,
-   "explain": "$\\left(\\dfrac{1}{2}\\right)^{4}\\cdot\\det A\\cdot\\dfrac{1}{\\det B}\\cdot\\det A = \\dfrac{1}{2}$<br>Kết quả: $\\dfrac{1}{2}$",
+   "explain": "$\\det(\\dfrac{1}{2}A^TB^{-1}A)=(\\dfrac{1}{2})^{4}\\det(A^T)\\det(B^{-1})\\det(A)$.<br>$=(\\dfrac{1}{2})^{4}\\cdot4\\cdot\\dfrac{1}{2}\\cdot4$.<br>$=\\dfrac{1}{2}$.",
    "note": "$\\det(kA) = k^n\\det A$, $\\det\\left(A^{-1}\\right) = \\dfrac{1}{\\det A}$, $\\det\\left(A^T\\right) = \\det A$, $\\det(AB) = \\det A\\cdot\\det B$."
   },
   {
@@ -170,7 +170,7 @@
     "$3$."
    ],
    "answer": 0,
-   "explain": "$f'_x = - 2 x y - y^{2} + 2 y,\\quad f'_y = - x^{2} - 2 x y + 2 x$<br>Giải hệ $f'_x = f'_y = 0$ được các điểm dừng: $(0;0)$, $(0;2)$, $(\\dfrac{2}{3};\\dfrac{2}{3})$, $(2;0)$<br>Giá trị $AC - B^2$ tại các điểm đó lần lượt: $-4$, $-4$, $\\dfrac{4}{3}$, $-4$<br>Số điểm dừng: $4$; số điểm cực trị (có $AC - B^2 > 0$): $1$",
+   "explain": "$f'_x = - 2 x y - y^{2} + 2 y,\\quad f'_y = - x^{2} - 2 x y + 2 x$<br>Giải hệ $f'_x=f'_y=0$ (thay lần lượt vào hai phương trình) được các điểm dừng: $(0;0)$, $(0;2)$, $(\\dfrac{2}{3};\\dfrac{2}{3})$, $(2;0)$<br>$f''_{xx}=- 2 y,\\quad f''_{xy}=- 2 \\left(x + y - 1\\right),\\quad f''_{yy}=- 2 x$<br>$(0;0):\\ A=f''_{xx}=0,\\ B=f''_{xy}=2,\\ C=f''_{yy}=0; AC-B^2=(0)(0)-(2)^2=-4\\Rightarrow điểm yên ngựa$<br>$(0;2):\\ A=f''_{xx}=-4,\\ B=f''_{xy}=-2,\\ C=f''_{yy}=0; AC-B^2=(-4)(0)-(-2)^2=-4\\Rightarrow điểm yên ngựa$<br>$(\\dfrac{2}{3};\\dfrac{2}{3}):\\ A=f''_{xx}=- \\dfrac{4}{3},\\ B=f''_{xy}=- \\dfrac{2}{3},\\ C=f''_{yy}=- \\dfrac{4}{3}; AC-B^2=(- \\dfrac{4}{3})(- \\dfrac{4}{3})-(- \\dfrac{2}{3})^2=\\dfrac{4}{3}\\Rightarrow cực trị$<br>$(2;0):\\ A=f''_{xx}=0,\\ B=f''_{xy}=-2,\\ C=f''_{yy}=-4; AC-B^2=(0)(-4)-(-2)^2=-4\\Rightarrow điểm yên ngựa$<br>Số điểm dừng: $4$; số điểm cực trị (có $AC - B^2 > 0$): $1$",
    "note": "Giải đủ hệ $f'_x = f'_y = 0$ (đừng bỏ sót nghiệm), rồi xét dấu $AC - B^2$ tại từng điểm dừng."
   },
   {
@@ -182,7 +182,7 @@
     "với mọi số nguyên dương $q$."
    ],
    "answer": 0,
-   "explain": "$u_n \\sim \\dfrac{n^{2}}{n^q} = \\dfrac{1}{n^{q - 2}}$<br>Chuỗi $\\sum\\dfrac{1}{n^{s}}$ hội tụ $\\Leftrightarrow s > 1$, tức $q - 2 > 1$<br>$q$ nguyên nên $q \\ge 4$",
+   "explain": "$u_n=\\dfrac{n^{2}}{n^q+1}\\sim\\dfrac{n^{2}}{n^q}=\\dfrac1{n^{q-2}}$ khi $n\\to\\infty$<br>$\\sum u_n$ cùng tính hội tụ với chuỗi $p$-series $\\sum n^{-(q-2)}$; chuỗi này hội tụ khi $q-2>1$<br>Vì $q$ nguyên dương: $q>2+1\\Rightarrow q\\ge4$; nếu $q\\le2+1$ thì chuỗi phân kỳ",
    "note": "Chỉ so bậc của tử và mẫu: cần (bậc mẫu $-$ bậc tử) $> 1$; bằng đúng 1 thì vẫn phân kỳ."
   },
   {
@@ -205,7 +205,7 @@
     "$y' = \\dfrac{y}{x} + \\tan\\dfrac{y}{x}$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> $y' = e^{x - y}$ — Viết được dưới dạng $g(y)\\,dy = h(x)\\,dx$<br><b>Sai:</b> $(3x^2 + 2xy^2)dx + (2x^2y + 4y^3)dy = 0$ — là phương trình vi phân toàn phần, không thuộc dạng đang hỏi<br><b>Sai:</b> $y' + y\\tan x = \\cos x$ — là phương trình tuyến tính cấp một (bậc nhất đối với $y$ và $y'$), không thuộc dạng đang hỏi<br><b>Sai:</b> $y' = \\dfrac{y}{x} + \\tan\\dfrac{y}{x}$ — là phương trình đẳng cấp (vế phải chỉ phụ thuộc $\\dfrac{y}{x}$), không thuộc dạng đang hỏi"
+   "explain": "<b>Đúng:</b> $y' = e^{x - y}$ — Viết được dưới dạng $g(y)\\,dy = h(x)\\,dx$; $e^{x-y}=e^x e^{-y}$ nên $e^y\\,dy=e^x\\,dx$.<br><b>Sai:</b> $(3x^2 + 2xy^2)dx + (2x^2y + 4y^3)dy = 0$ — $P=(3x^2 + 2xy^2),\\ Q=2x^2y + 4y^3$: $\\partial P/\\partial y=4xy$ và $\\partial Q/\\partial x=4xy$; bằng nhau, nên toàn phần.; đây là là phương trình vi phân toàn phần, không phải dạng đang hỏi.<br><b>Sai:</b> $y' + y\\tan x = \\cos x$ — Đã ở dạng $y'+(\\tan x)y=\\cos x$, bậc nhất tuyến tính theo $y,y'$.; đây là là phương trình tuyến tính cấp một (bậc nhất đối với $y$ và $y'$), không phải dạng đang hỏi.<br><b>Sai:</b> $y' = \\dfrac{y}{x} + \\tan\\dfrac{y}{x}$ — $\\dfrac yx+\\tan(y/x)$ chỉ phụ thuộc tỉ số $y/x$.; đây là là phương trình đẳng cấp (vế phải chỉ phụ thuộc $\\dfrac{y}{x}$), không phải dạng đang hỏi."
   },
   {
    "q": "Gọi $y = y(x)$ là nghiệm của phương trình $(x^2 + 1)y' + 2xy = 4x^3$ thỏa mãn $y(0) = 1$. Giá trị của $y(1)$ bằng",
@@ -276,7 +276,7 @@
     "$400$."
    ],
    "answer": 0,
-   "explain": "Giải hệ $(I - A)X = D$ được $x_1 = 250,\\ x_2 = 400$<br>Kết quả: $650$",
+   "explain": "$I-A=\\begin{pmatrix}\\dfrac{7}{10} & - \\dfrac{3}{10} \\\\ - \\dfrac{2}{5} & \\dfrac{9}{10}\\end{pmatrix}$; do đó $\\begin{pmatrix}\\dfrac{7}{10}&- \\dfrac{3}{10}\\\\- \\dfrac{2}{5}&\\dfrac{9}{10}\\end{pmatrix}\\begin{pmatrix}x_1\\\\x_2\\end{pmatrix}=\\begin{pmatrix}55\\\\260\\end{pmatrix}$.<br>Ma trận bổ sung ban đầu: $$\\left(\\begin{array}{rr|r}\\dfrac{7}{10} & - \\dfrac{3}{10} & 55\\\\ - \\dfrac{2}{5} & \\dfrac{9}{10} & 260\\end{array}\\right)$$<br>$R_1 \\leftarrow \\dfrac{1}{\\dfrac{7}{10}}R_1$: $$\\left(\\begin{array}{rr|r}1 & - \\dfrac{3}{7} & \\dfrac{550}{7}\\\\ - \\dfrac{2}{5} & \\dfrac{9}{10} & 260\\end{array}\\right)$$<br>$R_2 \\leftarrow R_2 - (- \\dfrac{2}{5})R_1$: $$\\left(\\begin{array}{rr|r}1 & - \\dfrac{3}{7} & \\dfrac{550}{7}\\\\ 0 & \\dfrac{51}{70} & \\dfrac{2040}{7}\\end{array}\\right)$$<br>$R_2 \\leftarrow \\dfrac{1}{\\dfrac{51}{70}}R_2$: $$\\left(\\begin{array}{rr|r}1 & - \\dfrac{3}{7} & \\dfrac{550}{7}\\\\ 0 & 1 & 400\\end{array}\\right)$$<br>$R_1 \\leftarrow R_1 - (- \\dfrac{3}{7})R_2$: $$\\left(\\begin{array}{rr|r}1 & 0 & 250\\\\ 0 & 1 & 400\\end{array}\\right)$$<br>$x_1=250,\\quad x_2=400\\Rightarrow x_1+x_2=650$.",
    "note": "Kiểm tra cỡ ma trận trước khi nhân (số cột của ma trận trước bằng số hàng của ma trận sau); với mô hình Leontief giải $(I - A)X = D$."
   },
   {
@@ -288,7 +288,7 @@
     "$m = -3$."
    ],
    "answer": 0,
-   "explain": "Ba tọa độ đầu của hàng 3 bằng $2$ lần hàng 1 cộng $2$ lần hàng 2, nên hạng bằng 2 khi và chỉ khi phần tử cuối cũng thỏa mãn hệ thức đó: $m = -2$; ngược lại hạng bằng 3<br>Kết quả: $m = -2$",
+   "explain": "$R_3 \\leftarrow R_3 - 2R_1 - 2R_2$.<br>$A = \\begin{pmatrix}1 & -1 & 1 & 0 \\\\ -1 & 2 & 3 & -1 \\\\ 0 & 2 & 8 & m\\end{pmatrix} \\xrightarrow{R_3 \\leftarrow R_3 - 2R_1 - 2R_2} \\begin{pmatrix}1 & -1 & 1 & 0 \\\\ -1 & 2 & 3 & -1 \\\\ 0 & 0 & 0 & m + 2\\end{pmatrix}$.<br>$\\det \\begin{pmatrix}1 & -1 \\\\ -1 & 2\\end{pmatrix} = 1 \\ne 0$, nên hai hàng đầu độc lập tuyến tính.<br>$m = -2 \\Rightarrow R_3 = (0,0,0,0) \\Rightarrow \\operatorname{rank}(A)=2$.<br>$m \\ne -2 \\Rightarrow R_3 = (0,0,0,m + 2) \\ne (0,0,0,0) \\Rightarrow \\operatorname{rank}(A)=3$.<br><b>Kết quả:</b> $m = -2$.",
    "note": "Đưa về dạng bậc thang; hạng giảm đúng khi hàng cuối thành hàng không, điều kiện đó cho giá trị của $m$."
   },
   {
@@ -300,7 +300,7 @@
     "$\\begin{pmatrix}-1 & -3 \\\\ -3 & 0\\end{pmatrix}$."
    ],
    "answer": 0,
-   "explain": "$X = BA^{-1}$ (nhân $A^{-1}$ về bên phải); kết quả $X = \\begin{pmatrix}1 & 3 \\\\ 3 & 0\\end{pmatrix}$.",
+   "explain": "$XA=B \\Rightarrow X=BA^{-1}$ (nhân $A^{-1}$ bên phải).<br>$A^{-1}=\\begin{pmatrix}2 & -1 \\\\ -1 & 1\\end{pmatrix},\\qquad BA^{-1}=\\begin{pmatrix}1 & 3 \\\\ 3 & 0\\end{pmatrix}$.<br>Kiểm tra: $\\begin{pmatrix}1 & 3 \\\\ 3 & 0\\end{pmatrix}A=\\begin{pmatrix}4 & 7 \\\\ 3 & 3\\end{pmatrix}$.",
    "note": "$AX = B \\Rightarrow X = A^{-1}B$ (nhân bên trái); $XA = B \\Rightarrow X = BA^{-1}$ (nhân bên phải); không được đổi thứ tự."
   },
   {
@@ -360,7 +360,7 @@
     "$25$."
    ],
    "answer": 0,
-   "explain": "Hệ: $x + y + z = 210$; $30x + 50y + 90z = 9300$; $x - y - z = 30$. Giải được $(120;60;30)$<br>Kết quả: $30$",
+   "explain": "Hệ phương trình: $\\begin{cases}x+y+z=210\\\\30x+50y+90z=9300\\\\x-y-z=30\\end{cases}$.<br>Ma trận bổ sung ban đầu: $$\\left(\\begin{array}{rrr|r}1 & 1 & 1 & 210\\\\ 30 & 50 & 90 & 9300\\\\ 1 & -1 & -1 & 30\\end{array}\\right)$$<br>$R_2 \\leftarrow R_2 - (30)R_1$: $$\\left(\\begin{array}{rrr|r}1 & 1 & 1 & 210\\\\ 0 & 20 & 60 & 3000\\\\ 1 & -1 & -1 & 30\\end{array}\\right)$$<br>$R_3 \\leftarrow R_3 - (1)R_1$: $$\\left(\\begin{array}{rrr|r}1 & 1 & 1 & 210\\\\ 0 & 20 & 60 & 3000\\\\ 0 & -2 & -2 & -180\\end{array}\\right)$$<br>$R_2 \\leftarrow \\dfrac{1}{20}R_2$: $$\\left(\\begin{array}{rrr|r}1 & 1 & 1 & 210\\\\ 0 & 1 & 3 & 150\\\\ 0 & -2 & -2 & -180\\end{array}\\right)$$<br>$R_1 \\leftarrow R_1 - (1)R_2$: $$\\left(\\begin{array}{rrr|r}1 & 0 & -2 & 60\\\\ 0 & 1 & 3 & 150\\\\ 0 & -2 & -2 & -180\\end{array}\\right)$$<br>$R_3 \\leftarrow R_3 - (-2)R_2$: $$\\left(\\begin{array}{rrr|r}1 & 0 & -2 & 60\\\\ 0 & 1 & 3 & 150\\\\ 0 & 0 & 4 & 120\\end{array}\\right)$$<br>$R_3 \\leftarrow \\dfrac{1}{4}R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & -2 & 60\\\\ 0 & 1 & 3 & 150\\\\ 0 & 0 & 1 & 30\\end{array}\\right)$$<br>$R_1 \\leftarrow R_1 - (-2)R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 120\\\\ 0 & 1 & 3 & 150\\\\ 0 & 0 & 1 & 30\\end{array}\\right)$$<br>$R_2 \\leftarrow R_2 - (3)R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 120\\\\ 0 & 1 & 0 & 60\\\\ 0 & 0 & 1 & 30\\end{array}\\right)$$<br>$(x,y,z)=(120,60,30)$; số vé VIP đã bán: $z=30$.",
    "note": "Lập hệ phương trình từ điều kiện của bài toán (cung bằng cầu, hoặc dùng hết nguyên liệu) rồi giải bằng phép khử Gauss."
   },
   {
@@ -396,7 +396,7 @@
     "$\\dfrac{2x}{(1-x)^3}$."
    ],
    "answer": 0,
-   "explain": "Áp dụng toán tử $x\\dfrac{d}{dx}$ hai lần cho $\\dfrac{1}{1-x}$.",
+   "explain": "Đặt $D=x\\frac d{dx}$. Từ $\\sum_{n\\ge0}x^n=(1-x)^{-1}$, $D$ lần một cho $\\sum nx^n=\\frac{x}{(1-x)^2}$; lần hai cho $\\sum n^2x^n=x\\frac d{dx}\\frac{x}{(1-x)^2}=\\frac{x(1+x)}{(1-x)^3}$.",
    "note": "Đạo hàm hoặc tích phân từng số hạng của $\\displaystyle\\sum x^n = \\dfrac{1}{1 - x}$ để có các chuỗi liên quan; chỉ đúng khi $|x| < 1$."
   },
   {
@@ -408,7 +408,7 @@
     "$y = Cx$."
    ],
    "answer": 0,
-   "explain": "$\\dfrac{dy}{y\\ln y} = \\dfrac{dx}{x} \\Rightarrow \\ln y = Cx$.",
+   "explain": "$\\dfrac{dy}{y\\ln y}=\\dfrac{dx}{x}$. Đặt $u=\\ln y$, khi đó $du=dy/y$: $\\ln|\\ln y|=\\ln x+C$, tương đương $\\ln y=C_1x$ và $y=e^{C_1x}$.",
    "note": "Tách biến: đưa $y$ về một vế, $x$ về một vế rồi lấy tích phân; hằng số $C$ chỉ cần viết ở một vế."
   },
   {
@@ -420,7 +420,7 @@
     "$y = (x + C)\\cos x$."
    ],
    "answer": 0,
-   "explain": "$\\left(\\dfrac{y}{\\cos x}\\right)' = \\dfrac{1}{\\cos^2x}$.",
+   "explain": "Chia cho $\\cos^2x$: $y^\\prime/\\cos x+y\\tan x=1/\\cos^2x$, tức $(y/\\cos x)^\\prime=1/\\cos^2x$. Tích phân: $y/\\cos x=\\tan x+C$, nên $y=\\sin x+C\\cos x$.",
    "note": "Tuyến tính: nhân thừa số tích phân $e^{\\int p\\,dx}$; đẳng cấp: đặt $y = ux$."
   },
   {
@@ -444,7 +444,7 @@
     "$32$."
    ],
    "answer": 0,
-   "explain": "$\\displaystyle\\int_0^{\\pi/2}\\sin\\varphi\\cos\\varphi\\,d\\varphi\\int_2^4 r^3\\,dr = \\dfrac12\\cdot\\dfrac{4^4 - 2^4}{4}$<br>Kết quả: $30$",
+   "explain": "Polar coordinates give $xy=r^2\\cos\\varphi\\sin\\varphi$ and $dxdy=r\\,dr\\,d\\varphi$; the quarter-annulus has $a\\le r\\le b$, $0\\le\\varphi\\le\\pi/2$.<br>$\\displaystyle I=\\left(\\int_0^{\\pi/2}\\sin\\varphi\\cos\\varphi\\,d\\varphi\\right)\\left(\\int_2^4r^3\\,dr\\right)=\\dfrac12\\left[\\dfrac{r^4}{4}\\right]_2^4$.<br>$I=\\dfrac12\\cdot\\dfrac{256-16}{4}=30$.",
    "note": "Trong tọa độ cực $dxdy = r\\,dr\\,d\\varphi$; đường tròn $x^2 + y^2 = 2ax$ là $r = 2a\\cos\\varphi$ với $-\\dfrac{\\pi}{2} \\le \\varphi \\le \\dfrac{\\pi}{2}$."
   },
   {
@@ -456,7 +456,7 @@
     "$\\dfrac{81 \\pi}{2}$."
    ],
    "answer": 0,
-   "explain": "Tọa độ trụ: $\\displaystyle\\int_0^{2\\pi}d\\varphi\\int_0^3 r^3(3 - r)\\,dr = 2\\pi\\cdot\\dfrac{3^5}{20}$<br>Kết quả: $\\dfrac{243 \\pi}{10}$",
+   "explain": "Tọa độ trụ: $r=\\sqrt{x^2+y^2}$, $0\\le r\\le3$, $r\\le z\\le3$, $dV=r\\,dz\\,dr\\,d\\varphi$. Sau khi tích phân theo $z$, biểu thức là $r^2(3-r)r=r^3(3-r)$.<br>$\\displaystyle I=2\\pi\\int_0^{3}(3r^3-r^4)\\,dr=2\\pi\\left[\\frac{3r^4}{4}-\\frac{r^5}{5}\\right]_0^{3}$.<br>$I=2\\pi(243/4-243/5)=\\pi243/10=\\dfrac{243 \\pi}{10}$.",
    "note": "Tọa độ trụ hợp với paraboloid, mặt nón; tọa độ cầu hợp với hình cầu; không quên định thức Jacobi."
   },
   {
@@ -468,7 +468,7 @@
     "$30 \\pi$."
    ],
    "answer": 0,
-   "explain": "Trên $L$, $\\rho = 9 + 1$ là hằng số nên khối lượng bằng $(9 + 1)\\cdot2\\pi\\cdot3$<br>Kết quả: $60 \\pi$",
+   "explain": "Trên $L$, $x^2+y^2=9$ nên $\\rho=9+1$ không đổi. Tham số hóa $x=3\\cos t$, $y=3\\sin t$, $0\\le t\\le2\\pi$, cho $ds=3\\,dt$.<br>$\\displaystyle M=\\int_0^{2\\pi}(9+1)3\\,dt=2\\pi3(9+1)=60 \\pi$.",
    "note": "Tích phân đường loại một: $ds = \\sqrt{x'^2 + y'^2}\\,dt$, không phụ thuộc chiều đi trên đường cong."
   },
   {
@@ -480,7 +480,7 @@
     "$\\dfrac{4}{3}$."
    ],
    "answer": 0,
-   "explain": "Thay $y = x^2,\\ dy = 2x\\,dx$: $\\displaystyle\\int_0^1\\left[2 x^{5} + 4 x^{2}\\right]dx = \\dfrac{5}{3}$<br>Kết quả: $\\dfrac{5}{3}$",
+   "explain": "Tham số hóa $x=t,\\ y=t^2$ ($0\\le t\\le1$), nên $dy=2t\\,dt$. Khi đó $P\\,dx+Q\\,dy=[2 x^{5} + 4 x^{2}]dt$.<br>Khai triển: $\\displaystyle I=\\int_0^1(2 x^{5} + 4 x^{2})\\,dt=[\\dfrac{x^{6}}{3} + \\dfrac{4 x^{3}}{3}]_0^1=\\dfrac{5}{3}$.",
    "note": "Tích phân đường loại hai: thay $y = y(x)$, $dy = y'dx$; với đường cong kín thì dùng công thức Green."
   }
  ],
@@ -570,7 +570,7 @@
    "answer": [
     "2"
    ],
-   "explain": "$A = \\begin{pmatrix}2 & 3 & 4 \\\\ 3 & 6 & 8 \\\\ 4 & 8 & 12\\end{pmatrix}$, $\\det A = 4$; kết quả bằng $\\dfrac{(\\det A)^2}{2^3}$ $= 2$<br>Đáp số: $2$",
+   "explain": "$$A=\\begin{pmatrix}2 & 3 & 4 \\\\ 3 & 6 & 8 \\\\ 4 & 8 & 12\\end{pmatrix},\\quad \\det A=(2)\\big((6)(12)-(8)(8)\\big)-(3)\\big((3)(12)-(8)(4)\\big)+(4)\\big((3)(8)-(6)(4)\\big)$$<br>$=16 - 12 + 0=4$.<br>$\\det\\left(\\dfrac12A^TA\\right)=\\dfrac{1}{2^3}\\det(A^T)\\det(A)=\\dfrac{(\\det A)^2}{8}=\\dfrac{4^2}{8}=2$.",
    "note": "Viết ma trận ra từ công thức của $a_{ij}$, rồi dùng $\\det\\left(A^T\\right) = \\det A$ và $\\det(AB) = \\det A\\cdot\\det B$."
   },
   {
@@ -586,7 +586,7 @@
    "answer": [
     "2"
    ],
-   "explain": "Đặt $t = x^3$: $\\sum\\dfrac{t^n}{n\\cdot8^n}$ có bán kính hội tụ 8 theo $t$, tức $|x|^3 < 8$<br>$R = 2$",
+   "explain": "$\\sqrt[n]{|u_n|}=|x|^3/(8n^{1/n})\\to|x|^3/8$; điều kiện hội tụ tuyệt đối là $|x|<2$. Hai đầu mút không đổi bán kính, nên $R=2$.<br>$R = 2$",
    "note": "Chuỗi theo $x^k$: đặt $t = x^k$; bán kính theo $x$ là căn bậc $k$ của bán kính theo $t$."
   },
   {

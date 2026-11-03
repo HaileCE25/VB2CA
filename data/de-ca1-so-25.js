@@ -28,7 +28,7 @@
     "$8$."
    ],
    "answer": 0,
-   "explain": "$\\langle u, v\\rangle = m^{2} + 3 m = m \\left(m + 3\\right)$<br>$\\langle u, v\\rangle > 0 \\Leftrightarrow m < -3 \\text{ hoặc } m > 0$<br>Các số nguyên thuộc $[-5;5]$ thỏa mãn: $7$ giá trị",
+   "explain": "$\\langle u,v\\rangle=(m)(m)+(3)(m)+(1)(0)=m^{2} + 3 m=m \\left(m + 3\\right)$<br>$\\langle u, v\\rangle > 0 \\Leftrightarrow m < -3 \\text{ hoặc } m > 0$<br>Giao điều kiện với các số nguyên $m\\in[-5;5]$ là $\\{-5, -4, 1, 2, 3, 4, 5\\}$; có $7$ giá trị",
    "note": "Góc nhọn $\\Leftrightarrow \\langle u, v\\rangle > 0$, góc tù $\\Leftrightarrow \\langle u, v\\rangle < 0$; các giá trị làm tích vô hướng bằng 0 (góc vuông) bị loại."
   },
   {
@@ -40,7 +40,7 @@
     "$m \\ne 16$."
    ],
    "answer": 0,
-   "explain": "Ba véc tơ trong $\\mathbb{R}^3$ là cơ sở $\\Leftrightarrow$ chúng độc lập tuyến tính $\\Leftrightarrow$ định thức của chúng khác 0<br>$\\det(u_1, u_2, u_3) = 14 - m$<br>$14 - m \\ne 0 \\Leftrightarrow m \\ne 14$",
+   "explain": "Ba véc tơ trong $\\mathbb{R}^3$ là cơ sở khi và chỉ khi định thức của ma trận có ba hàng là các véc tơ khác 0.<br>Khai triển định thức: $\\det(u_1,u_2,u_3)=14 - m=14 - m$<br>Giải $14 - m=0$: $m=14$; do đó định thức khác 0 khi và chỉ khi $m\\ne14$",
    "note": "Số véc tơ đã bằng số chiều nên chỉ cần định thức khác 0."
   },
   {
@@ -88,7 +88,7 @@
     "$I + A$ không khả nghịch."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> $I - A$ khả nghịch và $(I - A)^{-1} = I + A$. $(I - A)(I + A) = I - A^2 = I$.<br><b>Sai:</b> $A$ là ma trận không. $A = \\begin{pmatrix}0&1\\\\0&0\\end{pmatrix}$ khác ma trận không nhưng $A^2 = 0$.<br><b>Sai:</b> $A$ khả nghịch. $(\\det A)^2 = \\det(A^2) = 0$ nên $\\det A = 0$.<br><b>Sai:</b> $I + A$ không khả nghịch. $(I + A)(I - A) = I$ nên $I + A$ khả nghịch."
+   "explain": "<b>Đúng:</b> $I - A$ khả nghịch và $(I - A)^{-1} = I + A$. Nhân trực tiếp: $(I-A)(I+A)=I+A-A-A^2=I-A^2=I$, và $(I+A)(I-A)=I-A^2=I$. Hai tích đều là $I$, vậy nghịch đảo của $I-A$ là $I+A$.<br><b>Sai:</b> $A$ là ma trận không. $A = \\begin{pmatrix}0&1\\\\0&0\\end{pmatrix}$ khác ma trận không nhưng $A^2 = 0$.<br><b>Sai:</b> $A$ khả nghịch. $(\\det A)^2 = \\det(A^2) = 0$ nên $\\det A = 0$.<br><b>Sai:</b> $I + A$ không khả nghịch. $(I + A)(I - A) = I$ nên $I + A$ khả nghịch."
   },
   {
    "q": "Cho ma trận vuông cấp 4: $A = \\begin{pmatrix}1 & 2 & 2 & 2 \\\\ 2 & 1 & 2 & 2 \\\\ 2 & 2 & 1 & 2 \\\\ 2 & 2 & 2 & 1\\end{pmatrix}$. Bằng cách cộng tất cả các hàng vào hàng thứ nhất rồi khử, định thức của $A$ bằng",
@@ -99,7 +99,7 @@
     "$7$."
    ],
    "answer": 0,
-   "explain": "$h_1 \\to h_1 + h_2 + h_3 + h_4$: hàng 1 trở thành $(7;7;7;7)$, rút $7$ ra ngoài định thức<br>$h_i \\to h_i - (2)h_1\\ (i = 2,3,4)$: được ma trận tam giác có đường chéo $1;\\ -1;\\ -1;\\ -1$<br>$\\det A = (7)\\cdot(-1)^3 = -7$",
+   "explain": "$h_1 \\to h_1+h_2+h_3+h_4$: mỗi phần tử hàng 1 bằng $a+4b=7$. Rút $7$ khỏi hàng này để hàng đầu thành $(1,1,1,1)$, đồng thời nhân định thức với thừa số $7$.<br>Với hàng đầu $(1,1,1,1)$, thực hiện $h_i\\to h_i-(2)h_1$ với $i=2,3,4$: các phần tử ngoài đường chéo thành $b-b=0$, còn mỗi phần tử đường chéo dưới bằng $(a+b)-b=a$. Đường chéo là $1,-1,-1,-1$.<br>$\\det A = (7)\\cdot(-1)^3 = -7$",
    "note": "Cộng bội của một hàng vào hàng khác không làm đổi định thức; đưa về dạng tam giác (hoặc tam giác khối) rồi nhân các phần tử (khối) trên đường chéo."
   },
   {
@@ -123,7 +123,7 @@
     "$4$."
    ],
    "answer": 0,
-   "explain": "$y = \\dfrac{\\left(x - 1\\right) \\left(x + 4\\right)}{\\left(x - 1\\right) \\left(x + 2\\right)}$<br>Có tiệm cận đứng $x = -2$, tiệm cận ngang $y = 1$ (tại $x = 1$ giới hạn hữu hạn nên không có tiệm cận)<br>Tổng cộng: $2$ đường tiệm cận",
+   "explain": "Phân tích rồi khử nhân tử chung: $y=\\dfrac{\\left(x - 1\\right) \\left(x + 4\\right)}{\\left(x - 1\\right) \\left(x + 2\\right)}=\\dfrac{x + 4}{x + 2}$.<br>Kiểm tra điểm làm mẫu bằng $0$: Tại $x=1$, tử cũng bằng $0$ nên nhân tử $(x-1)$ bị khử; giới hạn hữu hạn, không là TCĐ.; Tại $x=-2$, tử khác $0$; mẫu tiến về $0$ nên có TCĐ $x=-2$..<br>Chia đa thức: $\\dfrac{x + 4}{x + 2}=1+\\dfrac{2}{x + 2}$. Vì số hạng dư tiến về $0$, tiệm cận ngang là $y=<q>$.<br>Số đường tiệm cận: 2.",
    "note": "Tiệm cận đứng: nghiệm của mẫu không bị rút gọn với tử; tiệm cận ngang: xét riêng $x \\to +\\infty$ và $x \\to -\\infty$ (với căn thức, hai phía có thể khác nhau)."
   },
   {
@@ -135,7 +135,7 @@
     "$- \\dfrac{5}{3}$."
    ],
    "answer": 0,
-   "explain": "$e^{x} = 1 + x + \\dfrac{1}{2}x^{2} + \\dfrac{1}{6}x^{3} + o(x^{3})$<br>$\\ln\\left(2 x + 1\\right) = 2x - 2x^{2} + \\dfrac{8}{3}x^{3} + o(x^{3})$<br>Nhân lại, gom theo bậc: $f(x) = 2x + \\dfrac{5}{3}x^{3} + o(x^{3})$<br>Hệ số của $x^{3}$: $\\dfrac{5}{3}$",
+   "explain": "$e^{x} = 1 + x + \\dfrac{1}{2}x^{2} + \\dfrac{1}{6}x^{3} + o(x^{3})$<br>$\\ln\\left(2 x + 1\\right) = 2x - 2x^{2} + \\dfrac{8}{3}x^{3} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=2x + \\dfrac{5}{3}x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $\\dfrac{5}{3}$.",
    "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$."
   },
   {
@@ -147,7 +147,7 @@
     "$24$."
    ],
    "answer": 0,
-   "explain": "$f'_x = 2 x y,\\quad f'_y = x^{2} + 3 y^{2}$<br>$\\nabla f(M) = (8;16)$<br>$|\\vec l| = \\sqrt{(12)^2 + (5)^2} = 13$<br>$\\dfrac{\\partial f}{\\partial \\vec l} = \\dfrac{(8)\\cdot(12) + (16)\\cdot(5)}{13} = \\dfrac{176}{13}$",
+   "explain": "$f'_x = 2 x y,\\quad f'_y = x^{2} + 3 y^{2}$<br>$\\nabla f(M) = (8;16)$<br>$|\\vec l| = \\sqrt{(12)^2 + (5)^2} = 13$<br>$\\dfrac{\\partial f}{\\partial \\vec l}=\\dfrac{(8)(12)+(16)(5)}{13}=\\dfrac{96+80}{13}=\\dfrac{176}{13}=\\dfrac{176}{13}$.",
    "note": "Phải chia cho độ dài $|\\vec l|$: đạo hàm theo hướng dùng véc tơ đơn vị."
   },
   {
@@ -170,7 +170,7 @@
     "$6$."
    ],
    "answer": 0,
-   "explain": "$L = xy - \\lambda(2 x + y - 12)$<br>$L'_x = y - 2 \\lambda = 0,\\quad L'_y = x - \\lambda = 0 \\Rightarrow y = 2 \\lambda,\\ x = \\lambda$<br>Thay vào ràng buộc: $4 \\lambda = 12 \\Rightarrow \\lambda = 3$<br>$x = 3,\\ y = 6$, $S_{\\max} = 18$",
+   "explain": "$L=xy-\\lambda(2x+1y-12)$. $L_x=y-2\\lambda=0$ và $L_y=x-1\\lambda=0$, vì thế $y=2\\lambda$, $x=1\\lambda$.<br>Thay vào ràng buộc: $2\\lambda+2\\lambda=2(2)(1)\\lambda=12$, nên $\\lambda=\\dfrac{12}{2(2)(1)}$.<br>$x=\\dfrac{12}{22}$, $y=\\dfrac{12}{21}$. Vậy $S_{\\max}=xy=\\dfrac{12}{22}\\cdot\\dfrac{12}{21}=\\dfrac{144}{421}=18$.",
    "note": "Rút một biến từ điều kiện, hoặc dùng $\\nabla f = \\lambda\\nabla g$; nhớ kiểm tra đó là giá trị lớn nhất hay nhỏ nhất."
   },
   {
@@ -182,7 +182,7 @@
     "$C = 1$ và chuỗi hội tụ."
    ],
    "answer": 0,
-   "explain": "$\\sqrt[n]{u_n} = \\dfrac{n + 1}{2n + 2} \\to \\dfrac{1}{2}$<br>$C < 1$ nên theo tiêu chuẩn Cauchy chuỗi hội tụ",
+   "explain": "$u_n=\\left(\\dfrac{n+1}{2n+2}\\right)^n$; do đó $\\sqrt[n]{u_n}=\\dfrac{n+1}{2n+2}\\to\\dfrac{1}{2}$<br>$C < 1$ nên theo tiêu chuẩn Cauchy chuỗi hội tụ",
    "note": "Tiêu chuẩn Cauchy: lấy căn bậc $n$ làm mất số mũ $n$; số mũ $2n$ thì còn lại bình phương."
   },
   {
@@ -194,7 +194,7 @@
     "$0$."
    ],
    "answer": 0,
-   "explain": "Chuỗi thứ 1: $\\frac1n \\downarrow 0$ (Leibniz), $\\sum\\frac1n$ phân kỳ $\\Rightarrow$ bán hội tụ<br>Chuỗi thứ 2: $\\frac{1}{\\sqrt[3]{n}} \\downarrow 0$ (Leibniz), $\\sum\\frac{1}{n^{1/3}}$ phân kỳ $\\Rightarrow$ bán hội tụ<br>Chuỗi thứ 3: $\\frac{|u_{n+1}|}{|u_n|} \\to \\frac12 < 1$ $\\Rightarrow$ hội tụ tuyệt đối<br>Chuỗi thứ 4: $\\frac{\\ln n}{n} \\downarrow 0$ khi $n \\ge 3$ (Leibniz), $\\frac{\\ln n}{n} \\ge \\frac1n$ $\\Rightarrow$ bán hội tụ<br>Số chuỗi hội tụ: $4$",
+   "explain": "Chuỗi thứ 1: $a_n=1/n\\downarrow0$ nên Leibniz cho hội tụ; $\\sum|u_n|=\\sum1/n$ phân kỳ, do đó bán hội tụ. Kết luận: bán hội tụ.<br>Chuỗi thứ 2: $a_n=n^{-1/3}\\downarrow0$ nên Leibniz hội tụ; chuỗi trị tuyệt đối là $p$-series $p=1/3\\le1$, phân kỳ: bán hội tụ. Kết luận: bán hội tụ.<br>Chuỗi thứ 3: $\\dfrac{|u_{n+1}|}{|u_n|}=\\dfrac{n+1}{2^{n+1}}\\dfrac{2^n}{n}=\\dfrac{n+1}{2n}\\to1/2<1$, nên hội tụ tuyệt đối. Kết luận: hội tụ tuyệt đối.<br>Chuỗi thứ 4: $a_n=\\ln n/n\\downarrow0$ khi $n\\ge3$, nên Leibniz hội tụ; $\\ln n\\ge1$ khi $n\\ge3$ cho $a_n\\ge1/n$, nên không hội tụ tuyệt đối. Kết luận: bán hội tụ.<br>Số chuỗi hội tụ: $4$",
    "note": "Leibniz: $a_n$ giảm về 0 thì chuỗi đan dấu hội tụ; hội tụ tuyệt đối phải xét thêm $\\sum a_n$; nếu $a_n \\not\\to 0$ thì chuỗi phân kỳ."
   },
   {
@@ -206,7 +206,7 @@
     "$y' = \\dfrac{1 + y^2}{1 + x^2}$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> $y' + y\\tan x = \\cos x$ — Dạng $y' + p(x)y = q(x)$: bậc nhất đối với $y$ và $y'$<br><b>Sai:</b> $y' - y = xy^2$ — là phương trình Bernoulli (có số hạng $y^{\\alpha}$ với $\\alpha \\ne 0, 1$ ở vế phải), không thuộc dạng đang hỏi<br><b>Sai:</b> $(y\\cos x + 2x)dx + (\\sin x - 2y)dy = 0$ — là phương trình vi phân toàn phần, không thuộc dạng đang hỏi<br><b>Sai:</b> $y' = \\dfrac{1 + y^2}{1 + x^2}$ — là phương trình có biến số phân ly (tách được $x$ và $y$ về hai vế), không thuộc dạng đang hỏi"
+   "explain": "<b>Đúng:</b> $y' + y\\tan x = \\cos x$ — Dạng $y' + p(x)y = q(x)$: bậc nhất đối với $y$ và $y'$; Đã ở dạng $y'+(\\tan x)y=\\cos x$, bậc nhất tuyến tính theo $y,y'$.<br><b>Sai:</b> $y' - y = xy^2$ — $y'-y=xy^2$: dạng Bernoulli với $\\alpha=2$.; đây là là phương trình Bernoulli (có số hạng $y^{\\alpha}$ với $\\alpha \\ne 0, 1$ ở vế phải), không phải dạng đang hỏi.<br><b>Sai:</b> $(y\\cos x + 2x)dx + (\\sin x - 2y)dy = 0$ — $P=(y\\cos x + 2x),\\ Q=\\sin x - 2y$: $\\partial P/\\partial y=\\cos x$ và $\\partial Q/\\partial x=\\cos x$; bằng nhau, nên toàn phần.; đây là là phương trình vi phân toàn phần, không phải dạng đang hỏi.<br><b>Sai:</b> $y' = \\dfrac{1 + y^2}{1 + x^2}$ — $\\dfrac{dy}{1+y^2}=\\dfrac{dx}{1+x^2}$, tách được biến.; đây là là phương trình có biến số phân ly (tách được $x$ và $y$ về hai vế), không phải dạng đang hỏi."
   },
   {
    "q": "Gọi $y = y(x)$ là nghiệm của phương trình Bernoulli $y' + \\dfrac{y}{x} = 3xy^2$ $(x > 0)$ thỏa mãn $y(1) = \\dfrac{1}{6}$. Bằng phép đặt $z = \\dfrac1y$ để đưa về phương trình tuyến tính, giá trị của $y(2)$ bằng",
@@ -217,7 +217,7 @@
     "$6$."
    ],
    "answer": 0,
-   "explain": "Đặt $z = \\dfrac1y \\Rightarrow z' = -\\dfrac{y'}{y^2}$; chia phương trình cho $-y^2$:<br>$z' - \\dfrac{z}{x} = - 3 x$<br>$\\left(\\dfrac{z}{x}\\right)' = -3 \\Rightarrow z = x(C - 3 x)$<br>$y(1) = \\dfrac{1}{C - 3} = \\dfrac{1}{6} \\Rightarrow C = 9$<br>$y(2) = \\dfrac{1}{2(9 - 6)} = \\dfrac{1}{6}$",
+   "explain": "Đặt $z=1/y$, do đó $y^\\prime=-z^\\prime/z^2$. Thay vào $y^\\prime+y/x=3xy^2$ rồi nhân với $-1$: $z^\\prime-z/x=-3x$.<br>Chia cho $x$: $(z/x)^\\prime=(xz^\\prime-z)/x^2=-3$. Tích phân hai vế: $z/x=-3x+C$, tức $z=x(C-3x)$.<br>$y(1)=1/z(1)=1/(C-3)=\\dfrac{1}{6}$ nên $C-3=1/\\dfrac{1}{6}=6$ và $C=9$.<br>$z(2)=2(C-23)=2(9-6)=6$; vậy $y(2)=1/z(2)=\\dfrac{1}{6}$.",
    "note": "Bernoulli: đặt $z = y^{1-\\alpha}$; với $\\alpha = 2$ là $z = \\dfrac1y$, khi đó $z' = -\\dfrac{y'}{y^2}$."
   },
   {
@@ -229,7 +229,7 @@
     "$451$."
    ],
    "answer": 0,
-   "explain": "$P(0) = \\dfrac{900}{1 + A} = 100 \\Rightarrow A = 8$<br>$e^{-kt} = e^{-\\frac{\\ln 2}{3}\\cdot9} = 2^{-3} = \\dfrac{1}{8}$<br>$P(9) = \\dfrac{900}{1 + \\frac{8}{8}} = 450$",
+   "explain": "$P(0)=\\dfrac{M}{1+A}=P_0$; nhân chéo $M=P_0(1+A)$ nên $A=\\dfrac{M}{P_0}-1=8$.<br>$kt=\\dfrac{\\ln2}{3}(9)=3\\ln2$, vì thế $e^{-kt}=e^{-3\\ln2}=2^{-3}=\\dfrac1{8}$.<br>$P(9)=\\dfrac{900}{1+\\frac{8}{8}}=\\dfrac{900\\cdot8}{8+8}=\\dfrac{7200}{16}=450$.",
    "note": "Thay $t = 0$ để tìm hằng số trong công thức nghiệm; với $k = \\dfrac{\\ln 2}{T}$ thì $e^{-kT} = \\dfrac12$."
   },
   {
@@ -241,7 +241,7 @@
     "$y^* = Ax^2e^{2x} + B$."
    ],
    "answer": 0,
-   "explain": "Nghiệm đặc trưng $\\pm2$: số $2$ là nghiệm đơn nên $Axe^{2x}$; số $0$ không là nghiệm nên hằng số $B$<br>Dạng cần tìm: $y^* = Axe^{2x} + B$",
+   "explain": "$k^2-4=(k-2)(k+2)=0$. Hạng $e^{2x}$ cộng hưởng với nghiệm đơn $2$, nên dùng $Axe^{2x}$; hạng hằng $1$ ứng với $k=0$ không là nghiệm, nên dùng $B$.<br>Dạng cần tìm: $y^* = Axe^{2x} + B$",
    "note": "Bội của số mũ (hoặc của $\\alpha \\pm i\\beta$) trong phương trình đặc trưng quyết định nhân thêm $1$, $x$ hay $x^2$."
   },
   {
@@ -253,7 +253,7 @@
     "$\\displaystyle\\int_{0}^{2\\pi}d\\varphi\\int_{2}^{4} f(r\\cos\\varphi, r\\sin\\varphi)\\,r\\,dr$."
    ],
    "answer": 0,
-   "explain": "$4 \\le r^2 \\le 16 \\Leftrightarrow 2 \\le r \\le 4$<br>Điều kiện $x \\ge 0,\\ y \\ge 0$ ứng với $0 \\le \\varphi \\le \\pi/2$<br>Jacobian của phép đổi biến bằng $r$: $dxdy = r\\,dr\\,d\\varphi$",
+   "explain": "$4 \\le r^2 \\le 16 \\Leftrightarrow 2 \\le r \\le 4$<br>$x\\ge0,\\ y\\ge0\\Leftrightarrow\\cos\\varphi\\ge0,\\ \\sin\\varphi\\ge0\\Rightarrow0\\le\\varphi\\le\\pi/2$<br>$dxdy=\\left|\\dfrac{\\partial(x,y)}{\\partial(r,\\varphi)}\\right|dr\\,d\\varphi=r\\,dr\\,d\\varphi$<br>Vậy tích phân được viết: $\\displaystyle\\int_{0}^{\\pi/2}d\\varphi\\int_{2}^{4}f(r\\cos\\varphi,r\\sin\\varphi)\\,r\\,dr$",
    "note": "Cận của $r$ là căn bậc hai của các số ở hai vế; không quên định thức Jacobi $r$."
   },
   {
@@ -265,7 +265,7 @@
     "$\\dfrac{4 \\pi}{3}$."
    ],
    "answer": 0,
-   "explain": "$V = \\displaystyle\\int_0^{2\\pi}d\\varphi\\int_0^{\\dfrac{\\pi}{3}}\\sin\\theta\\,d\\theta\\int_0^{2}\\rho^2\\,d\\rho$<br>$= 2\\pi\\cdot\\left(1 - \\cos\\dfrac{\\pi}{3}\\right)\\cdot\\dfrac{8}{3} = \\dfrac{8 \\pi}{3}$",
+   "explain": "$V=\\displaystyle\\int_0^{2\\pi}d\\varphi\\int_0^{\\dfrac{\\pi}{3}}\\sin\\theta\\,d\\theta\\int_0^{2}\\rho^2\\,d\\rho$. Các tích phân lần lượt bằng $2\\pi$, $[-\\cos\\theta]_0^{\\dfrac{\\pi}{3}}=1-\\cos\\dfrac{\\pi}{3}$ và $[\\rho^3/3]_0^{2}=8/3$.<br>$V=2\\pi(1-\\cos\\dfrac{\\pi}{3})\\dfrac{8}{3}=\\dfrac{8 \\pi}{3}$.",
    "note": "Góc $\\theta$ tính từ trục $Oz$: mặt nón $z = c\\sqrt{x^2 + y^2}$ ứng với $\\tan\\theta = \\dfrac1c$."
   },
   {
@@ -277,7 +277,7 @@
     "$220$."
    ],
    "answer": 0,
-   "explain": "Gọi $x$ là số người dùng của X khi ổn định; lượng rời X bằng lượng đến X: $30\\%\\cdot x = 20\\%\\cdot(600 - x)$<br>$50x = 12000 \\Rightarrow x = 240$",
+   "explain": "Gọi $x$ là số người dùng của X ở trạng thái ổn định. Lượng rời X là 30% của $x$; lượng chuyển từ Y sang X là 20% của $600-x$. Cân bằng cho $\\dfrac{30}{100}x=\\dfrac{20}{100}(600-x)$.<br>Nhân với $100$: $30x=20(600-x)=12000-20x$, nên $(50)x=12000$ và $x=\\dfrac{12000}{50}=240$.",
    "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu."
   },
   {
@@ -289,7 +289,7 @@
     "$m = 4$."
    ],
    "answer": 0,
-   "explain": "Ba tọa độ đầu của hàng 3 bằng $1$ lần hàng 1 cộng $1$ lần hàng 2, nên hạng bằng 2 khi và chỉ khi phần tử cuối cũng thỏa mãn hệ thức đó: $m = 5$; ngược lại hạng bằng 3<br>Kết quả: $m = 5$",
+   "explain": "$R_3 \\leftarrow R_3 - R_1 - R_2$.<br>$A = \\begin{pmatrix}1 & 0 & -1 & 2 \\\\ 1 & -2 & 2 & 3 \\\\ 2 & -2 & 1 & m\\end{pmatrix} \\xrightarrow{R_3 \\leftarrow R_3 - R_1 - R_2} \\begin{pmatrix}1 & 0 & -1 & 2 \\\\ 1 & -2 & 2 & 3 \\\\ 0 & 0 & 0 & m - 5\\end{pmatrix}$.<br>$\\det \\begin{pmatrix}1 & 0 \\\\ 1 & -2\\end{pmatrix} = -2 \\ne 0$, nên hai hàng đầu độc lập tuyến tính.<br>$m = 5 \\Rightarrow R_3 = (0,0,0,0) \\Rightarrow \\operatorname{rank}(A)=2$.<br>$m \\ne 5 \\Rightarrow R_3 = (0,0,0,m - 5) \\ne (0,0,0,0) \\Rightarrow \\operatorname{rank}(A)=3$.<br><b>Kết quả:</b> $m = 5$.",
    "note": "Đưa về dạng bậc thang; hạng giảm đúng khi hàng cuối thành hàng không, điều kiện đó cho giá trị của $m$."
   },
   {
@@ -301,7 +301,7 @@
     "$\\begin{pmatrix}2 & -3 \\\\ -1 & 1\\end{pmatrix}$."
    ],
    "answer": 0,
-   "explain": "$(A - I)X = B$ với $A - I = \\begin{pmatrix}1 & -2 \\\\ -2 & 5\\end{pmatrix}$, nên $X = (A - I)^{-1}B$; kết quả $X = \\begin{pmatrix}-2 & 3 \\\\ 1 & -1\\end{pmatrix}$.",
+   "explain": "$AX=X+B \\Rightarrow (A-I)X=B$.<br>$A-I=\\begin{pmatrix}1 & -2 \\\\ -2 & 5\\end{pmatrix},\\qquad B=\\begin{pmatrix}-4 & 5 \\\\ 9 & -11\\end{pmatrix}$.<br>$X=(A-I)^{-1}B=\\begin{pmatrix}5 & 2 \\\\ 2 & 1\\end{pmatrix}\\begin{pmatrix}-4 & 5 \\\\ 9 & -11\\end{pmatrix}=\\begin{pmatrix}-2 & 3 \\\\ 1 & -1\\end{pmatrix}$.<br>Kiểm tra: $\\begin{pmatrix}2 & -2 \\\\ -2 & 6\\end{pmatrix}\\begin{pmatrix}-2 & 3 \\\\ 1 & -1\\end{pmatrix}=\\begin{pmatrix}-2 & 3 \\\\ 1 & -1\\end{pmatrix}+\\begin{pmatrix}-4 & 5 \\\\ 9 & -11\\end{pmatrix}$.",
    "note": "$AX = B \\Rightarrow X = A^{-1}B$ (nhân bên trái); $XA = B \\Rightarrow X = BA^{-1}$ (nhân bên phải); không được đổi thứ tự."
   },
   {
@@ -313,7 +313,7 @@
     "$(a;b) = (2;-2)$."
    ],
    "answer": 0,
-   "explain": "Vô số nghiệm $\\Leftrightarrow \\dfrac{b + 2}{1} = \\dfrac{-8}{a} = \\dfrac{a^2 + 4}{2}$<br>Với $(a;b) = (-2;2)$: $\\dfrac{4}{1} = 4;\\quad \\dfrac{-8}{-2} = 4;\\quad \\dfrac{8}{2} = 4$ (thỏa mãn)<br>Mỗi cặp còn lại làm ít nhất một tỉ số khác đi nên không cho vô số nghiệm",
+   "explain": "Để vô số nghiệm, ba hệ số của phương trình đầu phải cùng tỉ lệ với $(1,a,c_0)$ của phương trình sau: $b+2=\\lambda$, $-8=\\lambda a$, $a^2 + 4=\\lambda2$.<br>Với $(a,b)=(-2,2)$: $b+2=4=4$; $-8=4\\cdot-2=-8$; $a^2 + 4=8=4\\cdot2=8$. Do đó hai phương trình tỉ lệ đúng cùng hệ số $\\lambda=4$.<br>Kiểm tra các cặp còn lại bằng cùng ba phép thế trên; ít nhất một hệ số không đúng tỉ lệ (do các cặp đã lọc bằng điều kiện works), nên không tạo cùng một phương trình.",
    "note": "Hệ hai phương trình hai ẩn có vô số nghiệm khi các hệ số và vế phải tỉ lệ: $\\dfrac{a_1}{a_2} = \\dfrac{b_1}{b_2} = \\dfrac{c_1}{c_2}$."
   },
   {
@@ -337,7 +337,7 @@
     "$-35$."
    ],
    "answer": 0,
-   "explain": "Nhánh trái $g(x) = \\cos{\\left(6 x \\right)}$: $g(0) = 1,\\ g'(0) = 0,\\ g''(0) = -36$<br>Nhánh phải $h(x) = ax^2 + bx + d$: $h(0) = d,\\ h'(0) = b,\\ h''(0) = 2a$<br>$d = 1,\\ b = 0,\\ 2a = -36 \\Rightarrow a = -18$<br>$2a + b = -36$",
+   "explain": "Nhánh trái $g(x)=\\cos{\\left(6 x \\right)}$ có $g(0)=1$, $g^\\prime(0)=0$, $g^{\\prime\\prime}(0)=-36$ (tính đạo hàm rồi thế $x=0$).<br>Nhánh phải $h(x)=ax^2+bx+d$: $h(0)=d$, $h^\\prime(x)=2ax+b$ nên $h^\\prime(0)=b$, $h^{\\prime\\prime}(x)=2a$ nên $h^{\\prime\\prime}(0)=2a$. Để ghép khả vi cấp hai, đặt lần lượt $h(0)=g(0)$, $h^\\prime(0)=g^\\prime(0)$, $h^{\\prime\\prime}(0)=g^{\\prime\\prime}(0)$.<br>$d=1,\\ b=0,\\ 2a=-36$, do đó $a=-18$.<br>Thay các hệ số đã tìm vào biểu thức cần tính: $2a + b=-36$.",
    "note": "Có đạo hàm cấp hai tại điểm nối: giá trị, đạo hàm cấp một và đạo hàm cấp hai ở hai phía đều phải khớp nhau."
   },
   {
@@ -349,7 +349,7 @@
     "$\\dfrac{1}{8}$."
    ],
    "answer": 0,
-   "explain": "Từng phần với $u = x,\\ dv = e^{-4x}dx$: $\\displaystyle\\int_0^{+\\infty}xe^{-4x}dx = \\left[-\\dfrac{x}{4}e^{-4x}\\right]_0^{+\\infty} + \\dfrac{1}{4}\\int_0^{+\\infty}e^{-4x}dx$<br>$= 0 + \\dfrac{1}{4}\\cdot\\dfrac{1}{4} = \\dfrac{1}{16}$",
+   "explain": "Từng phần trên $[0,R]$ với $u=x$, $dv=e^{-4x}dx$, $v=-e^{-4x}/4$: $\\int_0^Rxe^{-4x}dx=[-xe^{-4x}/4]_0^R+\\frac1{4}\\int_0^Re^{-4x}dx$.<br>Cho $R\\to\\infty$, $Re^{-4R}\\to0$; tích phân còn lại là $[-e^{-4x}/4]_0^\\infty=1/4$. Vậy $I=0+\\dfrac1{4}\\cdot\\dfrac1{4}=\\dfrac{1}{16}$.",
    "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$."
   },
   {
@@ -361,7 +361,7 @@
     "$115$."
    ],
    "answer": 0,
-   "explain": "Giải hệ $s_i = d_i$ được giá cân bằng $(35;15;40)$, lượng cung (cầu) tương ứng $(50;30;40)$<br>Kết quả: $120$",
+   "explain": "Tại cân bằng, $s_i=d_i$. Trừ lượng cầu khỏi lượng cung theo từng loại: $(S-D)P=(S-D)(35;15;40)^T$.<br>$S-D=\\begin{pmatrix}4 & 0 & 0 \\\\ -1 & 4 & -1 \\\\ -2 & 0 & 4\\end{pmatrix}$, nên hệ giá là $\\begin{pmatrix}4 & 0 & 0 \\\\ -1 & 4 & -1 \\\\ -2 & 0 & 4\\end{pmatrix}P=(140;-15;90)^T$.<br>Ma trận bổ sung ban đầu: $$\\left(\\begin{array}{rrr|r}4 & 0 & 0 & 140\\\\ -1 & 4 & -1 & -15\\\\ -2 & 0 & 4 & 90\\end{array}\\right)$$<br>$R_1 \\leftarrow \\dfrac{1}{4}R_1$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 35\\\\ -1 & 4 & -1 & -15\\\\ -2 & 0 & 4 & 90\\end{array}\\right)$$<br>$R_2 \\leftarrow R_2 - (-1)R_1$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 35\\\\ 0 & 4 & -1 & 20\\\\ -2 & 0 & 4 & 90\\end{array}\\right)$$<br>$R_3 \\leftarrow R_3 - (-2)R_1$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 35\\\\ 0 & 4 & -1 & 20\\\\ 0 & 0 & 4 & 160\\end{array}\\right)$$<br>$R_2 \\leftarrow \\dfrac{1}{4}R_2$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 35\\\\ 0 & 1 & - \\dfrac{1}{4} & 5\\\\ 0 & 0 & 4 & 160\\end{array}\\right)$$<br>$R_3 \\leftarrow \\dfrac{1}{4}R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 35\\\\ 0 & 1 & - \\dfrac{1}{4} & 5\\\\ 0 & 0 & 1 & 40\\end{array}\\right)$$<br>$R_2 \\leftarrow R_2 - (- \\dfrac{1}{4})R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 35\\\\ 0 & 1 & 0 & 15\\\\ 0 & 0 & 1 & 40\\end{array}\\right)$$<br>$P=(35;15;40)^T$; thay vào hàm cung hoặc cầu được $Q=(50;30;40)^T$.<br>Tổng lượng cung/cầu: $50+30+40=120$; tổng giá: $35+15+40=90$.",
    "note": "Lập hệ phương trình từ điều kiện của bài toán (cung bằng cầu, hoặc dùng hết nguyên liệu) rồi giải bằng phép khử Gauss."
   },
   {
@@ -397,7 +397,7 @@
     "$\\dfrac{1}{3}$."
    ],
    "answer": 0,
-   "explain": "$-\\ln(1 - x)$ tại $x = \\dfrac14$<br>Vậy tổng của chuỗi bằng $\\ln\\left(\\dfrac{4}{3}\\right)$",
+   "explain": "$x=\\frac14$: $\\sum_{n\\ge1}\\frac{(1/4)^n}{n}=-\\ln(1-\\frac14)=-\\ln\\frac34=\\ln\\frac43$.<br>Vậy tổng của chuỗi bằng $\\ln\\left(\\dfrac{4}{3}\\right)$",
    "note": "Nhận ra chuỗi quen thuộc ($e^x$, $\\ln(1 + x)$, $\\arctan x$, ...) rồi thay giá trị $x$ thích hợp."
   },
   {
@@ -409,7 +409,7 @@
     "$\\ln\\left(\\sqrt{3}\\right)$."
    ],
    "answer": 0,
-   "explain": "Tách biến: $e^y\\,dy = x\\,dx \\Rightarrow e^y = \\dfrac{x^2}{2} + C$<br>$y(0) = 0 \\Rightarrow y = \\ln\\left(\\dfrac{x^{2}}{2} + 1\\right)$<br>$y\\left(2\\right) = \\ln 3$",
+   "explain": "Tách biến rồi tích phân hai vế: $e^y\\,dy = x\\,dx \\Rightarrow e^y = \\dfrac{x^2}{2} + C$<br>$x=0,y=0$: $e^y=x^2/2+C$ gives $1=0+C$, so $C=1$.<br>Từ $C$ vừa tìm và điều kiện đầu, nghiệm tường minh là $y=\\ln\\left(\\dfrac{x^{2}}{2} + 1\\right)$.<br>Thay $x=2$ vào nghiệm: $y(2)=\\ln 3=\\ln 3$.",
    "note": "Tìm nghiệm tổng quát trước, rồi dùng điều kiện đầu để xác định $C$ (và dấu của căn nếu có)."
   },
   {
@@ -457,7 +457,7 @@
     "$512 \\pi$."
    ],
    "answer": 0,
-   "explain": "Tọa độ cầu: $I = \\displaystyle\\int_0^{2\\pi}d\\varphi\\int_0^{\\pi}\\sin\\theta\\,d\\theta\\int_0^{4}\\rho\\cdot\\rho^2\\,d\\rho$<br>$= 2\\pi\\cdot2\\cdot\\dfrac{256}{4} = 256 \\pi$",
+   "explain": "Tọa độ cầu cho $\\sqrt{x^2+y^2+z^2}=\\rho$ và $dV=\\rho^2\\sin\\theta\\,d\\rho d\\theta d\\varphi$, nên $I=\\int_0^{2\\pi}d\\varphi\\int_0^\\pi\\sin\\theta\\,d\\theta\\int_0^{4}\\rho^3\\,d\\rho$.<br>$\\int_0^{2\\pi}d\\varphi=2\\pi$, $[-\\cos\\theta]_0^\\pi=2$, và $[\\rho^4/4]_0^{4}=256/4$. Nhân lại: $I=2\\pi\\cdot2\\cdot\\dfrac{256}{4}=256 \\pi$.",
    "note": "Trong tọa độ cầu $\\sqrt{x^2 + y^2 + z^2} = \\rho$ và $dV = \\rho^2\\sin\\theta\\,d\\rho\\,d\\theta\\,d\\varphi$."
   },
   {
@@ -469,7 +469,7 @@
     "$128$."
    ],
    "answer": 0,
-   "explain": "$ds = 8\\,dt$: $\\displaystyle\\int_0^{\\pi/2} 8^3\\sin t\\cos t\\,dt = \\dfrac{8^3}{2}$<br>Kết quả: $256$",
+   "explain": "$x=a\\cos t,\\ y=a\\sin t$, $0\\le t\\le\\pi/2$; $ds=\\sqrt{(-a\\sin t)^2+(a\\cos t)^2}\\,dt=8\\,dt$ and $xy=64\\sin t\\cos t$.<br>$\\displaystyle I=512\\int_0^{\\pi/2}\\sin t\\cos t\\,dt=512\\left[\\frac{\\sin^2t}{2}\\right]_0^{\\pi/2}=\\frac{512}{2}=256$.",
    "note": "Tích phân đường loại một: $ds = \\sqrt{x'^2 + y'^2}\\,dt$, không phụ thuộc chiều đi trên đường cong."
   },
   {
@@ -571,7 +571,7 @@
    "answer": [
     "3"
    ],
-   "explain": "$\\det A = m^{3} - 3 m + 2 = \\left(m - 1\\right)^{2} \\left(m + 2\\right)$<br>$m^{3} - 3 m + 2 = 20 \\Leftrightarrow \\left(m - 3\\right) \\left(m^{2} + 3 m + 6\\right) = 0$<br>Nghiệm nguyên dương duy nhất: $m = 3$",
+   "explain": "Khai triển định thức: $\\det A=m^{3} - 3 m + 2=\\left(m - 1\\right)^{2} \\left(m + 2\\right)$<br>Đặt $\\det A=20$: $\\left(m - 3\\right) \\left(m^{2} + 3 m + 6\\right)=0$, có nghiệm $m=3,\\ - \\dfrac{3}{2} - \\dfrac{\\sqrt{15} i}{2},\\ - \\dfrac{3}{2} + \\dfrac{\\sqrt{15} i}{2}$<br>Lọc nghiệm nguyên dương trong tập trên: $m=3$",
    "note": "Lập $\\det A$ theo $m$ rồi giải phương trình; chỉ nhận nghiệm nguyên dương."
   },
   {

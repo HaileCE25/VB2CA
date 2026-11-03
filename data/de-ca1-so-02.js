@@ -40,7 +40,7 @@
     "$(4;-1)$."
    ],
    "answer": 0,
-   "explain": "$v = xb_1 + yb_2 \\Leftrightarrow \\begin{cases}2 y = 2\\\\ - 2 x + y = -7\\end{cases}$<br>Giải hệ: $x = 4,\\ y = 1$<br>Tọa độ của $v$ đối với $B$: $(4;1)$",
+   "explain": "$v = xb_1 + yb_2 \\Leftrightarrow \\begin{cases}2 y = 2\\\\ - 2 x + y = -7\\end{cases}$<br>Từ $v=(2;-7)$, giải hệ trên được $x=4,\\ y=1$; thay lại: $2=2,\\ -7=-7$<br>Tọa độ của $v$ đối với $B$: $(4;1)$",
    "note": "Tọa độ đối với cơ sở $B$ là nghiệm của hệ $xb_1 + yb_2 = v$, không phải tọa độ thông thường của $v$."
   },
   {
@@ -99,7 +99,7 @@
     "$\\dfrac{5}{24}$."
    ],
    "answer": 0,
-   "explain": "$\\left(\\dfrac{1}{2}\\right)^{4}\\cdot\\dfrac{1}{\\det A}\\cdot(\\det B)^2 = \\dfrac{25}{48}$<br>Kết quả: $\\dfrac{25}{48}$",
+   "explain": "$\\det(\\dfrac{1}{2}A^{-1}B^2)=(\\dfrac{1}{2})^{4}\\det(A^{-1})(\\det B)^2$.<br>$=(\\dfrac{1}{2})^{4}\\cdot\\dfrac{1}{3}\\cdot(5)^2$.<br>$=\\dfrac{25}{48}$.",
    "note": "$\\det(kA) = k^n\\det A$, $\\det\\left(A^{-1}\\right) = \\dfrac{1}{\\det A}$, $\\det\\left(A^T\\right) = \\det A$, $\\det(AB) = \\det A\\cdot\\det B$."
   },
   {
@@ -170,7 +170,7 @@
     "$3$."
    ],
    "answer": 0,
-   "explain": "$f'_x = 3 x^{2} - 3 y,\\quad f'_y = - 3 x + 3 y^{2}$<br>Giải hệ $f'_x = f'_y = 0$ được các điểm dừng: $(0;0)$, $(1;1)$<br>Giá trị $AC - B^2$ tại các điểm đó lần lượt: $-9$, $27$<br>Số điểm dừng: $2$; số điểm cực trị (có $AC - B^2 > 0$): $1$",
+   "explain": "$f'_x = 3 x^{2} - 3 y,\\quad f'_y = - 3 x + 3 y^{2}$<br>Giải hệ $f'_x=f'_y=0$ (thay lần lượt vào hai phương trình) được các điểm dừng: $(0;0)$, $(1;1)$<br>$f''_{xx}=6 x,\\quad f''_{xy}=-3,\\quad f''_{yy}=6 y$<br>$(0;0):\\ A=f''_{xx}=0,\\ B=f''_{xy}=-3,\\ C=f''_{yy}=0; AC-B^2=(0)(0)-(-3)^2=-9\\Rightarrow điểm yên ngựa$<br>$(1;1):\\ A=f''_{xx}=6,\\ B=f''_{xy}=-3,\\ C=f''_{yy}=6; AC-B^2=(6)(6)-(-3)^2=27\\Rightarrow cực trị$<br>Số điểm dừng: $2$; số điểm cực trị (có $AC - B^2 > 0$): $1$",
    "note": "Giải đủ hệ $f'_x = f'_y = 0$ (đừng bỏ sót nghiệm), rồi xét dấu $AC - B^2$ tại từng điểm dừng."
   },
   {
@@ -193,7 +193,7 @@
     "$0$."
    ],
    "answer": 0,
-   "explain": "Chuỗi thứ 1: $\\frac{1}{\\sqrt[3]{n}} \\downarrow 0$ (Leibniz), $\\sum\\frac{1}{n^{1/3}}$ phân kỳ $\\Rightarrow$ bán hội tụ<br>Chuỗi thứ 2: $\\frac{1}{\\sqrt{n+1}} \\downarrow 0$ (Leibniz), $\\sum\\frac{1}{\\sqrt{n+1}}$ phân kỳ $\\Rightarrow$ bán hội tụ<br>Chuỗi thứ 3: $|u_n| \\to 1 \\ne 0$ $\\Rightarrow$ phân kỳ<br>Chuỗi thứ 4: $|u_n| \\le \\frac{1}{n^2}$ $\\Rightarrow$ hội tụ tuyệt đối<br>Số chuỗi hội tụ tuyệt đối: $1$",
+   "explain": "Chuỗi thứ 1: $a_n=n^{-1/3}\\downarrow0$ nên Leibniz hội tụ; chuỗi trị tuyệt đối là $p$-series $p=1/3\\le1$, phân kỳ: bán hội tụ. Kết luận: bán hội tụ.<br>Chuỗi thứ 2: $a_n=1/\\sqrt{n+1}\\downarrow0$ nên Leibniz hội tụ; trị tuyệt đối là $p$-series $p=1/2\\le1$, nên chỉ hội tụ có điều kiện. Kết luận: bán hội tụ.<br>Chuỗi thứ 3: $|u_n|=n^2/(n^2+1)\\to1\\ne0$, nên phân kỳ. Kết luận: phân kỳ.<br>Chuỗi thứ 4: $0<1/(n^2+1)\\le1/n^2$; so sánh với $\\sum1/n^2$ chứng minh hội tụ tuyệt đối. Kết luận: hội tụ tuyệt đối.<br>Số chuỗi hội tụ tuyệt đối: $1$",
    "note": "Leibniz: $a_n$ giảm về 0 thì chuỗi đan dấu hội tụ; hội tụ tuyệt đối phải xét thêm $\\sum a_n$; nếu $a_n \\not\\to 0$ thì chuỗi phân kỳ."
   },
   {
@@ -205,7 +205,7 @@
     "$(2xy + 1)dx + (x^2 + 3y^2)dy = 0$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> $y' - y = xy^2$ — Dạng $y' + p(x)y = q(x)y^{\\alpha}$<br><b>Sai:</b> $xy' = y + \\sqrt{x^2 + y^2}$ — là phương trình đẳng cấp (vế phải chỉ phụ thuộc $\\dfrac{y}{x}$), không thuộc dạng đang hỏi<br><b>Sai:</b> $xy' - 2y = x^3$ — là phương trình tuyến tính cấp một (bậc nhất đối với $y$ và $y'$), không thuộc dạng đang hỏi<br><b>Sai:</b> $(2xy + 1)dx + (x^2 + 3y^2)dy = 0$ — là phương trình vi phân toàn phần, không thuộc dạng đang hỏi"
+   "explain": "<b>Đúng:</b> $y' - y = xy^2$ — Dạng $y' + p(x)y = q(x)y^{\\alpha}$; $y'-y=xy^2$: dạng Bernoulli với $\\alpha=2$.<br><b>Sai:</b> $xy' = y + \\sqrt{x^2 + y^2}$ — Chia cho $x$: $y'=y/x+\\sqrt{1+(y/x)^2}$; phụ thuộc duy nhất vào $y/x$.; đây là là phương trình đẳng cấp (vế phải chỉ phụ thuộc $\\dfrac{y}{x}$), không phải dạng đang hỏi.<br><b>Sai:</b> $xy' - 2y = x^3$ — Chia cho $x\\ne0$: $y'-\\dfrac2x y=x^2$, đúng dạng $y'+p(x)y=q(x)$.; đây là là phương trình tuyến tính cấp một (bậc nhất đối với $y$ và $y'$), không phải dạng đang hỏi.<br><b>Sai:</b> $(2xy + 1)dx + (x^2 + 3y^2)dy = 0$ — $P=(2xy + 1),\\ Q=x^2 + 3y^2$: $\\partial P/\\partial y=2x$ và $\\partial Q/\\partial x=2x$; bằng nhau, nên toàn phần.; đây là là phương trình vi phân toàn phần, không phải dạng đang hỏi."
   },
   {
    "q": "Gọi $y = y(x)$ là nghiệm của phương trình $y' + y\\cot x = 2\\cos x$ trên khoảng $(0;\\pi)$ thỏa mãn $y\\left(\\dfrac{\\pi}{2}\\right) = 1$. Giá trị của $y\\left(\\dfrac{\\pi}{6}\\right)$ bằng",
@@ -276,7 +276,7 @@
     "$540$."
    ],
    "answer": 0,
-   "explain": "Số linh kiện: $C\\cdot(5;5;20)^T = (55;75)^T$; nguyên liệu: $R\\cdot(55;75)^T = (280;260;280)^T$, tổng bằng $820$<br>Kết quả: $820$",
+   "explain": "Số linh kiện cần: $C(5;5;20)^T=\\begin{pmatrix}1 & 2 & 2 \\\\ 4 & 3 & 2\\end{pmatrix}(5;5;20)^T=(55;75)^T$.<br>Số nguyên liệu cần: $R(55;75)^T=\\begin{pmatrix}1 & 3 \\\\ 2 & 2 \\\\ 1 & 3\\end{pmatrix}(55;75)^T=(280;260;280)^T$.<br>Tổng lượng nguyên liệu: $280+260+280=820$.",
    "note": "Kiểm tra cỡ ma trận trước khi nhân (số cột của ma trận trước bằng số hàng của ma trận sau); với mô hình Leontief giải $(I - A)X = D$."
   },
   {
@@ -360,7 +360,7 @@
     "$49$."
    ],
    "answer": 0,
-   "explain": "Gọi $x, y, z$ là số sản phẩm mỗi loại; giải hệ ba phương trình được $(40;20;30)$<br>Kết quả: $90$",
+   "explain": "Gọi $x,y,z$ lần lượt là số sản phẩm loại 1, 2, 3.<br>Hệ nguyên liệu: $\\begin{pmatrix}1 & 1 & 3 \\\\ 2 & 1 & 1 \\\\ 3 & 3 & 1\\end{pmatrix}\\begin{pmatrix}x\\\\y\\\\z\\end{pmatrix}=(150;130;210)^T$.<br>Ma trận bổ sung ban đầu: $$\\left(\\begin{array}{rrr|r}1 & 1 & 3 & 150\\\\ 2 & 1 & 1 & 130\\\\ 3 & 3 & 1 & 210\\end{array}\\right)$$<br>$R_2 \\leftarrow R_2 - (2)R_1$: $$\\left(\\begin{array}{rrr|r}1 & 1 & 3 & 150\\\\ 0 & -1 & -5 & -170\\\\ 3 & 3 & 1 & 210\\end{array}\\right)$$<br>$R_3 \\leftarrow R_3 - (3)R_1$: $$\\left(\\begin{array}{rrr|r}1 & 1 & 3 & 150\\\\ 0 & -1 & -5 & -170\\\\ 0 & 0 & -8 & -240\\end{array}\\right)$$<br>$R_2 \\leftarrow \\dfrac{1}{-1}R_2$: $$\\left(\\begin{array}{rrr|r}1 & 1 & 3 & 150\\\\ 0 & 1 & 5 & 170\\\\ 0 & 0 & -8 & -240\\end{array}\\right)$$<br>$R_1 \\leftarrow R_1 - (1)R_2$: $$\\left(\\begin{array}{rrr|r}1 & 0 & -2 & -20\\\\ 0 & 1 & 5 & 170\\\\ 0 & 0 & -8 & -240\\end{array}\\right)$$<br>$R_3 \\leftarrow \\dfrac{1}{-8}R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & -2 & -20\\\\ 0 & 1 & 5 & 170\\\\ 0 & 0 & 1 & 30\\end{array}\\right)$$<br>$R_1 \\leftarrow R_1 - (-2)R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 40\\\\ 0 & 1 & 5 & 170\\\\ 0 & 0 & 1 & 30\\end{array}\\right)$$<br>$R_2 \\leftarrow R_2 - (5)R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 40\\\\ 0 & 1 & 0 & 20\\\\ 0 & 0 & 1 & 30\\end{array}\\right)$$<br>$(x,y,z)^T=(40;20;30)^T$; tổng sản phẩm: $40+20+30=90$.",
    "note": "Lập hệ phương trình từ điều kiện của bài toán (cung bằng cầu, hoặc dùng hết nguyên liệu) rồi giải bằng phép khử Gauss."
   },
   {
@@ -396,7 +396,7 @@
     "$-\\ln(1+x)$."
    ],
    "answer": 0,
-   "explain": "Tích phân từng số hạng chuỗi $\\sum_{n\\ge0} x^n = \\dfrac{1}{1-x}$ từ $0$ đến $x$.",
+   "explain": "$\\sum_{n\\ge1}x^n=\\frac{x}{1-x}$. Tích phân từ $0$ đến $x$: $\\sum_{n\\ge1}\\frac{x^n}{n}=\\int_0^x\\frac{t}{1-t}\\,dt=-\\ln(1-x)$.",
    "note": "Đạo hàm hoặc tích phân từng số hạng của $\\displaystyle\\sum x^n = \\dfrac{1}{1 - x}$ để có các chuỗi liên quan; chỉ đúng khi $|x| < 1$."
   },
   {
@@ -408,7 +408,7 @@
     "$y = \\dfrac{C}{\\sqrt{1 + x^2}}$."
    ],
    "answer": 0,
-   "explain": "$\\dfrac{dy}{y} = \\dfrac{x\\,dx}{1+x^2}$.",
+   "explain": "$\\dfrac{dy}{y}=\\dfrac{x\\,dx}{1+x^2}$. Tích phân: $\\ln|y|=\\frac12\\ln(1+x^2)+C$; hấp thụ hằng số sau khi mũ hóa được $y=C\\sqrt{1+x^2}$.",
    "note": "Tách biến: đưa $y$ về một vế, $x$ về một vế rồi lấy tích phân; hằng số $C$ chỉ cần viết ở một vế."
   },
   {
@@ -420,7 +420,7 @@
     "$y = Cx\\ln|x|$."
    ],
    "answer": 0,
-   "explain": "Đặt $y = ux$: $u'x = 1$.",
+   "explain": "Đặt $y=ux$, $y^\\prime=u^\\prime x+u$. Thế vào $y^\\prime=1+y/x=1+u$: $u^\\prime x=1$, nên $u=\\ln|x|+C$ và $y=x\\ln|x|+Cx$.",
    "note": "Tuyến tính: nhân thừa số tích phân $e^{\\int p\\,dx}$; đẳng cấp: đặt $y = ux$."
   },
   {
@@ -456,7 +456,7 @@
     "$\\dfrac{2 \\pi}{3}$."
    ],
    "answer": 0,
-   "explain": "Tọa độ cầu: $\\displaystyle\\int_0^{2\\pi}d\\varphi\\int_0^{\\pi/2}\\cos\\theta\\sin\\theta\\,d\\theta\\int_0^1\\rho^3\\,d\\rho = 2\\pi\\cdot\\dfrac12\\cdot\\dfrac{1^4}{4}$<br>Kết quả: $\\dfrac{\\pi}{4}$",
+   "explain": "Spherical coordinates: $z=\\rho\\cos\\theta$, $dV=\\rho^2\\sin\\theta\\,d\\rho\\,d\\theta\\,d\\varphi$; hence $z\\,dV=\\rho^3\\cos\\theta\\sin\\theta\\,d\\rho\\,d\\theta\\,d\\varphi$.<br>$\\int_0^{2\\pi}d\\varphi=2\\pi$, $\\int_0^{\\pi/2}\\cos\\theta\\sin\\theta\\,d\\theta=[\\sin^2\\theta/2]_0^{\\pi/2}=1/2$, $\\int_0^{1}\\rho^3d\\rho=1/4$.<br>$I=2\\pi\\cdot\\dfrac12\\cdot\\dfrac{1}{4}=\\dfrac{\\pi}{4}$.",
    "note": "Tọa độ trụ hợp với paraboloid, mặt nón; tọa độ cầu hợp với hình cầu; không quên định thức Jacobi."
   },
   {
@@ -585,7 +585,7 @@
    "answer": [
     "2"
    ],
-   "explain": "Đặt $t = x^2$: $\\sum\\dfrac{n^2t^n}{4^n}$ có bán kính hội tụ 4 theo $t$, tức $x^2 < 4$<br>$R = 2$",
+   "explain": "Đặt $t=x^2$: $\\sqrt[n]{n^2(t/4)^n}=n^{2/n}|t|/4\\to|t|/4$; hội tụ khi $|t|<4$, tức $|x|<2$. Tại $x=\\pm2$, số hạng là $n^2$, không tiến về 0.<br>$R = 2$",
    "note": "Chuỗi theo $x^k$: đặt $t = x^k$; bán kính theo $x$ là căn bậc $k$ của bán kính theo $t$."
   },
   {

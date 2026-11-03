@@ -40,7 +40,7 @@
     "$(1;4;-3)$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> $(0;-2;-1)$ — định thức của ba véc tơ $u_1, u_2$ và véc tơ này bằng $18 \\ne 0$ nên ba véc tơ độc lập tuyến tính<br><b>Sai:</b> $(5;2;3) = u_{1} + u_{2}$ là tổ hợp tuyến tính của $u_1, u_2$<br><b>Sai:</b> $(7;4;3) = 2 u_{1} + u_{2}$ là tổ hợp tuyến tính của $u_1, u_2$<br><b>Sai:</b> $(1;4;-3) = 2 u_{1} - u_{2}$ là tổ hợp tuyến tính của $u_1, u_2$"
+   "explain": "<b>Đúng:</b> Với $w=(0;-2;-1)$, tính định thức theo hàng đầu: $\\det\\begin{pmatrix}2 & 2 & 0\\\\ 3 & 0 & 3\\\\ 0 & -2 & -1\\end{pmatrix}= 2(0\\cdot-1-3\\cdot-2)-2(3\\cdot-1-3\\cdot0)+0(3\\cdot-2-0\\cdot0)=18\\ne0$, nên ba véc tơ độc lập tuyến tính và tạo thành cơ sở<br><b>Sai:</b> $(5;2;3) = u_{1} + u_{2}$ là tổ hợp tuyến tính của $u_1, u_2$<br><b>Sai:</b> $(7;4;3) = 2 u_{1} + u_{2}$ là tổ hợp tuyến tính của $u_1, u_2$<br><b>Sai:</b> $(1;4;-3) = 2 u_{1} - u_{2}$ là tổ hợp tuyến tính của $u_1, u_2$"
   },
   {
    "q": "Trong không gian véc tơ $\\mathbb{R}^4$, cho hệ $S$ gồm $u_1 = (-4;-1;2;-2),\\ u_2 = (-1;-2;2;-1),\\ u_3 = (3;-1;0;1),\\ u_4 = (1;-5;4;-1)$. Cần bổ sung vào $S$ ít nhất bao nhiêu véc tơ để hệ mới sinh ra toàn bộ $\\mathbb{R}^4$?",
@@ -63,7 +63,7 @@
     "$-3$."
    ],
    "answer": 0,
-   "explain": "$A^2 = \\begin{pmatrix}-3 & -2 \\\\ 2 & 0\\end{pmatrix}$<br>$A^3 = A^2\\cdot A = \\begin{pmatrix}1 & -2 \\\\ 2 & 4\\end{pmatrix}$<br>$A^4 = A^2\\cdot A^2 = \\begin{pmatrix}5 & 6 \\\\ -6 & -4\\end{pmatrix}$<br>Phần tử hàng 2, cột 2 của $A^{4}$: $-4$",
+   "explain": "Với $\\operatorname{tr}A=-1$ và $\\det A=2$, Cayley–Hamilton cho $A^2-(-1)A+(2)I=0$, tức $A^2=-1A-2I=\\begin{pmatrix}-3 & -2 \\\\ 2 & 0\\end{pmatrix}$<br>Nhân đẳng thức $A^2=\\begin{pmatrix}-3 & -2 \\\\ 2 & 0\\end{pmatrix}$ với $A$: $A^3=A^2A=\\begin{pmatrix}1 & -2 \\\\ 2 & 4\\end{pmatrix}$; do đó phần tử $(2,2)$ của $A^3$ là 4.<br>$A^4=A^2A^2=\\begin{pmatrix}5 & 6 \\\\ -6 & -4\\end{pmatrix}$; phần tử hàng 2, cột 2 của $A^{4}$ bằng -4.",
    "note": "Dùng hệ thức $A^2 = pA + qI$ để hạ bậc dần ($A^3 = A\\cdot A^2$), không cần nhân ma trận nhiều lần."
   },
   {
@@ -87,7 +87,7 @@
     "Tập nghiệm của hệ $AX = 0$ luôn có số chiều $n$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> Tập nghiệm của hệ $AX = 0$ là không gian con của $\\mathbb{R}^n$ có số chiều $n - r$. Hệ có $n - r$ ẩn tự do, mỗi ẩn tự do cho một véc tơ của hệ nghiệm cơ bản.<br><b>Sai:</b> Tập nghiệm của hệ $AX = 0$ là không gian con có số chiều $r$. $r$ là số ẩn cơ sở; số chiều của không gian nghiệm là $n - r$.<br><b>Sai:</b> Với $B \\ne 0$, tập nghiệm của hệ $AX = B$ là không gian con của $\\mathbb{R}^n$. Tập đó không chứa véc tơ không, vì $A\\cdot0 = 0 \\ne B$.<br><b>Sai:</b> Tập nghiệm của hệ $AX = 0$ luôn có số chiều $n$. Chỉ đúng khi $r = 0$, tức $A$ là ma trận không."
+   "explain": "<b>Đúng:</b> Tập nghiệm của hệ $AX = 0$ là không gian con của $\\mathbb{R}^n$ có số chiều $n - r$. Khử Gauss cho $r$ cột trụ trong $n$ ẩn, nên còn $n-r$ ẩn tự do. Mỗi ẩn tự do độc lập tạo một vectơ nghiệm cơ bản; vì vậy $\\dim\\ker A=n-r$.<br><b>Sai:</b> Tập nghiệm của hệ $AX = 0$ là không gian con có số chiều $r$. $r$ là số ẩn cơ sở; số chiều của không gian nghiệm là $n - r$.<br><b>Sai:</b> Với $B \\ne 0$, tập nghiệm của hệ $AX = B$ là không gian con của $\\mathbb{R}^n$. Tập đó không chứa véc tơ không, vì $A\\cdot0 = 0 \\ne B$.<br><b>Sai:</b> Tập nghiệm của hệ $AX = 0$ luôn có số chiều $n$. Chỉ đúng khi $r = 0$, tức $A$ là ma trận không."
   },
   {
    "q": "Cho ma trận vuông cấp 4: $A = \\begin{pmatrix}1 & 2 & 2 & 3 \\\\ 0 & 1 & 0 & -1 \\\\ 0 & 0 & 3 & 3 \\\\ 0 & 0 & 1 & -1\\end{pmatrix}$. Nhận xét rằng $A$ có dạng khối tam giác $\\begin{pmatrix}P & Q\\\\ 0 & R\\end{pmatrix}$ với $P, R$ là các ma trận vuông cấp 2, định thức của $A$ bằng",
@@ -98,7 +98,7 @@
     "$6$."
    ],
    "answer": 0,
-   "explain": "$\\det P = 1,\\quad \\det R = -6$<br>$\\det A = \\det P\\cdot\\det R = (1)\\cdot(-6) = -6$",
+   "explain": "$P=\\begin{pmatrix}1 & 2 \\\\ 0 & 1\\end{pmatrix}$, khử hàng được $\\det P=1$; $R=\\begin{pmatrix}3 & 3 \\\\ 1 & -1\\end{pmatrix}$, khử hàng được $\\det R=-6$.<br>Khai triển theo cấu trúc khối tam giác: $\\det A=\\det P\\det R=(1)(-6)=-6$.",
    "note": "Cộng bội của một hàng vào hàng khác không làm đổi định thức; đưa về dạng tam giác (hoặc tam giác khối) rồi nhân các phần tử (khối) trên đường chéo."
   },
   {
@@ -122,7 +122,7 @@
     "$4$."
    ],
    "answer": 0,
-   "explain": "Tiệm cận đứng $x = -1$; khi $x \\to +\\infty$ thì $y \\to 1$, khi $x \\to -\\infty$ thì $y \\to -1$ nên có hai tiệm cận ngang $y = \\pm1$<br>Kết quả: $3$",
+   "explain": "Khi $x\\to-1$, tử số $\\sqrt{x^2+c}\\to\\sqrt{r^2+c}>0$ còn $x-r\\to0$, nên $x=-1$ là tiệm cận đứng. Khi $x\\to+\\infty$, $\\dfrac{\\sqrt{x^2+c}}{x-r}=\\dfrac{\\sqrt{1+c/x^2}}{1-r/x}\\to1$; khi $x\\to-\\infty$, viết $|x|=-x$ được $\\dfrac{\\sqrt{x^2+c}}{x-r}=\\dfrac{-\\sqrt{1+c/x^2}}{1-r/x}\\to-1$. Vậy có hai tiệm cận ngang $y=1$ và $y=-1$; tổng cộng $3$<br>Kết quả: $3$",
    "note": "Tiệm cận đứng: nghiệm của mẫu không bị rút gọn với tử; tiệm cận ngang: xét riêng $x \\to +\\infty$ và $x \\to -\\infty$ (với căn thức, hai phía có thể khác nhau)."
   },
   {
@@ -145,7 +145,7 @@
     "$- \\dfrac{44}{7}$."
    ],
    "answer": 0,
-   "explain": "$f'_x = y + z,\\quad f'_y = x + z,\\quad f'_z = x + y$<br>$\\nabla f(M) = (4;4;4)$<br>$|\\vec l| = \\sqrt{49} = 7$<br>$\\dfrac{\\partial f}{\\partial \\vec l} = \\dfrac{44}{7} = \\dfrac{44}{7}$",
+   "explain": "$f'_x = y + z,\\quad f'_y = x + z,\\quad f'_z = x + y$<br>$\\nabla f(M) = (4;4;4)$<br>$|\\vec l| = \\sqrt{49} = 7$<br>$\\dfrac{\\partial f}{\\partial \\vec l}=\\dfrac{(4)(2)+(4)(3)+(4)(6)}{7}=\\dfrac{8+12+24}{7}=\\dfrac{44}{7}=\\dfrac{44}{7}$.",
    "note": "Phải chia cho độ dài $|\\vec l|$: đạo hàm theo hướng dùng véc tơ đơn vị."
   },
   {
@@ -157,7 +157,7 @@
     "0,12%."
    ],
    "answer": 0,
-   "explain": "Gọi $u, v$ là hai đại lượng đo; lấy lôgarit: $\\ln T = \\pm\\dfrac{1}{2}\\ln u \\pm \\dfrac{1}{2}\\ln v + \\text{hằng số}$<br>Vi phân hai vế, lấy trị tuyệt đối từng số hạng: $\\dfrac{\\Delta T}{T} \\le \\dfrac{1}{2}\\cdot\\dfrac{\\Delta u}{u} + \\dfrac{1}{2}\\cdot\\dfrac{\\Delta v}{v}$<br>$= \\dfrac{1}{2}\\cdot1\\% + \\dfrac{1}{2}\\cdot0{,}5\\% = 0{,}75\\%$",
+   "explain": "Từ công thức đã cho, viết dạng lũy thừa theo hai đại lượng đo: $\\ln T=C+\\dfrac{1}{2}\\ln u-\\dfrac{1}{2}\\ln v$ (hằng số $C$ không đổi).<br>Vi phân: $\\dfrac{dT}{T}=+\\dfrac{1}{2}\\dfrac{du}{u}-\\dfrac{1}{2}\\dfrac{dv}{v}$. Lấy trị tuyệt đối và dùng các cận đo: $\\dfrac{|\\DeltaT|}{|T|}\\le \\dfrac{1}{2}\\dfrac{|\\Delta u|}{u}+\\dfrac{1}{2}\\dfrac{|\\Delta v|}{v}$.<br>$= \\dfrac{1}{2}\\cdot1\\% + \\dfrac{1}{2}\\cdot0{,}5\\% = 0{,}75\\%$.",
    "note": "Lấy lôgarit rồi vi phân: sai số tương đối của tích, thương bằng tổng các sai số tương đối nhân với trị tuyệt đối của số mũ."
   },
   {
@@ -169,7 +169,7 @@
     "$3$."
    ],
    "answer": 0,
-   "explain": "$L = x^2 + y^2 - \\lambda(x + y - 2)$<br>$L'_x = 2x - \\lambda = 0,\\quad L'_y = 2y - \\lambda = 0 \\Rightarrow x = \\dfrac{\\lambda}{2},\\ y = \\dfrac{\\lambda}{2}$<br>Thay vào ràng buộc: $\\lambda = 2 \\Rightarrow \\lambda = 2$<br>$(x;y) = \\left(1;1\\right)$, $f_{\\min} = 2$",
+   "explain": "$L=x^2+y^2-\\lambda(1x+1y-2)$. Từ $L_x=2x-1\\lambda=0$ và $L_y=2y-1\\lambda=0$, ta có $x=\\dfrac{1\\lambda}{2}$, $y=\\dfrac{1\\lambda}{2}$.<br>Thay vào ràng buộc: $\\dfrac{1\\lambda}{2}+\\dfrac{1\\lambda}{2}=\\dfrac{(1+1)\\lambda}{2}=2$, nên $\\lambda=\\dfrac{22}{2}$.<br>$(x,y)=(\\dfrac{12}{2},\\dfrac{12}{2})$. Khi đó $x^2+y^2=\\dfrac{14+14}{4}=\\dfrac{4(1+1)}{4}=\\dfrac{4}{2}=2$.",
    "note": "Rút một biến từ điều kiện, hoặc dùng $\\nabla f = \\lambda\\nabla g$; nhớ kiểm tra đó là giá trị lớn nhất hay nhỏ nhất."
   },
   {
@@ -181,7 +181,7 @@
     "$3$."
    ],
    "answer": 0,
-   "explain": "Chuỗi thứ 1: $u_n \\sim \\dfrac1n$ $\\Rightarrow$ phân kỳ<br>Chuỗi thứ 2: $u_n \\sim \\dfrac1n$ $\\Rightarrow$ phân kỳ<br>Chuỗi thứ 3: $u_n \\sim \\left(\\dfrac32\\right)^n \\not\\to 0$ $\\Rightarrow$ phân kỳ<br>Chuỗi thứ 4: $u_n \\sim \\dfrac{1}{n^2}$ $\\Rightarrow$ hội tụ<br>Số chuỗi hội tụ: $1$",
+   "explain": "Chuỗi thứ 1: $u_n=1/\\sqrt{n(n+1)}\\sim1/n$; so sánh giới hạn với chuỗi điều hòa cho phân kỳ. Kết luận: phân kỳ.<br>Chuỗi thứ 2: $\\ln(1+1/n)\\sim1/n$; so sánh giới hạn với chuỗi điều hòa cho phân kỳ. Kết luận: phân kỳ.<br>Chuỗi thứ 3: $u_n=\\dfrac{3^n}{2^n+n}\\sim(3/2)^n$, nên $u_n\\not\\to0$; chuỗi phân kỳ. Kết luận: phân kỳ.<br>Chuỗi thứ 4: $\\tan(1/n^2)\\sim1/n^2$; chuỗi hội tụ theo so sánh giới hạn. Kết luận: hội tụ.<br>Số chuỗi hội tụ: $1$",
    "note": "So sánh với $\\sum\\dfrac{1}{n^\\alpha}$ (hội tụ khi $\\alpha > 1$); có $n!$ hoặc $a^n$ thì dùng D’Alembert; có lũy thừa bậc $n$ thì dùng Cauchy."
   },
   {
@@ -193,7 +193,7 @@
     "$99$."
    ],
    "answer": 0,
-   "explain": "$\\dfrac{1}{(n+1)^{2}} \\le 0{,}01 \\Leftrightarrow n + 1 \\ge 10$<br>Kết quả: $9$",
+   "explain": "Leibniz: $|S-S_n|\\le a_{n+1}=\\dfrac1{(n+1)^{2}}$. Muốn sai số không quá $\\varepsilon=0{,}01$, cần $\\dfrac1{(n+1)^{2}}\\le0{,}01$.<br>Biến đổi bất đẳng thức: $(n+1)^{2}\\ge100 \\Rightarrow n+1\\ge10\\approx10$.<br>$n$ nguyên nên $n\\ge9$; số nguyên nhỏ nhất là $n=9$.",
    "note": "Leibniz: $a_n$ giảm về 0 thì chuỗi đan dấu hội tụ; hội tụ tuyệt đối phải xét thêm $\\sum a_n$; nếu $a_n \\not\\to 0$ thì chuỗi phân kỳ."
   },
   {
@@ -205,7 +205,7 @@
     "$(x^2 + y)dx + (y - x)dy = 0$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> $(y\\cos x + 2x)dx + (\\sin x - 2y)dy = 0$ — Điều kiện $\\dfrac{\\partial P}{\\partial y} = \\dfrac{\\partial Q}{\\partial x}$ đối với $P\\,dx + Q\\,dy = 0$: $\\dfrac{\\partial P}{\\partial y} = \\cos x$, $\\dfrac{\\partial Q}{\\partial x} = \\cos x$<br><b>Sai:</b> $2xy\\,dx + (y^2 - x^2)dy = 0$ — $\\dfrac{\\partial P}{\\partial y} = 2x$, $\\dfrac{\\partial Q}{\\partial x} = -2x$, hai đạo hàm riêng khác nhau<br><b>Sai:</b> $(x + y)dx + (y - x)dy = 0$ — $\\dfrac{\\partial P}{\\partial y} = 1$, $\\dfrac{\\partial Q}{\\partial x} = -1$, hai đạo hàm riêng khác nhau<br><b>Sai:</b> $(x^2 + y)dx + (y - x)dy = 0$ — $\\dfrac{\\partial P}{\\partial y} = 1$, $\\dfrac{\\partial Q}{\\partial x} = -1$, hai đạo hàm riêng khác nhau"
+   "explain": "<b>Đúng:</b> $(y\\cos x + 2x)dx + (\\sin x - 2y)dy = 0$ — Điều kiện $\\dfrac{\\partial P}{\\partial y} = \\dfrac{\\partial Q}{\\partial x}$ đối với $P\\,dx + Q\\,dy = 0$; $P=(y\\cos x + 2x),\\ Q=\\sin x - 2y$: $\\partial P/\\partial y=\\cos x$ và $\\partial Q/\\partial x=\\cos x$; bằng nhau, nên toàn phần.<br><b>Sai:</b> $2xy\\,dx + (y^2 - x^2)dy = 0$ — $P=2xy\\,,\\ Q=y^2 - x^2$: $\\partial P/\\partial y=2x$ và $\\partial Q/\\partial x=-2x$; khác nhau, nên không toàn phần.<br><b>Sai:</b> $(x + y)dx + (y - x)dy = 0$ — $P=(x + y),\\ Q=y - x$: $\\partial P/\\partial y=1$ và $\\partial Q/\\partial x=-1$; khác nhau, nên không toàn phần.<br><b>Sai:</b> $(x^2 + y)dx + (y - x)dy = 0$ — $P=(x^2 + y),\\ Q=y - x$: $\\partial P/\\partial y=1$ và $\\partial Q/\\partial x=-1$; khác nhau, nên không toàn phần."
   },
   {
    "q": "Đường cong tích phân của phương trình vi phân toàn phần $(2 x + y)\\,dx + (x + 4 y)\\,dy = 0$ đi qua điểm $M(1;1)$ là một đường elip. Elip này cắt tia $Ox$ (phần $x > 0$ của trục hoành) tại điểm có hoành độ bằng",
@@ -228,7 +228,7 @@
     "$2251$."
    ],
    "answer": 0,
-   "explain": "$P(0) = \\dfrac{4500}{1 + A} = 900 \\Rightarrow A = 4$<br>$e^{-kt} = e^{-\\frac{\\ln 2}{5}\\cdot10} = 2^{-2} = \\dfrac{1}{4}$<br>$P(10) = \\dfrac{4500}{1 + \\frac{4}{4}} = 2250$",
+   "explain": "$P(0)=\\dfrac{M}{1+A}=P_0$; nhân chéo $M=P_0(1+A)$ nên $A=\\dfrac{M}{P_0}-1=4$.<br>$kt=\\dfrac{\\ln2}{5}(10)=2\\ln2$, vì thế $e^{-kt}=e^{-2\\ln2}=2^{-2}=\\dfrac1{4}$.<br>$P(10)=\\dfrac{4500}{1+\\frac{4}{4}}=\\dfrac{4500\\cdot4}{4+4}=\\dfrac{18000}{8}=2250$.",
    "note": "Thay $t = 0$ để tìm hằng số trong công thức nghiệm; với $k = \\dfrac{\\ln 2}{T}$ thì $e^{-kT} = \\dfrac12$."
   },
   {
@@ -240,7 +240,7 @@
     "$y^* = x(Ax + B) + Ce^{-2x}$."
    ],
    "answer": 0,
-   "explain": "Chồng chất nghiệm: với vế phải $x$, số $0$ không là nghiệm đặc trưng nên $Ax + B$; với $e^{-2x}$, số $-2$ là nghiệm kép nên $Cx^2e^{-2x}$<br>Dạng cần tìm: $y^* = Ax + B + Cx^2e^{-2x}$",
+   "explain": "$k^2+4k+4=(k+2)^2=0$. Vế $x$ có dạng đa thức $Ax+B$ (số mũ $0$ không là nghiệm); vế $e^{-2x}$ cộng hưởng với nghiệm kép $-2$, nên có hạng $Cx^2e^{-2x}$.<br>Dạng cần tìm: $y^* = Ax + B + Cx^2e^{-2x}$",
    "note": "Bội của số mũ (hoặc của $\\alpha \\pm i\\beta$) trong phương trình đặc trưng quyết định nhân thêm $1$, $x$ hay $x^2$."
   },
   {
@@ -252,7 +252,7 @@
     "$\\displaystyle\\int_{0}^{2\\pi}d\\varphi\\int_{2}^{4} f(r\\cos\\varphi, r\\sin\\varphi)\\,r\\,dr$."
    ],
    "answer": 0,
-   "explain": "$4 \\le r^2 \\le 16 \\Leftrightarrow 2 \\le r \\le 4$<br>Điều kiện $y \\ge 0$ ứng với $0 \\le \\varphi \\le \\pi$<br>Jacobian của phép đổi biến bằng $r$: $dxdy = r\\,dr\\,d\\varphi$",
+   "explain": "$4 \\le r^2 \\le 16 \\Leftrightarrow 2 \\le r \\le 4$<br>$y\\ge0\\Leftrightarrow r\\sin\\varphi\\ge0\\Rightarrow\\sin\\varphi\\ge0\\Rightarrow0\\le\\varphi\\le\\pi$<br>$dxdy=\\left|\\dfrac{\\partial(x,y)}{\\partial(r,\\varphi)}\\right|dr\\,d\\varphi=r\\,dr\\,d\\varphi$<br>Vậy tích phân được viết: $\\displaystyle\\int_{0}^{\\pi}d\\varphi\\int_{2}^{4}f(r\\cos\\varphi,r\\sin\\varphi)\\,r\\,dr$",
    "note": "Cận của $r$ là căn bậc hai của các số ở hai vế; không quên định thức Jacobi $r$."
   },
   {
@@ -264,7 +264,7 @@
     "$4 \\sqrt{2} \\pi$."
    ],
    "answer": 0,
-   "explain": "$I = \\displaystyle\\int_0^{2\\pi}d\\varphi\\int_0^{\\dfrac{\\pi}{4}}\\cos\\theta\\sin\\theta\\,d\\theta\\int_0^{2}\\rho^3\\,d\\rho$<br>$= 2\\pi\\cdot\\dfrac{\\sin^2\\dfrac{\\pi}{4}}{2}\\cdot\\dfrac{16}{4} = 2 \\pi$",
+   "explain": "Vì $z=\\rho\\cos\\theta$ và $dV=\\rho^2\\sin\\theta\\,d\\rho\\,d\\theta\\,d\\varphi$, $I=\\displaystyle\\int_0^{2\\pi}d\\varphi\\int_0^{\\dfrac{\\pi}{4}}\\cos\\theta\\sin\\theta\\,d\\theta\\int_0^{2}\\rho^3\\,d\\rho$.<br>Các tích phân bằng $2\\pi$, $[\\sin^2\\theta/2]_0^{\\dfrac{\\pi}{4}}=\\sin^2\\dfrac{\\pi}{4}/2$, và $[\\rho^4/4]_0^{2}=16/4$. Vậy $I=2\\pi\\cdot\\dfrac{\\sin^2\\dfrac{\\pi}{4}}{2}\\cdot\\dfrac{16}{4}=2 \\pi$.",
    "note": "Góc $\\theta$ tính từ trục $Oz$: mặt nón $z = c\\sqrt{x^2 + y^2}$ ứng với $\\tan\\theta = \\dfrac1c$."
   },
   {
@@ -276,7 +276,7 @@
     "$945$."
    ],
    "answer": 0,
-   "explain": "Gọi $x$ là số khách hàng của X khi ổn định; lượng rời X bằng lượng đến X: $40\\%\\cdot x = 30\\%\\cdot(2100 - x)$<br>$70x = 63000 \\Rightarrow x = 900$",
+   "explain": "Gọi $x$ là số khách hàng của X ở trạng thái ổn định. Lượng rời X là 40% của $x$; lượng chuyển từ Y sang X là 30% của $2100-x$. Cân bằng cho $\\dfrac{40}{100}x=\\dfrac{30}{100}(2100-x)$.<br>Nhân với $100$: $40x=30(2100-x)=63000-30x$, nên $(70)x=63000$ và $x=\\dfrac{63000}{70}=900$.",
    "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu."
   },
   {
@@ -336,7 +336,7 @@
     "$1$."
    ],
    "answer": 0,
-   "explain": "Nhánh trái $g(x) = \\ln\\left(2 x + 1\\right)$: $g(0) = 0,\\ g'(0) = 2,\\ g''(0) = -4$<br>Nhánh phải $h(x) = ax^2 + bx + d$: $h(0) = d,\\ h'(0) = b,\\ h''(0) = 2a$<br>$d = 0,\\ b = 2,\\ 2a = -4 \\Rightarrow a = -2$<br>$a + b + d = 0$",
+   "explain": "Nhánh trái $g(x)=\\ln\\left(2 x + 1\\right)$ có $g(0)=0$, $g^\\prime(0)=2$, $g^{\\prime\\prime}(0)=-4$ (tính đạo hàm rồi thế $x=0$).<br>Nhánh phải $h(x)=ax^2+bx+d$: $h(0)=d$, $h^\\prime(x)=2ax+b$ nên $h^\\prime(0)=b$, $h^{\\prime\\prime}(x)=2a$ nên $h^{\\prime\\prime}(0)=2a$. Để ghép khả vi cấp hai, đặt lần lượt $h(0)=g(0)$, $h^\\prime(0)=g^\\prime(0)$, $h^{\\prime\\prime}(0)=g^{\\prime\\prime}(0)$.<br>$d=0,\\ b=2,\\ 2a=-4$, do đó $a=-2$.<br>Thay các hệ số đã tìm vào biểu thức cần tính: $a + b + d=0$.",
    "note": "Có đạo hàm cấp hai tại điểm nối: giá trị, đạo hàm cấp một và đạo hàm cấp hai ở hai phía đều phải khớp nhau."
   },
   {
@@ -348,7 +348,7 @@
     "$- \\pi \\left(1 - e^{2}\\right)$."
    ],
    "answer": 0,
-   "explain": "$V = \\pi\\displaystyle\\int_0^{1} y^2\\,dx = \\pi\\int_0^{1} e^{2 x}\\,dx$<br>$= \\pi\\left[\\dfrac{e^{2 x}}{2}\\right]_0^{1} = - \\dfrac{\\pi \\left(1 - e^{2}\\right)}{2}$",
+   "explain": "$V=\\pi\\int_0^{1}y^2dx=\\pi\\int_0^{1}e^{2 x}dx$; bình phương hàm số cho biểu thức dưới dấu tích phân như trên.<br>Nguyên hàm là $\\dfrac{e^{2 x}}{2}$. Thế cận: $V=\\pi(\\dfrac{e^{2}}{2}-\\dfrac{1}{2})=- \\dfrac{\\pi \\left(1 - e^{2}\\right)}{2}$.",
    "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$."
   },
   {
@@ -360,7 +360,7 @@
     "$25$."
    ],
    "answer": 0,
-   "explain": "Hệ: $x + y + z = 240$; $60x + 90y + 150z = 18900$; $x - y - z = 60$. Giải được $(150;60;30)$<br>Kết quả: $30$",
+   "explain": "Hệ phương trình: $\\begin{cases}x+y+z=240\\\\60x+90y+150z=18900\\\\x-y-z=60\\end{cases}$.<br>Ma trận bổ sung ban đầu: $$\\left(\\begin{array}{rrr|r}1 & 1 & 1 & 240\\\\ 60 & 90 & 150 & 18900\\\\ 1 & -1 & -1 & 60\\end{array}\\right)$$<br>$R_2 \\leftarrow R_2 - (60)R_1$: $$\\left(\\begin{array}{rrr|r}1 & 1 & 1 & 240\\\\ 0 & 30 & 90 & 4500\\\\ 1 & -1 & -1 & 60\\end{array}\\right)$$<br>$R_3 \\leftarrow R_3 - (1)R_1$: $$\\left(\\begin{array}{rrr|r}1 & 1 & 1 & 240\\\\ 0 & 30 & 90 & 4500\\\\ 0 & -2 & -2 & -180\\end{array}\\right)$$<br>$R_2 \\leftarrow \\dfrac{1}{30}R_2$: $$\\left(\\begin{array}{rrr|r}1 & 1 & 1 & 240\\\\ 0 & 1 & 3 & 150\\\\ 0 & -2 & -2 & -180\\end{array}\\right)$$<br>$R_1 \\leftarrow R_1 - (1)R_2$: $$\\left(\\begin{array}{rrr|r}1 & 0 & -2 & 90\\\\ 0 & 1 & 3 & 150\\\\ 0 & -2 & -2 & -180\\end{array}\\right)$$<br>$R_3 \\leftarrow R_3 - (-2)R_2$: $$\\left(\\begin{array}{rrr|r}1 & 0 & -2 & 90\\\\ 0 & 1 & 3 & 150\\\\ 0 & 0 & 4 & 120\\end{array}\\right)$$<br>$R_3 \\leftarrow \\dfrac{1}{4}R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & -2 & 90\\\\ 0 & 1 & 3 & 150\\\\ 0 & 0 & 1 & 30\\end{array}\\right)$$<br>$R_1 \\leftarrow R_1 - (-2)R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 150\\\\ 0 & 1 & 3 & 150\\\\ 0 & 0 & 1 & 30\\end{array}\\right)$$<br>$R_2 \\leftarrow R_2 - (3)R_3$: $$\\left(\\begin{array}{rrr|r}1 & 0 & 0 & 150\\\\ 0 & 1 & 0 & 60\\\\ 0 & 0 & 1 & 30\\end{array}\\right)$$<br>$(x,y,z)=(150,60,30)$; số vé VIP đã bán: $z=30$.",
    "note": "Lập hệ phương trình từ điều kiện của bài toán (cung bằng cầu, hoặc dùng hết nguyên liệu) rồi giải bằng phép khử Gauss."
   },
   {
@@ -396,7 +396,7 @@
     "$\\pi$."
    ],
    "answer": 0,
-   "explain": "$\\displaystyle\\sum_{n\\ge0}\\dfrac{(-1)^nx^{2n}}{(2n)!} = \\cos x$ tại $x = \\pi$<br>Vậy tổng của chuỗi bằng $-1$",
+   "explain": "$\\sum_{n\\ge0}\\frac{(-1)^n\\pi^{2n}}{(2n)!}=\\cos\\pi=-1$.<br>Vậy tổng của chuỗi bằng $-1$",
    "note": "Nhận ra chuỗi quen thuộc ($e^x$, $\\ln(1 + x)$, $\\arctan x$, ...) rồi thay giá trị $x$ thích hợp."
   },
   {
@@ -408,7 +408,7 @@
     "$4$."
    ],
    "answer": 0,
-   "explain": "Tách biến: $\\dfrac{dy}{y} = \\dfrac{\\cos x}{\\sin x}dx \\Rightarrow \\ln|y| = \\ln|\\sin x| + C$<br>$y(\\dfrac{\\pi}{6}) = 1 \\Rightarrow y = 2 \\sin{\\left(x \\right)}$<br>$y\\left(\\dfrac{\\pi}{2}\\right) = 2$",
+   "explain": "Tách biến rồi tích phân hai vế: $\\dfrac{dy}{y} = \\dfrac{\\cos x}{\\sin x}dx \\Rightarrow \\ln|y| = \\ln|\\sin x| + C$<br>$x=\\pi/6,y=1$: $\\ln y=\\ln(\\sin x)+C$ gives $0=\\ln(1/2)+C$, so $C=\\ln2$.<br>Từ $C$ vừa tìm và điều kiện đầu, nghiệm tường minh là $y=2 \\sin{\\left(x \\right)}$.<br>Thay $x=\\dfrac{\\pi}{2}$ vào nghiệm: $y(\\dfrac{\\pi}{2})=2=2$.",
    "note": "Tìm nghiệm tổng quát trước, rồi dùng điều kiện đầu để xác định $C$ (và dấu của căn nếu có)."
   },
   {
@@ -444,7 +444,7 @@
     "$\\dfrac{11}{6}$."
    ],
    "answer": 0,
-   "explain": "$I = \\displaystyle\\int_0^{\\pi/3}d\\varphi\\int_{2}^{4\\cos\\varphi} r^{2} \\sin{\\left(\\varphi \\right)}\\,dr$ (đã nhân Jacobian $r$)<br>$= \\displaystyle\\int_0^{\\pi/3}\\left(\\dfrac{64 \\sin{\\left(\\varphi \\right)} \\cos^{3}{\\left(\\varphi \\right)}}{3} - \\dfrac{8 \\sin{\\left(\\varphi \\right)}}{3}\\right)d\\varphi = \\dfrac{11}{3}$",
+   "explain": "$I=\\int_0^{\\pi/3}d\\varphi\\int_{2}^{4\\cos\\varphi}r^{2} \\sin{\\left(\\varphi \\right)}\\,dr$; $r^{2} \\sin{\\left(\\varphi \\right)}$ đã gồm Jacobian $r$.<br>Tính tích phân theo $r$: $\\int_{2}^{4\\cos\\varphi}r^{2} \\sin{\\left(\\varphi \\right)}\\,dr=\\dfrac{8 \\left(8 \\cos^{3}{\\left(\\varphi \\right)} - 1\\right) \\sin{\\left(\\varphi \\right)}}{3}$, bằng cách thế hai cận vào nguyên hàm theo $r$.<br>Nguyên hàm theo $\\varphi$ của biểu thức trên là $- \\dfrac{16 \\cos^{4}{\\left(\\varphi \\right)}}{3} + \\dfrac{8 \\cos{\\left(\\varphi \\right)}}{3}$. Do đó $I=[- \\dfrac{16 \\cos^{4}{\\left(\\varphi \\right)}}{3} + \\dfrac{8 \\cos{\\left(\\varphi \\right)}}{3}]_{0}^{\\pi/3}=1-- \\dfrac{8}{3}=\\dfrac{11}{3}$.",
    "note": "Cận của $r$ phụ thuộc $\\varphi$ nên phải lấy tích phân theo $r$ trước, rồi mới theo $\\varphi$."
   },
   {

@@ -39,7 +39,12 @@ def n2a(rng, j):
     combos = rng.sample([(1, 1), (1, -1), (2, 1), (1, 2), (-1, 2), (2, -1)], 3)
     wrongs = [(a * u1 + b * u2, a, b) for a, b in combos]
     q = T(r'Trong không gian véc tơ $\mathbb{R}^3$, cho hai véc tơ $u_1 = <a>,\ u_2 = <b>$. Véc tơ nào sau đây cùng với $u_1, u_2$ tạo thành một cơ sở của $\mathbb{R}^3$?', a=vec(u1), b=vec(u2))
-    ex = steps(T(r'<b>Đúng:</b> $<w>$ — định thức của ba véc tơ $u_1, u_2$ và véc tơ này bằng $<d> \ne 0$ nên ba véc tơ độc lập tuyến tính', w=vec(w), d=d),
+    det_work = (
+        r'\det\begin{pmatrix}%s & %s & %s\\ %s & %s & %s\\ %s & %s & %s\end{pmatrix}'
+        r'= %s(%s\cdot%s-%s\cdot%s)-%s(%s\cdot%s-%s\cdot%s)+%s(%s\cdot%s-%s\cdot%s)=%s'
+    ) % (*u1, *u2, *w, u1[0], u2[1], w[2], u2[2], w[1], u1[1], u2[0], w[2], u2[2], w[0],
+         u1[2], u2[0], w[1], u2[1], w[0], d)
+    ex = steps(T(r'<b>Đúng:</b> Với $w=<w>$, tính định thức theo hàng đầu: $<det>\ne0$, nên ba véc tơ độc lập tuyến tính và tạo thành cơ sở', w=vec(w), det=det_work),
                *[T(r'<b>Sai:</b> $<w> = <e>$ là tổ hợp tuyến tính của $u_1, u_2$', w=vec(v), e=a * symbols('u_1') + b * symbols('u_2')) for v, a, b in wrongs])
     return Q(q, fmv(w), [fmv(v) for v, _, _ in wrongs], ex)
 
@@ -52,7 +57,9 @@ def n2b(rng, j):
     v = a * B.row(0) + b * B.row(1)
     q = T(r'Trong không gian véc tơ $\mathbb{R}^2$, cho cơ sở $B = \{b_1<p>,\ b_2<q>\}$ và véc tơ $v = <v>$. Tọa độ của $v$ đối với cơ sở $B$ (tức cặp số $(x;y)$ sao cho $v = xb_1 + yb_2$) là', p=vec(B.row(0)), q=vec(B.row(1)), v=vec(v))
     ex = steps(r'$v = xb_1 + yb_2 \Leftrightarrow \begin{cases}' + tx(sp.Eq(B[0, 0] * x + B[1, 0] * y, v[0])) + r'\\ ' + tx(sp.Eq(B[0, 1] * x + B[1, 1] * y, v[1])) + r'\end{cases}$',
-               T(r'Giải hệ: $x = <a>,\ y = <b>$', a=a, b=b), T(r'Tọa độ của $v$ đối với $B$: $(<a>;<b>)$', a=a, b=b))
+               T(r'Từ $v=<v>$, giải hệ trên được $x=<a>,\ y=<b>$; thay lại: $<ax>=<vx>,\ <ay>=<vy>$', v=vec(v), a=a, b=b,
+                 ax=a * B[0, 0] + b * B[1, 0], vx=v[0], ay=a * B[0, 1] + b * B[1, 1], vy=v[1]),
+               T(r'Tọa độ của $v$ đối với $B$: $(<a>;<b>)$', a=a, b=b))
     f = lambda c: '$(%s;%s)$.' % (tx(c[0]), tx(c[1]))
     return Q(q, f((a, b)), pick3((a, b), [(b, a), (v[0], v[1]), (a, -b), (-a, b), (a + 1, b)], f), ex)
 
@@ -68,8 +75,9 @@ def n2d(rng, j):
         raise Retry
     o = m0 + rng.choice([1, -1, 2])
     q = T(r'Trong không gian véc tơ $\mathbb{R}^3$, cho hệ $S = \{u_1<a>,\ u_2<b>,\ u_3<c>\}$ với $m$ là tham số. Hệ $S$ là một cơ sở của $\mathbb{R}^3$ khi và chỉ khi', a=vec(u1), b=vec(u2), c=vec([p, qq, m_]))
-    ex = steps(r'Ba véc tơ trong $\mathbb{R}^3$ là cơ sở $\Leftrightarrow$ chúng độc lập tuyến tính $\Leftrightarrow$ định thức của chúng khác 0',
-               T(r'$\det(u_1, u_2, u_3) = <d>$', d=d), T(r'$<d> \ne 0 \Leftrightarrow m \ne <m0>$', d=d, m0=m0))
+    ex = steps(r'Ba véc tơ trong $\mathbb{R}^3$ là cơ sở khi và chỉ khi định thức của ma trận có ba hàng là các véc tơ khác 0.',
+               T(r'Khai triển định thức: $\det(u_1,u_2,u_3)=<d>=<f>$', d=d, f=sp.factor(d)),
+               T(r'Giải $<d>=0$: $m=<m0>$; do đó định thức khác 0 khi và chỉ khi $m\ne<m0>$', d=d, m0=m0))
     return Q(q, T(r'$m \ne <m0>$.', m0=m0), [T('$m = <m0>$.', m0=m0), 'với mọi giá trị của $m$.', T(r'$m \ne <o>$.', o=o)], ex)
 
 
@@ -81,7 +89,12 @@ def n2e(rng, j):
     u3 = a * u1 + b * u2
     ask = rng.choice([('x + y', -a - b), ('x - y', b - a), (r'x\cdot y', a * b)])
     q = T(r'Trong không gian véc tơ $\mathbb{R}^3$, hệ $\{u_1<p>,\ u_2<q>,\ u_3<r>\}$ phụ thuộc tuyến tính, tức tồn tại các số $x, y$ sao cho $xu_1 + yu_2 + u_3 = 0$. Giá trị của $<e>$ bằng', p=vec(u1), q=vec(u2), r=vec(u3), e=ask[0])
-    ex = steps(r'$xu_1 + yu_2 = -u_3$; viết theo từng tọa độ được hệ ba phương trình hai ẩn', T(r'Giải hai phương trình đầu (phương trình thứ ba nghiệm đúng): $x = <x>,\ y = <y>$', x=-a, y=-b), T(r'$<e> = <ok>$', e=ask[0], ok=ask[1]))
+    coord_eqs = r'\begin{cases}%s\\%s\\%s\end{cases}' % tuple(
+        tx(sp.Eq(x * u1[i] + y * u2[i], -u3[i])) for i in range(3))
+    ex = steps(T(r'$xu_1+yu_2=-u_3$ theo từng tọa độ: $<eq>$', eq=coord_eqs),
+               T(r'Nghiệm là $x=<x>,\ y=<y>$; kiểm tra tọa độ thứ ba: $<lhs>=<rhs>$', x=-a, y=-b,
+                 lhs=(-a) * u1[2] + (-b) * u2[2], rhs=-u3[2]),
+               T(r'$<e> = <ok>$', e=ask[0], ok=ask[1]))
     return NQ(q, ask[1], [a + b, a - b, -a * b, ask[1] + 1], ex)
 
 
@@ -210,18 +223,26 @@ def n11e(rng, j):
 def n14a(rng, j):
     p = rng.choice([1, 2, 3])
     q = T(r'Cho $q$ là số nguyên dương. Chuỗi số dương $\displaystyle\sum_{n=1}^{+\infty}\dfrac{n^{<p>}}{n^{q} + 1}$ hội tụ khi và chỉ khi', p='' if p == 1 else p).replace('^{}', '')
-    ex = steps(T(r'$u_n \sim \dfrac{<np>}{n^q} = \dfrac{1}{n^{q - <p>}}$', np='n' if p == 1 else 'n^{%d}' % p, p=p), T(r'Chuỗi $\sum\dfrac{1}{n^{s}}$ hội tụ $\Leftrightarrow s > 1$, tức $q - <p> > 1$', p=p), T(r'$q$ nguyên nên $q \ge <ok>$', ok=p + 2))
+    ex = steps(T(r'$u_n=\dfrac{n^{<p>}}{n^q+1}\sim\dfrac{n^{<p>}}{n^q}=\dfrac1{n^{q-<p>}}$ khi $n\to\infty$', p=p),
+               T(r'$\sum u_n$ cùng tính hội tụ với chuỗi $p$-series $\sum n^{-(q-<p>)}$; chuỗi này hội tụ khi $q-<p>>1$', p=p),
+               T(r'Vì $q$ nguyên dương: $q><p>+1\Rightarrow q\ge<ok>$; nếu $q\le<p>+1$ thì chuỗi phân kỳ', p=p, ok=p + 2))
     f = lambda v: r'$q \ge %d$.' % v
     return Q(q, f(p + 2), [f(p + 1), f(p + 3), 'với mọi số nguyên dương $q$.'], ex)
 
 
 P14B = [
-    (r'\dfrac{(n!)^2c^n}{(2n)!}', 3, r'\dfrac{u_{n+1}}{u_n} = \dfrac{c(n+1)^2}{(2n+1)(2n+2)} \to \dfrac{c}{4}', r'Hội tụ khi $\dfrac{c}{4} < 1$; với $c = 4$ có $\dfrac{u_{n+1}}{u_n} = \dfrac{2n+2}{2n+1} > 1$ nên $u_n \not\to 0$'),
-    (r'\dfrac{c^n\,n!}{n^n}', 2, r'\dfrac{u_{n+1}}{u_n} = c\left(\dfrac{n}{n+1}\right)^n \to \dfrac{c}{e}', r'Hội tụ khi $c < e \approx 2{,}72$'),
-    (r'\dfrac{n^2c^n}{5^n}', 4, r'\dfrac{u_{n+1}}{u_n} \to \dfrac{c}{5}', r'Hội tụ khi $c < 5$; với $c = 5$ thì $u_n = n^2 \not\to 0$'),
-    (r'\dfrac{c^n}{n\cdot3^n}', 2, r'\sqrt[n]{u_n} \to \dfrac{c}{3}', r'Hội tụ khi $c < 3$; với $c = 3$ được chuỗi điều hòa $\sum\dfrac1n$ phân kỳ'),
-    (r'\dfrac{c^n}{n^2\cdot3^n}', 3, r'\sqrt[n]{u_n} \to \dfrac{c}{3}', r'Hội tụ khi $c < 3$; với $c = 3$ được chuỗi $\sum\dfrac{1}{n^2}$ vẫn hội tụ'),
-    (r'\dfrac{(2n)!\,c^n}{(n!)^2\cdot20^n}', 4, r'\dfrac{u_{n+1}}{u_n} = \dfrac{c(2n+1)(2n+2)}{20(n+1)^2} \to \dfrac{c}{5}', r'Hội tụ khi $c < 5$; với $c = 5$ có $\dfrac{u_{n+1}}{u_n} = \dfrac{2n+1}{2n+2}$ và $u_n \sim \dfrac{1}{\sqrt{\pi n}}$ nên chuỗi phân kỳ'),
+    (r'\dfrac{(n!)^2c^n}{(2n)!}', 3, r'\dfrac{u_{n+1}}{u_n}=\dfrac{c(n+1)^2}{(2n+1)(2n+2)}\to\dfrac c4',
+     r'Nếu $c<4$ thì tỉ số giới hạn $c/4<1$ nên chuỗi hội tụ. Tại $c=4$, $\dfrac{u_{n+1}}{u_n}=\dfrac{2n+2}{2n+1}>1$ với mọi $n$, do đó $u_n\ge u_1>0$ và số hạng tổng quát không tiến về 0; vì vậy $c_{\max}=3$.'),
+    (r'\dfrac{c^n\,n!}{n^n}', 2, r'\dfrac{u_{n+1}}{u_n}=c\left(\dfrac n{n+1}\right)^n\to\dfrac ce',
+     r'Điều kiện tỉ số là $c/e<1$, tức $c<e\approx2{,}718$. Với $c=1,2$ chuỗi hội tụ; với $c=3$, $3/e>1$ nên chuỗi phân kỳ. Vậy $c_{\max}=2$.'),
+    (r'\dfrac{n^2c^n}{5^n}', 4, r'\dfrac{u_{n+1}}{u_n}=\left(\dfrac{n+1}{n}\right)^2\dfrac c5\to\dfrac c5',
+     r'Khi $c<5$, tỉ số giới hạn $c/5<1$ nên chuỗi hội tụ. Tại $c=5$, $u_n=n^2(5/5)^n=n^2\not\to0$, nên chuỗi phân kỳ; do đó $c_{\max}=4$.'),
+    (r'\dfrac{c^n}{n\cdot3^n}', 2, r'\sqrt[n]{u_n}=\dfrac c3\sqrt[n]{1/n}\to\dfrac c3',
+     r'Điều kiện căn là $c/3<1$, tức $c<3$. Tại $c=3$, $u_n=1/n$ và $\sum 1/n$ phân kỳ; vậy $c_{\max}=2$.'),
+    (r'\dfrac{c^n}{n^2\cdot3^n}', 3, r'\sqrt[n]{u_n}=\dfrac c3\sqrt[n]{1/n^2}\to\dfrac c3',
+     r'Với $c<3$, tiêu chuẩn căn cho hội tụ. Tại $c=3$, $u_n=1/n^2$ và $\sum 1/n^2$ hội tụ; với $c>3$, căn giới hạn $c/3>1$ cho phân kỳ. Vậy $c_{\max}=3$.'),
+    (r'\dfrac{(2n)!\,c^n}{(n!)^2\cdot20^n}', 4, r'\dfrac{u_{n+1}}{u_n}=\dfrac{c(2n+1)(2n+2)}{20(n+1)^2}\to\dfrac c5',
+     r'Với $c<5$, tỉ số giới hạn $c/5<1$ nên hội tụ. Tại $c=5$, $u_n=\binom{2n}{n}/4^n\sim1/\sqrt{\pi n}$, nên $\sum u_n$ phân kỳ như chuỗi $p$ với $p=1/2$. Vậy $c_{\max}=4$.'),
 ]
 
 
@@ -238,8 +259,10 @@ def n14c(rng, j):
     conv = C < 1
     q = T(r'Cho chuỗi số dương $\displaystyle\sum_{n=1}^{+\infty}\left(\dfrac{<a>n + 1}{<b>n + 2}\right)^{<e>}$. Đặt $C = \lim\limits_{n\to\infty}\sqrt[n]{u_n}$, khi đó:', a='' if a == 1 else a, b='' if b == 1 else b, e='2n' if e2 else 'n')
     f = lambda c, k_: T(r'$C = <c>$ và chuỗi <k>.', c=c, k='hội tụ' if k_ else 'phân kỳ')
-    ex = steps(T(r'$\sqrt[n]{u_n} = <l>\dfrac{<a>n + 1}{<b>n + 2}<r> \to <l>\dfrac{<a0>}{<b0>}<r> = <C>$' if e2 else r'$\sqrt[n]{u_n} = \dfrac{<a>n + 1}{<b>n + 2} \to <C>$',
-                 l=r'\left(', r=r'\right)^{2}', a='' if a == 1 else a, b='' if b == 1 else b, a0=a, b0=b, C=C),
+    ex = steps(T(r'$u_n=\left(\dfrac{<a>n+1}{<b>n+2}\right)^{<e>}$; do đó $\sqrt[n]{u_n}=<l>\dfrac{<a>n+1}{<b>n+2}<r>\to<l>\dfrac{<a0>}{<b0>}<r>=<C>$' if e2 else r'$u_n=\left(\dfrac{<a>n+1}{<b>n+2}\right)^n$; do đó $\sqrt[n]{u_n}=\dfrac{<a>n+1}{<b>n+2}\to<C>$',
+                 e='2n', l=r'\left(', r=r'\right)^2', a='' if a == 1 else a, b='' if b == 1 else b, a0=a, b0=b, C=C) if e2 else
+               T(r'$u_n=\left(\dfrac{<a>n+1}{<b>n+2}\right)^n$; do đó $\sqrt[n]{u_n}=\dfrac{<a>n+1}{<b>n+2}\to<C>$',
+                 a='' if a == 1 else a, b='' if b == 1 else b, C=C),
                T(r'$C <s> 1$ nên theo tiêu chuẩn Cauchy chuỗi <k>', s='<' if conv else '>', k='hội tụ' if conv else 'phân kỳ'))
     other = R(a, b) if e2 else R(a, b) ** 2
     return Q(q, f(C, conv), [f(C, not conv), f(other, other < 1), f(1, conv)], ex)
@@ -258,8 +281,9 @@ def n14d(rng, j):
 def n14e(rng, j):
     s = r'\dfrac{1}{n\ln^{p}n}'
     q = T(r'Cho $p$ là số thực. Dùng tiêu chuẩn tích phân, chuỗi số dương $\displaystyle\sum_{n=2}^{+\infty}<s>$ hội tụ khi và chỉ khi', s=s)
-    ex = steps(r'Xét $\displaystyle\int_2^{+\infty}\dfrac{dx}{x\ln^{p}x}$, đặt $t = \ln x$: $\displaystyle\int_{\ln 2}^{+\infty}\dfrac{dt}{t^{p}}$', r'Tích phân này hội tụ $\Leftrightarrow p > 1$',
-               r'Với $p = 1$: $\displaystyle\int\dfrac{dt}{t} = \ln t \to +\infty$ nên chuỗi phân kỳ')
+    ex = steps(r'Xét tích phân thử $\displaystyle\int_2^{+\infty}\frac{dx}{x(\ln x)^p}$. Đặt $t=\ln x$, $dt=dx/x$, được $\displaystyle\int_{\ln2}^{+\infty}t^{-p}\,dt$.',
+               r'Với $p\ne1$, $\displaystyle\int_{\ln2}^{B}t^{-p}\,dt=\left[\frac{t^{1-p}}{1-p}\right]_{\ln2}^{B}$. Khi $B\to\infty$, tích phân hữu hạn đúng khi $1-p<0$, tức $p>1$.',
+               r'Với $p=1$, $\displaystyle\int_{\ln2}^{B}\frac{dt}{t}=\ln B-\ln(\ln2)\to+\infty$; nếu $p<1$ thì $B^{1-p}/(1-p)\to+\infty$. Theo tiêu chuẩn tích phân, chuỗi hội tụ khi và chỉ khi $p>1$.')
     return Q(q, '$p > 1$.', [r'$p \ge 1$.', '$p > 0$.', 'với mọi $p$.'], ex)
 
 
@@ -350,14 +374,14 @@ def n19a(rng, j):
 
 
 P19B = [
-    ("y'' - 3y' + 2y = xe^{x}", r'y^* = x(Ax + B)e^{x}', [r'y^* = (Ax + B)e^{x}', r'y^* = Axe^{x}', r'y^* = x^2(Ax + B)e^{x}'], r'Phương trình đặc trưng có nghiệm $1$ và $2$; số $1$ (ứng với $e^{x}$) là nghiệm đơn nên nhân thêm $x$ vào dạng $(Ax + B)e^{x}$'),
-    ("y'' - 2y' + y = 5e^{x}", r'y^* = Ax^2e^{x}', [r'y^* = Ae^{x}', r'y^* = Axe^{x}', r'y^* = (Ax + B)e^{x}'], r'Phương trình đặc trưng có nghiệm kép $1$, trùng với số mũ của vế phải nên nhân thêm $x^2$'),
-    ("y'' + y' = x^2", r'y^* = x(Ax^2 + Bx + C)', [r'y^* = Ax^2 + Bx + C', r'y^* = x^2(Ax^2 + Bx + C)', r'y^* = Ax^2'], r'Phương trình đặc trưng có nghiệm $0$ và $-1$; số $0$ (ứng với vế phải là đa thức) là nghiệm đơn nên nhân thêm $x$'),
-    ("y'' + 9y = \\sin 3x", r'y^* = x(A\cos 3x + B\sin 3x)', [r'y^* = A\sin 3x', r'y^* = A\cos 3x + B\sin 3x', r'y^* = Ax\sin 3x'], r'Phương trình đặc trưng có nghiệm $\pm 3i$, trùng với tần số của vế phải nên nhân thêm $x$; phải có cả $\cos 3x$ và $\sin 3x$'),
-    ("y'' - y = e^{2x}\\sin x", r'y^* = e^{2x}(A\cos x + B\sin x)', [r'y^* = xe^{2x}(A\cos x + B\sin x)', r'y^* = Ae^{2x}\sin x', r'y^* = Ae^{2x}\cos x'], r'$2 \pm i$ không là nghiệm của phương trình đặc trưng ($k = \pm1$) nên không nhân thêm $x$; phải có cả $\cos x$ và $\sin x$'),
-    ("y'' + 4y' + 4y = x + e^{-2x}", r'y^* = Ax + B + Cx^2e^{-2x}', [r'y^* = Ax + B + Ce^{-2x}', r'y^* = Ax + B + Cxe^{-2x}', r'y^* = x(Ax + B) + Ce^{-2x}'], r'Chồng chất nghiệm: với vế phải $x$, số $0$ không là nghiệm đặc trưng nên $Ax + B$; với $e^{-2x}$, số $-2$ là nghiệm kép nên $Cx^2e^{-2x}$'),
-    ("y'' - 4y = e^{2x} + 1", r'y^* = Axe^{2x} + B', [r'y^* = Ae^{2x} + B', r'y^* = Axe^{2x} + Bx', r'y^* = Ax^2e^{2x} + B'], r'Nghiệm đặc trưng $\pm2$: số $2$ là nghiệm đơn nên $Axe^{2x}$; số $0$ không là nghiệm nên hằng số $B$'),
-    ("y'' + 2y' + 5y = e^{-x}\\cos 2x", r'y^* = xe^{-x}(A\cos 2x + B\sin 2x)', [r'y^* = e^{-x}(A\cos 2x + B\sin 2x)', r'y^* = Axe^{-x}\cos 2x', r'y^* = x^2e^{-x}(A\cos 2x + B\sin 2x)'], r'Phương trình đặc trưng có nghiệm $-1 \pm 2i$, trùng với $-1 \pm 2i$ của vế phải nên nhân thêm $x$'),
+    ("y'' - 3y' + 2y = xe^{x}", r'y^* = x(Ax + B)e^{x}', [r'y^* = (Ax + B)e^{x}', r'y^* = Axe^{x}', r'y^* = x^2(Ax + B)e^{x}'], r'$k^2-3k+2=(k-1)(k-2)=0$. Vế phải $xe^x$ có dạng $e^xP_1(x)$; nghiệm $k=1$ đơn nên lấy $x e^x(Ax+B)$.'),
+    ("y'' - 2y' + y = 5e^{x}", r'y^* = Ax^2e^{x}', [r'y^* = Ae^{x}', r'y^* = Axe^{x}', r'y^* = (Ax + B)e^{x}'], r'$k^2-2k+1=(k-1)^2=0$. Vế phải là $5e^x$; số mũ $1$ trùng nghiệm kép, vì vậy dạng $Ae^x$ phải nhân $x^2$: $y^*=Ax^2e^x$.'),
+    ("y'' + y' = x^2", r'y^* = x(Ax^2 + Bx + C)', [r'y^* = Ax^2 + Bx + C', r'y^* = x^2(Ax^2 + Bx + C)', r'y^* = Ax^2'], r'$k^2+k=k(k+1)=0$, có nghiệm $k=0$ đơn. Đa thức vế phải bậc 2 cho dạng $Ax^2+Bx+C$; do cộng hưởng tại $k=0$, nhân thêm $x$.'),
+    ("y'' + 9y = \\sin 3x", r'y^* = x(A\cos 3x + B\sin 3x)', [r'y^* = A\sin 3x', r'y^* = A\cos 3x + B\sin 3x', r'y^* = Ax\sin 3x'], r'$k^2+9=0\Rightarrow k=\pm3i$, trùng với tần số $3$ của $\sin3x$. Dạng chưa cộng hưởng là $A\cos3x+B\sin3x$; nhân thêm $x$.'),
+    ("y'' - y = e^{2x}\\sin x", r'y^* = e^{2x}(A\cos x + B\sin x)', [r'y^* = xe^{2x}(A\cos x + B\sin x)', r'y^* = Ae^{2x}\sin x', r'y^* = Ae^{2x}\cos x'], r'$k^2-1=(k-1)(k+1)=0$ có nghiệm $\pm1$, còn vế phải $e^{2x}\sin x$ ứng với $2\pm i$. Không trùng nghiệm nên không nhân $x$; cần đủ cặp $A\cos x+B\sin x$.'),
+    ("y'' + 4y' + 4y = x + e^{-2x}", r'y^* = Ax + B + Cx^2e^{-2x}', [r'y^* = Ax + B + Ce^{-2x}', r'y^* = Ax + B + Cxe^{-2x}', r'y^* = x(Ax + B) + Ce^{-2x}'], r'$k^2+4k+4=(k+2)^2=0$. Vế $x$ có dạng đa thức $Ax+B$ (số mũ $0$ không là nghiệm); vế $e^{-2x}$ cộng hưởng với nghiệm kép $-2$, nên có hạng $Cx^2e^{-2x}$.'),
+    ("y'' - 4y = e^{2x} + 1", r'y^* = Axe^{2x} + B', [r'y^* = Ae^{2x} + B', r'y^* = Axe^{2x} + Bx', r'y^* = Ax^2e^{2x} + B'], r'$k^2-4=(k-2)(k+2)=0$. Hạng $e^{2x}$ cộng hưởng với nghiệm đơn $2$, nên dùng $Axe^{2x}$; hạng hằng $1$ ứng với $k=0$ không là nghiệm, nên dùng $B$.'),
+    ("y'' + 2y' + 5y = e^{-x}\\cos 2x", r'y^* = xe^{-x}(A\cos 2x + B\sin 2x)', [r'y^* = e^{-x}(A\cos 2x + B\sin 2x)', r'y^* = Axe^{-x}\cos 2x', r'y^* = x^2e^{-x}(A\cos 2x + B\sin 2x)'], r'$k^2+2k+5=0\Rightarrow k=-1\pm2i$, đúng bằng cặp số mũ phức của $e^{-x}\cos2x$. Dạng $e^{-x}(A\cos2x+B\sin2x)$ cộng hưởng bậc 1 nên nhân thêm $x$.'),
 ]
 
 
@@ -432,7 +456,17 @@ def n20c(rng, j):
     cond, lo, hi = [(r'y \ge 0', '0', r'\pi'), (r'x \ge 0,\ y \ge 0', '0', r'\pi/2'), (r'y \ge |x|', r'\pi/4', r'3\pi/4'), (r'x \le 0', r'\pi/2', r'3\pi/2'), (r'y \ge x,\ x \ge 0', r'\pi/4', r'\pi/2'), (r'y \le 0', r'\pi', r'2\pi')][j % 6]
     f = lambda lo_, hi_, r1, r2, jac=r'r\,dr': r'$\displaystyle\int_{%s}^{%s}d\varphi\int_{%s}^{%s} f(r\cos\varphi, r\sin\varphi)\,%s$.' % (lo_, hi_, r1, r2, jac)
     q = T(r'Cho miền $D = \{(x,y): <a2> \le x^2 + y^2 \le <b2>,\ <c>\}$. Khi chuyển sang tọa độ cực $x = r\cos\varphi,\ y = r\sin\varphi$, tích phân $\displaystyle\iint_D f(x,y)\,dxdy$ được viết là', a2=a * a, b2=b * b, c=cond)
-    ex = steps(T(r'$<a2> \le r^2 \le <b2> \Leftrightarrow <a> \le r \le <b>$', a2=a * a, b2=b * b, a=a, b=b), T(r'Điều kiện $<c>$ ứng với $<lo> \le \varphi \le <hi>$', c=cond, lo=lo, hi=hi), r'Jacobian của phép đổi biến bằng $r$: $dxdy = r\,dr\,d\varphi$')
+    angle_work = [
+        r'$y\ge0\Leftrightarrow r\sin\varphi\ge0\Rightarrow\sin\varphi\ge0\Rightarrow0\le\varphi\le\pi$',
+        r'$x\ge0,\ y\ge0\Leftrightarrow\cos\varphi\ge0,\ \sin\varphi\ge0\Rightarrow0\le\varphi\le\pi/2$',
+        r'$y\ge|x|\Leftrightarrow\sin\varphi\ge|\cos\varphi|\Rightarrow\pi/4\le\varphi\le3\pi/4$',
+        r'$x\le0\Leftrightarrow\cos\varphi\le0\Rightarrow\pi/2\le\varphi\le3\pi/2$',
+        r'$x\ge0,\ y\ge x\Leftrightarrow\cos\varphi\ge0,\ \sin\varphi\ge\cos\varphi\Rightarrow\pi/4\le\varphi\le\pi/2$',
+        r'$y\le0\Leftrightarrow\sin\varphi\le0\Rightarrow\pi\le\varphi\le2\pi$'
+    ][j % 6]
+    ex = steps(T(r'$<a2> \le r^2 \le <b2> \Leftrightarrow <a> \le r \le <b>$', a2=a * a, b2=b * b, a=a, b=b),
+               angle_work, r'$dxdy=\left|\dfrac{\partial(x,y)}{\partial(r,\varphi)}\right|dr\,d\varphi=r\,dr\,d\varphi$',
+               T(r'Vậy tích phân được viết: $\displaystyle\int_{<lo>}^{<hi>}d\varphi\int_{<a>}^{<b>}f(r\cos\varphi,r\sin\varphi)\,r\,dr$', lo=lo, hi=hi, a=a, b=b))
     wrong_th = ('0', r'2\pi')
     return Q(q, f(lo, hi, a, b), [f(lo, hi, a, b, 'dr'), f(lo, hi, a * a, b * b), f(wrong_th[0], wrong_th[1], a, b)], ex)
 
@@ -638,7 +672,10 @@ def n46a(rng, j):
     if roots != [m0]:
         raise Retry
     q = T(r'Cho ma trận $A = <A>$ với $m$ là số nguyên dương. Biết $\det A = <v>$, tìm $m$.', A=pmat(A), v=val)
-    return SQ(q, str(m0), steps(T(r'$\det A = <d> = <f>$', d=d, f=sp.factor(d)), T(r'$<d> = <v> \Leftrightarrow <g> = 0$', d=d, v=val, g=sp.factor(d - val)), T(r'Nghiệm nguyên dương duy nhất: $m = <m>$', m=m0)))
+    all_roots = r',\ '.join(tx(root) for root in sp.solve(d - val, m_))
+    return SQ(q, str(m0), steps(T(r'Khai triển định thức: $\det A=<d>=<f>$', d=d, f=sp.factor(d)),
+                                  T(r'Đặt $\det A=<v>$: $<g>=0$, có nghiệm $m=<roots>$', d=d, v=val, g=sp.factor(d - val), roots=all_roots),
+                                  T(r'Lọc nghiệm nguyên dương trong tập trên: $m=<m>$', m=m0)))
 
 
 def n46b(rng, j):
@@ -671,7 +708,11 @@ def n46d(rng, j):
         S, e, note = A - A.T, 'A - A^T', r' (ma trận phản đối xứng cấp lẻ luôn có định thức bằng 0, vì $\det(-M) = -\det M$ và $M^T = -M$)'
     ok = S.det()
     q = T(r'Cho ma trận $A = <A>$ và $A^T$ là ma trận chuyển vị của $A$. Tính $\det\left(<e>\right)$.', A=pmat(A), e=e)
-    return SQ(q, str(ok), steps(T(r'$<e> = <S>$', e=e, S=pmat(S)), T(r'$\det\left(<e>\right) = <ok>$', e=e, ok=ok) + note))
+    if j % 2:
+        work = T(r'$S=A-A^T=<S>$, nên $S^T=-S$. Do đó $\det S=\det(S^T)=\det(-S)=(-1)^3\det S=-\det S$, suy ra $2\det S=0$ và $\det S=0$.', S=pmat(S))
+    else:
+        work = T(r'$S=A+A^T=<S>$; khai triển định thức cấp 3 của ma trận này cho $\det S=<det>=<ok>$.', S=pmat(S), det=sp.expand(S.det()), ok=ok)
+    return SQ(q, str(ok), steps(work))
 
 
 # =============== Câu 48: chuỗi lũy thừa (trả lời ngắn) ===============
@@ -697,12 +738,12 @@ def n48c(rng, j):
 
 
 def n48d(rng, j):
-    body, Rr, how = [(r'\dfrac{n^2x^{2n}}{4^n}', 2, r'Đặt $t = x^2$: $\sum\dfrac{n^2t^n}{4^n}$ có bán kính hội tụ 4 theo $t$, tức $x^2 < 4$'),
-                     (r'\dfrac{x^{3n}}{n\cdot8^n}', 2, r'Đặt $t = x^3$: $\sum\dfrac{t^n}{n\cdot8^n}$ có bán kính hội tụ 8 theo $t$, tức $|x|^3 < 8$'),
-                     (r'\dfrac{x^{2n}}{n\cdot9^n}', 3, r'Đặt $t = x^2$: bán kính hội tụ theo $t$ bằng 9, tức $x^2 < 9$'),
-                     (r'\dfrac{n\,x^{2n}}{25^n}', 5, r'Đặt $t = x^2$: bán kính hội tụ theo $t$ bằng 25, tức $x^2 < 25$'),
-                     (r'\dfrac{x^{4n}}{16^n}', 2, r'Chuỗi hình học công bội $\dfrac{x^4}{16}$, hội tụ khi $x^4 < 16$'),
-                     (r'\dfrac{x^{3n}}{27^n\sqrt n}', 3, r'Đặt $t = x^3$: bán kính hội tụ theo $t$ bằng 27, tức $|x|^3 < 27$')][j % 6]
+    body, Rr, how = [(r'\dfrac{n^2x^{2n}}{4^n}', 2, r'Đặt $t=x^2$: $\sqrt[n]{n^2(t/4)^n}=n^{2/n}|t|/4\to|t|/4$; hội tụ khi $|t|<4$, tức $|x|<2$. Tại $x=\pm2$, số hạng là $n^2$, không tiến về 0.'),
+                     (r'\dfrac{x^{3n}}{n\cdot8^n}', 2, r'$\sqrt[n]{|u_n|}=|x|^3/(8n^{1/n})\to|x|^3/8$; điều kiện hội tụ tuyệt đối là $|x|<2$. Hai đầu mút không đổi bán kính, nên $R=2$.'),
+                     (r'\dfrac{x^{2n}}{n\cdot9^n}', 3, r'$\sqrt[n]{|u_n|}=x^2/(9n^{1/n})\to x^2/9$; điều kiện trong miền hội tụ là $|x|<3$, do đó bán kính $R=3$.'),
+                     (r'\dfrac{n\,x^{2n}}{25^n}', 5, r'$\sqrt[n]{|u_n|}=n^{1/n}x^2/25\to x^2/25$; cần $x^2<25$, tức $|x|<5$, nên $R=5$.'),
+                     (r'\dfrac{x^{4n}}{16^n}', 2, r'Đây là chuỗi hình học với công bội $q=x^4/16$. Điều kiện $|q|<1$ cho $x^4<16$, tương đương $|x|<2$; vậy $R=2$.'),
+                     (r'\dfrac{x^{3n}}{27^n\sqrt n}', 3, r'$\sqrt[n]{|u_n|}=|x|^3/(27n^{1/(2n)})\to|x|^3/27$; căn thức cho $|x|<3$, do đó bán kính $R=3$.')][j % 6]
     q = T(r'Tìm bán kính hội tụ của chuỗi lũy thừa $\displaystyle\sum_{n=1}^{+\infty}<b>$.', b=body)
     return SQ(q, str(Rr), steps(how, T('$R = <R>$', R=Rr)))
 
@@ -841,9 +882,11 @@ def n1d(rng, j):
         raise Retry
     q = T(r'Trong không gian $\mathbb{R}^3$ với tích vô hướng thông thường, cho hai véc tơ $u = (m;<p>;1)$ và $v = (m;m;<q>)$ với $m$ là tham số. Có bao nhiêu giá trị nguyên của $m$ thuộc đoạn $[-5;5]$ để góc giữa $u$ và $v$ là góc <k> (tức $\langle u, v\rangle <s> 0$)?',
           p=p, q=qq, k='nhọn' if acute else 'tù', s='>' if acute else '<')
-    ex = steps(T(r'$\langle u, v\rangle = <e> = <f>$', e=m_ ** 2 + p * m_ + qq, f=sp.factor(m_ ** 2 + p * m_ + qq)),
+    integer_set = r'\{' + ', '.join(map(str, ms)) + r'\}'
+    ex = steps(T(r'$\langle u,v\rangle=(m)(m)+(<p>)(m)+(1)(<q>)=<e>=<f>$', p=p, q=qq,
+                 e=m_ ** 2 + p * m_ + qq, f=sp.factor(m_ ** 2 + p * m_ + qq)),
                T(r'$\langle u, v\rangle <s> 0 \Leftrightarrow <c>$', s='>' if acute else '<', c=(r'm < %d \text{ hoặc } m > %d' % (r1, r2)) if acute else '%d < m < %d' % (r1, r2)),
-               T(r'Các số nguyên thuộc $[-5;5]$ thỏa mãn: $<n>$ giá trị', n=len(ms)))
+               T(r'Giao điều kiện với các số nguyên $m\in[-5;5]$ là $<set>$; có $<n>$ giá trị', set=integer_set, n=len(ms)))
     return NQ(q, len(ms), [11 - len(ms), len(ms) + 2, len(ms) + 1, len(ms) - 1, 11], ex)
 
 

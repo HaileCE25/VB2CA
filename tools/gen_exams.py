@@ -235,7 +235,7 @@ def main():
     path = os.path.join(ROOT, 'index.html')
     html = io.open(path, encoding='utf-8').read()
     ordered = sorted(n for n in os.listdir(os.path.join(ROOT, 'data')) if re.fullmatch(r'de-ca1-so-\d+\.js', n))
-    block = '  <!-- DANH-SACH-DE:BEGIN (tools/gen_exams.py tự cập nhật) -->\n' + ''.join('  <script defer src="data/%s"></script>\n' % n for n in ordered) + '  <!-- DANH-SACH-DE:END -->\n'
+    block = '  <!-- DANH-SACH-DE:BEGIN (tools/gen_exams.py tự cập nhật) -->\n' + ''.join('  <script defer src="data/%s?v=2"></script>\n' % n for n in ordered) + '  <!-- DANH-SACH-DE:END -->\n'
     html = re.sub(r'  <!-- DANH-SACH-DE:BEGIN.*?DANH-SACH-DE:END -->\n', lambda m: block, html, flags=re.S)
     io.open(path, 'w', encoding='utf-8', newline='\n').write(html)
     print('đã ghi %d file đề vào data/ và cập nhật index.html' % len(exams))

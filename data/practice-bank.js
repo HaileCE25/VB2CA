@@ -9,7 +9,7 @@ window.PRACTICE_BANK = [
    "$26$."
   ],
   "answer": 0,
-  "explain": "$\\langle u, v\\rangle = (2)\\cdot m + m\\cdot(-3) + (-3)\\cdot(2) = - m - 6$<br>$u \\perp v \\Leftrightarrow - m - 6 = 0 \\Leftrightarrow m = -6$<br>$u + v = (-4;-9;-1)$<br>$|u + v|^2 = (-4)^2 + (-9)^2 + (-1)^2 = 98$",
+  "explain": "$\\langle u, v\\rangle = (2)m + m(-3) + (-3)(2) = (-1)m + (-3)(2) = 0$<br>$(-1)m = -(-3)(2) \\Rightarrow m = \\dfrac{- (-3)(2)}{-1} = -6$<br>$u + v = ((2) + (-6);\\ (-6) + (-3);\\ (-3) + (2)) = (-4;-9;-1)$<br>$|u + v|^2 = (-4)^2 + (-9)^2 + (-1)^2 = 16 + 81 + 1 = 98$",
   "note": "$u \\perp v \\Leftrightarrow \\langle u, v\\rangle = 0$; khi đó $|u + v|^2 = |u|^2 + |v|^2$.",
   "topic": "vt",
   "type": "mcq",
@@ -39,7 +39,7 @@ window.PRACTICE_BANK = [
    "$7$."
   ],
   "answer": 0,
-  "explain": "$\\langle u, v\\rangle = m^{2} - 4 = \\left(m - 2\\right) \\left(m + 2\\right)$<br>$\\langle u, v\\rangle > 0 \\Leftrightarrow m < -2 \\text{ hoặc } m > 2$<br>Các số nguyên thuộc $[-5;5]$ thỏa mãn: $6$ giá trị",
+  "explain": "$\\langle u,v\\rangle=(m)(m)+(0)(m)+(1)(-4)=m^{2} - 4=\\left(m - 2\\right) \\left(m + 2\\right)$<br>$\\langle u, v\\rangle > 0 \\Leftrightarrow m < -2 \\text{ hoặc } m > 2$<br>Giao điều kiện với các số nguyên $m\\in[-5;5]$ là $\\{-5, -4, -3, 3, 4, 5\\}$; có $6$ giá trị",
   "note": "Góc nhọn $\\Leftrightarrow \\langle u, v\\rangle > 0$, góc tù $\\Leftrightarrow \\langle u, v\\rangle < 0$; các giá trị làm tích vô hướng bằng 0 (góc vuông) bị loại.",
   "topic": "vt",
   "type": "mcq",
@@ -54,7 +54,7 @@ window.PRACTICE_BANK = [
    "$7$."
   ],
   "answer": 0,
-  "explain": "$\\langle u, v\\rangle = m^{2} - m - 12 = \\left(m - 4\\right) \\left(m + 3\\right)$<br>$\\langle u, v\\rangle < 0 \\Leftrightarrow -3 < m < 4$<br>Các số nguyên thuộc $[-5;5]$ thỏa mãn: $6$ giá trị",
+  "explain": "$\\langle u,v\\rangle=(m)(m)+(-1)(m)+(1)(-12)=m^{2} - m - 12=\\left(m - 4\\right) \\left(m + 3\\right)$<br>$\\langle u, v\\rangle < 0 \\Leftrightarrow -3 < m < 4$<br>Giao điều kiện với các số nguyên $m\\in[-5;5]$ là $\\{-2, -1, 0, 1, 2, 3\\}$; có $6$ giá trị",
   "note": "Góc nhọn $\\Leftrightarrow \\langle u, v\\rangle > 0$, góc tù $\\Leftrightarrow \\langle u, v\\rangle < 0$; các giá trị làm tích vô hướng bằng 0 (góc vuông) bị loại.",
   "topic": "vt",
   "type": "mcq",
@@ -69,7 +69,7 @@ window.PRACTICE_BANK = [
    "$22$."
   ],
   "answer": 0,
-  "explain": "$\\langle u, v\\rangle = (-1)\\cdot m + m\\cdot(-1) + (2)\\cdot(4) = 8 - 2 m$<br>$u \\perp v \\Leftrightarrow 8 - 2 m = 0 \\Leftrightarrow m = 4$<br>$u + v = (3;3;6)$<br>$|u + v|^2 = (3)^2 + (3)^2 + (6)^2 = 54$",
+  "explain": "$\\langle u, v\\rangle = (-1)m + m(-1) + (2)(4) = (-2)m + (2)(4) = 0$<br>$(-2)m = -(2)(4) \\Rightarrow m = \\dfrac{- (2)(4)}{-2} = 4$<br>$u + v = ((-1) + (4);\\ (4) + (-1);\\ (2) + (4)) = (3;3;6)$<br>$|u + v|^2 = (3)^2 + (3)^2 + (6)^2 = 9 + 9 + 36 = 54$",
   "note": "$u \\perp v \\Leftrightarrow \\langle u, v\\rangle = 0$; khi đó $|u + v|^2 = |u|^2 + |v|^2$.",
   "topic": "vt",
   "type": "mcq",
@@ -99,7 +99,7 @@ window.PRACTICE_BANK = [
    "$7$."
   ],
   "answer": 0,
-  "explain": "$\\langle u, v\\rangle = m^{2} + 4 m = m \\left(m + 4\\right)$<br>$\\langle u, v\\rangle > 0 \\Leftrightarrow m < -4 \\text{ hoặc } m > 0$<br>Các số nguyên thuộc $[-5;5]$ thỏa mãn: $6$ giá trị",
+  "explain": "$\\langle u,v\\rangle=(m)(m)+(4)(m)+(1)(0)=m^{2} + 4 m=m \\left(m + 4\\right)$<br>$\\langle u, v\\rangle > 0 \\Leftrightarrow m < -4 \\text{ hoặc } m > 0$<br>Giao điều kiện với các số nguyên $m\\in[-5;5]$ là $\\{-5, 1, 2, 3, 4, 5\\}$; có $6$ giá trị",
   "note": "Góc nhọn $\\Leftrightarrow \\langle u, v\\rangle > 0$, góc tù $\\Leftrightarrow \\langle u, v\\rangle < 0$; các giá trị làm tích vô hướng bằng 0 (góc vuông) bị loại.",
   "topic": "vt",
   "type": "mcq",
@@ -114,7 +114,7 @@ window.PRACTICE_BANK = [
    "$4$."
   ],
   "answer": 0,
-  "explain": "$\\langle u, v\\rangle = m^{2} - 4 m = m \\left(m - 4\\right)$<br>$\\langle u, v\\rangle < 0 \\Leftrightarrow 0 < m < 4$<br>Các số nguyên thuộc $[-5;5]$ thỏa mãn: $3$ giá trị",
+  "explain": "$\\langle u,v\\rangle=(m)(m)+(-4)(m)+(1)(0)=m^{2} - 4 m=m \\left(m - 4\\right)$<br>$\\langle u, v\\rangle < 0 \\Leftrightarrow 0 < m < 4$<br>Giao điều kiện với các số nguyên $m\\in[-5;5]$ là $\\{1, 2, 3\\}$; có $3$ giá trị",
   "note": "Góc nhọn $\\Leftrightarrow \\langle u, v\\rangle > 0$, góc tù $\\Leftrightarrow \\langle u, v\\rangle < 0$; các giá trị làm tích vô hướng bằng 0 (góc vuông) bị loại.",
   "topic": "vt",
   "type": "mcq",
@@ -129,7 +129,7 @@ window.PRACTICE_BANK = [
    "$21$."
   ],
   "answer": 0,
-  "explain": "$\\langle u, v\\rangle = (-3)\\cdot m + m\\cdot(2) + (-2)\\cdot(-2) = 4 - m$<br>$u \\perp v \\Leftrightarrow 4 - m = 0 \\Leftrightarrow m = 4$<br>$u + v = (1;6;-4)$<br>$|u + v|^2 = (1)^2 + (6)^2 + (-4)^2 = 53$",
+  "explain": "$\\langle u, v\\rangle = (-3)m + m(2) + (-2)(-2) = (-1)m + (-2)(-2) = 0$<br>$(-1)m = -(-2)(-2) \\Rightarrow m = \\dfrac{- (-2)(-2)}{-1} = 4$<br>$u + v = ((-3) + (4);\\ (4) + (2);\\ (-2) + (-2)) = (1;6;-4)$<br>$|u + v|^2 = (1)^2 + (6)^2 + (-4)^2 = 1 + 36 + 16 = 53$",
   "note": "$u \\perp v \\Leftrightarrow \\langle u, v\\rangle = 0$; khi đó $|u + v|^2 = |u|^2 + |v|^2$.",
   "topic": "vt",
   "type": "mcq",
@@ -159,7 +159,7 @@ window.PRACTICE_BANK = [
    "$4$."
   ],
   "answer": 0,
-  "explain": "$\\langle u, v\\rangle = m^{2} - 3 m - 4 = \\left(m - 4\\right) \\left(m + 1\\right)$<br>$\\langle u, v\\rangle > 0 \\Leftrightarrow m < -1 \\text{ hoặc } m > 4$<br>Các số nguyên thuộc $[-5;5]$ thỏa mãn: $5$ giá trị",
+  "explain": "$\\langle u,v\\rangle=(m)(m)+(-3)(m)+(1)(-4)=m^{2} - 3 m - 4=\\left(m - 4\\right) \\left(m + 1\\right)$<br>$\\langle u, v\\rangle > 0 \\Leftrightarrow m < -1 \\text{ hoặc } m > 4$<br>Giao điều kiện với các số nguyên $m\\in[-5;5]$ là $\\{-5, -4, -3, -2, 5\\}$; có $5$ giá trị",
   "note": "Góc nhọn $\\Leftrightarrow \\langle u, v\\rangle > 0$, góc tù $\\Leftrightarrow \\langle u, v\\rangle < 0$; các giá trị làm tích vô hướng bằng 0 (góc vuông) bị loại.",
   "topic": "vt",
   "type": "mcq",
@@ -174,7 +174,7 @@ window.PRACTICE_BANK = [
    "$3$."
   ],
   "answer": 0,
-  "explain": "$\\langle u, v\\rangle = m^{2} - 5 m + 4 = \\left(m - 4\\right) \\left(m - 1\\right)$<br>$\\langle u, v\\rangle < 0 \\Leftrightarrow 1 < m < 4$<br>Các số nguyên thuộc $[-5;5]$ thỏa mãn: $2$ giá trị",
+  "explain": "$\\langle u,v\\rangle=(m)(m)+(-5)(m)+(1)(4)=m^{2} - 5 m + 4=\\left(m - 4\\right) \\left(m - 1\\right)$<br>$\\langle u, v\\rangle < 0 \\Leftrightarrow 1 < m < 4$<br>Giao điều kiện với các số nguyên $m\\in[-5;5]$ là $\\{2, 3\\}$; có $2$ giá trị",
   "note": "Góc nhọn $\\Leftrightarrow \\langle u, v\\rangle > 0$, góc tù $\\Leftrightarrow \\langle u, v\\rangle < 0$; các giá trị làm tích vô hướng bằng 0 (góc vuông) bị loại.",
   "topic": "vt",
   "type": "mcq",
@@ -189,7 +189,7 @@ window.PRACTICE_BANK = [
    "$30$."
   ],
   "answer": 0,
-  "explain": "$\\langle u, v\\rangle = (4)\\cdot m + m\\cdot(-1) + (3)\\cdot(-2) = 3 m - 6$<br>$u \\perp v \\Leftrightarrow 3 m - 6 = 0 \\Leftrightarrow m = 2$<br>$u + v = (6;1;1)$<br>$|u + v|^2 = (6)^2 + (1)^2 + (1)^2 = 38$",
+  "explain": "$\\langle u, v\\rangle = (4)m + m(-1) + (3)(-2) = (3)m + (3)(-2) = 0$<br>$(3)m = -(3)(-2) \\Rightarrow m = \\dfrac{- (3)(-2)}{3} = 2$<br>$u + v = ((4) + (2);\\ (2) + (-1);\\ (3) + (-2)) = (6;1;1)$<br>$|u + v|^2 = (6)^2 + (1)^2 + (1)^2 = 36 + 1 + 1 = 38$",
   "note": "$u \\perp v \\Leftrightarrow \\langle u, v\\rangle = 0$; khi đó $|u + v|^2 = |u|^2 + |v|^2$.",
   "topic": "vt",
   "type": "mcq",
@@ -219,7 +219,7 @@ window.PRACTICE_BANK = [
    "$7$."
   ],
   "answer": 0,
-  "explain": "$\\langle u, v\\rangle = m^{2} - 4 m = m \\left(m - 4\\right)$<br>$\\langle u, v\\rangle > 0 \\Leftrightarrow m < 0 \\text{ hoặc } m > 4$<br>Các số nguyên thuộc $[-5;5]$ thỏa mãn: $6$ giá trị",
+  "explain": "$\\langle u,v\\rangle=(m)(m)+(-4)(m)+(1)(0)=m^{2} - 4 m=m \\left(m - 4\\right)$<br>$\\langle u, v\\rangle > 0 \\Leftrightarrow m < 0 \\text{ hoặc } m > 4$<br>Giao điều kiện với các số nguyên $m\\in[-5;5]$ là $\\{-5, -4, -3, -2, -1, 5\\}$; có $6$ giá trị",
   "note": "Góc nhọn $\\Leftrightarrow \\langle u, v\\rangle > 0$, góc tù $\\Leftrightarrow \\langle u, v\\rangle < 0$; các giá trị làm tích vô hướng bằng 0 (góc vuông) bị loại.",
   "topic": "vt",
   "type": "mcq",
@@ -234,7 +234,7 @@ window.PRACTICE_BANK = [
    "$2$."
   ],
   "answer": 0,
-  "explain": "$\\langle u, v\\rangle = m^{2} - 6 m + 8 = \\left(m - 4\\right) \\left(m - 2\\right)$<br>$\\langle u, v\\rangle < 0 \\Leftrightarrow 2 < m < 4$<br>Các số nguyên thuộc $[-5;5]$ thỏa mãn: $1$ giá trị",
+  "explain": "$\\langle u,v\\rangle=(m)(m)+(-6)(m)+(1)(8)=m^{2} - 6 m + 8=\\left(m - 4\\right) \\left(m - 2\\right)$<br>$\\langle u, v\\rangle < 0 \\Leftrightarrow 2 < m < 4$<br>Giao điều kiện với các số nguyên $m\\in[-5;5]$ là $\\{3\\}$; có $1$ giá trị",
   "note": "Góc nhọn $\\Leftrightarrow \\langle u, v\\rangle > 0$, góc tù $\\Leftrightarrow \\langle u, v\\rangle < 0$; các giá trị làm tích vô hướng bằng 0 (góc vuông) bị loại.",
   "topic": "vt",
   "type": "mcq",
@@ -249,7 +249,7 @@ window.PRACTICE_BANK = [
    "$18$."
   ],
   "answer": 0,
-  "explain": "$\\langle u, v\\rangle = (-1)\\cdot m + m\\cdot(-2) + (-2)\\cdot(-3) = 6 - 3 m$<br>$u \\perp v \\Leftrightarrow 6 - 3 m = 0 \\Leftrightarrow m = 2$<br>$u + v = (1;0;-5)$<br>$|u + v|^2 = (1)^2 + (0)^2 + (-5)^2 = 26$",
+  "explain": "$\\langle u, v\\rangle = (-1)m + m(-2) + (-2)(-3) = (-3)m + (-2)(-3) = 0$<br>$(-3)m = -(-2)(-3) \\Rightarrow m = \\dfrac{- (-2)(-3)}{-3} = 2$<br>$u + v = ((-1) + (2);\\ (2) + (-2);\\ (-2) + (-3)) = (1;0;-5)$<br>$|u + v|^2 = (1)^2 + (0)^2 + (-5)^2 = 1 + 0 + 25 = 26$",
   "note": "$u \\perp v \\Leftrightarrow \\langle u, v\\rangle = 0$; khi đó $|u + v|^2 = |u|^2 + |v|^2$.",
   "topic": "vt",
   "type": "mcq",
@@ -279,7 +279,7 @@ window.PRACTICE_BANK = [
    "$4$."
   ],
   "answer": 0,
-  "explain": "$\\langle u, v\\rangle = m^{2} + m - 6 = \\left(m - 2\\right) \\left(m + 3\\right)$<br>$\\langle u, v\\rangle > 0 \\Leftrightarrow m < -3 \\text{ hoặc } m > 2$<br>Các số nguyên thuộc $[-5;5]$ thỏa mãn: $5$ giá trị",
+  "explain": "$\\langle u,v\\rangle=(m)(m)+(1)(m)+(1)(-6)=m^{2} + m - 6=\\left(m - 2\\right) \\left(m + 3\\right)$<br>$\\langle u, v\\rangle > 0 \\Leftrightarrow m < -3 \\text{ hoặc } m > 2$<br>Giao điều kiện với các số nguyên $m\\in[-5;5]$ là $\\{-5, -4, 3, 4, 5\\}$; có $5$ giá trị",
   "note": "Góc nhọn $\\Leftrightarrow \\langle u, v\\rangle > 0$, góc tù $\\Leftrightarrow \\langle u, v\\rangle < 0$; các giá trị làm tích vô hướng bằng 0 (góc vuông) bị loại.",
   "topic": "vt",
   "type": "mcq",
@@ -294,7 +294,7 @@ window.PRACTICE_BANK = [
    "$5$."
   ],
   "answer": 0,
-  "explain": "$\\langle u, v\\rangle = m^{2} - m - 6 = \\left(m - 3\\right) \\left(m + 2\\right)$<br>$\\langle u, v\\rangle < 0 \\Leftrightarrow -2 < m < 3$<br>Các số nguyên thuộc $[-5;5]$ thỏa mãn: $4$ giá trị",
+  "explain": "$\\langle u,v\\rangle=(m)(m)+(-1)(m)+(1)(-6)=m^{2} - m - 6=\\left(m - 3\\right) \\left(m + 2\\right)$<br>$\\langle u, v\\rangle < 0 \\Leftrightarrow -2 < m < 3$<br>Giao điều kiện với các số nguyên $m\\in[-5;5]$ là $\\{-1, 0, 1, 2\\}$; có $4$ giá trị",
   "note": "Góc nhọn $\\Leftrightarrow \\langle u, v\\rangle > 0$, góc tù $\\Leftrightarrow \\langle u, v\\rangle < 0$; các giá trị làm tích vô hướng bằng 0 (góc vuông) bị loại.",
   "topic": "vt",
   "type": "mcq",
@@ -309,7 +309,7 @@ window.PRACTICE_BANK = [
    "$15$."
   ],
   "answer": 0,
-  "explain": "$\\langle u, v\\rangle = (-1)\\cdot m + m\\cdot(3) + (-1)\\cdot(-2) = 2 m + 2$<br>$u \\perp v \\Leftrightarrow 2 m + 2 = 0 \\Leftrightarrow m = -1$<br>$u + v = (-2;2;-3)$<br>$|u + v|^2 = (-2)^2 + (2)^2 + (-3)^2 = 17$",
+  "explain": "$\\langle u, v\\rangle = (-1)m + m(3) + (-1)(-2) = (2)m + (-1)(-2) = 0$<br>$(2)m = -(-1)(-2) \\Rightarrow m = \\dfrac{- (-1)(-2)}{2} = -1$<br>$u + v = ((-1) + (-1);\\ (-1) + (3);\\ (-1) + (-2)) = (-2;2;-3)$<br>$|u + v|^2 = (-2)^2 + (2)^2 + (-3)^2 = 4 + 4 + 9 = 17$",
   "note": "$u \\perp v \\Leftrightarrow \\langle u, v\\rangle = 0$; khi đó $|u + v|^2 = |u|^2 + |v|^2$.",
   "topic": "vt",
   "type": "mcq",
@@ -339,7 +339,7 @@ window.PRACTICE_BANK = [
    "$4$."
   ],
   "answer": 0,
-  "explain": "$\\langle u, v\\rangle = m^{2} + 3 m - 4 = \\left(m - 1\\right) \\left(m + 4\\right)$<br>$\\langle u, v\\rangle > 0 \\Leftrightarrow m < -4 \\text{ hoặc } m > 1$<br>Các số nguyên thuộc $[-5;5]$ thỏa mãn: $5$ giá trị",
+  "explain": "$\\langle u,v\\rangle=(m)(m)+(3)(m)+(1)(-4)=m^{2} + 3 m - 4=\\left(m - 1\\right) \\left(m + 4\\right)$<br>$\\langle u, v\\rangle > 0 \\Leftrightarrow m < -4 \\text{ hoặc } m > 1$<br>Giao điều kiện với các số nguyên $m\\in[-5;5]$ là $\\{-5, 2, 3, 4, 5\\}$; có $5$ giá trị",
   "note": "Góc nhọn $\\Leftrightarrow \\langle u, v\\rangle > 0$, góc tù $\\Leftrightarrow \\langle u, v\\rangle < 0$; các giá trị làm tích vô hướng bằng 0 (góc vuông) bị loại.",
   "topic": "vt",
   "type": "mcq",
@@ -354,7 +354,7 @@ window.PRACTICE_BANK = [
    "$2$."
   ],
   "answer": 0,
-  "explain": "$\\langle u, v\\rangle = m^{2} + 6 m + 8 = \\left(m + 2\\right) \\left(m + 4\\right)$<br>$\\langle u, v\\rangle < 0 \\Leftrightarrow -4 < m < -2$<br>Các số nguyên thuộc $[-5;5]$ thỏa mãn: $1$ giá trị",
+  "explain": "$\\langle u,v\\rangle=(m)(m)+(6)(m)+(1)(8)=m^{2} + 6 m + 8=\\left(m + 2\\right) \\left(m + 4\\right)$<br>$\\langle u, v\\rangle < 0 \\Leftrightarrow -4 < m < -2$<br>Giao điều kiện với các số nguyên $m\\in[-5;5]$ là $\\{-3\\}$; có $1$ giá trị",
   "note": "Góc nhọn $\\Leftrightarrow \\langle u, v\\rangle > 0$, góc tù $\\Leftrightarrow \\langle u, v\\rangle < 0$; các giá trị làm tích vô hướng bằng 0 (góc vuông) bị loại.",
   "topic": "vt",
   "type": "mcq",
@@ -369,7 +369,7 @@ window.PRACTICE_BANK = [
    "$23$."
   ],
   "answer": 0,
-  "explain": "$\\langle u, v\\rangle = (2)\\cdot m + m\\cdot(-3) + (-3)\\cdot(1) = - m - 3$<br>$u \\perp v \\Leftrightarrow - m - 3 = 0 \\Leftrightarrow m = -3$<br>$u + v = (-1;-6;-2)$<br>$|u + v|^2 = (-1)^2 + (-6)^2 + (-2)^2 = 41$",
+  "explain": "$\\langle u, v\\rangle = (2)m + m(-3) + (-3)(1) = (-1)m + (-3)(1) = 0$<br>$(-1)m = -(-3)(1) \\Rightarrow m = \\dfrac{- (-3)(1)}{-1} = -3$<br>$u + v = ((2) + (-3);\\ (-3) + (-3);\\ (-3) + (1)) = (-1;-6;-2)$<br>$|u + v|^2 = (-1)^2 + (-6)^2 + (-2)^2 = 1 + 36 + 4 = 41$",
   "note": "$u \\perp v \\Leftrightarrow \\langle u, v\\rangle = 0$; khi đó $|u + v|^2 = |u|^2 + |v|^2$.",
   "topic": "vt",
   "type": "mcq",
@@ -429,7 +429,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{9}{4}$."
   ],
   "answer": 0,
-  "explain": "$\\ln(\\cos u) = \\ln\\left(1 - \\dfrac{u^2}{2} + o(u^2)\\right) = -\\dfrac{u^2}{2} + o(u^2)$<br>$\\lim = \\lim\\limits_{x\\to0}\\dfrac{-(2x)^2/2}{-(3x)^2/2} = \\dfrac{4}{9} = \\dfrac{4}{9}$",
+  "explain": "$\\cos u=1-\\dfrac{u^2}{2}+o(u^2)$; với $w\\to0$, $\\ln(1+w)=w+o(w)$ nên $\\ln(\\cos u)=-\\dfrac{u^2}{2}+o(u^2)$.<br>Đặt $u=Ax$ ở tử và $v=bx$ ở mẫu: $\\dfrac{\\ln(\\cos Ax)}{\\ln(\\cos bx)}=\\dfrac{-A^2x^2/2+o(x^2)}{-b^2x^2/2+o(x^2)}\\to\\dfrac{4}{9}=\\dfrac{4}{9}$.",
   "note": "Khai triển tử và mẫu đến bậc đầu tiên khác 0; dừng sớm sẽ lại gặp dạng $\\dfrac00$.",
   "topic": "gh",
   "type": "mcq",
@@ -444,7 +444,7 @@ window.PRACTICE_BANK = [
    "$0$."
   ],
   "answer": 0,
-  "explain": "Đặt $u = 2x$: $e^{u} - 1 = u + \\dfrac{u^2}{2} + o(u^2),\\quad \\sin u = u + o(u^2)$<br>$e^{u} - 1 - \\sin u = \\dfrac{u^2}{2} + o(u^2) = \\dfrac{4x^2}{2} + o(x^2)$<br>$\\lim = \\dfrac{4}{2} = 2$",
+  "explain": "Đặt $u=Ax$: $e^u-1=u+\\dfrac{u^2}{2}+o(u^2)$ và $\\sin u=u+o(u^2)$.<br>$(e^u-1)-\\sin u=(u+\\dfrac{u^2}{2}+o(u^2))-(u+o(u^2))=\\dfrac{u^2}{2}+o(u^2)=\\dfrac{A^2x^2}{2}+o(x^2)$.<br>Chia cả tử và mẫu cho $x^2$: $\\lim=\\dfrac{A^2/2+o(1)}{1}=\\dfrac{4}{2}=2$.",
   "note": "Khai triển tử và mẫu đến bậc đầu tiên khác 0; dừng sớm sẽ lại gặp dạng $\\dfrac00$.",
   "topic": "gh",
   "type": "mcq",
@@ -459,7 +459,7 @@ window.PRACTICE_BANK = [
    "$1$."
   ],
   "answer": 0,
-  "explain": "Đặt $u = 3x$: $\\dfrac{1}{\\sin^2u} - \\dfrac{1}{u^2} = \\dfrac{u^2 - \\sin^2u}{u^2\\sin^2u}$<br>$\\sin^2u = \\left(u - \\dfrac{u^3}{6} + o(u^3)\\right)^2 = u^2 - \\dfrac{u^4}{3} + o(u^4)$<br>$\\lim = \\lim\\limits_{u\\to0}\\dfrac{u^4/3}{u^4} = \\dfrac{1}{3}$",
+  "explain": "Đặt $u=Ax$. Quy đồng: $\\dfrac1{\\sin^2u}-\\dfrac1{u^2}=\\dfrac{u^2-\\sin^2u}{u^2\\sin^2u}$.<br>$\\sin^2u=(u-\\dfrac{u^3}{6}+o(u^3))^2=u^2-\\dfrac{u^4}{3}+o(u^4)$; do đó $u^2-\\sin^2u=\\dfrac{u^4}{3}+o(u^4)$ và $u^2\\sin^2u=u^4+o(u^4)$.<br>$\\lim_{u\\to0}\\dfrac{u^4/3+o(u^4)}{u^4+o(u^4)}=\\dfrac13=\\dfrac{1}{3}$.",
   "note": "Khai triển tử và mẫu đến bậc đầu tiên khác 0; dừng sớm sẽ lại gặp dạng $\\dfrac00$.",
   "topic": "gh",
   "type": "mcq",
@@ -474,7 +474,7 @@ window.PRACTICE_BANK = [
    "$27$."
   ],
   "answer": 0,
-  "explain": "Đặt $u = 3x$: $\\sin u = u - \\dfrac{u^3}{6} + o(u^3),\\quad \\cos u = 1 - \\dfrac{u^2}{2} + o(u^2)$<br>$\\sin u - u\\cos u = \\left(u - \\dfrac{u^3}{6}\\right) - \\left(u - \\dfrac{u^3}{2}\\right) + o(u^3) = \\dfrac{u^3}{3} + o(u^3)$<br>$\\lim = \\lim\\limits_{x\\to0}\\dfrac{(3x)^3}{3x^3} = \\dfrac{27}{3} = 9$",
+  "explain": "Đặt $u=3x$. Khi đó $\\sin u=u-\\dfrac{u^3}{6}+o(u^3)$ và $u\\cos u=u-\\dfrac{u^3}{2}+o(u^3)$.<br>$\\sin u-u\\cos u=(u-\\dfrac{u^3}{6})-(u-\\dfrac{u^3}{2})+o(u^3)=(\\dfrac12-\\dfrac16)u^3+o(u^3)=\\dfrac{u^3}{3}+o(u^3)$.<br>$\\dfrac{\\sin(Ax)-Ax\\cos(Ax)}{x^3}=\\dfrac{A^3x^3/3+o(x^3)}{x^3}\\to\\dfrac{27}{3}=9$.",
   "note": "Khai triển tử và mẫu đến bậc đầu tiên khác 0; dừng sớm sẽ lại gặp dạng $\\dfrac00$.",
   "topic": "gh",
   "type": "mcq",
@@ -549,7 +549,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{4}{9}$."
   ],
   "answer": 0,
-  "explain": "$\\ln(\\cos u) = \\ln\\left(1 - \\dfrac{u^2}{2} + o(u^2)\\right) = -\\dfrac{u^2}{2} + o(u^2)$<br>$\\lim = \\lim\\limits_{x\\to0}\\dfrac{-(3x)^2/2}{-(2x)^2/2} = \\dfrac{9}{4} = \\dfrac{9}{4}$",
+  "explain": "$\\cos u=1-\\dfrac{u^2}{2}+o(u^2)$; với $w\\to0$, $\\ln(1+w)=w+o(w)$ nên $\\ln(\\cos u)=-\\dfrac{u^2}{2}+o(u^2)$.<br>Đặt $u=Ax$ ở tử và $v=bx$ ở mẫu: $\\dfrac{\\ln(\\cos Ax)}{\\ln(\\cos bx)}=\\dfrac{-A^2x^2/2+o(x^2)}{-b^2x^2/2+o(x^2)}\\to\\dfrac{9}{4}=\\dfrac{9}{4}$.",
   "note": "Khai triển tử và mẫu đến bậc đầu tiên khác 0; dừng sớm sẽ lại gặp dạng $\\dfrac00$.",
   "topic": "gh",
   "type": "mcq",
@@ -564,7 +564,7 @@ window.PRACTICE_BANK = [
    "$0$."
   ],
   "answer": 0,
-  "explain": "Đặt $u = 3x$: $e^{u} - 1 = u + \\dfrac{u^2}{2} + o(u^2),\\quad \\sin u = u + o(u^2)$<br>$e^{u} - 1 - \\sin u = \\dfrac{u^2}{2} + o(u^2) = \\dfrac{9x^2}{2} + o(x^2)$<br>$\\lim = \\dfrac{9}{2} = \\dfrac{9}{2}$",
+  "explain": "Đặt $u=Ax$: $e^u-1=u+\\dfrac{u^2}{2}+o(u^2)$ và $\\sin u=u+o(u^2)$.<br>$(e^u-1)-\\sin u=(u+\\dfrac{u^2}{2}+o(u^2))-(u+o(u^2))=\\dfrac{u^2}{2}+o(u^2)=\\dfrac{A^2x^2}{2}+o(x^2)$.<br>Chia cả tử và mẫu cho $x^2$: $\\lim=\\dfrac{A^2/2+o(1)}{1}=\\dfrac{9}{2}=\\dfrac{9}{2}$.",
   "note": "Khai triển tử và mẫu đến bậc đầu tiên khác 0; dừng sớm sẽ lại gặp dạng $\\dfrac00$.",
   "topic": "gh",
   "type": "mcq",
@@ -579,7 +579,7 @@ window.PRACTICE_BANK = [
    "$1$."
   ],
   "answer": 0,
-  "explain": "Đặt $u = x$: $\\dfrac{1}{\\sin^2u} - \\dfrac{1}{u^2} = \\dfrac{u^2 - \\sin^2u}{u^2\\sin^2u}$<br>$\\sin^2u = \\left(u - \\dfrac{u^3}{6} + o(u^3)\\right)^2 = u^2 - \\dfrac{u^4}{3} + o(u^4)$<br>$\\lim = \\lim\\limits_{u\\to0}\\dfrac{u^4/3}{u^4} = \\dfrac{1}{3}$",
+  "explain": "Đặt $u=Ax$. Quy đồng: $\\dfrac1{\\sin^2u}-\\dfrac1{u^2}=\\dfrac{u^2-\\sin^2u}{u^2\\sin^2u}$.<br>$\\sin^2u=(u-\\dfrac{u^3}{6}+o(u^3))^2=u^2-\\dfrac{u^4}{3}+o(u^4)$; do đó $u^2-\\sin^2u=\\dfrac{u^4}{3}+o(u^4)$ và $u^2\\sin^2u=u^4+o(u^4)$.<br>$\\lim_{u\\to0}\\dfrac{u^4/3+o(u^4)}{u^4+o(u^4)}=\\dfrac13=\\dfrac{1}{3}$.",
   "note": "Khai triển tử và mẫu đến bậc đầu tiên khác 0; dừng sớm sẽ lại gặp dạng $\\dfrac00$.",
   "topic": "gh",
   "type": "mcq",
@@ -594,7 +594,7 @@ window.PRACTICE_BANK = [
    "$1$."
   ],
   "answer": 0,
-  "explain": "Đặt $u = x$: $\\sin u = u - \\dfrac{u^3}{6} + o(u^3),\\quad \\cos u = 1 - \\dfrac{u^2}{2} + o(u^2)$<br>$\\sin u - u\\cos u = \\left(u - \\dfrac{u^3}{6}\\right) - \\left(u - \\dfrac{u^3}{2}\\right) + o(u^3) = \\dfrac{u^3}{3} + o(u^3)$<br>$\\lim = \\lim\\limits_{x\\to0}\\dfrac{(x)^3}{3x^3} = \\dfrac{1}{3} = \\dfrac{1}{3}$",
+  "explain": "Đặt $u=x$. Khi đó $\\sin u=u-\\dfrac{u^3}{6}+o(u^3)$ và $u\\cos u=u-\\dfrac{u^3}{2}+o(u^3)$.<br>$\\sin u-u\\cos u=(u-\\dfrac{u^3}{6})-(u-\\dfrac{u^3}{2})+o(u^3)=(\\dfrac12-\\dfrac16)u^3+o(u^3)=\\dfrac{u^3}{3}+o(u^3)$.<br>$\\dfrac{\\sin(Ax)-Ax\\cos(Ax)}{x^3}=\\dfrac{A^3x^3/3+o(x^3)}{x^3}\\to\\dfrac{1}{3}=\\dfrac{1}{3}$.",
   "note": "Khai triển tử và mẫu đến bậc đầu tiên khác 0; dừng sớm sẽ lại gặp dạng $\\dfrac00$.",
   "topic": "gh",
   "type": "mcq",
@@ -669,7 +669,7 @@ window.PRACTICE_BANK = [
    "$4$."
   ],
   "answer": 0,
-  "explain": "$\\ln(\\cos u) = \\ln\\left(1 - \\dfrac{u^2}{2} + o(u^2)\\right) = -\\dfrac{u^2}{2} + o(u^2)$<br>$\\lim = \\lim\\limits_{x\\to0}\\dfrac{-(x)^2/2}{-(2x)^2/2} = \\dfrac{1}{4} = \\dfrac{1}{4}$",
+  "explain": "$\\cos u=1-\\dfrac{u^2}{2}+o(u^2)$; với $w\\to0$, $\\ln(1+w)=w+o(w)$ nên $\\ln(\\cos u)=-\\dfrac{u^2}{2}+o(u^2)$.<br>Đặt $u=Ax$ ở tử và $v=bx$ ở mẫu: $\\dfrac{\\ln(\\cos Ax)}{\\ln(\\cos bx)}=\\dfrac{-A^2x^2/2+o(x^2)}{-b^2x^2/2+o(x^2)}\\to\\dfrac{1}{4}=\\dfrac{1}{4}$.",
   "note": "Khai triển tử và mẫu đến bậc đầu tiên khác 0; dừng sớm sẽ lại gặp dạng $\\dfrac00$.",
   "topic": "gh",
   "type": "mcq",
@@ -684,7 +684,7 @@ window.PRACTICE_BANK = [
    "$- \\dfrac{1}{2}$."
   ],
   "answer": 0,
-  "explain": "Đặt $u = x$: $e^{u} - 1 = u + \\dfrac{u^2}{2} + o(u^2),\\quad \\sin u = u + o(u^2)$<br>$e^{u} - 1 - \\sin u = \\dfrac{u^2}{2} + o(u^2) = \\dfrac{1x^2}{2} + o(x^2)$<br>$\\lim = \\dfrac{1}{2} = \\dfrac{1}{2}$",
+  "explain": "Đặt $u=Ax$: $e^u-1=u+\\dfrac{u^2}{2}+o(u^2)$ và $\\sin u=u+o(u^2)$.<br>$(e^u-1)-\\sin u=(u+\\dfrac{u^2}{2}+o(u^2))-(u+o(u^2))=\\dfrac{u^2}{2}+o(u^2)=\\dfrac{A^2x^2}{2}+o(x^2)$.<br>Chia cả tử và mẫu cho $x^2$: $\\lim=\\dfrac{A^2/2+o(1)}{1}=\\dfrac{1}{2}=\\dfrac{1}{2}$.",
   "note": "Khai triển tử và mẫu đến bậc đầu tiên khác 0; dừng sớm sẽ lại gặp dạng $\\dfrac00$.",
   "topic": "gh",
   "type": "mcq",
@@ -699,7 +699,7 @@ window.PRACTICE_BANK = [
    "$- \\dfrac{601}{120}$."
   ],
   "answer": 0,
-  "explain": "$e^{- 3 x^{2}} = 1 - 3x^{2} + \\dfrac{9}{2}x^{4} + o(x^{5})$<br>$\\sin{\\left(x \\right)} = x - \\dfrac{1}{6}x^{3} + \\dfrac{1}{120}x^{5} + o(x^{5})$<br>Nhân lại, gom theo bậc: $f(x) = x - \\dfrac{19}{6}x^{3} + \\dfrac{601}{120}x^{5} + o(x^{5})$<br>Hệ số của $x^{5}$: $\\dfrac{601}{120}$",
+  "explain": "$e^{- 3 x^{2}} = 1 - 3x^{2} + \\dfrac{9}{2}x^{4} + o(x^{5})$<br>$\\sin{\\left(x \\right)} = x - \\dfrac{1}{6}x^{3} + \\dfrac{1}{120}x^{5} + o(x^{5})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 5: $f(x)=x - \\dfrac{19}{6}x^{3} + \\dfrac{601}{120}x^{5}+o(x^{5})$.<br>Đọc hệ số của $x^{5}$ từ tổng các tích cùng bậc vừa thu được: $\\dfrac{601}{120}$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -714,7 +714,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{11}{6}$."
   ],
   "answer": 0,
-  "explain": "$e^{x} = 1 + x + \\dfrac{1}{2}x^{2} + \\dfrac{1}{6}x^{3} + o(x^{3})$<br>$\\cos{\\left(2 x \\right)} = 1 - 2x^{2} + o(x^{3})$<br>Nhân lại, gom theo bậc: $f(x) = 1 + x - \\dfrac{3}{2}x^{2} - \\dfrac{11}{6}x^{3} + o(x^{3})$<br>Hệ số của $x^{3}$: $- \\dfrac{11}{6}$",
+  "explain": "$e^{x} = 1 + x + \\dfrac{1}{2}x^{2} + \\dfrac{1}{6}x^{3} + o(x^{3})$<br>$\\cos{\\left(2 x \\right)} = 1 - 2x^{2} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=1 + x - \\dfrac{3}{2}x^{2} - \\dfrac{11}{6}x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $- \\dfrac{11}{6}$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -743,7 +743,7 @@ window.PRACTICE_BANK = [
    "$-31$."
   ],
   "answer": 0,
-  "explain": "$\\dfrac{1}{1 - 2 x} = 1 + 2x + 4x^{2} + 8x^{3} + 16x^{4} + o(x^{4})$<br>$\\dfrac{1}{1 - x} = 1 + x + x^{2} + x^{3} + x^{4} + o(x^{4})$<br>Nhân lại, gom theo bậc: $f(x) = 1 + 3x + 7x^{2} + 15x^{3} + 31x^{4} + o(x^{4})$<br>Hệ số của $x^{4}$: $31$",
+  "explain": "$\\dfrac{1}{1 - 2 x} = 1 + 2x + 4x^{2} + 8x^{3} + 16x^{4} + o(x^{4})$<br>$\\dfrac{1}{1 - x} = 1 + x + x^{2} + x^{3} + x^{4} + o(x^{4})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 4: $f(x)=1 + 3x + 7x^{2} + 15x^{3} + 31x^{4}+o(x^{4})$.<br>Đọc hệ số của $x^{4}$ từ tổng các tích cùng bậc vừa thu được: $31$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -758,7 +758,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{1}{3}$."
   ],
   "answer": 0,
-  "explain": "$e^{x} = 1 + x + \\dfrac{1}{2}x^{2} + \\dfrac{1}{6}x^{3} + o(x^{3})$<br>$\\cos{\\left(x \\right)} = 1 - \\dfrac{1}{2}x^{2} + o(x^{3})$<br>Nhân lại, gom theo bậc: $f(x) = 1 + x - \\dfrac{1}{3}x^{3} + o(x^{3})$<br>Hệ số của $x^{3}$: $- \\dfrac{1}{3}$",
+  "explain": "$e^{x} = 1 + x + \\dfrac{1}{2}x^{2} + \\dfrac{1}{6}x^{3} + o(x^{3})$<br>$\\cos{\\left(x \\right)} = 1 - \\dfrac{1}{2}x^{2} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=1 + x - \\dfrac{1}{3}x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $- \\dfrac{1}{3}$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -773,7 +773,7 @@ window.PRACTICE_BANK = [
    "$-121$."
   ],
   "answer": 0,
-  "explain": "$\\dfrac{1}{1 - 3 x} = 1 + 3x + 9x^{2} + 27x^{3} + 81x^{4} + o(x^{4})$<br>$\\dfrac{1}{1 - x} = 1 + x + x^{2} + x^{3} + x^{4} + o(x^{4})$<br>Nhân lại, gom theo bậc: $f(x) = 1 + 4x + 13x^{2} + 40x^{3} + 121x^{4} + o(x^{4})$<br>Hệ số của $x^{4}$: $121$",
+  "explain": "$\\dfrac{1}{1 - 3 x} = 1 + 3x + 9x^{2} + 27x^{3} + 81x^{4} + o(x^{4})$<br>$\\dfrac{1}{1 - x} = 1 + x + x^{2} + x^{3} + x^{4} + o(x^{4})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 4: $f(x)=1 + 4x + 13x^{2} + 40x^{3} + 121x^{4}+o(x^{4})$.<br>Đọc hệ số của $x^{4}$ từ tổng các tích cùng bậc vừa thu được: $121$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -788,7 +788,7 @@ window.PRACTICE_BANK = [
    "$-20$."
   ],
   "answer": 0,
-  "explain": "$\\dfrac{1}{- 3 x^{2} - 2 x + 1} = 1 + 2x + 7x^{2} + 20x^{3} + 61x^{4} + o(x^{4})$<br>Nhân lại, gom theo bậc: $f(x) = x + 2x^{2} + 7x^{3} + 20x^{4} + o(x^{4})$<br>Hệ số của $x^{4}$: $20$",
+  "explain": "$\\dfrac{1}{- 3 x^{2} - 2 x + 1} = 1 + 2x + 7x^{2} + 20x^{3} + 61x^{4} + o(x^{4})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 4: $f(x)=x + 2x^{2} + 7x^{3} + 20x^{4}+o(x^{4})$.<br>Đọc hệ số của $x^{4}$ từ tổng các tích cùng bậc vừa thu được: $20$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -803,7 +803,7 @@ window.PRACTICE_BANK = [
    "$-1$."
   ],
   "answer": 0,
-  "explain": "$x + 1 = 1 + x + o(x^{3})$<br>$\\sqrt{2 x + 1} = 1 + x - \\dfrac{1}{2}x^{2} + \\dfrac{1}{2}x^{3} + o(x^{3})$<br>Nhân lại, gom theo bậc: $f(x) = 1 + 2x + \\dfrac{1}{2}x^{2} + o(x^{3})$<br>Hệ số của $x^{3}$: $0$",
+  "explain": "$x + 1 = 1 + x + o(x^{3})$<br>$\\sqrt{2 x + 1} = 1 + x - \\dfrac{1}{2}x^{2} + \\dfrac{1}{2}x^{3} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=1 + 2x + \\dfrac{1}{2}x^{2}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $0$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -818,7 +818,7 @@ window.PRACTICE_BANK = [
    "$6$."
   ],
   "answer": 0,
-  "explain": "$\\sin{\\left(3 x \\right)} = 3x - \\dfrac{9}{2}x^{3} + o(x^{3})$<br>$\\cos{\\left(x \\right)} = 1 - \\dfrac{1}{2}x^{2} + o(x^{3})$<br>Nhân lại, gom theo bậc: $f(x) = 3x - 6x^{3} + o(x^{3})$<br>Hệ số của $x^{3}$: $-6$",
+  "explain": "$\\sin{\\left(3 x \\right)} = 3x - \\dfrac{9}{2}x^{3} + o(x^{3})$<br>$\\cos{\\left(x \\right)} = 1 - \\dfrac{1}{2}x^{2} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=3x - 6x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $-6$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -833,7 +833,7 @@ window.PRACTICE_BANK = [
    "$-5$."
   ],
   "answer": 0,
-  "explain": "$\\dfrac{1}{- 2 x^{2} - x + 1} = 1 + x + 3x^{2} + 5x^{3} + 11x^{4} + o(x^{4})$<br>Nhân lại, gom theo bậc: $f(x) = x + x^{2} + 3x^{3} + 5x^{4} + o(x^{4})$<br>Hệ số của $x^{4}$: $5$",
+  "explain": "$\\dfrac{1}{- 2 x^{2} - x + 1} = 1 + x + 3x^{2} + 5x^{3} + 11x^{4} + o(x^{4})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 4: $f(x)=x + x^{2} + 3x^{3} + 5x^{4}+o(x^{4})$.<br>Đọc hệ số của $x^{4}$ từ tổng các tích cùng bậc vừa thu được: $5$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -848,7 +848,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{3}{2}$."
   ],
   "answer": 0,
-  "explain": "$\\dfrac{1}{x + 1} = 1 - x + x^{2} - x^{3} + o(x^{3})$<br>$\\cos{\\left(2 x \\right)} = 1 - 2x^{2} + o(x^{3})$<br>Nhân lại, gom theo bậc: $f(x) = 1 - x - x^{2} + x^{3} + o(x^{3})$<br>Hệ số của $x^{3}$: $1$",
+  "explain": "$\\dfrac{1}{x + 1} = 1 - x + x^{2} - x^{3} + o(x^{3})$<br>$\\cos{\\left(2 x \\right)} = 1 - 2x^{2} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=1 - x - x^{2} + x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $1$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -877,7 +877,7 @@ window.PRACTICE_BANK = [
    "$- \\dfrac{1}{3}$."
   ],
   "answer": 0,
-  "explain": "$e^{2 x} = 1 + 2x + 2x^{2} + \\dfrac{4}{3}x^{3} + o(x^{3})$<br>$\\cos{\\left(x \\right)} = 1 - \\dfrac{1}{2}x^{2} + o(x^{3})$<br>Nhân lại, gom theo bậc: $f(x) = 1 + 2x + \\dfrac{3}{2}x^{2} + \\dfrac{1}{3}x^{3} + o(x^{3})$<br>Hệ số của $x^{3}$: $\\dfrac{1}{3}$",
+  "explain": "$e^{2 x} = 1 + 2x + 2x^{2} + \\dfrac{4}{3}x^{3} + o(x^{3})$<br>$\\cos{\\left(x \\right)} = 1 - \\dfrac{1}{2}x^{2} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=1 + 2x + \\dfrac{3}{2}x^{2} + \\dfrac{1}{3}x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $\\dfrac{1}{3}$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -892,7 +892,7 @@ window.PRACTICE_BANK = [
    "$- \\dfrac{8}{3}$."
   ],
   "answer": 0,
-  "explain": "$\\dfrac{1}{1 - x} = 1 + x + x^{2} + x^{3} + o(x^{3})$<br>$e^{x} = 1 + x + \\dfrac{1}{2}x^{2} + \\dfrac{1}{6}x^{3} + o(x^{3})$<br>Nhân lại, gom theo bậc: $f(x) = 1 + 2x + \\dfrac{5}{2}x^{2} + \\dfrac{8}{3}x^{3} + o(x^{3})$<br>Hệ số của $x^{3}$: $\\dfrac{8}{3}$",
+  "explain": "$\\dfrac{1}{1 - x} = 1 + x + x^{2} + x^{3} + o(x^{3})$<br>$e^{x} = 1 + x + \\dfrac{1}{2}x^{2} + \\dfrac{1}{6}x^{3} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=1 + 2x + \\dfrac{5}{2}x^{2} + \\dfrac{8}{3}x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $\\dfrac{8}{3}$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -907,7 +907,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{3}{2}$."
   ],
   "answer": 0,
-  "explain": "$e^{3 x} = 1 + 3x + \\dfrac{9}{2}x^{2} + \\dfrac{9}{2}x^{3} + o(x^{3})$<br>$\\cos{\\left(2 x \\right)} = 1 - 2x^{2} + o(x^{3})$<br>Nhân lại, gom theo bậc: $f(x) = 1 + 3x + \\dfrac{5}{2}x^{2} - \\dfrac{3}{2}x^{3} + o(x^{3})$<br>Hệ số của $x^{3}$: $- \\dfrac{3}{2}$",
+  "explain": "$e^{3 x} = 1 + 3x + \\dfrac{9}{2}x^{2} + \\dfrac{9}{2}x^{3} + o(x^{3})$<br>$\\cos{\\left(2 x \\right)} = 1 - 2x^{2} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=1 + 3x + \\dfrac{5}{2}x^{2} - \\dfrac{3}{2}x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $- \\dfrac{3}{2}$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -922,7 +922,7 @@ window.PRACTICE_BANK = [
    "$-13$."
   ],
   "answer": 0,
-  "explain": "$\\dfrac{1}{1 - x} = 1 + x + x^{2} + x^{3} + o(x^{3})$<br>$e^{3 x} = 1 + 3x + \\dfrac{9}{2}x^{2} + \\dfrac{9}{2}x^{3} + o(x^{3})$<br>Nhân lại, gom theo bậc: $f(x) = 1 + 4x + \\dfrac{17}{2}x^{2} + 13x^{3} + o(x^{3})$<br>Hệ số của $x^{3}$: $13$",
+  "explain": "$\\dfrac{1}{1 - x} = 1 + x + x^{2} + x^{3} + o(x^{3})$<br>$e^{3 x} = 1 + 3x + \\dfrac{9}{2}x^{2} + \\dfrac{9}{2}x^{3} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=1 + 4x + \\dfrac{17}{2}x^{2} + 13x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $13$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -937,7 +937,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{7}{3}$."
   ],
   "answer": 0,
-  "explain": "$\\sin{\\left(2 x \\right)} = 2x - \\dfrac{4}{3}x^{3} + o(x^{3})$<br>$\\cos{\\left(x \\right)} = 1 - \\dfrac{1}{2}x^{2} + o(x^{3})$<br>Nhân lại, gom theo bậc: $f(x) = 2x - \\dfrac{7}{3}x^{3} + o(x^{3})$<br>Hệ số của $x^{3}$: $- \\dfrac{7}{3}$",
+  "explain": "$\\sin{\\left(2 x \\right)} = 2x - \\dfrac{4}{3}x^{3} + o(x^{3})$<br>$\\cos{\\left(x \\right)} = 1 - \\dfrac{1}{2}x^{2} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=2x - \\dfrac{7}{3}x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $- \\dfrac{7}{3}$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -952,7 +952,7 @@ window.PRACTICE_BANK = [
    "$-6$."
   ],
   "answer": 0,
-  "explain": "$e^{x} = 1 + x + \\dfrac{1}{2}x^{2} + \\dfrac{1}{6}x^{3} + o(x^{3})$<br>$\\ln\\left(3 x + 1\\right) = 3x - \\dfrac{9}{2}x^{2} + 9x^{3} + o(x^{3})$<br>Nhân lại, gom theo bậc: $f(x) = 3x - \\dfrac{3}{2}x^{2} + 6x^{3} + o(x^{3})$<br>Hệ số của $x^{3}$: $6$",
+  "explain": "$e^{x} = 1 + x + \\dfrac{1}{2}x^{2} + \\dfrac{1}{6}x^{3} + o(x^{3})$<br>$\\ln\\left(3 x + 1\\right) = 3x - \\dfrac{9}{2}x^{2} + 9x^{3} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=3x - \\dfrac{3}{2}x^{2} + 6x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $6$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -967,7 +967,7 @@ window.PRACTICE_BANK = [
    "$- \\dfrac{2}{3}$."
   ],
   "answer": 0,
-  "explain": "Nhân lại, gom theo bậc: $f(x) = 2x + \\dfrac{2}{3}x^{3} + o(x^{3})$<br>Hệ số của $x^{3}$: $\\dfrac{2}{3}$",
+  "explain": "Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=2x + \\dfrac{2}{3}x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $\\dfrac{2}{3}$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -982,7 +982,7 @@ window.PRACTICE_BANK = [
    "$-3$."
   ],
   "answer": 0,
-  "explain": "Nhân lại, gom theo bậc: $f(x) = 3x - \\dfrac{3}{2}x^{2} + 3x^{3} + o(x^{3})$<br>Hệ số của $x^{3}$: $3$",
+  "explain": "Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=3x - \\dfrac{3}{2}x^{2} + 3x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $3$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -997,7 +997,7 @@ window.PRACTICE_BANK = [
    "$0$."
   ],
   "answer": 0,
-  "explain": "$\\dfrac{1}{x + 1} = 1 - x + x^{2} - x^{3} + o(x^{3})$<br>$\\cos{\\left(x \\right)} = 1 - \\dfrac{1}{2}x^{2} + o(x^{3})$<br>Nhân lại, gom theo bậc: $f(x) = 1 - x + \\dfrac{1}{2}x^{2} - \\dfrac{1}{2}x^{3} + o(x^{3})$<br>Hệ số của $x^{3}$: $- \\dfrac{1}{2}$",
+  "explain": "$\\dfrac{1}{x + 1} = 1 - x + x^{2} - x^{3} + o(x^{3})$<br>$\\cos{\\left(x \\right)} = 1 - \\dfrac{1}{2}x^{2} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=1 - x + \\dfrac{1}{2}x^{2} - \\dfrac{1}{2}x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $- \\dfrac{1}{2}$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -1012,7 +1012,7 @@ window.PRACTICE_BANK = [
    "$- \\dfrac{281}{120}$."
   ],
   "answer": 0,
-  "explain": "$e^{- 2 x^{2}} = 1 - 2x^{2} + 2x^{4} + o(x^{5})$<br>$\\sin{\\left(x \\right)} = x - \\dfrac{1}{6}x^{3} + \\dfrac{1}{120}x^{5} + o(x^{5})$<br>Nhân lại, gom theo bậc: $f(x) = x - \\dfrac{13}{6}x^{3} + \\dfrac{281}{120}x^{5} + o(x^{5})$<br>Hệ số của $x^{5}$: $\\dfrac{281}{120}$",
+  "explain": "$e^{- 2 x^{2}} = 1 - 2x^{2} + 2x^{4} + o(x^{5})$<br>$\\sin{\\left(x \\right)} = x - \\dfrac{1}{6}x^{3} + \\dfrac{1}{120}x^{5} + o(x^{5})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 5: $f(x)=x - \\dfrac{13}{6}x^{3} + \\dfrac{281}{120}x^{5}+o(x^{5})$.<br>Đọc hệ số của $x^{5}$ từ tổng các tích cùng bậc vừa thu được: $\\dfrac{281}{120}$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -1027,7 +1027,7 @@ window.PRACTICE_BANK = [
    "$-3$."
   ],
   "answer": 0,
-  "explain": "$e^{3 x} = 1 + 3x + \\dfrac{9}{2}x^{2} + \\dfrac{9}{2}x^{3} + o(x^{3})$<br>$\\cos{\\left(x \\right)} = 1 - \\dfrac{1}{2}x^{2} + o(x^{3})$<br>Nhân lại, gom theo bậc: $f(x) = 1 + 3x + 4x^{2} + 3x^{3} + o(x^{3})$<br>Hệ số của $x^{3}$: $3$",
+  "explain": "$e^{3 x} = 1 + 3x + \\dfrac{9}{2}x^{2} + \\dfrac{9}{2}x^{3} + o(x^{3})$<br>$\\cos{\\left(x \\right)} = 1 - \\dfrac{1}{2}x^{2} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=1 + 3x + 4x^{2} + 3x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $3$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -1042,7 +1042,7 @@ window.PRACTICE_BANK = [
    "$- \\dfrac{19}{3}$."
   ],
   "answer": 0,
-  "explain": "$\\dfrac{1}{1 - x} = 1 + x + x^{2} + x^{3} + o(x^{3})$<br>$e^{2 x} = 1 + 2x + 2x^{2} + \\dfrac{4}{3}x^{3} + o(x^{3})$<br>Nhân lại, gom theo bậc: $f(x) = 1 + 3x + 5x^{2} + \\dfrac{19}{3}x^{3} + o(x^{3})$<br>Hệ số của $x^{3}$: $\\dfrac{19}{3}$",
+  "explain": "$\\dfrac{1}{1 - x} = 1 + x + x^{2} + x^{3} + o(x^{3})$<br>$e^{2 x} = 1 + 2x + 2x^{2} + \\dfrac{4}{3}x^{3} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=1 + 3x + 5x^{2} + \\dfrac{19}{3}x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $\\dfrac{19}{3}$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -1057,7 +1057,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{8}{3}$."
   ],
   "answer": 0,
-  "explain": "$e^{2 x} = 1 + 2x + 2x^{2} + \\dfrac{4}{3}x^{3} + o(x^{3})$<br>$\\cos{\\left(2 x \\right)} = 1 - 2x^{2} + o(x^{3})$<br>Nhân lại, gom theo bậc: $f(x) = 1 + 2x - \\dfrac{8}{3}x^{3} + o(x^{3})$<br>Hệ số của $x^{3}$: $- \\dfrac{8}{3}$",
+  "explain": "$e^{2 x} = 1 + 2x + 2x^{2} + \\dfrac{4}{3}x^{3} + o(x^{3})$<br>$\\cos{\\left(2 x \\right)} = 1 - 2x^{2} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=1 + 2x - \\dfrac{8}{3}x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $- \\dfrac{8}{3}$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -1072,7 +1072,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{2}{3}$."
   ],
   "answer": 0,
-  "explain": "$\\sin{\\left(x \\right)} = x - \\dfrac{1}{6}x^{3} + o(x^{3})$<br>$\\cos{\\left(x \\right)} = 1 - \\dfrac{1}{2}x^{2} + o(x^{3})$<br>Nhân lại, gom theo bậc: $f(x) = x - \\dfrac{2}{3}x^{3} + o(x^{3})$<br>Hệ số của $x^{3}$: $- \\dfrac{2}{3}$",
+  "explain": "$\\sin{\\left(x \\right)} = x - \\dfrac{1}{6}x^{3} + o(x^{3})$<br>$\\cos{\\left(x \\right)} = 1 - \\dfrac{1}{2}x^{2} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=x - \\dfrac{2}{3}x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $- \\dfrac{2}{3}$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -1087,7 +1087,7 @@ window.PRACTICE_BANK = [
    "$-51$."
   ],
   "answer": 0,
-  "explain": "$\\dfrac{1}{- 4 x^{2} - 3 x + 1} = 1 + 3x + 13x^{2} + 51x^{3} + 205x^{4} + o(x^{4})$<br>Nhân lại, gom theo bậc: $f(x) = x + 3x^{2} + 13x^{3} + 51x^{4} + o(x^{4})$<br>Hệ số của $x^{4}$: $51$",
+  "explain": "$\\dfrac{1}{- 4 x^{2} - 3 x + 1} = 1 + 3x + 13x^{2} + 51x^{3} + 205x^{4} + o(x^{4})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 4: $f(x)=x + 3x^{2} + 13x^{3} + 51x^{4}+o(x^{4})$.<br>Đọc hệ số của $x^{4}$ từ tổng các tích cùng bậc vừa thu được: $51$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -1102,7 +1102,7 @@ window.PRACTICE_BANK = [
    "$- \\dfrac{1}{3}$."
   ],
   "answer": 0,
-  "explain": "$e^{x} = 1 + x + \\dfrac{1}{2}x^{2} + \\dfrac{1}{6}x^{3} + o(x^{3})$<br>$\\ln\\left(x + 1\\right) = x - \\dfrac{1}{2}x^{2} + \\dfrac{1}{3}x^{3} + o(x^{3})$<br>Nhân lại, gom theo bậc: $f(x) = x + \\dfrac{1}{2}x^{2} + \\dfrac{1}{3}x^{3} + o(x^{3})$<br>Hệ số của $x^{3}$: $\\dfrac{1}{3}$",
+  "explain": "$e^{x} = 1 + x + \\dfrac{1}{2}x^{2} + \\dfrac{1}{6}x^{3} + o(x^{3})$<br>$\\ln\\left(x + 1\\right) = x - \\dfrac{1}{2}x^{2} + \\dfrac{1}{3}x^{3} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=x + \\dfrac{1}{2}x^{2} + \\dfrac{1}{3}x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $\\dfrac{1}{3}$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -1117,7 +1117,7 @@ window.PRACTICE_BANK = [
    "$- \\dfrac{9}{16}$."
   ],
   "answer": 0,
-  "explain": "$x + 1 = 1 + x + o(x^{3})$<br>$\\sqrt{3 x + 1} = 1 + \\dfrac{3}{2}x - \\dfrac{9}{8}x^{2} + \\dfrac{27}{16}x^{3} + o(x^{3})$<br>Nhân lại, gom theo bậc: $f(x) = 1 + \\dfrac{5}{2}x + \\dfrac{3}{8}x^{2} + \\dfrac{9}{16}x^{3} + o(x^{3})$<br>Hệ số của $x^{3}$: $\\dfrac{9}{16}$",
+  "explain": "$x + 1 = 1 + x + o(x^{3})$<br>$\\sqrt{3 x + 1} = 1 + \\dfrac{3}{2}x - \\dfrac{9}{8}x^{2} + \\dfrac{27}{16}x^{3} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=1 + \\dfrac{5}{2}x + \\dfrac{3}{8}x^{2} + \\dfrac{9}{16}x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $\\dfrac{9}{16}$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -1132,7 +1132,7 @@ window.PRACTICE_BANK = [
    "$- \\dfrac{28}{3}$."
   ],
   "answer": 0,
-  "explain": "Nhân lại, gom theo bậc: $f(x) = 4x - 4x^{2} + \\dfrac{28}{3}x^{3} + o(x^{3})$<br>Hệ số của $x^{3}$: $\\dfrac{28}{3}$",
+  "explain": "Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=4x - 4x^{2} + \\dfrac{28}{3}x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $\\dfrac{28}{3}$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -1147,7 +1147,7 @@ window.PRACTICE_BANK = [
    "$- \\dfrac{27}{40}$."
   ],
   "answer": 0,
-  "explain": "$e^{- x^{2}} = 1 - x^{2} + \\dfrac{1}{2}x^{4} + o(x^{5})$<br>$\\sin{\\left(x \\right)} = x - \\dfrac{1}{6}x^{3} + \\dfrac{1}{120}x^{5} + o(x^{5})$<br>Nhân lại, gom theo bậc: $f(x) = x - \\dfrac{7}{6}x^{3} + \\dfrac{27}{40}x^{5} + o(x^{5})$<br>Hệ số của $x^{5}$: $\\dfrac{27}{40}$",
+  "explain": "$e^{- x^{2}} = 1 - x^{2} + \\dfrac{1}{2}x^{4} + o(x^{5})$<br>$\\sin{\\left(x \\right)} = x - \\dfrac{1}{6}x^{3} + \\dfrac{1}{120}x^{5} + o(x^{5})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 5: $f(x)=x - \\dfrac{7}{6}x^{3} + \\dfrac{27}{40}x^{5}+o(x^{5})$.<br>Đọc hệ số của $x^{5}$ từ tổng các tích cùng bậc vừa thu được: $\\dfrac{27}{40}$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -1162,7 +1162,7 @@ window.PRACTICE_BANK = [
    "$4$."
   ],
   "answer": 0,
-  "explain": "$\\dfrac{1}{x + 1} = 1 - x + x^{2} - x^{3} + o(x^{3})$<br>$\\cos{\\left(3 x \\right)} = 1 - \\dfrac{9}{2}x^{2} + o(x^{3})$<br>Nhân lại, gom theo bậc: $f(x) = 1 - x - \\dfrac{7}{2}x^{2} + \\dfrac{7}{2}x^{3} + o(x^{3})$<br>Hệ số của $x^{3}$: $\\dfrac{7}{2}$",
+  "explain": "$\\dfrac{1}{x + 1} = 1 - x + x^{2} - x^{3} + o(x^{3})$<br>$\\cos{\\left(3 x \\right)} = 1 - \\dfrac{9}{2}x^{2} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=1 - x - \\dfrac{7}{2}x^{2} + \\dfrac{7}{2}x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $\\dfrac{7}{2}$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -1177,7 +1177,7 @@ window.PRACTICE_BANK = [
    "$-341$."
   ],
   "answer": 0,
-  "explain": "$\\dfrac{1}{1 - 4 x} = 1 + 4x + 16x^{2} + 64x^{3} + 256x^{4} + o(x^{4})$<br>$\\dfrac{1}{1 - x} = 1 + x + x^{2} + x^{3} + x^{4} + o(x^{4})$<br>Nhân lại, gom theo bậc: $f(x) = 1 + 5x + 21x^{2} + 85x^{3} + 341x^{4} + o(x^{4})$<br>Hệ số của $x^{4}$: $341$",
+  "explain": "$\\dfrac{1}{1 - 4 x} = 1 + 4x + 16x^{2} + 64x^{3} + 256x^{4} + o(x^{4})$<br>$\\dfrac{1}{1 - x} = 1 + x + x^{2} + x^{3} + x^{4} + o(x^{4})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 4: $f(x)=1 + 5x + 21x^{2} + 85x^{3} + 341x^{4}+o(x^{4})$.<br>Đọc hệ số của $x^{4}$ từ tổng các tích cùng bậc vừa thu được: $341$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -1207,7 +1207,7 @@ window.PRACTICE_BANK = [
    "$- \\dfrac{5}{3}$."
   ],
   "answer": 0,
-  "explain": "$e^{x} = 1 + x + \\dfrac{1}{2}x^{2} + \\dfrac{1}{6}x^{3} + o(x^{3})$<br>$\\ln\\left(2 x + 1\\right) = 2x - 2x^{2} + \\dfrac{8}{3}x^{3} + o(x^{3})$<br>Nhân lại, gom theo bậc: $f(x) = 2x + \\dfrac{5}{3}x^{3} + o(x^{3})$<br>Hệ số của $x^{3}$: $\\dfrac{5}{3}$",
+  "explain": "$e^{x} = 1 + x + \\dfrac{1}{2}x^{2} + \\dfrac{1}{6}x^{3} + o(x^{3})$<br>$\\ln\\left(2 x + 1\\right) = 2x - 2x^{2} + \\dfrac{8}{3}x^{3} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=2x + \\dfrac{5}{3}x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $\\dfrac{5}{3}$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -1252,7 +1252,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{1}{16}$."
   ],
   "answer": 0,
-  "explain": "Nhân lại, gom theo bậc: $f(x) = 1 + \\dfrac{3}{2}x + \\dfrac{3}{8}x^{2} - \\dfrac{1}{16}x^{3} + o(x^{3})$<br>Hệ số của $x^{3}$: $- \\dfrac{1}{16}$",
+  "explain": "Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=1 + \\dfrac{3}{2}x + \\dfrac{3}{8}x^{2} - \\dfrac{1}{16}x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $- \\dfrac{1}{16}$.",
   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$.",
   "topic": "dh",
   "type": "mcq",
@@ -1342,7 +1342,7 @@ window.PRACTICE_BANK = [
    "$- 3 \\pi - 2$."
   ],
   "answer": 0,
-  "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^* = x(a\\cos 2x + b\\sin 2x)\\ \\Rightarrow\\ y^{*\\prime\\prime} + 4y^* = -4a\\sin 2x + 4b\\cos 2x$<br>So sánh với vế phải $48\\cos 2x$: $a = 0,\\ b = 12$<br>$y = C_1\\cos 2x + C_2\\sin 2x + 12x\\sin 2x$<br>$y(0) = C_1 = 1;\\quad y'(0) = 2 C_{2} = -4 \\Rightarrow C_2 = -2$<br>$y\\left(\\dfrac{\\pi}{4}\\right) = -2 + 12\\cdot\\dfrac{\\pi}{4} = 3 \\pi - 2$",
+  "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^*=x(a\\cos 2x + b\\sin 2x)$. Tính đạo hàm hai lần và cộng $4y^*$: $y^{*\\prime\\prime}+4y^*=-4a\\sin 2x + 4b\\cos 2x$.<br>Đối chiếu hệ số với vế phải $48\\cos 2x$: hệ số của $\\sin(wx)$ bằng $-2wa=0$ nên $a=0$; hệ số của $\\cos(wx)$ là $2wb=c$, do đó $b=\\dfrac{c}{2w}=12$.<br>$y = C_1\\cos 2x + C_2\\sin 2x + 12x\\sin 2x$<br>$y(0)=C_1=1$. Also $y^\\prime(0)=wC_2=-4$, so $C_2=-2$.<br>At $x_0=\\dfrac{\\pi}{2w}$, $\\cos(wx_0)=0$ and $\\sin(wx_0)=1$. Thus the homogeneous part is $-2$ and the particular part is $12\\cdot\\dfrac{\\pi}{2w}=3 \\pi$; hence $y(x_0)=-2+3 \\pi=3 \\pi - 2$.",
   "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$).",
   "topic": "v2",
   "type": "mcq",
@@ -1372,7 +1372,7 @@ window.PRACTICE_BANK = [
    "$2 - 3 \\pi$."
   ],
   "answer": 0,
-  "explain": "Phương trình đặc trưng: $k^2 + 1 = 0 \\Rightarrow k = \\pm i$ (trùng tần số của vế phải)<br>$y^* = x(a\\cos x + b\\sin x)\\ \\Rightarrow\\ y^{*\\prime\\prime} + y^* = -2a\\sin x + 2b\\cos x$<br>So sánh với vế phải $12\\cos x$: $a = 0,\\ b = 6$<br>$y = C_1\\cos x + C_2\\sin x + 6x\\sin x$<br>$y(0) = C_1 = 3;\\quad y'(0) = C_{2} = 2 \\Rightarrow C_2 = 2$<br>$y\\left(\\dfrac{\\pi}{2}\\right) = 2 + 6\\cdot\\dfrac{\\pi}{2} = 2 + 3 \\pi$",
+  "explain": "Phương trình đặc trưng: $k^2 + 1 = 0 \\Rightarrow k = \\pm i$ (trùng tần số của vế phải)<br>$y^*=x(a\\cos x + b\\sin x)$. Tính đạo hàm hai lần và cộng $y^*$: $y^{*\\prime\\prime}+y^*=-2a\\sin x + 2b\\cos x$.<br>Đối chiếu hệ số với vế phải $12\\cos x$: hệ số của $\\sin(wx)$ bằng $-2wa=0$ nên $a=0$; hệ số của $\\cos(wx)$ là $2wb=c$, do đó $b=\\dfrac{c}{2w}=6$.<br>$y = C_1\\cos x + C_2\\sin x + 6x\\sin x$<br>$y(0)=C_1=3$. Also $y^\\prime(0)=wC_2=2$, so $C_2=2$.<br>At $x_0=\\dfrac{\\pi}{2w}$, $\\cos(wx_0)=0$ and $\\sin(wx_0)=1$. Thus the homogeneous part is $2$ and the particular part is $6\\cdot\\dfrac{\\pi}{2w}=3 \\pi$; hence $y(x_0)=2+3 \\pi=2 + 3 \\pi$.",
   "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$).",
   "topic": "v2",
   "type": "mcq",
@@ -1402,7 +1402,7 @@ window.PRACTICE_BANK = [
    "$3 - 2 \\pi$."
   ],
   "answer": 0,
-  "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^* = x(a\\cos 2x + b\\sin 2x)\\ \\Rightarrow\\ y^{*\\prime\\prime} + 4y^* = -4a\\sin 2x + 4b\\cos 2x$<br>So sánh với vế phải $32\\cos 2x$: $a = 0,\\ b = 8$<br>$y = C_1\\cos 2x + C_2\\sin 2x + 8x\\sin 2x$<br>$y(0) = C_1 = -1;\\quad y'(0) = 2 C_{2} = 6 \\Rightarrow C_2 = 3$<br>$y\\left(\\dfrac{\\pi}{4}\\right) = 3 + 8\\cdot\\dfrac{\\pi}{4} = 3 + 2 \\pi$",
+  "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^*=x(a\\cos 2x + b\\sin 2x)$. Tính đạo hàm hai lần và cộng $4y^*$: $y^{*\\prime\\prime}+4y^*=-4a\\sin 2x + 4b\\cos 2x$.<br>Đối chiếu hệ số với vế phải $32\\cos 2x$: hệ số của $\\sin(wx)$ bằng $-2wa=0$ nên $a=0$; hệ số của $\\cos(wx)$ là $2wb=c$, do đó $b=\\dfrac{c}{2w}=8$.<br>$y = C_1\\cos 2x + C_2\\sin 2x + 8x\\sin 2x$<br>$y(0)=C_1=-1$. Also $y^\\prime(0)=wC_2=6$, so $C_2=3$.<br>At $x_0=\\dfrac{\\pi}{2w}$, $\\cos(wx_0)=0$ and $\\sin(wx_0)=1$. Thus the homogeneous part is $3$ and the particular part is $8\\cdot\\dfrac{\\pi}{2w}=2 \\pi$; hence $y(x_0)=3+2 \\pi=3 + 2 \\pi$.",
   "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$).",
   "topic": "v2",
   "type": "mcq",
@@ -1446,7 +1446,7 @@ window.PRACTICE_BANK = [
    "$3 - 3 \\pi$."
   ],
   "answer": 0,
-  "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^* = x(a\\cos 2x + b\\sin 2x)\\ \\Rightarrow\\ y^{*\\prime\\prime} + 4y^* = -4a\\sin 2x + 4b\\cos 2x$<br>So sánh với vế phải $48\\cos 2x$: $a = 0,\\ b = 12$<br>$y = C_1\\cos 2x + C_2\\sin 2x + 12x\\sin 2x$<br>$y(0) = C_1 = 2;\\quad y'(0) = 2 C_{2} = 6 \\Rightarrow C_2 = 3$<br>$y\\left(\\dfrac{\\pi}{4}\\right) = 3 + 12\\cdot\\dfrac{\\pi}{4} = 3 + 3 \\pi$",
+  "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^*=x(a\\cos 2x + b\\sin 2x)$. Tính đạo hàm hai lần và cộng $4y^*$: $y^{*\\prime\\prime}+4y^*=-4a\\sin 2x + 4b\\cos 2x$.<br>Đối chiếu hệ số với vế phải $48\\cos 2x$: hệ số của $\\sin(wx)$ bằng $-2wa=0$ nên $a=0$; hệ số của $\\cos(wx)$ là $2wb=c$, do đó $b=\\dfrac{c}{2w}=12$.<br>$y = C_1\\cos 2x + C_2\\sin 2x + 12x\\sin 2x$<br>$y(0)=C_1=2$. Also $y^\\prime(0)=wC_2=6$, so $C_2=3$.<br>At $x_0=\\dfrac{\\pi}{2w}$, $\\cos(wx_0)=0$ and $\\sin(wx_0)=1$. Thus the homogeneous part is $3$ and the particular part is $12\\cdot\\dfrac{\\pi}{2w}=3 \\pi$; hence $y(x_0)=3+3 \\pi=3 + 3 \\pi$.",
   "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$).",
   "topic": "v2",
   "type": "mcq",
@@ -1476,7 +1476,7 @@ window.PRACTICE_BANK = [
    "$- \\pi - 2$."
   ],
   "answer": 0,
-  "explain": "Phương trình đặc trưng: $k^2 + 1 = 0 \\Rightarrow k = \\pm i$ (trùng tần số của vế phải)<br>$y^* = x(a\\cos x + b\\sin x)\\ \\Rightarrow\\ y^{*\\prime\\prime} + y^* = -2a\\sin x + 2b\\cos x$<br>So sánh với vế phải $4\\cos x$: $a = 0,\\ b = 2$<br>$y = C_1\\cos x + C_2\\sin x + 2x\\sin x$<br>$y(0) = C_1 = 1;\\quad y'(0) = C_{2} = -2 \\Rightarrow C_2 = -2$<br>$y\\left(\\dfrac{\\pi}{2}\\right) = -2 + 2\\cdot\\dfrac{\\pi}{2} = \\pi - 2$",
+  "explain": "Phương trình đặc trưng: $k^2 + 1 = 0 \\Rightarrow k = \\pm i$ (trùng tần số của vế phải)<br>$y^*=x(a\\cos x + b\\sin x)$. Tính đạo hàm hai lần và cộng $y^*$: $y^{*\\prime\\prime}+y^*=-2a\\sin x + 2b\\cos x$.<br>Đối chiếu hệ số với vế phải $4\\cos x$: hệ số của $\\sin(wx)$ bằng $-2wa=0$ nên $a=0$; hệ số của $\\cos(wx)$ là $2wb=c$, do đó $b=\\dfrac{c}{2w}=2$.<br>$y = C_1\\cos x + C_2\\sin x + 2x\\sin x$<br>$y(0)=C_1=1$. Also $y^\\prime(0)=wC_2=-2$, so $C_2=-2$.<br>At $x_0=\\dfrac{\\pi}{2w}$, $\\cos(wx_0)=0$ and $\\sin(wx_0)=1$. Thus the homogeneous part is $-2$ and the particular part is $2\\cdot\\dfrac{\\pi}{2w}=\\pi$; hence $y(x_0)=-2+\\pi=\\pi - 2$.",
   "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$).",
   "topic": "v2",
   "type": "mcq",
@@ -1506,7 +1506,7 @@ window.PRACTICE_BANK = [
    "$- \\pi - 2$."
   ],
   "answer": 0,
-  "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^* = x(a\\cos 2x + b\\sin 2x)\\ \\Rightarrow\\ y^{*\\prime\\prime} + 4y^* = -4a\\sin 2x + 4b\\cos 2x$<br>So sánh với vế phải $16\\cos 2x$: $a = 0,\\ b = 4$<br>$y = C_1\\cos 2x + C_2\\sin 2x + 4x\\sin 2x$<br>$y(0) = C_1 = 3;\\quad y'(0) = 2 C_{2} = -4 \\Rightarrow C_2 = -2$<br>$y\\left(\\dfrac{\\pi}{4}\\right) = -2 + 4\\cdot\\dfrac{\\pi}{4} = \\pi - 2$",
+  "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^*=x(a\\cos 2x + b\\sin 2x)$. Tính đạo hàm hai lần và cộng $4y^*$: $y^{*\\prime\\prime}+4y^*=-4a\\sin 2x + 4b\\cos 2x$.<br>Đối chiếu hệ số với vế phải $16\\cos 2x$: hệ số của $\\sin(wx)$ bằng $-2wa=0$ nên $a=0$; hệ số của $\\cos(wx)$ là $2wb=c$, do đó $b=\\dfrac{c}{2w}=4$.<br>$y = C_1\\cos 2x + C_2\\sin 2x + 4x\\sin 2x$<br>$y(0)=C_1=3$. Also $y^\\prime(0)=wC_2=-4$, so $C_2=-2$.<br>At $x_0=\\dfrac{\\pi}{2w}$, $\\cos(wx_0)=0$ and $\\sin(wx_0)=1$. Thus the homogeneous part is $-2$ and the particular part is $4\\cdot\\dfrac{\\pi}{2w}=\\pi$; hence $y(x_0)=-2+\\pi=\\pi - 2$.",
   "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$).",
   "topic": "v2",
   "type": "mcq",
@@ -1536,7 +1536,7 @@ window.PRACTICE_BANK = [
    "$3 - \\pi$."
   ],
   "answer": 0,
-  "explain": "Phương trình đặc trưng: $k^2 + 1 = 0 \\Rightarrow k = \\pm i$ (trùng tần số của vế phải)<br>$y^* = x(a\\cos x + b\\sin x)\\ \\Rightarrow\\ y^{*\\prime\\prime} + y^* = -2a\\sin x + 2b\\cos x$<br>So sánh với vế phải $4\\cos x$: $a = 0,\\ b = 2$<br>$y = C_1\\cos x + C_2\\sin x + 2x\\sin x$<br>$y(0) = C_1 = -1;\\quad y'(0) = C_{2} = 3 \\Rightarrow C_2 = 3$<br>$y\\left(\\dfrac{\\pi}{2}\\right) = 3 + 2\\cdot\\dfrac{\\pi}{2} = 3 + \\pi$",
+  "explain": "Phương trình đặc trưng: $k^2 + 1 = 0 \\Rightarrow k = \\pm i$ (trùng tần số của vế phải)<br>$y^*=x(a\\cos x + b\\sin x)$. Tính đạo hàm hai lần và cộng $y^*$: $y^{*\\prime\\prime}+y^*=-2a\\sin x + 2b\\cos x$.<br>Đối chiếu hệ số với vế phải $4\\cos x$: hệ số của $\\sin(wx)$ bằng $-2wa=0$ nên $a=0$; hệ số của $\\cos(wx)$ là $2wb=c$, do đó $b=\\dfrac{c}{2w}=2$.<br>$y = C_1\\cos x + C_2\\sin x + 2x\\sin x$<br>$y(0)=C_1=-1$. Also $y^\\prime(0)=wC_2=3$, so $C_2=3$.<br>At $x_0=\\dfrac{\\pi}{2w}$, $\\cos(wx_0)=0$ and $\\sin(wx_0)=1$. Thus the homogeneous part is $3$ and the particular part is $2\\cdot\\dfrac{\\pi}{2w}=\\pi$; hence $y(x_0)=3+\\pi=3 + \\pi$.",
   "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$).",
   "topic": "v2",
   "type": "mcq",
@@ -1566,7 +1566,7 @@ window.PRACTICE_BANK = [
    "$- 3 \\pi - 2$."
   ],
   "answer": 0,
-  "explain": "Phương trình đặc trưng: $k^2 + 1 = 0 \\Rightarrow k = \\pm i$ (trùng tần số của vế phải)<br>$y^* = x(a\\cos x + b\\sin x)\\ \\Rightarrow\\ y^{*\\prime\\prime} + y^* = -2a\\sin x + 2b\\cos x$<br>So sánh với vế phải $12\\cos x$: $a = 0,\\ b = 6$<br>$y = C_1\\cos x + C_2\\sin x + 6x\\sin x$<br>$y(0) = C_1 = -1;\\quad y'(0) = C_{2} = -2 \\Rightarrow C_2 = -2$<br>$y\\left(\\dfrac{\\pi}{2}\\right) = -2 + 6\\cdot\\dfrac{\\pi}{2} = 3 \\pi - 2$",
+  "explain": "Phương trình đặc trưng: $k^2 + 1 = 0 \\Rightarrow k = \\pm i$ (trùng tần số của vế phải)<br>$y^*=x(a\\cos x + b\\sin x)$. Tính đạo hàm hai lần và cộng $y^*$: $y^{*\\prime\\prime}+y^*=-2a\\sin x + 2b\\cos x$.<br>Đối chiếu hệ số với vế phải $12\\cos x$: hệ số của $\\sin(wx)$ bằng $-2wa=0$ nên $a=0$; hệ số của $\\cos(wx)$ là $2wb=c$, do đó $b=\\dfrac{c}{2w}=6$.<br>$y = C_1\\cos x + C_2\\sin x + 6x\\sin x$<br>$y(0)=C_1=-1$. Also $y^\\prime(0)=wC_2=-2$, so $C_2=-2$.<br>At $x_0=\\dfrac{\\pi}{2w}$, $\\cos(wx_0)=0$ and $\\sin(wx_0)=1$. Thus the homogeneous part is $-2$ and the particular part is $6\\cdot\\dfrac{\\pi}{2w}=3 \\pi$; hence $y(x_0)=-2+3 \\pi=3 \\pi - 2$.",
   "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$).",
   "topic": "v2",
   "type": "mcq",
@@ -1596,7 +1596,7 @@ window.PRACTICE_BANK = [
    "$- 2 \\pi - 2$."
   ],
   "answer": 0,
-  "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^* = x(a\\cos 2x + b\\sin 2x)\\ \\Rightarrow\\ y^{*\\prime\\prime} + 4y^* = -4a\\sin 2x + 4b\\cos 2x$<br>So sánh với vế phải $32\\cos 2x$: $a = 0,\\ b = 8$<br>$y = C_1\\cos 2x + C_2\\sin 2x + 8x\\sin 2x$<br>$y(0) = C_1 = 3;\\quad y'(0) = 2 C_{2} = -4 \\Rightarrow C_2 = -2$<br>$y\\left(\\dfrac{\\pi}{4}\\right) = -2 + 8\\cdot\\dfrac{\\pi}{4} = 2 \\pi - 2$",
+  "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^*=x(a\\cos 2x + b\\sin 2x)$. Tính đạo hàm hai lần và cộng $4y^*$: $y^{*\\prime\\prime}+4y^*=-4a\\sin 2x + 4b\\cos 2x$.<br>Đối chiếu hệ số với vế phải $32\\cos 2x$: hệ số của $\\sin(wx)$ bằng $-2wa=0$ nên $a=0$; hệ số của $\\cos(wx)$ là $2wb=c$, do đó $b=\\dfrac{c}{2w}=8$.<br>$y = C_1\\cos 2x + C_2\\sin 2x + 8x\\sin 2x$<br>$y(0)=C_1=3$. Also $y^\\prime(0)=wC_2=-4$, so $C_2=-2$.<br>At $x_0=\\dfrac{\\pi}{2w}$, $\\cos(wx_0)=0$ and $\\sin(wx_0)=1$. Thus the homogeneous part is $-2$ and the particular part is $8\\cdot\\dfrac{\\pi}{2w}=2 \\pi$; hence $y(x_0)=-2+2 \\pi=2 \\pi - 2$.",
   "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$).",
   "topic": "v2",
   "type": "mcq",
@@ -1626,7 +1626,7 @@ window.PRACTICE_BANK = [
    "$2 - \\pi$."
   ],
   "answer": 0,
-  "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^* = x(a\\cos 2x + b\\sin 2x)\\ \\Rightarrow\\ y^{*\\prime\\prime} + 4y^* = -4a\\sin 2x + 4b\\cos 2x$<br>So sánh với vế phải $16\\cos 2x$: $a = 0,\\ b = 4$<br>$y = C_1\\cos 2x + C_2\\sin 2x + 4x\\sin 2x$<br>$y(0) = C_1 = 2;\\quad y'(0) = 2 C_{2} = 4 \\Rightarrow C_2 = 2$<br>$y\\left(\\dfrac{\\pi}{4}\\right) = 2 + 4\\cdot\\dfrac{\\pi}{4} = 2 + \\pi$",
+  "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^*=x(a\\cos 2x + b\\sin 2x)$. Tính đạo hàm hai lần và cộng $4y^*$: $y^{*\\prime\\prime}+4y^*=-4a\\sin 2x + 4b\\cos 2x$.<br>Đối chiếu hệ số với vế phải $16\\cos 2x$: hệ số của $\\sin(wx)$ bằng $-2wa=0$ nên $a=0$; hệ số của $\\cos(wx)$ là $2wb=c$, do đó $b=\\dfrac{c}{2w}=4$.<br>$y = C_1\\cos 2x + C_2\\sin 2x + 4x\\sin 2x$<br>$y(0)=C_1=2$. Also $y^\\prime(0)=wC_2=4$, so $C_2=2$.<br>At $x_0=\\dfrac{\\pi}{2w}$, $\\cos(wx_0)=0$ and $\\sin(wx_0)=1$. Thus the homogeneous part is $2$ and the particular part is $4\\cdot\\dfrac{\\pi}{2w}=\\pi$; hence $y(x_0)=2+\\pi=2 + \\pi$.",
   "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$).",
   "topic": "v2",
   "type": "mcq",
@@ -1656,7 +1656,7 @@ window.PRACTICE_BANK = [
    "$3 - \\pi$."
   ],
   "answer": 0,
-  "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^* = x(a\\cos 2x + b\\sin 2x)\\ \\Rightarrow\\ y^{*\\prime\\prime} + 4y^* = -4a\\sin 2x + 4b\\cos 2x$<br>So sánh với vế phải $16\\cos 2x$: $a = 0,\\ b = 4$<br>$y = C_1\\cos 2x + C_2\\sin 2x + 4x\\sin 2x$<br>$y(0) = C_1 = -1;\\quad y'(0) = 2 C_{2} = 6 \\Rightarrow C_2 = 3$<br>$y\\left(\\dfrac{\\pi}{4}\\right) = 3 + 4\\cdot\\dfrac{\\pi}{4} = 3 + \\pi$",
+  "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^*=x(a\\cos 2x + b\\sin 2x)$. Tính đạo hàm hai lần và cộng $4y^*$: $y^{*\\prime\\prime}+4y^*=-4a\\sin 2x + 4b\\cos 2x$.<br>Đối chiếu hệ số với vế phải $16\\cos 2x$: hệ số của $\\sin(wx)$ bằng $-2wa=0$ nên $a=0$; hệ số của $\\cos(wx)$ là $2wb=c$, do đó $b=\\dfrac{c}{2w}=4$.<br>$y = C_1\\cos 2x + C_2\\sin 2x + 4x\\sin 2x$<br>$y(0)=C_1=-1$. Also $y^\\prime(0)=wC_2=6$, so $C_2=3$.<br>At $x_0=\\dfrac{\\pi}{2w}$, $\\cos(wx_0)=0$ and $\\sin(wx_0)=1$. Thus the homogeneous part is $3$ and the particular part is $4\\cdot\\dfrac{\\pi}{2w}=\\pi$; hence $y(x_0)=3+\\pi=3 + \\pi$.",
   "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$).",
   "topic": "v2",
   "type": "mcq",
@@ -1686,7 +1686,7 @@ window.PRACTICE_BANK = [
    "$1 - \\pi$."
   ],
   "answer": 0,
-  "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^* = x(a\\cos 2x + b\\sin 2x)\\ \\Rightarrow\\ y^{*\\prime\\prime} + 4y^* = -4a\\sin 2x + 4b\\cos 2x$<br>So sánh với vế phải $16\\cos 2x$: $a = 0,\\ b = 4$<br>$y = C_1\\cos 2x + C_2\\sin 2x + 4x\\sin 2x$<br>$y(0) = C_1 = 2;\\quad y'(0) = 2 C_{2} = 2 \\Rightarrow C_2 = 1$<br>$y\\left(\\dfrac{\\pi}{4}\\right) = 1 + 4\\cdot\\dfrac{\\pi}{4} = 1 + \\pi$",
+  "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^*=x(a\\cos 2x + b\\sin 2x)$. Tính đạo hàm hai lần và cộng $4y^*$: $y^{*\\prime\\prime}+4y^*=-4a\\sin 2x + 4b\\cos 2x$.<br>Đối chiếu hệ số với vế phải $16\\cos 2x$: hệ số của $\\sin(wx)$ bằng $-2wa=0$ nên $a=0$; hệ số của $\\cos(wx)$ là $2wb=c$, do đó $b=\\dfrac{c}{2w}=4$.<br>$y = C_1\\cos 2x + C_2\\sin 2x + 4x\\sin 2x$<br>$y(0)=C_1=2$. Also $y^\\prime(0)=wC_2=2$, so $C_2=1$.<br>At $x_0=\\dfrac{\\pi}{2w}$, $\\cos(wx_0)=0$ and $\\sin(wx_0)=1$. Thus the homogeneous part is $1$ and the particular part is $4\\cdot\\dfrac{\\pi}{2w}=\\pi$; hence $y(x_0)=1+\\pi=1 + \\pi$.",
   "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$).",
   "topic": "v2",
   "type": "mcq",
@@ -1716,7 +1716,7 @@ window.PRACTICE_BANK = [
    "$2 - 2 \\pi$."
   ],
   "answer": 0,
-  "explain": "Phương trình đặc trưng: $k^2 + 1 = 0 \\Rightarrow k = \\pm i$ (trùng tần số của vế phải)<br>$y^* = x(a\\cos x + b\\sin x)\\ \\Rightarrow\\ y^{*\\prime\\prime} + y^* = -2a\\sin x + 2b\\cos x$<br>So sánh với vế phải $8\\cos x$: $a = 0,\\ b = 4$<br>$y = C_1\\cos x + C_2\\sin x + 4x\\sin x$<br>$y(0) = C_1 = -1;\\quad y'(0) = C_{2} = 2 \\Rightarrow C_2 = 2$<br>$y\\left(\\dfrac{\\pi}{2}\\right) = 2 + 4\\cdot\\dfrac{\\pi}{2} = 2 + 2 \\pi$",
+  "explain": "Phương trình đặc trưng: $k^2 + 1 = 0 \\Rightarrow k = \\pm i$ (trùng tần số của vế phải)<br>$y^*=x(a\\cos x + b\\sin x)$. Tính đạo hàm hai lần và cộng $y^*$: $y^{*\\prime\\prime}+y^*=-2a\\sin x + 2b\\cos x$.<br>Đối chiếu hệ số với vế phải $8\\cos x$: hệ số của $\\sin(wx)$ bằng $-2wa=0$ nên $a=0$; hệ số của $\\cos(wx)$ là $2wb=c$, do đó $b=\\dfrac{c}{2w}=4$.<br>$y = C_1\\cos x + C_2\\sin x + 4x\\sin x$<br>$y(0)=C_1=-1$. Also $y^\\prime(0)=wC_2=2$, so $C_2=2$.<br>At $x_0=\\dfrac{\\pi}{2w}$, $\\cos(wx_0)=0$ and $\\sin(wx_0)=1$. Thus the homogeneous part is $2$ and the particular part is $4\\cdot\\dfrac{\\pi}{2w}=2 \\pi$; hence $y(x_0)=2+2 \\pi=2 + 2 \\pi$.",
   "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$).",
   "topic": "v2",
   "type": "mcq",
@@ -1746,7 +1746,7 @@ window.PRACTICE_BANK = [
    "$1 - 2 \\pi$."
   ],
   "answer": 0,
-  "explain": "Phương trình đặc trưng: $k^2 + 1 = 0 \\Rightarrow k = \\pm i$ (trùng tần số của vế phải)<br>$y^* = x(a\\cos x + b\\sin x)\\ \\Rightarrow\\ y^{*\\prime\\prime} + y^* = -2a\\sin x + 2b\\cos x$<br>So sánh với vế phải $8\\cos x$: $a = 0,\\ b = 4$<br>$y = C_1\\cos x + C_2\\sin x + 4x\\sin x$<br>$y(0) = C_1 = -1;\\quad y'(0) = C_{2} = 1 \\Rightarrow C_2 = 1$<br>$y\\left(\\dfrac{\\pi}{2}\\right) = 1 + 4\\cdot\\dfrac{\\pi}{2} = 1 + 2 \\pi$",
+  "explain": "Phương trình đặc trưng: $k^2 + 1 = 0 \\Rightarrow k = \\pm i$ (trùng tần số của vế phải)<br>$y^*=x(a\\cos x + b\\sin x)$. Tính đạo hàm hai lần và cộng $y^*$: $y^{*\\prime\\prime}+y^*=-2a\\sin x + 2b\\cos x$.<br>Đối chiếu hệ số với vế phải $8\\cos x$: hệ số của $\\sin(wx)$ bằng $-2wa=0$ nên $a=0$; hệ số của $\\cos(wx)$ là $2wb=c$, do đó $b=\\dfrac{c}{2w}=4$.<br>$y = C_1\\cos x + C_2\\sin x + 4x\\sin x$<br>$y(0)=C_1=-1$. Also $y^\\prime(0)=wC_2=1$, so $C_2=1$.<br>At $x_0=\\dfrac{\\pi}{2w}$, $\\cos(wx_0)=0$ and $\\sin(wx_0)=1$. Thus the homogeneous part is $1$ and the particular part is $4\\cdot\\dfrac{\\pi}{2w}=2 \\pi$; hence $y(x_0)=1+2 \\pi=1 + 2 \\pi$.",
   "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$).",
   "topic": "v2",
   "type": "mcq",
@@ -1776,7 +1776,7 @@ window.PRACTICE_BANK = [
    "$2 - 2 \\pi$."
   ],
   "answer": 0,
-  "explain": "Phương trình đặc trưng: $k^2 + 1 = 0 \\Rightarrow k = \\pm i$ (trùng tần số của vế phải)<br>$y^* = x(a\\cos x + b\\sin x)\\ \\Rightarrow\\ y^{*\\prime\\prime} + y^* = -2a\\sin x + 2b\\cos x$<br>So sánh với vế phải $8\\cos x$: $a = 0,\\ b = 4$<br>$y = C_1\\cos x + C_2\\sin x + 4x\\sin x$<br>$y(0) = C_1 = 3;\\quad y'(0) = C_{2} = 2 \\Rightarrow C_2 = 2$<br>$y\\left(\\dfrac{\\pi}{2}\\right) = 2 + 4\\cdot\\dfrac{\\pi}{2} = 2 + 2 \\pi$",
+  "explain": "Phương trình đặc trưng: $k^2 + 1 = 0 \\Rightarrow k = \\pm i$ (trùng tần số của vế phải)<br>$y^*=x(a\\cos x + b\\sin x)$. Tính đạo hàm hai lần và cộng $y^*$: $y^{*\\prime\\prime}+y^*=-2a\\sin x + 2b\\cos x$.<br>Đối chiếu hệ số với vế phải $8\\cos x$: hệ số của $\\sin(wx)$ bằng $-2wa=0$ nên $a=0$; hệ số của $\\cos(wx)$ là $2wb=c$, do đó $b=\\dfrac{c}{2w}=4$.<br>$y = C_1\\cos x + C_2\\sin x + 4x\\sin x$<br>$y(0)=C_1=3$. Also $y^\\prime(0)=wC_2=2$, so $C_2=2$.<br>At $x_0=\\dfrac{\\pi}{2w}$, $\\cos(wx_0)=0$ and $\\sin(wx_0)=1$. Thus the homogeneous part is $2$ and the particular part is $4\\cdot\\dfrac{\\pi}{2w}=2 \\pi$; hence $y(x_0)=2+2 \\pi=2 + 2 \\pi$.",
   "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$).",
   "topic": "v2",
   "type": "mcq",
@@ -1806,7 +1806,7 @@ window.PRACTICE_BANK = [
    "$- \\pi - 2$."
   ],
   "answer": 0,
-  "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^* = x(a\\cos 2x + b\\sin 2x)\\ \\Rightarrow\\ y^{*\\prime\\prime} + 4y^* = -4a\\sin 2x + 4b\\cos 2x$<br>So sánh với vế phải $16\\cos 2x$: $a = 0,\\ b = 4$<br>$y = C_1\\cos 2x + C_2\\sin 2x + 4x\\sin 2x$<br>$y(0) = C_1 = 1;\\quad y'(0) = 2 C_{2} = -4 \\Rightarrow C_2 = -2$<br>$y\\left(\\dfrac{\\pi}{4}\\right) = -2 + 4\\cdot\\dfrac{\\pi}{4} = \\pi - 2$",
+  "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^*=x(a\\cos 2x + b\\sin 2x)$. Tính đạo hàm hai lần và cộng $4y^*$: $y^{*\\prime\\prime}+4y^*=-4a\\sin 2x + 4b\\cos 2x$.<br>Đối chiếu hệ số với vế phải $16\\cos 2x$: hệ số của $\\sin(wx)$ bằng $-2wa=0$ nên $a=0$; hệ số của $\\cos(wx)$ là $2wb=c$, do đó $b=\\dfrac{c}{2w}=4$.<br>$y = C_1\\cos 2x + C_2\\sin 2x + 4x\\sin 2x$<br>$y(0)=C_1=1$. Also $y^\\prime(0)=wC_2=-4$, so $C_2=-2$.<br>At $x_0=\\dfrac{\\pi}{2w}$, $\\cos(wx_0)=0$ and $\\sin(wx_0)=1$. Thus the homogeneous part is $-2$ and the particular part is $4\\cdot\\dfrac{\\pi}{2w}=\\pi$; hence $y(x_0)=-2+\\pi=\\pi - 2$.",
   "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$).",
   "topic": "v2",
   "type": "mcq",
@@ -1836,7 +1836,7 @@ window.PRACTICE_BANK = [
    "$2 - 3 \\pi$."
   ],
   "answer": 0,
-  "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^* = x(a\\cos 2x + b\\sin 2x)\\ \\Rightarrow\\ y^{*\\prime\\prime} + 4y^* = -4a\\sin 2x + 4b\\cos 2x$<br>So sánh với vế phải $48\\cos 2x$: $a = 0,\\ b = 12$<br>$y = C_1\\cos 2x + C_2\\sin 2x + 12x\\sin 2x$<br>$y(0) = C_1 = 3;\\quad y'(0) = 2 C_{2} = 4 \\Rightarrow C_2 = 2$<br>$y\\left(\\dfrac{\\pi}{4}\\right) = 2 + 12\\cdot\\dfrac{\\pi}{4} = 2 + 3 \\pi$",
+  "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^*=x(a\\cos 2x + b\\sin 2x)$. Tính đạo hàm hai lần và cộng $4y^*$: $y^{*\\prime\\prime}+4y^*=-4a\\sin 2x + 4b\\cos 2x$.<br>Đối chiếu hệ số với vế phải $48\\cos 2x$: hệ số của $\\sin(wx)$ bằng $-2wa=0$ nên $a=0$; hệ số của $\\cos(wx)$ là $2wb=c$, do đó $b=\\dfrac{c}{2w}=12$.<br>$y = C_1\\cos 2x + C_2\\sin 2x + 12x\\sin 2x$<br>$y(0)=C_1=3$. Also $y^\\prime(0)=wC_2=4$, so $C_2=2$.<br>At $x_0=\\dfrac{\\pi}{2w}$, $\\cos(wx_0)=0$ and $\\sin(wx_0)=1$. Thus the homogeneous part is $2$ and the particular part is $12\\cdot\\dfrac{\\pi}{2w}=3 \\pi$; hence $y(x_0)=2+3 \\pi=2 + 3 \\pi$.",
   "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$).",
   "topic": "v2",
   "type": "mcq",
@@ -1866,7 +1866,7 @@ window.PRACTICE_BANK = [
    "$1 - 2 \\pi$."
   ],
   "answer": 0,
-  "explain": "Phương trình đặc trưng: $k^2 + 1 = 0 \\Rightarrow k = \\pm i$ (trùng tần số của vế phải)<br>$y^* = x(a\\cos x + b\\sin x)\\ \\Rightarrow\\ y^{*\\prime\\prime} + y^* = -2a\\sin x + 2b\\cos x$<br>So sánh với vế phải $8\\cos x$: $a = 0,\\ b = 4$<br>$y = C_1\\cos x + C_2\\sin x + 4x\\sin x$<br>$y(0) = C_1 = 1;\\quad y'(0) = C_{2} = 1 \\Rightarrow C_2 = 1$<br>$y\\left(\\dfrac{\\pi}{2}\\right) = 1 + 4\\cdot\\dfrac{\\pi}{2} = 1 + 2 \\pi$",
+  "explain": "Phương trình đặc trưng: $k^2 + 1 = 0 \\Rightarrow k = \\pm i$ (trùng tần số của vế phải)<br>$y^*=x(a\\cos x + b\\sin x)$. Tính đạo hàm hai lần và cộng $y^*$: $y^{*\\prime\\prime}+y^*=-2a\\sin x + 2b\\cos x$.<br>Đối chiếu hệ số với vế phải $8\\cos x$: hệ số của $\\sin(wx)$ bằng $-2wa=0$ nên $a=0$; hệ số của $\\cos(wx)$ là $2wb=c$, do đó $b=\\dfrac{c}{2w}=4$.<br>$y = C_1\\cos x + C_2\\sin x + 4x\\sin x$<br>$y(0)=C_1=1$. Also $y^\\prime(0)=wC_2=1$, so $C_2=1$.<br>At $x_0=\\dfrac{\\pi}{2w}$, $\\cos(wx_0)=0$ and $\\sin(wx_0)=1$. Thus the homogeneous part is $1$ and the particular part is $4\\cdot\\dfrac{\\pi}{2w}=2 \\pi$; hence $y(x_0)=1+2 \\pi=1 + 2 \\pi$.",
   "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$).",
   "topic": "v2",
   "type": "mcq",
@@ -1896,7 +1896,7 @@ window.PRACTICE_BANK = [
    "$1 - 2 \\pi$."
   ],
   "answer": 0,
-  "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^* = x(a\\cos 2x + b\\sin 2x)\\ \\Rightarrow\\ y^{*\\prime\\prime} + 4y^* = -4a\\sin 2x + 4b\\cos 2x$<br>So sánh với vế phải $32\\cos 2x$: $a = 0,\\ b = 8$<br>$y = C_1\\cos 2x + C_2\\sin 2x + 8x\\sin 2x$<br>$y(0) = C_1 = 3;\\quad y'(0) = 2 C_{2} = 2 \\Rightarrow C_2 = 1$<br>$y\\left(\\dfrac{\\pi}{4}\\right) = 1 + 8\\cdot\\dfrac{\\pi}{4} = 1 + 2 \\pi$",
+  "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^*=x(a\\cos 2x + b\\sin 2x)$. Tính đạo hàm hai lần và cộng $4y^*$: $y^{*\\prime\\prime}+4y^*=-4a\\sin 2x + 4b\\cos 2x$.<br>Đối chiếu hệ số với vế phải $32\\cos 2x$: hệ số của $\\sin(wx)$ bằng $-2wa=0$ nên $a=0$; hệ số của $\\cos(wx)$ là $2wb=c$, do đó $b=\\dfrac{c}{2w}=8$.<br>$y = C_1\\cos 2x + C_2\\sin 2x + 8x\\sin 2x$<br>$y(0)=C_1=3$. Also $y^\\prime(0)=wC_2=2$, so $C_2=1$.<br>At $x_0=\\dfrac{\\pi}{2w}$, $\\cos(wx_0)=0$ and $\\sin(wx_0)=1$. Thus the homogeneous part is $1$ and the particular part is $8\\cdot\\dfrac{\\pi}{2w}=2 \\pi$; hence $y(x_0)=1+2 \\pi=1 + 2 \\pi$.",
   "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$).",
   "topic": "v2",
   "type": "mcq",
@@ -1926,7 +1926,7 @@ window.PRACTICE_BANK = [
    "$1 - 2 \\pi$."
   ],
   "answer": 0,
-  "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^* = x(a\\cos 2x + b\\sin 2x)\\ \\Rightarrow\\ y^{*\\prime\\prime} + 4y^* = -4a\\sin 2x + 4b\\cos 2x$<br>So sánh với vế phải $32\\cos 2x$: $a = 0,\\ b = 8$<br>$y = C_1\\cos 2x + C_2\\sin 2x + 8x\\sin 2x$<br>$y(0) = C_1 = -1;\\quad y'(0) = 2 C_{2} = 2 \\Rightarrow C_2 = 1$<br>$y\\left(\\dfrac{\\pi}{4}\\right) = 1 + 8\\cdot\\dfrac{\\pi}{4} = 1 + 2 \\pi$",
+  "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^*=x(a\\cos 2x + b\\sin 2x)$. Tính đạo hàm hai lần và cộng $4y^*$: $y^{*\\prime\\prime}+4y^*=-4a\\sin 2x + 4b\\cos 2x$.<br>Đối chiếu hệ số với vế phải $32\\cos 2x$: hệ số của $\\sin(wx)$ bằng $-2wa=0$ nên $a=0$; hệ số của $\\cos(wx)$ là $2wb=c$, do đó $b=\\dfrac{c}{2w}=8$.<br>$y = C_1\\cos 2x + C_2\\sin 2x + 8x\\sin 2x$<br>$y(0)=C_1=-1$. Also $y^\\prime(0)=wC_2=2$, so $C_2=1$.<br>At $x_0=\\dfrac{\\pi}{2w}$, $\\cos(wx_0)=0$ and $\\sin(wx_0)=1$. Thus the homogeneous part is $1$ and the particular part is $8\\cdot\\dfrac{\\pi}{2w}=2 \\pi$; hence $y(x_0)=1+2 \\pi=1 + 2 \\pi$.",
   "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$).",
   "topic": "v2",
   "type": "mcq",
@@ -1956,7 +1956,7 @@ window.PRACTICE_BANK = [
    "$3 - \\pi$."
   ],
   "answer": 0,
-  "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^* = x(a\\cos 2x + b\\sin 2x)\\ \\Rightarrow\\ y^{*\\prime\\prime} + 4y^* = -4a\\sin 2x + 4b\\cos 2x$<br>So sánh với vế phải $16\\cos 2x$: $a = 0,\\ b = 4$<br>$y = C_1\\cos 2x + C_2\\sin 2x + 4x\\sin 2x$<br>$y(0) = C_1 = 3;\\quad y'(0) = 2 C_{2} = 6 \\Rightarrow C_2 = 3$<br>$y\\left(\\dfrac{\\pi}{4}\\right) = 3 + 4\\cdot\\dfrac{\\pi}{4} = 3 + \\pi$",
+  "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^*=x(a\\cos 2x + b\\sin 2x)$. Tính đạo hàm hai lần và cộng $4y^*$: $y^{*\\prime\\prime}+4y^*=-4a\\sin 2x + 4b\\cos 2x$.<br>Đối chiếu hệ số với vế phải $16\\cos 2x$: hệ số của $\\sin(wx)$ bằng $-2wa=0$ nên $a=0$; hệ số của $\\cos(wx)$ là $2wb=c$, do đó $b=\\dfrac{c}{2w}=4$.<br>$y = C_1\\cos 2x + C_2\\sin 2x + 4x\\sin 2x$<br>$y(0)=C_1=3$. Also $y^\\prime(0)=wC_2=6$, so $C_2=3$.<br>At $x_0=\\dfrac{\\pi}{2w}$, $\\cos(wx_0)=0$ and $\\sin(wx_0)=1$. Thus the homogeneous part is $3$ and the particular part is $4\\cdot\\dfrac{\\pi}{2w}=\\pi$; hence $y(x_0)=3+\\pi=3 + \\pi$.",
   "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$).",
   "topic": "v2",
   "type": "mcq",
@@ -1986,7 +1986,7 @@ window.PRACTICE_BANK = [
    "$1190$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số người dùng của X khi ổn định; lượng rời X bằng lượng đến X: $20\\%\\cdot x = 10\\%\\cdot(2100 - x)$<br>$30x = 21000 \\Rightarrow x = 700$",
+  "explain": "Gọi $x$ là số người dùng của X ở trạng thái ổn định. Lượng rời X là 20% của $x$; lượng chuyển từ Y sang X là 10% của $2100-x$. Cân bằng cho $\\dfrac{20}{100}x=\\dfrac{10}{100}(2100-x)$.<br>Nhân với $100$: $20x=10(2100-x)=21000-10x$, nên $(30)x=21000$ và $x=\\dfrac{21000}{30}=700$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2001,7 +2001,7 @@ window.PRACTICE_BANK = [
    "$840$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách quen của X khi ổn định; lượng rời X bằng lượng đến X: $40\\%\\cdot x = 30\\%\\cdot(2100 - x)$<br>$70x = 63000 \\Rightarrow x = 900$",
+  "explain": "Gọi $x$ là số khách quen của X ở trạng thái ổn định. Lượng rời X là 40% của $x$; lượng chuyển từ Y sang X là 30% của $2100-x$. Cân bằng cho $\\dfrac{40}{100}x=\\dfrac{30}{100}(2100-x)$.<br>Nhân với $100$: $40x=30(2100-x)=63000-30x$, nên $(70)x=63000$ và $x=\\dfrac{63000}{70}=900$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2016,7 +2016,7 @@ window.PRACTICE_BANK = [
    "$800$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách quen của X khi ổn định; lượng rời X bằng lượng đến X: $20\\%\\cdot x = 40\\%\\cdot(1500 - x)$<br>$60x = 60000 \\Rightarrow x = 1000$",
+  "explain": "Gọi $x$ là số khách quen của X ở trạng thái ổn định. Lượng rời X là 20% của $x$; lượng chuyển từ Y sang X là 40% của $1500-x$. Cân bằng cho $\\dfrac{20}{100}x=\\dfrac{40}{100}(1500-x)$.<br>Nhân với $100$: $20x=40(1500-x)=60000-40x$, nên $(60)x=60000$ và $x=\\dfrac{60000}{60}=1000$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2031,7 +2031,7 @@ window.PRACTICE_BANK = [
    "$280$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số người dùng của X khi ổn định; lượng rời X bằng lượng đến X: $20\\%\\cdot x = 30\\%\\cdot(600 - x)$<br>$50x = 18000 \\Rightarrow x = 360$",
+  "explain": "Gọi $x$ là số người dùng của X ở trạng thái ổn định. Lượng rời X là 20% của $x$; lượng chuyển từ Y sang X là 30% của $600-x$. Cân bằng cho $\\dfrac{20}{100}x=\\dfrac{30}{100}(600-x)$.<br>Nhân với $100$: $20x=30(600-x)=18000-30x$, nên $(50)x=18000$ và $x=\\dfrac{18000}{50}=360$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2046,7 +2046,7 @@ window.PRACTICE_BANK = [
    "$945$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách hàng của X khi ổn định; lượng rời X bằng lượng đến X: $20\\%\\cdot x = 10\\%\\cdot(2100 - x)$<br>$30x = 21000 \\Rightarrow x = 700$",
+  "explain": "Gọi $x$ là số khách hàng của X ở trạng thái ổn định. Lượng rời X là 20% của $x$; lượng chuyển từ Y sang X là 10% của $2100-x$. Cân bằng cho $\\dfrac{20}{100}x=\\dfrac{10}{100}(2100-x)$.<br>Nhân với $100$: $20x=10(2100-x)=21000-10x$, nên $(30)x=21000$ và $x=\\dfrac{21000}{30}=700$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2061,7 +2061,7 @@ window.PRACTICE_BANK = [
    "$630$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách hàng của X khi ổn định; lượng rời X bằng lượng đến X: $40\\%\\cdot x = 30\\%\\cdot(1400 - x)$<br>$70x = 42000 \\Rightarrow x = 600$",
+  "explain": "Gọi $x$ là số khách hàng của X ở trạng thái ổn định. Lượng rời X là 40% của $x$; lượng chuyển từ Y sang X là 30% của $1400-x$. Cân bằng cho $\\dfrac{40}{100}x=\\dfrac{30}{100}(1400-x)$.<br>Nhân với $100$: $40x=30(1400-x)=42000-30x$, nên $(70)x=42000$ và $x=\\dfrac{42000}{70}=600$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2076,7 +2076,7 @@ window.PRACTICE_BANK = [
    "$980$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách quen của X khi ổn định; lượng rời X bằng lượng đến X: $20\\%\\cdot x = 30\\%\\cdot(2100 - x)$<br>$50x = 63000 \\Rightarrow x = 1260$",
+  "explain": "Gọi $x$ là số khách quen của X ở trạng thái ổn định. Lượng rời X là 20% của $x$; lượng chuyển từ Y sang X là 30% của $2100-x$. Cân bằng cho $\\dfrac{20}{100}x=\\dfrac{30}{100}(2100-x)$.<br>Nhân với $100$: $20x=30(2100-x)=63000-30x$, nên $(50)x=63000$ và $x=\\dfrac{63000}{50}=1260$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2091,7 +2091,7 @@ window.PRACTICE_BANK = [
    "$1400$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số người dùng của X khi ổn định; lượng rời X bằng lượng đến X: $40\\%\\cdot x = 30\\%\\cdot(2100 - x)$<br>$70x = 63000 \\Rightarrow x = 900$",
+  "explain": "Gọi $x$ là số người dùng của X ở trạng thái ổn định. Lượng rời X là 40% của $x$; lượng chuyển từ Y sang X là 30% của $2100-x$. Cân bằng cho $\\dfrac{40}{100}x=\\dfrac{30}{100}(2100-x)$.<br>Nhân với $100$: $40x=30(2100-x)=63000-30x$, nên $(70)x=63000$ và $x=\\dfrac{63000}{70}=900$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2106,7 +2106,7 @@ window.PRACTICE_BANK = [
    "$501$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách hàng của X khi ổn định; lượng rời X bằng lượng đến X: $40\\%\\cdot x = 20\\%\\cdot(1500 - x)$<br>$60x = 30000 \\Rightarrow x = 500$",
+  "explain": "Gọi $x$ là số khách hàng của X ở trạng thái ổn định. Lượng rời X là 40% của $x$; lượng chuyển từ Y sang X là 20% của $1500-x$. Cân bằng cho $\\dfrac{40}{100}x=\\dfrac{20}{100}(1500-x)$.<br>Nhân với $100$: $40x=20(1500-x)=30000-20x$, nên $(60)x=30000$ và $x=\\dfrac{30000}{60}=500$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2121,7 +2121,7 @@ window.PRACTICE_BANK = [
    "$945$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách hàng của X khi ổn định; lượng rời X bằng lượng đến X: $40\\%\\cdot x = 30\\%\\cdot(2100 - x)$<br>$70x = 63000 \\Rightarrow x = 900$",
+  "explain": "Gọi $x$ là số khách hàng của X ở trạng thái ổn định. Lượng rời X là 40% của $x$; lượng chuyển từ Y sang X là 30% của $2100-x$. Cân bằng cho $\\dfrac{40}{100}x=\\dfrac{30}{100}(2100-x)$.<br>Nhân với $100$: $40x=30(2100-x)=63000-30x$, nên $(70)x=63000$ và $x=\\dfrac{63000}{70}=900$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2136,7 +2136,7 @@ window.PRACTICE_BANK = [
    "$1026$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách quen của X khi ổn định; lượng rời X bằng lượng đến X: $10\\%\\cdot x = 40\\%\\cdot(1400 - x)$<br>$50x = 56000 \\Rightarrow x = 1120$",
+  "explain": "Gọi $x$ là số khách quen của X ở trạng thái ổn định. Lượng rời X là 10% của $x$; lượng chuyển từ Y sang X là 40% của $1400-x$. Cân bằng cho $\\dfrac{10}{100}x=\\dfrac{40}{100}(1400-x)$.<br>Nhân với $100$: $10x=40(1400-x)=56000-40x$, nên $(50)x=56000$ và $x=\\dfrac{56000}{50}=1120$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2151,7 +2151,7 @@ window.PRACTICE_BANK = [
    "$420$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách hàng của X khi ổn định; lượng rời X bằng lượng đến X: $40\\%\\cdot x = 20\\%\\cdot(900 - x)$<br>$60x = 18000 \\Rightarrow x = 300$",
+  "explain": "Gọi $x$ là số khách hàng của X ở trạng thái ổn định. Lượng rời X là 40% của $x$; lượng chuyển từ Y sang X là 20% của $900-x$. Cân bằng cho $\\dfrac{40}{100}x=\\dfrac{20}{100}(900-x)$.<br>Nhân với $100$: $40x=20(900-x)=18000-20x$, nên $(60)x=18000$ và $x=\\dfrac{18000}{60}=300$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2166,7 +2166,7 @@ window.PRACTICE_BANK = [
    "$480$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số người dùng của X khi ổn định; lượng rời X bằng lượng đến X: $40\\%\\cdot x = 20\\%\\cdot(1200 - x)$<br>$60x = 24000 \\Rightarrow x = 400$",
+  "explain": "Gọi $x$ là số người dùng của X ở trạng thái ổn định. Lượng rời X là 40% của $x$; lượng chuyển từ Y sang X là 20% của $1200-x$. Cân bằng cho $\\dfrac{40}{100}x=\\dfrac{20}{100}(1200-x)$.<br>Nhân với $100$: $40x=20(1200-x)=24000-20x$, nên $(60)x=24000$ và $x=\\dfrac{24000}{60}=400$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2181,7 +2181,7 @@ window.PRACTICE_BANK = [
    "$945$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách quen của X khi ổn định; lượng rời X bằng lượng đến X: $20\\%\\cdot x = 10\\%\\cdot(2100 - x)$<br>$30x = 21000 \\Rightarrow x = 700$",
+  "explain": "Gọi $x$ là số khách quen của X ở trạng thái ổn định. Lượng rời X là 20% của $x$; lượng chuyển từ Y sang X là 10% của $2100-x$. Cân bằng cho $\\dfrac{20}{100}x=\\dfrac{10}{100}(2100-x)$.<br>Nhân với $100$: $20x=10(2100-x)=21000-10x$, nên $(30)x=21000$ và $x=\\dfrac{21000}{30}=700$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2196,7 +2196,7 @@ window.PRACTICE_BANK = [
    "$420$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách quen của X khi ổn định; lượng rời X bằng lượng đến X: $40\\%\\cdot x = 20\\%\\cdot(900 - x)$<br>$60x = 18000 \\Rightarrow x = 300$",
+  "explain": "Gọi $x$ là số khách quen của X ở trạng thái ổn định. Lượng rời X là 40% của $x$; lượng chuyển từ Y sang X là 20% của $900-x$. Cân bằng cho $\\dfrac{40}{100}x=\\dfrac{20}{100}(900-x)$.<br>Nhân với $100$: $40x=20(900-x)=18000-20x$, nên $(60)x=18000$ và $x=\\dfrac{18000}{60}=300$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2211,7 +2211,7 @@ window.PRACTICE_BANK = [
    "$650$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách hàng của X khi ổn định; lượng rời X bằng lượng đến X: $40\\%\\cdot x = 10\\%\\cdot(1500 - x)$<br>$50x = 15000 \\Rightarrow x = 300$",
+  "explain": "Gọi $x$ là số khách hàng của X ở trạng thái ổn định. Lượng rời X là 40% của $x$; lượng chuyển từ Y sang X là 10% của $1500-x$. Cân bằng cho $\\dfrac{40}{100}x=\\dfrac{10}{100}(1500-x)$.<br>Nhân với $100$: $40x=10(1500-x)=15000-10x$, nên $(50)x=15000$ và $x=\\dfrac{15000}{50}=300$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2226,7 +2226,7 @@ window.PRACTICE_BANK = [
    "$390$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách quen của X khi ổn định; lượng rời X bằng lượng đến X: $10\\%\\cdot x = 20\\%\\cdot(900 - x)$<br>$30x = 18000 \\Rightarrow x = 600$",
+  "explain": "Gọi $x$ là số khách quen của X ở trạng thái ổn định. Lượng rời X là 10% của $x$; lượng chuyển từ Y sang X là 20% của $900-x$. Cân bằng cho $\\dfrac{10}{100}x=\\dfrac{20}{100}(900-x)$.<br>Nhân với $100$: $10x=20(900-x)=18000-20x$, nên $(30)x=18000$ và $x=\\dfrac{18000}{30}=600$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2241,7 +2241,7 @@ window.PRACTICE_BANK = [
    "$450$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách hàng của X khi ổn định; lượng rời X bằng lượng đến X: $30\\%\\cdot x = 10\\%\\cdot(1500 - x)$<br>$40x = 15000 \\Rightarrow x = 375$",
+  "explain": "Gọi $x$ là số khách hàng của X ở trạng thái ổn định. Lượng rời X là 30% của $x$; lượng chuyển từ Y sang X là 10% của $1500-x$. Cân bằng cho $\\dfrac{30}{100}x=\\dfrac{10}{100}(1500-x)$.<br>Nhân với $100$: $30x=10(1500-x)=15000-10x$, nên $(40)x=15000$ và $x=\\dfrac{15000}{40}=375$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2256,7 +2256,7 @@ window.PRACTICE_BANK = [
    "$1330$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách quen của X khi ổn định; lượng rời X bằng lượng đến X: $20\\%\\cdot x = 30\\%\\cdot(2100 - x)$<br>$50x = 63000 \\Rightarrow x = 1260$",
+  "explain": "Gọi $x$ là số khách quen của X ở trạng thái ổn định. Lượng rời X là 20% của $x$; lượng chuyển từ Y sang X là 30% của $2100-x$. Cân bằng cho $\\dfrac{20}{100}x=\\dfrac{30}{100}(2100-x)$.<br>Nhân với $100$: $20x=30(2100-x)=63000-30x$, nên $(50)x=63000$ và $x=\\dfrac{63000}{50}=1260$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2271,7 +2271,7 @@ window.PRACTICE_BANK = [
    "$560$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách hàng của X khi ổn định; lượng rời X bằng lượng đến X: $40\\%\\cdot x = 20\\%\\cdot(1200 - x)$<br>$60x = 24000 \\Rightarrow x = 400$",
+  "explain": "Gọi $x$ là số khách hàng của X ở trạng thái ổn định. Lượng rời X là 40% của $x$; lượng chuyển từ Y sang X là 20% của $1200-x$. Cân bằng cho $\\dfrac{40}{100}x=\\dfrac{20}{100}(1200-x)$.<br>Nhân với $100$: $40x=20(1200-x)=24000-20x$, nên $(60)x=24000$ và $x=\\dfrac{24000}{60}=400$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2286,7 +2286,7 @@ window.PRACTICE_BANK = [
    "$1260$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số người dùng của X khi ổn định; lượng rời X bằng lượng đến X: $20\\%\\cdot x = 40\\%\\cdot(2100 - x)$<br>$60x = 84000 \\Rightarrow x = 1400$",
+  "explain": "Gọi $x$ là số người dùng của X ở trạng thái ổn định. Lượng rời X là 20% của $x$; lượng chuyển từ Y sang X là 40% của $2100-x$. Cân bằng cho $\\dfrac{20}{100}x=\\dfrac{40}{100}(2100-x)$.<br>Nhân với $100$: $20x=40(2100-x)=84000-40x$, nên $(60)x=84000$ và $x=\\dfrac{84000}{60}=1400$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2301,7 +2301,7 @@ window.PRACTICE_BANK = [
    "$360$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách quen của X khi ổn định; lượng rời X bằng lượng đến X: $30\\%\\cdot x = 10\\%\\cdot(1200 - x)$<br>$40x = 12000 \\Rightarrow x = 300$",
+  "explain": "Gọi $x$ là số khách quen của X ở trạng thái ổn định. Lượng rời X là 30% của $x$; lượng chuyển từ Y sang X là 10% của $1200-x$. Cân bằng cho $\\dfrac{30}{100}x=\\dfrac{10}{100}(1200-x)$.<br>Nhân với $100$: $30x=10(1200-x)=12000-10x$, nên $(40)x=12000$ và $x=\\dfrac{12000}{40}=300$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2316,7 +2316,7 @@ window.PRACTICE_BANK = [
    "$825$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách hàng của X khi ổn định; lượng rời X bằng lượng đến X: $10\\%\\cdot x = 20\\%\\cdot(1500 - x)$<br>$30x = 30000 \\Rightarrow x = 1000$",
+  "explain": "Gọi $x$ là số khách hàng của X ở trạng thái ổn định. Lượng rời X là 10% của $x$; lượng chuyển từ Y sang X là 20% của $1500-x$. Cân bằng cho $\\dfrac{10}{100}x=\\dfrac{20}{100}(1500-x)$.<br>Nhân với $100$: $10x=20(1500-x)=30000-20x$, nên $(30)x=30000$ và $x=\\dfrac{30000}{30}=1000$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2331,7 +2331,7 @@ window.PRACTICE_BANK = [
    "$360$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số người dùng của X khi ổn định; lượng rời X bằng lượng đến X: $10\\%\\cdot x = 30\\%\\cdot(600 - x)$<br>$40x = 18000 \\Rightarrow x = 450$",
+  "explain": "Gọi $x$ là số người dùng của X ở trạng thái ổn định. Lượng rời X là 10% của $x$; lượng chuyển từ Y sang X là 30% của $600-x$. Cân bằng cho $\\dfrac{10}{100}x=\\dfrac{30}{100}(600-x)$.<br>Nhân với $100$: $10x=30(600-x)=18000-30x$, nên $(40)x=18000$ và $x=\\dfrac{18000}{40}=450$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2346,7 +2346,7 @@ window.PRACTICE_BANK = [
    "$699$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số người dùng của X khi ổn định; lượng rời X bằng lượng đến X: $30\\%\\cdot x = 40\\%\\cdot(1400 - x)$<br>$70x = 56000 \\Rightarrow x = 800$",
+  "explain": "Gọi $x$ là số người dùng của X ở trạng thái ổn định. Lượng rời X là 30% của $x$; lượng chuyển từ Y sang X là 40% của $1400-x$. Cân bằng cho $\\dfrac{30}{100}x=\\dfrac{40}{100}(1400-x)$.<br>Nhân với $100$: $30x=40(1400-x)=56000-40x$, nên $(70)x=56000$ và $x=\\dfrac{56000}{70}=800$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2361,7 +2361,7 @@ window.PRACTICE_BANK = [
    "$360$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số người dùng của X khi ổn định; lượng rời X bằng lượng đến X: $20\\%\\cdot x = 40\\%\\cdot(600 - x)$<br>$60x = 24000 \\Rightarrow x = 400$",
+  "explain": "Gọi $x$ là số người dùng của X ở trạng thái ổn định. Lượng rời X là 20% của $x$; lượng chuyển từ Y sang X là 40% của $600-x$. Cân bằng cho $\\dfrac{20}{100}x=\\dfrac{40}{100}(600-x)$.<br>Nhân với $100$: $20x=40(600-x)=24000-40x$, nên $(60)x=24000$ và $x=\\dfrac{24000}{60}=400$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2376,7 +2376,7 @@ window.PRACTICE_BANK = [
    "$825$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số người dùng của X khi ổn định; lượng rời X bằng lượng đến X: $10\\%\\cdot x = 20\\%\\cdot(1500 - x)$<br>$30x = 30000 \\Rightarrow x = 1000$",
+  "explain": "Gọi $x$ là số người dùng của X ở trạng thái ổn định. Lượng rời X là 10% của $x$; lượng chuyển từ Y sang X là 20% của $1500-x$. Cân bằng cho $\\dfrac{10}{100}x=\\dfrac{20}{100}(1500-x)$.<br>Nhân với $100$: $10x=20(1500-x)=30000-20x$, nên $(30)x=30000$ và $x=\\dfrac{30000}{30}=1000$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2391,7 +2391,7 @@ window.PRACTICE_BANK = [
    "$701$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách quen của X khi ổn định; lượng rời X bằng lượng đến X: $40\\%\\cdot x = 20\\%\\cdot(2100 - x)$<br>$60x = 42000 \\Rightarrow x = 700$",
+  "explain": "Gọi $x$ là số khách quen của X ở trạng thái ổn định. Lượng rời X là 40% của $x$; lượng chuyển từ Y sang X là 20% của $2100-x$. Cân bằng cho $\\dfrac{40}{100}x=\\dfrac{20}{100}(2100-x)$.<br>Nhân với $100$: $40x=20(2100-x)=42000-20x$, nên $(60)x=42000$ và $x=\\dfrac{42000}{60}=700$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2406,7 +2406,7 @@ window.PRACTICE_BANK = [
    "$390$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách hàng của X khi ổn định; lượng rời X bằng lượng đến X: $10\\%\\cdot x = 40\\%\\cdot(600 - x)$<br>$50x = 24000 \\Rightarrow x = 480$",
+  "explain": "Gọi $x$ là số khách hàng của X ở trạng thái ổn định. Lượng rời X là 10% của $x$; lượng chuyển từ Y sang X là 40% của $600-x$. Cân bằng cho $\\dfrac{10}{100}x=\\dfrac{40}{100}(600-x)$.<br>Nhân với $100$: $10x=40(600-x)=24000-40x$, nên $(50)x=24000$ và $x=\\dfrac{24000}{50}=480$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2421,7 +2421,7 @@ window.PRACTICE_BANK = [
    "$699$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách hàng của X khi ổn định; lượng rời X bằng lượng đến X: $30\\%\\cdot x = 40\\%\\cdot(1400 - x)$<br>$70x = 56000 \\Rightarrow x = 800$",
+  "explain": "Gọi $x$ là số khách hàng của X ở trạng thái ổn định. Lượng rời X là 30% của $x$; lượng chuyển từ Y sang X là 40% của $1400-x$. Cân bằng cho $\\dfrac{30}{100}x=\\dfrac{40}{100}(1400-x)$.<br>Nhân với $100$: $30x=40(1400-x)=56000-40x$, nên $(70)x=56000$ và $x=\\dfrac{56000}{70}=800$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2436,7 +2436,7 @@ window.PRACTICE_BANK = [
    "$1001$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số người dùng của X khi ổn định; lượng rời X bằng lượng đến X: $10\\%\\cdot x = 20\\%\\cdot(1500 - x)$<br>$30x = 30000 \\Rightarrow x = 1000$",
+  "explain": "Gọi $x$ là số người dùng của X ở trạng thái ổn định. Lượng rời X là 10% của $x$; lượng chuyển từ Y sang X là 20% của $1500-x$. Cân bằng cho $\\dfrac{10}{100}x=\\dfrac{20}{100}(1500-x)$.<br>Nhân với $100$: $10x=20(1500-x)=30000-20x$, nên $(30)x=30000$ và $x=\\dfrac{30000}{30}=1000$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2451,7 +2451,7 @@ window.PRACTICE_BANK = [
    "$630$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số người dùng của X khi ổn định; lượng rời X bằng lượng đến X: $40\\%\\cdot x = 30\\%\\cdot(1400 - x)$<br>$70x = 42000 \\Rightarrow x = 600$",
+  "explain": "Gọi $x$ là số người dùng của X ở trạng thái ổn định. Lượng rời X là 40% của $x$; lượng chuyển từ Y sang X là 30% của $1400-x$. Cân bằng cho $\\dfrac{40}{100}x=\\dfrac{30}{100}(1400-x)$.<br>Nhân với $100$: $40x=30(1400-x)=42000-30x$, nên $(70)x=42000$ và $x=\\dfrac{42000}{70}=600$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2466,7 +2466,7 @@ window.PRACTICE_BANK = [
    "$160$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách quen của X khi ổn định; lượng rời X bằng lượng đến X: $40\\%\\cdot x = 10\\%\\cdot(600 - x)$<br>$50x = 6000 \\Rightarrow x = 120$",
+  "explain": "Gọi $x$ là số khách quen của X ở trạng thái ổn định. Lượng rời X là 40% của $x$; lượng chuyển từ Y sang X là 10% của $600-x$. Cân bằng cho $\\dfrac{40}{100}x=\\dfrac{10}{100}(600-x)$.<br>Nhân với $100$: $40x=10(600-x)=6000-10x$, nên $(50)x=6000$ và $x=\\dfrac{6000}{50}=120$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2481,7 +2481,7 @@ window.PRACTICE_BANK = [
    "$839$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách quen của X khi ổn định; lượng rời X bằng lượng đến X: $30\\%\\cdot x = 40\\%\\cdot(1400 - x)$<br>$70x = 56000 \\Rightarrow x = 800$",
+  "explain": "Gọi $x$ là số khách quen của X ở trạng thái ổn định. Lượng rời X là 30% của $x$; lượng chuyển từ Y sang X là 40% của $1400-x$. Cân bằng cho $\\dfrac{30}{100}x=\\dfrac{40}{100}(1400-x)$.<br>Nhân với $100$: $30x=40(1400-x)=56000-40x$, nên $(70)x=56000$ và $x=\\dfrac{56000}{70}=800$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2496,7 +2496,7 @@ window.PRACTICE_BANK = [
    "$699$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách quen của X khi ổn định; lượng rời X bằng lượng đến X: $30\\%\\cdot x = 40\\%\\cdot(1400 - x)$<br>$70x = 56000 \\Rightarrow x = 800$",
+  "explain": "Gọi $x$ là số khách quen của X ở trạng thái ổn định. Lượng rời X là 30% của $x$; lượng chuyển từ Y sang X là 40% của $1400-x$. Cân bằng cho $\\dfrac{30}{100}x=\\dfrac{40}{100}(1400-x)$.<br>Nhân với $100$: $30x=40(1400-x)=56000-40x$, nên $(70)x=56000$ và $x=\\dfrac{56000}{70}=800$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2511,7 +2511,7 @@ window.PRACTICE_BANK = [
    "$600$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách hàng của X khi ổn định; lượng rời X bằng lượng đến X: $30\\%\\cdot x = 10\\%\\cdot(1500 - x)$<br>$40x = 15000 \\Rightarrow x = 375$",
+  "explain": "Gọi $x$ là số khách hàng của X ở trạng thái ổn định. Lượng rời X là 30% của $x$; lượng chuyển từ Y sang X là 10% của $1500-x$. Cân bằng cho $\\dfrac{30}{100}x=\\dfrac{10}{100}(1500-x)$.<br>Nhân với $100$: $30x=10(1500-x)=15000-10x$, nên $(40)x=15000$ và $x=\\dfrac{15000}{40}=375$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2526,7 +2526,7 @@ window.PRACTICE_BANK = [
    "$700$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số người dùng của X khi ổn định; lượng rời X bằng lượng đến X: $40\\%\\cdot x = 20\\%\\cdot(1500 - x)$<br>$60x = 30000 \\Rightarrow x = 500$",
+  "explain": "Gọi $x$ là số người dùng của X ở trạng thái ổn định. Lượng rời X là 40% của $x$; lượng chuyển từ Y sang X là 20% của $1500-x$. Cân bằng cho $\\dfrac{40}{100}x=\\dfrac{20}{100}(1500-x)$.<br>Nhân với $100$: $40x=20(1500-x)=30000-20x$, nên $(60)x=30000$ và $x=\\dfrac{30000}{60}=500$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2541,7 +2541,7 @@ window.PRACTICE_BANK = [
    "$540$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách quen của X khi ổn định; lượng rời X bằng lượng đến X: $20\\%\\cdot x = 40\\%\\cdot(900 - x)$<br>$60x = 36000 \\Rightarrow x = 600$",
+  "explain": "Gọi $x$ là số khách quen của X ở trạng thái ổn định. Lượng rời X là 20% của $x$; lượng chuyển từ Y sang X là 40% của $900-x$. Cân bằng cho $\\dfrac{20}{100}x=\\dfrac{40}{100}(900-x)$.<br>Nhân với $100$: $20x=40(900-x)=36000-40x$, nên $(60)x=36000$ và $x=\\dfrac{36000}{60}=600$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2556,7 +2556,7 @@ window.PRACTICE_BANK = [
    "$950$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số người dùng của X khi ổn định; lượng rời X bằng lượng đến X: $20\\%\\cdot x = 30\\%\\cdot(1500 - x)$<br>$50x = 45000 \\Rightarrow x = 900$",
+  "explain": "Gọi $x$ là số người dùng của X ở trạng thái ổn định. Lượng rời X là 20% của $x$; lượng chuyển từ Y sang X là 30% của $1500-x$. Cân bằng cho $\\dfrac{20}{100}x=\\dfrac{30}{100}(1500-x)$.<br>Nhân với $100$: $20x=30(1500-x)=45000-30x$, nên $(50)x=45000$ và $x=\\dfrac{45000}{50}=900$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2571,7 +2571,7 @@ window.PRACTICE_BANK = [
    "$1365$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số người dùng của X khi ổn định; lượng rời X bằng lượng đến X: $10\\%\\cdot x = 40\\%\\cdot(2100 - x)$<br>$50x = 84000 \\Rightarrow x = 1680$",
+  "explain": "Gọi $x$ là số người dùng của X ở trạng thái ổn định. Lượng rời X là 10% của $x$; lượng chuyển từ Y sang X là 40% của $2100-x$. Cân bằng cho $\\dfrac{10}{100}x=\\dfrac{40}{100}(2100-x)$.<br>Nhân với $100$: $10x=40(2100-x)=84000-40x$, nên $(50)x=84000$ và $x=\\dfrac{84000}{50}=1680$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2586,7 +2586,7 @@ window.PRACTICE_BANK = [
    "$606$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số khách hàng của X khi ổn định; lượng rời X bằng lượng đến X: $40\\%\\cdot x = 10\\%\\cdot(1400 - x)$<br>$50x = 14000 \\Rightarrow x = 280$",
+  "explain": "Gọi $x$ là số khách hàng của X ở trạng thái ổn định. Lượng rời X là 40% của $x$; lượng chuyển từ Y sang X là 10% của $1400-x$. Cân bằng cho $\\dfrac{40}{100}x=\\dfrac{10}{100}(1400-x)$.<br>Nhân với $100$: $40x=10(1400-x)=14000-10x$, nên $(50)x=14000$ và $x=\\dfrac{14000}{50}=280$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2601,7 +2601,7 @@ window.PRACTICE_BANK = [
    "$840$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số người dùng của X khi ổn định; lượng rời X bằng lượng đến X: $40\\%\\cdot x = 30\\%\\cdot(2100 - x)$<br>$70x = 63000 \\Rightarrow x = 900$",
+  "explain": "Gọi $x$ là số người dùng của X ở trạng thái ổn định. Lượng rời X là 40% của $x$; lượng chuyển từ Y sang X là 30% của $2100-x$. Cân bằng cho $\\dfrac{40}{100}x=\\dfrac{30}{100}(2100-x)$.<br>Nhân với $100$: $40x=30(2100-x)=63000-30x$, nên $(70)x=63000$ và $x=\\dfrac{63000}{70}=900$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2616,7 +2616,7 @@ window.PRACTICE_BANK = [
    "$945$."
   ],
   "answer": 0,
-  "explain": "Gọi $x$ là số người dùng của X khi ổn định; lượng rời X bằng lượng đến X: $40\\%\\cdot x = 30\\%\\cdot(2100 - x)$<br>$70x = 63000 \\Rightarrow x = 900$",
+  "explain": "Gọi $x$ là số người dùng của X ở trạng thái ổn định. Lượng rời X là 40% của $x$; lượng chuyển từ Y sang X là 30% của $2100-x$. Cân bằng cho $\\dfrac{40}{100}x=\\dfrac{30}{100}(2100-x)$.<br>Nhân với $100$: $40x=30(2100-x)=63000-30x$, nên $(70)x=63000$ và $x=\\dfrac{63000}{70}=900$.",
   "note": "Ở trạng thái ổn định, lượng khách rời X mỗi tháng bằng lượng khách chuyển đến X; kết quả không phụ thuộc số khách ban đầu.",
   "topic": "he",
   "type": "mcq",
@@ -2691,7 +2691,7 @@ window.PRACTICE_BANK = [
    "$(a;b) = (-4;-3)$."
   ],
   "answer": 0,
-  "explain": "Vô số nghiệm $\\Leftrightarrow \\dfrac{b + 1}{1} = \\dfrac{16}{a} = \\dfrac{a^2 - 8}{2}$<br>Với $(a;b) = (4;3)$: $\\dfrac{4}{1} = 4;\\quad \\dfrac{16}{4} = 4;\\quad \\dfrac{8}{2} = 4$ (thỏa mãn)<br>Mỗi cặp còn lại làm ít nhất một tỉ số khác đi nên không cho vô số nghiệm",
+  "explain": "Để vô số nghiệm, ba hệ số của phương trình đầu phải cùng tỉ lệ với $(1,a,c_0)$ của phương trình sau: $b+1=\\lambda$, $16=\\lambda a$, $a^2 - 8=\\lambda2$.<br>Với $(a,b)=(4,3)$: $b+1=4=4$; $16=4\\cdot4=16$; $a^2 - 8=8=4\\cdot2=8$. Do đó hai phương trình tỉ lệ đúng cùng hệ số $\\lambda=4$.<br>Kiểm tra các cặp còn lại bằng cùng ba phép thế trên; ít nhất một hệ số không đúng tỉ lệ (do các cặp đã lọc bằng điều kiện works), nên không tạo cùng một phương trình.",
   "note": "Hệ hai phương trình hai ẩn có vô số nghiệm khi các hệ số và vế phải tỉ lệ: $\\dfrac{a_1}{a_2} = \\dfrac{b_1}{b_2} = \\dfrac{c_1}{c_2}$.",
   "topic": "he",
   "type": "mcq",
@@ -2751,7 +2751,7 @@ window.PRACTICE_BANK = [
    "$3$."
   ],
   "answer": 0,
-  "explain": "Từng phần với $u = x,\\ dv = e^{-x}dx$: $\\displaystyle\\int_0^{+\\infty}xe^{-x}dx = \\left[-\\dfrac{x}{1}e^{-x}\\right]_0^{+\\infty} + \\dfrac{1}{1}\\int_0^{+\\infty}e^{-x}dx$<br>$= 0 + \\dfrac{1}{1}\\cdot\\dfrac{1}{1} = 1$",
+  "explain": "Từng phần trên $[0,R]$ với $u=x$, $dv=e^{-x}dx$, $v=-e^{-x}/1$: $\\int_0^Rxe^{-x}dx=[-xe^{-x}/1]_0^R+\\frac1{1}\\int_0^Re^{-x}dx$.<br>Cho $R\\to\\infty$, $Re^{-1R}\\to0$; tích phân còn lại là $[-e^{-1x}/1]_0^\\infty=1/1$. Vậy $I=0+\\dfrac1{1}\\cdot\\dfrac1{1}=1$.",
   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$.",
   "topic": "dh",
   "type": "mcq",
@@ -2766,7 +2766,7 @@ window.PRACTICE_BANK = [
    "$1 + \\dfrac{\\pi}{2}$."
   ],
   "answer": 0,
-  "explain": "$\\displaystyle\\int_0^{+\\infty}\\dfrac{dx}{x^2 + 1} = \\left[\\dfrac{1}{1}\\arctan\\dfrac{x}{1}\\right]_0^{+\\infty}$<br>$= \\dfrac{1}{1}\\cdot\\dfrac{\\pi}{2} = \\dfrac{\\pi}{2}$",
+  "explain": "Đặt $x=1t$, $dx=1dt$, $x^2+1=1(1+t^2)$: $\\int_0^\\infty\\dfrac{dx}{x^2+1}=\\dfrac1{1}\\int_0^\\infty\\dfrac{dt}{1+t^2}$.<br>$=\\dfrac1{1}[\\arctan t]_0^\\infty=\\dfrac1{1}(\\dfrac\\pi2-0)=\\dfrac{\\pi}{2}$.",
   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$.",
   "topic": "dh",
   "type": "mcq",
@@ -2781,7 +2781,7 @@ window.PRACTICE_BANK = [
    "$\\ln 2 + 1$."
   ],
   "answer": 0,
-  "explain": "$\\dfrac{1}{x(x + 1)} = \\dfrac{1}{1}\\left(\\dfrac1x - \\dfrac{1}{x + 1}\\right)$<br>$I = \\dfrac{1}{1}\\left[\\ln\\dfrac{x}{x + 1}\\right]_1^{+\\infty} = \\dfrac{1}{1}\\left(0 - \\ln\\dfrac{1}{2}\\right) = \\ln 2$",
+  "explain": "Phân tích phân thức: $\\dfrac1{x(x+1)}=\\dfrac1{1}\\left(\\dfrac1x-\\dfrac1{x+1}\\right)$ vì $\\dfrac{(x+1)-x}{1x(x+1)}=\\dfrac1{x(x+1)}$.<br>$I_R=\\dfrac1{1}\\left[\\ln x-\\ln(x+1)\\right]_1^R=\\dfrac1{1}\\ln\\dfrac{2R}{R+1}\\to\\dfrac1{1}\\ln2=\\ln 2$.",
   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$.",
   "topic": "dh",
   "type": "mcq",
@@ -2796,7 +2796,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{4}{3}$."
   ],
   "answer": 0,
-  "explain": "Từng phần hai lần: $I = \\left[-\\dfrac{1}{4}e^{-3x}\\cos 4x\\right]_0^{+\\infty} - \\dfrac{3}{4}\\displaystyle\\int_0^{+\\infty}e^{-3x}\\cos 4x\\,dx = \\dfrac{1}{4} - \\dfrac{9}{16}I$<br>$I\\left(1 + \\dfrac{9}{16}\\right) = \\dfrac{1}{4} \\Rightarrow I = \\dfrac{4}{25}$",
+  "explain": "Đặt $I=\\int_0^\\infty e^{-ax}\\sin bx\\,dx$, $J=\\int_0^\\infty e^{-ax}\\cos bx\\,dx$. Từng phần cho $I=[-e^{-ax}\\cos bx/b]_0^\\infty-(a/b)J=1/b-(a/b)J$.<br>Từng phần với $J$: $J=[e^{-ax}\\sin bx/b]_0^\\infty+(a/b)I=(a/b)I$. Thế vào phương trình đầu: $I=1/b-(a^2/b^2)I$, nên $I(1+a^2/b^2)=1/b$ và $I=b/(a^2+b^2)=\\dfrac{4}{25}$.",
   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$.",
   "topic": "dh",
   "type": "mcq",
@@ -2826,7 +2826,7 @@ window.PRACTICE_BANK = [
    "$- \\pi \\left(1 - e^{4}\\right)$."
   ],
   "answer": 0,
-  "explain": "$V = \\pi\\displaystyle\\int_0^{2} y^2\\,dx = \\pi\\int_0^{2} e^{2 x}\\,dx$<br>$= \\pi\\left[\\dfrac{e^{2 x}}{2}\\right]_0^{2} = - \\dfrac{\\pi \\left(1 - e^{4}\\right)}{2}$",
+  "explain": "$V=\\pi\\int_0^{2}y^2dx=\\pi\\int_0^{2}e^{2 x}dx$; bình phương hàm số cho biểu thức dưới dấu tích phân như trên.<br>Nguyên hàm là $\\dfrac{e^{2 x}}{2}$. Thế cận: $V=\\pi(\\dfrac{e^{4}}{2}-\\dfrac{1}{2})=- \\dfrac{\\pi \\left(1 - e^{4}\\right)}{2}$.",
   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$.",
   "topic": "dh",
   "type": "mcq",
@@ -2841,7 +2841,7 @@ window.PRACTICE_BANK = [
    "$1$."
   ],
   "answer": 0,
-  "explain": "Từng phần với $u = x,\\ dv = e^{-2x}dx$: $\\displaystyle\\int_0^{+\\infty}xe^{-2x}dx = \\left[-\\dfrac{x}{2}e^{-2x}\\right]_0^{+\\infty} + \\dfrac{1}{2}\\int_0^{+\\infty}e^{-2x}dx$<br>$= 0 + \\dfrac{1}{2}\\cdot\\dfrac{1}{2} = \\dfrac{1}{4}$",
+  "explain": "Từng phần trên $[0,R]$ với $u=x$, $dv=e^{-2x}dx$, $v=-e^{-2x}/2$: $\\int_0^Rxe^{-2x}dx=[-xe^{-2x}/2]_0^R+\\frac1{2}\\int_0^Re^{-2x}dx$.<br>Cho $R\\to\\infty$, $Re^{-2R}\\to0$; tích phân còn lại là $[-e^{-2x}/2]_0^\\infty=1/2$. Vậy $I=0+\\dfrac1{2}\\cdot\\dfrac1{2}=\\dfrac{1}{4}$.",
   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$.",
   "topic": "dh",
   "type": "mcq",
@@ -2856,7 +2856,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{\\pi}{4} + 1$."
   ],
   "answer": 0,
-  "explain": "$\\displaystyle\\int_0^{+\\infty}\\dfrac{dx}{x^2 + 4} = \\left[\\dfrac{1}{2}\\arctan\\dfrac{x}{2}\\right]_0^{+\\infty}$<br>$= \\dfrac{1}{2}\\cdot\\dfrac{\\pi}{2} = \\dfrac{\\pi}{4}$",
+  "explain": "Đặt $x=2t$, $dx=2dt$, $x^2+4=4(1+t^2)$: $\\int_0^\\infty\\dfrac{dx}{x^2+4}=\\dfrac1{2}\\int_0^\\infty\\dfrac{dt}{1+t^2}$.<br>$=\\dfrac1{2}[\\arctan t]_0^\\infty=\\dfrac1{2}(\\dfrac\\pi2-0)=\\dfrac{\\pi}{4}$.",
   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$.",
   "topic": "dh",
   "type": "mcq",
@@ -2885,7 +2885,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{1}{3}$."
   ],
   "answer": 0,
-  "explain": "Từng phần hai lần: $I = \\left[-\\dfrac{1}{1}e^{-2x}\\cos x\\right]_0^{+\\infty} - \\dfrac{2}{1}\\displaystyle\\int_0^{+\\infty}e^{-2x}\\cos x\\,dx = \\dfrac{1}{1} - \\dfrac{4}{1}I$<br>$I\\left(1 + \\dfrac{4}{1}\\right) = \\dfrac{1}{1} \\Rightarrow I = \\dfrac{1}{5}$",
+  "explain": "Đặt $I=\\int_0^\\infty e^{-ax}\\sin bx\\,dx$, $J=\\int_0^\\infty e^{-ax}\\cos bx\\,dx$. Từng phần cho $I=[-e^{-ax}\\cos bx/b]_0^\\infty-(a/b)J=1/b-(a/b)J$.<br>Từng phần với $J$: $J=[e^{-ax}\\sin bx/b]_0^\\infty+(a/b)I=(a/b)I$. Thế vào phương trình đầu: $I=1/b-(a^2/b^2)I$, nên $I(1+a^2/b^2)=1/b$ và $I=b/(a^2+b^2)=\\dfrac{1}{5}$.",
   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$.",
   "topic": "dh",
   "type": "mcq",
@@ -2915,7 +2915,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{\\pi}{2}$."
   ],
   "answer": 0,
-  "explain": "$V = \\pi\\displaystyle\\int_0^{1} y^2\\,dx = \\pi\\int_0^{1} x^{3}\\,dx$<br>$= \\pi\\left[\\dfrac{x^{4}}{4}\\right]_0^{1} = \\dfrac{\\pi}{4}$",
+  "explain": "$V=\\pi\\int_0^{1}y^2dx=\\pi\\int_0^{1}x^{3}dx$; bình phương hàm số cho biểu thức dưới dấu tích phân như trên.<br>Nguyên hàm là $\\dfrac{x^{4}}{4}$. Thế cận: $V=\\pi(\\dfrac{1}{4}-0)=\\dfrac{\\pi}{4}$.",
   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$.",
   "topic": "dh",
   "type": "mcq",
@@ -2930,7 +2930,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{1}{8}$."
   ],
   "answer": 0,
-  "explain": "Từng phần với $u = x,\\ dv = e^{-4x}dx$: $\\displaystyle\\int_0^{+\\infty}xe^{-4x}dx = \\left[-\\dfrac{x}{4}e^{-4x}\\right]_0^{+\\infty} + \\dfrac{1}{4}\\int_0^{+\\infty}e^{-4x}dx$<br>$= 0 + \\dfrac{1}{4}\\cdot\\dfrac{1}{4} = \\dfrac{1}{16}$",
+  "explain": "Từng phần trên $[0,R]$ với $u=x$, $dv=e^{-4x}dx$, $v=-e^{-4x}/4$: $\\int_0^Rxe^{-4x}dx=[-xe^{-4x}/4]_0^R+\\frac1{4}\\int_0^Re^{-4x}dx$.<br>Cho $R\\to\\infty$, $Re^{-4R}\\to0$; tích phân còn lại là $[-e^{-4x}/4]_0^\\infty=1/4$. Vậy $I=0+\\dfrac1{4}\\cdot\\dfrac1{4}=\\dfrac{1}{16}$.",
   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$.",
   "topic": "dh",
   "type": "mcq",
@@ -2945,7 +2945,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{\\pi}{18}$."
   ],
   "answer": 0,
-  "explain": "$\\displaystyle\\int_0^{+\\infty}\\dfrac{dx}{x^2 + 9} = \\left[\\dfrac{1}{3}\\arctan\\dfrac{x}{3}\\right]_0^{+\\infty}$<br>$= \\dfrac{1}{3}\\cdot\\dfrac{\\pi}{2} = \\dfrac{\\pi}{6}$",
+  "explain": "Đặt $x=3t$, $dx=3dt$, $x^2+9=9(1+t^2)$: $\\int_0^\\infty\\dfrac{dx}{x^2+9}=\\dfrac1{3}\\int_0^\\infty\\dfrac{dt}{1+t^2}$.<br>$=\\dfrac1{3}[\\arctan t]_0^\\infty=\\dfrac1{3}(\\dfrac\\pi2-0)=\\dfrac{\\pi}{6}$.",
   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$.",
   "topic": "dh",
   "type": "mcq",
@@ -2960,7 +2960,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{1}{2}$."
   ],
   "answer": 0,
-  "explain": "$\\dfrac{1}{x(x + 2)} = \\dfrac{1}{2}\\left(\\dfrac1x - \\dfrac{1}{x + 2}\\right)$<br>$I = \\dfrac{1}{2}\\left[\\ln\\dfrac{x}{x + 2}\\right]_1^{+\\infty} = \\dfrac{1}{2}\\left(0 - \\ln\\dfrac{1}{3}\\right) = \\dfrac{\\ln 3}{2}$",
+  "explain": "Phân tích phân thức: $\\dfrac1{x(x+2)}=\\dfrac1{2}\\left(\\dfrac1x-\\dfrac1{x+2}\\right)$ vì $\\dfrac{(x+2)-x}{2x(x+2)}=\\dfrac1{x(x+2)}$.<br>$I_R=\\dfrac1{2}\\left[\\ln x-\\ln(x+2)\\right]_1^R=\\dfrac1{2}\\ln\\dfrac{3R}{R+2}\\to\\dfrac1{2}\\ln3=\\dfrac{\\ln 3}{2}$.",
   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$.",
   "topic": "dh",
   "type": "mcq",
@@ -2975,7 +2975,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{1}{3}$."
   ],
   "answer": 0,
-  "explain": "Từng phần hai lần: $I = \\left[-\\dfrac{1}{2}e^{-x}\\cos 2x\\right]_0^{+\\infty} - \\dfrac{1}{2}\\displaystyle\\int_0^{+\\infty}e^{-x}\\cos 2x\\,dx = \\dfrac{1}{2} - \\dfrac{1}{4}I$<br>$I\\left(1 + \\dfrac{1}{4}\\right) = \\dfrac{1}{2} \\Rightarrow I = \\dfrac{2}{5}$",
+  "explain": "Đặt $I=\\int_0^\\infty e^{-ax}\\sin bx\\,dx$, $J=\\int_0^\\infty e^{-ax}\\cos bx\\,dx$. Từng phần cho $I=[-e^{-ax}\\cos bx/b]_0^\\infty-(a/b)J=1/b-(a/b)J$.<br>Từng phần với $J$: $J=[e^{-ax}\\sin bx/b]_0^\\infty+(a/b)I=(a/b)I$. Thế vào phương trình đầu: $I=1/b-(a^2/b^2)I$, nên $I(1+a^2/b^2)=1/b$ và $I=b/(a^2+b^2)=\\dfrac{2}{5}$.",
   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$.",
   "topic": "dh",
   "type": "mcq",
@@ -3005,7 +3005,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{486 \\pi}{5}$."
   ],
   "answer": 0,
-  "explain": "$V = \\pi\\displaystyle\\int_0^{3} y^2\\,dx = \\pi\\int_0^{3} x^{4}\\,dx$<br>$= \\pi\\left[\\dfrac{x^{5}}{5}\\right]_0^{3} = \\dfrac{243 \\pi}{5}$",
+  "explain": "$V=\\pi\\int_0^{3}y^2dx=\\pi\\int_0^{3}x^{4}dx$; bình phương hàm số cho biểu thức dưới dấu tích phân như trên.<br>Nguyên hàm là $\\dfrac{x^{5}}{5}$. Thế cận: $V=\\pi(\\dfrac{243}{5}-0)=\\dfrac{243 \\pi}{5}$.",
   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$.",
   "topic": "dh",
   "type": "mcq",
@@ -3020,7 +3020,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{2}{9}$."
   ],
   "answer": 0,
-  "explain": "Từng phần với $u = x,\\ dv = e^{-3x}dx$: $\\displaystyle\\int_0^{+\\infty}xe^{-3x}dx = \\left[-\\dfrac{x}{3}e^{-3x}\\right]_0^{+\\infty} + \\dfrac{1}{3}\\int_0^{+\\infty}e^{-3x}dx$<br>$= 0 + \\dfrac{1}{3}\\cdot\\dfrac{1}{3} = \\dfrac{1}{9}$",
+  "explain": "Từng phần trên $[0,R]$ với $u=x$, $dv=e^{-3x}dx$, $v=-e^{-3x}/3$: $\\int_0^Rxe^{-3x}dx=[-xe^{-3x}/3]_0^R+\\frac1{3}\\int_0^Re^{-3x}dx$.<br>Cho $R\\to\\infty$, $Re^{-3R}\\to0$; tích phân còn lại là $[-e^{-3x}/3]_0^\\infty=1/3$. Vậy $I=0+\\dfrac1{3}\\cdot\\dfrac1{3}=\\dfrac{1}{9}$.",
   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$.",
   "topic": "dh",
   "type": "mcq",
@@ -3035,7 +3035,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{\\pi}{32}$."
   ],
   "answer": 0,
-  "explain": "$\\displaystyle\\int_0^{+\\infty}\\dfrac{dx}{x^2 + 16} = \\left[\\dfrac{1}{4}\\arctan\\dfrac{x}{4}\\right]_0^{+\\infty}$<br>$= \\dfrac{1}{4}\\cdot\\dfrac{\\pi}{2} = \\dfrac{\\pi}{8}$",
+  "explain": "Đặt $x=4t$, $dx=4dt$, $x^2+16=16(1+t^2)$: $\\int_0^\\infty\\dfrac{dx}{x^2+16}=\\dfrac1{4}\\int_0^\\infty\\dfrac{dt}{1+t^2}$.<br>$=\\dfrac1{4}[\\arctan t]_0^\\infty=\\dfrac1{4}(\\dfrac\\pi2-0)=\\dfrac{\\pi}{8}$.",
   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$.",
   "topic": "dh",
   "type": "mcq",
@@ -3050,7 +3050,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{1}{3}$."
   ],
   "answer": 0,
-  "explain": "$\\dfrac{1}{x(x + 3)} = \\dfrac{1}{3}\\left(\\dfrac1x - \\dfrac{1}{x + 3}\\right)$<br>$I = \\dfrac{1}{3}\\left[\\ln\\dfrac{x}{x + 3}\\right]_1^{+\\infty} = \\dfrac{1}{3}\\left(0 - \\ln\\dfrac{1}{4}\\right) = \\dfrac{2 \\ln 2}{3}$",
+  "explain": "Phân tích phân thức: $\\dfrac1{x(x+3)}=\\dfrac1{3}\\left(\\dfrac1x-\\dfrac1{x+3}\\right)$ vì $\\dfrac{(x+3)-x}{3x(x+3)}=\\dfrac1{x(x+3)}$.<br>$I_R=\\dfrac1{3}\\left[\\ln x-\\ln(x+3)\\right]_1^R=\\dfrac1{3}\\ln\\dfrac{4R}{R+3}\\to\\dfrac1{3}\\ln4=\\dfrac{2 \\ln 2}{3}$.",
   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$.",
   "topic": "dh",
   "type": "mcq",
@@ -3065,7 +3065,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{3}{4}$."
   ],
   "answer": 0,
-  "explain": "Từng phần hai lần: $I = \\left[-\\dfrac{1}{3}e^{-4x}\\cos 3x\\right]_0^{+\\infty} - \\dfrac{4}{3}\\displaystyle\\int_0^{+\\infty}e^{-4x}\\cos 3x\\,dx = \\dfrac{1}{3} - \\dfrac{16}{9}I$<br>$I\\left(1 + \\dfrac{16}{9}\\right) = \\dfrac{1}{3} \\Rightarrow I = \\dfrac{3}{25}$",
+  "explain": "Đặt $I=\\int_0^\\infty e^{-ax}\\sin bx\\,dx$, $J=\\int_0^\\infty e^{-ax}\\cos bx\\,dx$. Từng phần cho $I=[-e^{-ax}\\cos bx/b]_0^\\infty-(a/b)J=1/b-(a/b)J$.<br>Từng phần với $J$: $J=[e^{-ax}\\sin bx/b]_0^\\infty+(a/b)I=(a/b)I$. Thế vào phương trình đầu: $I=1/b-(a^2/b^2)I$, nên $I(1+a^2/b^2)=1/b$ và $I=b/(a^2+b^2)=\\dfrac{3}{25}$.",
   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$.",
   "topic": "dh",
   "type": "mcq",
@@ -3095,7 +3095,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{2 \\pi}{5}$."
   ],
   "answer": 0,
-  "explain": "$V = \\pi\\displaystyle\\int_0^{1} y^2\\,dx = \\pi\\int_0^{1} x^{4}\\,dx$<br>$= \\pi\\left[\\dfrac{x^{5}}{5}\\right]_0^{1} = \\dfrac{\\pi}{5}$",
+  "explain": "$V=\\pi\\int_0^{1}y^2dx=\\pi\\int_0^{1}x^{4}dx$; bình phương hàm số cho biểu thức dưới dấu tích phân như trên.<br>Nguyên hàm là $\\dfrac{x^{5}}{5}$. Thế cận: $V=\\pi(\\dfrac{1}{5}-0)=\\dfrac{\\pi}{5}$.",
   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$.",
   "topic": "dh",
   "type": "mcq",
@@ -3155,7 +3155,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{5}{4}$."
   ],
   "answer": 0,
-  "explain": "Từng phần hai lần: $I = \\left[-\\dfrac{1}{2}e^{-2x}\\cos 2x\\right]_0^{+\\infty} - \\dfrac{2}{2}\\displaystyle\\int_0^{+\\infty}e^{-2x}\\cos 2x\\,dx = \\dfrac{1}{2} - \\dfrac{4}{4}I$<br>$I\\left(1 + \\dfrac{4}{4}\\right) = \\dfrac{1}{2} \\Rightarrow I = \\dfrac{1}{4}$",
+  "explain": "Đặt $I=\\int_0^\\infty e^{-ax}\\sin bx\\,dx$, $J=\\int_0^\\infty e^{-ax}\\cos bx\\,dx$. Từng phần cho $I=[-e^{-ax}\\cos bx/b]_0^\\infty-(a/b)J=1/b-(a/b)J$.<br>Từng phần với $J$: $J=[e^{-ax}\\sin bx/b]_0^\\infty+(a/b)I=(a/b)I$. Thế vào phương trình đầu: $I=1/b-(a^2/b^2)I$, nên $I(1+a^2/b^2)=1/b$ và $I=b/(a^2+b^2)=\\dfrac{1}{4}$.",
   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$.",
   "topic": "dh",
   "type": "mcq",
@@ -3185,7 +3185,7 @@ window.PRACTICE_BANK = [
    "$8 \\pi$."
   ],
   "answer": 0,
-  "explain": "$V = \\pi\\displaystyle\\int_0^{2} y^2\\,dx = \\pi\\int_0^{2} x^{3}\\,dx$<br>$= \\pi\\left[\\dfrac{x^{4}}{4}\\right]_0^{2} = 4 \\pi$",
+  "explain": "$V=\\pi\\int_0^{2}y^2dx=\\pi\\int_0^{2}x^{3}dx$; bình phương hàm số cho biểu thức dưới dấu tích phân như trên.<br>Nguyên hàm là $\\dfrac{x^{4}}{4}$. Thế cận: $V=\\pi(4-0)=4 \\pi$.",
   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$.",
   "topic": "dh",
   "type": "mcq",
@@ -3245,7 +3245,7 @@ window.PRACTICE_BANK = [
    "$- \\dfrac{1}{2}$."
   ],
   "answer": 0,
-  "explain": "Từng phần hai lần: $I = \\left[-\\dfrac{1}{1}e^{-x}\\cos x\\right]_0^{+\\infty} - \\dfrac{1}{1}\\displaystyle\\int_0^{+\\infty}e^{-x}\\cos x\\,dx = \\dfrac{1}{1} - \\dfrac{1}{1}I$<br>$I\\left(1 + \\dfrac{1}{1}\\right) = \\dfrac{1}{1} \\Rightarrow I = \\dfrac{1}{2}$",
+  "explain": "Đặt $I=\\int_0^\\infty e^{-ax}\\sin bx\\,dx$, $J=\\int_0^\\infty e^{-ax}\\cos bx\\,dx$. Từng phần cho $I=[-e^{-ax}\\cos bx/b]_0^\\infty-(a/b)J=1/b-(a/b)J$.<br>Từng phần với $J$: $J=[e^{-ax}\\sin bx/b]_0^\\infty+(a/b)I=(a/b)I$. Thế vào phương trình đầu: $I=1/b-(a^2/b^2)I$, nên $I(1+a^2/b^2)=1/b$ và $I=b/(a^2+b^2)=\\dfrac{1}{2}$.",
   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$.",
   "topic": "dh",
   "type": "mcq",
@@ -3275,7 +3275,7 @@ window.PRACTICE_BANK = [
    "$4 \\pi$."
   ],
   "answer": 0,
-  "explain": "$V = \\pi\\displaystyle\\int_0^{2} y^2\\,dx = \\pi\\int_0^{2} x\\,dx$<br>$= \\pi\\left[\\dfrac{x^{2}}{2}\\right]_0^{2} = 2 \\pi$",
+  "explain": "$V=\\pi\\int_0^{2}y^2dx=\\pi\\int_0^{2}xdx$; bình phương hàm số cho biểu thức dưới dấu tích phân như trên.<br>Nguyên hàm là $\\dfrac{x^{2}}{2}$. Thế cận: $V=\\pi(2-0)=2 \\pi$.",
   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$.",
   "topic": "dh",
   "type": "mcq",
@@ -3364,7 +3364,7 @@ window.PRACTICE_BANK = [
    "$4 \\sqrt{2} \\pi^{2}$."
   ],
   "answer": 0,
-  "explain": "$ds = \\sqrt{1^2 + 1^2}\\,dt = \\sqrt{2}\\,dt$; $\\displaystyle\\int_0^{2\\pi} 1t\\cdot\\sqrt{2}\\,dt$<br>Kết quả: $2 \\sqrt{2} \\pi^{2}$",
+  "explain": "$x^\\prime=-1\\sin t,\\ y^\\prime=1\\cos t,\\ z^\\prime=1$; hence $ds=\\sqrt{(-1\\sin t)^2+(1\\cos t)^2+1^2}\\,dt=\\sqrt{2}\\,dt$.<br>$\\displaystyle I=\\int_0^{2\\pi}1t\\cdot\\sqrt{2}\\,dt=1\\sqrt{2}\\left[\\frac{t^2}{2}\\right]_0^{2\\pi}=2\\pi^21\\sqrt{2}=2 \\sqrt{2} \\pi^{2}$.",
   "note": "Tích phân đường loại một: $ds = \\sqrt{x'^2 + y'^2}\\,dt$, không phụ thuộc chiều đi trên đường cong.",
   "topic": "td",
   "type": "mcq",
@@ -3379,7 +3379,7 @@ window.PRACTICE_BANK = [
    "$1 + 28 \\pi$."
   ],
   "answer": 0,
-  "explain": "Trên $L$, $\\rho = 4 + 3$ là hằng số nên khối lượng bằng $(4 + 3)\\cdot2\\pi\\cdot2$<br>Kết quả: $28 \\pi$",
+  "explain": "Trên $L$, $x^2+y^2=4$ nên $\\rho=4+3$ không đổi. Tham số hóa $x=2\\cos t$, $y=2\\sin t$, $0\\le t\\le2\\pi$, cho $ds=2\\,dt$.<br>$\\displaystyle M=\\int_0^{2\\pi}(4+3)2\\,dt=2\\pi2(4+3)=28 \\pi$.",
   "note": "Tích phân đường loại một: $ds = \\sqrt{x'^2 + y'^2}\\,dt$, không phụ thuộc chiều đi trên đường cong.",
   "topic": "td",
   "type": "mcq",
@@ -3394,7 +3394,7 @@ window.PRACTICE_BANK = [
    "$62$."
   ],
   "answer": 0,
-  "explain": "$ds = \\sqrt{1 + x^2}\\,dx$; $\\displaystyle\\int_0^{2\\sqrt6} x\\sqrt{1 + x^2}\\,dx = \\dfrac{(1 + x^2)^{3/2}}{3}\\Big|_0^{2\\sqrt6}$<br>Kết quả: $\\dfrac{124}{3}$",
+  "explain": "Đặt $x=t,\\ y=t^2/2$ với $0\\le t\\le2\\sqrt6$; $ds=\\sqrt{(dx/dt)^2+(dy/dt)^2}\\,dt=\\sqrt{1+t^2}\\,dt$, nên $x\\,ds=t\\sqrt{1+t^2}\\,dt$.<br>Đặt $u=1+t^2$, $du=2t\\,dt$: $\\displaystyle I=\\frac12\\int_1^{1+2\\sqrt6^2}u^{1/2}\\,du=\\frac13[u^{3/2}]_1^{1+2\\sqrt6^2}$.<br>$I=\\dfrac{(1+2\\sqrt6^2)^{3/2}-1}{3}=\\dfrac{124}{3}$.",
   "note": "Tích phân đường loại một: $ds = \\sqrt{x'^2 + y'^2}\\,dt$, không phụ thuộc chiều đi trên đường cong.",
   "topic": "td",
   "type": "mcq",
@@ -3409,7 +3409,7 @@ window.PRACTICE_BANK = [
    "$128$."
   ],
   "answer": 0,
-  "explain": "$ds = 8\\,dt$: $\\displaystyle\\int_0^{\\pi/2} 8^3\\sin t\\cos t\\,dt = \\dfrac{8^3}{2}$<br>Kết quả: $256$",
+  "explain": "$x=a\\cos t,\\ y=a\\sin t$, $0\\le t\\le\\pi/2$; $ds=\\sqrt{(-a\\sin t)^2+(a\\cos t)^2}\\,dt=8\\,dt$ and $xy=64\\sin t\\cos t$.<br>$\\displaystyle I=512\\int_0^{\\pi/2}\\sin t\\cos t\\,dt=512\\left[\\frac{\\sin^2t}{2}\\right]_0^{\\pi/2}=\\frac{512}{2}=256$.",
   "note": "Tích phân đường loại một: $ds = \\sqrt{x'^2 + y'^2}\\,dt$, không phụ thuộc chiều đi trên đường cong.",
   "topic": "td",
   "type": "mcq",
@@ -3424,7 +3424,7 @@ window.PRACTICE_BANK = [
    "$270$."
   ],
   "answer": 0,
-  "explain": "Tham số hóa $x = 0 + 6t,\\ y = 1 + 8t$, $0 \\le t \\le 1$, $ds = 10\\,dt$; hàm dưới dấu tích phân bậc nhất nên tích phân bằng độ dài đoạn thẳng nhân giá trị tại trung điểm<br>Kết quả: $140$",
+  "explain": "Tham số hóa $x=0+6t,\\ y=1+8t$, $0\\le t\\le1$; $ds=\\sqrt{6^2+8^2}\\,dt=10\\,dt$.<br>$px+qy=p(<x1>+<dx>t)+q(<y1>+<dy>t)=1+26t$. Do đó $\\displaystyle I=10\\int_0^1(1+26t)\\,dt=10(1+26/2)=140$.",
   "note": "Tích phân đường loại một: $ds = \\sqrt{x'^2 + y'^2}\\,dt$, không phụ thuộc chiều đi trên đường cong.",
   "topic": "td",
   "type": "mcq",
@@ -3439,7 +3439,7 @@ window.PRACTICE_BANK = [
    "$80 \\pi^{2}$."
   ],
   "answer": 0,
-  "explain": "$ds = \\sqrt{3^2 + 4^2}\\,dt = 5\\,dt$; $\\displaystyle\\int_0^{2\\pi} 4t\\cdot5\\,dt$<br>Kết quả: $40 \\pi^{2}$",
+  "explain": "$x^\\prime=-3\\sin t,\\ y^\\prime=3\\cos t,\\ z^\\prime=4$; hence $ds=\\sqrt{(-3\\sin t)^2+(3\\cos t)^2+4^2}\\,dt=5\\,dt$.<br>$\\displaystyle I=\\int_0^{2\\pi}4t\\cdot5\\,dt=45\\left[\\frac{t^2}{2}\\right]_0^{2\\pi}=2\\pi^245=40 \\pi^{2}$.",
   "note": "Tích phân đường loại một: $ds = \\sqrt{x'^2 + y'^2}\\,dt$, không phụ thuộc chiều đi trên đường cong.",
   "topic": "td",
   "type": "mcq",
@@ -3454,7 +3454,7 @@ window.PRACTICE_BANK = [
    "$4 \\pi - 1$."
   ],
   "answer": 0,
-  "explain": "Trên $L$, $\\rho = 1 + 1$ là hằng số nên khối lượng bằng $(1 + 1)\\cdot2\\pi\\cdot1$<br>Kết quả: $4 \\pi$",
+  "explain": "Trên $L$, $x^2+y^2=1$ nên $\\rho=1+1$ không đổi. Tham số hóa $x=1\\cos t$, $y=1\\sin t$, $0\\le t\\le2\\pi$, cho $ds=1\\,dt$.<br>$\\displaystyle M=\\int_0^{2\\pi}(1+1)1\\,dt=2\\pi1(1+1)=4 \\pi$.",
   "note": "Tích phân đường loại một: $ds = \\sqrt{x'^2 + y'^2}\\,dt$, không phụ thuộc chiều đi trên đường cong.",
   "topic": "td",
   "type": "mcq",
@@ -3469,7 +3469,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{215}{2}$."
   ],
   "answer": 0,
-  "explain": "$ds = \\sqrt{1 + x^2}\\,dx$; $\\displaystyle\\int_0^{\\sqrt{35}} x\\sqrt{1 + x^2}\\,dx = \\dfrac{(1 + x^2)^{3/2}}{3}\\Big|_0^{\\sqrt{35}}$<br>Kết quả: $\\dfrac{215}{3}$",
+  "explain": "Đặt $x=t,\\ y=t^2/2$ với $0\\le t\\le\\sqrt{35}$; $ds=\\sqrt{(dx/dt)^2+(dy/dt)^2}\\,dt=\\sqrt{1+t^2}\\,dt$, nên $x\\,ds=t\\sqrt{1+t^2}\\,dt$.<br>Đặt $u=1+t^2$, $du=2t\\,dt$: $\\displaystyle I=\\frac12\\int_1^{1+\\sqrt{35}^2}u^{1/2}\\,du=\\frac13[u^{3/2}]_1^{1+\\sqrt{35}^2}$.<br>$I=\\dfrac{(1+\\sqrt{35}^2)^{3/2}-1}{3}=\\dfrac{215}{3}$.",
   "note": "Tích phân đường loại một: $ds = \\sqrt{x'^2 + y'^2}\\,dt$, không phụ thuộc chiều đi trên đường cong.",
   "topic": "td",
   "type": "mcq",
@@ -3498,7 +3498,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{75}{4}$."
   ],
   "answer": 0,
-  "explain": "Tham số hóa $x = 0 + 4t,\\ y = 0 + 3t$, $0 \\le t \\le 1$, $ds = 5\\,dt$; hàm dưới dấu tích phân bậc nhất nên tích phân bằng độ dài đoạn thẳng nhân giá trị tại trung điểm<br>Kết quả: $\\dfrac{75}{2}$",
+  "explain": "Tham số hóa $x=0+4t,\\ y=0+3t$, $0\\le t\\le1$; $ds=\\sqrt{4^2+3^2}\\,dt=5\\,dt$.<br>$px+qy=p(<x1>+<dx>t)+q(<y1>+<dy>t)=0+15t$. Do đó $\\displaystyle I=5\\int_0^1(0+15t)\\,dt=5(0+15/2)=\\dfrac{75}{2}$.",
   "note": "Tích phân đường loại một: $ds = \\sqrt{x'^2 + y'^2}\\,dt$, không phụ thuộc chiều đi trên đường cong.",
   "topic": "td",
   "type": "mcq",
@@ -3513,7 +3513,7 @@ window.PRACTICE_BANK = [
    "$624 \\pi^{2}$."
   ],
   "answer": 0,
-  "explain": "$ds = \\sqrt{5^2 + 12^2}\\,dt = 13\\,dt$; $\\displaystyle\\int_0^{2\\pi} 12t\\cdot13\\,dt$<br>Kết quả: $312 \\pi^{2}$",
+  "explain": "$x^\\prime=-5\\sin t,\\ y^\\prime=5\\cos t,\\ z^\\prime=12$; hence $ds=\\sqrt{(-5\\sin t)^2+(5\\cos t)^2+12^2}\\,dt=13\\,dt$.<br>$\\displaystyle I=\\int_0^{2\\pi}12t\\cdot13\\,dt=1213\\left[\\frac{t^2}{2}\\right]_0^{2\\pi}=2\\pi^21213=312 \\pi^{2}$.",
   "note": "Tích phân đường loại một: $ds = \\sqrt{x'^2 + y'^2}\\,dt$, không phụ thuộc chiều đi trên đường cong.",
   "topic": "td",
   "type": "mcq",
@@ -3528,7 +3528,7 @@ window.PRACTICE_BANK = [
    "$1 + 8 \\pi$."
   ],
   "answer": 0,
-  "explain": "Trên $L$, $\\rho = 1 + 3$ là hằng số nên khối lượng bằng $(1 + 3)\\cdot2\\pi\\cdot1$<br>Kết quả: $8 \\pi$",
+  "explain": "Trên $L$, $x^2+y^2=1$ nên $\\rho=1+3$ không đổi. Tham số hóa $x=1\\cos t$, $y=1\\sin t$, $0\\le t\\le2\\pi$, cho $ds=1\\,dt$.<br>$\\displaystyle M=\\int_0^{2\\pi}(1+3)1\\,dt=2\\pi1(1+3)=8 \\pi$.",
   "note": "Tích phân đường loại một: $ds = \\sqrt{x'^2 + y'^2}\\,dt$, không phụ thuộc chiều đi trên đường cong.",
   "topic": "td",
   "type": "mcq",
