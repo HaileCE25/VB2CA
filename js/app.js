@@ -243,6 +243,30 @@
         delimiters: [{ left: '$$', right: '$$', display: true }, { left: '$', right: '$', display: false }],
         throwOnError: false
       });
+      el.querySelectorAll('.katex').forEach(math => {
+        if (!math.querySelector('.mtable')) return;
+        math.classList.add('mobile-matrix');
+        const line = document.createElement('span');
+        line.className = 'mobile-matrix-line';
+        math.parentNode.insertBefore(line, math);
+        line.appendChild(math);
+        let parent = line, next = line.nextSibling;
+        while (!next && parent !== el && parent.parentNode) {
+          parent = parent.parentNode;
+          next = parent.nextSibling;
+        }
+        if (next && next.nodeType === Node.TEXT_NODE) {
+          const punctuation = /^\s*([.,;:!?])\s*/.exec(next.textContent);
+          if (punctuation) {
+            const mark = document.createElement('span');
+            mark.className = 'mobile-matrix-punctuation';
+            mark.textContent = punctuation[1];
+            line.appendChild(mark);
+            next.textContent = next.textContent.slice(punctuation[0].length);
+          }
+          if (!next.textContent) next.parentNode.removeChild(next);
+        }
+      });
     }
   }
   function go(screen) {
@@ -1058,7 +1082,7 @@
         <div class="p-nav">
           <button class="btn-ghost" data-act="p-prev" ${P.i > 0 ? '' : 'disabled'}>← Câu trước</button>
           <span class="pending">Câu ${P.i + 1} / ${n} · ${esc(topicName(it.topic))}</span>
-          <button class="btn-ghost" data-act="p-next" ${P.i + 1 < n ? '' : 'disabled'}>Câu sau →</button>
+          <button class="btn-ghost" data-act="p-next" ${done && P.i + 1 < n ? '' : 'disabled'}>Câu sau →</button>
         </div>
         ${it.group ? `<div class="group-stem"><small>Thông tin chung</small>${it.group.stem}</div>` : ''}
         <div class="q"><div class="q-text">${it.q}</div>${body}</div>
@@ -1300,7 +1324,12 @@
     'stats-back'() { go(S.result && S.profile ? 'result' : 'login'); },
     'p-quit'() { go('stats'); },
     'p-prev'() { if (S.practice && S.practice.i > 0) { S.practice.i--; go('practice'); } },
-    'p-next'() { S.practice.i++; go('practice'); },
+    'p-next'() {
+      const P = S.practice;
+      if (!P || P.i >= P.refs.length || P.ans[P.refs[P.i]] === undefined) return;
+      P.i++;
+      go('practice');
+    },
     'p-check'() {
       const el = document.getElementById('p-short');
       if (el && el.value.trim()) answerPractice(el.value);

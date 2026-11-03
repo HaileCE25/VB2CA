@@ -832,6 +832,36 @@ body.dark .example-sol b { color: #4ade80; }
 @media (max-width: 600px) {
   .exam { padding: 10px 8px; }
   .q { padding: 12px 10px; }
+  .q-text, .group-stem, .opt { min-width: 0; overflow-wrap: anywhere; }
+  .q-text .katex, .group-stem .katex, .opt .katex { white-space: normal; }
+  .q-text .katex .base, .group-stem .katex .base, .opt .katex .base {
+    display: inline;
+    white-space: normal;
+  }
+  .q-text .katex .base *, .group-stem .katex .base *, .opt .katex .base * { white-space: normal; }
+  .q-text .mobile-matrix-line,
+  .group-stem .mobile-matrix-line,
+  .opt .mobile-matrix-line,
+  .steps .mobile-matrix-line {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    font-size: .9em;
+    margin: 4px 0;
+    padding-right: 4px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+  .mobile-matrix-line .katex.mobile-matrix {
+    display: inline;
+    white-space: nowrap;
+  }
+  .mobile-matrix-line .katex.mobile-matrix .base {
+    display: inline-block;
+    white-space: nowrap;
+  }
+  .mobile-matrix-line .katex.mobile-matrix .base * { white-space: nowrap; }
   .rv { padding: 10px; }
   .steps { margin-left: 0; padding-left: 9px; }
   .steps > div { margin: 7px 0; line-height: 1.7; }
