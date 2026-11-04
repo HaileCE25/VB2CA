@@ -59,6 +59,7 @@
   };
 
   const EXAMS = window.EXAMS || [];
+  const ESSAY_GUIDES = window.ESSAY_GUIDES || [];
   const app = document.getElementById('app');
   const modalRoot = document.getElementById('modal-root');
 
@@ -237,36 +238,53 @@
     document.documentElement.style.setProperty('--fs', S.fs + 'px');
     VnIme.mode = S.imeMode;
   }
+  function wrapWideMath(el) {
+    el.querySelectorAll('.katex').forEach(math => {
+      if (math.closest('.mobile-math-line')) return;
+      const matrix = !!math.querySelector('.mtable');
+      const card = math.closest('.formula-box, .concept-box, .example-prob, .example-sol, .formula-exercise, .trap-box');
+      const boundary = math.closest('.q-text, .group-stem, .opt, .steps > div, .formula-box, .concept-box, .example-prob, .example-sol, .formula-exercise, .trap-box') || el;
+      const mathWidth = math.getBoundingClientRect().width;
+      const tooWide = boundary.clientWidth > 0 && mathWidth > boundary.clientWidth - 24;
+      const longFormula = card && window.matchMedia('(max-width: 600px)').matches && mathWidth > 100;
+      if (!matrix && !tooWide && !longFormula) return;
+      if (matrix) math.classList.add('mobile-matrix');
+      const line = document.createElement('span');
+      line.className = matrix ? 'mobile-math-line mobile-math-overflow' : 'mobile-math-line mobile-math-fit';
+      math.parentNode.insertBefore(line, math);
+      line.appendChild(math);
+      if (!matrix && window.matchMedia('(max-width: 600px)').matches) {
+        const available = Math.max(80, line.clientWidth - 8);
+        const renderedWidth = math.getBoundingClientRect().width;
+        if (renderedWidth > available) {
+          math.style.fontSize = `${Math.max(.68, available / renderedWidth) * 100}%`;
+        }
+      }
+      let parent = line, next = line.nextSibling;
+      while (!next && parent !== el && parent.parentNode) {
+        parent = parent.parentNode;
+        next = parent.nextSibling;
+      }
+      if (next && next.nodeType === Node.TEXT_NODE) {
+        const punctuation = /^\s*([.,;:!?])\s*/.exec(next.textContent);
+        if (punctuation) {
+          const mark = document.createElement('span');
+          mark.className = 'mobile-math-punctuation';
+          mark.textContent = punctuation[1];
+          line.appendChild(mark);
+          next.textContent = next.textContent.slice(punctuation[0].length);
+        }
+        if (!next.textContent) next.parentNode.removeChild(next);
+      }
+    });
+  }
   function typeset(el) {
     if (window.renderMathInElement) {
       window.renderMathInElement(el, {
         delimiters: [{ left: '$$', right: '$$', display: true }, { left: '$', right: '$', display: false }],
         throwOnError: false
       });
-      el.querySelectorAll('.katex').forEach(math => {
-        if (!math.querySelector('.mtable')) return;
-        math.classList.add('mobile-matrix');
-        const line = document.createElement('span');
-        line.className = 'mobile-matrix-line';
-        math.parentNode.insertBefore(line, math);
-        line.appendChild(math);
-        let parent = line, next = line.nextSibling;
-        while (!next && parent !== el && parent.parentNode) {
-          parent = parent.parentNode;
-          next = parent.nextSibling;
-        }
-        if (next && next.nodeType === Node.TEXT_NODE) {
-          const punctuation = /^\s*([.,;:!?])\s*/.exec(next.textContent);
-          if (punctuation) {
-            const mark = document.createElement('span');
-            mark.className = 'mobile-matrix-punctuation';
-            mark.textContent = punctuation[1];
-            line.appendChild(mark);
-            next.textContent = next.textContent.slice(punctuation[0].length);
-          }
-          if (!next.textContent) next.parentNode.removeChild(next);
-        }
-      });
+      wrapWideMath(el);
     }
   }
   function go(screen) {
@@ -384,6 +402,7 @@
           <div class="login-note">Chế độ luyện tập: nhập SBD và PIN bất kỳ để vào thi.</div>
           <button class="btn-ghost btn-wide" type="button" data-act="open-exams" style="margin-top:10px">📚 Thư viện 32 đề thi & Tiến độ</button>
           <button class="btn-ghost btn-wide" type="button" data-act="open-theory" style="margin-top:6px">📖 Cẩm nang lý thuyết & Công thức trọng tâm</button>
+          <button class="btn-ghost btn-wide" type="button" data-act="open-essays" style="margin-top:6px">📝 Cẩm nang nghị luận xã hội 500 chữ</button>
           <button class="btn-ghost btn-wide" type="button" data-act="open-stats" style="margin-top:6px">📊 Thống kê · Luyện theo chủ đề · Sổ câu sai${wrongCount() ? ' (' + wrongCount() + ')' : ''}</button>
         </form>
       </div>`;
@@ -406,6 +425,7 @@
         <div style="display:flex;gap:8px;justify-content:center;margin-bottom:16px;flex-wrap:wrap">
           <button class="btn-ghost" data-act="open-exams">📚 Thư viện 32 đề thi</button>
           <button class="btn-ghost" data-act="open-theory">📖 Cẩm nang lý thuyết & Công thức</button>
+          <button class="btn-ghost" data-act="open-essays">📝 Ôn nghị luận xã hội</button>
         </div>
 
         <div class="card accent">
@@ -884,7 +904,7 @@
     }
 
     const topicCount = Object.keys(TD.topics).length;
-    const backText = S.profile ? '← Về màn hình trước' : '← Về trang đăng nhập';
+    const backText = '← Về trang đăng nhập';
 
     return `
       <div class="page">
@@ -903,10 +923,13 @@
             <b>Đề cương: ${topicCount} chuyên đề trong ${TD.categories.length} nhóm kiến thức</b>
             <span>${topicIds.length} chuyên đề đang hiển thị</span>
           </div>
-          <nav class="theory-outline-links" aria-label="Mục lục chuyên đề">
-            ${topicIds.map(id => `<a href="#theory-${id}">${esc(topicName(id))}</a>`).join('')}
-          </nav>
-          <div class="theory-outline-note">Các nút nhóm bên dưới dùng để lọc nội dung; mở “Tất cả” để xem toàn bộ đề cương.</div>
+          <details class="theory-outline-details">
+            <summary>Xem danh sách ${topicIds.length} chuyên đề</summary>
+            <nav class="theory-outline-links" aria-label="Mục lục chuyên đề">
+              ${topicIds.map(id => `<a href="#theory-${id}" data-theory-topic="${id}">${esc(topicName(id))}</a>`).join('')}
+            </nav>
+          </details>
+          <div class="theory-outline-note">Chọn nhóm để lọc nhanh; mở danh sách nếu muốn đến thẳng một chuyên đề.</div>
         </div>
 
         <div class="formula-section-title">Lọc theo nhóm kiến thức</div>
@@ -931,27 +954,20 @@
             .concat((window.THEORY_DEEP_DATA || {})[id] || []);
           const examples = (top.examples || []).concat(((window.THEORY_EXTRA_EXAMPLES || {})[id] || []));
           return `
-            <div class="theory-topic-card" id="theory-${id}">
-              <div class="theory-topic-head">
-                <div class="theory-topic-title">
+            <details class="theory-topic-card" id="theory-${id}">
+              <summary class="theory-topic-summary">
+                <span class="theory-topic-title">
                   <span>${esc(top.title)}</span>
                   <span class="theory-badge">${esc(top.badge || 'Toán cao cấp')}</span>
-                </div>
+                </span>
+              </summary>
+              <div class="theory-topic-content">
+                <div class="theory-topic-head">
                 <button class="btn-small" data-practice-topic="${id}">🎯 Luyện 10 câu chuyên đề này</button>
-              </div>
-
-              ${knowledge.length ? `
-                <div class="formula-section-title">📖 1. Kiến thức, định lý & phương pháp</div>
-                ${knowledge.map((section, idx) => `
-                  <div class="concept-box">
-                    <b class="c-title">${idx + 1}. ${section.title}</b>
-                    <div>${section.content}</div>
-                  </div>
-                `).join('')}
-              ` : ''}
+                </div>
 
               ${formulas.length ? `
-                <div class="formula-section-title">📌 2. Công thức & thuật toán</div>
+                <div class="formula-section-title">📌 Công thức trọng tâm & cách áp dụng</div>
                 ${formulas.map(f => `
                   <div class="formula-box">
                     <b class="f-name">• ${f.name}</b>
@@ -975,7 +991,7 @@
               ` : ''}
 
               ${examples.length ? `
-                <div class="formula-section-title">💡 3. Ví dụ có lời giải</div>
+                <div class="formula-section-title">💡 Ví dụ theo dạng bài</div>
                 ${examples.map((ex, idx) => `
                   <div class="example-card">
                     <div class="example-head">
@@ -984,22 +1000,40 @@
                     <div class="example-prob">
                       <b>Bài toán:</b> ${ex.problem}
                     </div>
-                    <div class="example-sol">
-                      ${ex.solution}
-                    </div>
+                    <details class="example-solution-details">
+                      <summary>Xem cách giải từng bước</summary>
+                      <div class="example-sol">${ex.solution}</div>
+                    </details>
                   </div>
                 `).join('')}
               ` : ''}
 
-              ${top.traps && top.traps.length ? `
-                <div class="formula-section-title">⚠️ 4. Lỗi thường gặp & lưu ý</div>
-                <div class="trap-box">
-                  <ul class="trap-list">
-                    ${top.traps.map(t => `<li>${t}</li>`).join('')}
-                  </ul>
-                </div>
+              ${knowledge.length ? `
+                <details class="theory-details">
+                  <summary>📖 Lý thuyết nền & giải thích chi tiết (${knowledge.length} mục)</summary>
+                  <div class="theory-details-content">
+                    ${knowledge.map((section, idx) => `
+                      <div class="concept-box">
+                        <b class="c-title">${idx + 1}. ${section.title}</b>
+                        <div>${section.content}</div>
+                      </div>
+                    `).join('')}
+                  </div>
+                </details>
               ` : ''}
-            </div>`;
+
+              ${top.traps && top.traps.length ? `
+                <details class="theory-details trap-details">
+                  <summary>⚠️ Lỗi thường gặp & lưu ý (${top.traps.length})</summary>
+                  <div class="trap-box">
+                    <ul class="trap-list">
+                      ${top.traps.map(t => `<li>${t}</li>`).join('')}
+                    </ul>
+                  </div>
+                </details>
+              ` : ''}
+              </div>
+            </details>`;
         }).join('')}
       </div>`;
   }
@@ -1047,7 +1081,7 @@
           <table class="history">${P.refs.map((r, i) => `<tr><td>Câu ${i + 1}</td><td>${esc(refLabel(r))}</td><td>${check(REF[r].item, P.ans[r]) ? '<span class="ok">✔ Đúng</span>' : '<span style="color:var(--red)">✘ Sai</span>'}</td></tr>`).join('')}</table>
           <div class="actions">
             ${P.topic ? `<button class="btn-start" data-practice-topic="${P.topic}">Luyện tiếp 10 câu chủ đề này</button>` : '<button class="btn-start" data-act="p-wrong">Luyện tiếp câu sai</button>'}
-            <button class="btn-ghost" data-act="p-quit">Về trang thống kê</button>
+            <button class="btn-ghost" data-act="p-quit">Về trang đăng nhập</button>
           </div></div></div>`;
     }
     const ref = P.refs[P.i], it = REF[ref].item, a = P.ans[ref], done = a !== undefined, right = done && check(it, a);
@@ -1188,13 +1222,556 @@
       ? `rời màn hình thi <b>${v.length}</b> lần (tổng khoảng ${secs} giây ở ngoài)` : 'không rời màn hình thi lần nào'}</div>`;
   }
 
+    // ---------- Cẩm nang Nghị luận Xã hội (NLXH 500 từ) ----------
+  let essayTab = 'method'; // 'method' | 'evidence' | 'samples' | 'practice'
+  let essayTheme = 'theme-all';
+  let essayQuery = '';
+  let essayPracticeId = 'p-01';
+  let essayTimerSec = 45 * 60;
+  let essayTimerRunning = false;
+  let essayTimerInterval = null;
+  let essayShowOutline = false;
+  const LS_ESSAY_DRAFTS = 'vb2ca_essay_drafts_v1';
+  let essayDrafts = {};
+  try {
+    essayDrafts = JSON.parse(localStorage.getItem(LS_ESSAY_DRAFTS)) || {};
+  } catch (e) { essayDrafts = {}; }
+
+  function getEssayDraft(id) {
+    return essayDrafts[id] || '';
+  }
+  function saveEssayDraft(id, text) {
+    essayDrafts[id] = text;
+    try {
+      localStorage.setItem(LS_ESSAY_DRAFTS, JSON.stringify(essayDrafts));
+    } catch (e) {}
+  }
+
+  function updateStudioWordMeter() {
+    const ta = document.getElementById('studio-essay');
+    if (!ta) return;
+    const text = ta.value;
+    const words = countWords(text);
+    const targetWords = 500;
+    const pct = Math.min(100, Math.round((words / targetWords) * 100));
+
+    let meterColor = '#f59e0b';
+    let statusText = 'Chưa đủ ý (' + words + '/' + targetWords + ' từ)';
+    let statusBg = '#fef3c7';
+    let statusTextColor = '#92400e';
+
+    if (words >= targetWords && words <= 750) {
+      meterColor = '#16a34a';
+      statusText = 'Đạt chuẩn điểm cao Bộ Công an (' + words + ' từ)';
+      statusBg = '#dcfce7';
+      statusTextColor = '#15803d';
+    } else if (words > 750) {
+      meterColor = '#8b5cf6';
+      statusText = 'Bài khá dài (' + words + ' từ), lưu ý thời gian!';
+      statusBg = '#f3e8ff';
+      statusTextColor = '#6b21a8';
+    } else if (words >= 300) {
+      meterColor = '#2563eb';
+      statusText = 'Sắp đạt (' + words + '/' + targetWords + ' từ)';
+      statusBg = '#dbeafe';
+      statusTextColor = '#1e40af';
+    }
+
+    const counter = document.getElementById('meter-counter');
+    if (counter) counter.innerHTML = 'Đã gõ: <b>' + words + '</b> / ' + targetWords + ' từ';
+
+    const bar = document.getElementById('meter-bar');
+    if (bar) {
+      bar.style.width = pct + '%';
+      bar.style.backgroundColor = meterColor;
+    }
+
+    const st = document.getElementById('meter-status');
+    if (st) {
+      st.textContent = statusText;
+      st.style.background = statusBg;
+      st.style.color = statusTextColor;
+    }
+
+    const saveSt = document.getElementById('studio-save-status');
+    if (saveSt) {
+      saveSt.textContent = '💾 Đã lưu nháp lúc ' + clock(Date.now());
+    }
+  }
+
+  function viewEssayGuides() {
+    const back = S.profile ? 'Về kiểm tra trước khi thi' : 'Về trang đăng nhập';
+    const M = window.ESSAY_METHODOLOGY || {};
+    const themes = window.ESSAY_THEMES || [];
+    const guides = window.ESSAY_GUIDES || [];
+    const samples = window.ESSAY_SAMPLES || [];
+    const practiceList = window.ESSAY_PRACTICE_LIST || [];
+
+    // Filter evidence by query & theme
+    let filteredGuides = guides.slice();
+    if (essayTheme !== 'theme-all') {
+      filteredGuides = filteredGuides.filter(g => g.themeId === essayTheme);
+    }
+    if (essayQuery.trim()) {
+      const q = essayQuery.trim().toLowerCase();
+      filteredGuides = filteredGuides.filter(g =>
+        (g.theme || '').toLowerCase().includes(q) ||
+        (g.sourceTitle || '').toLowerCase().includes(q) ||
+        (g.evidence || '').toLowerCase().includes(q) ||
+        (g.issue || '').toLowerCase().includes(q) ||
+        (g.sampleQuote || '').toLowerCase().includes(q) ||
+        (g.prompt || '').toLowerCase().includes(q)
+      );
+    }
+
+    // Filter samples by theme
+    let filteredSamples = samples.slice();
+    if (essayTheme !== 'theme-all') {
+      filteredSamples = filteredSamples.filter(s => s.themeId === essayTheme);
+    }
+
+    // Get current practice prompt
+    const allPrompts = practiceList.slice();
+    EXAMS.forEach(ex => {
+      if (ex.essay && !allPrompts.some(p => p.id === ex.id)) {
+        allPrompts.push({
+          id: ex.id,
+          themeId: 'theme-era',
+          title: ex.title + ' (Đề thi CA1)',
+          prompt: ex.essay.prompt,
+          task: ex.essay.task,
+          minWords: ex.essay.minWords || 500,
+          outline: []
+        });
+      }
+    });
+
+    let curPrompt = allPrompts.find(p => p.id === essayPracticeId) || allPrompts[0] || {
+      id: 'p-01',
+      title: 'Đề tự luyện tập',
+      prompt: 'Nghị luận xã hội',
+      task: 'Viết bài nghị luận tối thiểu 500 từ',
+      minWords: 500,
+      outline: []
+    };
+
+    const curDraft = getEssayDraft(curPrompt.id);
+    const curWords = countWords(curDraft);
+
+    // Meter calculation
+    const targetWords = curPrompt.minWords || 500;
+    const pct = Math.min(100, Math.round((curWords / targetWords) * 100));
+    let meterColor = '#f59e0b';
+    let statusText = 'Chưa đủ ý (' + curWords + '/' + targetWords + ' từ)';
+    let statusBg = '#fef3c7';
+    let statusTextColor = '#92400e';
+
+    if (curWords >= targetWords && curWords <= 750) {
+      meterColor = '#16a34a';
+      statusText = 'Đạt chuẩn điểm cao Bộ Công an (' + curWords + ' từ)';
+      statusBg = '#dcfce7';
+      statusTextColor = '#15803d';
+    } else if (curWords > 750) {
+      meterColor = '#8b5cf6';
+      statusText = 'Bài khá dài (' + curWords + ' từ), lưu ý thời gian!';
+      statusBg = '#f3e8ff';
+      statusTextColor = '#6b21a8';
+    } else if (curWords >= 300) {
+      meterColor = '#2563eb';
+      statusText = 'Sắp đạt (' + curWords + '/' + targetWords + ' từ)';
+      statusBg = '#dbeafe';
+      statusTextColor = '#1e40af';
+    }
+
+    const formatTimer = sec => {
+      const m = Math.floor(sec / 60);
+      const s = sec % 60;
+      return pad(m) + ':' + pad(s);
+    };
+
+    return `
+      <div class="page essay-guides">
+        <div class="page-head">
+          <button class="btn-ghost" data-act="essays-back">${back}</button>
+          <div style="text-align:center">
+            <div class="essay-badge-pill">🛡️ TÀI LIỆU ÔN THI ĐẶC QUYỀN • BỘ CÔNG AN (CA1)</div>
+            <h2>CẨM NANG ÔN THI NGHỊ LUẬN XÃ HỘI (TỐI THIỂU 500 CHỮ)</h2>
+            <p class="essay-header-desc">
+              Chiến thuật viết văn chính luận đạt 26 - 28/30 điểm • Sổ tay dẫn chứng thời sự CAND 2024 - 2026 • 8 Bài mẫu chuẩn điểm cao • Phòng luyện viết studio thông minh.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tab Navigation -->
+        <nav class="essay-tab-bar" aria-label="Tabs nghị luận xã hội">
+          <button class="essay-tab-btn ${essayTab === 'method' ? 'active' : ''}" data-essay-tab="method">
+            📋 Phương pháp & Thang điểm Bộ CA
+          </button>
+          <button class="essay-tab-btn ${essayTab === 'evidence' ? 'active' : ''}" data-essay-tab="evidence">
+            📰 Sổ tay Dẫn chứng Thời sự <span class="tab-badge">${guides.length}</span>
+          </button>
+          <button class="essay-tab-btn ${essayTab === 'samples' ? 'active' : ''}" data-essay-tab="samples">
+            📚 Bài mẫu Chuẩn 500+ Chữ <span class="tab-badge">${samples.length}</span>
+          </button>
+          <button class="essay-tab-btn ${essayTab === 'practice' ? 'active' : ''}" data-essay-tab="practice">
+            ✍️ Phòng Luyện Viết Studio
+          </button>
+        </nav>
+
+        <!-- TAB 1: PHƯƠNG PHÁP & THANG ĐIỂM -->
+        ${essayTab === 'method' ? `
+          <div class="essay-tab-content">
+            <div class="essay-hero-card">
+              <h3>🎯 Quy chuẩn Bài thi Tự luận Bộ Công An (Mã CA1, CA2...)</h3>
+              <p style="margin:6px 0 10px;line-height:1.6;font-size:14px">
+                <b>Thời gian:</b> 45 – 60 phút &nbsp;•&nbsp;
+                <b>Điểm số:</b> 30 / 100 điểm tổng &nbsp;•&nbsp;
+                <b>Dung lượng bắt buộc:</b> Tối thiểu 500 từ (khuyến nghị chuẩn: <b>550 – 700 từ</b>).
+              </p>
+              <p style="margin:0;font-size:13.5px;color:var(--muted);line-height:1.55">
+                ${esc(M.examFormat ? M.examFormat.summary : '')}
+              </p>
+            </div>
+
+            <h3 style="color:var(--navy);margin:24px 0 10px">📊 Ma trận 6 Tiêu chí Chấm điểm Tự luận</h3>
+            <table class="essay-matrix-table">
+              <thead>
+                <tr>
+                  <th style="width:32%">Tiêu chí & Điểm số</th>
+                  <th>Yêu cầu đạt điểm tối đa của Giám khảo</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${(M.scoringMatrix || []).map(sm => `
+                  <tr>
+                    <td><b>${esc(sm.criteria)}</b></td>
+                    <td>${esc(sm.detail)}</td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+
+            <h3 style="color:var(--navy);margin:24px 0 10px">⚡ Chiến thuật 5 Bước Viết Bài trong 45 Phút</h3>
+            <div class="essay-step-grid">
+              ${(M.fiveSteps || []).map(st => `
+                <div class="essay-step-card">
+                  <div class="essay-step-head">
+                    <span class="essay-step-num">${esc(st.step)}: ${esc(st.name)}</span>
+                  </div>
+                  <div style="font-size:13px;line-height:1.55;color:var(--text)">${esc(st.action)}</div>
+                </div>
+              `).join('')}
+            </div>
+
+            <h3 style="color:var(--navy);margin:24px 0 10px">🏆 Cấu trúc "6 Đoạn Vàng" Bài Văn 550 - 700 Từ Điểm Tuyệt Đối</h3>
+            <div class="essay-structure-flow">
+              ${(M.goldenStructure || []).map((gs, idx) => `
+                <div class="essay-flow-item">
+                  <div class="flow-meta">
+                    <div>${esc(gs.part)}</div>
+                    <div class="flow-words">${esc(gs.words)}</div>
+                  </div>
+                  <div class="flow-body">${esc(gs.content)}</div>
+                </div>
+              `).join('')}
+            </div>
+
+            <h3 style="color:var(--navy);margin:24px 0 10px">💡 Công thức Mở bài & Kết bài Mẫu Đa Năng</h3>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:14px;margin-bottom:20px">
+              <div>
+                <h4 style="margin:0 0 8px;color:var(--blue)">✨ Các mẫu Mở bài Trực tiếp:</h4>
+                ${(M.openings || []).map(op => `
+                  <div class="essay-copy-box">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+                      <b>${esc(op.title)}</b>
+                      <button class="btn-ghost" style="padding:2px 8px;font-size:11.5px" data-act="essay-copy-text" data-text="${esc(op.text)}">Sao chép</button>
+                    </div>
+                    <p>${esc(op.text)}</p>
+                  </div>
+                `).join('')}
+              </div>
+              <div>
+                <h4 style="margin:0 0 8px;color:var(--blue)">🔥 Các mẫu Kết bài Hào hùng (Gắn liền CAND):</h4>
+                ${(M.endings || []).map(ed => `
+                  <div class="essay-copy-box">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+                      <b>${esc(ed.title)}</b>
+                      <button class="btn-ghost" style="padding:2px 8px;font-size:11.5px" data-act="essay-copy-text" data-text="${esc(ed.text)}">Sao chép</button>
+                    </div>
+                    <p>${esc(ed.text)}</p>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <h3 style="color:var(--navy);margin:24px 0 10px">🔗 Bộ Từ Nối & Cụm Từ Chính Luận Đắt Giá</h3>
+            <div class="card" style="margin-bottom:20px">
+              ${(M.transitionPhrases || []).map(tp => `
+                <div style="margin-bottom:12px">
+                  <b style="color:var(--blue);font-size:13.5px">${esc(tp.useFor)}:</b>
+                  <div style="margin-top:4px">
+                    ${tp.examples.map(ex => `<span class="essay-phrase-tag">“${esc(ex)}”</span>`).join('')}
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+
+            <h3 style="color:var(--red);margin:24px 0 10px">⚠️ 4 Cạm Bẫy Trừ Điểm Nặng Cần Tránh Tuyệt Đối</h3>
+            ${(M.deadlyMistakes || []).map(dm => `
+              <div class="essay-danger-card">
+                <b style="font-size:14px">${esc(dm.name)}</b>
+                <div style="margin:4px 0"><b>Hậu quả:</b> ${esc(dm.consequence)}</div>
+                <div><b>Khắc phục:</b> ${esc(dm.solution)}</div>
+              </div>
+            `).join('')}
+          </div>
+        ` : ''}
+
+        <!-- TAB 2: SỔ TAY DẪN CHỨNG THỜI SỰ -->
+        ${essayTab === 'evidence' ? `
+          <div class="essay-tab-content">
+            <!-- Search & Filter bar -->
+            <div class="essay-search-bar">
+              <input class="essay-search-input" id="essay-search" placeholder="🔍 Tìm kiếm dẫn chứng (VNeID, Yagi, Lừa đảo, Ma túy, Tô Lâm, Phú Quốc...)" value="${esc(essayQuery)}">
+            </div>
+
+            <!-- Theme Chips -->
+            <div class="essay-chips-bar">
+              ${themes.map(th => `
+                <button class="essay-chip ${essayTheme === th.id ? 'active' : ''}" data-essay-theme="${th.id}">
+                  ${th.icon} ${esc(th.name)}
+                </button>
+              `).join('')}
+            </div>
+
+            ${!filteredGuides.length ? `
+              <div class="card" style="text-align:center;padding:30px 20px">
+                <div style="font-size:32px;margin-bottom:8px">🔍</div>
+                <b>Không tìm thấy dẫn chứng nào khớp với từ khóa "${esc(essayQuery)}"</b>
+                <div class="pending" style="margin-top:6px">Thử tìm kiếm với từ khóa khác hoặc bấm nút "Tất cả chuyên đề".</div>
+              </div>
+            ` : `
+              <div>
+                ${filteredGuides.map(g => `
+                  <article class="evidence-card">
+                    <div class="evidence-head">
+                      <span class="evidence-theme-tag">${esc(g.theme)}</span>
+                      <span class="evidence-date">Báo CAND • ${esc(g.date)}</span>
+                    </div>
+                    <h3 class="evidence-title">${esc(g.sourceTitle)}</h3>
+                    <div class="evidence-source">
+                      Nguồn: <a href="${esc(g.sourceUrl)}" target="_blank" rel="noopener noreferrer" style="color:var(--blue);font-weight:600">${esc(g.sourceName || 'Báo Công an Nhân dân')}</a>
+                    </div>
+
+                    <div class="evidence-highlight-box">
+                      <b>📌 Sự kiện & Dẫn chứng cốt lõi:</b><br>
+                      ${esc(g.evidence)}
+                    </div>
+
+                    <p style="margin:8px 0;font-size:13.5px;line-height:1.55">
+                      <b>Vấn đề đặt ra:</b> ${esc(g.issue)}
+                    </p>
+
+                    ${g.sampleQuote ? `
+                      <div class="evidence-quote-snippet">
+                        <b>Đoạn văn trích dẫn mẫu vào bài thi:</b><br>
+                        “${esc(g.sampleQuote)}”
+                      </div>
+                    ` : ''}
+
+                    <details style="margin-top:10px;border-top:1px solid var(--line);padding-top:8px">
+                      <summary style="cursor:pointer;color:var(--blue);font-size:13px;font-weight:600">
+                        Gợi ý luận điểm, giải pháp và đề tự luyện
+                      </summary>
+                      <div style="font-size:13px;line-height:1.55;padding:8px 0">
+                        <b>Hướng bình luận:</b>
+                        <ul style="margin:4px 0 10px;padding-left:20px">${(g.angles || []).map(a => `<li>${esc(a)}</li>`).join('')}</ul>
+                        <b>Giải pháp đề xuất:</b>
+                        <ul style="margin:4px 0 10px;padding-left:20px">${(g.solutions || []).map(s => `<li>${esc(s)}</li>`).join('')}</ul>
+                        <div style="background:var(--field);padding:8px 12px;border-radius:6px">
+                          <b>Đề tự luyện:</b> ${esc(g.prompt)}
+                        </div>
+                      </div>
+                    </details>
+
+                    <div class="evidence-actions">
+                      ${g.sampleQuote ? `
+                        <button class="btn-ghost" style="font-size:12px;padding:4px 10px" data-act="essay-copy-text" data-text="${esc(g.sampleQuote)}">
+                          📋 Sao chép câu trích dẫn
+                        </button>
+                      ` : ''}
+                      <button class="btn-ghost" style="font-size:12px;padding:4px 10px" data-act="essay-load-prompt" data-prompt="${esc(g.prompt)}" data-title="${esc(g.sourceTitle)}">
+                        ✍️ Luyện viết đề này
+                      </button>
+                    </div>
+                  </article>
+                `).join('')}
+              </div>
+            `}
+          </div>
+        ` : ''}
+
+        <!-- TAB 3: BÀI MẪU CHUẨN 500+ CHỮ -->
+        ${essayTab === 'samples' ? `
+          <div class="essay-tab-content">
+            <!-- Theme Chips -->
+            <div class="essay-chips-bar">
+              ${themes.map(th => `
+                <button class="essay-chip ${essayTheme === th.id ? 'active' : ''}" data-essay-theme="${th.id}">
+                  ${th.icon} ${esc(th.name)}
+                </button>
+              `).join('')}
+            </div>
+
+            <div style="margin-bottom:14px;color:var(--muted);font-size:13.5px">
+              Tổng cộng <b>${filteredSamples.length}</b> bài văn mẫu hoàn chỉnh chuẩn 520 - 650 từ. Mỗi bài đều có phân tích dàn ý 6 bước và liên hệ sâu sắc với lý tưởng của người chiến sĩ CAND.
+            </div>
+
+            ${filteredSamples.map((s, idx) => `
+              <article class="sample-card">
+                <div class="sample-meta-row">
+                  <span class="sample-words-pill">Bài mẫu 0${idx + 1} • ${s.wordCount || countWords(s.text)} từ (Chuẩn CA)</span>
+                  <div>
+                    <button class="btn-ghost" style="font-size:12px;padding:4px 10px;margin-right:6px" data-act="essay-copy-text" data-text="${esc(s.text)}">
+                      📋 Sao chép bài
+                    </button>
+                    <button class="btn-ghost" style="font-size:12px;padding:4px 10px" data-act="essay-load-sample-prompt" data-idx="${idx}">
+                      ✍️ Luyện viết đề này
+                    </button>
+                  </div>
+                </div>
+
+                <h3 style="margin:4px 0 10px;font-size:17px;color:var(--navy)">${esc(s.title)}</h3>
+
+                <div class="sample-prompt-box">
+                  <b>Đề bài:</b> ${esc(s.prompt)}
+                </div>
+
+                ${s.outline && s.outline.length ? `
+                  <details style="margin-bottom:12px">
+                    <summary style="cursor:pointer;color:var(--blue);font-weight:600;font-size:13px">
+                      💡 Xem phân tích dàn ý 6 bước của bài này
+                    </summary>
+                    <div class="sample-outline-box" style="margin-top:8px">
+                      <ol style="margin:0;padding-left:20px">
+                        ${s.outline.map(ol => `<li>${esc(ol)}</li>`).join('')}
+                      </ol>
+                    </div>
+                  </details>
+                ` : ''}
+
+                <div class="sample-article-body">
+                  ${s.text.split(/\n\n+/).map(p => `<p>${esc(p)}</p>`).join('')}
+                </div>
+              </article>
+            `).join('')}
+          </div>
+        ` : ''}
+
+        <!-- TAB 4: PHÒNG LUYỆN VIẾT STUDIO -->
+        ${essayTab === 'practice' ? `
+          <div class="essay-tab-content">
+            <div class="practice-studio-card">
+              <!-- Studio Header & Controls -->
+              <div class="studio-top-controls">
+                <div class="studio-prompt-picker">
+                  <b style="font-size:13.5px;white-space:nowrap">Chọn đề:</b>
+                  <select id="practice-prompt-select">
+                    ${allPrompts.map(p => `
+                      <option value="${esc(p.id)}" ${p.id === curPrompt.id ? 'selected' : ''}>
+                        ${esc(p.title || p.task || p.prompt.slice(0, 45))}
+                      </option>
+                    `).join('')}
+                  </select>
+                  <button class="btn-ghost" style="font-size:13px;padding:6px 10px;white-space:nowrap" data-act="essay-random-prompt">
+                    🎲 Đổi ngẫu nhiên
+                  </button>
+                </div>
+
+                <!-- Timer countdown -->
+                <div class="studio-timer-box">
+                  <span>⏱️</span>
+                  <span class="timer-digits" id="essay-timer-display">${formatTimer(essayTimerSec)}</span>
+                  <button class="btn-ghost" style="font-size:12px;padding:3px 8px" data-act="essay-timer-toggle" id="essay-timer-btn">
+                    ${essayTimerRunning ? '⏸️ Tạm dừng' : '▶️ Bấm giờ'}
+                  </button>
+                  <button class="btn-ghost" style="font-size:12px;padding:3px 8px" data-act="essay-timer-reset">
+                    🔄 45p
+                  </button>
+                </div>
+              </div>
+
+              <!-- Prompt display box -->
+              <div class="studio-prompt-display">
+                <div style="font-weight:700;color:var(--navy);margin-bottom:6px">
+                  📝 ĐỀ BÀI: ${esc(curPrompt.title || 'Nghị luận xã hội')}
+                </div>
+                <div style="margin-bottom:8px">
+                  ${esc(curPrompt.prompt)}
+                </div>
+                <div style="font-weight:600;color:var(--blue)">
+                  👉 Yêu cầu: ${esc(curPrompt.task || 'Anh/chị hãy viết một bài nghị luận (tối thiểu 500 chữ) trình bày suy nghĩ của mình.')}
+                </div>
+              </div>
+
+              <!-- Outline hint drawer (optional) -->
+              ${curPrompt.outline && curPrompt.outline.length ? `
+                <div style="margin-bottom:12px">
+                  <button class="btn-ghost" style="font-size:12.5px;padding:4px 10px" data-act="essay-toggle-outline">
+                    ${essayShowOutline ? 'Ẩn dàn ý gợi ý' : '💡 Xem dàn ý gợi ý cho đề này'}
+                  </button>
+                  ${essayShowOutline ? `
+                    <div class="sample-outline-box" style="margin-top:8px">
+                      <b>Dàn ý gợi ý 5 bước:</b>
+                      <ol style="margin:6px 0 0;padding-left:20px">
+                        ${curPrompt.outline.map(o => `<li>${esc(o)}</li>`).join('')}
+                      </ol>
+                    </div>
+                  ` : ''}
+                </div>
+              ` : ''}
+
+              <!-- Live Word Meter -->
+              <div class="studio-live-meter">
+                <span style="font-weight:700;min-width:130px" id="meter-counter">
+                  Đã gõ: <b>${curWords}</b> / ${targetWords} từ
+                </span>
+                <div class="meter-bar-outer">
+                  <div class="meter-bar-inner" id="meter-bar" style="width:${pct}%;background-color:${meterColor}"></div>
+                </div>
+                <span class="meter-status-pill" id="meter-status" style="background:${statusBg};color:${statusTextColor}">
+                  ${statusText}
+                </span>
+              </div>
+
+              <!-- Textarea Box -->
+              <textarea class="studio-textarea-box" id="studio-essay" data-ime spellcheck="false" placeholder="Nhập bài văn nghị luận của bạn tại đây... (Hỗ trợ gõ tiếng Việt Telex/VNI, tự động lưu bản nháp theo đề)">${esc(curDraft)}</textarea>
+
+              <!-- Bottom Actions -->
+              <div class="studio-bottom-actions">
+                <div style="font-size:12.5px;color:var(--muted)">
+                  <span id="studio-save-status">💾 Tự động lưu bản nháp</span>
+                </div>
+                <div style="display:flex;gap:8px;flex-wrap:wrap">
+                  <button class="btn-ghost" data-act="essay-copy-draft">📋 Sao chép bài</button>
+                  <button class="btn-ghost" data-act="essay-print-draft">🖨️ In / Xuất PDF</button>
+                  <button class="btn-ghost" data-act="essay-clear-draft" style="color:var(--red)">🗑️ Xóa nháp</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        ` : ''}
+      </div>
+    `;
+  }
+
   function render() {
     setExam();
     applyPrefs();
     closeModal();
-    const free = S.screen === 'stats' || S.screen === 'practice' || S.screen === 'exams' || S.screen === 'theory';   // các màn hình này không cần đăng nhập
+    const free = S.screen === 'stats' || S.screen === 'practice' || S.screen === 'exams' || S.screen === 'theory' || S.screen === 'essays';   // các màn hình này không cần đăng nhập
     if (!exam || (!S.profile && !free)) S.screen = 'login';
-    const views = { login: viewLogin, precheck: viewPrecheck, p1: viewPart1, p2: viewPart2, result: viewResult, stats: viewStats, practice: viewPractice, exams: viewExamList, theory: viewTheory };
+    const views = { login: viewLogin, precheck: viewPrecheck, p1: viewPart1, p2: viewPart2, result: viewResult, stats: viewStats, practice: viewPractice, exams: viewExamList, theory: viewTheory, essays: viewEssayGuides };
     app.innerHTML = views[S.screen]();
     typeset(app);
     if (S.screen === 'precheck') updatePrecheck();
@@ -1318,11 +1895,140 @@
     logout() { leaveLock(); S.profile = null; go('login'); },
     'open-exams'() { go('exams'); },
     'open-theory'() { go('theory'); },
-    'theory-back'() { go(S.profile ? (S.result ? 'result' : 'precheck') : 'login'); },
+        'open-essays'() { essayTab = 'method'; go('essays'); },
+    'essay-load-prompt'(btn) {
+      const promptText = btn.dataset.prompt || '';
+      const titleText = btn.dataset.title || 'Đề tự luyện';
+      let p = (window.ESSAY_PRACTICE_LIST || []).find(x => x.prompt === promptText);
+      if (!p) {
+        p = {
+          id: 'custom-' + Date.now(),
+          themeId: 'theme-era',
+          title: titleText,
+          prompt: promptText,
+          task: 'Viết bài nghị luận (tối thiểu 500 từ) bàn về vấn đề trên.',
+          minWords: 500,
+          outline: []
+        };
+        (window.ESSAY_PRACTICE_LIST = window.ESSAY_PRACTICE_LIST || []).push(p);
+      }
+      essayPracticeId = p.id;
+      essayTab = 'practice';
+      render();
+      const ta = document.getElementById('studio-essay');
+      if (ta) { ta.focus(); ta.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+    },
+    'essay-load-sample-prompt'(btn) {
+      const idx = Number(btn.dataset.idx || 0);
+      const sample = (window.ESSAY_SAMPLES || [])[idx];
+      if (sample) {
+        let p = (window.ESSAY_PRACTICE_LIST || []).find(x => x.prompt === sample.prompt);
+        if (!p) {
+          p = {
+            id: sample.id || ('sample-p-' + idx),
+            themeId: sample.themeId || 'theme-era',
+            title: sample.title,
+            prompt: sample.prompt,
+            task: 'Viết bài nghị luận (tối thiểu 500 từ) trình bày suy nghĩ của anh/chị.',
+            minWords: 500,
+            outline: sample.outline || []
+          };
+          (window.ESSAY_PRACTICE_LIST = window.ESSAY_PRACTICE_LIST || []).push(p);
+        }
+        essayPracticeId = p.id;
+        essayTab = 'practice';
+        render();
+        const ta = document.getElementById('studio-essay');
+        if (ta) { ta.focus(); ta.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+      }
+    },
+    'essay-random-prompt'() {
+      const list = (window.ESSAY_PRACTICE_LIST || []).concat(
+        EXAMS.filter(e => e.essay).map(e => ({
+          id: e.id,
+          themeId: 'theme-era',
+          title: e.title,
+          prompt: e.essay.prompt,
+          task: e.essay.task,
+          minWords: e.essay.minWords || 500,
+          outline: []
+        }))
+      );
+      if (!list.length) return;
+      const rnd = list[Math.floor(Math.random() * list.length)];
+      essayPracticeId = rnd.id;
+      render();
+    },
+    'essay-toggle-outline'() {
+      essayShowOutline = !essayShowOutline;
+      render();
+    },
+    'essay-timer-toggle'() {
+      if (essayTimerRunning) {
+        clearInterval(essayTimerInterval);
+        essayTimerRunning = false;
+      } else {
+        essayTimerRunning = true;
+        essayTimerInterval = setInterval(() => {
+          if (essayTimerSec > 0) {
+            essayTimerSec--;
+            const el = document.getElementById('essay-timer-display');
+            if (el) {
+              const m = Math.floor(essayTimerSec / 60);
+              const s = essayTimerSec % 60;
+              el.textContent = pad(m) + ':' + pad(s);
+            }
+          } else {
+            clearInterval(essayTimerInterval);
+            essayTimerRunning = false;
+            alert('⏰ Đã hết thời gian làm bài nghị luận xã hội (45 phút)! Hãy dừng bút và soát lại bài.');
+            render();
+          }
+        }, 1000);
+      }
+      const btn = document.getElementById('essay-timer-btn');
+      if (btn) btn.textContent = essayTimerRunning ? '⏸️ Tạm dừng' : '▶️ Bấm giờ';
+    },
+    'essay-timer-reset'() {
+      clearInterval(essayTimerInterval);
+      essayTimerRunning = false;
+      essayTimerSec = 45 * 60;
+      render();
+    },
+    'essay-copy-text'(btn) {
+      const text = btn.dataset.text || '';
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).catch(() => {});
+      }
+      const orig = btn.textContent;
+      btn.textContent = '✓ Đã chép!';
+      setTimeout(() => { btn.textContent = orig; }, 1500);
+    },
+    'essay-copy-draft'(btn) {
+      const ta = document.getElementById('studio-essay');
+      const text = ta ? ta.value : (getEssayDraft(essayPracticeId) || '');
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).catch(() => {});
+      }
+      const orig = btn.textContent;
+      btn.textContent = '✓ Đã chép bài!';
+      setTimeout(() => { btn.textContent = orig; }, 1500);
+    },
+    'essay-clear-draft'() {
+      if (confirm('Bạn có chắc chắn muốn xóa bài viết nháp này để viết lại từ đầu không?')) {
+        saveEssayDraft(essayPracticeId, '');
+        render();
+      }
+    },
+    'essay-print-draft'() {
+      window.print();
+    },
+    'theory-back'() { go('login'); },
+    'essays-back'() { go(S.profile ? 'precheck' : 'login'); },
     'exams-back'() { go(S.profile ? 'precheck' : 'login'); },
     'open-stats'() { go('stats'); },
     'stats-back'() { go(S.result && S.profile ? 'result' : 'login'); },
-    'p-quit'() { go('stats'); },
+    'p-quit'() { go('login'); },
     'p-prev'() { if (S.practice && S.practice.i > 0) { S.practice.i--; go('practice'); } },
     'p-next'() {
       const P = S.practice;
@@ -1399,6 +2105,13 @@
     }
   };
 
+  app.addEventListener('toggle', e => {
+    const details = e.target;
+    if (details instanceof HTMLDetailsElement && details.open) {
+      wrapWideMath(details.closest('.theory-topic-card') || details);
+    }
+  }, true);
+
   app.addEventListener('click', e => {
     const act = e.target.closest('[data-act]');
     if (act) { actions[act.dataset.act](act); return; }
@@ -1450,6 +2163,30 @@
       return;
     }
 
+    const topicLink = e.target.closest('[data-theory-topic]');
+    if (topicLink) {
+      e.preventDefault();
+      const topic = document.getElementById('theory-' + topicLink.dataset.theoryTopic);
+      if (topic && topic.tagName === 'DETAILS') {
+        topic.open = true;
+        window.history.replaceState(null, '', topicLink.getAttribute('href'));
+        topic.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      return;
+    }
+
+        const etab = e.target.closest('[data-essay-tab]');
+    if (etab) {
+      essayTab = etab.dataset.essayTab;
+      render();
+      return;
+    }
+    const etheme = e.target.closest('[data-essay-theme]');
+    if (etheme) {
+      essayTheme = etheme.dataset.essayTheme;
+      render();
+      return;
+    }
     const tc = e.target.closest('[data-theory-cat]');
     if (tc) {
       theoryCat = tc.dataset.theoryCat;
@@ -1521,6 +2258,19 @@
   let essayTimer;
   app.addEventListener('input', e => {
     const t = e.target;
+    if (t.id === 'essay-search') {
+      essayQuery = t.value;
+      const pos = t.selectionStart;
+      render();
+      const el = document.getElementById('essay-search');
+      if (el) { el.focus(); el.setSelectionRange(pos, pos); }
+      return;
+    }
+    if (t.id === 'studio-essay') {
+      saveEssayDraft(essayPracticeId, t.value);
+      updateStudioWordMeter();
+      return;
+    }
     if (t.id === 'theory-search') {
       theoryQuery = t.value;
       const pos = t.selectionStart;
@@ -1544,6 +2294,11 @@
     }
   });
   app.addEventListener('change', e => {
+    if (e.target.id === 'practice-prompt-select') {
+      essayPracticeId = e.target.value;
+      render();
+      return;
+    }
     if (e.target.id === 'lock-opt') { S.lock = e.target.checked; save(); return; }
     if (e.target.matches('[data-flag]')) {
       const no = Number(e.target.closest('.q').dataset.no);
