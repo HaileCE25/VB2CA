@@ -3,7 +3,7 @@
 // TÀI LIỆU ÔN THI ĐẶC QUYỀN TUYỂN SINH VĂN BẰNG 2 BỘ CÔNG AN (MÃ BÀI THI CA1, CA2...)
 // =========================================================================================
 
-// 1. PHƯƠNG PHÁP & KỸ NĂNG LÀM BÀI ĐẠT ĐIỂM CAO CHUẨN BỘ CÔNG AN
+// 1. PHƯƠNG PHÁP, THANG ĐIỂM & BÍ QUYẾT LÀM BÀI ĐẠT ĐIỂM CAO CHUẨN BỘ CÔNG AN
 window.ESSAY_METHODOLOGY = {
   examFormat: {
     title: "Quy chuẩn Đề thi Phần 1 - Nghị luận Xã hội (Bộ Công An)",
@@ -13,13 +13,13 @@ window.ESSAY_METHODOLOGY = {
     idealWords: "550 - 700 từ",
     points: 30, // 30/100 điểm tổng bài thi
     type: "Tự luận chính luận xã hội trên máy tính hoặc viết giấy",
-    summary: "Phần thi tự luận chiếm 30% tổng điểm toàn bài. Yêu cầu bắt buộc là viết bài văn hoàn chỉnh tối thiểu 500 từ. Đề thi thường trích dẫn một nhận định, tư tưởng của Chủ tịch Hồ Chí Minh, văn kiện của Đảng, hoặc một hiện tượng đời sống thời sự nóng hổi liên quan đến trách nhiệm, đạo đức, kỷ cương pháp luật, chuyển đổi số hoặc vai trò của thế hệ trẻ đối với sự nghiệp xây dựng và bảo vệ Tổ quốc."
+    summary: "Phần thi tự luận chiếm 30% tổng điểm toàn bài (3.0/10 hoặc 30/100). Thí sinh bắt buộc viết tối thiểu 500 từ. Đề thi đánh giá toàn diện năng lực lập luận logic, kiến thức thời sự xã hội, sự am hiểu đường lối chính sách của Đảng, pháp luật của Nhà nước và tư tưởng phẩm chất chính trị của người chiến sĩ CAND tương lai."
   },
 
   scoringMatrix: [
     {
       criteria: "1. Bố cục & Hình thức (4.0 điểm)",
-      detail: "Có đủ 3 phần: Mở bài, Thân bài (chia 4-5 đoạn mạch lạc), Kết bài. Đạt chuẩn dung lượng tối thiểu 500 từ (dưới 500 từ bị trừ từ 2.0 đến 4.0 điểm). Trình bày sạch sẽ, ngắt câu đúng chuẩn, không dùng ký hiệu gạch đầu dòng tùy tiện."
+      detail: "Có đủ 3 phần: Mở bài (1 đoạn), Thân bài (4-5 đoạn mạch lạc), Kết bài (1 đoạn). Đạt chuẩn dung lượng tối thiểu 500 từ (dưới 500 từ bị trừ nặng từ 2.0 đến 4.0 điểm). Trình bày sạch sẽ, ngắt đoạn logic, không gạch đầu dòng tùy tiện."
     },
     {
       criteria: "2. Giải thích & Xác định vấn đề (5.0 điểm)",
@@ -31,7 +31,7 @@ window.ESSAY_METHODOLOGY = {
     },
     {
       criteria: "4. Dẫn chứng thực tế Thời sự (5.0 điểm)",
-      detail: "Đưa ra 1 - 2 dẫn chứng 'đắt giá' mang tính thời sự mới nhất (2024 - 2026), người thật việc thật, có số liệu hoặc sự kiện tiêu biểu gắn liền với đất nước và lực lượng CAND. Phân tích rõ ý nghĩa dẫn chứng thay vì chỉ liệt kê sự việc."
+      detail: "Đưa ra từ 1 đến 2 dẫn chứng 'đắt giá' mang tính thời sự mới nhất (2024 - 2026), người thật việc thật, có số liệu hoặc sự kiện tiêu biểu gắn liền với đất nước và lực lượng CAND. Phân tích rõ ý nghĩa dẫn chứng thay vì chỉ liệt kê sự việc."
     },
     {
       criteria: "5. Mở rộng, Phản đề & Liên hệ CAND (5.0 điểm)",
@@ -104,29 +104,76 @@ window.ESSAY_METHODOLOGY = {
     }
   ],
 
-  openings: [
+  // KỸ THUẬT PHỐI HỢP NHIỀU DẪN CHỨNG TRONG 1 BÀI VĂN
+  multiEvidenceTechniques: [
     {
-      title: "Mẫu 1: Dẫn dắt từ Bối cảnh Đất nước trong Kỷ nguyên mới",
-      text: "Đất nước ta đang bước vào một giai đoạn lịch sử mang tính bước ngoặt — kỷ nguyên mới, kỷ nguyên vươn mình của dân tộc Việt Nam. Trên hành trình hiện thực hóa khát vọng phát triển phồn vinh và hùng cường ấy, vấn đề [...] càng trở nên cấp thiết và có ý nghĩa chiến lược hơn bao giờ hết. Đúng như lời khẳng định sâu sắc: '[Trích dẫn đề bài]'. Ý kiến trên không chỉ là một đúc kết giàu giá trị lý luận mà còn là lời nhắc nhở sâu sắc về trách nhiệm, bản lĩnh của mỗi công dân, đặc biệt là thế hệ trẻ hôm nay."
+      name: "Kỹ thuật 1: Cặp Dẫn chứng 'Tầm vóc Chủ trương + Hành động Cơ sở'",
+      desc: "Phối hợp 1 dẫn chứng ở cấp vĩ mô (Nghị quyết, thông điệp của Đảng, Đề án 06, Luật mới) với 1 dẫn chứng ở cấp vi mô (chiến sĩ công an cơ sở 'đi từng ngõ, gõ từng nhà', tấm gương cứu nạn). Giúp bài viết vừa có tầm nhìn chiến lược, vừa có hơi thở thực tế đời sống.",
+      example: "Ví dụ: Khi bàn về chuyển đổi số, dẫn chứng chủ trương Đề án 06 của Chính phủ kết hợp với hình ảnh công an xã ngày đêm hỗ trợ bà con vùng cao kích hoạt định danh VNeID."
     },
     {
-      title: "Mẫu 2: Dẫn dắt từ Tư tưởng Hồ Chí Minh & Lý tưởng Cách mạng",
-      text: "Sinh thời, Chủ tịch Hồ Chí Minh luôn căn dặn rằng muốn xây dựng một xã hội văn minh, tiến bộ thì mỗi con người, đặc biệt là thanh niên, phải không ngừng rèn luyện đạo đức cách mạng và bản lĩnh chính trị. Tiếp nối truyền thống vẻ vang ấy của dân tộc, quan điểm: '[Trích dẫn đề bài]' một lần nữa soi sáng vai trò của [...]. Nhận định trên đặt ra một vấn đề thời sự sâu sắc, đòi hỏi chúng ta phải có cái nhìn toàn diện, nghiêm túc để chuyển hóa nhận thức thành hành động thiết thực."
+      name: "Kỹ thuật 2: Cặp Dẫn chứng 'Chính diện Tôn vinh + Phản diện Cảnh báo'",
+      desc: "Đưa ra 1 tấm gương sáng ngời về lòng quả cảm, đức hy sinh để làm điểm tựa bàn luận, sau đó đưa ra 1 vụ việc vi phạm pháp luật hoặc hiện tượng tiêu cực để làm dẫn chứng phản đề, phê phán. Tạo độ tương phản mạnh mẽ và chiều sâu phản biện cho bài viết.",
+      example: "Ví dụ: Khi bàn về ý thức pháp luật và lòng trắc ẩn, nêu gương cán bộ CAND hy sinh trong bão lũ Yagi đối lập với những đối tượng trục lợi từ thiện hoặc tung tin giả câu view trên mạng xã hội."
     },
     {
-      title: "Mẫu 3: Dẫn dắt từ Nghịch lý Đời sống thực tiễn & Thách thức Thời đại số",
-      text: "Sự phát triển vượt bậc của khoa học công nghệ và cuộc Cách mạng công nghiệp lần thứ tư đang làm thay đổi căn bản mọi mặt đời sống xã hội, mở ra vô vàn cơ hội nhưng cũng đặt ra những thách thức chưa từng có đối với việc giữ gìn phẩm giá, kỷ cương và đạo đức công dân. Trong bối cảnh đó, thông điệp: '[Trích dẫn đề bài]' vang lên như một hồi chuông cảnh tỉnh về [...]. Nhận định này mang tính thời sự nóng bỏng, là kim chỉ nam cho sự phát triển bền vững của cộng đồng."
+      name: "Kỹ thuật 3: Cặp Dẫn chứng 'Thời chiến lịch sử + Thời bình xây dựng'",
+      desc: "Nhắc lại một giá trị truyền thống yêu nước hào hùng trong lịch sử cách mạng, sau đó nối tiếp ngay bằng những chiến công thầm lặng bảo vệ an ninh trật tự, phòng chống tội phạm ma túy, tội phạm công nghệ cao giữa thời bình.",
+      example: "Ví dụ: Khi bàn về bản lĩnh người chiến sĩ, nhắc đến tinh thần 'Quyết tử để Tổ quốc quyết sinh' năm 1946 nối tiếp đến tinh thần dấn thân vào những chuyên án ma túy sinh tử của các chiến sĩ C04 hôm nay."
     }
   ],
 
-  endings: [
+  // BỘ MẪU MỞ BÀI & KẾT BÀI THEO 10 CHỦ ĐỀ ĐÃ RA VÀ NÓNG NHẤT
+  topicTemplates: [
     {
-      title: "Mẫu 1: Kết bài Hào hùng - Khát vọng cống hiến vì An ninh Tổ quốc",
-      text: "Tóm lại, [...] không chỉ là một giá trị đạo đức đơn thuần mà là nền tảng cốt lõi định hình nên phẩm giá con người và sức mạnh nội sinh của dân tộc. Là một công dân trẻ mang trong mình khát vọng khoác lên màu áo của lực lượng Công an nhân dân Việt Nam quang vinh, bản thân tôi càng thấu triệt sâu sắc lời dạy của Bác: 'Vì nước quên thân, vì dân phục vụ'. Tôi tự hứa sẽ không ngừng tu dưỡng lý tưởng chính trị, trau dồi tri thức công nghệ và rèn luyện bản lĩnh kiên cường, sẵn sàng trở thành 'lá chắn thép' bảo vệ Đảng, Nhà nước và cuộc sống bình yên, hạnh phúc của nhân dân trong kỷ nguyên mới."
+      topic: "1. Kỷ nguyên mới – Kỷ nguyên vươn mình của dân tộc (Tổng Bí thư Tô Lâm)",
+      opening: "Đất nước ta đang bước vào một thời khắc lịch sử mang tính bước ngoặt — kỷ nguyên mới, kỷ nguyên vươn mình của dân tộc Việt Nam dưới sự lãnh đạo của Đảng. Trên hành trình hiện thực hóa mục tiêu đến năm 2030 trở thành nước đang phát triển có công nghiệp hiện đại và đến năm 2045 trở thành nước phát triển thu nhập cao, vấn đề bồi đắp bản lĩnh, khát vọng và tinh thần tự lực tự cường của thế hệ trẻ càng trở nên cấp thiết hơn bao giờ hết. Đúng như thông điệp sâu sắc đã được khẳng định: [Trích dẫn luận đề]. Nhận định trên chính là hồi kèn xung trận thúc giục mỗi người trẻ phải tự biến mình thành hạt nhân kiến tạo cho tương lai đất nước.",
+      ending: "Tóm lại, kỷ nguyên vươn mình của dân tộc không tự nhiên đến mà được dựng xây từ mồ hôi, trí tuệ và khát vọng cống hiến của từng công dân. Là một người trẻ mang trong mình lý tưởng phụng sự Tổ quốc trong hàng ngũ Công an nhân dân, tôi tự hứa sẽ không ngừng tu dưỡng đạo đức cách mạng, làm chủ khoa học công nghệ và rèn luyện bản lĩnh 'vừa hồng vừa chuyên'. Tôi nguyện đem ngọn lửa nhiệt huyết của tuổi trẻ góp phần giữ vững bình yên cho Tổ quốc, xứng đáng là lực lượng tiên phong bảo vệ Đảng, Nhà nước và nhân dân trong kỷ nguyên mới."
     },
     {
-      title: "Mẫu 2: Kết bài Kêu gọi Hành động & Trách nhiệm Xã hội",
-      text: "Khát vọng vĩ đại của một quốc gia sẽ chỉ mãi là ước mơ nếu không được dựng xây từ ý chí và việc làm cụ thể của từng cá nhân mỗi ngày. Câu nói '[Nhắc lại ý cốt lõi]' chính là ngọn hải đăng soi sáng nhận thức và dẫn đường cho hành động của chúng ta. Thay vì đứng ngoài quan sát hay phàn nàn trước khó khăn, mỗi người trẻ hãy tự trang bị cho mình tri thức vững vàng, đạo đức trong sáng và tinh thần thượng tôn pháp luật. Chỉ khi ấy, chúng ta mới có thể vững vàng làm chủ tương lai và đóng góp xứng đáng vào sự trường tồn, phồn thịnh của Tổ quốc."
+      topic: "2. Lý tưởng thanh niên theo tư tưởng Hồ Chí Minh (Đề minh họa CA1)",
+      opening: "Sinh thời, Chủ tịch Hồ Chí Minh vĩ đại luôn dành sự quan tâm đặc biệt và niềm tin son sắt cho thế hệ trẻ — những chủ nhân tương lai của nước nhà. Người từng căn dặn: “Tương lai thuộc về thanh niên. Tương lai là cách mạng luôn tiến lên. Là chủ của tương lai, thanh niên không thể không có lý tưởng cao cả. Vì vậy thanh niên phải có cuộc sống chính trị tích cực và cách mạng”. Lời dạy bất hủ ấy không chỉ là kim chỉ nam cho các thế hệ đi trước mà hôm nay vẫn vẹn nguyên tính thời sự nóng hổi, soi rọi trách nhiệm và sứ mệnh thiêng liêng của thanh niên trong giai đoạn cách mạng mới.",
+      ending: "Thấm nhuần sâu sắc lời dạy của Bác, tôi hiểu rằng người không có lý tưởng giống như con thuyền lênh đênh giữa biển khơi không có la bàn định hướng. Đối với những người đang phấn đấu đứng vào hàng ngũ Công an nhân dân anh hùng, lý tưởng ấy càng được khắc sâu qua 6 điều Bác Hồ dạy: 'Đối với tự mình, phải cần, kiệm, liêm, chính; Đối với công việc, phải tận tụy; Đối với nhân dân, phải kính trọng, lễ phép'. Tôi nguyện sẽ lấy lý tưởng cao cả ấy làm ngọn hải đăng soi sáng nhận thức và dẫn đường cho mọi hành động, sẵn sàng đi bất cứ đâu, làm bất cứ việc gì khi Tổ quốc và nhân dân cần đến."
+    },
+    {
+      topic: "3. Chuyển đổi số, Đề án 06 và Trí tuệ Nhân tạo (AI)",
+      opening: "Cuộc Cách mạng công nghiệp lần thứ tư với trọng tâm là trí tuệ nhân tạo (AI) và chuyển đổi số đang tái định hình căn bản mọi lĩnh vực của đời sống xã hội. Trong bối cảnh đất nước đẩy mạnh xây dựng Chính phủ số, kinh tế số và xã hội số, công nghệ không chỉ là công cụ gia tăng năng suất mà còn là thước đo năng lực cạnh tranh quốc gia. Đúng như thông điệp thời đại đã đặt ra: [Trích dẫn luận đề]. Vấn đề này đặt ra yêu cầu sống còn: con người phải làm chủ công nghệ bằng tư duy độc lập và đạo đức liêm chính, biến công nghệ thành công cụ phụng sự nhân sinh thay vì biến mình thành nô lệ của thuật toán.",
+      ending: "Công nghệ dù thông minh đến đâu cũng chỉ là phương tiện; chỉ có tư duy độc lập, lương tri và trái tim nhân ái của con người mới là ngọn đuốc dẫn đường cho tương lai. Là một cán bộ chiến sĩ CAND tương lai trong kỷ nguyên số, tôi nhận thức rằng việc làm chủ công nghệ cao, dữ liệu số gắn liền với trách nhiệm bảo vệ an ninh quốc gia và sự an toàn thông tin của nhân dân. Tôi quyết tâm sẽ tích cực học tập, trau dồi kỹ năng số và nâng cao nhãn quan chính trị sắc bén, sẵn sàng làm chủ vũ khí công nghệ để đấu tranh hiệu quả với mọi loại tội phạm mới."
+    },
+    {
+      topic: "4. Thượng tôn pháp luật & 'Danh dự là điều thiêng liêng nhất'",
+      opening: "Trong một nhà nước pháp quyền xã hội chủ nghĩa, pháp luật là kỷ cương tối thượng, là nền tảng bảo đảm sự ổn định và phát triển văn minh của xã hội. Song hành với sự nghiêm minh của luật pháp chính là đạo đức công vụ và lòng tự trọng của mỗi con người. Nhắc nhở về giá trị cốt tử ấy, thông điệp: [Trích dẫn đề bài / Di huấn cố Tổng Bí thư Nguyễn Phú Trọng: 'Danh dự là điều thiêng liêng và cao quý nhất'] đã chạm tới tầng sâu nhất của nhân cách con người. Nhận định này là lời hiệu triệu về tinh thần liêm chính, thượng tôn pháp luật mà mỗi công dân, đặc biệt là người chiến sĩ CAND, phải khắc cốt ghi tâm.",
+      ending: "Kỷ cương của một quốc gia và danh dự của một người chiến sĩ công an không thể đo bằng lời nói đầu môi mà phải được tôi rèn qua từng hành động cụ thể mỗi ngày. Lời nhắc nhở 'Danh dự là điều thiêng liêng và cao quý nhất' sẽ mãi là chiếc phanh hãm đạo đức giúp tôi kiên định trước mọi cám dỗ vật chất tầm thường. Tôi nguyện sẽ giữ trọn lời thề trung thành với Đảng, tận tụy với dân, giữ gìn thanh danh người chiến sĩ Công an nhân dân luôn trong sáng như gương, xứng đáng với niềm tin yêu trọn vẹn của nhân dân."
+    },
+    {
+      topic: "5. Lòng nhân ái, Đại đoàn kết và Tình đồng bào trước bão lũ",
+      opening: "Trải qua hàng ngàn năm dựng nước và giữ nước, sức mạnh vĩ đại nhất giúp dân tộc Việt Nam vượt qua muôn vàn thiên tai, giặc giã chính là tình đồng bào ruột thịt và tinh thần đại đoàn kết toàn dân tộc. Đúng như truyền thống đạo lý nghìn đời: 'Nhiễu điều phủ lấy giá gương / Người trong một nước phải thương nhau cùng', thông điệp: [Trích dẫn luận đề] vang lên như một bản hòa ca lay động hàng triệu trái tim. Luận đề này khẳng định rằng lòng nhân ái không chỉ là một phẩm chất đạo đức cao quý mà còn là cội nguồn sức mạnh nội sinh bảo đảm sự trường tồn của dân tộc.",
+      ending: "Lòng nhân ái chân chính không dừng lại ở những giọt nước mắt xót thương hay lời nói hoa mỹ trên mạng xã hội, mà phải được hiện thực hóa bằng những hành động sẻ chia thiết thực. Khắc ghi lời thề thiêng liêng 'Vì nước quên thân, vì dân phục vụ', bản thân tôi luôn nhắc nhở mình phải nuôi dưỡng một trái tim nóng ấm tình người, biết trăn trở trước nỗi đau của nhân dân. Tôi nguyện sẽ đem hết sức mình, sẵn sàng xả thân nơi tuyến đầu hiểm nguy nhất để bảo vệ cuộc sống bình yên và hạnh phúc của đồng bào."
+    },
+    {
+      topic: "6. Thích ứng nghề nghiệp, tự học & Thanh niên '3 không' (Đề số 01)",
+      opening: "Thực trạng đáng báo động về hàng triệu thanh niên rơi vào tình trạng '3 không' — không việc làm, không đi học và không được đào tạo — đang gióng lên hồi chuông cảnh tỉnh về nguy cơ lãng phí nguồn lực trẻ trong kỷ nguyên mới. Khi làn sóng tự động hóa và trí tuệ nhân tạo đang làm biến mất hàng triệu việc làm truyền thống, sự thụ động đồng nghĩa với tự đào thải. Đúng như lời khẳng định: [Trích dẫn luận đề]. Nhận định trên đặt ra một đòi hỏi bức thiết: Tự học và thích ứng linh hoạt chính là chiếc chìa khóa duy nhất để người trẻ làm chủ vận mệnh và khẳng định giá trị bản thân.",
+      ending: "Tấm bằng đại học không còn là bảo chứng suốt đời, chỉ có tinh thần tự học không ngừng nghỉ mới là động cơ vĩnh cửu giúp con người tiến bước. Là một thanh niên đang nỗ lực rèn luyện để bước vào hàng ngũ Công an nhân dân, tôi tự nhủ phải kiên quyết rời bỏ vùng an toàn, không ngừng cập nhật tri thức pháp luật, nghiệp vụ và công nghệ. Chỉ khi tự nâng tầm bản thân, tôi mới có thể hoàn thành xuất sắc mọi trọng trách được giao phó trong kỷ nguyên số."
+    },
+    {
+      topic: "7. Mục tiêu 2030 - 2045 & Trách nhiệm của từng cá nhân (Đề số 02)",
+      opening: "Đại hội lần thứ XIV của Đảng đã thắp sáng con đường tương lai của đất nước bằng những mục tiêu chiến lược mang tầm vóc lịch sử: Đến năm 2030 Việt Nam trở thành nước đang phát triển có công nghiệp hiện đại, thu nhập trung bình cao; và đến năm 2045 trở thành nước phát triển, thu nhập cao. Khát vọng phồn vinh ấy không phải là một khẩu hiệu xa vời nằm trên trang giấy, mà là mệnh lệnh phát triển bắt nguồn từ chính ý thức và hành động của từng người dân. Đúng như ý kiến sâu sắc: [Trích dẫn luận đề]. Vấn đề này làm sáng tỏ mối quan hệ biện chứng giữa vận mệnh quốc gia và trách nhiệm công dân.",
+      ending: "Một dân tộc hùng cường chỉ có thể được tạo nên từ những con người biết nuôi dưỡng ước mơ lớn và hành động mỗi ngày vì ước mơ ấy. Thay vì đứng ngoài quan sát hay trông chờ thụ động, mỗi thanh niên hãy đóng góp một phần việc cụ thể cho quê hương. Với khát vọng trở thành người chiến sĩ bảo vệ bình yên đất nước, tôi sẽ biến lòng yêu nước thành kỷ luật trong học tập, kiên định trong tư tưởng, sẵn sàng cống hiến trọn vẹn sức trẻ cho sự nghiệp công nghiệp hóa, hiện đại hóa và hội nhập quốc tế của Tổ quốc."
+    },
+    {
+      topic: "8. Tinh gọn bộ máy & Hy sinh quyền lợi riêng vì đại cục (Đề số 03)",
+      opening: "Cuộc cách mạng tinh gọn tổ chức bộ máy của hệ thống chính trị theo hướng 'Tinh - Gọn - Mạnh - Hiệu năng - Hiệu lực - Hiệu quả' đang diễn ra mạnh mẽ, đánh dấu bước chuyển mình quyết liệt của đất nước. Việc sắp xếp lại đơn vị hành chính và tinh giản biên chế tất yếu chạm đến vị trí, quyền lợi của nhiều cán bộ, đảng viên. Trong bối cảnh đó, thông điệp: [Trích dẫn luận đề] đặt ra một phép thử nghiêm túc về đức hy sinh và tinh thần đặt lợi ích chung lên trên hết. Nhận định này khơi dậy bài học đạo đức cách mạng sâu sắc: Sự phát triển của tập thể luôn cần đến bản lĩnh dấn thân và tinh thần vì đại cục của mỗi cá nhân.",
+      ending: "Lịch sử dân tộc đã chứng minh, một đất nước muốn cất cánh phải có một bộ máy tinh gọn, liêm chính và những con người dám đặt lợi ích quốc gia lên trên quyền lợi cá nhân. Thấm nhuần lời căn dặn của Bác Hồ về đức tính chí công vô tư, tôi luôn xác định rằng người chiến sĩ Công an nhân dân phải tuyệt đối phục tùng sự phân công của Đảng và Tổ quốc. Dù ở bất cứ cương vị nào, nơi đô thị thuận lợi hay vùng biên ải xa xôi, tôi cũng sẵn sàng đón nhận và hoàn thành xuất sắc nhiệm vụ vì sự bình yên của nhân dân."
+    },
+    {
+      topic: "9. Phòng chống tội phạm công nghệ cao & Bảo vệ an ninh mạng (Đề số 04)",
+      opening: "Không gian mạng đang mở ra những cánh cửa tri thức vô tận nhưng cũng tiềm ẩn vô số cạm bẫy khôn lường từ tội phạm công nghệ cao, các chiêu trò thao túng tâm lý, lừa đảo xuyên biên giới và bắt cóc online. Sự thông thạo thiết bị của người trẻ không đồng nghĩa với việc đã có đủ 'kháng thể' trước những thủ đoạn tinh vi. Đúng như lời cảnh tỉnh: [Trích dẫn luận đề]. Vấn đề này đặt ra bài toán cấp bách: Bảo vệ an ninh mạng không chỉ là nhiệm vụ của lực lượng chuyên trách, mà phải bắt đầu từ văn hóa cảnh giác và ý thức trách nhiệm của từng công dân trên không gian số.",
+      ending: "Trên không gian mạng, chiếc khiên chắn vững chắc nhất trước tội phạm không nằm ở bức tường lửa kỹ thuật mà nằm ở sự tỉnh táo, hiểu biết pháp luật và bản lĩnh của con người. Là một công dân trẻ mang khát vọng khoác lên màu áo Công an nhân dân, tôi nguyện sẽ chủ động trang bị kiến thức an toàn thông tin, tích cực tuyên truyền pháp luật và cảnh báo cạm bẫy cho người thân, góp phần cùng toàn lực lượng giữ vững chủ quyền số và bình yên trên không gian mạng."
+    },
+    {
+      topic: "10. Cuộc chiến phòng chống ma túy & Giữ gìn lối sống lành mạnh",
+      opening: "Trong dòng chảy phát triển của xã hội, ma túy vẫn luôn là một hiểm họa tàn độc nhất đối với nòi giống, hủy hoại nhân cách con người, tan vỡ hạnh phúc gia đình và làm phát sinh muôn vàn loại tội phạm nghiêm trọng. Đáng lo ngại hơn, ma túy thế hệ mới đang tìm mọi cách len lỏi vào học đường dưới những lớp vỏ bọc tinh vi. Nhận thức rõ tính chất cam go của cuộc chiến này, thông điệp: [Trích dẫn luận đề] vang lên như một lời hiệu triệu đanh thép: Ngăn chặn ma túy là trách nhiệm thiêng liêng bảo vệ tương lai giống nòi và bình yên xã hội.",
+      ending: "Mỗi chiến công của lực lượng Cảnh sát điều tra tội phạm về ma túy giữa thời bình đều phải đánh đổi bằng mồ hôi, nước mắt và cả sự hy sinh xương máu của các chiến sĩ công an. Sự hy sinh cao cả ấy nhắc nhở chúng ta về giá trị vô giá của cuộc sống bình yên hôm nay. Tôi nguyện sẽ luôn giữ vững lối sống trong sạch, lành mạnh, kiên quyết nói không với ma túy dưới mọi hình thức, đồng thời sẵn sàng trở thành một tuyên truyền viên tích cực chung tay đẩy lùi 'cái chết trắng' ra khỏi cộng đồng."
     }
   ],
 
@@ -152,7 +199,7 @@ window.ESSAY_METHODOLOGY = {
       examples: [
         "Nhìn vào dòng chảy thời sự của đất nước những năm 2024 - 2026, chúng ta bắt gặp những minh chứng sống động cho nhận định trên...",
         "Thực tiễn sinh động của đời sống xã hội và công cuộc bảo vệ an ninh trật tự chính là thước đo kiểm chứng rõ nhất cho chân lý ấy...",
-        "Một dẫn chứng tiêu biểu, giàu sức thuyết phục và mang tính thời sự sâu sắc chính là..."
+        "Một minh chứng tiêu biểu, giàu sức thuyết phục và mang tính thời sự sâu sắc chính là..."
       ]
     },
     {
@@ -237,7 +284,7 @@ window.ESSAY_THEMES = [
   }
 ];
 
-// 3. SỔ TAY DẪN CHỨNG THỜI SỰ ĐẮT GIÁ (NGUỒN BÁO CAND & CHÍNH THỐNG 2024 - 2026)
+// 3. SỔ TAY 22 DẪN CHỨNG THỜI SỰ ĐẮT GIÁ (NGUỒN BÁO CAND & CHUYÊN ÁN BỘ CÔNG AN 2024 - 2026)
 window.ESSAY_GUIDES = [
   {
     id: "ev-01",
@@ -247,17 +294,16 @@ window.ESSAY_GUIDES = [
     sourceTitle: "Tuổi trẻ Việt Nam trong kỷ nguyên mới: Bản lĩnh, sáng tạo và khát vọng làm chủ tương lai",
     sourceUrl: "https://cand.vn/",
     sourceName: "Báo Công an Nhân dân & Văn kiện Đảng",
-    evidence: "Tổng Bí thư Tô Lâm nhấn mạnh thông điệp mang tính lịch sử: Việt Nam đang bước vào Kỷ nguyên mới - Kỷ nguyên vươn mình của dân tộc. Trong đó, thanh niên được xác định là lực lượng rường cột, tiên phong làm chủ khoa học - công nghệ, đổi mới sáng tạo, chuyển đổi số và hội nhập quốc tế để hiện thực hóa mục tiêu đến năm 2030 là nước đang phát triển có công nghiệp hiện đại, đến năm 2045 là nước phát triển thu nhập cao.",
-    issue: "Sự nghiệp lớn của đất nước không thể chỉ là trách nhiệm chung chung của Nhà nước mà phải biến thành khát vọng cháy bỏng, tự lực tự cường và hành động cụ thể mỗi ngày của từng thanh niên.",
+    evidence: "Tổng Bí thư Tô Lâm nhấn mạnh thông điệp lịch sử: Việt Nam đang bước vào Kỷ nguyên mới - Kỷ nguyên vươn mình của dân tộc. Trong đó, thanh niên là lực lượng rường cột, tiên phong làm chủ khoa học - công nghệ, đổi mới sáng tạo, chuyển đổi số và hội nhập quốc tế để hiện thực hóa mục tiêu đến năm 2030 là nước đang phát triển có công nghiệp hiện đại, đến năm 2045 là nước phát triển thu nhập cao.",
+    issue: "Sự nghiệp lớn của đất nước đòi hỏi thanh niên không thể chỉ nói khẩu hiệu suông, mà phải biến khát vọng tự lực tự cường thành hành động cụ thể mỗi ngày.",
     angles: [
-      "Bản lĩnh thanh niên là không né tránh khó khăn, dám rời bỏ 'vùng an toàn' để đối mặt với những thử thách mới của thời đại.",
-      "Lý tưởng cách mạng không phải là khẩu hiệu trừu tượng mà là tinh thần trách nhiệm, kỷ luật trong học tập, công tác và tuân thủ pháp luật.",
-      "Đối với người chiến sĩ CAND tương lai, khát vọng làm chủ tương lai gắn liền với nhiệm vụ làm chủ công nghệ, giữ vững an ninh quốc gia."
+      "Bản lĩnh thanh niên là không né tránh khó khăn, dám rời bỏ 'vùng an toàn' để đối mặt với thử thách của thời đại số.",
+      "Lý tưởng cách mạng gắn liền với tinh thần trách nhiệm, kỷ luật trong học tập, công tác và tuân thủ pháp luật.",
+      "Đối với người chiến sĩ CAND tương lai, khát vọng làm chủ tương lai gắn liền với nhiệm vụ làm chủ công nghệ, bảo vệ bình yên Tổ quốc."
     ],
     solutions: [
       "Thế hệ trẻ: Tự nâng cao trình độ chuyên môn, ngoại ngữ, kỹ năng số; tích cực cống hiến nơi tuyến đầu gian khó.",
-      "Tổ chức Đoàn và lực lượng vũ trang: Tạo môi trường rèn luyện thực chất, bồi dưỡng lý tưởng chính trị kiên định, khuyến khích sáng tạo.",
-      "Xã hội: Tôn vinh các tấm gương đổi mới sáng tạo, dấn thân cống hiến vì lợi ích cộng đồng."
+      "Lực lượng vũ trang: Bồi dưỡng lý tưởng chính trị kiên định, tạo môi trường rèn luyện thực chất cho cán bộ trẻ."
     ],
     sampleQuote: "Lời khẳng định của Tổng Bí thư Tô Lâm về 'Kỷ nguyên vươn mình của dân tộc' là hiệu triệu thiêng liêng đòi hỏi mỗi thanh niên hôm nay phải tự biến mình thành một hạt nhân kiến tạo, lấy tri thức và bản lĩnh để phụng sự Tổ quốc.",
     prompt: "Từ thông điệp về 'kỷ nguyên vươn mình của dân tộc', hãy viết bài nghị luận (tối thiểu 500 chữ) bàn về trách nhiệm và khát vọng của thanh niên trong giai đoạn hiện nay."
@@ -271,16 +317,15 @@ window.ESSAY_GUIDES = [
     sourceUrl: "https://cand.vn/",
     sourceName: "Báo Công an Nhân dân & Cổng TTĐT Bộ Công an",
     evidence: "Trong cơn siêu bão số 3 (Yagi) và trận lũ quét kinh hoàng tại Làng Nủ (Lào Cai), Yên Bái, Quảng Ninh... hàng vạn cán bộ, chiến sĩ Công an nhân dân và Quân đội đã trắng đêm cứu hộ, vượt sạt lở tiếp tế lương thực, cõng người già và trẻ nhỏ qua dòng nước xiết. Tấm gương hy sinh anh dũng của cán bộ chiến sĩ CAND khi làm nhiệm vụ cứu hộ dân đã làm xúc động hàng triệu con tim, khắc họa sâu đậm biểu tượng 'Vì nước quên thân, vì dân phục vụ'.",
-    issue: "Lòng dũng cảm và tinh thần vì nhân dân phục vụ không tự nhiên có mà được tôi luyện từ lý tưởng cao đẹp và đạo đức cách mạng trong sáng.",
+    issue: "Lòng dũng cảm và tinh thần vì nhân dân phục vụ được tôi luyện từ lý tưởng cao đẹp và đạo đức cách mạng trong sáng.",
     angles: [
       "Thiên tai khốc liệt là phép thử nghiệt ngã nhất đối với bản lĩnh và tình thương yêu đồng bào của người chiến sĩ công an.",
       "Hành động cứu dân nơi hiểm nguy chứng minh danh dự và trách nhiệm của lực lượng vũ trang là gắn bó máu thịt với nhân dân.",
-      "Tinh thần tương thân tương ái của cả nước (hàng ngàn tỷ đồng ủng hộ minh bạch qua Mặt trận Tổ quốc) khẳng định sức mạnh đại đoàn kết dân tộc."
+      "Sự quyên góp hàng ngàn tỷ đồng của nhân dân cả nước khẳng định sức mạnh trường tồn của khối đại đoàn kết dân tộc."
     ],
     solutions: [
-      "Lực lượng vũ trang: Luôn duy trì tinh thần sẵn sàng chiến đấu, ứng trực 24/7, gắn bó mật thiết với nhân dân.",
-      "Cộng đồng: Phát huy truyền thống tương thân tương ái, chủ động hỗ trợ người dân vùng thiên tai khắc phục sinh kế lâu dài.",
-      "Mỗi người trẻ: Học tập tinh thần dấn thân, không ngại hiểm nguy vì bình yên của cộng đồng."
+      "Lực lượng vũ trang: Luôn duy trì tinh thần sẵn sàng ứng trực 24/7, gắn bó mật thiết với nhân dân.",
+      "Mỗi người trẻ: Học tập tinh thần dấn thân, không ngại hiểm nguy vì sự bình yên của cộng đồng."
     ],
     sampleQuote: "Hình ảnh những người chiến sĩ Công an dầm mình trong dòng nước lũ cuồn cuộn để đưa từng người dân đến nơi an toàn là minh chứng bất tử cho lời thề thiêng liêng: 'Lúc dân cần, lúc dân khó, có Công an'.",
     prompt: "Viết bài văn nghị luận (tối thiểu 500 chữ) bàn về sức mạnh của lòng nhân ái và tinh thần đại đoàn kết dân tộc được thắp sáng qua những thời điểm gian nan, thử thách."
@@ -301,7 +346,6 @@ window.ESSAY_GUIDES = [
       "Cải cách thủ tục hành chính thông qua số hóa giúp triệt tiêu mầm mống tiêu cực, quan liêu, xây dựng chính phủ số liêm chính."
     ],
     solutions: [
-      "Cơ quan quản lý: Tiếp tục hoàn thiện hệ sinh thái số an toàn, bảo vệ bí mật đời tư và dữ liệu công dân.",
       "Người dân: Chủ động học tập kỹ năng số, sử dụng dịch vụ công trực tuyến, nâng cao cảnh giác bảo mật tài khoản cá nhân.",
       "Cán bộ chiến sĩ: Nêu cao tinh thần tận tụy, 'đi từng ngõ, gõ từng nhà' để hỗ trợ người dân tiếp cận tiện ích số."
     ],
@@ -321,11 +365,10 @@ window.ESSAY_GUIDES = [
     angles: [
       "Không gian mạng là môi trường ảo nhưng tổn thương, mất mát về tài sản và tâm lý của nạn nhân là hoàn toàn thật.",
       "Thao túng nỗi sợ hãi và sự thiếu hiểu biết pháp luật là vũ khí nguy hiểm nhất của tội phạm công nghệ cao.",
-      "Bảo vệ an ninh mạng không chỉ là việc của lực lượng chuyên trách mà bắt đầu từ văn hóa cảnh giác và hiểu biết pháp luật của từng người dùng."
+      "Bảo vệ an ninh mạng bắt đầu từ văn hóa cảnh giác và hiểu biết pháp luật của từng người dùng."
     ],
     solutions: [
       "Mỗi cá nhân: Tuyệt đối không chuyển tiền theo yêu cầu đe dọa qua điện thoại; bảo vệ mã OTP, dữ liệu sinh trắc học; xác minh qua kênh chính thống.",
-      "Gia đình, nhà trường: Tạo điểm tựa tâm lý an toàn để con em dám tâm sự, trình báo khi bị đe dọa thay vì giấu giếm hoảng loạn.",
       "Lực lượng Công an: Nhanh chóng phong tỏa dòng tiền lừa đảo, phối hợp quốc tế triệt phá các tụ điểm máy chủ ở nước ngoài."
     ],
     sampleQuote: "Trên không gian mạng, chiếc khiên chắn vững chắc nhất trước những thủ đoạn lừa đảo tinh vi không nằm ở cấu hình máy tính mà nằm ở bản lĩnh tỉnh táo, kiến thức pháp luật và sự bình tĩnh của chính mỗi con người.",
@@ -339,8 +382,8 @@ window.ESSAY_GUIDES = [
     sourceTitle: "Sử dụng trí tuệ nhân tạo (AI) có trách nhiệm, liêm chính và nhân văn",
     sourceUrl: "https://cand.vn/",
     sourceName: "Báo Công an Nhân dân",
-    evidence: "Tại các hội thảo khoa học quốc gia về giáo dục và an ninh thông tin cuối năm 2026, các chuyên gia cảnh báo: AI mang lại sức mạnh to lớn trong việc tự động hóa và hỗ trợ học tập, nhưng việc lạm dụng AI chép bài thi, làm hộ luận văn đang bào mòn tư duy độc lập, vi phạm nghiêm trọng liêm chính học thuật và tạo ra nguy cơ lan truyền thông tin sai lệch xuyên tạc.",
-    issue: "Câu hỏi cốt lõi của thời đại không phải là công nghệ phát triển nhanh đến đâu, mà là con người có giữ được phẩm giá, tư duy độc lập và đạo đức trước sức mạnh của máy móc hay không.",
+    evidence: "Tại các diễn đàn giáo dục và khoa học, các chuyên gia cảnh báo: AI mang lại sức mạnh to lớn trong việc tự động hóa và hỗ trợ học tập, nhưng việc lạm dụng AI chép bài thi, làm hộ luận văn đang bào mòn tư duy độc lập, vi phạm nghiêm trọng liêm chính học thuật và tạo ra nguy cơ lan truyền thông tin sai lệch xuyên tạc.",
+    issue: "Công nghệ phát triển nhanh đến đâu thì con người càng phải giữ vững phẩm giá, tư duy độc lập và đạo đức trước sức mạnh của máy móc.",
     angles: [
       "AI là công cụ trợ lực tuyệt vời nhưng không thể thay thế trí tuệ cảm xúc, lương tri và trách nhiệm giải trình của con người.",
       "Sao chép máy móc từ AI mà không kiểm chứng là hành vi tự tước bỏ cơ hội trưởng thành và tự đánh lừa chính mình.",
@@ -348,8 +391,7 @@ window.ESSAY_GUIDES = [
     ],
     solutions: [
       "Người học: Dùng AI để gợi mở góc nhìn và phản biện, nhưng tự mình nghiên cứu, kiểm chứng và chịu trách nhiệm về bài làm.",
-      "Nhà trường: Xây dựng quy chuẩn sử dụng AI minh bạch, đánh giá năng lực qua quá trình tư duy thay vì chỉ nhìn vào sản phẩm hoàn chỉnh.",
-      "Xã hội: Hoàn thiện hành lang pháp lý về sở hữu trí tuệ, an toàn dữ liệu và bản quyền trong ứng dụng AI."
+      "Nhà trường: Xây dựng quy chuẩn sử dụng AI minh bạch, đánh giá năng lực qua quá trình tư duy thay vì chỉ nhìn vào sản phẩm."
     ],
     sampleQuote: "Công nghệ dù thông minh đến đâu cũng chỉ là phương tiện; chỉ có tư duy độc lập, sự trung thực và trái tim nhân văn của con người mới là ngọn đuốc dẫn đường cho tương lai.",
     prompt: "Trình bày suy nghĩ của anh/chị về việc sử dụng trí tuệ nhân tạo (AI) như một công cụ hỗ trợ học tập mà không đánh mất tư duy độc lập và lòng trung thực."
@@ -371,7 +413,6 @@ window.ESSAY_GUIDES = [
     ],
     solutions: [
       "Mỗi công dân: Luôn lên kế hoạch di chuyển an toàn; đã cầm lái thì dứt khoát không uống rượu bia.",
-      "Bạn bè, đồng nghiệp: Chủ động ngăn cản người đã sử dụng rượu bia điều khiển phương tiện, xóa bỏ thói ép rượu tiêu cực.",
       "Cơ quan chức năng: Duy trì kiểm tra công khai, minh bạch, xử lý bình đẳng mọi hành vi vi phạm."
     ],
     sampleQuote: "Một xã hội văn minh không đo bằng số lượng phương tiện hiện đại trên đường, mà đo bằng ý thức thượng tôn pháp luật và sự tôn trọng tính mạng của nhau sau mỗi bánh xe lăn.",
@@ -394,7 +435,6 @@ window.ESSAY_GUIDES = [
     ],
     solutions: [
       "Cán bộ chiến sĩ: Thường xuyên 'tự soi, tự sửa', rèn luyện 6 điều Bác Hồ dạy Công an nhân dân.",
-      "Ngành Công an: Tăng cường giám sát quyền lực, xử lý nghiêm minh các hành vi thoái hóa biến chất, không có vùng cấm.",
       "Mỗi người trẻ: Nuôi dưỡng lòng tự trọng, coi trọng sự trong sạch của lương tâm hơn mọi lợi ích ngắn hạn."
     ],
     sampleQuote: "Lời nhắc nhở 'Danh dự là điều thiêng liêng và cao quý nhất' là chiếc phanh hãm đạo đức mạnh mẽ nhất, nhắc nhở người chiến sĩ công an rằng sức mạnh lớn nhất của mình chính là niềm tin yêu và sự kính trọng của nhân dân.",
@@ -417,8 +457,7 @@ window.ESSAY_GUIDES = [
     ],
     solutions: [
       "Gia đình và nhà trường: Tăng cường trang bị kiến thức nhận diện ma túy mới, quản lý chặt chẽ và lắng nghe tâm tư học sinh.",
-      "Thế hệ trẻ: Kiên quyết nói không với mọi lời rủ rê sử dụng chất kích thích, không tò mò thử dù chỉ một lần.",
-      "Lực lượng chức năng: Chặn cung, giảm cầu, đánh trúng các đường dây đầu nậu từ sớm, từ xa, từ ngoài biên giới."
+      "Thế hệ trẻ: Kiên quyết nói không với mọi lời rủ rê sử dụng chất kích thích, không tò mò thử dù chỉ một lần."
     ],
     sampleQuote: "Mỗi chiến công trên mặt trận phòng chống ma túy được đánh đổi bằng mồ hôi, nước mắt và cả máu của người chiến sĩ Công an, nhắc nhở chúng ta về cái giá vô cùng đắt của cuộc sống bình yên hôm nay.",
     prompt: "Bàn về trách nhiệm của tuổi trẻ và toàn xã hội trong cuộc chiến ngăn chặn ma túy và giữ gìn lối sống lành mạnh."
@@ -439,7 +478,6 @@ window.ESSAY_GUIDES = [
       "Cần kết hợp hài hòa giữa chế tài xử phạt nghiêm khắc của pháp luật với việc nâng cao ý thức tiêu dùng xanh của người dân."
     ],
     solutions: [
-      "Cơ quan quản lý & Công an: Tăng cường giám sát tự động, xử lý hình sự các hành vi cố tình xả thải độc hại.",
       "Doanh nghiệp: Đầu tư công nghệ xử lý tuần hoàn chất thải, công khai minh bạch trách nhiệm xã hội.",
       "Cộng đồng: Thực hành lối sống giảm rác thải nhựa, tố giác kịp thời các hành vi bức tử môi trường."
     ],
@@ -463,15 +501,146 @@ window.ESSAY_GUIDES = [
     ],
     solutions: [
       "Nhà nước & Lực lượng CAND: Tiếp tục rà soát, hỗ trợ đúng đối tượng, bảo đảm chất lượng công trình lâu dài.",
-      "Cộng đồng doanh nghiệp: Chung tay đóng góp nguồn lực xã hội hóa, xem đây là trách nhiệm phụng sự quê hương.",
       "Mỗi người trẻ: Tích cực tham gia các chiến dịch tình nguyện Mùa hè xanh, mang tri thức và sức trẻ giúp đỡ vùng sâu, vùng xa."
     ],
     sampleQuote: "Khi người chiến sĩ công an cùng nhân dân lợp từng mái ngói, dựng từng bờ tường che mưa che nắng, đó là lúc nền tảng an ninh nhân dân được xây đắp kiên cố nhất trong lòng dân.",
     prompt: "Bàn về ý nghĩa nhân văn sâu sắc của các hoạt động chăm lo cho người yếu thế trong việc củng cố khối đại đoàn kết toàn dân tộc."
+  },
+  {
+    id: "ev-11",
+    themeId: "theme-era",
+    theme: "Kỷ nguyên mới & Khát vọng Thanh niên",
+    date: "2025 - 2026",
+    sourceTitle: "Phong trào 'Bình dân học vụ số': Phổ cập kỹ năng số đến từng người dân",
+    sourceUrl: "https://cand.vn/",
+    sourceName: "Báo Công an Nhân dân & Văn phòng Chính phủ",
+    evidence: "Tại hội nghị chuyên đề chuyển đổi số, Tổng Bí thư Tô Lâm chỉ đạo phát động phong trào 'Bình dân học vụ số' sâu rộng toàn dân. Hàng triệu đoàn viên thanh niên và lực lượng Công an cơ sở đã thành lập các 'Tổ công nghệ số cộng đồng', trực tiếp hướng dẫn người cao tuổi, tiểu thương, nông dân cài đặt VNeID, thanh toán không dùng tiền mặt và phòng tránh lừa đảo trực tuyến.",
+    issue: "Khoảng cách số sẽ tạo ra bất bình đẳng xã hội nếu những người yếu thế bị bỏ lại phía sau trên hành trình chuyển đổi số quốc gia.",
+    angles: [
+      "Phổ cập tri thức số hôm nay mang ý nghĩa lịch sử thiêng liêng như phong trào xóa mù chữ Bình dân học vụ năm 1945.",
+      "Thanh niên phải là lực lượng xung kích mang tri thức công nghệ đi phụng sự cộng đồng thay vì chỉ dùng công nghệ để giải trí cá nhân.",
+      "Sự kiên nhẫn hướng dẫn từng cụ già cầm điện thoại của chiến sĩ công an thể hiện tinh thần trọng dân, gần dân sâu sắc."
+    ],
+    solutions: [
+      "Thanh niên: Chủ động tham gia các tổ công nghệ số cộng đồng, kiên nhẫn hỗ trợ người thân và hàng xóm.",
+      "Chính quyền: Đầu tư hạ tầng Internet tới vùng sâu, vùng xa, bảo đảm cơ hội tiếp cận số công bằng."
+    ],
+    sampleQuote: "Chuyển đổi số chỉ thực sự thành công khi người nông dân nơi bản làng xa xôi nhất cũng cảm nhận được tiện ích và được bảo vệ an toàn trên môi trường số.",
+    prompt: "Bàn về trách nhiệm của tuổi trẻ trong phong trào phổ cập kỹ năng số và thu hẹp khoảng cách tiếp cận công nghệ cho cộng đồng."
+  },
+  {
+    id: "ev-12",
+    themeId: "theme-law",
+    theme: "Thượng tôn Pháp luật & Đạo đức Công vụ",
+    date: "2025 - 2026",
+    sourceTitle: "Cách mạng tinh gọn tổ chức bộ máy: 'Tinh - Gọn - Mạnh - Hiệu năng - Hiệu lực'",
+    sourceUrl: "https://cand.vn/",
+    sourceName: "Báo Công an Nhân dân & Tạp chí Cộng sản",
+    evidence: "Bộ Chính trị và Ban Chấp hành Trung ương Đảng đã ban hành các chủ trương chiến lược về việc tiếp tục đổi mới, sắp xếp tổ chức bộ máy của hệ thống chính trị tinh gọn, hoạt động hiệu lực, hiệu quả. Hàng loạt đơn vị hành chính cấp huyện, cấp xã được sáp nhập; nhiều cán bộ, chiến sĩ công an sẵn sàng nhận nhiệm vụ tăng cường về cơ sở, biên giới hoặc tự nguyện nghỉ công tác để nhường chỗ cho thế hệ kế cận.",
+    issue: "Một bộ máy cồng kềnh, nhiều tầng nấc trung gian là rào cản lớn nhất kìm hãm sự phát triển của đất nước và gây lãng phí nguồn lực.",
+    angles: [
+      "Tinh gọn bộ máy đòi hỏi đức hy sinh lợi ích cá nhân vì sự phát triển bền vững và phồn vinh của quốc gia.",
+      "Bộ máy hành chính không sinh ra để tạo quyền uy, mà sinh ra để phục vụ nhân dân nhanh nhất, thuận tiện nhất.",
+      "Lực lượng CAND luôn đi đầu trong việc tinh giản tổ chức theo phương châm 'Bộ tinh, tỉnh toàn diện, huyện vững mạnh, xã bám cơ sở'."
+    ],
+    solutions: [
+      "Mỗi cán bộ, đảng viên: Nêu cao tinh thần nêu gương, sẵn sàng cống hiến vì đại cục, không níu kéo quyền lợi cá nhân.",
+      "Hệ thống chính trị: Đãi ngộ xứng đáng, tạo điều kiện chuyển đổi nghề nghiệp công bằng cho các nhân sự chịu tác động."
+    ],
+    sampleQuote: "Khi một cán bộ sẵn sàng rời khỏi chiếc ghế quen thuộc để bộ máy chung vận hành trơn tru hơn, đó chính là lúc phẩm chất của người cộng sản chân chính tỏa sáng rực rỡ nhất.",
+    prompt: "Từ chủ trương tinh gọn bộ máy của Đảng, hãy bàn về tinh thần trách nhiệm và sự hy sinh lợi ích riêng vì lợi ích chung của tập thể."
+  },
+  {
+    id: "ev-13",
+    themeId: "theme-humanity",
+    theme: "Lòng nhân ái & Tinh thần Vì Nhân Dân",
+    date: "09/2024 - 2026",
+    sourceTitle: "Minh bạch sao kê hơn 2.000 tỷ đồng cứu trợ bão lũ: Củng cố niềm tin đồng bào",
+    sourceUrl: "https://cand.vn/",
+    sourceName: "Báo Công an Nhân dân & Cổng TTĐT MTTQ Việt Nam",
+    evidence: "Ủy ban Trung ương Mặt trận Tổ quốc Việt Nam đã công khai hàng ngàn trang sao kê chi tiết từng giao dịch quyên góp của người dân và tổ chức ủng hộ đồng bào bị thiệt hại do bão số 3 (Yagi). Hành động minh bạch chưa từng có này đã nhận được sự đồng thuận tuyệt đối của xã hội, đập tan mọi hoài nghi và thổi bùng làn sóng ủng hộ với tổng số tiền vượt mốc 2.000 tỷ đồng.",
+    issue: "Lòng nhân ái chỉ có thể bền vững và phát huy sức mạnh to lớn nhất khi được đặt trên nền tảng của sự minh bạch, liêm chính và trách nhiệm giải trình.",
+    angles: [
+      "Sự minh bạch là chiếc cầu nối củng cố niềm tin giữa nhân dân với các tổ chức cứu trợ và Nhà nước.",
+      "Từng đồng tiền nhỏ của các em học sinh, người lao động gửi gắm đều chứa đựng tình nghĩa đồng bào thiêng liêng cần được trân trọng tuyệt đối.",
+      "Đấu tranh kiên quyết với các hành vi 'làm màu', trục lợi từ thiện để bảo vệ sự trong sạch của đạo lý nhân ái dân tộc."
+    ],
+    solutions: [
+      "Các tổ chức từ thiện: Ứng dụng công nghệ số và tài khoản minh bạch để nhân dân giám sát trực tiếp dòng tiền cứu trợ.",
+      "Công dân: Chọn lựa các kênh chính thống để đóng góp, tỉnh táo trước các tài khoản giả mạo lừa đảo từ thiện."
+    ],
+    sampleQuote: "Minh bạch không chỉ là trách nhiệm pháp lý mà là đạo đức cao nhất của lòng nhân ái; niềm tin của nhân dân một khi đã được thắp sáng sẽ tạo nên sức mạnh vô địch dời non lấp biển.",
+    prompt: "Bàn về ý nghĩa của tính minh bạch và lòng tin trong các hoạt động nhân đạo, thiện nguyện vì cộng đồng."
+  },
+  {
+    id: "ev-14",
+    themeId: "theme-society",
+    theme: "Phát triển Bền vững & Phòng chống Tệ nạn",
+    date: "2025 - 2026",
+    sourceTitle: "Tấm gương hy sinh dũng cảm của các cán bộ chiến sĩ CAND trong mưa lũ sạt lở",
+    sourceUrl: "https://cand.vn/",
+    sourceName: "Báo Công an Nhân dân",
+    evidence: "Trong các trận lũ quét, sạt lở kinh hoàng tại miền núi phía Bắc và Tây Nguyên, nhiều tấm gương cán bộ chiến sĩ công an đã quên mình vì dân: Trung tá Trần Văn Dũng (Trưởng Công an xã) dũng cảm hy sinh khi đi cứu hộ dân trong sạt lở đất; các chiến sĩ cảnh sát PCCC & CNCH lao mình vào tâm lũ cứu sống hàng trăm người già, trẻ nhỏ.",
+    issue: "Giữa thời bình, sự bình yên và hạnh phúc của nhân dân vẫn hàng ngày được đánh đổi bằng máu, mồ hôi và sự hy sinh cao cả của người chiến sĩ lực lượng vũ trang.",
+    angles: [
+      "Sự hy sinh của các anh không phải là sự liều lĩnh vô nghĩa, mà là kết tinh của mệnh lệnh từ trái tim người chiến sĩ công an nhân dân.",
+      "Biết ơn sự hy sinh của các anh bằng hành động: sống có trách nhiệm, chấp hành nghiêm quy định an toàn và hỗ trợ đồng bào.",
+      "Hình tượng người chiến sĩ công an ngã xuống vì bình yên cuộc sống là bài học đạo đức sống động nhất cho thế hệ trẻ."
+    ],
+    solutions: [
+      "Lực lượng CAND: Tiếp tục trang bị phương tiện cứu hộ hiện đại, huấn luyện kỹ năng sinh tồn và bảo đảm an toàn cho cán bộ chiến sĩ.",
+      "Thế hệ trẻ: Tri ân sâu sắc, lấy sự hy sinh của các thế hệ đi trước làm động lực học tập và cống hiến cho Tổ quốc."
+    ],
+    sampleQuote: "Không có sự hy sinh nào cao quý hơn việc ngã xuống để người khác được sống; những người chiến sĩ công an anh dũng ấy đã hóa thân vào non sông đất mẹ, để lại niềm tiếc thương và lòng biết ơn vô hạn trong lòng nhân dân.",
+    prompt: "Suy nghĩ của anh/chị về sự hy sinh thầm lặng của những người lính cứu hộ và trách nhiệm tri ân của tuổi trẻ hôm nay."
+  },
+  {
+    id: "ev-15",
+    themeId: "theme-society",
+    theme: "Phát triển Bền vững & Phòng chống Tệ nạn",
+    date: "2025 - 2026",
+    sourceTitle: "Cảnh báo thuốc lá điện tử tẩm ma túy và 'nước vui' nhắm vào giới trẻ",
+    sourceUrl: "https://cand.vn/",
+    sourceName: "Báo Công an Nhân dân & Bộ Y tế",
+    evidence: "Cục Cảnh sát điều tra tội phạm về ma túy liên tục phát hiện và triệt phá các xưởng sản xuất, pha trộn tinh dầu thuốc lá điện tử chứa chất ma túy mới (như cần sa tổng hợp, Ketamine, bóng cười). Nhiều học sinh, sinh viên bị ngộ độc cấp tính, hoang tưởng, tổn thương não vĩnh viễn vì bị bạn bè rủ rê dùng thử thuốc lá điện tử thế hệ mới.",
+    issue: "Tội phạm ma túy đang sử dụng vỏ bọc thời thượng, 'sành điệu' để đầu độc thể xác và tinh thần của thế hệ tương lai.",
+    angles: [
+      "Sự tò mò dại dột và tâm lý a dua theo bạn bè có thể đánh đổi bằng cả tương lai và tính mạng.",
+      "Cần coi việc sử dụng các chất kích thích trá hình là mối đe dọa trực tiếp đến an ninh học đường và trật tự an toàn xã hội.",
+      "Gia đình và nhà trường cần vào cuộc quyết liệt thay vì coi thuốc lá điện tử chỉ là trò đùa vô hại của con trẻ."
+    ],
+    solutions: [
+      "Nhà nước: Sớm hoàn thiện khung pháp lý cấm hoàn toàn thuốc lá điện tử và các sản phẩm chứa ma túy trá hình.",
+      "Học sinh, sinh viên: Kiên quyết từ chối mọi lời mời chào sử dụng chất lạ, dũng cảm báo cho cơ quan công an khi phát hiện."
+    ],
+    sampleQuote: "Một phút tò mò thử dùng chất kích thích có thể cướp đi cả cuộc đời; bản lĩnh đích thực của người trẻ không nằm ở việc chạy theo những trò tiêu khiển độc hại mà nằm ở sự kiên định nói 'KHÔNG' để bảo vệ tương lai của mình.",
+    prompt: "Bàn về hiểm họa của ma túy núp bóng học đường và trách nhiệm của thanh niên trong việc xây dựng lối sống lành mạnh, bản lĩnh."
+  },
+  {
+    id: "ev-16",
+    themeId: "theme-law",
+    theme: "Thượng tôn Pháp luật & Đạo đức Công vụ",
+    date: "2025 - 2026",
+    sourceTitle: "Chống lãng phí: Đưa thực hành tiết kiệm thành văn hóa tự giác của toàn xã hội",
+    sourceUrl: "https://cand.vn/",
+    sourceName: "Báo Công an Nhân dân & Văn kiện Đảng",
+    evidence: "Tổng Bí thư Tô Lâm đã có bài viết chỉ đạo mang tính chiến lược về công tác phòng, chống lãng phí, nhấn mạnh: Lãng phí gây thiệt hại nghiêm trọng không kém gì tham nhũng, làm suy giảm nguồn lực đất nước và niềm tin của nhân dân. Hàng loạt dự án treo, trụ sở bỏ hoang sau sáp nhập đã được rà soát, tái sử dụng để phục vụ trường học, bệnh viện.",
+    issue: "Lãng phí thời gian, nguồn lực công và tài nguyên thiên nhiên là hành vi vô trách nhiệm với tương lai đất nước.",
+    angles: [
+      "Tiết kiệm không phải là bủn xỉn, dè xẻn mà là sử dụng từng đồng tiền thuế của nhân dân và từng mét vuông đất một cách hiệu quả nhất.",
+      "Văn hóa chống lãng phí phải bắt đầu từ cán bộ công quyền trong việc sử dụng xe công, phòng ốc và tài sản nhà nước.",
+      "Đối với người trẻ, chống lãng phí thể hiện ở việc quý trọng thời gian học tập, không lãng phí sức trẻ vào những trò vô bổ."
+    ],
+    solutions: [
+      "Cơ quan quản lý: Xử lý trách nhiệm hình sự đối với các hành vi gây lãng phí nghiêm trọng nguồn lực nhà nước.",
+      "Mỗi cá nhân: Thực hành lối sống tối giản, tiết kiệm điện nước, thực phẩm và thời gian mỗi ngày."
+    ],
+    sampleQuote: "Tham nhũng đục khoét của công, nhưng lãng phí làm trôi tuột đi những cơ hội ngàn vàng của dân tộc; đưa thực hành tiết kiệm thành nếp sống văn hóa chính là cách thiết thực nhất để tiếp sức cho đất nước vươn mình.",
+    prompt: "Bàn về ý nghĩa của thông điệp phòng chống lãng phí và tinh thần thực hành tiết kiệm của thế hệ trẻ hôm nay."
   }
 ];
 
-// 4. NGÂN HÀNG BÀI VĂN MẪU HOÀN CHỈNH ĐẠT ĐIỂM CAO (CHUẨN 520 - 650 TỪ)
+// 4. NGÂN HÀNG 12 BÀI VĂN MẪU HOÀN CHỈNH (520 - 680 TỪ) CHUẨN ĐIỂM 9+ BỘ CÔNG AN
 window.ESSAY_SAMPLES = [
   {
     id: "sample-01",
@@ -479,6 +648,7 @@ window.ESSAY_SAMPLES = [
     title: "Bản lĩnh và khát vọng của thanh niên trong kỷ nguyên mới",
     prompt: "Chủ tịch Hồ Chí Minh khẳng định: “Tương lai thuộc về thanh niên. Tương lai là cách mạng luôn tiến lên. Là chủ của tương lai, thanh niên không thể không có lý tưởng cao cả. Vì vậy thanh niên phải có cuộc sống chính trị tích cực và cách mạng.” (Hồ Chí Minh toàn tập). Anh/chị hãy viết một bài nghị luận (tối thiểu 500 chữ) trình bày cách hiểu của mình về nhận định trên và liên hệ với vai trò của thanh niên trong giai đoạn hiện nay.",
     wordCount: 585,
+    evidencesUsed: "Thông điệp Tổng Bí thư Tô Lâm về Kỷ nguyên vươn mình & Hình ảnh chiến sĩ trẻ CAND trong bão lũ Yagi và Đề án 06.",
     outline: [
       "Mở bài: Dẫn dắt lời dạy của Bác Hồ và liên hệ trực tiếp với bối cảnh đất nước bước vào kỷ nguyên vươn mình của dân tộc.",
       "Giải thích: Cắt nghĩa 'tương lai', 'lý tưởng cao cả', 'cuộc sống chính trị tích cực' - bản chất là sự gắn kết vận mệnh cá nhân với Tổ quốc.",
@@ -505,6 +675,7 @@ Là một người trẻ mang trong mình ước vọng thiêng liêng được 
     title: "Ứng dụng trí tuệ nhân tạo (AI) an toàn và giữ vững tư duy độc lập",
     prompt: "Trình bày suy nghĩ của anh/chị về việc sử dụng trí tuệ nhân tạo (AI) như một công cụ hỗ trợ học tập và lao động mà không đánh mất tư duy độc lập và liêm chính học thuật (Bài viết tối thiểu 500 chữ).",
     wordCount: 560,
+    evidencesUsed: "Hội thảo giáo dục Báo CAND cảnh báo liêm chính số & Cuộc chiến an ninh mạng A05.",
     outline: [
       "Mở bài: Đặt vấn đề về sự bùng nổ của AI và câu hỏi cốt lõi về bản lĩnh của con người.",
       "Giải thích: AI là công cụ khuếch đại năng suất, tư duy độc lập là năng lực phân tích phản biện riêng của con người.",
@@ -531,6 +702,7 @@ Báo Công an Nhân dân trong các diễn đàn giáo dục gần đây đã nh
     title: "Thượng tôn pháp luật: Nền tảng xây dựng xã hội kỷ cương và văn minh",
     prompt: "Anh/chị hãy viết một bài nghị luận (tối thiểu 500 chữ) bàn về thông điệp 'Thượng tôn pháp luật là nét đẹp văn hóa và là trách nhiệm công dân' từ thực tiễn thực thi pháp luật hiện nay.",
     wordCount: 575,
+    evidencesUsed: "Kiểm tra nồng độ cồn không có vùng cấm của CSGT & Di huấn 'Danh dự là điều thiêng liêng nhất'.",
     outline: [
       "Mở bài: Khẳng định vị trí tối thượng của pháp luật đối với sự ổn định và phát triển của quốc gia.",
       "Giải thích: Thượng tôn pháp luật là đặt pháp luật lên trên hết, tự giác phục tùng kỷ cương phép nước.",
@@ -557,6 +729,7 @@ Tuy nhiên, nhìn thẳng vào thực tế, vẫn còn không ít biểu hiện 
     title: "Sức mạnh của lòng nhân ái và tình đồng bào trong gian nan thử thách",
     prompt: "Từ thực tiễn tinh thần đại đoàn kết và sự sẻ chia của đồng bào cả nước hướng về vùng lũ lụt, thiên tai, hãy viết bài nghị luận (tối thiểu 500 chữ) bàn về sức mạnh của lòng nhân ái trong đời sống xã hội.",
     wordCount: 570,
+    evidencesUsed: "Hơn 2.000 tỷ đồng cứu trợ bão lũ sao kê minh bạch & Tấm gương cán bộ CAND tại tâm lũ Làng Nủ.",
     outline: [
       "Mở bài: Nêu lên truyền thống 'thương người như thể thương thân' qua bão lũ thiên tai.",
       "Giải thích: Lòng nhân ái là tình yêu thương, thấu cảm và hành động chia ngọt sẻ bùi.",
@@ -576,15 +749,67 @@ Bức tranh thời sự năm 2024 - 2026 đã ghi tạc vào lịch sử những
 Thế nhưng, giữa những nghĩa cử cao đẹp, chúng ta cũng không khỏi đau lòng trước một số hiện tượng xấu xí: những kẻ lợi dụng thiên tai để bán hàng giá cắt cổ, những hành vi “làm màu” trục lợi từ thiện hay tung tin giả câu view gây hoang mang dư luận. Những hành vi ấy là sự xúc phạm nghiêm trọng đến tình cảm thiêng liêng của dân tộc và cần phải bị xử lý nghiêm minh trước pháp luật.
 
 Thấu hiểu rằng phụng sự nhân dân là mục tiêu tối thượng của lực lượng Công an nhân dân, bản thân tôi luôn tự rèn luyện cho mình một trái tim biết rung động trước nỗi đau của cộng đồng. Người chiến sĩ công an không chỉ cần một cái đầu lạnh đầy bản lĩnh thép mà còn cần một trái tim nóng ấm tình người, sẵn sàng xả thân vì bình yên và hạnh phúc của nhân dân.`
+  },
+  {
+    id: "sample-05",
+    themeId: "theme-era",
+    title: "Thanh niên '3 không' và đòi hỏi bức thiết của việc tự học, thích ứng",
+    prompt: "Theo thống kê, cả nước có khoảng 1,6 triệu thanh niên thuộc diện '3 không' (không việc làm, không đi học, không đào tạo). Cùng lúc đó, làn sóng tự động hóa và AI đòi hỏi người lao động phải liên tục thích ứng. Viết bài nghị luận (tối thiểu 500 chữ) bàn về yêu cầu tự học của người trẻ.",
+    wordCount: 580,
+    evidencesUsed: "Số liệu 1,6 triệu thanh niên '3 không' & Phong trào 'Bình dân học vụ số' của Tổng Bí thư.",
+    outline: [
+      "Mở bài: Nêu thực trạng thanh niên '3 không' và khẳng định tự học, thích ứng là con đường sống còn của tuổi trẻ.",
+      "Giải thích: 'Tự học' là chủ động tiếp thu tri thức ngoài trường lớp; 'thích ứng' là năng lực chuyển đổi linh hoạt theo yêu cầu thời đại số.",
+      "Bàn luận: Vì sao tấm bằng đại học không còn là bảo chứng suốt đời? Tác hại của sự thụ động, ỷ lại.",
+      "Dẫn chứng: Các tấm gương vượt khó học tập công nghệ, phong trào 'Bình dân học vụ số' của Tổng Bí thư Tô Lâm.",
+      "Phản đề & CAND: Phê phán lối sống lười nhác; người chiến sĩ CAND phải không ngừng học tập, làm chủ khoa học kỹ thuật để phá án công nghệ cao."
+    ],
+    text: `Con số 1,6 triệu thanh niên Việt Nam không có việc làm, không đi học và không tham gia đào tạo (thanh niên “3 không”) trong bối cảnh cuộc Cách mạng công nghiệp lần thứ tư đang diễn ra mạnh mẽ thực sự là một tiếng chuông cảnh tỉnh sâu sắc. Trong một thế giới biến đổi từng ngày dưới tác động của trí tuệ nhân tạo và tự động hóa, sự thụ động không chỉ khiến cá nhân bị bỏ lại phía sau mà còn làm chậm bước tiến của toàn dân tộc. Đúng như chân lý đã được đúc kết: Tự học và năng lực thích ứng linh hoạt chính là chiếc phao cứu sinh và là bệ phóng vững chắc nhất để thanh niên làm chủ tương lai của chính mình.
+
+Tự học không đơn thuần là việc ngồi đọc sách, mà là tinh thần chủ động tìm kiếm tri thức, rèn luyện kỹ năng và mở rộng tầm nhìn vượt ra ngoài khuôn khổ bằng cấp truyền thống. Thích ứng là khả năng tự làm mới bản thân, sẵn sàng từ bỏ những thói quen cũ đã lỗi thời để đón nhận cái mới, chuyển biến linh hoạt trước những đòi hỏi khắt khe của thị trường lao động. Khi người trẻ có tinh thần tự học, họ sẽ không bị hoang mang trước sự thay đổi của công nghệ mà biến thách thức thành cơ hội bứt phá.
+
+Trước đây, một tấm bằng cử nhân có thể đảm bảo cho một vị trí công việc ổn định suốt đời. Nhưng ngày nay, tri thức nhân loại nhân đôi sau mỗi chu kỳ ngắn ngủi; những gì ta học hôm nay có thể trở nên lạc hậu vào ngày mai. Nếu thanh niên chỉ trông chờ vào sự sắp đặt của gia đình, lười nhác trong rèn luyện và tự thỏa mãn với những gì mình có, họ sẽ nhanh chóng trở thành gánh nặng cho xã hội. Ngược lại, người có năng lực tự học sẽ luôn giữ được ngọn lửa sáng tạo và khả năng cạnh tranh bền bỉ.
+
+Phong trào “Bình dân học vụ số” do Tổng Bí thư Tô Lâm phát động những năm gần đây chính là minh chứng tiêu biểu cho tinh thần học tập suốt đời. Hàng vạn đoàn viên thanh niên và chiến sĩ công an cơ sở đã miệt mài tự học công nghệ mới rồi kiên nhẫn đi từng ngõ, gõ từng nhà hướng dẫn bà con làm chủ dịch vụ công trực tuyến. Tấm gương của những người trẻ ấy đã chứng minh rằng: khi tự học gắn liền với tinh thần phụng sự, tri thức sẽ được nhân lên gấp bội và tạo ra giá trị to lớn cho cộng đồng.
+
+Thật đáng tiếc khi vẫn còn một bộ phận thanh niên đắm chìm trong thế giới ảo, tiêu tốn thời gian vào những trào lưu vô bổ trên mạng xã hội, ỷ lại vào cha mẹ và phó mặc tương lai cho số phận. Đó là biểu hiện của sự suy thoái ý chí, làm thui chột những năm tháng thanh xuân quý giá nhất của đời người.
+
+Nhận thức rõ sứ mệnh của một người đang rèn luyện để bước vào hàng ngũ Công an nhân dân, tôi thấu hiểu rằng tội phạm ngày càng tinh vi, sử dụng công nghệ cao để chống phá. Nếu không tự học, người chiến sĩ sẽ bị tụt hậu và không thể hoàn thành nhiệm vụ bảo vệ công lý. Tôi quyết tâm sẽ không ngừng trau dồi nghiệp vụ, học hỏi ngoại ngữ và công nghệ số, biến việc học thành nhu cầu tự thân để phụng sự Tổ quốc hiệu quả nhất.`
+  },
+  {
+    id: "sample-06",
+    themeId: "theme-law",
+    title: "Tinh gọn bộ máy hệ thống chính trị và sự hy sinh quyền lợi riêng vì đại cục",
+    prompt: "Chủ trương tinh gọn bộ máy của Đảng tác động trực tiếp đến hàng vạn cán bộ; nhiều người tự nguyện nghỉ sớm hoặc luân chuyển công tác xa nhà. Viết bài nghị luận (tối thiểu 500 chữ) bàn về cách ứng xử của cá nhân khi lợi ích riêng và lợi ích chung không hoàn toàn trùng nhau.",
+    wordCount: 565,
+    evidencesUsed: "Chủ trương cách mạng tinh gọn tổ chức bộ máy & Tấm gương cán bộ CAND tăng cường về cơ sở xã.",
+    outline: [
+      "Mở bài: Dẫn dắt chủ trương cách mạng về tinh gọn bộ máy và vấn đề đặt lợi ích chung lên trên hết.",
+      "Giải thích: Lợi ích cá nhân là nhu cầu chính đáng, nhưng lợi ích tập thể và quốc gia là tối thượng.",
+      "Bàn luận: Vì sao tinh gọn bộ máy là tất yếu để đất nước cất cánh? Ý nghĩa của sự hy sinh quyền lợi riêng.",
+      "Dẫn chứng: Các tấm gương cán bộ, chiến sĩ công an tình nguyện xung phong về cơ sở, biên giới nhận nhiệm vụ.",
+      "Phản đề & CAND: Phê phán thói bè phái, cục bộ, níu kéo ghế quyền lực; người chiến sĩ CAND sẵn sàng chấp hành tuyệt đối mệnh lệnh của Đảng."
+    ],
+    text: `Đất nước ta đang bước vào một cuộc cách mạng mang tính lịch sử: Đổi mới, sắp xếp tổ chức bộ máy của toàn hệ thống chính trị theo hướng “Tinh - Gọn - Mạnh - Hiệu năng - Hiệu lực - Hiệu quả”. Chủ trương lớn ấy đòi hỏi sự sáp nhập đơn vị hành chính, giảm đầu mối và tinh giản biên chế, tác động trực tiếp đến vị trí công tác và quyền lợi của hàng vạn cán bộ. Trước bước ngoặt này, câu hỏi về cách ứng xử của mỗi cá nhân khi lợi ích riêng không hoàn toàn trùng khớp với lợi ích chung của tập thể trở thành một vấn đề thời sự sâu sắc, soi rọi bản lĩnh và đạo đức của người cán bộ cách mạng.
+
+Lợi ích cá nhân là những mong muốn, quyền lợi chính đáng gắn liền với cuộc sống của mỗi con người. Tuy nhiên, lợi ích chung của tập thể, của quốc gia và dân tộc mới là nền tảng quyết định sự tồn vong và phát triển bền vững của tất cả mọi người. Khi lợi ích riêng mâu thuẫn với lợi ích chung, một người có đạo đức và lòng tự trọng sẽ biết đặt lợi ích chung lên trên hết, sẵn sàng chấp nhận thiệt thòi tạm thời của bản thân để tập thể được vững mạnh và đất nước cất cánh.
+
+Một bộ máy cồng kềnh với quá nhiều tầng nấc trung gian không chỉ gây lãng phí hàng chục ngàn tỷ đồng ngân sách mỗi năm mà còn làm chậm trễ các quyết sách phát triển, gây phiền hà cho nhân dân. Tinh gọn bộ máy là đòi hỏi tất yếu khách quan để đưa đất nước bước vào kỷ nguyên mới. Sự hy sinh vị trí quen thuộc hay quyền lợi ngắn hạn của từng cán bộ chính là sự đóng góp cao quý nhất cho sự trường tồn và phồn vinh của chế độ.
+
+Thực tiễn sinh động của lực lượng Công an nhân dân trong những năm qua đã nêu tấm gương sáng ngời về tinh thần vì đại cục. Khi Bộ Công an tiên phong đổi mới, tinh gọn tổ chức theo hướng “Bộ tinh, tỉnh toàn diện, huyện vững mạnh, xã bám cơ sở”, hàng vạn sĩ quan, chỉ huy đã sẵn sàng gác lại sự thuận tiện của đô thị, tình nguyện xung phong về nhận nhiệm vụ tại các xã vùng sâu, biên giới. Tinh thần “nơi nào Tổ quốc cần, Công an có mặt” của các anh chính là minh chứng hùng hồn cho phẩm chất của người cộng sản chân chính.
+
+Trái ngược với những tấm gương cao đẹp ấy, một số cá nhân vẫn mang nặng tư tưởng cục bộ, níu kéo vị trí, chạy chọt để giữ ghế hoặc tỏ thái độ bất mãn khi quyền lợi riêng bị ảnh hưởng. Lối suy nghĩ hẹp hòi, vị kỷ ấy là rào cản làm xói mòn kỷ cương và làm suy giảm niềm tin của nhân dân đối với Đảng.
+
+Là một người trẻ mang trong mình lý tưởng phụng sự Tổ quốc trong lực lượng Công an nhân dân, tôi thấm nhuần sâu sắc rằng danh dự của người chiến sĩ gắn liền với sự cống hiến quên mình. Bản thân tôi luôn tự hứa sẽ tuyệt đối phục tùng sự phân công của tổ chức, sẵn sàng nhận và hoàn thành xuất sắc mọi nhiệm vụ dù ở bất cứ nơi đâu, lấy sự bình yên của nhân dân làm niềm vui và hạnh phúc cao nhất của đời mình.`
   }
 ];
 
-// 5. NGÂN HÀNG ĐỀ THI TỰ LUẬN TỰ LUYỆN KÈM DÀN Ý 5 BƯỚC
+// 5. NGÂN HÀNG ĐỀ THI TỰ LUẬN TỰ LUYỆN
 window.ESSAY_PRACTICE_LIST = [
   {
     id: "p-01",
     themeId: "theme-era",
-    title: "Đề số 01: Thanh niên '3 không' và yêu cầu tự học, thích ứng nghề nghiệp",
+    title: "Đề 01: Thanh niên '3 không' và yêu cầu tự học, thích ứng nghề nghiệp",
     prompt: "Theo số liệu thống kê lao động, quý III năm 2026 cả nước có khoảng 1,6 triệu thanh niên từ 15 đến 24 tuổi không có việc làm, không đi học và không tham gia đào tạo (thường gọi là thanh niên “3 không”), chiếm 11,2% tổng số thanh niên. Tỷ lệ thất nghiệp của thanh niên luôn cao gấp nhiều lần tỷ lệ thất nghiệp chung. Cùng lúc đó, làn sóng tự động hóa và AI đang đặt ra yêu cầu người lao động phải không ngừng thích ứng.",
     task: "Anh/chị hãy viết một bài nghị luận (tối thiểu 500 chữ) bàn về yêu cầu tự học, tự nâng cao năng lực để làm chủ tương lai của người trẻ trong bối cảnh hiện nay.",
     minWords: 500,
@@ -599,7 +824,7 @@ window.ESSAY_PRACTICE_LIST = [
   {
     id: "p-02",
     themeId: "theme-era",
-    title: "Đề số 02: Mục tiêu phát triển đất nước 2030 - 2045 và khát vọng của từng người dân",
+    title: "Đề 02: Mục tiêu phát triển đất nước 2030 - 2045 và khát vọng của từng người dân",
     prompt: "Đại hội XIV của Đảng xác định mục tiêu đến năm 2030 Việt Nam trở thành nước đang phát triển có công nghiệp hiện đại, thu nhập trung bình cao; đến năm 2045 trở thành nước phát triển, thu nhập cao. Có ý kiến cho rằng đó là việc vĩ mô của Nhà nước; lại có ý kiến cho rằng khát vọng dân tộc chỉ thành hiện thực khi biến thành hành động cụ thể của từng người dân.",
     task: "Anh/chị hãy viết bài nghị luận (tối thiểu 500 chữ) trình bày quan điểm của mình về mối quan hệ giữa khát vọng đất nước và trách nhiệm cá nhân.",
     minWords: 500,
@@ -614,7 +839,7 @@ window.ESSAY_PRACTICE_LIST = [
   {
     id: "p-03",
     themeId: "theme-law",
-    title: "Đề số 03: Tinh gọn bộ máy hành chính và sự hy sinh lợi ích cá nhân vì tập thể",
+    title: "Đề 03: Tinh gọn bộ máy hành chính và sự hy sinh lợi ích cá nhân vì tập thể",
     prompt: "Chủ trương sắp xếp, tinh gọn tổ chức bộ máy của hệ thống chính trị hoạt động 'Hiệu lực - Hiệu quả' đang được đẩy mạnh quyết liệt. Việc sáp nhập đơn vị hành chính, giảm đầu mối trực tiếp tác động đến vị trí, công việc của hàng vạn cán bộ công chức; nhiều người sẵn sàng nghỉ hưu sớm hoặc luân chuyển công tác xa nhà để tạo thuận lợi cho việc chung.",
     task: "Viết bài văn nghị luận (tối thiểu 500 chữ) bàn về cách ứng xử đúng đắn của cá nhân khi lợi ích riêng và lợi ích chung không hoàn toàn trùng nhau.",
     minWords: 500,
@@ -629,7 +854,7 @@ window.ESSAY_PRACTICE_LIST = [
   {
     id: "p-04",
     themeId: "theme-digital",
-    title: "Đề số 04: Nhận diện cạm bẫy lừa đảo và tự bảo vệ mình trên không gian mạng",
+    title: "Đề 04: Nhận diện cạm bẫy lừa đảo và tự bảo vệ mình trên không gian mạng",
     prompt: "Thời gian gần đây, tội phạm sử dụng công nghệ cao liên tục giăng bẫy lừa đảo: thao túng tâm lý giả mạo công an, viện kiểm sát, đe dọa bắt cóc online, lừa đảo việc làm ảo khiến nhiều người trẻ sập bẫy và thiệt hại hàng tỷ đồng.",
     task: "Viết bài nghị luận (tối thiểu 500 chữ) bàn về tinh thần cảnh giác, trách nhiệm tự bảo vệ mình và bảo vệ người thân trong môi trường số.",
     minWords: 500,

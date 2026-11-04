@@ -1299,7 +1299,7 @@
     }
   }
 
-  function viewEssayGuides() {
+    function viewEssayGuides() {
     const back = S.profile ? 'Về kiểm tra trước khi thi' : 'Về trang đăng nhập';
     const M = window.ESSAY_METHODOLOGY || {};
     const themes = window.ESSAY_THEMES || [];
@@ -1397,7 +1397,7 @@
             <div class="essay-badge-pill">🛡️ TÀI LIỆU ÔN THI ĐẶC QUYỀN • BỘ CÔNG AN (CA1)</div>
             <h2>CẨM NANG ÔN THI NGHỊ LUẬN XÃ HỘI (TỐI THIỂU 500 CHỮ)</h2>
             <p class="essay-header-desc">
-              Chiến thuật viết văn chính luận đạt 26 - 28/30 điểm • Sổ tay dẫn chứng thời sự CAND 2024 - 2026 • 8 Bài mẫu chuẩn điểm cao • Phòng luyện viết studio thông minh.
+              Chiến thuật viết văn chính luận đạt 26 - 28/30 điểm • Sổ tay 22 dẫn chứng thời sự Báo CAND 2024 - 2026 • 12 Bài mẫu chuẩn điểm cao • Phòng luyện viết studio thông minh.
             </p>
           </div>
         </div>
@@ -1408,7 +1408,7 @@
             📋 Phương pháp & Thang điểm Bộ CA
           </button>
           <button class="essay-tab-btn ${essayTab === 'evidence' ? 'active' : ''}" data-essay-tab="evidence">
-            📰 Sổ tay Dẫn chứng Thời sự <span class="tab-badge">${guides.length}</span>
+            📰 Sổ tay Dẫn chứng Báo CAND <span class="tab-badge">${guides.length}</span>
           </button>
           <button class="essay-tab-btn ${essayTab === 'samples' ? 'active' : ''}" data-essay-tab="samples">
             📚 Bài mẫu Chuẩn 500+ Chữ <span class="tab-badge">${samples.length}</span>
@@ -1476,32 +1476,51 @@
               `).join('')}
             </div>
 
-            <h3 style="color:var(--navy);margin:24px 0 10px">💡 Công thức Mở bài & Kết bài Mẫu Đa Năng</h3>
-            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:14px;margin-bottom:20px">
-              <div>
-                <h4 style="margin:0 0 8px;color:var(--blue)">✨ Các mẫu Mở bài Trực tiếp:</h4>
-                ${(M.openings || []).map(op => `
-                  <div class="essay-copy-box">
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-                      <b>${esc(op.title)}</b>
-                      <button class="btn-ghost" style="padding:2px 8px;font-size:11.5px" data-act="essay-copy-text" data-text="${esc(op.text)}">Sao chép</button>
-                    </div>
-                    <p>${esc(op.text)}</p>
+            <!-- Kỹ thuật phối hợp nhiều dẫn chứng -->
+            <h3 style="color:var(--navy);margin:24px 0 10px">💡 Bí quyết Phối hợp Nhiều Dẫn chứng Trong 1 Bài Văn</h3>
+            <div class="card" style="margin-bottom:20px;padding:16px 20px">
+              <p style="margin:0 0 12px;font-size:13.5px;line-height:1.6">
+                Để đạt điểm 28 - 30/30, bài văn nghị luận không nên chỉ đưa 1 dẫn chứng đơn độc. Hãy áp dụng 3 kỹ thuật phối hợp dẫn chứng đắt giá dưới đây:
+              </p>
+              ${(M.multiEvidenceTechniques || []).map(mt => `
+                <div style="margin-bottom:14px;border-left:3px solid var(--blue);padding-left:12px">
+                  <b style="color:var(--blue);font-size:14px">${esc(mt.name)}</b>
+                  <div style="font-size:13.5px;color:var(--text);margin:4px 0 2px">${esc(mt.desc)}</div>
+                  <div style="font-size:13px;color:var(--muted);font-style:italic">${esc(mt.example)}</div>
+                </div>
+              `).join('')}
+            </div>
+
+            <!-- BỘ MẪU MỞ BÀI & KẾT BÀI THEO 10 CHỦ ĐỀ ĐÃ RA VÀ NÓNG NHẤT -->
+            <h3 style="color:var(--navy);margin:24px 0 10px">✨ Mẫu Mở bài & Kết bài Theo 10 Chủ đề Nóng Hổi / Đã Ra</h3>
+            <p style="margin:-4px 0 14px;color:var(--muted);font-size:13px">
+              Được biên soạn chuẩn mực văn phong chính luận hành chính, bám sát các đề thi Bộ Công An và thời sự 2024 - 2026. Có thể ứng dụng ngay cho từng dạng đề cụ thể.
+            </p>
+            <div>
+              ${(M.topicTemplates || []).map((tt, idx) => `
+                <article class="topic-template-card">
+                  <div class="topic-template-title">
+                    <span>${esc(tt.topic)}</span>
+                    <button class="btn-ghost" style="font-size:12px;padding:3px 8px" data-act="essay-load-template-prompt" data-idx="${idx}">
+                      ✍️ Luyện viết chủ đề này
+                    </button>
                   </div>
-                `).join('')}
-              </div>
-              <div>
-                <h4 style="margin:0 0 8px;color:var(--blue)">🔥 Các mẫu Kết bài Hào hùng (Gắn liền CAND):</h4>
-                ${(M.endings || []).map(ed => `
-                  <div class="essay-copy-box">
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-                      <b>${esc(ed.title)}</b>
-                      <button class="btn-ghost" style="padding:2px 8px;font-size:11.5px" data-act="essay-copy-text" data-text="${esc(ed.text)}">Sao chép</button>
+                  <div class="topic-sample-box">
+                    <div class="topic-sample-head">
+                      <span>✨ Mẫu Mở bài trực tiếp:</span>
+                      <button class="btn-ghost" style="padding:2px 8px;font-size:11.5px" data-act="essay-copy-text" data-text="${esc(tt.opening)}">Sao chép mở bài</button>
                     </div>
-                    <p>${esc(ed.text)}</p>
+                    <div>${esc(tt.opening)}</div>
                   </div>
-                `).join('')}
-              </div>
+                  <div class="topic-sample-box ending">
+                    <div class="topic-sample-head">
+                      <span>🔥 Mẫu Kết bài hào hùng (Liên hệ CAND):</span>
+                      <button class="btn-ghost" style="padding:2px 8px;font-size:11.5px" data-act="essay-copy-text" data-text="${esc(tt.ending)}">Sao chép kết bài</button>
+                    </div>
+                    <div>${esc(tt.ending)}</div>
+                  </div>
+                </article>
+              `).join('')}
             </div>
 
             <h3 style="color:var(--navy);margin:24px 0 10px">🔗 Bộ Từ Nối & Cụm Từ Chính Luận Đắt Giá</h3>
@@ -1624,7 +1643,7 @@
             </div>
 
             <div style="margin-bottom:14px;color:var(--muted);font-size:13.5px">
-              Tổng cộng <b>${filteredSamples.length}</b> bài văn mẫu hoàn chỉnh chuẩn 520 - 650 từ. Mỗi bài đều có phân tích dàn ý 6 bước và liên hệ sâu sắc với lý tưởng của người chiến sĩ CAND.
+              Tổng cộng <b>${filteredSamples.length}</b> bài văn mẫu hoàn chỉnh chuẩn 520 - 680 từ. Mỗi bài đều có phân tích dàn ý 6 bước, chỉ rõ các dẫn chứng phối hợp và liên hệ sâu sắc với lý tưởng CAND.
             </div>
 
             ${filteredSamples.map((s, idx) => `
@@ -1647,6 +1666,12 @@
                   <b>Đề bài:</b> ${esc(s.prompt)}
                 </div>
 
+                ${s.evidencesUsed ? `
+                  <div style="font-size:13px;color:var(--green);font-weight:600;margin-bottom:10px">
+                    📌 Dẫn chứng phối hợp trong bài: ${esc(s.evidencesUsed)}
+                  </div>
+                ` : ''}
+
                 ${s.outline && s.outline.length ? `
                   <details style="margin-bottom:12px">
                     <summary style="cursor:pointer;color:var(--blue);font-weight:600;font-size:13px">
@@ -1668,36 +1693,49 @@
           </div>
         ` : ''}
 
-        <!-- TAB 4: PHÒNG LUYỆN VIẾT STUDIO -->
+        <!-- TAB 4: PHÒNG LUYỆN VIẾT STUDIO (TỐI ƯU MOBILE & KHÔNG NÚT THỪA) -->
         ${essayTab === 'practice' ? `
           <div class="essay-tab-content">
             <div class="practice-studio-card">
               <!-- Studio Header & Controls -->
               <div class="studio-top-controls">
-                <div class="studio-prompt-picker">
-                  <b style="font-size:13.5px;white-space:nowrap">Chọn đề:</b>
-                  <select id="practice-prompt-select">
+                <!-- Row 1: Header + Dropdown Full Width -->
+                <div class="studio-prompt-header">
+                  <div class="studio-prompt-label-row">
+                    <span class="studio-prompt-label">📝 Chọn đề bài luyện viết:</span>
+                    <button class="btn-ghost" style="font-size:12.5px;padding:4px 10px" data-act="essay-random-prompt" title="Đổi sang một đề thi ngẫu nhiên khác">
+                      🎲 Đổi ngẫu nhiên
+                    </button>
+                  </div>
+                  <select id="practice-prompt-select" class="studio-select">
                     ${allPrompts.map(p => `
                       <option value="${esc(p.id)}" ${p.id === curPrompt.id ? 'selected' : ''}>
                         ${esc(p.title || p.task || p.prompt.slice(0, 45))}
                       </option>
                     `).join('')}
                   </select>
-                  <button class="btn-ghost" style="font-size:13px;padding:6px 10px;white-space:nowrap" data-act="essay-random-prompt">
-                    🎲 Đổi ngẫu nhiên
-                  </button>
                 </div>
 
-                <!-- Timer countdown -->
-                <div class="studio-timer-box">
-                  <span>⏱️</span>
-                  <span class="timer-digits" id="essay-timer-display">${formatTimer(essayTimerSec)}</span>
-                  <button class="btn-ghost" style="font-size:12px;padding:3px 8px" data-act="essay-timer-toggle" id="essay-timer-btn">
-                    ${essayTimerRunning ? '⏸️ Tạm dừng' : '▶️ Bấm giờ'}
-                  </button>
-                  <button class="btn-ghost" style="font-size:12px;padding:3px 8px" data-act="essay-timer-reset">
-                    🔄 45p
-                  </button>
+                <!-- Row 2: Timer Bar -->
+                <div class="studio-timer-bar">
+                  <div class="studio-timer-display-group">
+                    <span>⏱️</span>
+                    <span class="timer-digits" id="essay-timer-display">${formatTimer(essayTimerSec)}</span>
+                    <button class="btn-ghost" style="font-size:12.5px;padding:4px 10px" data-act="essay-timer-toggle" id="essay-timer-btn">
+                      ${essayTimerRunning ? '⏸️ Tạm dừng' : '▶️ Bắt đầu'}
+                    </button>
+                  </div>
+                  <div class="studio-timer-buttons">
+                    <button class="btn-ghost" style="font-size:12px;padding:3px 8px" data-act="essay-timer-set" data-mins="45" title="Đặt lại 45 phút chuẩn thi">
+                      45p
+                    </button>
+                    <button class="btn-ghost" style="font-size:12px;padding:3px 8px" data-act="essay-timer-set" data-mins="60" title="Đặt lại 60 phút">
+                      60p
+                    </button>
+                    <button class="btn-ghost" style="font-size:12px;padding:3px 8px" data-act="essay-timer-set" data-mins="30" title="Đặt lại 30 phút luyện tốc độ">
+                      30p
+                    </button>
+                  </div>
                 </div>
               </div>
 
@@ -1733,15 +1771,17 @@
 
               <!-- Live Word Meter -->
               <div class="studio-live-meter">
-                <span style="font-weight:700;min-width:130px" id="meter-counter">
-                  Đã gõ: <b>${curWords}</b> / ${targetWords} từ
-                </span>
+                <div class="meter-info-row">
+                  <span style="font-weight:700" id="meter-counter">
+                    Đã gõ: <b>${curWords}</b> / ${targetWords} từ
+                  </span>
+                  <span class="meter-status-pill" id="meter-status" style="background:${statusBg};color:${statusTextColor}">
+                    ${statusText}
+                  </span>
+                </div>
                 <div class="meter-bar-outer">
                   <div class="meter-bar-inner" id="meter-bar" style="width:${pct}%;background-color:${meterColor}"></div>
                 </div>
-                <span class="meter-status-pill" id="meter-status" style="background:${statusBg};color:${statusTextColor}">
-                  ${statusText}
-                </span>
               </div>
 
               <!-- Textarea Box -->
@@ -1752,7 +1792,7 @@
                 <div style="font-size:12.5px;color:var(--muted)">
                   <span id="studio-save-status">💾 Tự động lưu bản nháp</span>
                 </div>
-                <div style="display:flex;gap:8px;flex-wrap:wrap">
+                <div>
                   <button class="btn-ghost" data-act="essay-copy-draft">📋 Sao chép bài</button>
                   <button class="btn-ghost" data-act="essay-print-draft">🖨️ In / Xuất PDF</button>
                   <button class="btn-ghost" data-act="essay-clear-draft" style="color:var(--red)">🗑️ Xóa nháp</button>
@@ -1764,7 +1804,6 @@
       </div>
     `;
   }
-
   function render() {
     setExam();
     applyPrefs();
@@ -1988,6 +2027,37 @@
       }
       const btn = document.getElementById('essay-timer-btn');
       if (btn) btn.textContent = essayTimerRunning ? '⏸️ Tạm dừng' : '▶️ Bấm giờ';
+    },
+        'essay-load-template-prompt'(btn) {
+      const idx = Number(btn.dataset.idx || 0);
+      const tt = (window.ESSAY_METHODOLOGY && window.ESSAY_METHODOLOGY.topicTemplates) ? window.ESSAY_METHODOLOGY.topicTemplates[idx] : null;
+      if (tt) {
+        let p = (window.ESSAY_PRACTICE_LIST || []).find(x => x.title === tt.topic);
+        if (!p) {
+          p = {
+            id: 'template-' + idx,
+            themeId: 'theme-era',
+            title: tt.topic,
+            prompt: 'Viết bài nghị luận xã hội về chủ đề: ' + tt.topic,
+            task: 'Anh/chị hãy viết một bài nghị luận (tối thiểu 500 chữ) làm sáng tỏ chủ đề trên và liên hệ với trách nhiệm của bản thân.',
+            minWords: 500,
+            outline: []
+          };
+          (window.ESSAY_PRACTICE_LIST = window.ESSAY_PRACTICE_LIST || []).push(p);
+        }
+        essayPracticeId = p.id;
+        essayTab = 'practice';
+        render();
+        const ta = document.getElementById('studio-essay');
+        if (ta) { ta.focus(); ta.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+      }
+    },
+    'essay-timer-set'(btn) {
+      clearInterval(essayTimerInterval);
+      essayTimerRunning = false;
+      const mins = Number(btn.dataset.mins || 45);
+      essayTimerSec = mins * 60;
+      render();
     },
     'essay-timer-reset'() {
       clearInterval(essayTimerInterval);
