@@ -4,7 +4,7 @@
   const LS_STATS = 'vb2ca_stats_v1';
   const LS_SEEN = 'vb2ca_seen_v1';
   const TOP = window.TOPICS || { names: {}, order: [], slots: [] };
-  const PRACTICE_BANK_TARGET = 150;
+  const PRACTICE_BANK_TARGET = 200;
 
   // Các đề từng mang mã ca1-vd-NN / ca1-nc-NN nay là ca1-so-NN: chuyển dữ liệu đã lưu (đề đang chọn, sổ câu sai, câu đã báo lỗi)
   (function migrateIds() {
@@ -1397,7 +1397,7 @@
             <div class="essay-badge-pill">🛡️ TÀI LIỆU ÔN THI ĐẶC QUYỀN • BỘ CÔNG AN (CA1)</div>
             <h2>CẨM NANG ÔN THI NGHỊ LUẬN XÃ HỘI (TỐI THIỂU 500 CHỮ)</h2>
             <p class="essay-header-desc">
-              Chiến thuật viết văn chính luận đạt 26 - 28/30 điểm • Sổ tay 22 dẫn chứng thời sự Báo CAND 2024 - 2026 • 12 Bài mẫu chuẩn điểm cao • Phòng luyện viết studio thông minh.
+              ${guides.length} dẫn chứng thời sự từ Báo CAND • ${samples.length} bài mẫu nghị luận • Phòng luyện viết trực tuyến.
             </p>
           </div>
         </div>
@@ -1405,7 +1405,7 @@
         <!-- Tab Navigation -->
         <nav class="essay-tab-bar" aria-label="Tabs nghị luận xã hội">
           <button class="essay-tab-btn ${essayTab === 'method' ? 'active' : ''}" data-essay-tab="method">
-            📋 Phương pháp & Thang điểm Bộ CA
+            ✨ Mẫu mở bài, kết bài & từ nối
           </button>
           <button class="essay-tab-btn ${essayTab === 'evidence' ? 'active' : ''}" data-essay-tab="evidence">
             📰 Sổ tay Dẫn chứng Báo CAND <span class="tab-badge">${guides.length}</span>
@@ -1418,81 +1418,10 @@
           </button>
         </nav>
 
-        <!-- TAB 1: PHƯƠNG PHÁP & THANG ĐIỂM -->
+        <!-- TAB 1: MẪU MỞ BÀI, KẾT BÀI & TỪ NỐI -->
         ${essayTab === 'method' ? `
           <div class="essay-tab-content">
-            <div class="essay-hero-card">
-              <h3>🎯 Quy chuẩn Bài thi Tự luận Bộ Công An (Mã CA1, CA2...)</h3>
-              <p style="margin:6px 0 10px;line-height:1.6;font-size:14px">
-                <b>Thời gian:</b> 45 – 60 phút &nbsp;•&nbsp;
-                <b>Điểm số:</b> 30 / 100 điểm tổng &nbsp;•&nbsp;
-                <b>Dung lượng bắt buộc:</b> Tối thiểu 500 từ (khuyến nghị chuẩn: <b>550 – 700 từ</b>).
-              </p>
-              <p style="margin:0;font-size:13.5px;color:var(--muted);line-height:1.55">
-                ${esc(M.examFormat ? M.examFormat.summary : '')}
-              </p>
-            </div>
-
-            <h3 style="color:var(--navy);margin:24px 0 10px">📊 Ma trận 6 Tiêu chí Chấm điểm Tự luận</h3>
-            <table class="essay-matrix-table">
-              <thead>
-                <tr>
-                  <th style="width:32%">Tiêu chí & Điểm số</th>
-                  <th>Yêu cầu đạt điểm tối đa của Giám khảo</th>
-                </tr>
-              </thead>
-              <tbody>
-                ${(M.scoringMatrix || []).map(sm => `
-                  <tr>
-                    <td><b>${esc(sm.criteria)}</b></td>
-                    <td>${esc(sm.detail)}</td>
-                  </tr>
-                `).join('')}
-              </tbody>
-            </table>
-
-            <h3 style="color:var(--navy);margin:24px 0 10px">⚡ Chiến thuật 5 Bước Viết Bài trong 45 Phút</h3>
-            <div class="essay-step-grid">
-              ${(M.fiveSteps || []).map(st => `
-                <div class="essay-step-card">
-                  <div class="essay-step-head">
-                    <span class="essay-step-num">${esc(st.step)}: ${esc(st.name)}</span>
-                  </div>
-                  <div style="font-size:13px;line-height:1.55;color:var(--text)">${esc(st.action)}</div>
-                </div>
-              `).join('')}
-            </div>
-
-            <h3 style="color:var(--navy);margin:24px 0 10px">🏆 Cấu trúc "6 Đoạn Vàng" Bài Văn 550 - 700 Từ Điểm Tuyệt Đối</h3>
-            <div class="essay-structure-flow">
-              ${(M.goldenStructure || []).map((gs, idx) => `
-                <div class="essay-flow-item">
-                  <div class="flow-meta">
-                    <div>${esc(gs.part)}</div>
-                    <div class="flow-words">${esc(gs.words)}</div>
-                  </div>
-                  <div class="flow-body">${esc(gs.content)}</div>
-                </div>
-              `).join('')}
-            </div>
-
-            <!-- Kỹ thuật phối hợp nhiều dẫn chứng -->
-            <h3 style="color:var(--navy);margin:24px 0 10px">💡 Bí quyết Phối hợp Nhiều Dẫn chứng Trong 1 Bài Văn</h3>
-            <div class="card" style="margin-bottom:20px;padding:16px 20px">
-              <p style="margin:0 0 12px;font-size:13.5px;line-height:1.6">
-                Để đạt điểm 28 - 30/30, bài văn nghị luận không nên chỉ đưa 1 dẫn chứng đơn độc. Hãy áp dụng 3 kỹ thuật phối hợp dẫn chứng đắt giá dưới đây:
-              </p>
-              ${(M.multiEvidenceTechniques || []).map(mt => `
-                <div style="margin-bottom:14px;border-left:3px solid var(--blue);padding-left:12px">
-                  <b style="color:var(--blue);font-size:14px">${esc(mt.name)}</b>
-                  <div style="font-size:13.5px;color:var(--text);margin:4px 0 2px">${esc(mt.desc)}</div>
-                  <div style="font-size:13px;color:var(--muted);font-style:italic">${esc(mt.example)}</div>
-                </div>
-              `).join('')}
-            </div>
-
-            <!-- BỘ MẪU MỞ BÀI & KẾT BÀI THEO 10 CHỦ ĐỀ ĐÃ RA VÀ NÓNG NHẤT -->
-            <h3 style="color:var(--navy);margin:24px 0 10px">✨ Mẫu Mở bài & Kết bài Theo 10 Chủ đề Nóng Hổi / Đã Ra</h3>
+            <h3 style="color:var(--navy);margin:24px 0 10px">✨ Mẫu mở bài & kết bài theo chủ đề</h3>
             <p style="margin:-4px 0 14px;color:var(--muted);font-size:13px">
               Được biên soạn chuẩn mực văn phong chính luận hành chính, bám sát các đề thi Bộ Công An và thời sự 2024 - 2026. Có thể ứng dụng ngay cho từng dạng đề cụ thể.
             </p>
@@ -1535,14 +1464,6 @@
               `).join('')}
             </div>
 
-            <h3 style="color:var(--red);margin:24px 0 10px">⚠️ 4 Cạm Bẫy Trừ Điểm Nặng Cần Tránh Tuyệt Đối</h3>
-            ${(M.deadlyMistakes || []).map(dm => `
-              <div class="essay-danger-card">
-                <b style="font-size:14px">${esc(dm.name)}</b>
-                <div style="margin:4px 0"><b>Hậu quả:</b> ${esc(dm.consequence)}</div>
-                <div><b>Khắc phục:</b> ${esc(dm.solution)}</div>
-              </div>
-            `).join('')}
           </div>
         ` : ''}
 
@@ -1593,7 +1514,7 @@
 
                     ${g.sampleQuote ? `
                       <div class="evidence-quote-snippet">
-                        <b>Đoạn văn trích dẫn mẫu vào bài thi:</b><br>
+                        <b>Gợi ý lồng dẫn chứng vào bài viết:</b><br>
                         “${esc(g.sampleQuote)}”
                       </div>
                     ` : ''}

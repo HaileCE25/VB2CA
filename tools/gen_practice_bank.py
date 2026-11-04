@@ -13,7 +13,7 @@ import g_theory as TH
 from g_core import NQ, steps, tx
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MIN_PER_TOPIC = 150
+MIN_PER_TOPIC = 200
 FIRST_EXTRA_EXAM = G.N_EXAMS
 GROUP_QUESTION_COUNTS = [3] * len(G.GROUPS)
 BASE_COUNTS = {

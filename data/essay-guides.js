@@ -3,7 +3,7 @@
 // TÀI LIỆU ÔN THI ĐẶC QUYỀN TUYỂN SINH VĂN BẰNG 2 BỘ CÔNG AN (MÃ BÀI THI CA1, CA2...)
 // =========================================================================================
 
-// 1. PHƯƠNG PHÁP, THANG ĐIỂM & BÍ QUYẾT LÀM BÀI ĐẠT ĐIỂM CAO CHUẨN BỘ CÔNG AN
+// 1. MẪU MỞ BÀI, KẾT BÀI & TỪ NỐI
 window.ESSAY_METHODOLOGY = {
   examFormat: {
     title: "Quy chuẩn Đề thi Phần 1 - Nghị luận Xã hội (Bộ Công An)",
@@ -284,7 +284,7 @@ window.ESSAY_THEMES = [
   }
 ];
 
-// 3. SỔ TAY 22 DẪN CHỨNG THỜI SỰ ĐẮT GIÁ (NGUỒN BÁO CAND & CHUYÊN ÁN BỘ CÔNG AN 2024 - 2026)
+// 3. NGÂN HÀNG DẪN CHỨNG THỜI SỰ TỪ BÁO CAND
 window.ESSAY_GUIDES = [
   {
     id: "ev-01",
@@ -637,10 +637,98 @@ window.ESSAY_GUIDES = [
     ],
     sampleQuote: "Tham nhũng đục khoét của công, nhưng lãng phí làm trôi tuột đi những cơ hội ngàn vàng của dân tộc; đưa thực hành tiết kiệm thành nếp sống văn hóa chính là cách thiết thực nhất để tiếp sức cho đất nước vươn mình.",
     prompt: "Bàn về ý nghĩa của thông điệp phòng chống lãng phí và tinh thần thực hành tiết kiệm của thế hệ trẻ hôm nay."
+  },
+  {
+    id: "ev-17",
+    themeId: "theme-digital",
+    theme: "Chuyển đổi số, AI & An ninh mạng",
+    date: "04/11/2026",
+    sourceTitle: "Lấy người dân làm trung tâm trong bảo vệ an ninh dữ liệu",
+    sourceUrl: "https://cand.vn/lay-nguoi-dan-lam-trung-tam-trong-bao-ve-an-ninh-du-lieu-post826740.html",
+    sourceName: "Báo Công an Nhân dân, ngày 4/11/2026",
+    evidence: "Ngày 4/11/2026, Quốc hội thảo luận tại hội trường về dự án Luật An ninh dữ liệu và dự án Luật Định danh, xác thực điện tử. Đại biểu Nguyễn Vũ Trung nhấn mạnh an ninh dữ liệu gắn trực tiếp với tài khoản, hồ sơ bệnh án và danh tính của người dân; đồng thời đề nghị làm rõ việc đánh giá rủi ro, trách nhiệm bảo vệ dữ liệu và cơ chế kiểm tra. Đây là nội dung góp ý đối với dự thảo luật, không phải quy định đã có hiệu lực.",
+    issue: "Chuyển đổi số cần đi cùng bảo vệ quyền riêng tư, an toàn dữ liệu và trách nhiệm giải trình của tổ chức quản lý dữ liệu.",
+    angles: [
+      "Dữ liệu cá nhân không chỉ là thông tin kỹ thuật mà gắn với tài sản, danh tính và quyền riêng tư của mỗi người.",
+      "Chính sách bảo vệ dữ liệu cần cân bằng giữa ngăn ngừa rủi ro và tạo điều kiện cho dịch vụ số phát triển.",
+      "Người dùng cũng cần thận trọng khi chia sẻ thông tin cá nhân và xác minh yêu cầu cung cấp dữ liệu."
+    ],
+    solutions: [
+      "Cơ quan, doanh nghiệp: Thu thập dữ liệu đúng mục đích, giới hạn quyền truy cập và thông báo rõ khi xảy ra sự cố.",
+      "Mỗi người: Dùng mật khẩu mạnh, bật xác thực nhiều lớp và không gửi mã OTP hoặc ảnh giấy tờ cho người lạ."
+    ],
+    sampleQuote: "Cuộc thảo luận về dự thảo Luật An ninh dữ liệu cho thấy bảo vệ dữ liệu không phải việc riêng của cơ quan quản lý: đó còn là cách bảo vệ tài sản, danh tính và sự an tâm của từng người dân.",
+    prompt: "Từ vấn đề bảo vệ an ninh dữ liệu được đặt ra trong quá trình xây dựng pháp luật, hãy bàn về trách nhiệm của tổ chức và mỗi cá nhân trong môi trường số."
+  },
+  {
+    id: "ev-18",
+    themeId: "theme-digital",
+    theme: "Chuyển đổi số, AI & An ninh mạng",
+    date: "04/11/2026",
+    sourceTitle: "Bóc gỡ đường dây lừa đảo đầu tư tài chính, chiếm đoạt hơn 100 tỷ đồng",
+    sourceUrl: "https://cand.vn/boc-go-duong-day-lua-dao-dau-tu-tai-chinh-chiem-doat-hon-100-ty-dong-post826734.html",
+    sourceName: "Báo Công an Nhân dân, ngày 4/11/2026",
+    evidence: "Theo thông tin điều tra ban đầu được Báo Công an Nhân dân đăng ngày 4/11/2026, Công an TP Đà Nẵng đã khởi tố vụ án và khởi tố, bắt tạm giam một số bị can liên quan đến hoạt động kêu gọi đầu tư qua ứng dụng LB-Pro. Kết quả xác minh ban đầu cho thấy hàng trăm nhà đầu tư ở nhiều địa phương bị chiếm đoạt tổng số tiền hơn 100 tỷ đồng; vụ án đang tiếp tục được điều tra mở rộng.",
+    issue: "Lời mời đầu tư lợi nhuận cao trên ứng dụng hoặc mạng xã hội có thể lợi dụng lòng tin và sự thiếu kiểm chứng để chiếm đoạt tài sản.",
+    angles: [
+      "Giao diện chuyên nghiệp hay tên gọi giống doanh nghiệp không đủ chứng minh một dự án đầu tư là hợp pháp.",
+      "Tâm lý muốn làm giàu nhanh khiến người tham gia dễ bỏ qua việc xác minh pháp nhân, giấy phép và dòng tiền.",
+      "Khi dẫn chứng vụ án đang điều tra, cần dùng đúng cụm từ như 'theo thông tin ban đầu' và không kết luận thay cơ quan tố tụng."
+    ],
+    solutions: [
+      "Người dân: Kiểm tra giấy phép và thông tin doanh nghiệp qua kênh chính thức; không chuyển tiền theo lời hứa lợi nhuận chắc chắn.",
+      "Nền tảng và cơ quan chức năng: Kịp thời cảnh báo thủ đoạn, tiếp nhận trình báo và phối hợp ngăn dòng tiền bất hợp pháp."
+    ],
+    sampleQuote: "Vụ việc được điều tra tại Đà Nẵng là lời cảnh báo về những lời mời đầu tư trực tuyến có lợi nhuận hấp dẫn: trước khi chuyển tiền, người dân cần kiểm chứng doanh nghiệp, ứng dụng và cơ sở pháp lý của hoạt động huy động vốn.",
+    prompt: "Từ một vụ việc lừa đảo đầu tư trực tuyến được báo chí phản ánh, hãy bàn về sự tỉnh táo và trách nhiệm tự bảo vệ mình trên không gian mạng."
+  },
+  {
+    id: "ev-19",
+    themeId: "theme-law",
+    theme: "Thượng tôn Pháp luật & Đạo đức Công vụ",
+    date: "04/11/2026",
+    sourceTitle: "Cảnh sát 141 tuần tra xuyên đêm, ngăn nguy cơ thanh thiếu niên vi phạm",
+    sourceUrl: "https://cand.vn/canh-sat-141-tuan-tra-xuyen-dem-ngan-nguy-co-thanh-thieu-nien-vi-pham-post826746.html",
+    sourceName: "Báo Công an Nhân dân, ngày 4/11/2026",
+    evidence: "Trong ca tuần tra đêm 3-4/11/2026 tại phường Từ Liêm, Hà Nội, Tổ công tác Y21/141 kiểm tra các trường hợp có dấu hiệu vi phạm, trong đó có thanh niên đi xe máy không đội mũ bảo hiểm, che biển số. Bài báo cũng ghi nhận lực lượng chức năng phối hợp với gia đình tuyên truyền, quản lý thanh thiếu niên bên cạnh việc xử lý vi phạm.",
+    issue: "Giữ gìn an toàn giao thông và trật tự công cộng cần kết hợp thực thi pháp luật với giáo dục, trách nhiệm gia đình và ý thức tự giác của người trẻ.",
+    angles: [
+      "Tuổi trẻ không đồng nghĩa với quyền xem nhẹ quy tắc chung; một hành vi vi phạm có thể gây nguy hiểm cho chính người điều khiển và cộng đồng.",
+      "Phòng ngừa hiệu quả không chỉ là xử phạt mà còn cần sự phối hợp giữa lực lượng chức năng, gia đình và địa phương.",
+      "Có thể dùng dẫn chứng để phân tích trách nhiệm công dân, văn hóa giao thông hoặc vai trò của giáo dục pháp luật."
+    ],
+    solutions: [
+      "Thanh thiếu niên: Chấp hành quy định giao thông, không cổ vũ hoặc tham gia tụ tập gây rối.",
+      "Gia đình và nhà trường: Quan tâm, hướng dẫn và trao đổi với người trẻ về hậu quả pháp lý, an toàn của hành vi vi phạm."
+    ],
+    sampleQuote: "Ca tuần tra của Tổ Y21/141 tại Hà Nội cho thấy giữ gìn trật tự công cộng cần sự hiện diện kịp thời của lực lượng chức năng, đồng thời cần giáo dục và phối hợp với gia đình để ngăn vi phạm từ sớm.",
+    prompt: "Từ câu chuyện tuần tra bảo đảm trật tự giao thông, hãy bàn về ý thức chấp hành pháp luật và trách nhiệm của thanh thiếu niên."
+  },
+  {
+    id: "ev-20",
+    themeId: "theme-humanity",
+    theme: "Lòng nhân ái & Tinh thần Vì Nhân Dân",
+    date: "04/11/2026",
+    sourceTitle: "Kịp thời cứu nạn tài xế mắc kẹt trong cabin xe tải bị lật",
+    sourceUrl: "https://cand.vn/kip-thoi-cuu-nan-tai-xe-mac-ket-trong-cabin-xe-tai-bi-lat-post826750.html",
+    sourceName: "Báo Công an Nhân dân, ngày 4/11/2026",
+    evidence: "Sáng 3/11/2026, một xe tải bị lật trên đường liên bản ở xã Nậm Ty, Sơn La, khiến tài xế mắc kẹt trong cabin biến dạng. Công an xã phối hợp với người dân cứu nạn ban đầu; Đội Chữa cháy và Cứu nạn, cứu hộ khu vực 6 điều 14 cán bộ, chiến sĩ cùng phương tiện chuyên dụng đến hiện trường. Nạn nhân được đưa ra ngoài và chuyển đến bệnh viện cấp cứu.",
+    issue: "Tinh thần trách nhiệm và sự phối hợp giữa lực lượng chuyên môn, chính quyền cơ sở và người dân có ý nghĩa quyết định trong tình huống khẩn cấp.",
+    angles: [
+      "Lòng nhân ái được thể hiện bằng hành động kịp thời, thiết thực trước nguy hiểm của người khác.",
+      "Cứu nạn hiệu quả đòi hỏi kỹ năng chuyên môn, phương tiện phù hợp và phối hợp nhanh giữa nhiều lực lượng.",
+      "Mỗi người cần biết hỗ trợ trong khả năng an toàn của mình và gọi lực lượng cứu hộ chuyên nghiệp khi cần."
+    ],
+    solutions: [
+      "Cơ quan chức năng: Duy trì năng lực ứng trực, huấn luyện cứu nạn và phối hợp với lực lượng tại chỗ.",
+      "Cộng đồng: Trang bị kỹ năng sơ cứu, báo tin chính xác và không tụ tập cản trở hoạt động cứu hộ."
+    ],
+    sampleQuote: "Việc Công an xã Nậm Ty, người dân địa phương và lực lượng cứu hộ phối hợp đưa tài xế mắc kẹt đến bệnh viện là minh chứng cụ thể cho giá trị của tinh thần trách nhiệm và sự tương trợ trong hoạn nạn.",
+    prompt: "Từ một vụ cứu nạn giao thông ở Sơn La, hãy bàn về tinh thần trách nhiệm và sự sẻ chia trong cộng đồng."
   }
 ];
 
-// 4. NGÂN HÀNG 12 BÀI VĂN MẪU HOÀN CHỈNH (520 - 680 TỪ) CHUẨN ĐIỂM 9+ BỘ CÔNG AN
+// 4. NGÂN HÀNG 6 BÀI VĂN MẪU HOÀN CHỈNH (520 - 680 TỪ)
 window.ESSAY_SAMPLES = [
   {
     id: "sample-01",

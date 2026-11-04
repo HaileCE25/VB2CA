@@ -1301,17 +1301,170 @@ def n23b(rng, j):
     return NQ(q, m0, [-m0 if m0 != 0 else 2, m0 + 1, p + qq, m0 - 2, d.subs(m_, 0)], ex)
 
 
+# =============== Câu 10: đạo hàm – biến thể bổ sung ===============
+def n10a(rng, j):
+    """Đạo hàm hàm hợp / logarit nhiều lớp."""
+    v = j % 4
+    if v == 0:
+        # Đạo hàm hàm f(x) = ln(x^2 + ax + b) tại x=x0
+        a, b = rng.choice([2, 3, 4]), rng.choice([5, 10, 13])
+        x0 = rng.choice([1, 2, 3])
+        ok = sp.Rational(2 * x0 + a, x0 ** 2 + a * x0 + b)
+        if ok.q > 20:
+            raise Retry
+        q = T(r'Cho hàm số $f(x) = \ln(x^2 + \u003ca\u003ex + \u003cb\u003e)$. Giá trị của $f\'(\u003cx0\u003e)$ bằng', a=a, b=b, x0=x0)
+        ex = steps(T(r"$f'(x) = \dfrac{2x + \u003ca\u003e}{x^2 + \u003ca\u003ex + \u003cb\u003e}$", a=a, b=b),
+                   T(r"$f'(\u003cx0\u003e) = \dfrac{\u003cn\u003e}{\u003cd\u003e} = \u003cok\u003e$", x0=x0, n=2*x0+a, d=x0**2+a*x0+b, ok=ok))
+        return NQ(q, ok, [sp.Rational(2*x0, x0**2+a*x0+b), sp.Rational(2*x0+a, x0**2+b), -ok, sp.Rational(1, x0**2+a*x0+b)], ex)
+    if v == 1:
+        # Đạo hàm hàm f(x) = arcsin(ax) tại x=x0
+        a = rng.choice([1, 2])
+        # Chọn x0 sao cho a*x0 < 1 (tránh biên, tránh chia cho 0)
+        candidates = [(1, 3), (1, 4)] if a == 2 else [(1, 3), (1, 4), (1, 2)]
+        p, qq = rng.choice(candidates)
+        inner = 1 - a * a * sp.Rational(p, qq) ** 2
+        if inner <= 0:
+            raise Retry
+        ok = sp.nsimplify(sp.Rational(a, 1) / sp.sqrt(inner))
+        if not ok.is_number or not hasattr(ok, 'q') or ok.q > 20:
+            raise Retry
+        x0_s = r'\dfrac{%d}{%d}' % (p, qq)
+        a_str = '' if a == 1 else str(a)
+        a2_str = '' if a == 1 else '%d' % (a * a)
+        q = T(r'Cho hàm số $f(x) = \arcsin(\u003ca\u003ex)$. Giá trị của $f\'(x_0)$ tại $x_0 = \u003cx0\u003e$ bằng', a=a_str, x0=x0_s)
+        ex = steps(T(r"$f'(x) = \dfrac{\u003ca\u003e}{\sqrt{1 - \u003ca2\u003ex^2}}$", a=a_str if a_str else '1', a2=(a2_str + r'\cdot') if a2_str else ''),
+                   T(r"Tại $x_0 = \u003cx0\u003e$: $\sqrt{1 - \u003ca2\u003ex_0^2} = \u003cd\u003e$; $f'(x_0) = \u003cok\u003e$", x0=x0_s, a2=(a2_str + r'\cdot') if a2_str else '', d=sp.sqrt(inner), ok=ok))
+        return NQ(q, ok, [-ok, ok * 2, sp.Rational(a, 1), sp.nsimplify(sp.sqrt(inner))], ex)
+    if v == 2:
+        # Hàm số f(x)=x^n * e^(ax), tính f'(x0)
+        n, a = rng.choice([2, 3]), rng.choice([1, -1, 2])
+        x0 = rng.choice([0, 1])
+        ok = sp.nsimplify(diff(x**n * exp(a*x), x).subs(x, x0))
+        q = T(r'Cho hàm số $f(x) = x^{\u003cn\u003e}e^{\u003ca\u003ex}$. Giá trị của $f\'(\u003cx0\u003e)$ bằng', n=n, a='' if a==1 else ('-' if a==-1 else a), x0=x0)
+        ex = steps(T(r"$f'(x) = \u003cn\u003ex^{\u003cn1\u003e}e^{\u003ca\u003ex} + \u003ca\u003ex^{\u003cn\u003ee^{\u003ca\u003ex}}$", n=n, n1=n-1, a='' if a==1 else ('-' if a==-1 else a)),
+                   T(r"$f'(\u003cx0\u003e) = \u003cok\u003e$", x0=x0, ok=ok))
+        return NQ(q, ok, [ok+1, ok*2, -ok if ok!=0 else 1, diff(x**n * exp(a*x), x, 2).subs(x, x0)], ex)
+    # v == 3: đạo hàm hàm hợp f(g(x))
+    a, b = rng.choice([2, 3, 4]), rng.choice([1, 2, 3])
+    x0 = rng.choice([0, 1, 2])
+    # f(x) = sin(ax^2 + b)
+    ok = sp.nsimplify(diff(sin(a*x**2 + b), x).subs(x, x0))
+    da = 2 * a
+    q = T(r'Cho hàm số $f(x) = \sin(\u003ca\u003ex^2 + \u003cb\u003e)$. Giá trị của $f\'(\u003cx0\u003e)$ bằng', a=a, b=b, x0=x0)
+    ex = steps(T(r"$f'(x) = \cos(\u003ca\u003ex^2 + \u003cb\u003e)\cdot \u003cda\u003ex$", a=a, b=b, da=da),
+               T(r"$f'(\u003cx0\u003e) = \cos(\u003cv\u003e)\cdot\u003cw\u003e = \u003cok\u003e$", x0=x0, v=a*x0**2+b, w=da*x0, ok=ok))
+    return NQ(q, ok, [-ok if ok!=0 else 1, ok+1, diff(sin(a*x**2+b), x, 2).subs(x, x0), cos(a*x0**2+b)], ex)
+
+
+def n10b(rng, j):
+    """Đạo hàm hàm ngược / vi phân."""
+    v = j % 3
+    if v == 0:
+        # vi phân dy = f'(x)dx tại x=x0, Δx=dx
+        funcs = [(x**3 - 2*x, 3*x**2 - 2, 1), (x**4 + x, 4*x**3 + 1, 1), (sin(x) + x, cos(x)+1, 0)]
+        f, fd, x0 = rng.choice(funcs)
+        dx = rng.choice([sp.Rational(1,10), sp.Rational(1,100), sp.Rational(1,2)])
+        ok = sp.nsimplify(fd.subs(x, x0) * dx)
+        q = T(r'Cho hàm số $f(x) = \u003cf\u003e$. Vi phân $dy$ tại $x_0 = \u003cx0\u003e$ với $dx = \u003cdx\u003e$ bằng', f=f, x0=x0, dx=dx)
+        ex = steps(T(r"$f'(x) = \u003cfd\u003e$", fd=fd), T(r"$dy = f'(\u003cx0\u003e)\\cdot dx = \u003cfx0\u003e\\cdot\u003cdx\u003e = \u003cok\u003e$", x0=x0, fx0=fd.subs(x,x0), dx=dx, ok=ok))
+        return NQ(q, ok, [-ok if ok!=0 else 1, ok*2, f.subs(x, x0+dx) - f.subs(x, x0), ok/2], ex)
+    if v == 1:
+        # Sai số tương đối bằng vi phân
+        r0, dr = rng.choice([5, 10, 20]), rng.choice([sp.Rational(1,10), sp.Rational(1,2)])
+        V = sp.Rational(4, 3) * sp.pi * r0**3
+        dV = 4 * sp.pi * r0**2 * dr
+        rel = sp.nsimplify(dV / V)
+        q = T(r'Dùng vi phân để ước tính sai số tương đối $\dfrac{|\Delta V|}{V}$ của thể tích hình cầu bán kính $r = \u003cr0\u003e$ cm khi sai số đo bán kính là $|\Delta r| \le \u003cdr\u003e$ cm', r0=r0, dr=dr)
+        ex = steps(T(r'$V = \dfrac{4}{3}\pi r^3 \Rightarrow dV = 4\pi r^2\\,dr$'),
+                   T(r'$\dfrac{|dV|}{V} = \dfrac{4\pi r^2\\,|dr|}{\frac{4}{3}\pi r^3} = \dfrac{3|dr|}{r} = \dfrac{3\cdot\u003cdr\u003e}{\u003cr0\u003e} = \u003cok\u003e$', dr=dr, r0=r0, ok=rel))
+        return NQ(q, rel, [rel/2, rel*2, sp.Rational(dr, r0), dV], ex)
+    # v == 2: Phương trình tiếp tuyến
+    a, b = rng.choice([1, 2, 3]), rng.choice([1, -1, 2])
+    x0 = rng.choice([1, 2])
+    f = a*x**2 + b*x
+    y0, fd0 = f.subs(x, x0), diff(f, x).subs(x, x0)
+    # tiếp tuyến: y = fd0*(x - x0) + y0 → cắt Oy tại x=0: y = y0 - fd0*x0
+    yc = sp.nsimplify(y0 - fd0 * x0)
+    q = T(r'Cho đường cong $y = \u003cf\u003e$. Tiếp tuyến với đường cong tại điểm có hoành độ $x_0 = \u003cx0\u003e$ cắt trục $Oy$ tại điểm có tung độ bằng', f=f, x0=x0)
+    ex = steps(T(r"$y(\u003cx0\u003e) = \u003cy0\u003e$, $y'(x) = \u003cfd\u003e$, $y'(\u003cx0\u003e) = \u003cfd0\u003e$", x0=x0, y0=y0, fd=diff(f,x), fd0=fd0),
+               T(r'Tiếp tuyến: $y = \u003cfd0\u003e(x - \u003cx0\u003e) + \u003cy0\u003e$', fd0=fd0, x0=x0, y0=y0),
+               T(r'Tại $x = 0$: $y = \u003cok\u003e$', ok=yc))
+    return NQ(q, yc, [-yc if yc!=0 else 1, y0, fd0, yc+1], ex)
+
+
+# =============== Câu 28: tích phân ứng dụng – biến thể bổ sung ===============
+def n28a(rng, j):
+    """Độ dài cung đường cong – ứng dụng tích phân."""
+    v = j % 3
+    if v == 0:
+        # Độ dài cung parabol y = ax^2 trên [0, b] (công thức đơn giản cho a=1/2)
+        b = rng.choice([2, 4])
+        # y = x^2/2, ds = sqrt(1+x^2)dx
+        ok = sp.nsimplify(integrate(sqrt(1 + x**2), (x, 0, b)))
+        q = T(r'Tính độ dài cung của đường cong $y = \dfrac{x^2}{2}$ từ $x = 0$ đến $x = \u003cb\u003e$. Biết $\int\sqrt{1+x^2}\,dx = \dfrac{x\sqrt{1+x^2}}{2} + \dfrac{\ln(x+\sqrt{1+x^2})}{2} + C$.', b=b)
+        val = float(ok)
+        ex = steps(T(r"$y' = x$, $L = \displaystyle\int_0^{\u003cb\u003e}\sqrt{1 + x^2}\,dx$", b=b),
+                   T(r'$L = \left[\dfrac{x\sqrt{1+x^2}}{2} + \dfrac{\ln(x+\sqrt{1+x^2})}{2}\right]_0^{\u003cb\u003e} = \u003cok\u003e$', b=b, ok=ok))
+        ok_v = ok
+        return NQ(q, ok_v, [ok_v/2, 2*ok_v, ok_v+1, integrate(x, (x,0,b))], ex)
+    if v == 1:
+        # Diện tích vùng phẳng giới hạn bởi parabol và đường thẳng
+        a = rng.choice([1, 2, 3])
+        # y = x^2, y = ax: giao nhau tại 0 và a
+        ok = sp.nsimplify(integrate(a*x - x**2, (x, 0, a)))
+        q = T(r'Tính diện tích hình phẳng giới hạn bởi parabol $y = x^2$ và đường thẳng $y = \u003ca\u003ex$.', a=a)
+        ex = steps(T(r'Giao điểm: $x^2 = \u003ca\u003ex \Rightarrow x = 0$ và $x = \u003ca\u003e$', a=a),
+                   T(r'$S = \displaystyle\int_0^{\u003ca\u003e}(\u003ca\u003ex - x^2)\,dx = \left[\dfrac{\u003ca\u003ex^2}{2} - \dfrac{x^3}{3}\right]_0^{\u003ca\u003e} = \u003cok\u003e$', a=a, ok=ok))
+        return NQ(q, ok, [ok/2, 2*ok, ok+1, sp.Rational(a**2, 2)], ex)
+    # v == 2: Thể tích vật tròn xoay
+    a = rng.choice([1, 2, 3])
+    # Xoay y = sqrt(x) quanh Ox, từ 0 đến a^2 → V = pi*integral(x dx, 0, a^2) = pi*a^4/2
+    ok = sp.nsimplify(sp.pi * integrate(x, (x, 0, a**2)))
+    q = T(r'Tính thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y = \sqrt{x}$, $x = \u003ca2\u003e$ và trục $Ox$ xung quanh trục $Ox$.', a2=a**2)
+    ex = steps(T(r'$V = \pi\displaystyle\int_0^{\u003ca2\u003e} y^2\,dx = \pi\int_0^{\u003ca2\u003e} x\,dx = \pi\left[\dfrac{x^2}{2}\right]_0^{\u003ca2\u003e} = \u003cok\u003e$', a2=a**2, ok=ok))
+    return NQ(q, ok, [ok/2, 2*ok, sp.pi*a**4, sp.pi*a**2], ex)
+
+
+def n28b(rng, j):
+    """Áp lực chất lỏng / mô hình vật lý bằng tích phân."""
+    v = j % 2
+    if v == 0:
+        # Áp lực lên tấm phẳng hình chữ nhật a×b nhúng thẳng đứng, cạnh trên ở độ sâu d
+        aa, bb, d = rng.choice([2, 3, 4]), rng.choice([1, 2, 3]), rng.choice([0, 1, 2])
+        # F = rho*g * integral((d+y)*aa, y=0..bb) = 1000*9.8*aa*(d*bb + bb^2/2)
+        G98 = sp.Rational(49, 5)  # 9.8 = 49/5
+        ok = sp.nsimplify(1000 * G98 * aa * (d * bb + sp.Rational(bb**2, 2)))
+        ok_kN = sp.nsimplify(ok / 1000)
+        q = T(r'Một tấm phẳng hình chữ nhật chiều rộng \u003caa\u003e m, chiều cao \u003cbb\u003e m được nhúng thẳng đứng vào nước sao cho cạnh trên ở độ sâu \u003cd\u003e m. Lấy $g = 9{,}8\,m/s^2$. Áp lực của nước lên tấm bằng', aa=aa, bb=bb, d=d)
+        ex = steps(T(r'Dải ngang ở độ sâu $(\u003cd\u003e + y)$ m, diện tích $\u003caa\u003e\,dy$, áp lực $1000 \cdot 9{,}8 \cdot (\u003cd\u003e + y) \cdot \u003caa\u003e\,dy$', d=d, aa=aa),
+                   T(r'$F = \displaystyle\int_0^{\u003cbb\u003e} 9800 \cdot \u003caa\u003e \cdot (\u003cd\u003e + y)\,dy = 9800\u003caa\u003e\left[\u003cd\u003ey + \dfrac{y^2}{2}\right]_0^{\u003cbb\u003e} = \u003cok\u003e\,N = \u003ckN\u003e\,kN$', bb=bb, aa=aa, d=d, ok=ok, kN=ok_kN))
+        return NQ(q, ok, [ok/2, 2*ok, 1000*G98*aa*bb*(d + bb), ok - 1000*G98*aa*bb], ex, fmt=lambda v: str(v), unit=' <i>N</i>')
+    # v == 1: Trọng tâm (mô men tĩnh)
+    a = rng.choice([1, 2, 3])
+    # Trọng tâm hình phẳng giới hạn y=0, x=0, y=x (tam giác), từ x=0 đến a
+    # x_c = integral(x*(x)*dx, 0,a) / integral(x*dx, 0,a) = (a^3/3)/(a^2/2) = 2a/3
+    ok = sp.Rational(2*a, 3)
+    q = T(r'Tìm hoành độ trọng tâm $\bar{x}$ của hình phẳng giới hạn bởi $y = x$, $y = 0$ và $x = \u003ca\u003e$ (tam giác vuông). Biết $\bar{x} = \dfrac{\iint_D x\,dA}{\iint_D dA}$, giá trị $\bar{x}$ bằng', a=a)
+    ex = steps(T(r'Diện tích $S = \dfrac{1}{2} \cdot \u003ca\u003e^2 = \u003cs\u003e$', a=a, s=sp.Rational(a**2, 2)),
+               T(r'$\iint_D x\,dA = \displaystyle\int_0^{\u003ca\u003e} x \cdot x\,dx = \left[\dfrac{x^3}{3}\right]_0^{\u003ca\u003e} = \u003cm\u003e$', a=a, m=sp.Rational(a**3, 3)),
+               T(r'$\bar{x} = \dfrac{\u003cm\u003e}{\u003cs\u003e} = \u003cok\u003e$', m=sp.Rational(a**3, 3), s=sp.Rational(a**2, 2), ok=ok))
+    return NQ(q, ok, [sp.Rational(a, 2), sp.Rational(a, 3), sp.Rational(3*a, 4), ok+1], ex)
+
+
 NEW.update({
     1: {'A': [n1a, n1c], 'B': [n1b, n1d]},
     4: {'A': [n4a, n4c], 'B': [n4b, n4d]},
     5: {'A': [n5b, n5d], 'B': [n5a, n5c]},
+    10: {'A': [n10a, n10b], 'B': [n10a, n10b]},
     23: {'A': [n23b], 'B': [n23a, n23b]},
     25: {'A': [n25c], 'B': [n25a, n25b]},
+    28: {'A': [n28a, n28b], 'B': [n28a, n28b]},
     36: {'A': [n36a], 'B': [n36b, n36c]},
     39: {'A': [n39b, n39a], 'B': [n39c, n39d]},
 })
 NEW_GROUPS[0] = {'A': [ngL2], 'B': [ngL1, ngL3]}
-VARIANTS.update({n5a: 8, n36c: 6, n1d: 2, n4a: 2, n4c: 2, n5b: 3, n5c: 2, n5d: 2, n25a: 3, n36a: 2, n36b: 2, n39c: 2, n39d: 2})
+VARIANTS.update({n5a: 8, n36c: 6, n1d: 2, n4a: 2, n4c: 2, n5b: 3, n5c: 2, n5d: 2, n25a: 3, n36a: 2, n36b: 2, n39c: 2, n39d: 2,
+                 n10a: 4, n10b: 3, n28a: 3, n28b: 2})
 LIMIT.update({n36b: 8, n36a: 12, n23a: 6})
 VARIANTS.update({n23a: 2})
 # các vị trí mà dạng cũ chỉ là một dạng duy nhất (không có biến thể): tính ngang hàng với một dạng mới
