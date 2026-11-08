@@ -1,4 +1,4 @@
-// Generated from tools/gen_practice_bank.py using the existing CA1 question matrix.
+// Generated from tools/gen_practice_bank.py and tools/gen_applied_questions.py
 window.PRACTICE_BANK = [
  {
   "q": "Trong không gian $\\mathbb{R}^3$ với tích vô hướng thông thường $\\langle u, v\\rangle = u_1v_1 + u_2v_2 + u_3v_3$, cho hai véc tơ $u = (2;m;-3)$ và $v = (m;-3;2)$ với $m$ là tham số. Biết $u$ vuông góc với $v$, giá trị của $|u + v|^2$ bằng",
@@ -2202,7 +2202,7 @@ window.PRACTICE_BANK = [
   "id": "dh-001"
  },
  {
-  "q": "Cho hàm số $f(x) = x^{\\u003cn\\u003e}e^{\\u003ca\\u003ex}$. Giá trị của $f'(\\u003cx0\\u003e)$ bằng",
+  "q": "Cho hàm số $f(x) = x^{2}e^{2x}$. Giá trị của $f'(1)$ bằng",
   "options": [
    "$4 e^{2}$.",
    "$1 + 4 e^{2}$.",
@@ -2210,7 +2210,7 @@ window.PRACTICE_BANK = [
    "$- 4 e^{2}$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\u003cn\\u003ex^{\\u003cn1\\u003e}e^{\\u003ca\\u003ex} + \\u003ca\\u003ex^{\\u003cn\\u003ee^{\\u003ca\\u003ex}}$<br>$f'(\\u003cx0\\u003e) = \\u003cok\\u003e$",
+  "explain": "$f'(x) = 2x^{1}e^{2x} + 2x^{2}e^{2x}$<br>$f'(1) = 4 e^{2}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-002"
@@ -2230,7 +2230,7 @@ window.PRACTICE_BANK = [
   "id": "dh-003"
  },
  {
-  "q": "Cho đường cong $y = \\u003cf\\u003e$. Tiếp tuyến với đường cong tại điểm có hoành độ $x_0 = \\u003cx0\\u003e$ cắt trục $Oy$ tại điểm có tung độ bằng",
+  "q": "Cho đường cong $y = x^{2} + x$. Tiếp tuyến với đường cong tại điểm có hoành độ $x_0 = 2$ cắt trục $Oy$ tại điểm có tung độ bằng",
   "options": [
    "$-4$.",
    "$4$.",
@@ -2238,13 +2238,13 @@ window.PRACTICE_BANK = [
    "$5$."
   ],
   "answer": 0,
-  "explain": "$y(\\u003cx0\\u003e) = \\u003cy0\\u003e$, $y'(x) = \\u003cfd\\u003e$, $y'(\\u003cx0\\u003e) = \\u003cfd0\\u003e$<br>Tiếp tuyến: $y = \\u003cfd0\\u003e(x - \\u003cx0\\u003e) + \\u003cy0\\u003e$<br>Tại $x = 0$: $y = \\u003cok\\u003e$",
+  "explain": "$y(2) = 6$, $y'(x) = 2 x + 1$, $y'(2) = 5$<br>Tiếp tuyến: $y = 5(x - 2) + 6$<br>Tại $x = 0$: $y = -4$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-004"
  },
  {
-  "q": "Cho hàm số $f(x) = \\sin(\\u003ca\\u003ex^2 + \\u003cb\\u003e)$. Giá trị của $f'(\\u003cx0\\u003e)$ bằng",
+  "q": "Cho hàm số $f(x) = \\sin(2x^2 + 1)$. Giá trị của $f'(0)$ bằng",
   "options": [
    "$0$.",
    "$1$.",
@@ -2252,7 +2252,7 @@ window.PRACTICE_BANK = [
    "$\\cos{\\left(1 \\right)}$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\cos(\\u003ca\\u003ex^2 + \\u003cb\\u003e)\\cdot \\u003cda\\u003ex$<br>$f'(\\u003cx0\\u003e) = \\cos(\\u003cv\\u003e)\\cdot\\u003cw\\u003e = \\u003cok\\u003e$",
+  "explain": "$f'(x) = \\cos(2x^2 + 1)\\cdot 4x$<br>$f'(0) = \\cos(1)\\cdot0 = 0$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-005"
@@ -2273,7 +2273,7 @@ window.PRACTICE_BANK = [
   "id": "dh-006"
  },
  {
-  "q": "Cho hàm số $f(x) = \\ln(x^2 + \\u003ca\\u003ex + \\u003cb\\u003e)$. Giá trị của $f'(\\u003cx0\\u003e)$ bằng",
+  "q": "Cho hàm số $f(x) = \\ln(x^2 + 4x + 10)$. Giá trị của $f'(2)$ bằng",
   "options": [
    "$\\dfrac{4}{11}$.",
    "$\\dfrac{2}{11}$.",
@@ -2281,13 +2281,13 @@ window.PRACTICE_BANK = [
    "$- \\dfrac{4}{11}$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\dfrac{2x + \\u003ca\\u003e}{x^2 + \\u003ca\\u003ex + \\u003cb\\u003e}$<br>$f'(\\u003cx0\\u003e) = \\dfrac{\\u003cn\\u003e}{\\u003cd\\u003e} = \\u003cok\\u003e$",
+  "explain": "$f'(x) = \\dfrac{2x + 4}{x^2 + 4x + 10}$<br>$f'(2) = \\dfrac{8}{22} = \\dfrac{4}{11}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-007"
  },
  {
-  "q": "Cho hàm số $f(x) = \\u003cf\\u003e$. Vi phân $dy$ tại $x_0 = \\u003cx0\\u003e$ với $dx = \\u003cdx\\u003e$ bằng",
+  "q": "Cho hàm số $f(x) = x^{4} + x$. Vi phân $dy$ tại $x_0 = 1$ với $dx = \\dfrac{1}{100}$ bằng",
   "options": [
    "$\\dfrac{1}{20}$.",
    "$- \\dfrac{1}{20}$.",
@@ -2295,28 +2295,27 @@ window.PRACTICE_BANK = [
    "$\\dfrac{5060401}{100000000}$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\u003cfd\\u003e$<br>$dy = f'(\\u003cx0\\u003e)\\\\cdot dx = \\u003cfx0\\u003e\\\\cdot\\u003cdx\\u003e = \\u003cok\\u003e$",
+  "explain": "$f'(x) = 4 x^{3} + 1$<br>$dy = f'(1)\\\\cdot dx = 5\\\\cdot\\dfrac{1}{100} = \\dfrac{1}{20}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-008"
  },
  {
-  "q": "Cho hàm số $f(x) = x^{3x}$ $(x > 0)$. Bằng cách lấy lôgarit hai vế rồi đạo hàm, giá trị của $f'(e)$ bằng",
+  "q": "Cho hàm số $f(x) = \\arcsin(2x)$. Giá trị của $f'(x_0)$ tại $x_0 = \\dfrac{3}{10}$ bằng",
   "options": [
-   "$6 e^{3 e}$.",
-   "$3 e^{3 e}$.",
-   "$e^{3 e}$.",
-   "$3 \\left(1 + e\\right) e^{3 e}$."
+   "$\\dfrac{5}{2}$.",
+   "$- \\dfrac{5}{2}$.",
+   "$5$.",
+   "$2$."
   ],
   "answer": 0,
-  "explain": "$\\ln f = 3x\\ln x \\Rightarrow \\dfrac{f'}{f} = 3(\\ln x + 1)$<br>$f'(x) = 3x^{3x}(\\ln x + 1)$<br>$f'(e) = 3e^{3e}\\cdot2 = 6 e^{3 e}$",
-  "note": "Chọn đúng công cụ: Leibniz cho đạo hàm cấp cao của tích; đạo hàm hai vế cho hàm ẩn; lấy lôgarit cho $u^v$; $\\dfrac{dy}{dx} = \\dfrac{y'_t}{x'_t}$ cho đường cong tham số.",
+  "explain": "$f'(x) = \\dfrac{2}{\\sqrt{1 - 4\\cdotx^2}}$<br>Tại $x_0 = \\dfrac{3}{10}$: $\\sqrt{1 - 4\\cdotx_0^2} = \\dfrac{4}{5}$; $f'(x_0) = \\dfrac{5}{2}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-009"
  },
  {
-  "q": "Dùng vi phân để ước tính sai số tương đối $\\dfrac{|\\Delta V|}{V}$ của thể tích hình cầu bán kính $r = \\u003cr0\\u003e$ cm khi sai số đo bán kính là $|\\Delta r| \\le \\u003cdr\\u003e$ cm",
+  "q": "Dùng vi phân để ước tính sai số tương đối $\\dfrac{|\\Delta V|}{V}$ của thể tích hình cầu bán kính $r = 20$ cm khi sai số đo bán kính là $|\\Delta r| \\le \\dfrac{1}{2}$ cm",
   "options": [
    "$\\dfrac{3}{40}$.",
    "$\\dfrac{3}{80}$.",
@@ -2324,7 +2323,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{1}{40}$."
   ],
   "answer": 0,
-  "explain": "$V = \\dfrac{4}{3}\\pi r^3 \\Rightarrow dV = 4\\pi r^2\\\\,dr$<br>$\\dfrac{|dV|}{V} = \\dfrac{4\\pi r^2\\\\,|dr|}{\\frac{4}{3}\\pi r^3} = \\dfrac{3|dr|}{r} = \\dfrac{3\\cdot\\u003cdr\\u003e}{\\u003cr0\\u003e} = \\u003cok\\u003e$",
+  "explain": "$V = \\dfrac{4}{3}\\pi r^3 \\Rightarrow dV = 4\\pi r^2\\\\,dr$<br>$\\dfrac{|dV|}{V} = \\dfrac{4\\pi r^2\\\\,|dr|}{\\frac{4}{3}\\pi r^3} = \\dfrac{3|dr|}{r} = \\dfrac{3\\cdot\\dfrac{1}{2}}{20} = \\dfrac{3}{40}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-010"
@@ -2359,7 +2358,7 @@ window.PRACTICE_BANK = [
   "id": "dh-012"
  },
  {
-  "q": "Cho hàm số $f(x) = x^{\\u003cn\\u003e}e^{\\u003ca\\u003ex}$. Giá trị của $f'(\\u003cx0\\u003e)$ bằng",
+  "q": "Cho hàm số $f(x) = x^{3}e^{x}$. Giá trị của $f'(1)$ bằng",
   "options": [
    "$4 e$.",
    "$1 + 4 e$.",
@@ -2367,13 +2366,13 @@ window.PRACTICE_BANK = [
    "$- 4 e$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\u003cn\\u003ex^{\\u003cn1\\u003e}e^{\\u003ca\\u003ex} + \\u003ca\\u003ex^{\\u003cn\\u003ee^{\\u003ca\\u003ex}}$<br>$f'(\\u003cx0\\u003e) = \\u003cok\\u003e$",
+  "explain": "$f'(x) = 3x^{2}e^{x} + x^{3}e^{x}$<br>$f'(1) = 4 e$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-013"
  },
  {
-  "q": "Cho đường cong $y = \\u003cf\\u003e$. Tiếp tuyến với đường cong tại điểm có hoành độ $x_0 = \\u003cx0\\u003e$ cắt trục $Oy$ tại điểm có tung độ bằng",
+  "q": "Cho đường cong $y = 2 x^{2} + x$. Tiếp tuyến với đường cong tại điểm có hoành độ $x_0 = 1$ cắt trục $Oy$ tại điểm có tung độ bằng",
   "options": [
    "$-2$.",
    "$2$.",
@@ -2381,13 +2380,13 @@ window.PRACTICE_BANK = [
    "$5$."
   ],
   "answer": 0,
-  "explain": "$y(\\u003cx0\\u003e) = \\u003cy0\\u003e$, $y'(x) = \\u003cfd\\u003e$, $y'(\\u003cx0\\u003e) = \\u003cfd0\\u003e$<br>Tiếp tuyến: $y = \\u003cfd0\\u003e(x - \\u003cx0\\u003e) + \\u003cy0\\u003e$<br>Tại $x = 0$: $y = \\u003cok\\u003e$",
+  "explain": "$y(1) = 3$, $y'(x) = 4 x + 1$, $y'(1) = 5$<br>Tiếp tuyến: $y = 5(x - 1) + 3$<br>Tại $x = 0$: $y = -2$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-014"
  },
  {
-  "q": "Cho hàm số $f(x) = \\sin(\\u003ca\\u003ex^2 + \\u003cb\\u003e)$. Giá trị của $f'(\\u003cx0\\u003e)$ bằng",
+  "q": "Cho hàm số $f(x) = \\sin(2x^2 + 3)$. Giá trị của $f'(0)$ bằng",
   "options": [
    "$0$.",
    "$1$.",
@@ -2395,7 +2394,7 @@ window.PRACTICE_BANK = [
    "$\\cos{\\left(3 \\right)}$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\cos(\\u003ca\\u003ex^2 + \\u003cb\\u003e)\\cdot \\u003cda\\u003ex$<br>$f'(\\u003cx0\\u003e) = \\cos(\\u003cv\\u003e)\\cdot\\u003cw\\u003e = \\u003cok\\u003e$",
+  "explain": "$f'(x) = \\cos(2x^2 + 3)\\cdot 4x$<br>$f'(0) = \\cos(3)\\cdot0 = 0$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-015"
@@ -2416,7 +2415,7 @@ window.PRACTICE_BANK = [
   "id": "dh-016"
  },
  {
-  "q": "Cho hàm số $f(x) = \\ln(x^2 + \\u003ca\\u003ex + \\u003cb\\u003e)$. Giá trị của $f'(\\u003cx0\\u003e)$ bằng",
+  "q": "Cho hàm số $f(x) = \\ln(x^2 + 2x + 5)$. Giá trị của $f'(1)$ bằng",
   "options": [
    "$\\dfrac{1}{2}$.",
    "$\\dfrac{1}{4}$.",
@@ -2424,13 +2423,13 @@ window.PRACTICE_BANK = [
    "$- \\dfrac{1}{2}$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\dfrac{2x + \\u003ca\\u003e}{x^2 + \\u003ca\\u003ex + \\u003cb\\u003e}$<br>$f'(\\u003cx0\\u003e) = \\dfrac{\\u003cn\\u003e}{\\u003cd\\u003e} = \\u003cok\\u003e$",
+  "explain": "$f'(x) = \\dfrac{2x + 2}{x^2 + 2x + 5}$<br>$f'(1) = \\dfrac{4}{8} = \\dfrac{1}{2}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-017"
  },
  {
-  "q": "Cho hàm số $f(x) = \\u003cf\\u003e$. Vi phân $dy$ tại $x_0 = \\u003cx0\\u003e$ với $dx = \\u003cdx\\u003e$ bằng",
+  "q": "Cho hàm số $f(x) = x + \\sin{\\left(x \\right)}$. Vi phân $dy$ tại $x_0 = 0$ với $dx = \\dfrac{1}{10}$ bằng",
   "options": [
    "$\\dfrac{1}{5}$.",
    "$- \\dfrac{1}{5}$.",
@@ -2438,28 +2437,27 @@ window.PRACTICE_BANK = [
    "$\\sin{\\left(\\dfrac{1}{10} \\right)} + \\dfrac{1}{10}$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\u003cfd\\u003e$<br>$dy = f'(\\u003cx0\\u003e)\\\\cdot dx = \\u003cfx0\\u003e\\\\cdot\\u003cdx\\u003e = \\u003cok\\u003e$",
+  "explain": "$f'(x) = \\cos{\\left(x \\right)} + 1$<br>$dy = f'(0)\\\\cdot dx = 2\\\\cdot\\dfrac{1}{10} = \\dfrac{1}{5}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-018"
  },
  {
-  "q": "Cho hàm số $f(x) = x^2e^{2x}$. Dùng công thức Leibniz $(uv)^{(n)} = \\sum_{k=0}^{n} C_n^k u^{(k)}v^{(n-k)}$, giá trị của đạo hàm cấp sáu $f^{(6)}(0)$ bằng",
+  "q": "Cho hàm số $f(x) = \\arcsin(x)$. Giá trị của $f'(x_0)$ tại $x_0 = \\dfrac{4}{5}$ bằng",
   "options": [
-   "$480$.",
-   "$240$.",
-   "$960$.",
-   "$64$."
+   "$\\dfrac{5}{3}$.",
+   "$- \\dfrac{5}{3}$.",
+   "$\\dfrac{10}{3}$.",
+   "$1$."
   ],
   "answer": 0,
-  "explain": "$u = x^2$: $u(0) = 0,\\ u'(0) = 0,\\ u''(0) = 2,\\ u^{(k)} = 0\\ (k \\ge 3)$; $v = e^{2x}$: $v^{(m)}(0) = (2)^m$<br>$f^{(6)}(0) = C_{6}^2\\cdot u''(0)\\cdot v^{(4)}(0) = 15\\cdot2\\cdot(2)^{4} = 480$",
-  "note": "Chọn đúng công cụ: Leibniz cho đạo hàm cấp cao của tích; đạo hàm hai vế cho hàm ẩn; lấy lôgarit cho $u^v$; $\\dfrac{dy}{dx} = \\dfrac{y'_t}{x'_t}$ cho đường cong tham số.",
+  "explain": "$f'(x) = \\dfrac{1}{\\sqrt{1 - x^2}}$<br>Tại $x_0 = \\dfrac{4}{5}$: $\\sqrt{1 - x_0^2} = \\dfrac{3}{5}$; $f'(x_0) = \\dfrac{5}{3}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-019"
  },
  {
-  "q": "Dùng vi phân để ước tính sai số tương đối $\\dfrac{|\\Delta V|}{V}$ của thể tích hình cầu bán kính $r = \\u003cr0\\u003e$ cm khi sai số đo bán kính là $|\\Delta r| \\le \\u003cdr\\u003e$ cm",
+  "q": "Dùng vi phân để ước tính sai số tương đối $\\dfrac{|\\Delta V|}{V}$ của thể tích hình cầu bán kính $r = 10$ cm khi sai số đo bán kính là $|\\Delta r| \\le \\dfrac{1}{2}$ cm",
   "options": [
    "$\\dfrac{3}{20}$.",
    "$\\dfrac{3}{40}$.",
@@ -2467,7 +2465,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{1}{20}$."
   ],
   "answer": 0,
-  "explain": "$V = \\dfrac{4}{3}\\pi r^3 \\Rightarrow dV = 4\\pi r^2\\\\,dr$<br>$\\dfrac{|dV|}{V} = \\dfrac{4\\pi r^2\\\\,|dr|}{\\frac{4}{3}\\pi r^3} = \\dfrac{3|dr|}{r} = \\dfrac{3\\cdot\\u003cdr\\u003e}{\\u003cr0\\u003e} = \\u003cok\\u003e$",
+  "explain": "$V = \\dfrac{4}{3}\\pi r^3 \\Rightarrow dV = 4\\pi r^2\\\\,dr$<br>$\\dfrac{|dV|}{V} = \\dfrac{4\\pi r^2\\\\,|dr|}{\\frac{4}{3}\\pi r^3} = \\dfrac{3|dr|}{r} = \\dfrac{3\\cdot\\dfrac{1}{2}}{10} = \\dfrac{3}{20}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-020"
@@ -2488,7 +2486,7 @@ window.PRACTICE_BANK = [
   "id": "dh-021"
  },
  {
-  "q": "Cho hàm số $f(x) = x^{\\u003cn\\u003e}e^{\\u003ca\\u003ex}$. Giá trị của $f'(\\u003cx0\\u003e)$ bằng",
+  "q": "Cho hàm số $f(x) = x^{3}e^{-x}$. Giá trị của $f'(1)$ bằng",
   "options": [
    "$\\dfrac{2}{e}$.",
    "$\\dfrac{2}{e} + 1$.",
@@ -2496,13 +2494,13 @@ window.PRACTICE_BANK = [
    "$- \\dfrac{2}{e}$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\u003cn\\u003ex^{\\u003cn1\\u003e}e^{\\u003ca\\u003ex} + \\u003ca\\u003ex^{\\u003cn\\u003ee^{\\u003ca\\u003ex}}$<br>$f'(\\u003cx0\\u003e) = \\u003cok\\u003e$",
+  "explain": "$f'(x) = 3x^{2}e^{-x} - x^{3}e^{-x}$<br>$f'(1) = \\dfrac{2}{e}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-022"
  },
  {
-  "q": "Cho đường cong $y = \\u003cf\\u003e$. Tiếp tuyến với đường cong tại điểm có hoành độ $x_0 = \\u003cx0\\u003e$ cắt trục $Oy$ tại điểm có tung độ bằng",
+  "q": "Cho đường cong $y = x^{2} - x$. Tiếp tuyến với đường cong tại điểm có hoành độ $x_0 = 2$ cắt trục $Oy$ tại điểm có tung độ bằng",
   "options": [
    "$-4$.",
    "$4$.",
@@ -2510,13 +2508,13 @@ window.PRACTICE_BANK = [
    "$3$."
   ],
   "answer": 0,
-  "explain": "$y(\\u003cx0\\u003e) = \\u003cy0\\u003e$, $y'(x) = \\u003cfd\\u003e$, $y'(\\u003cx0\\u003e) = \\u003cfd0\\u003e$<br>Tiếp tuyến: $y = \\u003cfd0\\u003e(x - \\u003cx0\\u003e) + \\u003cy0\\u003e$<br>Tại $x = 0$: $y = \\u003cok\\u003e$",
+  "explain": "$y(2) = 2$, $y'(x) = 2 x - 1$, $y'(2) = 3$<br>Tiếp tuyến: $y = 3(x - 2) + 2$<br>Tại $x = 0$: $y = -4$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-023"
  },
  {
-  "q": "Cho hàm số $f(x) = \\sin(\\u003ca\\u003ex^2 + \\u003cb\\u003e)$. Giá trị của $f'(\\u003cx0\\u003e)$ bằng",
+  "q": "Cho hàm số $f(x) = \\sin(3x^2 + 1)$. Giá trị của $f'(1)$ bằng",
   "options": [
    "$6 \\cos{\\left(4 \\right)}$.",
    "$- 6 \\cos{\\left(4 \\right)}$.",
@@ -2524,7 +2522,7 @@ window.PRACTICE_BANK = [
    "$6 \\cos{\\left(4 \\right)} - 36 \\sin{\\left(4 \\right)}$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\cos(\\u003ca\\u003ex^2 + \\u003cb\\u003e)\\cdot \\u003cda\\u003ex$<br>$f'(\\u003cx0\\u003e) = \\cos(\\u003cv\\u003e)\\cdot\\u003cw\\u003e = \\u003cok\\u003e$",
+  "explain": "$f'(x) = \\cos(3x^2 + 1)\\cdot 6x$<br>$f'(1) = \\cos(4)\\cdot6 = 6 \\cos{\\left(4 \\right)}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-024"
@@ -2545,7 +2543,7 @@ window.PRACTICE_BANK = [
   "id": "dh-025"
  },
  {
-  "q": "Cho hàm số $f(x) = \\ln(x^2 + \\u003ca\\u003ex + \\u003cb\\u003e)$. Giá trị của $f'(\\u003cx0\\u003e)$ bằng",
+  "q": "Cho hàm số $f(x) = \\ln(x^2 + 2x + 13)$. Giá trị của $f'(3)$ bằng",
   "options": [
    "$\\dfrac{2}{7}$.",
    "$\\dfrac{3}{14}$.",
@@ -2553,13 +2551,13 @@ window.PRACTICE_BANK = [
    "$- \\dfrac{2}{7}$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\dfrac{2x + \\u003ca\\u003e}{x^2 + \\u003ca\\u003ex + \\u003cb\\u003e}$<br>$f'(\\u003cx0\\u003e) = \\dfrac{\\u003cn\\u003e}{\\u003cd\\u003e} = \\u003cok\\u003e$",
+  "explain": "$f'(x) = \\dfrac{2x + 2}{x^2 + 2x + 13}$<br>$f'(3) = \\dfrac{8}{28} = \\dfrac{2}{7}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-026"
  },
  {
-  "q": "Cho hàm số $f(x) = \\u003cf\\u003e$. Vi phân $dy$ tại $x_0 = \\u003cx0\\u003e$ với $dx = \\u003cdx\\u003e$ bằng",
+  "q": "Cho hàm số $f(x) = x^{3} - 2 x$. Vi phân $dy$ tại $x_0 = 1$ với $dx = \\dfrac{1}{2}$ bằng",
   "options": [
    "$\\dfrac{1}{2}$.",
    "$- \\dfrac{1}{2}$.",
@@ -2567,28 +2565,27 @@ window.PRACTICE_BANK = [
    "$\\dfrac{11}{8}$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\u003cfd\\u003e$<br>$dy = f'(\\u003cx0\\u003e)\\\\cdot dx = \\u003cfx0\\u003e\\\\cdot\\u003cdx\\u003e = \\u003cok\\u003e$",
+  "explain": "$f'(x) = 3 x^{2} - 2$<br>$dy = f'(1)\\\\cdot dx = 1\\\\cdot\\dfrac{1}{2} = \\dfrac{1}{2}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-027"
  },
  {
-  "q": "Cho hàm ẩn $y = y(x)$ xác định bởi phương trình $x^{2} + 3 x y + y^{2} = 5$. Hệ số góc của tiếp tuyến với đường cong tại điểm $(1;1)$, tức giá trị $y'(1)$, bằng",
+  "q": "Cho hàm số $f(x) = \\arcsin(x)$. Giá trị của $f'(x_0)$ tại $x_0 = \\dfrac{12}{13}$ bằng",
   "options": [
-   "$-1$.",
-   "$1$.",
-   "$\\dfrac{5}{2}$.",
-   "$0$."
+   "$\\dfrac{13}{5}$.",
+   "$- \\dfrac{13}{5}$.",
+   "$\\dfrac{26}{5}$.",
+   "$1$."
   ],
   "answer": 0,
-  "explain": "Đạo hàm hai vế theo $x$: $2x + 3(y + xy') + 2yy' = 0$<br>$y' = -\\dfrac{2x + 3y}{3x + 2y}$<br>Tại $(1;1)$: $y' = -\\dfrac{5}{5} = -1$",
-  "note": "Chọn đúng công cụ: Leibniz cho đạo hàm cấp cao của tích; đạo hàm hai vế cho hàm ẩn; lấy lôgarit cho $u^v$; $\\dfrac{dy}{dx} = \\dfrac{y'_t}{x'_t}$ cho đường cong tham số.",
+  "explain": "$f'(x) = \\dfrac{1}{\\sqrt{1 - x^2}}$<br>Tại $x_0 = \\dfrac{12}{13}$: $\\sqrt{1 - x_0^2} = \\dfrac{5}{13}$; $f'(x_0) = \\dfrac{13}{5}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-028"
  },
  {
-  "q": "Dùng vi phân để ước tính sai số tương đối $\\dfrac{|\\Delta V|}{V}$ của thể tích hình cầu bán kính $r = \\u003cr0\\u003e$ cm khi sai số đo bán kính là $|\\Delta r| \\le \\u003cdr\\u003e$ cm",
+  "q": "Dùng vi phân để ước tính sai số tương đối $\\dfrac{|\\Delta V|}{V}$ của thể tích hình cầu bán kính $r = 20$ cm khi sai số đo bán kính là $|\\Delta r| \\le \\dfrac{1}{10}$ cm",
   "options": [
    "$\\dfrac{3}{200}$.",
    "$\\dfrac{3}{400}$.",
@@ -2596,7 +2593,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{1}{200}$."
   ],
   "answer": 0,
-  "explain": "$V = \\dfrac{4}{3}\\pi r^3 \\Rightarrow dV = 4\\pi r^2\\\\,dr$<br>$\\dfrac{|dV|}{V} = \\dfrac{4\\pi r^2\\\\,|dr|}{\\frac{4}{3}\\pi r^3} = \\dfrac{3|dr|}{r} = \\dfrac{3\\cdot\\u003cdr\\u003e}{\\u003cr0\\u003e} = \\u003cok\\u003e$",
+  "explain": "$V = \\dfrac{4}{3}\\pi r^3 \\Rightarrow dV = 4\\pi r^2\\\\,dr$<br>$\\dfrac{|dV|}{V} = \\dfrac{4\\pi r^2\\\\,|dr|}{\\frac{4}{3}\\pi r^3} = \\dfrac{3|dr|}{r} = \\dfrac{3\\cdot\\dfrac{1}{10}}{20} = \\dfrac{3}{200}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-029"
@@ -2617,7 +2614,7 @@ window.PRACTICE_BANK = [
   "id": "dh-030"
  },
  {
-  "q": "Cho hàm số $f(x) = x^{\\u003cn\\u003e}e^{\\u003ca\\u003ex}$. Giá trị của $f'(\\u003cx0\\u003e)$ bằng",
+  "q": "Cho hàm số $f(x) = x^{2}e^{x}$. Giá trị của $f'(1)$ bằng",
   "options": [
    "$3 e$.",
    "$1 + 3 e$.",
@@ -2625,13 +2622,13 @@ window.PRACTICE_BANK = [
    "$- 3 e$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\u003cn\\u003ex^{\\u003cn1\\u003e}e^{\\u003ca\\u003ex} + \\u003ca\\u003ex^{\\u003cn\\u003ee^{\\u003ca\\u003ex}}$<br>$f'(\\u003cx0\\u003e) = \\u003cok\\u003e$",
+  "explain": "$f'(x) = 2x^{1}e^{x} + x^{2}e^{x}$<br>$f'(1) = 3 e$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-031"
  },
  {
-  "q": "Cho đường cong $y = \\u003cf\\u003e$. Tiếp tuyến với đường cong tại điểm có hoành độ $x_0 = \\u003cx0\\u003e$ cắt trục $Oy$ tại điểm có tung độ bằng",
+  "q": "Cho đường cong $y = 3 x^{2} + 2 x$. Tiếp tuyến với đường cong tại điểm có hoành độ $x_0 = 1$ cắt trục $Oy$ tại điểm có tung độ bằng",
   "options": [
    "$-3$.",
    "$3$.",
@@ -2639,13 +2636,13 @@ window.PRACTICE_BANK = [
    "$8$."
   ],
   "answer": 0,
-  "explain": "$y(\\u003cx0\\u003e) = \\u003cy0\\u003e$, $y'(x) = \\u003cfd\\u003e$, $y'(\\u003cx0\\u003e) = \\u003cfd0\\u003e$<br>Tiếp tuyến: $y = \\u003cfd0\\u003e(x - \\u003cx0\\u003e) + \\u003cy0\\u003e$<br>Tại $x = 0$: $y = \\u003cok\\u003e$",
+  "explain": "$y(1) = 5$, $y'(x) = 6 x + 2$, $y'(1) = 8$<br>Tiếp tuyến: $y = 8(x - 1) + 5$<br>Tại $x = 0$: $y = -3$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-032"
  },
  {
-  "q": "Cho hàm số $f(x) = \\sin(\\u003ca\\u003ex^2 + \\u003cb\\u003e)$. Giá trị của $f'(\\u003cx0\\u003e)$ bằng",
+  "q": "Cho hàm số $f(x) = \\sin(4x^2 + 2)$. Giá trị của $f'(1)$ bằng",
   "options": [
    "$8 \\cos{\\left(6 \\right)}$.",
    "$- 8 \\cos{\\left(6 \\right)}$.",
@@ -2653,7 +2650,7 @@ window.PRACTICE_BANK = [
    "$8 \\cos{\\left(6 \\right)} - 64 \\sin{\\left(6 \\right)}$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\cos(\\u003ca\\u003ex^2 + \\u003cb\\u003e)\\cdot \\u003cda\\u003ex$<br>$f'(\\u003cx0\\u003e) = \\cos(\\u003cv\\u003e)\\cdot\\u003cw\\u003e = \\u003cok\\u003e$",
+  "explain": "$f'(x) = \\cos(4x^2 + 2)\\cdot 8x$<br>$f'(1) = \\cos(6)\\cdot8 = 8 \\cos{\\left(6 \\right)}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-033"
@@ -2674,7 +2671,7 @@ window.PRACTICE_BANK = [
   "id": "dh-034"
  },
  {
-  "q": "Cho hàm số $f(x) = \\ln(x^2 + \\u003ca\\u003ex + \\u003cb\\u003e)$. Giá trị của $f'(\\u003cx0\\u003e)$ bằng",
+  "q": "Cho hàm số $f(x) = \\ln(x^2 + 2x + 5)$. Giá trị của $f'(2)$ bằng",
   "options": [
    "$\\dfrac{6}{13}$.",
    "$\\dfrac{4}{13}$.",
@@ -2682,13 +2679,13 @@ window.PRACTICE_BANK = [
    "$- \\dfrac{6}{13}$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\dfrac{2x + \\u003ca\\u003e}{x^2 + \\u003ca\\u003ex + \\u003cb\\u003e}$<br>$f'(\\u003cx0\\u003e) = \\dfrac{\\u003cn\\u003e}{\\u003cd\\u003e} = \\u003cok\\u003e$",
+  "explain": "$f'(x) = \\dfrac{2x + 2}{x^2 + 2x + 5}$<br>$f'(2) = \\dfrac{6}{13} = \\dfrac{6}{13}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-035"
  },
  {
-  "q": "Cho hàm số $f(x) = \\u003cf\\u003e$. Vi phân $dy$ tại $x_0 = \\u003cx0\\u003e$ với $dx = \\u003cdx\\u003e$ bằng",
+  "q": "Cho hàm số $f(x) = x + \\sin{\\left(x \\right)}$. Vi phân $dy$ tại $x_0 = 0$ với $dx = \\dfrac{1}{100}$ bằng",
   "options": [
    "$\\dfrac{1}{50}$.",
    "$- \\dfrac{1}{50}$.",
@@ -2696,28 +2693,27 @@ window.PRACTICE_BANK = [
    "$\\sin{\\left(\\dfrac{1}{100} \\right)} + \\dfrac{1}{100}$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\u003cfd\\u003e$<br>$dy = f'(\\u003cx0\\u003e)\\\\cdot dx = \\u003cfx0\\u003e\\\\cdot\\u003cdx\\u003e = \\u003cok\\u003e$",
+  "explain": "$f'(x) = \\cos{\\left(x \\right)} + 1$<br>$dy = f'(0)\\\\cdot dx = 2\\\\cdot\\dfrac{1}{100} = \\dfrac{1}{50}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-036"
  },
  {
-  "q": "Cho hàm số $f(x) = x^{2x}$ $(x > 0)$. Bằng cách lấy lôgarit hai vế rồi đạo hàm, giá trị của $f'(e)$ bằng",
+  "q": "Cho hàm số $f(x) = \\arcsin(x)$. Giá trị của $f'(x_0)$ tại $x_0 = \\dfrac{5}{13}$ bằng",
   "options": [
-   "$4 e^{2 e}$.",
-   "$2 e^{2 e}$.",
-   "$e^{2 e}$.",
-   "$2 \\left(1 + e\\right) e^{2 e}$."
+   "$\\dfrac{13}{12}$.",
+   "$- \\dfrac{13}{12}$.",
+   "$\\dfrac{13}{6}$.",
+   "$1$."
   ],
   "answer": 0,
-  "explain": "$\\ln f = 2x\\ln x \\Rightarrow \\dfrac{f'}{f} = 2(\\ln x + 1)$<br>$f'(x) = 2x^{2x}(\\ln x + 1)$<br>$f'(e) = 2e^{2e}\\cdot2 = 4 e^{2 e}$",
-  "note": "Chọn đúng công cụ: Leibniz cho đạo hàm cấp cao của tích; đạo hàm hai vế cho hàm ẩn; lấy lôgarit cho $u^v$; $\\dfrac{dy}{dx} = \\dfrac{y'_t}{x'_t}$ cho đường cong tham số.",
+  "explain": "$f'(x) = \\dfrac{1}{\\sqrt{1 - x^2}}$<br>Tại $x_0 = \\dfrac{5}{13}$: $\\sqrt{1 - x_0^2} = \\dfrac{12}{13}$; $f'(x_0) = \\dfrac{13}{12}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-037"
  },
  {
-  "q": "Dùng vi phân để ước tính sai số tương đối $\\dfrac{|\\Delta V|}{V}$ của thể tích hình cầu bán kính $r = \\u003cr0\\u003e$ cm khi sai số đo bán kính là $|\\Delta r| \\le \\u003cdr\\u003e$ cm",
+  "q": "Dùng vi phân để ước tính sai số tương đối $\\dfrac{|\\Delta V|}{V}$ của thể tích hình cầu bán kính $r = 5$ cm khi sai số đo bán kính là $|\\Delta r| \\le \\dfrac{1}{2}$ cm",
   "options": [
    "$\\dfrac{3}{10}$.",
    "$\\dfrac{3}{20}$.",
@@ -2725,7 +2721,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{1}{10}$."
   ],
   "answer": 0,
-  "explain": "$V = \\dfrac{4}{3}\\pi r^3 \\Rightarrow dV = 4\\pi r^2\\\\,dr$<br>$\\dfrac{|dV|}{V} = \\dfrac{4\\pi r^2\\\\,|dr|}{\\frac{4}{3}\\pi r^3} = \\dfrac{3|dr|}{r} = \\dfrac{3\\cdot\\u003cdr\\u003e}{\\u003cr0\\u003e} = \\u003cok\\u003e$",
+  "explain": "$V = \\dfrac{4}{3}\\pi r^3 \\Rightarrow dV = 4\\pi r^2\\\\,dr$<br>$\\dfrac{|dV|}{V} = \\dfrac{4\\pi r^2\\\\,|dr|}{\\frac{4}{3}\\pi r^3} = \\dfrac{3|dr|}{r} = \\dfrac{3\\cdot\\dfrac{1}{2}}{5} = \\dfrac{3}{10}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-038"
@@ -2746,7 +2742,7 @@ window.PRACTICE_BANK = [
   "id": "dh-039"
  },
  {
-  "q": "Cho hàm số $f(x) = x^{\\u003cn\\u003e}e^{\\u003ca\\u003ex}$. Giá trị của $f'(\\u003cx0\\u003e)$ bằng",
+  "q": "Cho hàm số $f(x) = x^{2}e^{2x}$. Giá trị của $f'(0)$ bằng",
   "options": [
    "$0$.",
    "$1$.",
@@ -2754,13 +2750,13 @@ window.PRACTICE_BANK = [
    "$-1$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\u003cn\\u003ex^{\\u003cn1\\u003e}e^{\\u003ca\\u003ex} + \\u003ca\\u003ex^{\\u003cn\\u003ee^{\\u003ca\\u003ex}}$<br>$f'(\\u003cx0\\u003e) = \\u003cok\\u003e$",
+  "explain": "$f'(x) = 2x^{1}e^{2x} + 2x^{2}e^{2x}$<br>$f'(0) = 0$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-040"
  },
  {
-  "q": "Cho đường cong $y = \\u003cf\\u003e$. Tiếp tuyến với đường cong tại điểm có hoành độ $x_0 = \\u003cx0\\u003e$ cắt trục $Oy$ tại điểm có tung độ bằng",
+  "q": "Cho đường cong $y = 2 x^{2} + 2 x$. Tiếp tuyến với đường cong tại điểm có hoành độ $x_0 = 2$ cắt trục $Oy$ tại điểm có tung độ bằng",
   "options": [
    "$-8$.",
    "$8$.",
@@ -2768,13 +2764,13 @@ window.PRACTICE_BANK = [
    "$10$."
   ],
   "answer": 0,
-  "explain": "$y(\\u003cx0\\u003e) = \\u003cy0\\u003e$, $y'(x) = \\u003cfd\\u003e$, $y'(\\u003cx0\\u003e) = \\u003cfd0\\u003e$<br>Tiếp tuyến: $y = \\u003cfd0\\u003e(x - \\u003cx0\\u003e) + \\u003cy0\\u003e$<br>Tại $x = 0$: $y = \\u003cok\\u003e$",
+  "explain": "$y(2) = 12$, $y'(x) = 4 x + 2$, $y'(2) = 10$<br>Tiếp tuyến: $y = 10(x - 2) + 12$<br>Tại $x = 0$: $y = -8$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-041"
  },
  {
-  "q": "Cho hàm số $f(x) = \\sin(\\u003ca\\u003ex^2 + \\u003cb\\u003e)$. Giá trị của $f'(\\u003cx0\\u003e)$ bằng",
+  "q": "Cho hàm số $f(x) = \\sin(4x^2 + 1)$. Giá trị của $f'(1)$ bằng",
   "options": [
    "$8 \\cos{\\left(5 \\right)}$.",
    "$- 8 \\cos{\\left(5 \\right)}$.",
@@ -2782,7 +2778,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{875 \\cdot 2^{\\dfrac{19}{55}} \\cdot 3^{\\dfrac{34}{55}} \\cdot 5^{\\dfrac{12}{55}} \\cdot 7^{\\dfrac{61}{110}}}{144}$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\cos(\\u003ca\\u003ex^2 + \\u003cb\\u003e)\\cdot \\u003cda\\u003ex$<br>$f'(\\u003cx0\\u003e) = \\cos(\\u003cv\\u003e)\\cdot\\u003cw\\u003e = \\u003cok\\u003e$",
+  "explain": "$f'(x) = \\cos(4x^2 + 1)\\cdot 8x$<br>$f'(1) = \\cos(5)\\cdot8 = 8 \\cos{\\left(5 \\right)}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-042"
@@ -2803,7 +2799,7 @@ window.PRACTICE_BANK = [
   "id": "dh-043"
  },
  {
-  "q": "Cho hàm số $f(x) = \\ln(x^2 + \\u003ca\\u003ex + \\u003cb\\u003e)$. Giá trị của $f'(\\u003cx0\\u003e)$ bằng",
+  "q": "Cho hàm số $f(x) = \\ln(x^2 + 4x + 5)$. Giá trị của $f'(1)$ bằng",
   "options": [
    "$\\dfrac{3}{5}$.",
    "$\\dfrac{1}{5}$.",
@@ -2811,13 +2807,13 @@ window.PRACTICE_BANK = [
    "$- \\dfrac{3}{5}$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\dfrac{2x + \\u003ca\\u003e}{x^2 + \\u003ca\\u003ex + \\u003cb\\u003e}$<br>$f'(\\u003cx0\\u003e) = \\dfrac{\\u003cn\\u003e}{\\u003cd\\u003e} = \\u003cok\\u003e$",
+  "explain": "$f'(x) = \\dfrac{2x + 4}{x^2 + 4x + 5}$<br>$f'(1) = \\dfrac{6}{10} = \\dfrac{3}{5}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-044"
  },
  {
-  "q": "Cho hàm số $f(x) = \\u003cf\\u003e$. Vi phân $dy$ tại $x_0 = \\u003cx0\\u003e$ với $dx = \\u003cdx\\u003e$ bằng",
+  "q": "Cho hàm số $f(x) = x^{4} + x$. Vi phân $dy$ tại $x_0 = 1$ với $dx = \\dfrac{1}{2}$ bằng",
   "options": [
    "$\\dfrac{5}{2}$.",
    "$- \\dfrac{5}{2}$.",
@@ -2825,28 +2821,27 @@ window.PRACTICE_BANK = [
    "$\\dfrac{73}{16}$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\u003cfd\\u003e$<br>$dy = f'(\\u003cx0\\u003e)\\\\cdot dx = \\u003cfx0\\u003e\\\\cdot\\u003cdx\\u003e = \\u003cok\\u003e$",
+  "explain": "$f'(x) = 4 x^{3} + 1$<br>$dy = f'(1)\\\\cdot dx = 5\\\\cdot\\dfrac{1}{2} = \\dfrac{5}{2}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-045"
  },
  {
-  "q": "Một chất điểm chuyển động trong mặt phẳng $Oxy$ theo quỹ đạo có phương trình tham số $x = t^2 + 2t,\\ y = t^3 - 2t$ ($t$ là thời gian). Hệ số góc $\\dfrac{dy}{dx}$ của tiếp tuyến với quỹ đạo tại thời điểm $t = 1$ bằng",
+  "q": "Cho hàm số $f(x) = \\arcsin(2x)$. Giá trị của $f'(x_0)$ tại $x_0 = \\dfrac{2}{5}$ bằng",
   "options": [
-   "$\\dfrac{1}{4}$.",
-   "$4$.",
-   "$1$.",
-   "$\\dfrac{3}{2}$."
+   "$\\dfrac{10}{3}$.",
+   "$- \\dfrac{10}{3}$.",
+   "$\\dfrac{20}{3}$.",
+   "$2$."
   ],
   "answer": 0,
-  "explain": "$x'(t) = 2t + 2,\\quad y'(t) = 3t^2 - 2$<br>$\\dfrac{dy}{dx} = \\dfrac{y'(t)}{x'(t)} = \\dfrac{3t^2 - 2}{2t + 2}$<br>Tại $t = 1$: $\\dfrac{1}{4} = \\dfrac{1}{4}$",
-  "note": "Chọn đúng công cụ: Leibniz cho đạo hàm cấp cao của tích; đạo hàm hai vế cho hàm ẩn; lấy lôgarit cho $u^v$; $\\dfrac{dy}{dx} = \\dfrac{y'_t}{x'_t}$ cho đường cong tham số.",
+  "explain": "$f'(x) = \\dfrac{2}{\\sqrt{1 - 4\\cdotx^2}}$<br>Tại $x_0 = \\dfrac{2}{5}$: $\\sqrt{1 - 4\\cdotx_0^2} = \\dfrac{3}{5}$; $f'(x_0) = \\dfrac{10}{3}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-046"
  },
  {
-  "q": "Dùng vi phân để ước tính sai số tương đối $\\dfrac{|\\Delta V|}{V}$ của thể tích hình cầu bán kính $r = \\u003cr0\\u003e$ cm khi sai số đo bán kính là $|\\Delta r| \\le \\u003cdr\\u003e$ cm",
+  "q": "Dùng vi phân để ước tính sai số tương đối $\\dfrac{|\\Delta V|}{V}$ của thể tích hình cầu bán kính $r = 5$ cm khi sai số đo bán kính là $|\\Delta r| \\le \\dfrac{1}{10}$ cm",
   "options": [
    "$\\dfrac{3}{50}$.",
    "$\\dfrac{3}{100}$.",
@@ -2854,7 +2849,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{1}{50}$."
   ],
   "answer": 0,
-  "explain": "$V = \\dfrac{4}{3}\\pi r^3 \\Rightarrow dV = 4\\pi r^2\\\\,dr$<br>$\\dfrac{|dV|}{V} = \\dfrac{4\\pi r^2\\\\,|dr|}{\\frac{4}{3}\\pi r^3} = \\dfrac{3|dr|}{r} = \\dfrac{3\\cdot\\u003cdr\\u003e}{\\u003cr0\\u003e} = \\u003cok\\u003e$",
+  "explain": "$V = \\dfrac{4}{3}\\pi r^3 \\Rightarrow dV = 4\\pi r^2\\\\,dr$<br>$\\dfrac{|dV|}{V} = \\dfrac{4\\pi r^2\\\\,|dr|}{\\frac{4}{3}\\pi r^3} = \\dfrac{3|dr|}{r} = \\dfrac{3\\cdot\\dfrac{1}{10}}{5} = \\dfrac{3}{50}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-047"
@@ -2875,21 +2870,21 @@ window.PRACTICE_BANK = [
   "id": "dh-048"
  },
  {
-  "q": "Cho hàm số $f(x) = x^{\\u003cn\\u003e}e^{\\u003ca\\u003ex}$. Giá trị của $f'(\\u003cx0\\u003e)$ bằng",
+  "q": "Cho hàm số $f(x) = x^{2}e^{-x}$. Giá trị của $f'(0)$ bằng",
   "options": [
-   "$e^{-1}$.",
-   "$e^{-1} + 1$.",
-   "$\\dfrac{2}{e}$.",
-   "$- \\dfrac{1}{e}$."
+   "$0$.",
+   "$1$.",
+   "$2$.",
+   "$-1$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\u003cn\\u003ex^{\\u003cn1\\u003e}e^{\\u003ca\\u003ex} + \\u003ca\\u003ex^{\\u003cn\\u003ee^{\\u003ca\\u003ex}}$<br>$f'(\\u003cx0\\u003e) = \\u003cok\\u003e$",
+  "explain": "$f'(x) = 2x^{1}e^{-x} - x^{2}e^{-x}$<br>$f'(0) = 0$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-049"
  },
  {
-  "q": "Cho đường cong $y = \\u003cf\\u003e$. Tiếp tuyến với đường cong tại điểm có hoành độ $x_0 = \\u003cx0\\u003e$ cắt trục $Oy$ tại điểm có tung độ bằng",
+  "q": "Cho đường cong $y = 3 x^{2} + x$. Tiếp tuyến với đường cong tại điểm có hoành độ $x_0 = 2$ cắt trục $Oy$ tại điểm có tung độ bằng",
   "options": [
    "$-12$.",
    "$12$.",
@@ -2897,13 +2892,13 @@ window.PRACTICE_BANK = [
    "$13$."
   ],
   "answer": 0,
-  "explain": "$y(\\u003cx0\\u003e) = \\u003cy0\\u003e$, $y'(x) = \\u003cfd\\u003e$, $y'(\\u003cx0\\u003e) = \\u003cfd0\\u003e$<br>Tiếp tuyến: $y = \\u003cfd0\\u003e(x - \\u003cx0\\u003e) + \\u003cy0\\u003e$<br>Tại $x = 0$: $y = \\u003cok\\u003e$",
+  "explain": "$y(2) = 14$, $y'(x) = 6 x + 1$, $y'(2) = 13$<br>Tiếp tuyến: $y = 13(x - 2) + 14$<br>Tại $x = 0$: $y = -12$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-050"
  },
  {
-  "q": "Cho hàm số $f(x) = \\sin(\\u003ca\\u003ex^2 + \\u003cb\\u003e)$. Giá trị của $f'(\\u003cx0\\u003e)$ bằng",
+  "q": "Cho hàm số $f(x) = \\sin(3x^2 + 2)$. Giá trị của $f'(0)$ bằng",
   "options": [
    "$0$.",
    "$1$.",
@@ -2911,7 +2906,7 @@ window.PRACTICE_BANK = [
    "$\\cos{\\left(2 \\right)}$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\cos(\\u003ca\\u003ex^2 + \\u003cb\\u003e)\\cdot \\u003cda\\u003ex$<br>$f'(\\u003cx0\\u003e) = \\cos(\\u003cv\\u003e)\\cdot\\u003cw\\u003e = \\u003cok\\u003e$",
+  "explain": "$f'(x) = \\cos(3x^2 + 2)\\cdot 6x$<br>$f'(0) = \\cos(2)\\cdot0 = 0$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-051"
@@ -2932,7 +2927,7 @@ window.PRACTICE_BANK = [
   "id": "dh-052"
  },
  {
-  "q": "Cho hàm số $f(x) = \\ln(x^2 + \\u003ca\\u003ex + \\u003cb\\u003e)$. Giá trị của $f'(\\u003cx0\\u003e)$ bằng",
+  "q": "Cho hàm số $f(x) = \\ln(x^2 + 4x + 5)$. Giá trị của $f'(2)$ bằng",
   "options": [
    "$\\dfrac{8}{17}$.",
    "$\\dfrac{4}{17}$.",
@@ -2940,13 +2935,13 @@ window.PRACTICE_BANK = [
    "$- \\dfrac{8}{17}$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\dfrac{2x + \\u003ca\\u003e}{x^2 + \\u003ca\\u003ex + \\u003cb\\u003e}$<br>$f'(\\u003cx0\\u003e) = \\dfrac{\\u003cn\\u003e}{\\u003cd\\u003e} = \\u003cok\\u003e$",
+  "explain": "$f'(x) = \\dfrac{2x + 4}{x^2 + 4x + 5}$<br>$f'(2) = \\dfrac{8}{17} = \\dfrac{8}{17}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-053"
  },
  {
-  "q": "Cho hàm số $f(x) = \\u003cf\\u003e$. Vi phân $dy$ tại $x_0 = \\u003cx0\\u003e$ với $dx = \\u003cdx\\u003e$ bằng",
+  "q": "Cho hàm số $f(x) = x^{3} - 2 x$. Vi phân $dy$ tại $x_0 = 1$ với $dx = \\dfrac{1}{100}$ bằng",
   "options": [
    "$\\dfrac{1}{100}$.",
    "$- \\dfrac{1}{100}$.",
@@ -2954,28 +2949,27 @@ window.PRACTICE_BANK = [
    "$\\dfrac{10301}{1000000}$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\u003cfd\\u003e$<br>$dy = f'(\\u003cx0\\u003e)\\\\cdot dx = \\u003cfx0\\u003e\\\\cdot\\u003cdx\\u003e = \\u003cok\\u003e$",
+  "explain": "$f'(x) = 3 x^{2} - 2$<br>$dy = f'(1)\\\\cdot dx = 1\\\\cdot\\dfrac{1}{100} = \\dfrac{1}{100}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-054"
  },
  {
-  "q": "Cho hàm số $f(x) = x^2e^{2x}$. Dùng công thức Leibniz $(uv)^{(n)} = \\sum_{k=0}^{n} C_n^k u^{(k)}v^{(n-k)}$, giá trị của đạo hàm cấp mười $f^{(10)}(0)$ bằng",
+  "q": "Cho hàm số $f(x) = \\arcsin(x)$. Giá trị của $f'(x_0)$ tại $x_0 = \\dfrac{3}{5}$ bằng",
   "options": [
-   "$23040$.",
-   "$11520$.",
-   "$46080$.",
-   "$1024$."
+   "$\\dfrac{5}{4}$.",
+   "$- \\dfrac{5}{4}$.",
+   "$\\dfrac{5}{2}$.",
+   "$1$."
   ],
   "answer": 0,
-  "explain": "$u = x^2$: $u(0) = 0,\\ u'(0) = 0,\\ u''(0) = 2,\\ u^{(k)} = 0\\ (k \\ge 3)$; $v = e^{2x}$: $v^{(m)}(0) = (2)^m$<br>$f^{(10)}(0) = C_{10}^2\\cdot u''(0)\\cdot v^{(8)}(0) = 45\\cdot2\\cdot(2)^{8} = 23040$",
-  "note": "Chọn đúng công cụ: Leibniz cho đạo hàm cấp cao của tích; đạo hàm hai vế cho hàm ẩn; lấy lôgarit cho $u^v$; $\\dfrac{dy}{dx} = \\dfrac{y'_t}{x'_t}$ cho đường cong tham số.",
+  "explain": "$f'(x) = \\dfrac{1}{\\sqrt{1 - x^2}}$<br>Tại $x_0 = \\dfrac{3}{5}$: $\\sqrt{1 - x_0^2} = \\dfrac{4}{5}$; $f'(x_0) = \\dfrac{5}{4}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-055"
  },
  {
-  "q": "Dùng vi phân để ước tính sai số tương đối $\\dfrac{|\\Delta V|}{V}$ của thể tích hình cầu bán kính $r = \\u003cr0\\u003e$ cm khi sai số đo bán kính là $|\\Delta r| \\le \\u003cdr\\u003e$ cm",
+  "q": "Dùng vi phân để ước tính sai số tương đối $\\dfrac{|\\Delta V|}{V}$ của thể tích hình cầu bán kính $r = 10$ cm khi sai số đo bán kính là $|\\Delta r| \\le \\dfrac{1}{10}$ cm",
   "options": [
    "$\\dfrac{3}{100}$.",
    "$\\dfrac{3}{200}$.",
@@ -2983,7 +2977,7 @@ window.PRACTICE_BANK = [
    "$\\dfrac{1}{100}$."
   ],
   "answer": 0,
-  "explain": "$V = \\dfrac{4}{3}\\pi r^3 \\Rightarrow dV = 4\\pi r^2\\\\,dr$<br>$\\dfrac{|dV|}{V} = \\dfrac{4\\pi r^2\\\\,|dr|}{\\frac{4}{3}\\pi r^3} = \\dfrac{3|dr|}{r} = \\dfrac{3\\cdot\\u003cdr\\u003e}{\\u003cr0\\u003e} = \\u003cok\\u003e$",
+  "explain": "$V = \\dfrac{4}{3}\\pi r^3 \\Rightarrow dV = 4\\pi r^2\\\\,dr$<br>$\\dfrac{|dV|}{V} = \\dfrac{4\\pi r^2\\\\,|dr|}{\\frac{4}{3}\\pi r^3} = \\dfrac{3|dr|}{r} = \\dfrac{3\\cdot\\dfrac{1}{10}}{10} = \\dfrac{3}{100}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-056"
@@ -3004,21 +2998,21 @@ window.PRACTICE_BANK = [
   "id": "dh-057"
  },
  {
-  "q": "Cho hàm số $f(x) = x^{\\u003cn\\u003e}e^{\\u003ca\\u003ex}$. Giá trị của $f'(\\u003cx0\\u003e)$ bằng",
+  "q": "Cho hàm số $f(x) = x^{3}e^{x}$. Giá trị của $f'(0)$ bằng",
   "options": [
-   "$5 e^{2}$.",
-   "$1 + 5 e^{2}$.",
-   "$10 e^{2}$.",
-   "$- 5 e^{2}$."
+   "$0$.",
+   "$1$.",
+   "$-1$.",
+   "$2$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\u003cn\\u003ex^{\\u003cn1\\u003e}e^{\\u003ca\\u003ex} + \\u003ca\\u003ex^{\\u003cn\\u003ee^{\\u003ca\\u003ex}}$<br>$f'(\\u003cx0\\u003e) = \\u003cok\\u003e$",
+  "explain": "$f'(x) = 3x^{2}e^{x} + x^{3}e^{x}$<br>$f'(0) = 0$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-058"
  },
  {
-  "q": "Cho đường cong $y = \\u003cf\\u003e$. Tiếp tuyến với đường cong tại điểm có hoành độ $x_0 = \\u003cx0\\u003e$ cắt trục $Oy$ tại điểm có tung độ bằng",
+  "q": "Cho đường cong $y = 3 x^{2} + 2 x$. Tiếp tuyến với đường cong tại điểm có hoành độ $x_0 = 2$ cắt trục $Oy$ tại điểm có tung độ bằng",
   "options": [
    "$-12$.",
    "$12$.",
@@ -3026,13 +3020,13 @@ window.PRACTICE_BANK = [
    "$14$."
   ],
   "answer": 0,
-  "explain": "$y(\\u003cx0\\u003e) = \\u003cy0\\u003e$, $y'(x) = \\u003cfd\\u003e$, $y'(\\u003cx0\\u003e) = \\u003cfd0\\u003e$<br>Tiếp tuyến: $y = \\u003cfd0\\u003e(x - \\u003cx0\\u003e) + \\u003cy0\\u003e$<br>Tại $x = 0$: $y = \\u003cok\\u003e$",
+  "explain": "$y(2) = 16$, $y'(x) = 6 x + 2$, $y'(2) = 14$<br>Tiếp tuyến: $y = 14(x - 2) + 16$<br>Tại $x = 0$: $y = -12$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-059"
  },
  {
-  "q": "Cho hàm số $f(x) = \\sin(\\u003ca\\u003ex^2 + \\u003cb\\u003e)$. Giá trị của $f'(\\u003cx0\\u003e)$ bằng",
+  "q": "Cho hàm số $f(x) = \\sin(3x^2 + 3)$. Giá trị của $f'(1)$ bằng",
   "options": [
    "$6 \\cos{\\left(6 \\right)}$.",
    "$- 6 \\cos{\\left(6 \\right)}$.",
@@ -3040,7 +3034,7 @@ window.PRACTICE_BANK = [
    "$6 \\cos{\\left(6 \\right)} - 36 \\sin{\\left(6 \\right)}$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\cos(\\u003ca\\u003ex^2 + \\u003cb\\u003e)\\cdot \\u003cda\\u003ex$<br>$f'(\\u003cx0\\u003e) = \\cos(\\u003cv\\u003e)\\cdot\\u003cw\\u003e = \\u003cok\\u003e$",
+  "explain": "$f'(x) = \\cos(3x^2 + 3)\\cdot 6x$<br>$f'(1) = \\cos(6)\\cdot6 = 6 \\cos{\\left(6 \\right)}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-060"
@@ -3061,7 +3055,7 @@ window.PRACTICE_BANK = [
   "id": "dh-061"
  },
  {
-  "q": "Cho hàm số $f(x) = \\ln(x^2 + \\u003ca\\u003ex + \\u003cb\\u003e)$. Giá trị của $f'(\\u003cx0\\u003e)$ bằng",
+  "q": "Cho hàm số $f(x) = \\ln(x^2 + 4x + 10)$. Giá trị của $f'(1)$ bằng",
   "options": [
    "$\\dfrac{2}{5}$.",
    "$\\dfrac{2}{15}$.",
@@ -3069,13 +3063,13 @@ window.PRACTICE_BANK = [
    "$- \\dfrac{2}{5}$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\dfrac{2x + \\u003ca\\u003e}{x^2 + \\u003ca\\u003ex + \\u003cb\\u003e}$<br>$f'(\\u003cx0\\u003e) = \\dfrac{\\u003cn\\u003e}{\\u003cd\\u003e} = \\u003cok\\u003e$",
+  "explain": "$f'(x) = \\dfrac{2x + 4}{x^2 + 4x + 10}$<br>$f'(1) = \\dfrac{6}{15} = \\dfrac{2}{5}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-062"
  },
  {
-  "q": "Cho hàm số $f(x) = \\u003cf\\u003e$. Vi phân $dy$ tại $x_0 = \\u003cx0\\u003e$ với $dx = \\u003cdx\\u003e$ bằng",
+  "q": "Cho hàm số $f(x) = x^{3} - 2 x$. Vi phân $dy$ tại $x_0 = 1$ với $dx = \\dfrac{1}{10}$ bằng",
   "options": [
    "$\\dfrac{1}{10}$.",
    "$- \\dfrac{1}{10}$.",
@@ -3083,22 +3077,21 @@ window.PRACTICE_BANK = [
    "$\\dfrac{131}{1000}$."
   ],
   "answer": 0,
-  "explain": "$f'(x) = \\u003cfd\\u003e$<br>$dy = f'(\\u003cx0\\u003e)\\\\cdot dx = \\u003cfx0\\u003e\\\\cdot\\u003cdx\\u003e = \\u003cok\\u003e$",
+  "explain": "$f'(x) = 3 x^{2} - 2$<br>$dy = f'(1)\\\\cdot dx = 1\\\\cdot\\dfrac{1}{10} = \\dfrac{1}{10}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-063"
  },
  {
-  "q": "Cho hàm ẩn $y = y(x)$ xác định bởi phương trình $x^{2} + x y + y^{2} = 7$. Hệ số góc của tiếp tuyến với đường cong tại điểm $(1;2)$, tức giá trị $y'(1)$, bằng",
+  "q": "Cho hàm số $f(x) = \\arcsin(2x)$. Giá trị của $f'(x_0)$ tại $x_0 = \\dfrac{6}{13}$ bằng",
   "options": [
-   "$- \\dfrac{4}{5}$.",
-   "$\\dfrac{4}{5}$.",
-   "$1$.",
-   "$- \\dfrac{5}{4}$."
+   "$\\dfrac{26}{5}$.",
+   "$- \\dfrac{26}{5}$.",
+   "$\\dfrac{52}{5}$.",
+   "$2$."
   ],
   "answer": 0,
-  "explain": "Đạo hàm hai vế theo $x$: $2x + 1(y + xy') + 2yy' = 0$<br>$y' = -\\dfrac{2x + 1y}{1x + 2y}$<br>Tại $(1;2)$: $y' = -\\dfrac{4}{5} = - \\dfrac{4}{5}$",
-  "note": "Chọn đúng công cụ: Leibniz cho đạo hàm cấp cao của tích; đạo hàm hai vế cho hàm ẩn; lấy lôgarit cho $u^v$; $\\dfrac{dy}{dx} = \\dfrac{y'_t}{x'_t}$ cho đường cong tham số.",
+  "explain": "$f'(x) = \\dfrac{2}{\\sqrt{1 - 4\\cdotx^2}}$<br>Tại $x_0 = \\dfrac{6}{13}$: $\\sqrt{1 - 4\\cdotx_0^2} = \\dfrac{5}{13}$; $f'(x_0) = \\dfrac{26}{5}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-064"
@@ -3134,22 +3127,21 @@ window.PRACTICE_BANK = [
   "id": "dh-066"
  },
  {
-  "q": "Cho hàm số $f(x) = x^2e^{3x}$. Dùng công thức Leibniz $(uv)^{(n)} = \\sum_{k=0}^{n} C_n^k u^{(k)}v^{(n-k)}$, giá trị của đạo hàm cấp tám $f^{(8)}(0)$ bằng",
+  "q": "Cho hàm số $f(x) = x^{2}e^{x}$. Giá trị của $f'(0)$ bằng",
   "options": [
-   "$40824$.",
-   "$20412$.",
-   "$81648$.",
-   "$6561$."
+   "$0$.",
+   "$1$.",
+   "$2$.",
+   "$-1$."
   ],
   "answer": 0,
-  "explain": "$u = x^2$: $u(0) = 0,\\ u'(0) = 0,\\ u''(0) = 2,\\ u^{(k)} = 0\\ (k \\ge 3)$; $v = e^{3x}$: $v^{(m)}(0) = (3)^m$<br>$f^{(8)}(0) = C_{8}^2\\cdot u''(0)\\cdot v^{(6)}(0) = 28\\cdot2\\cdot(3)^{6} = 40824$",
-  "note": "Chọn đúng công cụ: Leibniz cho đạo hàm cấp cao của tích; đạo hàm hai vế cho hàm ẩn; lấy lôgarit cho $u^v$; $\\dfrac{dy}{dx} = \\dfrac{y'_t}{x'_t}$ cho đường cong tham số.",
+  "explain": "$f'(x) = 2x^{1}e^{x} + x^{2}e^{x}$<br>$f'(0) = 0$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-067"
  },
  {
-  "q": "Cho đường cong $y = \\u003cf\\u003e$. Tiếp tuyến với đường cong tại điểm có hoành độ $x_0 = \\u003cx0\\u003e$ cắt trục $Oy$ tại điểm có tung độ bằng",
+  "q": "Cho đường cong $y = x^{2} + 2 x$. Tiếp tuyến với đường cong tại điểm có hoành độ $x_0 = 1$ cắt trục $Oy$ tại điểm có tung độ bằng",
   "options": [
    "$-1$.",
    "$1$.",
@@ -3157,7 +3149,7 @@ window.PRACTICE_BANK = [
    "$4$."
   ],
   "answer": 0,
-  "explain": "$y(\\u003cx0\\u003e) = \\u003cy0\\u003e$, $y'(x) = \\u003cfd\\u003e$, $y'(\\u003cx0\\u003e) = \\u003cfd0\\u003e$<br>Tiếp tuyến: $y = \\u003cfd0\\u003e(x - \\u003cx0\\u003e) + \\u003cy0\\u003e$<br>Tại $x = 0$: $y = \\u003cok\\u003e$",
+  "explain": "$y(1) = 3$, $y'(x) = 2 x + 2$, $y'(1) = 4$<br>Tiếp tuyến: $y = 4(x - 1) + 3$<br>Tại $x = 0$: $y = -1$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-068"
@@ -6513,21 +6505,21 @@ window.PRACTICE_BANK = [
   "id": "dh-069"
  },
  {
-  "q": "Tính độ dài cung của đường cong $y = \\dfrac{x^2}{2}$ từ $x = 0$ đến $x = \\u003cb\\u003e$. Biết $\\int\\sqrt{1+x^2}\\,dx = \\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2} + C$.",
+  "q": "Tính độ dài cung của đường cong $y = \\dfrac{x^2}{2}$ từ $x = 0$ đến $x = 1$. Biết $\\int\\sqrt{1+x^2}\\,dx = \\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2} + C$.",
   "options": [
-   "$\\dfrac{\\operatorname{asinh}{\\left(2 \\right)}}{2} + \\sqrt{5}$.",
-   "$\\dfrac{\\operatorname{asinh}{\\left(2 \\right)}}{4} + \\dfrac{\\sqrt{5}}{2}$.",
-   "$\\operatorname{asinh}{\\left(2 \\right)} + 2 \\sqrt{5}$.",
-   "$\\dfrac{\\operatorname{asinh}{\\left(2 \\right)}}{2} + 1 + \\sqrt{5}$."
+   "$\\dfrac{\\ln\\left(1 + \\sqrt{2}\\right)}{2} + \\dfrac{\\sqrt{2}}{2}$.",
+   "$\\dfrac{\\ln\\left(1 + \\sqrt{2}\\right)}{4} + \\dfrac{\\sqrt{2}}{4}$.",
+   "$\\ln\\left(1 + \\sqrt{2}\\right) + \\sqrt{2}$.",
+   "$\\dfrac{\\ln\\left(1 + \\sqrt{2}\\right)}{2} + \\dfrac{\\sqrt{2}}{2} + 1$."
   ],
   "answer": 0,
-  "explain": "$y' = x$, $L = \\displaystyle\\int_0^{\\u003cb\\u003e}\\sqrt{1 + x^2}\\,dx$<br>$L = \\left[\\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2}\\right]_0^{\\u003cb\\u003e} = \\u003cok\\u003e$",
+  "explain": "$y' = x$, $L = \\displaystyle\\int_0^{1}\\sqrt{1 + x^2}\\,dx$<br>$L = \\left[\\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2}\\right]_0^{1} = \\dfrac{\\ln\\left(1 + \\sqrt{2}\\right)}{2} + \\dfrac{\\sqrt{2}}{2}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-070"
  },
  {
-  "q": "Một tấm phẳng hình chữ nhật chiều rộng \\u003caa\\u003e m, chiều cao \\u003cbb\\u003e m được nhúng thẳng đứng vào nước sao cho cạnh trên ở độ sâu \\u003cd\\u003e m. Lấy $g = 9{,}8\\,m/s^2$. Áp lực của nước lên tấm bằng",
+  "q": "Một tấm phẳng hình chữ nhật chiều rộng 2 m, chiều cao 1 m được nhúng thẳng đứng vào nước sao cho cạnh trên ở độ sâu 0 m. Lấy $g = 9{,}8\\,m/s^2$. Áp lực của nước lên tấm bằng",
   "options": [
    "9800 <i>N</i>.",
    "4900 <i>N</i>.",
@@ -6535,21 +6527,21 @@ window.PRACTICE_BANK = [
    "-9800 <i>N</i>."
   ],
   "answer": 0,
-  "explain": "Dải ngang ở độ sâu $(\\u003cd\\u003e + y)$ m, diện tích $\\u003caa\\u003e\\,dy$, áp lực $1000 \\cdot 9{,}8 \\cdot (\\u003cd\\u003e + y) \\cdot \\u003caa\\u003e\\,dy$<br>$F = \\displaystyle\\int_0^{\\u003cbb\\u003e} 9800 \\cdot \\u003caa\\u003e \\cdot (\\u003cd\\u003e + y)\\,dy = 9800\\u003caa\\u003e\\left[\\u003cd\\u003ey + \\dfrac{y^2}{2}\\right]_0^{\\u003cbb\\u003e} = \\u003cok\\u003e\\,N = \\u003ckN\\u003e\\,kN$",
+  "explain": "Dải ngang ở độ sâu $(0 + y)$ m, diện tích $2\\,dy$, áp lực $1000 \\cdot 9{,}8 \\cdot (0 + y) \\cdot 2\\,dy$<br>$F = \\displaystyle\\int_0^{1} 9800 \\cdot 2 \\cdot (0 + y)\\,dy = 98002\\left[0y + \\dfrac{y^2}{2}\\right]_0^{1} = 9800\\,N = \\dfrac{49}{5}\\,kN$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-071"
  },
  {
-  "q": "Tính diện tích hình phẳng giới hạn bởi parabol $y = x^2$ và đường thẳng $y = \\u003ca\\u003ex$.",
+  "q": "Tính diện tích hình phẳng giới hạn bởi parabol $y = x^2$ và đường thẳng $y = 8x$.",
   "options": [
-   "$\\dfrac{4}{3}$.",
-   "$\\dfrac{2}{3}$.",
-   "$\\dfrac{8}{3}$.",
-   "$\\dfrac{7}{3}$."
+   "$\\dfrac{256}{3}$.",
+   "$\\dfrac{128}{3}$.",
+   "$\\dfrac{512}{3}$.",
+   "$\\dfrac{259}{3}$."
   ],
   "answer": 0,
-  "explain": "Giao điểm: $x^2 = \\u003ca\\u003ex \\Rightarrow x = 0$ và $x = \\u003ca\\u003e$<br>$S = \\displaystyle\\int_0^{\\u003ca\\u003e}(\\u003ca\\u003ex - x^2)\\,dx = \\left[\\dfrac{\\u003ca\\u003ex^2}{2} - \\dfrac{x^3}{3}\\right]_0^{\\u003ca\\u003e} = \\u003cok\\u003e$",
+  "explain": "Giao điểm: $x^2 = 8x \\Rightarrow x = 0$ và $x = 8$<br>$S = \\displaystyle\\int_0^{8}(8x - x^2)\\,dx = \\left[\\dfrac{8x^2}{2} - \\dfrac{x^3}{3}\\right]_0^{8} = \\dfrac{256}{3}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-072"
@@ -6570,29 +6562,29 @@ window.PRACTICE_BANK = [
   "id": "dh-073"
  },
  {
-  "q": "Tìm hoành độ trọng tâm $\\bar{x}$ của hình phẳng giới hạn bởi $y = x$, $y = 0$ và $x = \\u003ca\\u003e$ (tam giác vuông). Biết $\\bar{x} = \\dfrac{\\iint_D x\\,dA}{\\iint_D dA}$, giá trị $\\bar{x}$ bằng",
+  "q": "Tìm hoành độ trọng tâm $\\bar{x}$ của hình phẳng giới hạn bởi $y = x$, $y = 0$ và $x = 7$ (tam giác vuông). Biết $\\bar{x} = \\dfrac{\\iint_D x\\,dA}{\\iint_D dA}$, giá trị $\\bar{x}$ bằng",
   "options": [
-   "$\\dfrac{4}{3}$.",
-   "$1$.",
-   "$\\dfrac{2}{3}$.",
-   "$\\dfrac{3}{2}$."
+   "$\\dfrac{14}{3}$.",
+   "$\\dfrac{7}{2}$.",
+   "$\\dfrac{7}{3}$.",
+   "$\\dfrac{21}{4}$."
   ],
   "answer": 0,
-  "explain": "Diện tích $S = \\dfrac{1}{2} \\cdot \\u003ca\\u003e^2 = \\u003cs\\u003e$<br>$\\iint_D x\\,dA = \\displaystyle\\int_0^{\\u003ca\\u003e} x \\cdot x\\,dx = \\left[\\dfrac{x^3}{3}\\right]_0^{\\u003ca\\u003e} = \\u003cm\\u003e$<br>$\\bar{x} = \\dfrac{\\u003cm\\u003e}{\\u003cs\\u003e} = \\u003cok\\u003e$",
+  "explain": "Diện tích $S = \\dfrac{1}{2} \\cdot 7^2 = \\dfrac{49}{2}$<br>$\\iint_D x\\,dA = \\displaystyle\\int_0^{7} x \\cdot x\\,dx = \\left[\\dfrac{x^3}{3}\\right]_0^{7} = \\dfrac{343}{3}$<br>$\\bar{x} = \\dfrac{\\dfrac{343}{3}}{\\dfrac{49}{2}} = \\dfrac{14}{3}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-074"
  },
  {
-  "q": "Tính thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y = \\sqrt{x}$, $x = \\u003ca2\\u003e$ và trục $Ox$ xung quanh trục $Ox$.",
+  "q": "Tính thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y = \\sqrt{x}$, $x = 16$ và trục $Ox$ xung quanh trục $Ox$.",
   "options": [
-   "$\\dfrac{\\pi}{2}$.",
-   "$\\dfrac{\\pi}{4}$.",
-   "$\\pi$.",
-   "$1 + \\dfrac{\\pi}{2}$."
+   "$128 \\pi$.",
+   "$64 \\pi$.",
+   "$256 \\pi$.",
+   "$16 \\pi$."
   ],
   "answer": 0,
-  "explain": "$V = \\pi\\displaystyle\\int_0^{\\u003ca2\\u003e} y^2\\,dx = \\pi\\int_0^{\\u003ca2\\u003e} x\\,dx = \\pi\\left[\\dfrac{x^2}{2}\\right]_0^{\\u003ca2\\u003e} = \\u003cok\\u003e$<br>Kết quả: $\\dfrac{\\pi}{2}$",
+  "explain": "$V = \\pi\\displaystyle\\int_0^{16} y^2\\,dx = \\pi\\int_0^{16} x\\,dx = \\pi\\left[\\dfrac{x^2}{2}\\right]_0^{16} = 128 \\pi$<br>Kết quả: $128 \\pi$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-075"
@@ -6627,21 +6619,21 @@ window.PRACTICE_BANK = [
   "id": "dh-077"
  },
  {
-  "q": "Tính độ dài cung của đường cong $y = \\dfrac{x^2}{2}$ từ $x = 0$ đến $x = \\u003cb\\u003e$. Biết $\\int\\sqrt{1+x^2}\\,dx = \\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2} + C$.",
+  "q": "Tính độ dài cung của đường cong $y = \\dfrac{x^2}{2}$ từ $x = 0$ đến $x = 6$. Biết $\\int\\sqrt{1+x^2}\\,dx = \\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2} + C$.",
   "options": [
-   "$\\dfrac{\\operatorname{asinh}{\\left(4 \\right)}}{2} + 2 \\sqrt{17}$.",
-   "$\\dfrac{\\operatorname{asinh}{\\left(4 \\right)}}{4} + \\sqrt{17}$.",
-   "$\\operatorname{asinh}{\\left(4 \\right)} + 4 \\sqrt{17}$.",
-   "$1 + \\dfrac{\\operatorname{asinh}{\\left(4 \\right)}}{2} + 2 \\sqrt{17}$."
+   "$\\dfrac{\\operatorname{asinh}{\\left(6 \\right)}}{2} + 3 \\sqrt{37}$.",
+   "$\\dfrac{\\operatorname{asinh}{\\left(6 \\right)}}{4} + \\dfrac{3 \\sqrt{37}}{2}$.",
+   "$\\operatorname{asinh}{\\left(6 \\right)} + 6 \\sqrt{37}$.",
+   "$1 + \\dfrac{\\operatorname{asinh}{\\left(6 \\right)}}{2} + 3 \\sqrt{37}$."
   ],
   "answer": 0,
-  "explain": "$y' = x$, $L = \\displaystyle\\int_0^{\\u003cb\\u003e}\\sqrt{1 + x^2}\\,dx$<br>$L = \\left[\\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2}\\right]_0^{\\u003cb\\u003e} = \\u003cok\\u003e$",
+  "explain": "$y' = x$, $L = \\displaystyle\\int_0^{6}\\sqrt{1 + x^2}\\,dx$<br>$L = \\left[\\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2}\\right]_0^{6} = \\dfrac{\\operatorname{asinh}{\\left(6 \\right)}}{2} + 3 \\sqrt{37}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-078"
  },
  {
-  "q": "Một tấm phẳng hình chữ nhật chiều rộng \\u003caa\\u003e m, chiều cao \\u003cbb\\u003e m được nhúng thẳng đứng vào nước sao cho cạnh trên ở độ sâu \\u003cd\\u003e m. Lấy $g = 9{,}8\\,m/s^2$. Áp lực của nước lên tấm bằng",
+  "q": "Một tấm phẳng hình chữ nhật chiều rộng 4 m, chiều cao 1 m được nhúng thẳng đứng vào nước sao cho cạnh trên ở độ sâu 0 m. Lấy $g = 9{,}8\\,m/s^2$. Áp lực của nước lên tấm bằng",
   "options": [
    "19600 <i>N</i>.",
    "9800 <i>N</i>.",
@@ -6649,21 +6641,21 @@ window.PRACTICE_BANK = [
    "-19600 <i>N</i>."
   ],
   "answer": 0,
-  "explain": "Dải ngang ở độ sâu $(\\u003cd\\u003e + y)$ m, diện tích $\\u003caa\\u003e\\,dy$, áp lực $1000 \\cdot 9{,}8 \\cdot (\\u003cd\\u003e + y) \\cdot \\u003caa\\u003e\\,dy$<br>$F = \\displaystyle\\int_0^{\\u003cbb\\u003e} 9800 \\cdot \\u003caa\\u003e \\cdot (\\u003cd\\u003e + y)\\,dy = 9800\\u003caa\\u003e\\left[\\u003cd\\u003ey + \\dfrac{y^2}{2}\\right]_0^{\\u003cbb\\u003e} = \\u003cok\\u003e\\,N = \\u003ckN\\u003e\\,kN$",
+  "explain": "Dải ngang ở độ sâu $(0 + y)$ m, diện tích $4\\,dy$, áp lực $1000 \\cdot 9{,}8 \\cdot (0 + y) \\cdot 4\\,dy$<br>$F = \\displaystyle\\int_0^{1} 9800 \\cdot 4 \\cdot (0 + y)\\,dy = 98004\\left[0y + \\dfrac{y^2}{2}\\right]_0^{1} = 19600\\,N = \\dfrac{98}{5}\\,kN$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-079"
  },
  {
-  "q": "Tính diện tích hình phẳng giới hạn bởi parabol $y = x^2$ và đường thẳng $y = \\u003ca\\u003ex$.",
+  "q": "Tính diện tích hình phẳng giới hạn bởi parabol $y = x^2$ và đường thẳng $y = 3x$.",
   "options": [
-   "$\\dfrac{1}{6}$.",
-   "$\\dfrac{1}{12}$.",
-   "$\\dfrac{1}{3}$.",
-   "$\\dfrac{7}{6}$."
+   "$\\dfrac{9}{2}$.",
+   "$\\dfrac{9}{4}$.",
+   "$9$.",
+   "$\\dfrac{11}{2}$."
   ],
   "answer": 0,
-  "explain": "Giao điểm: $x^2 = \\u003ca\\u003ex \\Rightarrow x = 0$ và $x = \\u003ca\\u003e$<br>$S = \\displaystyle\\int_0^{\\u003ca\\u003e}(\\u003ca\\u003ex - x^2)\\,dx = \\left[\\dfrac{\\u003ca\\u003ex^2}{2} - \\dfrac{x^3}{3}\\right]_0^{\\u003ca\\u003e} = \\u003cok\\u003e$",
+  "explain": "Giao điểm: $x^2 = 3x \\Rightarrow x = 0$ và $x = 3$<br>$S = \\displaystyle\\int_0^{3}(3x - x^2)\\,dx = \\left[\\dfrac{3x^2}{2} - \\dfrac{x^3}{3}\\right]_0^{3} = \\dfrac{9}{2}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-080"
@@ -6684,29 +6676,29 @@ window.PRACTICE_BANK = [
   "id": "dh-081"
  },
  {
-  "q": "Tìm hoành độ trọng tâm $\\bar{x}$ của hình phẳng giới hạn bởi $y = x$, $y = 0$ và $x = \\u003ca\\u003e$ (tam giác vuông). Biết $\\bar{x} = \\dfrac{\\iint_D x\\,dA}{\\iint_D dA}$, giá trị $\\bar{x}$ bằng",
+  "q": "Tìm hoành độ trọng tâm $\\bar{x}$ của hình phẳng giới hạn bởi $y = x$, $y = 0$ và $x = 6$ (tam giác vuông). Biết $\\bar{x} = \\dfrac{\\iint_D x\\,dA}{\\iint_D dA}$, giá trị $\\bar{x}$ bằng",
   "options": [
-   "$\\dfrac{2}{3}$.",
-   "$\\dfrac{1}{2}$.",
-   "$\\dfrac{1}{3}$.",
-   "$\\dfrac{3}{4}$."
+   "$4$.",
+   "$3$.",
+   "$2$.",
+   "$\\dfrac{9}{2}$."
   ],
   "answer": 0,
-  "explain": "Diện tích $S = \\dfrac{1}{2} \\cdot \\u003ca\\u003e^2 = \\u003cs\\u003e$<br>$\\iint_D x\\,dA = \\displaystyle\\int_0^{\\u003ca\\u003e} x \\cdot x\\,dx = \\left[\\dfrac{x^3}{3}\\right]_0^{\\u003ca\\u003e} = \\u003cm\\u003e$<br>$\\bar{x} = \\dfrac{\\u003cm\\u003e}{\\u003cs\\u003e} = \\u003cok\\u003e$",
+  "explain": "Diện tích $S = \\dfrac{1}{2} \\cdot 6^2 = 18$<br>$\\iint_D x\\,dA = \\displaystyle\\int_0^{6} x \\cdot x\\,dx = \\left[\\dfrac{x^3}{3}\\right]_0^{6} = 72$<br>$\\bar{x} = \\dfrac{72}{18} = 4$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-082"
  },
  {
-  "q": "Tính thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y = \\sqrt{x}$, $x = \\u003ca2\\u003e$ và trục $Ox$ xung quanh trục $Ox$.",
+  "q": "Tính thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y = \\sqrt{x}$, $x = 25$ và trục $Ox$ xung quanh trục $Ox$.",
   "options": [
-   "$8 \\pi$.",
-   "$4 \\pi$.",
-   "$16 \\pi$.",
-   "$1 + 8 \\pi$."
+   "$\\dfrac{625 \\pi}{2}$.",
+   "$\\dfrac{625 \\pi}{4}$.",
+   "$625 \\pi$.",
+   "$25 \\pi$."
   ],
   "answer": 0,
-  "explain": "$V = \\pi\\displaystyle\\int_0^{\\u003ca2\\u003e} y^2\\,dx = \\pi\\int_0^{\\u003ca2\\u003e} x\\,dx = \\pi\\left[\\dfrac{x^2}{2}\\right]_0^{\\u003ca2\\u003e} = \\u003cok\\u003e$<br>Kết quả: $8 \\pi$",
+  "explain": "$V = \\pi\\displaystyle\\int_0^{25} y^2\\,dx = \\pi\\int_0^{25} x\\,dx = \\pi\\left[\\dfrac{x^2}{2}\\right]_0^{25} = \\dfrac{625 \\pi}{2}$<br>Kết quả: $\\dfrac{625 \\pi}{2}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-083"
@@ -6727,22 +6719,21 @@ window.PRACTICE_BANK = [
   "id": "dh-084"
  },
  {
-  "q": "Một lò xo tuân theo định luật Hooke $F = kx$ bị giãn 4 cm khi chịu lực kéo 30 N. Công cần thiết để kéo lò xo từ độ giãn 10 cm đến độ giãn 30 cm bằng",
+  "q": "Tính độ dài cung của đường cong $y = \\dfrac{x^2}{2}$ từ $x = 0$ đến $x = 9$. Biết $\\int\\sqrt{1+x^2}\\,dx = \\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2} + C$.",
   "options": [
-   "30 <i>J</i>.",
-   "15 <i>J</i>.",
-   "67,5 <i>J</i>.",
-   "6 <i>J</i>."
+   "$\\dfrac{\\operatorname{asinh}{\\left(9 \\right)}}{2} + \\dfrac{9 \\sqrt{82}}{2}$.",
+   "$\\dfrac{\\operatorname{asinh}{\\left(9 \\right)}}{4} + \\dfrac{9 \\sqrt{82}}{4}$.",
+   "$\\operatorname{asinh}{\\left(9 \\right)} + 9 \\sqrt{82}$.",
+   "$1 + \\dfrac{\\operatorname{asinh}{\\left(9 \\right)}}{2} + \\dfrac{9 \\sqrt{82}}{2}$."
   ],
   "answer": 0,
-  "explain": "$F = kx \\Rightarrow k = \\dfrac{30}{0{,}04} = 750\\ N/m$<br>$W = \\displaystyle\\int_{0{,}10}^{0{,}30} 750x\\,dx = 375\\left(0{,}30^2 - 0{,}10^2\\right) = 30\\ J$",
-  "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau.",
+  "explain": "$y' = x$, $L = \\displaystyle\\int_0^{9}\\sqrt{1 + x^2}\\,dx$<br>$L = \\left[\\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2}\\right]_0^{9} = \\dfrac{\\operatorname{asinh}{\\left(9 \\right)}}{2} + \\dfrac{9 \\sqrt{82}}{2}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-085"
  },
  {
-  "q": "Một tấm phẳng hình chữ nhật chiều rộng \\u003caa\\u003e m, chiều cao \\u003cbb\\u003e m được nhúng thẳng đứng vào nước sao cho cạnh trên ở độ sâu \\u003cd\\u003e m. Lấy $g = 9{,}8\\,m/s^2$. Áp lực của nước lên tấm bằng",
+  "q": "Một tấm phẳng hình chữ nhật chiều rộng 4 m, chiều cao 1 m được nhúng thẳng đứng vào nước sao cho cạnh trên ở độ sâu 1 m. Lấy $g = 9{,}8\\,m/s^2$. Áp lực của nước lên tấm bằng",
   "options": [
    "58800 <i>N</i>.",
    "29400 <i>N</i>.",
@@ -6750,21 +6741,21 @@ window.PRACTICE_BANK = [
    "78400 <i>N</i>."
   ],
   "answer": 0,
-  "explain": "Dải ngang ở độ sâu $(\\u003cd\\u003e + y)$ m, diện tích $\\u003caa\\u003e\\,dy$, áp lực $1000 \\cdot 9{,}8 \\cdot (\\u003cd\\u003e + y) \\cdot \\u003caa\\u003e\\,dy$<br>$F = \\displaystyle\\int_0^{\\u003cbb\\u003e} 9800 \\cdot \\u003caa\\u003e \\cdot (\\u003cd\\u003e + y)\\,dy = 9800\\u003caa\\u003e\\left[\\u003cd\\u003ey + \\dfrac{y^2}{2}\\right]_0^{\\u003cbb\\u003e} = \\u003cok\\u003e\\,N = \\u003ckN\\u003e\\,kN$",
+  "explain": "Dải ngang ở độ sâu $(1 + y)$ m, diện tích $4\\,dy$, áp lực $1000 \\cdot 9{,}8 \\cdot (1 + y) \\cdot 4\\,dy$<br>$F = \\displaystyle\\int_0^{1} 9800 \\cdot 4 \\cdot (1 + y)\\,dy = 98004\\left[1y + \\dfrac{y^2}{2}\\right]_0^{1} = 58800\\,N = \\dfrac{294}{5}\\,kN$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-086"
  },
  {
-  "q": "Tính diện tích hình phẳng giới hạn bởi parabol $y = x^2$ và đường thẳng $y = \\u003ca\\u003ex$.",
+  "q": "Tính diện tích hình phẳng giới hạn bởi parabol $y = x^2$ và đường thẳng $y = 9x$.",
   "options": [
-   "$\\dfrac{9}{2}$.",
-   "$\\dfrac{9}{4}$.",
-   "$9$.",
-   "$\\dfrac{11}{2}$."
+   "$\\dfrac{243}{2}$.",
+   "$\\dfrac{243}{4}$.",
+   "$243$.",
+   "$\\dfrac{245}{2}$."
   ],
   "answer": 0,
-  "explain": "Giao điểm: $x^2 = \\u003ca\\u003ex \\Rightarrow x = 0$ và $x = \\u003ca\\u003e$<br>$S = \\displaystyle\\int_0^{\\u003ca\\u003e}(\\u003ca\\u003ex - x^2)\\,dx = \\left[\\dfrac{\\u003ca\\u003ex^2}{2} - \\dfrac{x^3}{3}\\right]_0^{\\u003ca\\u003e} = \\u003cok\\u003e$",
+  "explain": "Giao điểm: $x^2 = 9x \\Rightarrow x = 0$ và $x = 9$<br>$S = \\displaystyle\\int_0^{9}(9x - x^2)\\,dx = \\left[\\dfrac{9x^2}{2} - \\dfrac{x^3}{3}\\right]_0^{9} = \\dfrac{243}{2}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-087"
@@ -6785,29 +6776,29 @@ window.PRACTICE_BANK = [
   "id": "dh-088"
  },
  {
-  "q": "Tìm hoành độ trọng tâm $\\bar{x}$ của hình phẳng giới hạn bởi $y = x$, $y = 0$ và $x = \\u003ca\\u003e$ (tam giác vuông). Biết $\\bar{x} = \\dfrac{\\iint_D x\\,dA}{\\iint_D dA}$, giá trị $\\bar{x}$ bằng",
+  "q": "Tìm hoành độ trọng tâm $\\bar{x}$ của hình phẳng giới hạn bởi $y = x$, $y = 0$ và $x = 9$ (tam giác vuông). Biết $\\bar{x} = \\dfrac{\\iint_D x\\,dA}{\\iint_D dA}$, giá trị $\\bar{x}$ bằng",
   "options": [
-   "$2$.",
-   "$\\dfrac{3}{2}$.",
-   "$1$.",
-   "$\\dfrac{9}{4}$."
+   "$6$.",
+   "$\\dfrac{9}{2}$.",
+   "$3$.",
+   "$\\dfrac{27}{4}$."
   ],
   "answer": 0,
-  "explain": "Diện tích $S = \\dfrac{1}{2} \\cdot \\u003ca\\u003e^2 = \\u003cs\\u003e$<br>$\\iint_D x\\,dA = \\displaystyle\\int_0^{\\u003ca\\u003e} x \\cdot x\\,dx = \\left[\\dfrac{x^3}{3}\\right]_0^{\\u003ca\\u003e} = \\u003cm\\u003e$<br>$\\bar{x} = \\dfrac{\\u003cm\\u003e}{\\u003cs\\u003e} = \\u003cok\\u003e$",
+  "explain": "Diện tích $S = \\dfrac{1}{2} \\cdot 9^2 = \\dfrac{81}{2}$<br>$\\iint_D x\\,dA = \\displaystyle\\int_0^{9} x \\cdot x\\,dx = \\left[\\dfrac{x^3}{3}\\right]_0^{9} = 243$<br>$\\bar{x} = \\dfrac{243}{\\dfrac{81}{2}} = 6$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-089"
  },
  {
-  "q": "Tính thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y = \\sqrt{x}$, $x = \\u003ca2\\u003e$ và trục $Ox$ xung quanh trục $Ox$.",
+  "q": "Tính thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y = \\sqrt{x}$, $x = 100$ và trục $Ox$ xung quanh trục $Ox$.",
   "options": [
-   "$\\dfrac{81 \\pi}{2}$.",
-   "$\\dfrac{81 \\pi}{4}$.",
-   "$81 \\pi$.",
-   "$9 \\pi$."
+   "$5000 \\pi$.",
+   "$2500 \\pi$.",
+   "$10000 \\pi$.",
+   "$100 \\pi$."
   ],
   "answer": 0,
-  "explain": "$V = \\pi\\displaystyle\\int_0^{\\u003ca2\\u003e} y^2\\,dx = \\pi\\int_0^{\\u003ca2\\u003e} x\\,dx = \\pi\\left[\\dfrac{x^2}{2}\\right]_0^{\\u003ca2\\u003e} = \\u003cok\\u003e$<br>Kết quả: $\\dfrac{81 \\pi}{2}$",
+  "explain": "$V = \\pi\\displaystyle\\int_0^{100} y^2\\,dx = \\pi\\int_0^{100} x\\,dx = \\pi\\left[\\dfrac{x^2}{2}\\right]_0^{100} = 5000 \\pi$<br>Kết quả: $5000 \\pi$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-090"
@@ -6828,22 +6819,21 @@ window.PRACTICE_BANK = [
   "id": "dh-091"
  },
  {
-  "q": "Một bể chứa nước hình hộp chữ nhật có chiều dài, chiều rộng và chiều cao lần lượt là 2 mét, 1,5 mét và 3 mét được chứa đầy nước. Biết khối lượng riêng của nước là $1000\\,kg/m^3$ và gia tốc trọng trường $g = 9{,}8\\,m/s^2$. Công cần thiết để bơm hết nước ra khỏi bể qua mặt trên của bể bằng",
+  "q": "Tính độ dài cung của đường cong $y = \\dfrac{x^2}{2}$ từ $x = 0$ đến $x = 5$. Biết $\\int\\sqrt{1+x^2}\\,dx = \\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2} + C$.",
   "options": [
-   "132,3 <i>kJ</i>.",
-   "33,1 <i>kJ</i>.",
-   "66,2 <i>kJ</i>.",
-   "264,6 <i>kJ</i>."
+   "$\\dfrac{\\operatorname{asinh}{\\left(5 \\right)}}{2} + \\dfrac{5 \\sqrt{26}}{2}$.",
+   "$\\dfrac{\\operatorname{asinh}{\\left(5 \\right)}}{4} + \\dfrac{5 \\sqrt{26}}{4}$.",
+   "$\\operatorname{asinh}{\\left(5 \\right)} + 5 \\sqrt{26}$.",
+   "$1 + \\dfrac{\\operatorname{asinh}{\\left(5 \\right)}}{2} + \\dfrac{5 \\sqrt{26}}{2}$."
   ],
   "answer": 0,
-  "explain": "Lớp nước dày $dy$ ở độ sâu $y$ có khối lượng $1000\\cdot2\\cdot1{,}5\\,dy$, phải nâng lên $y$ mét<br>$W = \\displaystyle\\int_0^{3} 9800\\cdot2\\cdot1{,}5\\cdot y\\,dy = 29400\\cdot\\dfrac{3^2}{2}$<br>$= 132300\\ J = 132{,}3\\ kJ$",
-  "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau.",
+  "explain": "$y' = x$, $L = \\displaystyle\\int_0^{5}\\sqrt{1 + x^2}\\,dx$<br>$L = \\left[\\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2}\\right]_0^{5} = \\dfrac{\\operatorname{asinh}{\\left(5 \\right)}}{2} + \\dfrac{5 \\sqrt{26}}{2}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-092"
  },
  {
-  "q": "Một tấm phẳng hình chữ nhật chiều rộng \\u003caa\\u003e m, chiều cao \\u003cbb\\u003e m được nhúng thẳng đứng vào nước sao cho cạnh trên ở độ sâu \\u003cd\\u003e m. Lấy $g = 9{,}8\\,m/s^2$. Áp lực của nước lên tấm bằng",
+  "q": "Một tấm phẳng hình chữ nhật chiều rộng 3 m, chiều cao 1 m được nhúng thẳng đứng vào nước sao cho cạnh trên ở độ sâu 2 m. Lấy $g = 9{,}8\\,m/s^2$. Áp lực của nước lên tấm bằng",
   "options": [
    "73500 <i>N</i>.",
    "36750 <i>N</i>.",
@@ -6851,22 +6841,21 @@ window.PRACTICE_BANK = [
    "88200 <i>N</i>."
   ],
   "answer": 0,
-  "explain": "Dải ngang ở độ sâu $(\\u003cd\\u003e + y)$ m, diện tích $\\u003caa\\u003e\\,dy$, áp lực $1000 \\cdot 9{,}8 \\cdot (\\u003cd\\u003e + y) \\cdot \\u003caa\\u003e\\,dy$<br>$F = \\displaystyle\\int_0^{\\u003cbb\\u003e} 9800 \\cdot \\u003caa\\u003e \\cdot (\\u003cd\\u003e + y)\\,dy = 9800\\u003caa\\u003e\\left[\\u003cd\\u003ey + \\dfrac{y^2}{2}\\right]_0^{\\u003cbb\\u003e} = \\u003cok\\u003e\\,N = \\u003ckN\\u003e\\,kN$",
+  "explain": "Dải ngang ở độ sâu $(2 + y)$ m, diện tích $3\\,dy$, áp lực $1000 \\cdot 9{,}8 \\cdot (2 + y) \\cdot 3\\,dy$<br>$F = \\displaystyle\\int_0^{1} 9800 \\cdot 3 \\cdot (2 + y)\\,dy = 98003\\left[2y + \\dfrac{y^2}{2}\\right]_0^{1} = 73500\\,N = \\dfrac{147}{2}\\,kN$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-093"
  },
  {
-  "q": "Một bể chứa có dạng hình nón tròn xoay với đỉnh ở phía dưới, bán kính miệng bể 3 mét, chiều cao 3 mét, chứa đầy nước. Biết khối lượng riêng của nước là $1000\\,kg/m^3$ và gia tốc trọng trường $g = 9{,}8\\,m/s^2$. Công cần thiết để bơm hết nước ra khỏi bể qua miệng bể (làm tròn đến hàng phần chục) bằng",
+  "q": "Tính diện tích hình phẳng giới hạn bởi parabol $y = x^2$ và đường thẳng $y = 2x$.",
   "options": [
-   "207,8 <i>kJ</i>.",
-   "623,4 <i>kJ</i>.",
-   "415,6 <i>kJ</i>.",
-   "831,3 <i>kJ</i>."
+   "$\\dfrac{4}{3}$.",
+   "$\\dfrac{2}{3}$.",
+   "$\\dfrac{8}{3}$.",
+   "$\\dfrac{7}{3}$."
   ],
   "answer": 0,
-  "explain": "Lớp nước ở độ cao $y$ (tính từ đỉnh) có bán kính $\\dfrac{3y}{3}$, phải nâng lên $3 - y$ mét<br>$W = \\displaystyle\\int_0^{3} 9800\\pi\\left(\\dfrac{3y}{3}\\right)^2(3 - y)\\,dy = 9800\\pi\\cdot\\dfrac{9}{9}\\left[\\dfrac{3y^3}{3} - \\dfrac{y^4}{4}\\right]_0^{3}$<br>$= 9800\\pi\\cdot\\dfrac{9\\cdot9}{12} \\approx 207{,}8\\ kJ$",
-  "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau.",
+  "explain": "Giao điểm: $x^2 = 2x \\Rightarrow x = 0$ và $x = 2$<br>$S = \\displaystyle\\int_0^{2}(2x - x^2)\\,dx = \\left[\\dfrac{2x^2}{2} - \\dfrac{x^3}{3}\\right]_0^{2} = \\dfrac{4}{3}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-094"
@@ -6887,31 +6876,29 @@ window.PRACTICE_BANK = [
   "id": "dh-095"
  },
  {
-  "q": "Một sợi cáp dài 30 mét, nặng 2 kg mỗi mét, được treo thẳng đứng từ nóc một tòa nhà cao, đầu dưới có gắn một vật nặng 50 kg. Lấy $g = 9{,}8\\,m/s^2$. Công cần thiết để kéo toàn bộ sợi cáp cùng vật nặng lên nóc tòa nhà (làm tròn đến hàng phần chục) bằng",
+  "q": "Tìm hoành độ trọng tâm $\\bar{x}$ của hình phẳng giới hạn bởi $y = x$, $y = 0$ và $x = 3$ (tam giác vuông). Biết $\\bar{x} = \\dfrac{\\iint_D x\\,dA}{\\iint_D dA}$, giá trị $\\bar{x}$ bằng",
   "options": [
-   "23,5 <i>kJ</i>.",
-   "32,3 <i>kJ</i>.",
-   "8,8 <i>kJ</i>.",
-   "11,8 <i>kJ</i>."
+   "$2$.",
+   "$\\dfrac{3}{2}$.",
+   "$1$.",
+   "$\\dfrac{9}{4}$."
   ],
   "answer": 0,
-  "explain": "Đoạn cáp dài $dx$ ở độ sâu $x$ nặng $2\\,dx$ kg, phải nâng lên $x$ mét<br>$W = \\displaystyle\\int_0^{30} 2\\cdot9{,}8\\cdot x\\,dx + 50\\cdot9{,}8\\cdot30 = 19{,}6\\cdot\\dfrac{30^2}{2} + 14700$<br>$= 23520\\ J = 23{,}5\\ kJ$",
-  "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau.",
+  "explain": "Diện tích $S = \\dfrac{1}{2} \\cdot 3^2 = \\dfrac{9}{2}$<br>$\\iint_D x\\,dA = \\displaystyle\\int_0^{3} x \\cdot x\\,dx = \\left[\\dfrac{x^3}{3}\\right]_0^{3} = 9$<br>$\\bar{x} = \\dfrac{9}{\\dfrac{9}{2}} = 2$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-096"
  },
  {
-  "q": "Một bể chứa nước hình hộp chữ nhật có chiều dài, chiều rộng và chiều cao lần lượt là 3 mét, 3 mét và 2 mét được chứa đầy nước. Biết khối lượng riêng của nước là $1000\\,kg/m^3$ và gia tốc trọng trường $g = 9{,}8\\,m/s^2$. Công cần thiết để bơm hết nước ra khỏi bể qua mặt trên của bể bằng",
+  "q": "Tính thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y = \\sqrt{x}$, $x = 36$ và trục $Ox$ xung quanh trục $Ox$.",
   "options": [
-   "176,4 <i>kJ</i>.",
-   "44,1 <i>kJ</i>.",
-   "88,2 <i>kJ</i>.",
-   "352,8 <i>kJ</i>."
+   "$648 \\pi$.",
+   "$324 \\pi$.",
+   "$1296 \\pi$.",
+   "$36 \\pi$."
   ],
   "answer": 0,
-  "explain": "Lớp nước dày $dy$ ở độ sâu $y$ có khối lượng $1000\\cdot3\\cdot3\\,dy$, phải nâng lên $y$ mét<br>$W = \\displaystyle\\int_0^{2} 9800\\cdot3\\cdot3\\cdot y\\,dy = 88200\\cdot\\dfrac{2^2}{2}$<br>$= 176400\\ J = 176{,}4\\ kJ$",
-  "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau.",
+  "explain": "$V = \\pi\\displaystyle\\int_0^{36} y^2\\,dx = \\pi\\int_0^{36} x\\,dx = \\pi\\left[\\dfrac{x^2}{2}\\right]_0^{36} = 648 \\pi$<br>Kết quả: $648 \\pi$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-097"
@@ -6932,22 +6919,21 @@ window.PRACTICE_BANK = [
   "id": "dh-098"
  },
  {
-  "q": "Một bể chứa có dạng hình nón tròn xoay với đỉnh ở phía dưới, bán kính miệng bể 1 mét, chiều cao 6 mét, chứa đầy nước. Biết khối lượng riêng của nước là $1000\\,kg/m^3$ và gia tốc trọng trường $g = 9{,}8\\,m/s^2$. Công cần thiết để bơm hết nước ra khỏi bể qua miệng bể (làm tròn đến hàng phần chục) bằng",
+  "q": "Tính độ dài cung của đường cong $y = \\dfrac{x^2}{2}$ từ $x = 0$ đến $x = 4$. Biết $\\int\\sqrt{1+x^2}\\,dx = \\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2} + C$.",
   "options": [
-   "92,4 <i>kJ</i>.",
-   "277,1 <i>kJ</i>.",
-   "184,7 <i>kJ</i>.",
-   "369,5 <i>kJ</i>."
+   "$\\dfrac{\\operatorname{asinh}{\\left(4 \\right)}}{2} + 2 \\sqrt{17}$.",
+   "$\\dfrac{\\operatorname{asinh}{\\left(4 \\right)}}{4} + \\sqrt{17}$.",
+   "$\\operatorname{asinh}{\\left(4 \\right)} + 4 \\sqrt{17}$.",
+   "$1 + \\dfrac{\\operatorname{asinh}{\\left(4 \\right)}}{2} + 2 \\sqrt{17}$."
   ],
   "answer": 0,
-  "explain": "Lớp nước ở độ cao $y$ (tính từ đỉnh) có bán kính $\\dfrac{1y}{6}$, phải nâng lên $6 - y$ mét<br>$W = \\displaystyle\\int_0^{6} 9800\\pi\\left(\\dfrac{1y}{6}\\right)^2(6 - y)\\,dy = 9800\\pi\\cdot\\dfrac{1}{36}\\left[\\dfrac{6y^3}{3} - \\dfrac{y^4}{4}\\right]_0^{6}$<br>$= 9800\\pi\\cdot\\dfrac{1\\cdot36}{12} \\approx 92{,}4\\ kJ$",
-  "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau.",
+  "explain": "$y' = x$, $L = \\displaystyle\\int_0^{4}\\sqrt{1 + x^2}\\,dx$<br>$L = \\left[\\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2}\\right]_0^{4} = \\dfrac{\\operatorname{asinh}{\\left(4 \\right)}}{2} + 2 \\sqrt{17}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-099"
  },
  {
-  "q": "Một tấm phẳng hình chữ nhật chiều rộng \\u003caa\\u003e m, chiều cao \\u003cbb\\u003e m được nhúng thẳng đứng vào nước sao cho cạnh trên ở độ sâu \\u003cd\\u003e m. Lấy $g = 9{,}8\\,m/s^2$. Áp lực của nước lên tấm bằng",
+  "q": "Một tấm phẳng hình chữ nhật chiều rộng 2 m, chiều cao 1 m được nhúng thẳng đứng vào nước sao cho cạnh trên ở độ sâu 1 m. Lấy $g = 9{,}8\\,m/s^2$. Áp lực của nước lên tấm bằng",
   "options": [
    "29400 <i>N</i>.",
    "14700 <i>N</i>.",
@@ -6955,22 +6941,21 @@ window.PRACTICE_BANK = [
    "39200 <i>N</i>."
   ],
   "answer": 0,
-  "explain": "Dải ngang ở độ sâu $(\\u003cd\\u003e + y)$ m, diện tích $\\u003caa\\u003e\\,dy$, áp lực $1000 \\cdot 9{,}8 \\cdot (\\u003cd\\u003e + y) \\cdot \\u003caa\\u003e\\,dy$<br>$F = \\displaystyle\\int_0^{\\u003cbb\\u003e} 9800 \\cdot \\u003caa\\u003e \\cdot (\\u003cd\\u003e + y)\\,dy = 9800\\u003caa\\u003e\\left[\\u003cd\\u003ey + \\dfrac{y^2}{2}\\right]_0^{\\u003cbb\\u003e} = \\u003cok\\u003e\\,N = \\u003ckN\\u003e\\,kN$",
+  "explain": "Dải ngang ở độ sâu $(1 + y)$ m, diện tích $2\\,dy$, áp lực $1000 \\cdot 9{,}8 \\cdot (1 + y) \\cdot 2\\,dy$<br>$F = \\displaystyle\\int_0^{1} 9800 \\cdot 2 \\cdot (1 + y)\\,dy = 98002\\left[1y + \\dfrac{y^2}{2}\\right]_0^{1} = 29400\\,N = \\dfrac{147}{5}\\,kN$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-100"
  },
  {
-  "q": "Một sợi cáp dài 20 mét, nặng 3 kg mỗi mét, được treo thẳng đứng từ nóc một tòa nhà cao, đầu dưới có gắn một vật nặng 50 kg. Lấy $g = 9{,}8\\,m/s^2$. Công cần thiết để kéo toàn bộ sợi cáp cùng vật nặng lên nóc tòa nhà (làm tròn đến hàng phần chục) bằng",
+  "q": "Tính diện tích hình phẳng giới hạn bởi parabol $y = x^2$ và đường thẳng $y = 1x$.",
   "options": [
-   "15,7 <i>kJ</i>.",
-   "21,6 <i>kJ</i>.",
-   "5,9 <i>kJ</i>.",
-   "7,8 <i>kJ</i>."
+   "$\\dfrac{1}{6}$.",
+   "$\\dfrac{1}{12}$.",
+   "$\\dfrac{1}{3}$.",
+   "$\\dfrac{7}{6}$."
   ],
   "answer": 0,
-  "explain": "Đoạn cáp dài $dx$ ở độ sâu $x$ nặng $3\\,dx$ kg, phải nâng lên $x$ mét<br>$W = \\displaystyle\\int_0^{20} 3\\cdot9{,}8\\cdot x\\,dx + 50\\cdot9{,}8\\cdot20 = 29{,}4\\cdot\\dfrac{20^2}{2} + 9800$<br>$= 15680\\ J = 15{,}7\\ kJ$",
-  "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau.",
+  "explain": "Giao điểm: $x^2 = 1x \\Rightarrow x = 0$ và $x = 1$<br>$S = \\displaystyle\\int_0^{1}(1x - x^2)\\,dx = \\left[\\dfrac{1x^2}{2} - \\dfrac{x^3}{3}\\right]_0^{1} = \\dfrac{1}{6}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-101"
@@ -6991,31 +6976,29 @@ window.PRACTICE_BANK = [
   "id": "dh-102"
  },
  {
-  "q": "Một bể chứa hình trụ đứng có bán kính đáy 1 mét, chiều cao 2 mét, chứa đầy nước. Biết khối lượng riêng của nước là $1000\\,kg/m^3$ và gia tốc trọng trường $g = 9{,}8\\,m/s^2$. Công cần thiết để bơm hết nước trong bể lên một bồn chứa đặt cao hơn miệng bể 2 mét (làm tròn đến hàng phần chục) bằng",
+  "q": "Tìm hoành độ trọng tâm $\\bar{x}$ của hình phẳng giới hạn bởi $y = x$, $y = 0$ và $x = 2$ (tam giác vuông). Biết $\\bar{x} = \\dfrac{\\iint_D x\\,dA}{\\iint_D dA}$, giá trị $\\bar{x}$ bằng",
   "options": [
-   "184,7 <i>kJ</i>.",
-   "61,6 <i>kJ</i>.",
-   "246,3 <i>kJ</i>.",
-   "153,9 <i>kJ</i>."
+   "$\\dfrac{4}{3}$.",
+   "$1$.",
+   "$\\dfrac{2}{3}$.",
+   "$\\dfrac{3}{2}$."
   ],
   "answer": 0,
-  "explain": "Lớp nước dày $dh$ ở độ sâu $h$ có khối lượng $1000\\cdot\\pi\\cdot1\\,dh$, phải nâng lên $h + 2$ mét<br>$W = \\displaystyle\\int_0^{2} 9800\\pi\\cdot1\\,(h + 2)\\,dh = 9800\\pi\\left[\\dfrac{h^2}{2} + 2h\\right]_0^{2}$<br>$= 9800\\pi\\cdot6 \\approx 184726\\ J = 184{,}7\\ kJ$",
-  "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau.",
+  "explain": "Diện tích $S = \\dfrac{1}{2} \\cdot 2^2 = 2$<br>$\\iint_D x\\,dA = \\displaystyle\\int_0^{2} x \\cdot x\\,dx = \\left[\\dfrac{x^3}{3}\\right]_0^{2} = \\dfrac{8}{3}$<br>$\\bar{x} = \\dfrac{\\dfrac{8}{3}}{2} = \\dfrac{4}{3}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-103"
  },
  {
-  "q": "Một bể chứa có dạng hình nón tròn xoay với đỉnh ở phía dưới, bán kính miệng bể 2 mét, chiều cao 4 mét, chứa đầy nước. Biết khối lượng riêng của nước là $1000\\,kg/m^3$ và gia tốc trọng trường $g = 9{,}8\\,m/s^2$. Công cần thiết để bơm hết nước ra khỏi bể qua miệng bể (làm tròn đến hàng phần chục) bằng",
+  "q": "Tính thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y = \\sqrt{x}$, $x = 49$ và trục $Ox$ xung quanh trục $Ox$.",
   "options": [
-   "164,2 <i>kJ</i>.",
-   "492,6 <i>kJ</i>.",
-   "328,4 <i>kJ</i>.",
-   "656,8 <i>kJ</i>."
+   "$\\dfrac{2401 \\pi}{2}$.",
+   "$\\dfrac{2401 \\pi}{4}$.",
+   "$2401 \\pi$.",
+   "$49 \\pi$."
   ],
   "answer": 0,
-  "explain": "Lớp nước ở độ cao $y$ (tính từ đỉnh) có bán kính $\\dfrac{2y}{4}$, phải nâng lên $4 - y$ mét<br>$W = \\displaystyle\\int_0^{4} 9800\\pi\\left(\\dfrac{2y}{4}\\right)^2(4 - y)\\,dy = 9800\\pi\\cdot\\dfrac{4}{16}\\left[\\dfrac{4y^3}{3} - \\dfrac{y^4}{4}\\right]_0^{4}$<br>$= 9800\\pi\\cdot\\dfrac{4\\cdot16}{12} \\approx 164{,}2\\ kJ$",
-  "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau.",
+  "explain": "$V = \\pi\\displaystyle\\int_0^{49} y^2\\,dx = \\pi\\int_0^{49} x\\,dx = \\pi\\left[\\dfrac{x^2}{2}\\right]_0^{49} = \\dfrac{2401 \\pi}{2}$<br>Kết quả: $\\dfrac{2401 \\pi}{2}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-104"
@@ -7036,22 +7019,21 @@ window.PRACTICE_BANK = [
   "id": "dh-105"
  },
  {
-  "q": "Một sợi cáp dài 20 mét, nặng 2 kg mỗi mét, được treo thẳng đứng từ nóc một tòa nhà cao, đầu dưới có gắn một vật nặng 10 kg. Lấy $g = 9{,}8\\,m/s^2$. Công cần thiết để kéo toàn bộ sợi cáp cùng vật nặng lên nóc tòa nhà (làm tròn đến hàng phần chục) bằng",
+  "q": "Tính độ dài cung của đường cong $y = \\dfrac{x^2}{2}$ từ $x = 0$ đến $x = 8$. Biết $\\int\\sqrt{1+x^2}\\,dx = \\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2} + C$.",
   "options": [
-   "5,9 <i>kJ</i>.",
-   "9,8 <i>kJ</i>.",
-   "3,9 <i>kJ</i>.",
-   "2,9 <i>kJ</i>."
+   "$\\dfrac{\\operatorname{asinh}{\\left(8 \\right)}}{2} + 4 \\sqrt{65}$.",
+   "$\\dfrac{\\operatorname{asinh}{\\left(8 \\right)}}{4} + 2 \\sqrt{65}$.",
+   "$\\operatorname{asinh}{\\left(8 \\right)} + 8 \\sqrt{65}$.",
+   "$1 + \\dfrac{\\operatorname{asinh}{\\left(8 \\right)}}{2} + 4 \\sqrt{65}$."
   ],
   "answer": 0,
-  "explain": "Đoạn cáp dài $dx$ ở độ sâu $x$ nặng $2\\,dx$ kg, phải nâng lên $x$ mét<br>$W = \\displaystyle\\int_0^{20} 2\\cdot9{,}8\\cdot x\\,dx + 10\\cdot9{,}8\\cdot20 = 19{,}6\\cdot\\dfrac{20^2}{2} + 1960$<br>$= 5880\\ J = 5{,}9\\ kJ$",
-  "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau.",
+  "explain": "$y' = x$, $L = \\displaystyle\\int_0^{8}\\sqrt{1 + x^2}\\,dx$<br>$L = \\left[\\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2}\\right]_0^{8} = \\dfrac{\\operatorname{asinh}{\\left(8 \\right)}}{2} + 4 \\sqrt{65}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-106"
  },
  {
-  "q": "Một tấm phẳng hình chữ nhật chiều rộng \\u003caa\\u003e m, chiều cao \\u003cbb\\u003e m được nhúng thẳng đứng vào nước sao cho cạnh trên ở độ sâu \\u003cd\\u003e m. Lấy $g = 9{,}8\\,m/s^2$. Áp lực của nước lên tấm bằng",
+  "q": "Một tấm phẳng hình chữ nhật chiều rộng 2 m, chiều cao 2 m được nhúng thẳng đứng vào nước sao cho cạnh trên ở độ sâu 1 m. Lấy $g = 9{,}8\\,m/s^2$. Áp lực của nước lên tấm bằng",
   "options": [
    "78400 <i>N</i>.",
    "39200 <i>N</i>.",
@@ -7059,22 +7041,21 @@ window.PRACTICE_BANK = [
    "117600 <i>N</i>."
   ],
   "answer": 0,
-  "explain": "Dải ngang ở độ sâu $(\\u003cd\\u003e + y)$ m, diện tích $\\u003caa\\u003e\\,dy$, áp lực $1000 \\cdot 9{,}8 \\cdot (\\u003cd\\u003e + y) \\cdot \\u003caa\\u003e\\,dy$<br>$F = \\displaystyle\\int_0^{\\u003cbb\\u003e} 9800 \\cdot \\u003caa\\u003e \\cdot (\\u003cd\\u003e + y)\\,dy = 9800\\u003caa\\u003e\\left[\\u003cd\\u003ey + \\dfrac{y^2}{2}\\right]_0^{\\u003cbb\\u003e} = \\u003cok\\u003e\\,N = \\u003ckN\\u003e\\,kN$",
+  "explain": "Dải ngang ở độ sâu $(1 + y)$ m, diện tích $2\\,dy$, áp lực $1000 \\cdot 9{,}8 \\cdot (1 + y) \\cdot 2\\,dy$<br>$F = \\displaystyle\\int_0^{2} 9800 \\cdot 2 \\cdot (1 + y)\\,dy = 98002\\left[1y + \\dfrac{y^2}{2}\\right]_0^{2} = 78400\\,N = \\dfrac{392}{5}\\,kN$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-107"
  },
  {
-  "q": "Một bể chứa hình trụ đứng có bán kính đáy 1 mét, chiều cao 4 mét, chứa đầy nước. Biết khối lượng riêng của nước là $1000\\,kg/m^3$ và gia tốc trọng trường $g = 9{,}8\\,m/s^2$. Công cần thiết để bơm hết nước trong bể lên một bồn chứa đặt cao hơn miệng bể 2 mét (làm tròn đến hàng phần chục) bằng",
+  "q": "Tính diện tích hình phẳng giới hạn bởi parabol $y = x^2$ và đường thẳng $y = 4x$.",
   "options": [
-   "492,6 <i>kJ</i>.",
-   "246,3 <i>kJ</i>.",
-   "738,9 <i>kJ</i>.",
-   "400,2 <i>kJ</i>."
+   "$\\dfrac{32}{3}$.",
+   "$\\dfrac{16}{3}$.",
+   "$\\dfrac{64}{3}$.",
+   "$\\dfrac{35}{3}$."
   ],
   "answer": 0,
-  "explain": "Lớp nước dày $dh$ ở độ sâu $h$ có khối lượng $1000\\cdot\\pi\\cdot1\\,dh$, phải nâng lên $h + 2$ mét<br>$W = \\displaystyle\\int_0^{4} 9800\\pi\\cdot1\\,(h + 2)\\,dh = 9800\\pi\\left[\\dfrac{h^2}{2} + 2h\\right]_0^{4}$<br>$= 9800\\pi\\cdot16 \\approx 492602\\ J = 492{,}6\\ kJ$",
-  "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau.",
+  "explain": "Giao điểm: $x^2 = 4x \\Rightarrow x = 0$ và $x = 4$<br>$S = \\displaystyle\\int_0^{4}(4x - x^2)\\,dx = \\left[\\dfrac{4x^2}{2} - \\dfrac{x^3}{3}\\right]_0^{4} = \\dfrac{32}{3}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-108"
@@ -7095,31 +7076,29 @@ window.PRACTICE_BANK = [
   "id": "dh-109"
  },
  {
-  "q": "Một lò xo tuân theo định luật Hooke $F = kx$ bị giãn 10 cm khi chịu lực kéo 20 N. Công cần thiết để kéo lò xo từ độ giãn 0 cm đến độ giãn 20 cm bằng",
+  "q": "Tìm hoành độ trọng tâm $\\bar{x}$ của hình phẳng giới hạn bởi $y = x$, $y = 0$ và $x = 8$ (tam giác vuông). Biết $\\bar{x} = \\dfrac{\\iint_D x\\,dA}{\\iint_D dA}$, giá trị $\\bar{x}$ bằng",
   "options": [
-   "4 <i>J</i>.",
-   "8 <i>J</i>.",
-   "2 <i>J</i>.",
-   "400 <i>J</i>."
+   "$\\dfrac{16}{3}$.",
+   "$4$.",
+   "$\\dfrac{8}{3}$.",
+   "$6$."
   ],
   "answer": 0,
-  "explain": "$F = kx \\Rightarrow k = \\dfrac{20}{0{,}10} = 200\\ N/m$<br>$W = \\displaystyle\\int_{0{,}00}^{0{,}20} 200x\\,dx = 100\\left(0{,}20^2 - 0{,}00^2\\right) = 4\\ J$",
-  "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau.",
+  "explain": "Diện tích $S = \\dfrac{1}{2} \\cdot 8^2 = 32$<br>$\\iint_D x\\,dA = \\displaystyle\\int_0^{8} x \\cdot x\\,dx = \\left[\\dfrac{x^3}{3}\\right]_0^{8} = \\dfrac{512}{3}$<br>$\\bar{x} = \\dfrac{\\dfrac{512}{3}}{32} = \\dfrac{16}{3}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-110"
  },
  {
-  "q": "Một sợi cáp dài 20 mét, nặng 3 kg mỗi mét, được treo thẳng đứng từ nóc một tòa nhà cao, đầu dưới có gắn một vật nặng 20 kg. Lấy $g = 9{,}8\\,m/s^2$. Công cần thiết để kéo toàn bộ sợi cáp cùng vật nặng lên nóc tòa nhà (làm tròn đến hàng phần chục) bằng",
+  "q": "Tính thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y = \\sqrt{x}$, $x = 4$ và trục $Ox$ xung quanh trục $Ox$.",
   "options": [
-   "9,8 <i>kJ</i>.",
-   "15,7 <i>kJ</i>.",
-   "5,9 <i>kJ</i>.",
-   "4,9 <i>kJ</i>."
+   "$8 \\pi$.",
+   "$4 \\pi$.",
+   "$16 \\pi$.",
+   "$1 + 8 \\pi$."
   ],
   "answer": 0,
-  "explain": "Đoạn cáp dài $dx$ ở độ sâu $x$ nặng $3\\,dx$ kg, phải nâng lên $x$ mét<br>$W = \\displaystyle\\int_0^{20} 3\\cdot9{,}8\\cdot x\\,dx + 20\\cdot9{,}8\\cdot20 = 29{,}4\\cdot\\dfrac{20^2}{2} + 3920$<br>$= 9800\\ J = 9{,}8\\ kJ$",
-  "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau.",
+  "explain": "$V = \\pi\\displaystyle\\int_0^{4} y^2\\,dx = \\pi\\int_0^{4} x\\,dx = \\pi\\left[\\dfrac{x^2}{2}\\right]_0^{4} = 8 \\pi$<br>Kết quả: $8 \\pi$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-111"
@@ -7140,22 +7119,21 @@ window.PRACTICE_BANK = [
   "id": "dh-112"
  },
  {
-  "q": "Một bể chứa hình trụ đứng có bán kính đáy 2 mét, chiều cao 5 mét, chứa đầy nước. Biết khối lượng riêng của nước là $1000\\,kg/m^3$ và gia tốc trọng trường $g = 9{,}8\\,m/s^2$. Công cần thiết để bơm hết nước trong bể lên một bồn chứa đặt cao hơn miệng bể 1 mét (làm tròn đến hàng phần chục) bằng",
+  "q": "Tính độ dài cung của đường cong $y = \\dfrac{x^2}{2}$ từ $x = 0$ đến $x = 7$. Biết $\\int\\sqrt{1+x^2}\\,dx = \\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2} + C$.",
   "options": [
-   "2155,1 <i>kJ</i>.",
-   "1539,4 <i>kJ</i>.",
-   "3694,5 <i>kJ</i>.",
-   "1970,4 <i>kJ</i>."
+   "$\\dfrac{\\operatorname{asinh}{\\left(7 \\right)}}{2} + \\dfrac{35 \\sqrt{2}}{2}$.",
+   "$\\dfrac{\\operatorname{asinh}{\\left(7 \\right)}}{4} + \\dfrac{35 \\sqrt{2}}{4}$.",
+   "$\\operatorname{asinh}{\\left(7 \\right)} + 35 \\sqrt{2}$.",
+   "$1 + \\dfrac{\\operatorname{asinh}{\\left(7 \\right)}}{2} + \\dfrac{35 \\sqrt{2}}{2}$."
   ],
   "answer": 0,
-  "explain": "Lớp nước dày $dh$ ở độ sâu $h$ có khối lượng $1000\\cdot\\pi\\cdot4\\,dh$, phải nâng lên $h + 1$ mét<br>$W = \\displaystyle\\int_0^{5} 9800\\pi\\cdot4\\,(h + 1)\\,dh = 39200\\pi\\left[\\dfrac{h^2}{2} + 1h\\right]_0^{5}$<br>$= 39200\\pi\\cdot\\dfrac{35}{2} \\approx 2155133\\ J = 2155{,}1\\ kJ$",
-  "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau.",
+  "explain": "$y' = x$, $L = \\displaystyle\\int_0^{7}\\sqrt{1 + x^2}\\,dx$<br>$L = \\left[\\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2}\\right]_0^{7} = \\dfrac{\\operatorname{asinh}{\\left(7 \\right)}}{2} + \\dfrac{35 \\sqrt{2}}{2}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-113"
  },
  {
-  "q": "Một tấm phẳng hình chữ nhật chiều rộng \\u003caa\\u003e m, chiều cao \\u003cbb\\u003e m được nhúng thẳng đứng vào nước sao cho cạnh trên ở độ sâu \\u003cd\\u003e m. Lấy $g = 9{,}8\\,m/s^2$. Áp lực của nước lên tấm bằng",
+  "q": "Một tấm phẳng hình chữ nhật chiều rộng 3 m, chiều cao 1 m được nhúng thẳng đứng vào nước sao cho cạnh trên ở độ sâu 1 m. Lấy $g = 9{,}8\\,m/s^2$. Áp lực của nước lên tấm bằng",
   "options": [
    "44100 <i>N</i>.",
    "22050 <i>N</i>.",
@@ -7163,22 +7141,21 @@ window.PRACTICE_BANK = [
    "58800 <i>N</i>."
   ],
   "answer": 0,
-  "explain": "Dải ngang ở độ sâu $(\\u003cd\\u003e + y)$ m, diện tích $\\u003caa\\u003e\\,dy$, áp lực $1000 \\cdot 9{,}8 \\cdot (\\u003cd\\u003e + y) \\cdot \\u003caa\\u003e\\,dy$<br>$F = \\displaystyle\\int_0^{\\u003cbb\\u003e} 9800 \\cdot \\u003caa\\u003e \\cdot (\\u003cd\\u003e + y)\\,dy = 9800\\u003caa\\u003e\\left[\\u003cd\\u003ey + \\dfrac{y^2}{2}\\right]_0^{\\u003cbb\\u003e} = \\u003cok\\u003e\\,N = \\u003ckN\\u003e\\,kN$",
+  "explain": "Dải ngang ở độ sâu $(1 + y)$ m, diện tích $3\\,dy$, áp lực $1000 \\cdot 9{,}8 \\cdot (1 + y) \\cdot 3\\,dy$<br>$F = \\displaystyle\\int_0^{1} 9800 \\cdot 3 \\cdot (1 + y)\\,dy = 98003\\left[1y + \\dfrac{y^2}{2}\\right]_0^{1} = 44100\\,N = \\dfrac{441}{10}\\,kN$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-114"
  },
  {
-  "q": "Một lò xo tuân theo định luật Hooke $F = kx$ bị giãn 4 cm khi chịu lực kéo 20 N. Công cần thiết để kéo lò xo từ độ giãn 20 cm đến độ giãn 40 cm bằng",
+  "q": "Tính diện tích hình phẳng giới hạn bởi parabol $y = x^2$ và đường thẳng $y = 10x$.",
   "options": [
-   "30 <i>J</i>.",
-   "10 <i>J</i>.",
-   "80 <i>J</i>.",
-   "4 <i>J</i>."
+   "$\\dfrac{500}{3}$.",
+   "$\\dfrac{250}{3}$.",
+   "$\\dfrac{1000}{3}$.",
+   "$\\dfrac{503}{3}$."
   ],
   "answer": 0,
-  "explain": "$F = kx \\Rightarrow k = \\dfrac{20}{0{,}04} = 500\\ N/m$<br>$W = \\displaystyle\\int_{0{,}20}^{0{,}40} 500x\\,dx = 250\\left(0{,}40^2 - 0{,}20^2\\right) = 30\\ J$",
-  "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau.",
+  "explain": "Giao điểm: $x^2 = 10x \\Rightarrow x = 0$ và $x = 10$<br>$S = \\displaystyle\\int_0^{10}(10x - x^2)\\,dx = \\left[\\dfrac{10x^2}{2} - \\dfrac{x^3}{3}\\right]_0^{10} = \\dfrac{500}{3}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-115"
@@ -7199,31 +7176,29 @@ window.PRACTICE_BANK = [
   "id": "dh-116"
  },
  {
-  "q": "Một bể chứa nước hình hộp chữ nhật có chiều dài, chiều rộng và chiều cao lần lượt là 4 mét, 2 mét và 4 mét được chứa đầy nước. Biết khối lượng riêng của nước là $1000\\,kg/m^3$ và gia tốc trọng trường $g = 9{,}8\\,m/s^2$. Công cần thiết để bơm nửa lượng nước phía trên ra khỏi bể qua mặt trên của bể bằng",
+  "q": "Tìm hoành độ trọng tâm $\\bar{x}$ của hình phẳng giới hạn bởi $y = x$, $y = 0$ và $x = 5$ (tam giác vuông). Biết $\\bar{x} = \\dfrac{\\iint_D x\\,dA}{\\iint_D dA}$, giá trị $\\bar{x}$ bằng",
   "options": [
-   "156,8 <i>kJ</i>.",
-   "627,2 <i>kJ</i>.",
-   "313,6 <i>kJ</i>.",
-   "1254,4 <i>kJ</i>."
+   "$\\dfrac{10}{3}$.",
+   "$\\dfrac{5}{2}$.",
+   "$\\dfrac{5}{3}$.",
+   "$\\dfrac{15}{4}$."
   ],
   "answer": 0,
-  "explain": "Lớp nước dày $dy$ ở độ sâu $y$ có khối lượng $1000\\cdot4\\cdot2\\,dy$, phải nâng lên $y$ mét<br>$W = \\displaystyle\\int_0^{2} 9800\\cdot4\\cdot2\\cdot y\\,dy = 78400\\cdot\\dfrac{2^2}{2}$<br>$= 156800\\ J = 156{,}8\\ kJ$",
-  "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau.",
+  "explain": "Diện tích $S = \\dfrac{1}{2} \\cdot 5^2 = \\dfrac{25}{2}$<br>$\\iint_D x\\,dA = \\displaystyle\\int_0^{5} x \\cdot x\\,dx = \\left[\\dfrac{x^3}{3}\\right]_0^{5} = \\dfrac{125}{3}$<br>$\\bar{x} = \\dfrac{\\dfrac{125}{3}}{\\dfrac{25}{2}} = \\dfrac{10}{3}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-117"
  },
  {
-  "q": "Một bể chứa hình trụ đứng có bán kính đáy 1 mét, chiều cao 2 mét, chứa đầy nước. Biết khối lượng riêng của nước là $1000\\,kg/m^3$ và gia tốc trọng trường $g = 9{,}8\\,m/s^2$. Công cần thiết để bơm hết nước trong bể lên một bồn chứa đặt cao hơn miệng bể 1 mét (làm tròn đến hàng phần chục) bằng",
+  "q": "Tính thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y = \\sqrt{x}$, $x = 81$ và trục $Ox$ xung quanh trục $Ox$.",
   "options": [
-   "123,2 <i>kJ</i>.",
-   "61,6 <i>kJ</i>.",
-   "184,7 <i>kJ</i>.",
-   "124,2 <i>kJ</i>."
+   "$\\dfrac{6561 \\pi}{2}$.",
+   "$\\dfrac{6561 \\pi}{4}$.",
+   "$6561 \\pi$.",
+   "$81 \\pi$."
   ],
   "answer": 0,
-  "explain": "Lớp nước dày $dh$ ở độ sâu $h$ có khối lượng $1000\\cdot\\pi\\cdot1\\,dh$, phải nâng lên $h + 1$ mét<br>$W = \\displaystyle\\int_0^{2} 9800\\pi\\cdot1\\,(h + 1)\\,dh = 9800\\pi\\left[\\dfrac{h^2}{2} + 1h\\right]_0^{2}$<br>$= 9800\\pi\\cdot4 \\approx 123150\\ J = 123{,}2\\ kJ$",
-  "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau.",
+  "explain": "$V = \\pi\\displaystyle\\int_0^{81} y^2\\,dx = \\pi\\int_0^{81} x\\,dx = \\pi\\left[\\dfrac{x^2}{2}\\right]_0^{81} = \\dfrac{6561 \\pi}{2}$<br>Kết quả: $\\dfrac{6561 \\pi}{2}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-118"
@@ -7244,22 +7219,21 @@ window.PRACTICE_BANK = [
   "id": "dh-119"
  },
  {
-  "q": "Một lò xo tuân theo định luật Hooke $F = kx$ bị giãn 10 cm khi chịu lực kéo 10 N. Công cần thiết để kéo lò xo từ độ giãn 5 cm đến độ giãn 25 cm bằng",
+  "q": "Tính độ dài cung của đường cong $y = \\dfrac{x^2}{2}$ từ $x = 0$ đến $x = 2$. Biết $\\int\\sqrt{1+x^2}\\,dx = \\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2} + C$.",
   "options": [
-   "3 <i>J</i>.",
-   "2 <i>J</i>.",
-   "6,25 <i>J</i>.",
-   "300 <i>J</i>."
+   "$\\dfrac{\\operatorname{asinh}{\\left(2 \\right)}}{2} + \\sqrt{5}$.",
+   "$\\dfrac{\\operatorname{asinh}{\\left(2 \\right)}}{4} + \\dfrac{\\sqrt{5}}{2}$.",
+   "$\\operatorname{asinh}{\\left(2 \\right)} + 2 \\sqrt{5}$.",
+   "$\\dfrac{\\operatorname{asinh}{\\left(2 \\right)}}{2} + 1 + \\sqrt{5}$."
   ],
   "answer": 0,
-  "explain": "$F = kx \\Rightarrow k = \\dfrac{10}{0{,}10} = 100\\ N/m$<br>$W = \\displaystyle\\int_{0{,}05}^{0{,}25} 100x\\,dx = 50\\left(0{,}25^2 - 0{,}05^2\\right) = 3\\ J$",
-  "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau.",
+  "explain": "$y' = x$, $L = \\displaystyle\\int_0^{2}\\sqrt{1 + x^2}\\,dx$<br>$L = \\left[\\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2}\\right]_0^{2} = \\dfrac{\\operatorname{asinh}{\\left(2 \\right)}}{2} + \\sqrt{5}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-120"
  },
  {
-  "q": "Một tấm phẳng hình chữ nhật chiều rộng \\u003caa\\u003e m, chiều cao \\u003cbb\\u003e m được nhúng thẳng đứng vào nước sao cho cạnh trên ở độ sâu \\u003cd\\u003e m. Lấy $g = 9{,}8\\,m/s^2$. Áp lực của nước lên tấm bằng",
+  "q": "Một tấm phẳng hình chữ nhật chiều rộng 2 m, chiều cao 1 m được nhúng thẳng đứng vào nước sao cho cạnh trên ở độ sâu 2 m. Lấy $g = 9{,}8\\,m/s^2$. Áp lực của nước lên tấm bằng",
   "options": [
    "49000 <i>N</i>.",
    "24500 <i>N</i>.",
@@ -7267,22 +7241,21 @@ window.PRACTICE_BANK = [
    "58800 <i>N</i>."
   ],
   "answer": 0,
-  "explain": "Dải ngang ở độ sâu $(\\u003cd\\u003e + y)$ m, diện tích $\\u003caa\\u003e\\,dy$, áp lực $1000 \\cdot 9{,}8 \\cdot (\\u003cd\\u003e + y) \\cdot \\u003caa\\u003e\\,dy$<br>$F = \\displaystyle\\int_0^{\\u003cbb\\u003e} 9800 \\cdot \\u003caa\\u003e \\cdot (\\u003cd\\u003e + y)\\,dy = 9800\\u003caa\\u003e\\left[\\u003cd\\u003ey + \\dfrac{y^2}{2}\\right]_0^{\\u003cbb\\u003e} = \\u003cok\\u003e\\,N = \\u003ckN\\u003e\\,kN$",
+  "explain": "Dải ngang ở độ sâu $(2 + y)$ m, diện tích $2\\,dy$, áp lực $1000 \\cdot 9{,}8 \\cdot (2 + y) \\cdot 2\\,dy$<br>$F = \\displaystyle\\int_0^{1} 9800 \\cdot 2 \\cdot (2 + y)\\,dy = 98002\\left[2y + \\dfrac{y^2}{2}\\right]_0^{1} = 49000\\,N = 49\\,kN$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-121"
  },
  {
-  "q": "Một bể chứa nước hình hộp chữ nhật có chiều dài, chiều rộng và chiều cao lần lượt là 3 mét, 1,5 mét và 3 mét được chứa đầy nước. Biết khối lượng riêng của nước là $1000\\,kg/m^3$ và gia tốc trọng trường $g = 9{,}8\\,m/s^2$. Công cần thiết để bơm nửa lượng nước phía trên ra khỏi bể qua mặt trên của bể bằng",
+  "q": "Tính diện tích hình phẳng giới hạn bởi parabol $y = x^2$ và đường thẳng $y = 7x$.",
   "options": [
-   "49,6 <i>kJ</i>.",
-   "198,4 <i>kJ</i>.",
-   "99,2 <i>kJ</i>.",
-   "396,9 <i>kJ</i>."
+   "$\\dfrac{343}{6}$.",
+   "$\\dfrac{343}{12}$.",
+   "$\\dfrac{343}{3}$.",
+   "$\\dfrac{349}{6}$."
   ],
   "answer": 0,
-  "explain": "Lớp nước dày $dy$ ở độ sâu $y$ có khối lượng $1000\\cdot3\\cdot1{,}5\\,dy$, phải nâng lên $y$ mét<br>$W = \\displaystyle\\int_0^{1{,}5} 9800\\cdot3\\cdot1{,}5\\cdot y\\,dy = 44100\\cdot\\dfrac{1{,}5^2}{2}$<br>$= 49612\\ J = 49{,}6\\ kJ$",
-  "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau.",
+  "explain": "Giao điểm: $x^2 = 7x \\Rightarrow x = 0$ và $x = 7$<br>$S = \\displaystyle\\int_0^{7}(7x - x^2)\\,dx = \\left[\\dfrac{7x^2}{2} - \\dfrac{x^3}{3}\\right]_0^{7} = \\dfrac{343}{6}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-122"
@@ -7303,31 +7276,29 @@ window.PRACTICE_BANK = [
   "id": "dh-123"
  },
  {
-  "q": "Một bể chứa có dạng hình nón tròn xoay với đỉnh ở phía dưới, bán kính miệng bể 1 mét, chiều cao 3 mét, chứa đầy nước. Biết khối lượng riêng của nước là $1000\\,kg/m^3$ và gia tốc trọng trường $g = 9{,}8\\,m/s^2$. Công cần thiết để bơm hết nước ra khỏi bể qua miệng bể (làm tròn đến hàng phần chục) bằng",
+  "q": "Tìm hoành độ trọng tâm $\\bar{x}$ của hình phẳng giới hạn bởi $y = x$, $y = 0$ và $x = 10$ (tam giác vuông). Biết $\\bar{x} = \\dfrac{\\iint_D x\\,dA}{\\iint_D dA}$, giá trị $\\bar{x}$ bằng",
   "options": [
-   "23,1 <i>kJ</i>.",
-   "69,3 <i>kJ</i>.",
-   "46,2 <i>kJ</i>.",
-   "92,4 <i>kJ</i>."
+   "$\\dfrac{20}{3}$.",
+   "$5$.",
+   "$\\dfrac{10}{3}$.",
+   "$\\dfrac{15}{2}$."
   ],
   "answer": 0,
-  "explain": "Lớp nước ở độ cao $y$ (tính từ đỉnh) có bán kính $\\dfrac{1y}{3}$, phải nâng lên $3 - y$ mét<br>$W = \\displaystyle\\int_0^{3} 9800\\pi\\left(\\dfrac{1y}{3}\\right)^2(3 - y)\\,dy = 9800\\pi\\cdot\\dfrac{1}{9}\\left[\\dfrac{3y^3}{3} - \\dfrac{y^4}{4}\\right]_0^{3}$<br>$= 9800\\pi\\cdot\\dfrac{1\\cdot9}{12} \\approx 23{,}1\\ kJ$",
-  "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau.",
+  "explain": "Diện tích $S = \\dfrac{1}{2} \\cdot 10^2 = 50$<br>$\\iint_D x\\,dA = \\displaystyle\\int_0^{10} x \\cdot x\\,dx = \\left[\\dfrac{x^3}{3}\\right]_0^{10} = \\dfrac{1000}{3}$<br>$\\bar{x} = \\dfrac{\\dfrac{1000}{3}}{50} = \\dfrac{20}{3}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-124"
  },
  {
-  "q": "Một lò xo tuân theo định luật Hooke $F = kx$ bị giãn 4 cm khi chịu lực kéo 30 N. Công cần thiết để kéo lò xo từ độ giãn 20 cm đến độ giãn 40 cm bằng",
+  "q": "Tính thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y = \\sqrt{x}$, $x = 64$ và trục $Ox$ xung quanh trục $Ox$.",
   "options": [
-   "45 <i>J</i>.",
-   "15 <i>J</i>.",
-   "120 <i>J</i>.",
-   "6 <i>J</i>."
+   "$2048 \\pi$.",
+   "$1024 \\pi$.",
+   "$4096 \\pi$.",
+   "$64 \\pi$."
   ],
   "answer": 0,
-  "explain": "$F = kx \\Rightarrow k = \\dfrac{30}{0{,}04} = 750\\ N/m$<br>$W = \\displaystyle\\int_{0{,}20}^{0{,}40} 750x\\,dx = 375\\left(0{,}40^2 - 0{,}20^2\\right) = 45\\ J$",
-  "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau.",
+  "explain": "$V = \\pi\\displaystyle\\int_0^{64} y^2\\,dx = \\pi\\int_0^{64} x\\,dx = \\pi\\left[\\dfrac{x^2}{2}\\right]_0^{64} = 2048 \\pi$<br>Kết quả: $2048 \\pi$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-125"
@@ -7348,22 +7319,21 @@ window.PRACTICE_BANK = [
   "id": "dh-126"
  },
  {
-  "q": "Một bể chứa nước hình hộp chữ nhật có chiều dài, chiều rộng và chiều cao lần lượt là 3 mét, 2 mét và 3 mét được chứa đầy nước. Biết khối lượng riêng của nước là $1000\\,kg/m^3$ và gia tốc trọng trường $g = 9{,}8\\,m/s^2$. Công cần thiết để bơm nửa lượng nước phía trên ra khỏi bể qua mặt trên của bể bằng",
+  "q": "Tính độ dài cung của đường cong $y = \\dfrac{x^2}{2}$ từ $x = 0$ đến $x = 10$. Biết $\\int\\sqrt{1+x^2}\\,dx = \\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2} + C$.",
   "options": [
-   "66,2 <i>kJ</i>.",
-   "264,6 <i>kJ</i>.",
-   "132,3 <i>kJ</i>.",
-   "529,2 <i>kJ</i>."
+   "$\\dfrac{\\operatorname{asinh}{\\left(10 \\right)}}{2} + 5 \\sqrt{101}$.",
+   "$\\dfrac{\\operatorname{asinh}{\\left(10 \\right)}}{4} + \\dfrac{5 \\sqrt{101}}{2}$.",
+   "$\\operatorname{asinh}{\\left(10 \\right)} + 10 \\sqrt{101}$.",
+   "$1 + \\dfrac{\\operatorname{asinh}{\\left(10 \\right)}}{2} + 5 \\sqrt{101}$."
   ],
   "answer": 0,
-  "explain": "Lớp nước dày $dy$ ở độ sâu $y$ có khối lượng $1000\\cdot3\\cdot2\\,dy$, phải nâng lên $y$ mét<br>$W = \\displaystyle\\int_0^{1{,}5} 9800\\cdot3\\cdot2\\cdot y\\,dy = 58800\\cdot\\dfrac{1{,}5^2}{2}$<br>$= 66150\\ J = 66{,}2\\ kJ$",
-  "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau.",
+  "explain": "$y' = x$, $L = \\displaystyle\\int_0^{10}\\sqrt{1 + x^2}\\,dx$<br>$L = \\left[\\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2}\\right]_0^{10} = \\dfrac{\\operatorname{asinh}{\\left(10 \\right)}}{2} + 5 \\sqrt{101}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-127"
  },
  {
-  "q": "Một tấm phẳng hình chữ nhật chiều rộng \\u003caa\\u003e m, chiều cao \\u003cbb\\u003e m được nhúng thẳng đứng vào nước sao cho cạnh trên ở độ sâu \\u003cd\\u003e m. Lấy $g = 9{,}8\\,m/s^2$. Áp lực của nước lên tấm bằng",
+  "q": "Một tấm phẳng hình chữ nhật chiều rộng 3 m, chiều cao 3 m được nhúng thẳng đứng vào nước sao cho cạnh trên ở độ sâu 0 m. Lấy $g = 9{,}8\\,m/s^2$. Áp lực của nước lên tấm bằng",
   "options": [
    "132300 <i>N</i>.",
    "66150 <i>N</i>.",
@@ -7371,22 +7341,21 @@ window.PRACTICE_BANK = [
    "44100 <i>N</i>."
   ],
   "answer": 0,
-  "explain": "Dải ngang ở độ sâu $(\\u003cd\\u003e + y)$ m, diện tích $\\u003caa\\u003e\\,dy$, áp lực $1000 \\cdot 9{,}8 \\cdot (\\u003cd\\u003e + y) \\cdot \\u003caa\\u003e\\,dy$<br>$F = \\displaystyle\\int_0^{\\u003cbb\\u003e} 9800 \\cdot \\u003caa\\u003e \\cdot (\\u003cd\\u003e + y)\\,dy = 9800\\u003caa\\u003e\\left[\\u003cd\\u003ey + \\dfrac{y^2}{2}\\right]_0^{\\u003cbb\\u003e} = \\u003cok\\u003e\\,N = \\u003ckN\\u003e\\,kN$",
+  "explain": "Dải ngang ở độ sâu $(0 + y)$ m, diện tích $3\\,dy$, áp lực $1000 \\cdot 9{,}8 \\cdot (0 + y) \\cdot 3\\,dy$<br>$F = \\displaystyle\\int_0^{3} 9800 \\cdot 3 \\cdot (0 + y)\\,dy = 98003\\left[0y + \\dfrac{y^2}{2}\\right]_0^{3} = 132300\\,N = \\dfrac{1323}{10}\\,kN$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-128"
  },
  {
-  "q": "Một bể chứa có dạng hình nón tròn xoay với đỉnh ở phía dưới, bán kính miệng bể 1 mét, chiều cao 4 mét, chứa đầy nước. Biết khối lượng riêng của nước là $1000\\,kg/m^3$ và gia tốc trọng trường $g = 9{,}8\\,m/s^2$. Công cần thiết để bơm hết nước ra khỏi bể qua miệng bể (làm tròn đến hàng phần chục) bằng",
+  "q": "Tính diện tích hình phẳng giới hạn bởi parabol $y = x^2$ và đường thẳng $y = 5x$.",
   "options": [
-   "41,1 <i>kJ</i>.",
-   "123,2 <i>kJ</i>.",
-   "82,1 <i>kJ</i>.",
-   "164,2 <i>kJ</i>."
+   "$\\dfrac{125}{6}$.",
+   "$\\dfrac{125}{12}$.",
+   "$\\dfrac{125}{3}$.",
+   "$\\dfrac{131}{6}$."
   ],
   "answer": 0,
-  "explain": "Lớp nước ở độ cao $y$ (tính từ đỉnh) có bán kính $\\dfrac{1y}{4}$, phải nâng lên $4 - y$ mét<br>$W = \\displaystyle\\int_0^{4} 9800\\pi\\left(\\dfrac{1y}{4}\\right)^2(4 - y)\\,dy = 9800\\pi\\cdot\\dfrac{1}{16}\\left[\\dfrac{4y^3}{3} - \\dfrac{y^4}{4}\\right]_0^{4}$<br>$= 9800\\pi\\cdot\\dfrac{1\\cdot16}{12} \\approx 41{,}1\\ kJ$",
-  "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau.",
+  "explain": "Giao điểm: $x^2 = 5x \\Rightarrow x = 0$ và $x = 5$<br>$S = \\displaystyle\\int_0^{5}(5x - x^2)\\,dx = \\left[\\dfrac{5x^2}{2} - \\dfrac{x^3}{3}\\right]_0^{5} = \\dfrac{125}{6}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-129"
@@ -7407,31 +7376,29 @@ window.PRACTICE_BANK = [
   "id": "dh-130"
  },
  {
-  "q": "Một sợi cáp dài 20 mét, nặng 4 kg mỗi mét, được treo thẳng đứng từ nóc một tòa nhà cao, đầu dưới có gắn một vật nặng 10 kg. Lấy $g = 9{,}8\\,m/s^2$. Công cần thiết để kéo toàn bộ sợi cáp cùng vật nặng lên nóc tòa nhà (làm tròn đến hàng phần chục) bằng",
+  "q": "Tìm hoành độ trọng tâm $\\bar{x}$ của hình phẳng giới hạn bởi $y = x$, $y = 0$ và $x = 4$ (tam giác vuông). Biết $\\bar{x} = \\dfrac{\\iint_D x\\,dA}{\\iint_D dA}$, giá trị $\\bar{x}$ bằng",
   "options": [
-   "9,8 <i>kJ</i>.",
-   "17,6 <i>kJ</i>.",
-   "7,8 <i>kJ</i>.",
-   "4,9 <i>kJ</i>."
+   "$\\dfrac{8}{3}$.",
+   "$2$.",
+   "$\\dfrac{4}{3}$.",
+   "$3$."
   ],
   "answer": 0,
-  "explain": "Đoạn cáp dài $dx$ ở độ sâu $x$ nặng $4\\,dx$ kg, phải nâng lên $x$ mét<br>$W = \\displaystyle\\int_0^{20} 4\\cdot9{,}8\\cdot x\\,dx + 10\\cdot9{,}8\\cdot20 = 39{,}2\\cdot\\dfrac{20^2}{2} + 1960$<br>$= 9800\\ J = 9{,}8\\ kJ$",
-  "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau.",
+  "explain": "Diện tích $S = \\dfrac{1}{2} \\cdot 4^2 = 8$<br>$\\iint_D x\\,dA = \\displaystyle\\int_0^{4} x \\cdot x\\,dx = \\left[\\dfrac{x^3}{3}\\right]_0^{4} = \\dfrac{64}{3}$<br>$\\bar{x} = \\dfrac{\\dfrac{64}{3}}{8} = \\dfrac{8}{3}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-131"
  },
  {
-  "q": "Một bể chứa nước hình hộp chữ nhật có chiều dài, chiều rộng và chiều cao lần lượt là 4 mét, 2 mét và 3 mét được chứa đầy nước. Biết khối lượng riêng của nước là $1000\\,kg/m^3$ và gia tốc trọng trường $g = 9{,}8\\,m/s^2$. Công cần thiết để bơm nửa lượng nước phía trên ra khỏi bể qua mặt trên của bể bằng",
+  "q": "Tính thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y = \\sqrt{x}$, $x = 9$ và trục $Ox$ xung quanh trục $Ox$.",
   "options": [
-   "88,2 <i>kJ</i>.",
-   "352,8 <i>kJ</i>.",
-   "176,4 <i>kJ</i>.",
-   "705,6 <i>kJ</i>."
+   "$\\dfrac{81 \\pi}{2}$.",
+   "$\\dfrac{81 \\pi}{4}$.",
+   "$81 \\pi$.",
+   "$9 \\pi$."
   ],
   "answer": 0,
-  "explain": "Lớp nước dày $dy$ ở độ sâu $y$ có khối lượng $1000\\cdot4\\cdot2\\,dy$, phải nâng lên $y$ mét<br>$W = \\displaystyle\\int_0^{1{,}5} 9800\\cdot4\\cdot2\\cdot y\\,dy = 78400\\cdot\\dfrac{1{,}5^2}{2}$<br>$= 88200\\ J = 88{,}2\\ kJ$",
-  "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau.",
+  "explain": "$V = \\pi\\displaystyle\\int_0^{9} y^2\\,dx = \\pi\\int_0^{9} x\\,dx = \\pi\\left[\\dfrac{x^2}{2}\\right]_0^{9} = \\dfrac{81 \\pi}{2}$<br>Kết quả: $\\dfrac{81 \\pi}{2}$",
   "topic": "dh",
   "type": "mcq",
   "id": "dh-132"
@@ -12016,5 +11983,1573 @@ window.PRACTICE_BANK = [
   "topic": "td",
   "type": "mcq",
   "id": "td-133"
+ },
+ {
+  "q": "Trong mô hình cân đối liên ngành mở Leontief gồm 2 ngành kinh tế, cho ma trận hệ số kỹ thuật $A = \\begin{pmatrix}\\dfrac{1}{5} & \\dfrac{2}{5} \\\\ \\dfrac{1}{4} & \\dfrac{1}{4}\\end{pmatrix}$ và vectơ cầu cuối cùng của thị trường $D = \\begin{pmatrix}60 \\\\ 40\\end{pmatrix}$. Tổng mức sản lượng của cả hai ngành $(x_1 + x_2)$ để đáp ứng hoàn toàn nhu cầu nền kinh tế bằng",
+  "options": [
+   "$216$.",
+   "$196$.",
+   "$241$.",
+   "$\\dfrac{864}{5}$."
+  ],
+  "answer": 0,
+  "explain": "Ma trận Leontief: $I - A = \\begin{pmatrix}\\dfrac{4}{5} & - \\dfrac{2}{5} \\\\ - \\dfrac{1}{4} & \\dfrac{3}{4}\\end{pmatrix}$, $\\det(I-A) = \\dfrac{1}{2}$.<br>Ma trận nghịch đảo: $(I - A)^{-1} = \\begin{pmatrix}\\dfrac{3}{2} & \\dfrac{4}{5} \\\\ \\dfrac{1}{2} & \\dfrac{8}{5}\\end{pmatrix}$.<br>Vectơ sản lượng: $X = (I - A)^{-1}D = \\begin{pmatrix}122 \\\\ 94\\end{pmatrix} \\Rightarrow x_1 = 122,\\; x_2 = 94$.<br>Tổng mức sản lượng: $x_1 + x_2 = 216$.",
+  "topic": "mt",
+  "type": "mcq",
+  "id": "mt-001"
+ },
+ {
+  "q": "Trong mô hình kinh tế Input-Output Leontief với ma trận tiêu hao đầu vào $A = \\begin{pmatrix}\\dfrac{1}{5} & \\dfrac{2}{5} \\\\ \\dfrac{1}{4} & \\dfrac{1}{4}\\end{pmatrix}$ và nhu cầu tiêu dùng cuối $D = \\begin{pmatrix}60 \\\\ 40\\end{pmatrix}$. Mức tổng sản lượng $x_1$ mà ngành thứ nhất cần sản xuất bằng",
+  "options": [
+   "$122$.",
+   "$94$.",
+   "$137$.",
+   "$102$."
+  ],
+  "answer": 0,
+  "explain": "Phương trình cân đối: $(I - A)X = D \\Leftrightarrow X = (I - A)^{-1}D$.<br>Ta có $(I - A)^{-1} = \\begin{pmatrix}\\dfrac{3}{2} & \\dfrac{4}{5} \\\\ \\dfrac{1}{2} & \\dfrac{8}{5}\\end{pmatrix}$.<br>Nhân với $D$: $x_1 = \\dfrac{3}{2}\\cdot 60 + \\dfrac{4}{5}\\cdot 40 = 122$.",
+  "topic": "mt",
+  "type": "mcq",
+  "id": "mt-002"
+ },
+ {
+  "q": "Trong mô hình cân đối liên ngành mở Leontief gồm 2 ngành kinh tế, cho ma trận hệ số kỹ thuật $A = \\begin{pmatrix}\\dfrac{1}{4} & \\dfrac{1}{2} \\\\ \\dfrac{1}{3} & \\dfrac{1}{6}\\end{pmatrix}$ và vectơ cầu cuối cùng của thị trường $D = \\begin{pmatrix}90 \\\\ 60\\end{pmatrix}$. Tổng mức sản lượng của cả hai ngành $(x_1 + x_2)$ để đáp ứng hoàn toàn nhu cầu nền kinh tế bằng",
+  "options": [
+   "$\\dfrac{4320}{11}$.",
+   "$\\dfrac{4100}{11}$.",
+   "$\\dfrac{4595}{11}$.",
+   "$\\dfrac{3456}{11}$."
+  ],
+  "answer": 0,
+  "explain": "Ma trận Leontief: $I - A = \\begin{pmatrix}\\dfrac{3}{4} & - \\dfrac{1}{2} \\\\ - \\dfrac{1}{3} & \\dfrac{5}{6}\\end{pmatrix}$, $\\det(I-A) = \\dfrac{11}{24}$.<br>Ma trận nghịch đảo: $(I - A)^{-1} = \\begin{pmatrix}\\dfrac{20}{11} & \\dfrac{12}{11} \\\\ \\dfrac{8}{11} & \\dfrac{18}{11}\\end{pmatrix}$.<br>Vectơ sản lượng: $X = (I - A)^{-1}D = \\begin{pmatrix}\\dfrac{2520}{11} \\\\ \\dfrac{1800}{11}\\end{pmatrix} \\Rightarrow x_1 = \\dfrac{2520}{11},\\; x_2 = \\dfrac{1800}{11}$.<br>Tổng mức sản lượng: $x_1 + x_2 = \\dfrac{4320}{11}$.",
+  "topic": "mt",
+  "type": "mcq",
+  "id": "mt-003"
+ },
+ {
+  "q": "Trong mô hình kinh tế Input-Output Leontief với ma trận tiêu hao đầu vào $A = \\begin{pmatrix}\\dfrac{1}{4} & \\dfrac{1}{2} \\\\ \\dfrac{1}{3} & \\dfrac{1}{6}\\end{pmatrix}$ và nhu cầu tiêu dùng cuối $D = \\begin{pmatrix}90 \\\\ 60\\end{pmatrix}$. Mức tổng sản lượng $x_1$ mà ngành thứ nhất cần sản xuất bằng",
+  "options": [
+   "$\\dfrac{2520}{11}$.",
+   "$\\dfrac{1800}{11}$.",
+   "$\\dfrac{2685}{11}$.",
+   "$\\dfrac{2300}{11}$."
+  ],
+  "answer": 0,
+  "explain": "Phương trình cân đối: $(I - A)X = D \\Leftrightarrow X = (I - A)^{-1}D$.<br>Ta có $(I - A)^{-1} = \\begin{pmatrix}\\dfrac{20}{11} & \\dfrac{12}{11} \\\\ \\dfrac{8}{11} & \\dfrac{18}{11}\\end{pmatrix}$.<br>Nhân với $D$: $x_1 = \\dfrac{20}{11}\\cdot 90 + \\dfrac{12}{11}\\cdot 60 = \\dfrac{2520}{11}$.",
+  "topic": "mt",
+  "type": "mcq",
+  "id": "mt-004"
+ },
+ {
+  "q": "Trong mô hình cân đối liên ngành mở Leontief gồm 2 ngành kinh tế, cho ma trận hệ số kỹ thuật $A = \\begin{pmatrix}\\dfrac{1}{5} & \\dfrac{3}{10} \\\\ \\dfrac{2}{5} & \\dfrac{1}{10}\\end{pmatrix}$ và vectơ cầu cuối cùng của thị trường $D = \\begin{pmatrix}100 \\\\ 50\\end{pmatrix}$. Tổng mức sản lượng của cả hai ngành $(x_1 + x_2)$ để đáp ứng hoàn toàn nhu cầu nền kinh tế bằng",
+  "options": [
+   "$\\dfrac{925}{3}$.",
+   "$\\dfrac{865}{3}$.",
+   "$\\dfrac{1000}{3}$.",
+   "$\\dfrac{740}{3}$."
+  ],
+  "answer": 0,
+  "explain": "Ma trận Leontief: $I - A = \\begin{pmatrix}\\dfrac{4}{5} & - \\dfrac{3}{10} \\\\ - \\dfrac{2}{5} & \\dfrac{9}{10}\\end{pmatrix}$, $\\det(I-A) = \\dfrac{3}{5}$.<br>Ma trận nghịch đảo: $(I - A)^{-1} = \\begin{pmatrix}\\dfrac{3}{2} & \\dfrac{1}{2} \\\\ \\dfrac{2}{3} & \\dfrac{4}{3}\\end{pmatrix}$.<br>Vectơ sản lượng: $X = (I - A)^{-1}D = \\begin{pmatrix}175 \\\\ \\dfrac{400}{3}\\end{pmatrix} \\Rightarrow x_1 = 175,\\; x_2 = \\dfrac{400}{3}$.<br>Tổng mức sản lượng: $x_1 + x_2 = \\dfrac{925}{3}$.",
+  "topic": "mt",
+  "type": "mcq",
+  "id": "mt-005"
+ },
+ {
+  "q": "Trong mô hình kinh tế Input-Output Leontief với ma trận tiêu hao đầu vào $A = \\begin{pmatrix}\\dfrac{1}{5} & \\dfrac{3}{10} \\\\ \\dfrac{2}{5} & \\dfrac{1}{10}\\end{pmatrix}$ và nhu cầu tiêu dùng cuối $D = \\begin{pmatrix}100 \\\\ 50\\end{pmatrix}$. Mức tổng sản lượng $x_1$ mà ngành thứ nhất cần sản xuất bằng",
+  "options": [
+   "$175$.",
+   "$\\dfrac{400}{3}$.",
+   "$190$.",
+   "$155$."
+  ],
+  "answer": 0,
+  "explain": "Phương trình cân đối: $(I - A)X = D \\Leftrightarrow X = (I - A)^{-1}D$.<br>Ta có $(I - A)^{-1} = \\begin{pmatrix}\\dfrac{3}{2} & \\dfrac{1}{2} \\\\ \\dfrac{2}{3} & \\dfrac{4}{3}\\end{pmatrix}$.<br>Nhân với $D$: $x_1 = \\dfrac{3}{2}\\cdot 100 + \\dfrac{1}{2}\\cdot 50 = 175$.",
+  "topic": "mt",
+  "type": "mcq",
+  "id": "mt-006"
+ },
+ {
+  "q": "Trong mô hình cân đối liên ngành mở Leontief gồm 2 ngành kinh tế, cho ma trận hệ số kỹ thuật $A = \\begin{pmatrix}\\dfrac{1}{6} & \\dfrac{1}{3} \\\\ \\dfrac{1}{2} & \\dfrac{1}{4}\\end{pmatrix}$ và vectơ cầu cuối cùng của thị trường $D = \\begin{pmatrix}70 \\\\ 80\\end{pmatrix}$. Tổng mức sản lượng của cả hai ngành $(x_1 + x_2)$ để đáp ứng hoàn toàn nhu cầu nền kinh tế bằng",
+  "options": [
+   "$\\dfrac{4340}{11}$.",
+   "$\\dfrac{4120}{11}$.",
+   "$\\dfrac{4615}{11}$.",
+   "$\\dfrac{3472}{11}$."
+  ],
+  "answer": 0,
+  "explain": "Ma trận Leontief: $I - A = \\begin{pmatrix}\\dfrac{5}{6} & - \\dfrac{1}{3} \\\\ - \\dfrac{1}{2} & \\dfrac{3}{4}\\end{pmatrix}$, $\\det(I-A) = \\dfrac{11}{24}$.<br>Ma trận nghịch đảo: $(I - A)^{-1} = \\begin{pmatrix}\\dfrac{18}{11} & \\dfrac{8}{11} \\\\ \\dfrac{12}{11} & \\dfrac{20}{11}\\end{pmatrix}$.<br>Vectơ sản lượng: $X = (I - A)^{-1}D = \\begin{pmatrix}\\dfrac{1900}{11} \\\\ \\dfrac{2440}{11}\\end{pmatrix} \\Rightarrow x_1 = \\dfrac{1900}{11},\\; x_2 = \\dfrac{2440}{11}$.<br>Tổng mức sản lượng: $x_1 + x_2 = \\dfrac{4340}{11}$.",
+  "topic": "mt",
+  "type": "mcq",
+  "id": "mt-007"
+ },
+ {
+  "q": "Trong mô hình kinh tế Input-Output Leontief với ma trận tiêu hao đầu vào $A = \\begin{pmatrix}\\dfrac{1}{6} & \\dfrac{1}{3} \\\\ \\dfrac{1}{2} & \\dfrac{1}{4}\\end{pmatrix}$ và nhu cầu tiêu dùng cuối $D = \\begin{pmatrix}70 \\\\ 80\\end{pmatrix}$. Mức tổng sản lượng $x_1$ mà ngành thứ nhất cần sản xuất bằng",
+  "options": [
+   "$\\dfrac{1900}{11}$.",
+   "$\\dfrac{2440}{11}$.",
+   "$\\dfrac{2065}{11}$.",
+   "$\\dfrac{1680}{11}$."
+  ],
+  "answer": 0,
+  "explain": "Phương trình cân đối: $(I - A)X = D \\Leftrightarrow X = (I - A)^{-1}D$.<br>Ta có $(I - A)^{-1} = \\begin{pmatrix}\\dfrac{18}{11} & \\dfrac{8}{11} \\\\ \\dfrac{12}{11} & \\dfrac{20}{11}\\end{pmatrix}$.<br>Nhân với $D$: $x_1 = \\dfrac{18}{11}\\cdot 70 + \\dfrac{8}{11}\\cdot 80 = \\dfrac{1900}{11}$.",
+  "topic": "mt",
+  "type": "mcq",
+  "id": "mt-008"
+ },
+ {
+  "q": "Trong mô hình cân đối liên ngành mở Leontief gồm 2 ngành kinh tế, cho ma trận hệ số kỹ thuật $A = \\begin{pmatrix}\\dfrac{1}{5} & \\dfrac{3}{10} \\\\ \\dfrac{2}{5} & \\dfrac{1}{5}\\end{pmatrix}$ và vectơ cầu cuối cùng của thị trường $D = \\begin{pmatrix}45 \\\\ 55\\end{pmatrix}$. Tổng mức sản lượng của cả hai ngành $(x_1 + x_2)$ để đáp ứng hoàn toàn nhu cầu nền kinh tế bằng",
+  "options": [
+   "$\\dfrac{5725}{26}$.",
+   "$\\dfrac{5205}{26}$.",
+   "$\\dfrac{6375}{26}$.",
+   "$\\dfrac{2290}{13}$."
+  ],
+  "answer": 0,
+  "explain": "Ma trận Leontief: $I - A = \\begin{pmatrix}\\dfrac{4}{5} & - \\dfrac{3}{10} \\\\ - \\dfrac{2}{5} & \\dfrac{4}{5}\\end{pmatrix}$, $\\det(I-A) = \\dfrac{13}{25}$.<br>Ma trận nghịch đảo: $(I - A)^{-1} = \\begin{pmatrix}\\dfrac{20}{13} & \\dfrac{15}{26} \\\\ \\dfrac{10}{13} & \\dfrac{20}{13}\\end{pmatrix}$.<br>Vectơ sản lượng: $X = (I - A)^{-1}D = \\begin{pmatrix}\\dfrac{2625}{26} \\\\ \\dfrac{1550}{13}\\end{pmatrix} \\Rightarrow x_1 = \\dfrac{2625}{26},\\; x_2 = \\dfrac{1550}{13}$.<br>Tổng mức sản lượng: $x_1 + x_2 = \\dfrac{5725}{26}$.",
+  "topic": "mt",
+  "type": "mcq",
+  "id": "mt-009"
+ },
+ {
+  "q": "Trong mô hình kinh tế Input-Output Leontief với ma trận tiêu hao đầu vào $A = \\begin{pmatrix}\\dfrac{1}{5} & \\dfrac{3}{10} \\\\ \\dfrac{2}{5} & \\dfrac{1}{5}\\end{pmatrix}$ và nhu cầu tiêu dùng cuối $D = \\begin{pmatrix}45 \\\\ 55\\end{pmatrix}$. Mức tổng sản lượng $x_1$ mà ngành thứ nhất cần sản xuất bằng",
+  "options": [
+   "$\\dfrac{2625}{26}$.",
+   "$\\dfrac{1550}{13}$.",
+   "$\\dfrac{3015}{26}$.",
+   "$\\dfrac{2105}{26}$."
+  ],
+  "answer": 0,
+  "explain": "Phương trình cân đối: $(I - A)X = D \\Leftrightarrow X = (I - A)^{-1}D$.<br>Ta có $(I - A)^{-1} = \\begin{pmatrix}\\dfrac{20}{13} & \\dfrac{15}{26} \\\\ \\dfrac{10}{13} & \\dfrac{20}{13}\\end{pmatrix}$.<br>Nhân với $D$: $x_1 = \\dfrac{20}{13}\\cdot 45 + \\dfrac{15}{26}\\cdot 55 = \\dfrac{2625}{26}$.",
+  "topic": "mt",
+  "type": "mcq",
+  "id": "mt-010"
+ },
+ {
+  "q": "Trong mô hình cân đối liên ngành mở Leontief gồm 2 ngành kinh tế, cho ma trận hệ số kỹ thuật $A = \\begin{pmatrix}\\dfrac{3}{10} & \\dfrac{1}{5} \\\\ \\dfrac{1}{5} & \\dfrac{2}{5}\\end{pmatrix}$ và vectơ cầu cuối cùng của thị trường $D = \\begin{pmatrix}80 \\\\ 120\\end{pmatrix}$. Tổng mức sản lượng của cả hai ngành $(x_1 + x_2)$ để đáp ứng hoàn toàn nhu cầu nền kinh tế bằng",
+  "options": [
+   "$\\dfrac{8600}{19}$.",
+   "$\\dfrac{8220}{19}$.",
+   "$\\dfrac{9075}{19}$.",
+   "$\\dfrac{6880}{19}$."
+  ],
+  "answer": 0,
+  "explain": "Ma trận Leontief: $I - A = \\begin{pmatrix}\\dfrac{7}{10} & - \\dfrac{1}{5} \\\\ - \\dfrac{1}{5} & \\dfrac{3}{5}\\end{pmatrix}$, $\\det(I-A) = \\dfrac{19}{50}$.<br>Ma trận nghịch đảo: $(I - A)^{-1} = \\begin{pmatrix}\\dfrac{30}{19} & \\dfrac{10}{19} \\\\ \\dfrac{10}{19} & \\dfrac{35}{19}\\end{pmatrix}$.<br>Vectơ sản lượng: $X = (I - A)^{-1}D = \\begin{pmatrix}\\dfrac{3600}{19} \\\\ \\dfrac{5000}{19}\\end{pmatrix} \\Rightarrow x_1 = \\dfrac{3600}{19},\\; x_2 = \\dfrac{5000}{19}$.<br>Tổng mức sản lượng: $x_1 + x_2 = \\dfrac{8600}{19}$.",
+  "topic": "mt",
+  "type": "mcq",
+  "id": "mt-011"
+ },
+ {
+  "q": "Trong mô hình kinh tế Input-Output Leontief với ma trận tiêu hao đầu vào $A = \\begin{pmatrix}\\dfrac{3}{10} & \\dfrac{1}{5} \\\\ \\dfrac{1}{5} & \\dfrac{2}{5}\\end{pmatrix}$ và nhu cầu tiêu dùng cuối $D = \\begin{pmatrix}80 \\\\ 120\\end{pmatrix}$. Mức tổng sản lượng $x_1$ mà ngành thứ nhất cần sản xuất bằng",
+  "options": [
+   "$\\dfrac{3600}{19}$.",
+   "$\\dfrac{5000}{19}$.",
+   "$\\dfrac{3885}{19}$.",
+   "$\\dfrac{3220}{19}$."
+  ],
+  "answer": 0,
+  "explain": "Phương trình cân đối: $(I - A)X = D \\Leftrightarrow X = (I - A)^{-1}D$.<br>Ta có $(I - A)^{-1} = \\begin{pmatrix}\\dfrac{30}{19} & \\dfrac{10}{19} \\\\ \\dfrac{10}{19} & \\dfrac{35}{19}\\end{pmatrix}$.<br>Nhân với $D$: $x_1 = \\dfrac{30}{19}\\cdot 80 + \\dfrac{10}{19}\\cdot 120 = \\dfrac{3600}{19}$.",
+  "topic": "mt",
+  "type": "mcq",
+  "id": "mt-012"
+ },
+ {
+  "q": "Trong mô hình cân đối liên ngành mở Leontief gồm 2 ngành kinh tế, cho ma trận hệ số kỹ thuật $A = \\begin{pmatrix}\\dfrac{1}{4} & \\dfrac{3}{8} \\\\ \\dfrac{1}{2} & \\dfrac{1}{8}\\end{pmatrix}$ và vectơ cầu cuối cùng của thị trường $D = \\begin{pmatrix}110 \\\\ 70\\end{pmatrix}$. Tổng mức sản lượng của cả hai ngành $(x_1 + x_2)$ để đáp ứng hoàn toàn nhu cầu nền kinh tế bằng",
+  "options": [
+   "$\\dfrac{1472}{3}$.",
+   "$\\dfrac{1412}{3}$.",
+   "$\\dfrac{1547}{3}$.",
+   "$\\dfrac{5888}{15}$."
+  ],
+  "answer": 0,
+  "explain": "Ma trận Leontief: $I - A = \\begin{pmatrix}\\dfrac{3}{4} & - \\dfrac{3}{8} \\\\ - \\dfrac{1}{2} & \\dfrac{7}{8}\\end{pmatrix}$, $\\det(I-A) = \\dfrac{15}{32}$.<br>Ma trận nghịch đảo: $(I - A)^{-1} = \\begin{pmatrix}\\dfrac{28}{15} & \\dfrac{4}{5} \\\\ \\dfrac{16}{15} & \\dfrac{8}{5}\\end{pmatrix}$.<br>Vectơ sản lượng: $X = (I - A)^{-1}D = \\begin{pmatrix}\\dfrac{784}{3} \\\\ \\dfrac{688}{3}\\end{pmatrix} \\Rightarrow x_1 = \\dfrac{784}{3},\\; x_2 = \\dfrac{688}{3}$.<br>Tổng mức sản lượng: $x_1 + x_2 = \\dfrac{1472}{3}$.",
+  "topic": "mt",
+  "type": "mcq",
+  "id": "mt-013"
+ },
+ {
+  "q": "Trong mô hình kinh tế Input-Output Leontief với ma trận tiêu hao đầu vào $A = \\begin{pmatrix}\\dfrac{1}{4} & \\dfrac{3}{8} \\\\ \\dfrac{1}{2} & \\dfrac{1}{8}\\end{pmatrix}$ và nhu cầu tiêu dùng cuối $D = \\begin{pmatrix}110 \\\\ 70\\end{pmatrix}$. Mức tổng sản lượng $x_1$ mà ngành thứ nhất cần sản xuất bằng",
+  "options": [
+   "$\\dfrac{784}{3}$.",
+   "$\\dfrac{688}{3}$.",
+   "$\\dfrac{829}{3}$.",
+   "$\\dfrac{724}{3}$."
+  ],
+  "answer": 0,
+  "explain": "Phương trình cân đối: $(I - A)X = D \\Leftrightarrow X = (I - A)^{-1}D$.<br>Ta có $(I - A)^{-1} = \\begin{pmatrix}\\dfrac{28}{15} & \\dfrac{4}{5} \\\\ \\dfrac{16}{15} & \\dfrac{8}{5}\\end{pmatrix}$.<br>Nhân với $D$: $x_1 = \\dfrac{28}{15}\\cdot 110 + \\dfrac{4}{5}\\cdot 70 = \\dfrac{784}{3}$.",
+  "topic": "mt",
+  "type": "mcq",
+  "id": "mt-014"
+ },
+ {
+  "q": "Trong mô hình cân đối liên ngành mở Leontief gồm 2 ngành kinh tế, cho ma trận hệ số kỹ thuật $A = \\begin{pmatrix}\\dfrac{1}{3} & \\dfrac{1}{4} \\\\ \\dfrac{2}{5} & \\dfrac{1}{5}\\end{pmatrix}$ và vectơ cầu cuối cùng của thị trường $D = \\begin{pmatrix}85 \\\\ 95\\end{pmatrix}$. Tổng mức sản lượng của cả hai ngành $(x_1 + x_2)$ để đáp ứng hoàn toàn nhu cầu nền kinh tế bằng",
+  "options": [
+   "$\\dfrac{11345}{26}$.",
+   "$\\dfrac{10825}{26}$.",
+   "$\\dfrac{11995}{26}$.",
+   "$\\dfrac{4538}{13}$."
+  ],
+  "answer": 0,
+  "explain": "Ma trận Leontief: $I - A = \\begin{pmatrix}\\dfrac{2}{3} & - \\dfrac{1}{4} \\\\ - \\dfrac{2}{5} & \\dfrac{4}{5}\\end{pmatrix}$, $\\det(I-A) = \\dfrac{13}{30}$.<br>Ma trận nghịch đảo: $(I - A)^{-1} = \\begin{pmatrix}\\dfrac{24}{13} & \\dfrac{15}{26} \\\\ \\dfrac{12}{13} & \\dfrac{20}{13}\\end{pmatrix}$.<br>Vectơ sản lượng: $X = (I - A)^{-1}D = \\begin{pmatrix}\\dfrac{5505}{26} \\\\ \\dfrac{2920}{13}\\end{pmatrix} \\Rightarrow x_1 = \\dfrac{5505}{26},\\; x_2 = \\dfrac{2920}{13}$.<br>Tổng mức sản lượng: $x_1 + x_2 = \\dfrac{11345}{26}$.",
+  "topic": "mt",
+  "type": "mcq",
+  "id": "mt-015"
+ },
+ {
+  "q": "Trong mô hình kinh tế Input-Output Leontief với ma trận tiêu hao đầu vào $A = \\begin{pmatrix}\\dfrac{1}{3} & \\dfrac{1}{4} \\\\ \\dfrac{2}{5} & \\dfrac{1}{5}\\end{pmatrix}$ và nhu cầu tiêu dùng cuối $D = \\begin{pmatrix}85 \\\\ 95\\end{pmatrix}$. Mức tổng sản lượng $x_1$ mà ngành thứ nhất cần sản xuất bằng",
+  "options": [
+   "$\\dfrac{5505}{26}$.",
+   "$\\dfrac{2920}{13}$.",
+   "$\\dfrac{5895}{26}$.",
+   "$\\dfrac{4985}{26}$."
+  ],
+  "answer": 0,
+  "explain": "Phương trình cân đối: $(I - A)X = D \\Leftrightarrow X = (I - A)^{-1}D$.<br>Ta có $(I - A)^{-1} = \\begin{pmatrix}\\dfrac{24}{13} & \\dfrac{15}{26} \\\\ \\dfrac{12}{13} & \\dfrac{20}{13}\\end{pmatrix}$.<br>Nhân với $D$: $x_1 = \\dfrac{24}{13}\\cdot 85 + \\dfrac{15}{26}\\cdot 95 = \\dfrac{5505}{26}$.",
+  "topic": "mt",
+  "type": "mcq",
+  "id": "mt-016"
+ },
+ {
+  "q": "Một thị trường viễn thông có 2 nhà mạng $A$ và $B$. Ma trận chuyển dịch khách hàng hàng tháng là $P = \\begin{pmatrix}\\dfrac{4}{5} & \\dfrac{1}{5} \\\\ \\dfrac{3}{10} & \\dfrac{7}{10}\\end{pmatrix}$ (với phần tử $p_{ij}$ là xác suất khách hàng chuyển từ mạng $i$ sang mạng $j$). Về lâu dài, thị phần ổn định của nhà mạng $A$ đạt tỉ lệ bằng",
+  "options": [
+   "$\\dfrac{3}{5}$.",
+   "$\\dfrac{2}{5}$.",
+   "$\\dfrac{27}{50}$.",
+   "$\\dfrac{7}{10}$."
+  ],
+  "answer": 0,
+  "explain": "Gọi $\\pi = (x;\\; y)$ là vectơ phân phối dừng thỏa $\\pi P = \\pi$ và $x + y = 1$.<br>Hệ phương trình: $\\begin{cases} \\dfrac{4}{5}x + \\dfrac{3}{10}y = x \\\\ x + y = 1 \\end{cases} \\Leftrightarrow \\dfrac{1}{5}x = \\dfrac{3}{10}y$.<br>Thay $y = 1 - x$: $(\\dfrac{1}{5} + \\dfrac{3}{10})x = \\dfrac{3}{10} \\Rightarrow x = \\dfrac{3}{5}$.",
+  "topic": "mt",
+  "type": "mcq",
+  "id": "mt-017"
+ },
+ {
+  "q": "Một thị trường viễn thông có 2 nhà mạng $A$ và $B$. Ma trận chuyển dịch khách hàng hàng tháng là $P = \\begin{pmatrix}\\dfrac{7}{10} & \\dfrac{3}{10} \\\\ \\dfrac{2}{5} & \\dfrac{3}{5}\\end{pmatrix}$ (với phần tử $p_{ij}$ là xác suất khách hàng chuyển từ mạng $i$ sang mạng $j$). Về lâu dài, thị phần ổn định của nhà mạng $A$ đạt tỉ lệ bằng",
+  "options": [
+   "$\\dfrac{4}{7}$.",
+   "$\\dfrac{3}{7}$.",
+   "$\\dfrac{18}{35}$.",
+   "$\\dfrac{47}{70}$."
+  ],
+  "answer": 0,
+  "explain": "Gọi $\\pi = (x;\\; y)$ là vectơ phân phối dừng thỏa $\\pi P = \\pi$ và $x + y = 1$.<br>Hệ phương trình: $\\begin{cases} \\dfrac{7}{10}x + \\dfrac{2}{5}y = x \\\\ x + y = 1 \\end{cases} \\Leftrightarrow \\dfrac{3}{10}x = \\dfrac{2}{5}y$.<br>Thay $y = 1 - x$: $(\\dfrac{3}{10} + \\dfrac{2}{5})x = \\dfrac{2}{5} \\Rightarrow x = \\dfrac{4}{7}$.",
+  "topic": "mt",
+  "type": "mcq",
+  "id": "mt-018"
+ },
+ {
+  "q": "Một thị trường viễn thông có 2 nhà mạng $A$ và $B$. Ma trận chuyển dịch khách hàng hàng tháng là $P = \\begin{pmatrix}\\dfrac{9}{10} & \\dfrac{1}{10} \\\\ \\dfrac{1}{5} & \\dfrac{4}{5}\\end{pmatrix}$ (với phần tử $p_{ij}$ là xác suất khách hàng chuyển từ mạng $i$ sang mạng $j$). Về lâu dài, thị phần ổn định của nhà mạng $A$ đạt tỉ lệ bằng",
+  "options": [
+   "$\\dfrac{2}{3}$.",
+   "$\\dfrac{1}{3}$.",
+   "$\\dfrac{3}{5}$.",
+   "$\\dfrac{23}{30}$."
+  ],
+  "answer": 0,
+  "explain": "Gọi $\\pi = (x;\\; y)$ là vectơ phân phối dừng thỏa $\\pi P = \\pi$ và $x + y = 1$.<br>Hệ phương trình: $\\begin{cases} \\dfrac{9}{10}x + \\dfrac{1}{5}y = x \\\\ x + y = 1 \\end{cases} \\Leftrightarrow \\dfrac{1}{10}x = \\dfrac{1}{5}y$.<br>Thay $y = 1 - x$: $(\\dfrac{1}{10} + \\dfrac{1}{5})x = \\dfrac{1}{5} \\Rightarrow x = \\dfrac{2}{3}$.",
+  "topic": "mt",
+  "type": "mcq",
+  "id": "mt-019"
+ },
+ {
+  "q": "Một thị trường viễn thông có 2 nhà mạng $A$ và $B$. Ma trận chuyển dịch khách hàng hàng tháng là $P = \\begin{pmatrix}\\dfrac{3}{4} & \\dfrac{1}{4} \\\\ \\dfrac{1}{3} & \\dfrac{2}{3}\\end{pmatrix}$ (với phần tử $p_{ij}$ là xác suất khách hàng chuyển từ mạng $i$ sang mạng $j$). Về lâu dài, thị phần ổn định của nhà mạng $A$ đạt tỉ lệ bằng",
+  "options": [
+   "$\\dfrac{4}{7}$.",
+   "$\\dfrac{3}{7}$.",
+   "$\\dfrac{18}{35}$.",
+   "$\\dfrac{47}{70}$."
+  ],
+  "answer": 0,
+  "explain": "Gọi $\\pi = (x;\\; y)$ là vectơ phân phối dừng thỏa $\\pi P = \\pi$ và $x + y = 1$.<br>Hệ phương trình: $\\begin{cases} \\dfrac{3}{4}x + \\dfrac{1}{3}y = x \\\\ x + y = 1 \\end{cases} \\Leftrightarrow \\dfrac{1}{4}x = \\dfrac{1}{3}y$.<br>Thay $y = 1 - x$: $(\\dfrac{1}{4} + \\dfrac{1}{3})x = \\dfrac{1}{3} \\Rightarrow x = \\dfrac{4}{7}$.",
+  "topic": "mt",
+  "type": "mcq",
+  "id": "mt-020"
+ },
+ {
+  "q": "Một thị trường viễn thông có 2 nhà mạng $A$ và $B$. Ma trận chuyển dịch khách hàng hàng tháng là $P = \\begin{pmatrix}\\dfrac{5}{6} & \\dfrac{1}{6} \\\\ \\dfrac{1}{4} & \\dfrac{3}{4}\\end{pmatrix}$ (với phần tử $p_{ij}$ là xác suất khách hàng chuyển từ mạng $i$ sang mạng $j$). Về lâu dài, thị phần ổn định của nhà mạng $A$ đạt tỉ lệ bằng",
+  "options": [
+   "$\\dfrac{3}{5}$.",
+   "$\\dfrac{2}{5}$.",
+   "$\\dfrac{27}{50}$.",
+   "$\\dfrac{7}{10}$."
+  ],
+  "answer": 0,
+  "explain": "Gọi $\\pi = (x;\\; y)$ là vectơ phân phối dừng thỏa $\\pi P = \\pi$ và $x + y = 1$.<br>Hệ phương trình: $\\begin{cases} \\dfrac{5}{6}x + \\dfrac{1}{4}y = x \\\\ x + y = 1 \\end{cases} \\Leftrightarrow \\dfrac{1}{6}x = \\dfrac{1}{4}y$.<br>Thay $y = 1 - x$: $(\\dfrac{1}{6} + \\dfrac{1}{4})x = \\dfrac{1}{4} \\Rightarrow x = \\dfrac{3}{5}$.",
+  "topic": "mt",
+  "type": "mcq",
+  "id": "mt-021"
+ },
+ {
+  "q": "Cho mạch điện hai mắt lưới có hai nguồn suất điện động $E_1 = 24\\,\\text{V}$, $E_2 = 12\\,\\text{V}$ và ba điện trở $R_1 = 4\\,\\Omega$, $R_2 = 2\\,\\Omega$, $R_3 = 6\\,\\Omega$. Theo định luật Kirchhoff, cường độ dòng điện $I_3$ chạy qua điện trở chung $R_3$ (biết $I_3 = I_1 + I_2$) bằng",
+  "options": [
+   "$\\dfrac{24}{11}$\\,\\text{A}.",
+   "$\\dfrac{30}{11}$\\,\\text{A}.",
+   "$- \\dfrac{6}{11}$\\,\\text{A}.",
+   "$\\dfrac{35}{11}$\\,\\text{A}."
+  ],
+  "answer": 0,
+  "explain": "Áp dụng định luật 2 Kirchhoff cho hai vòng mắt lưới: $\\begin{cases} (4 + 6)I_1 + 6I_2 = 24 \\\\ 6I_1 + (2 + 6)I_2 = 12\\end{cases}$<br>Ta được hệ: $\\begin{cases} 10I_1 + 6I_2 = 24 \\\\ 6I_1 + 8I_2 = 12\\end{cases}$<br>Giải hệ Cramer hoặc khử Gauss được: $I_1 = \\dfrac{30}{11}\\,\\text{A},\\; I_2 = - \\dfrac{6}{11}\\,\\text{A}$.<br>Dòng điện qua nhánh chung: $I_3 = I_1 + I_2 = \\dfrac{24}{11}\\,\\text{A}$.",
+  "topic": "he",
+  "type": "mcq",
+  "id": "he-102"
+ },
+ {
+  "q": "Cho mạch điện hai mắt lưới có hai nguồn suất điện động $E_1 = 36\\,\\text{V}$, $E_2 = 18\\,\\text{V}$ và ba điện trở $R_1 = 6\\,\\Omega$, $R_2 = 3\\,\\Omega$, $R_3 = 9\\,\\Omega$. Theo định luật Kirchhoff, cường độ dòng điện $I_3$ chạy qua điện trở chung $R_3$ (biết $I_3 = I_1 + I_2$) bằng",
+  "options": [
+   "$\\dfrac{24}{11}$\\,\\text{A}.",
+   "$\\dfrac{30}{11}$\\,\\text{A}.",
+   "$- \\dfrac{6}{11}$\\,\\text{A}.",
+   "$\\dfrac{35}{11}$\\,\\text{A}."
+  ],
+  "answer": 0,
+  "explain": "Áp dụng định luật 2 Kirchhoff cho hai vòng mắt lưới: $\\begin{cases} (6 + 9)I_1 + 9I_2 = 36 \\\\ 9I_1 + (3 + 9)I_2 = 18\\end{cases}$<br>Ta được hệ: $\\begin{cases} 15I_1 + 9I_2 = 36 \\\\ 9I_1 + 12I_2 = 18\\end{cases}$<br>Giải hệ Cramer hoặc khử Gauss được: $I_1 = \\dfrac{30}{11}\\,\\text{A},\\; I_2 = - \\dfrac{6}{11}\\,\\text{A}$.<br>Dòng điện qua nhánh chung: $I_3 = I_1 + I_2 = \\dfrac{24}{11}\\,\\text{A}$.",
+  "topic": "he",
+  "type": "mcq",
+  "id": "he-103"
+ },
+ {
+  "q": "Cho mạch điện hai mắt lưới có hai nguồn suất điện động $E_1 = 20\\,\\text{V}$, $E_2 = 10\\,\\text{V}$ và ba điện trở $R_1 = 5\\,\\Omega$, $R_2 = 2\\,\\Omega$, $R_3 = 4\\,\\Omega$. Theo định luật Kirchhoff, cường độ dòng điện $I_3$ chạy qua điện trở chung $R_3$ (biết $I_3 = I_1 + I_2$) bằng",
+  "options": [
+   "$\\dfrac{45}{19}$\\,\\text{A}.",
+   "$\\dfrac{40}{19}$\\,\\text{A}.",
+   "$\\dfrac{5}{19}$\\,\\text{A}.",
+   "$\\dfrac{64}{19}$\\,\\text{A}."
+  ],
+  "answer": 0,
+  "explain": "Áp dụng định luật 2 Kirchhoff cho hai vòng mắt lưới: $\\begin{cases} (5 + 4)I_1 + 4I_2 = 20 \\\\ 4I_1 + (2 + 4)I_2 = 10\\end{cases}$<br>Ta được hệ: $\\begin{cases} 9I_1 + 4I_2 = 20 \\\\ 4I_1 + 6I_2 = 10\\end{cases}$<br>Giải hệ Cramer hoặc khử Gauss được: $I_1 = \\dfrac{40}{19}\\,\\text{A},\\; I_2 = \\dfrac{5}{19}\\,\\text{A}$.<br>Dòng điện qua nhánh chung: $I_3 = I_1 + I_2 = \\dfrac{45}{19}\\,\\text{A}$.",
+  "topic": "he",
+  "type": "mcq",
+  "id": "he-104"
+ },
+ {
+  "q": "Cho mạch điện hai mắt lưới có hai nguồn suất điện động $E_1 = 30\\,\\text{V}$, $E_2 = 15\\,\\text{V}$ và ba điện trở $R_1 = 3\\,\\Omega$, $R_2 = 3\\,\\Omega$, $R_3 = 6\\,\\Omega$. Theo định luật Kirchhoff, cường độ dòng điện $I_3$ chạy qua điện trở chung $R_3$ (biết $I_3 = I_1 + I_2$) bằng",
+  "options": [
+   "$3$\\,\\text{A}.",
+   "$4$\\,\\text{A}.",
+   "$-1$\\,\\text{A}.",
+   "$\\dfrac{3}{2}$\\,\\text{A}."
+  ],
+  "answer": 0,
+  "explain": "Áp dụng định luật 2 Kirchhoff cho hai vòng mắt lưới: $\\begin{cases} (3 + 6)I_1 + 6I_2 = 30 \\\\ 6I_1 + (3 + 6)I_2 = 15\\end{cases}$<br>Ta được hệ: $\\begin{cases} 9I_1 + 6I_2 = 30 \\\\ 6I_1 + 9I_2 = 15\\end{cases}$<br>Giải hệ Cramer hoặc khử Gauss được: $I_1 = 4\\,\\text{A},\\; I_2 = -1\\,\\text{A}$.<br>Dòng điện qua nhánh chung: $I_3 = I_1 + I_2 = 3\\,\\text{A}$.",
+  "topic": "he",
+  "type": "mcq",
+  "id": "he-105"
+ },
+ {
+  "q": "Cho mạch điện hai mắt lưới có hai nguồn suất điện động $E_1 = 48\\,\\text{V}$, $E_2 = 24\\,\\text{V}$ và ba điện trở $R_1 = 8\\,\\Omega$, $R_2 = 4\\,\\Omega$, $R_3 = 12\\,\\Omega$. Theo định luật Kirchhoff, cường độ dòng điện $I_3$ chạy qua điện trở chung $R_3$ (biết $I_3 = I_1 + I_2$) bằng",
+  "options": [
+   "$\\dfrac{24}{11}$\\,\\text{A}.",
+   "$\\dfrac{30}{11}$\\,\\text{A}.",
+   "$- \\dfrac{6}{11}$\\,\\text{A}.",
+   "$\\dfrac{35}{11}$\\,\\text{A}."
+  ],
+  "answer": 0,
+  "explain": "Áp dụng định luật 2 Kirchhoff cho hai vòng mắt lưới: $\\begin{cases} (8 + 12)I_1 + 12I_2 = 48 \\\\ 12I_1 + (4 + 12)I_2 = 24\\end{cases}$<br>Ta được hệ: $\\begin{cases} 20I_1 + 12I_2 = 48 \\\\ 12I_1 + 16I_2 = 24\\end{cases}$<br>Giải hệ Cramer hoặc khử Gauss được: $I_1 = \\dfrac{30}{11}\\,\\text{A},\\; I_2 = - \\dfrac{6}{11}\\,\\text{A}$.<br>Dòng điện qua nhánh chung: $I_3 = I_1 + I_2 = \\dfrac{24}{11}\\,\\text{A}$.",
+  "topic": "he",
+  "type": "mcq",
+  "id": "he-106"
+ },
+ {
+  "q": "Trong không gian $\\mathbb{R}^3$ với tích vô hướng chính tắc, cho vectơ $v = (1;\\,2;\\,2)$ và không gian con $W = \\operatorname{span}\\{v\\}$. Cho $u = (2;\\,-2;\\,6)$. Khoảng cách từ điểm $u$ đến đường thẳng $W$, kí hiệu $d(u, W) = |u - \\operatorname{pr}_W(u)|$, có bình phương bằng",
+  "options": [
+   "$\\dfrac{296}{9}$.",
+   "$\\dfrac{100}{9}$.",
+   "$\\dfrac{386}{9}$.",
+   "$\\dfrac{251}{9}$."
+  ],
+  "answer": 0,
+  "explain": "Tích vô hướng $\\langle u, v\\rangle = (2)(1) + (-2)(2) + (6)(2) = 10$.<br>Độ dài $|v|^2 = 9 = 9$.<br>Độ dài hình chiếu: $|\\operatorname{pr}_W(u)|^2 = \\dfrac{\\langle u, v\\rangle^2}{|v|^2} = \\dfrac{100}{9} = \\dfrac{100}{9}$.<br>Theo định lý Pythagore: $d^2(u, W) = |u|^2 - |\\operatorname{pr}_W(u)|^2 = 44 - \\dfrac{100}{9} = \\dfrac{296}{9}$.",
+  "topic": "vt",
+  "type": "mcq",
+  "id": "vt-076"
+ },
+ {
+  "q": "Trong không gian $\\mathbb{R}^3$ với tích vô hướng chính tắc, cho vectơ $v = (2;\\,3;\\,6)$ và không gian con $W = \\operatorname{span}\\{v\\}$. Cho $u = (4;\\,-3;\\,18)$. Khoảng cách từ điểm $u$ đến đường thẳng $W$, kí hiệu $d(u, W) = |u - \\operatorname{pr}_W(u)|$, có bình phương bằng",
+  "options": [
+   "$\\dfrac{5652}{49}$.",
+   "$\\dfrac{11449}{49}$.",
+   "$\\dfrac{6142}{49}$.",
+   "$\\dfrac{5407}{49}$."
+  ],
+  "answer": 0,
+  "explain": "Tích vô hướng $\\langle u, v\\rangle = (4)(2) + (-3)(3) + (18)(6) = 107$.<br>Độ dài $|v|^2 = 49 = 49$.<br>Độ dài hình chiếu: $|\\operatorname{pr}_W(u)|^2 = \\dfrac{\\langle u, v\\rangle^2}{|v|^2} = \\dfrac{11449}{49} = \\dfrac{11449}{49}$.<br>Theo định lý Pythagore: $d^2(u, W) = |u|^2 - |\\operatorname{pr}_W(u)|^2 = 349 - \\dfrac{11449}{49} = \\dfrac{5652}{49}$.",
+  "topic": "vt",
+  "type": "mcq",
+  "id": "vt-077"
+ },
+ {
+  "q": "Trong không gian $\\mathbb{R}^3$ với tích vô hướng chính tắc, cho vectơ $v = (1;\\,4;\\,8)$ và không gian con $W = \\operatorname{span}\\{v\\}$. Cho $u = (2;\\,-4;\\,24)$. Khoảng cách từ điểm $u$ đến đường thẳng $W$, kí hiệu $d(u, W) = |u - \\operatorname{pr}_W(u)|$, có bình phương bằng",
+  "options": [
+   "$\\dfrac{16592}{81}$.",
+   "$\\dfrac{31684}{81}$.",
+   "$\\dfrac{17402}{81}$.",
+   "$\\dfrac{16187}{81}$."
+  ],
+  "answer": 0,
+  "explain": "Tích vô hướng $\\langle u, v\\rangle = (2)(1) + (-4)(4) + (24)(8) = 178$.<br>Độ dài $|v|^2 = 81 = 81$.<br>Độ dài hình chiếu: $|\\operatorname{pr}_W(u)|^2 = \\dfrac{\\langle u, v\\rangle^2}{|v|^2} = \\dfrac{31684}{81} = \\dfrac{31684}{81}$.<br>Theo định lý Pythagore: $d^2(u, W) = |u|^2 - |\\operatorname{pr}_W(u)|^2 = 596 - \\dfrac{31684}{81} = \\dfrac{16592}{81}$.",
+  "topic": "vt",
+  "type": "mcq",
+  "id": "vt-078"
+ },
+ {
+  "q": "Trong không gian $\\mathbb{R}^3$ với tích vô hướng chính tắc, cho vectơ $v = (4;\\,4;\\,7)$ và không gian con $W = \\operatorname{span}\\{v\\}$. Cho $u = (8;\\,-4;\\,21)$. Khoảng cách từ điểm $u$ đến đường thẳng $W$, kí hiệu $d(u, W) = |u - \\operatorname{pr}_W(u)|$, có bình phương bằng",
+  "options": [
+   "$\\dfrac{15632}{81}$.",
+   "$\\dfrac{26569}{81}$.",
+   "$\\dfrac{16442}{81}$.",
+   "$\\dfrac{15227}{81}$."
+  ],
+  "answer": 0,
+  "explain": "Tích vô hướng $\\langle u, v\\rangle = (8)(4) + (-4)(4) + (21)(7) = 163$.<br>Độ dài $|v|^2 = 81 = 81$.<br>Độ dài hình chiếu: $|\\operatorname{pr}_W(u)|^2 = \\dfrac{\\langle u, v\\rangle^2}{|v|^2} = \\dfrac{26569}{81} = \\dfrac{26569}{81}$.<br>Theo định lý Pythagore: $d^2(u, W) = |u|^2 - |\\operatorname{pr}_W(u)|^2 = 521 - \\dfrac{26569}{81} = \\dfrac{15632}{81}$.",
+  "topic": "vt",
+  "type": "mcq",
+  "id": "vt-079"
+ },
+ {
+  "q": "Trong không gian $\\mathbb{R}^3$ với tích vô hướng chính tắc, cho vectơ $v = (2;\\,6;\\,9)$ và không gian con $W = \\operatorname{span}\\{v\\}$. Cho $u = (4;\\,-6;\\,27)$. Khoảng cách từ điểm $u$ đến đường thẳng $W$, kí hiệu $d(u, W) = |u - \\operatorname{pr}_W(u)|$, có bình phương bằng",
+  "options": [
+   "$\\dfrac{48276}{121}$.",
+   "$\\dfrac{46225}{121}$.",
+   "$\\dfrac{49486}{121}$.",
+   "$\\dfrac{47671}{121}$."
+  ],
+  "answer": 0,
+  "explain": "Tích vô hướng $\\langle u, v\\rangle = (4)(2) + (-6)(6) + (27)(9) = 215$.<br>Độ dài $|v|^2 = 121 = 121$.<br>Độ dài hình chiếu: $|\\operatorname{pr}_W(u)|^2 = \\dfrac{\\langle u, v\\rangle^2}{|v|^2} = \\dfrac{46225}{121} = \\dfrac{46225}{121}$.<br>Theo định lý Pythagore: $d^2(u, W) = |u|^2 - |\\operatorname{pr}_W(u)|^2 = 781 - \\dfrac{46225}{121} = \\dfrac{48276}{121}$.",
+  "topic": "vt",
+  "type": "mcq",
+  "id": "vt-080"
+ },
+ {
+  "q": "Một bể nước hình nón tròn xoay đỉnh ở dưới, có bán kính miệng $R = 3\\,\\text{m}$ và chiều cao $H = 6\\,\\text{m}$. Nước được bơm vào bể với lưu lượng không đổi $c = 2\\,\\text{m}^3/\\text{phút}$. Tại thời điểm mực nước trong bể sâu $h = 4\\,\\text{m}$, tốc độ dâng lên của mực nước có dạng $\\dfrac{k}{\\pi}\\,(\\text{m}/\\text{phút})$. Giá trị của hệ số $k$ bằng",
+  "options": [
+   "$\\dfrac{1}{2}$.",
+   "$1$.",
+   "$\\dfrac{1}{4}$.",
+   "$\\dfrac{3}{2}$."
+  ],
+  "answer": 0,
+  "explain": "Bán kính mặt nước tại độ sâu $h$: $r = \\dfrac{R}{H}h = \\dfrac{1}{2}h$.<br>Thể tích khối nước: $V = \\dfrac{1}{3}\\pi r^2 h = \\dfrac{1}{3}\\pi \\left(\\dfrac{1}{2}h\\right)^2 h = \\dfrac{\\pi}{12} h^3$.<br>Đạo hàm theo thời gian: $\\dfrac{dV}{dt} = \\pi \\left(\\dfrac{1}{2}\\right)^2 h^2 \\dfrac{dh}{dt}$.<br>Thay $h = 4$ và $\\dfrac{dV}{dt} = 2$: $2 = \\pi \\cdot 4 \\cdot \\dfrac{dh}{dt} \\Rightarrow \\dfrac{dh}{dt} = \\dfrac{\\dfrac{1}{2}}{\\pi}$.<br>Do đó hệ số $k = \\dfrac{1}{2}$.",
+  "topic": "dh",
+  "type": "mcq",
+  "id": "dh-134"
+ },
+ {
+  "q": "Một bể nước hình nón tròn xoay đỉnh ở dưới, có bán kính miệng $R = 4\\,\\text{m}$ và chiều cao $H = 8\\,\\text{m}$. Nước được bơm vào bể với lưu lượng không đổi $c = 3\\,\\text{m}^3/\\text{phút}$. Tại thời điểm mực nước trong bể sâu $h = 4\\,\\text{m}$, tốc độ dâng lên của mực nước có dạng $\\dfrac{k}{\\pi}\\,(\\text{m}/\\text{phút})$. Giá trị của hệ số $k$ bằng",
+  "options": [
+   "$\\dfrac{3}{4}$.",
+   "$\\dfrac{3}{2}$.",
+   "$\\dfrac{3}{8}$.",
+   "$\\dfrac{7}{4}$."
+  ],
+  "answer": 0,
+  "explain": "Bán kính mặt nước tại độ sâu $h$: $r = \\dfrac{R}{H}h = \\dfrac{1}{2}h$.<br>Thể tích khối nước: $V = \\dfrac{1}{3}\\pi r^2 h = \\dfrac{1}{3}\\pi \\left(\\dfrac{1}{2}h\\right)^2 h = \\dfrac{\\pi}{12} h^3$.<br>Đạo hàm theo thời gian: $\\dfrac{dV}{dt} = \\pi \\left(\\dfrac{1}{2}\\right)^2 h^2 \\dfrac{dh}{dt}$.<br>Thay $h = 4$ và $\\dfrac{dV}{dt} = 3$: $3 = \\pi \\cdot 4 \\cdot \\dfrac{dh}{dt} \\Rightarrow \\dfrac{dh}{dt} = \\dfrac{\\dfrac{3}{4}}{\\pi}$.<br>Do đó hệ số $k = \\dfrac{3}{4}$.",
+  "topic": "dh",
+  "type": "mcq",
+  "id": "dh-135"
+ },
+ {
+  "q": "Một bể nước hình nón tròn xoay đỉnh ở dưới, có bán kính miệng $R = 2\\,\\text{m}$ và chiều cao $H = 4\\,\\text{m}$. Nước được bơm vào bể với lưu lượng không đổi $c = 1\\,\\text{m}^3/\\text{phút}$. Tại thời điểm mực nước trong bể sâu $h = 2\\,\\text{m}$, tốc độ dâng lên của mực nước có dạng $\\dfrac{k}{\\pi}\\,(\\text{m}/\\text{phút})$. Giá trị của hệ số $k$ bằng",
+  "options": [
+   "$1$.",
+   "$2$.",
+   "$\\dfrac{1}{2}$.",
+   "$0$."
+  ],
+  "answer": 0,
+  "explain": "Bán kính mặt nước tại độ sâu $h$: $r = \\dfrac{R}{H}h = \\dfrac{1}{2}h$.<br>Thể tích khối nước: $V = \\dfrac{1}{3}\\pi r^2 h = \\dfrac{1}{3}\\pi \\left(\\dfrac{1}{2}h\\right)^2 h = \\dfrac{\\pi}{12} h^3$.<br>Đạo hàm theo thời gian: $\\dfrac{dV}{dt} = \\pi \\left(\\dfrac{1}{2}\\right)^2 h^2 \\dfrac{dh}{dt}$.<br>Thay $h = 2$ và $\\dfrac{dV}{dt} = 1$: $1 = \\pi \\cdot 1 \\cdot \\dfrac{dh}{dt} \\Rightarrow \\dfrac{dh}{dt} = \\dfrac{1}{\\pi}$.<br>Do đó hệ số $k = 1$.",
+  "topic": "dh",
+  "type": "mcq",
+  "id": "dh-136"
+ },
+ {
+  "q": "Một bể nước hình nón tròn xoay đỉnh ở dưới, có bán kính miệng $R = 5\\,\\text{m}$ và chiều cao $H = 10\\,\\text{m}$. Nước được bơm vào bể với lưu lượng không đổi $c = 4\\,\\text{m}^3/\\text{phút}$. Tại thời điểm mực nước trong bể sâu $h = 5\\,\\text{m}$, tốc độ dâng lên của mực nước có dạng $\\dfrac{k}{\\pi}\\,(\\text{m}/\\text{phút})$. Giá trị của hệ số $k$ bằng",
+  "options": [
+   "$\\dfrac{16}{25}$.",
+   "$\\dfrac{32}{25}$.",
+   "$\\dfrac{8}{25}$.",
+   "$\\dfrac{41}{25}$."
+  ],
+  "answer": 0,
+  "explain": "Bán kính mặt nước tại độ sâu $h$: $r = \\dfrac{R}{H}h = \\dfrac{1}{2}h$.<br>Thể tích khối nước: $V = \\dfrac{1}{3}\\pi r^2 h = \\dfrac{1}{3}\\pi \\left(\\dfrac{1}{2}h\\right)^2 h = \\dfrac{\\pi}{12} h^3$.<br>Đạo hàm theo thời gian: $\\dfrac{dV}{dt} = \\pi \\left(\\dfrac{1}{2}\\right)^2 h^2 \\dfrac{dh}{dt}$.<br>Thay $h = 5$ và $\\dfrac{dV}{dt} = 4$: $4 = \\pi \\cdot \\dfrac{25}{4} \\cdot \\dfrac{dh}{dt} \\Rightarrow \\dfrac{dh}{dt} = \\dfrac{\\dfrac{16}{25}}{\\pi}$.<br>Do đó hệ số $k = \\dfrac{16}{25}$.",
+  "topic": "dh",
+  "type": "mcq",
+  "id": "dh-137"
+ },
+ {
+  "q": "Một bể nước hình nón tròn xoay đỉnh ở dưới, có bán kính miệng $R = 3\\,\\text{m}$ và chiều cao $H = 9\\,\\text{m}$. Nước được bơm vào bể với lưu lượng không đổi $c = 2\\,\\text{m}^3/\\text{phút}$. Tại thời điểm mực nước trong bể sâu $h = 3\\,\\text{m}$, tốc độ dâng lên của mực nước có dạng $\\dfrac{k}{\\pi}\\,(\\text{m}/\\text{phút})$. Giá trị của hệ số $k$ bằng",
+  "options": [
+   "$2$.",
+   "$4$.",
+   "$1$.",
+   "$3$."
+  ],
+  "answer": 0,
+  "explain": "Bán kính mặt nước tại độ sâu $h$: $r = \\dfrac{R}{H}h = \\dfrac{1}{3}h$.<br>Thể tích khối nước: $V = \\dfrac{1}{3}\\pi r^2 h = \\dfrac{1}{3}\\pi \\left(\\dfrac{1}{3}h\\right)^2 h = \\dfrac{\\pi}{27} h^3$.<br>Đạo hàm theo thời gian: $\\dfrac{dV}{dt} = \\pi \\left(\\dfrac{1}{3}\\right)^2 h^2 \\dfrac{dh}{dt}$.<br>Thay $h = 3$ và $\\dfrac{dV}{dt} = 2$: $2 = \\pi \\cdot 1 \\cdot \\dfrac{dh}{dt} \\Rightarrow \\dfrac{dh}{dt} = \\dfrac{2}{\\pi}$.<br>Do đó hệ số $k = 2$.",
+  "topic": "dh",
+  "type": "mcq",
+  "id": "dh-138"
+ },
+ {
+  "q": "Một doanh nghiệp sản xuất có hàm sản lượng Cobb-Douglas $Q(K, L) = K^{\\dfrac{1}{3}} L^{\\dfrac{2}{3}}$, trong đó $K$ là vốn, $L$ là lao động. Giá thuê một đơn vị vốn là $p_K = 4$, giá thuê một đơn vị lao động là $p_L = 2$, và ngân sách sản xuất cố định $B = 120$. Để tối đa hóa sản lượng, lượng vốn $K^*$ doanh nghiệp cần đầu tư là",
+  "options": [
+   "$10$.",
+   "$40$.",
+   "$15$.",
+   "$20$."
+  ],
+  "answer": 0,
+  "explain": "Bài toán cực trị có điều kiện: cực đại $Q = K^{\\dfrac{1}{3}} L^{\\dfrac{2}{3}}$ với ràng buộc $4K + 2L = 120$.<br>Lập hàm Lagrange: $\\mathcal{L}(K, L, \\lambda) = K^{\\dfrac{1}{3}} L^{\\dfrac{2}{3}} - \\lambda(4K + 2L - 120)$.<br>Điều kiện cần: $\\dfrac{Q'_K}{Q'_L} = \\dfrac{p_K}{p_L} \\Leftrightarrow \\dfrac{\\dfrac{1}{3} / K}{\\dfrac{2}{3} / L} = \\dfrac{4}{2} \\Leftrightarrow 4K = \\dfrac{\\dfrac{1}{3}}{\\dfrac{2}{3}}2L$.<br>Thay vào ràng buộc ngân sách ta được: $K^* = \\dfrac{\\alpha}{\\alpha + \\beta}\\cdot\\dfrac{B}{p_K} = 10.0$.",
+  "topic": "nb",
+  "type": "mcq",
+  "id": "nb-001"
+ },
+ {
+  "q": "Một doanh nghiệp sản xuất có hàm sản lượng Cobb-Douglas $Q(K, L) = K^{\\dfrac{1}{2}} L^{\\dfrac{1}{2}}$, trong đó $K$ là vốn, $L$ là lao động. Giá thuê một đơn vị vốn là $p_K = 5$, giá thuê một đơn vị lao động là $p_L = 10$, và ngân sách sản xuất cố định $B = 300$. Để tối đa hóa sản lượng, lượng vốn $K^*$ doanh nghiệp cần đầu tư là",
+  "options": [
+   "$30$.",
+   "$15$.",
+   "$35$.",
+   "$60$."
+  ],
+  "answer": 0,
+  "explain": "Bài toán cực trị có điều kiện: cực đại $Q = K^{\\dfrac{1}{2}} L^{\\dfrac{1}{2}}$ với ràng buộc $5K + 10L = 300$.<br>Lập hàm Lagrange: $\\mathcal{L}(K, L, \\lambda) = K^{\\dfrac{1}{2}} L^{\\dfrac{1}{2}} - \\lambda(5K + 10L - 300)$.<br>Điều kiện cần: $\\dfrac{Q'_K}{Q'_L} = \\dfrac{p_K}{p_L} \\Leftrightarrow \\dfrac{\\dfrac{1}{2} / K}{\\dfrac{1}{2} / L} = \\dfrac{5}{10} \\Leftrightarrow 5K = \\dfrac{\\dfrac{1}{2}}{\\dfrac{1}{2}}10L$.<br>Thay vào ràng buộc ngân sách ta được: $K^* = \\dfrac{\\alpha}{\\alpha + \\beta}\\cdot\\dfrac{B}{p_K} = 30.0$.",
+  "topic": "nb",
+  "type": "mcq",
+  "id": "nb-002"
+ },
+ {
+  "q": "Một doanh nghiệp sản xuất có hàm sản lượng Cobb-Douglas $Q(K, L) = K^{\\dfrac{2}{3}} L^{\\dfrac{1}{3}}$, trong đó $K$ là vốn, $L$ là lao động. Giá thuê một đơn vị vốn là $p_K = 3$, giá thuê một đơn vị lao động là $p_L = 6$, và ngân sách sản xuất cố định $B = 180$. Để tối đa hóa sản lượng, lượng vốn $K^*$ doanh nghiệp cần đầu tư là",
+  "options": [
+   "$40$.",
+   "$10$.",
+   "$45$.",
+   "$80$."
+  ],
+  "answer": 0,
+  "explain": "Bài toán cực trị có điều kiện: cực đại $Q = K^{\\dfrac{2}{3}} L^{\\dfrac{1}{3}}$ với ràng buộc $3K + 6L = 180$.<br>Lập hàm Lagrange: $\\mathcal{L}(K, L, \\lambda) = K^{\\dfrac{2}{3}} L^{\\dfrac{1}{3}} - \\lambda(3K + 6L - 180)$.<br>Điều kiện cần: $\\dfrac{Q'_K}{Q'_L} = \\dfrac{p_K}{p_L} \\Leftrightarrow \\dfrac{\\dfrac{2}{3} / K}{\\dfrac{1}{3} / L} = \\dfrac{3}{6} \\Leftrightarrow 3K = \\dfrac{\\dfrac{2}{3}}{\\dfrac{1}{3}}6L$.<br>Thay vào ràng buộc ngân sách ta được: $K^* = \\dfrac{\\alpha}{\\alpha + \\beta}\\cdot\\dfrac{B}{p_K} = 40.0$.",
+  "topic": "nb",
+  "type": "mcq",
+  "id": "nb-003"
+ },
+ {
+  "q": "Một doanh nghiệp sản xuất có hàm sản lượng Cobb-Douglas $Q(K, L) = K^{\\dfrac{1}{4}} L^{\\dfrac{3}{4}}$, trong đó $K$ là vốn, $L$ là lao động. Giá thuê một đơn vị vốn là $p_K = 2$, giá thuê một đơn vị lao động là $p_L = 4$, và ngân sách sản xuất cố định $B = 160$. Để tối đa hóa sản lượng, lượng vốn $K^*$ doanh nghiệp cần đầu tư là",
+  "options": [
+   "$20$.",
+   "$30$.",
+   "$25$.",
+   "$40$."
+  ],
+  "answer": 0,
+  "explain": "Bài toán cực trị có điều kiện: cực đại $Q = K^{\\dfrac{1}{4}} L^{\\dfrac{3}{4}}$ với ràng buộc $2K + 4L = 160$.<br>Lập hàm Lagrange: $\\mathcal{L}(K, L, \\lambda) = K^{\\dfrac{1}{4}} L^{\\dfrac{3}{4}} - \\lambda(2K + 4L - 160)$.<br>Điều kiện cần: $\\dfrac{Q'_K}{Q'_L} = \\dfrac{p_K}{p_L} \\Leftrightarrow \\dfrac{\\dfrac{1}{4} / K}{\\dfrac{3}{4} / L} = \\dfrac{2}{4} \\Leftrightarrow 2K = \\dfrac{\\dfrac{1}{4}}{\\dfrac{3}{4}}4L$.<br>Thay vào ràng buộc ngân sách ta được: $K^* = \\dfrac{\\alpha}{\\alpha + \\beta}\\cdot\\dfrac{B}{p_K} = 20.0$.",
+  "topic": "nb",
+  "type": "mcq",
+  "id": "nb-004"
+ },
+ {
+  "q": "Theo định luật làm nguội của Newton, tốc độ giảm nhiệt độ của một vật tỷ lệ với hiệu số giữa nhiệt độ của vật và môi trường xung quanh: $\\dfrac{dT}{dt} = -k(T - T_m)$. Một chiếc bánh mì lấy từ lò nướng ra ở $T_0 = 100^\\circ\\text{C}$ đặt trong phòng có nhiệt độ không đổi $T_m = 20^\\circ\\text{C}$. Sau $10$ phút, nhiệt độ của bánh giảm còn $60^\\circ\\text{C}$. Nhiệt độ của bánh sau $20$ phút kể từ khi lấy ra khỏi lò bằng",
+  "options": [
+   "$40$^\\circ\\text{C}.",
+   "$35$^\\circ\\text{C}.",
+   "$50$^\\circ\\text{C}.",
+   "$20$^\\circ\\text{C}."
+  ],
+  "answer": 0,
+  "explain": "Nghiệm của phương trình vi phân: $T(t) = T_m + (T_0 - T_m)e^{-kt} = 20 + 80e^{-kt}$.<br>Tại $t = 10$: $60 = 20 + 80e^{-10k} \\Rightarrow e^{-10k} = \\dfrac{40}{80} = \\dfrac{1}{2}$.<br>Tại $t = 20 = 2\\cdot 10$: $e^{-20k} = \\left(e^{-10k}\\right)^2 = \\left(\\dfrac{1}{2}\\right)^2 = \\dfrac{1}{4}$.<br>Nhiệt độ sau $20$ phút: $T(20) = 20 + 80\\cdot \\dfrac{1}{4} = 40^\\circ\\text{C}$.",
+  "topic": "v1",
+  "type": "mcq",
+  "id": "v1-010"
+ },
+ {
+  "q": "Theo định luật làm nguội của Newton, tốc độ giảm nhiệt độ của một vật tỷ lệ với hiệu số giữa nhiệt độ của vật và môi trường xung quanh: $\\dfrac{dT}{dt} = -k(T - T_m)$. Một chiếc bánh mì lấy từ lò nướng ra ở $T_0 = 90^\\circ\\text{C}$ đặt trong phòng có nhiệt độ không đổi $T_m = 30^\\circ\\text{C}$. Sau $15$ phút, nhiệt độ của bánh giảm còn $60^\\circ\\text{C}$. Nhiệt độ của bánh sau $30$ phút kể từ khi lấy ra khỏi lò bằng",
+  "options": [
+   "$45$^\\circ\\text{C}.",
+   "$40$^\\circ\\text{C}.",
+   "$55$^\\circ\\text{C}.",
+   "$30$^\\circ\\text{C}."
+  ],
+  "answer": 0,
+  "explain": "Nghiệm của phương trình vi phân: $T(t) = T_m + (T_0 - T_m)e^{-kt} = 30 + 60e^{-kt}$.<br>Tại $t = 15$: $60 = 30 + 60e^{-15k} \\Rightarrow e^{-15k} = \\dfrac{30}{60} = \\dfrac{1}{2}$.<br>Tại $t = 30 = 2\\cdot 15$: $e^{-30k} = \\left(e^{-15k}\\right)^2 = \\left(\\dfrac{1}{2}\\right)^2 = \\dfrac{1}{4}$.<br>Nhiệt độ sau $30$ phút: $T(30) = 30 + 60\\cdot \\dfrac{1}{4} = 45^\\circ\\text{C}$.",
+  "topic": "v1",
+  "type": "mcq",
+  "id": "v1-011"
+ },
+ {
+  "q": "Theo định luật làm nguội của Newton, tốc độ giảm nhiệt độ của một vật tỷ lệ với hiệu số giữa nhiệt độ của vật và môi trường xung quanh: $\\dfrac{dT}{dt} = -k(T - T_m)$. Một chiếc bánh mì lấy từ lò nướng ra ở $T_0 = 80^\\circ\\text{C}$ đặt trong phòng có nhiệt độ không đổi $T_m = 20^\\circ\\text{C}$. Sau $12$ phút, nhiệt độ của bánh giảm còn $50^\\circ\\text{C}$. Nhiệt độ của bánh sau $24$ phút kể từ khi lấy ra khỏi lò bằng",
+  "options": [
+   "$35$^\\circ\\text{C}.",
+   "$30$^\\circ\\text{C}.",
+   "$45$^\\circ\\text{C}.",
+   "$20$^\\circ\\text{C}."
+  ],
+  "answer": 0,
+  "explain": "Nghiệm của phương trình vi phân: $T(t) = T_m + (T_0 - T_m)e^{-kt} = 20 + 60e^{-kt}$.<br>Tại $t = 12$: $50 = 20 + 60e^{-12k} \\Rightarrow e^{-12k} = \\dfrac{30}{60} = \\dfrac{1}{2}$.<br>Tại $t = 24 = 2\\cdot 12$: $e^{-24k} = \\left(e^{-12k}\\right)^2 = \\left(\\dfrac{1}{2}\\right)^2 = \\dfrac{1}{4}$.<br>Nhiệt độ sau $24$ phút: $T(24) = 20 + 60\\cdot \\dfrac{1}{4} = 35^\\circ\\text{C}$.",
+  "topic": "v1",
+  "type": "mcq",
+  "id": "v1-012"
+ },
+ {
+  "q": "Theo định luật làm nguội của Newton, tốc độ giảm nhiệt độ của một vật tỷ lệ với hiệu số giữa nhiệt độ của vật và môi trường xung quanh: $\\dfrac{dT}{dt} = -k(T - T_m)$. Một chiếc bánh mì lấy từ lò nướng ra ở $T_0 = 100^\\circ\\text{C}$ đặt trong phòng có nhiệt độ không đổi $T_m = 25^\\circ\\text{C}$. Sau $8$ phút, nhiệt độ của bánh giảm còn $55^\\circ\\text{C}$. Nhiệt độ của bánh sau $16$ phút kể từ khi lấy ra khỏi lò bằng",
+  "options": [
+   "$37$^\\circ\\text{C}.",
+   "$32$^\\circ\\text{C}.",
+   "$47$^\\circ\\text{C}.",
+   "$10$^\\circ\\text{C}."
+  ],
+  "answer": 0,
+  "explain": "Nghiệm của phương trình vi phân: $T(t) = T_m + (T_0 - T_m)e^{-kt} = 25 + 75e^{-kt}$.<br>Tại $t = 8$: $55 = 25 + 75e^{-8k} \\Rightarrow e^{-8k} = \\dfrac{30}{75} = \\dfrac{2}{5}$.<br>Tại $t = 16 = 2\\cdot 8$: $e^{-16k} = \\left(e^{-8k}\\right)^2 = \\left(\\dfrac{2}{5}\\right)^2 = \\dfrac{4}{25}$.<br>Nhiệt độ sau $16$ phút: $T(16) = 25 + 75\\cdot \\dfrac{4}{25} = 37^\\circ\\text{C}$.",
+  "topic": "v1",
+  "type": "mcq",
+  "id": "v1-013"
+ },
+ {
+  "q": "Một bản kim loại phẳng mỏng chiếm miền hình vuông $D = [0;\\, 2] \\times [0;\\, 2]$ có mật độ khối lượng diện tích biến thiên $\\rho(x, y) = x$. Hoành độ trọng tâm $\\bar{x} = \\dfrac{1}{M}\\displaystyle\\iint_D x\\rho(x,y)\\,dxdy$ của bản kim loại này bằng",
+  "options": [
+   "$\\dfrac{4}{3}$.",
+   "$1$.",
+   "$\\dfrac{2}{3}$.",
+   "$\\dfrac{3}{2}$."
+  ],
+  "answer": 0,
+  "explain": "Khối lượng tổng cộng của bản mỏng: $M = \\displaystyle\\int_0^{2} dy \\int_0^{2} x\\,dx = 2\\left[\\dfrac{x^2}{2}\\right]_0^{2} = 4$.<br>Mômen tĩnh đối với trục $Oy$: $M_y = \\displaystyle\\iint_D x^2\\,dxdy = \\int_0^{2} dy \\int_0^{2} x^2\\,dx = 2\\cdot\\dfrac{2^3}{3} = \\dfrac{16}{3}$.<br>Hoành độ trọng tâm: $\\bar{x} = \\dfrac{M_y}{M} = \\dfrac{\\dfrac{16}{3}}{4} = \\dfrac{2\\cdot 2}{3} = \\dfrac{4}{3}$.",
+  "topic": "tb",
+  "type": "mcq",
+  "id": "tb-038"
+ },
+ {
+  "q": "Một bản kim loại phẳng mỏng chiếm miền hình vuông $D = [0;\\, 3] \\times [0;\\, 3]$ có mật độ khối lượng diện tích biến thiên $\\rho(x, y) = x$. Hoành độ trọng tâm $\\bar{x} = \\dfrac{1}{M}\\displaystyle\\iint_D x\\rho(x,y)\\,dxdy$ của bản kim loại này bằng",
+  "options": [
+   "$2$.",
+   "$\\dfrac{3}{2}$.",
+   "$1$.",
+   "$\\dfrac{9}{4}$."
+  ],
+  "answer": 0,
+  "explain": "Khối lượng tổng cộng của bản mỏng: $M = \\displaystyle\\int_0^{3} dy \\int_0^{3} x\\,dx = 3\\left[\\dfrac{x^2}{2}\\right]_0^{3} = \\dfrac{27}{2}$.<br>Mômen tĩnh đối với trục $Oy$: $M_y = \\displaystyle\\iint_D x^2\\,dxdy = \\int_0^{3} dy \\int_0^{3} x^2\\,dx = 3\\cdot\\dfrac{3^3}{3} = 27$.<br>Hoành độ trọng tâm: $\\bar{x} = \\dfrac{M_y}{M} = \\dfrac{27}{\\dfrac{27}{2}} = \\dfrac{2\\cdot 3}{3} = 2$.",
+  "topic": "tb",
+  "type": "mcq",
+  "id": "tb-039"
+ },
+ {
+  "q": "Một bản kim loại phẳng mỏng chiếm miền hình vuông $D = [0;\\, 4] \\times [0;\\, 4]$ có mật độ khối lượng diện tích biến thiên $\\rho(x, y) = x$. Hoành độ trọng tâm $\\bar{x} = \\dfrac{1}{M}\\displaystyle\\iint_D x\\rho(x,y)\\,dxdy$ của bản kim loại này bằng",
+  "options": [
+   "$\\dfrac{8}{3}$.",
+   "$2$.",
+   "$\\dfrac{4}{3}$.",
+   "$3$."
+  ],
+  "answer": 0,
+  "explain": "Khối lượng tổng cộng của bản mỏng: $M = \\displaystyle\\int_0^{4} dy \\int_0^{4} x\\,dx = 4\\left[\\dfrac{x^2}{2}\\right]_0^{4} = 32$.<br>Mômen tĩnh đối với trục $Oy$: $M_y = \\displaystyle\\iint_D x^2\\,dxdy = \\int_0^{4} dy \\int_0^{4} x^2\\,dx = 4\\cdot\\dfrac{4^3}{3} = \\dfrac{256}{3}$.<br>Hoành độ trọng tâm: $\\bar{x} = \\dfrac{M_y}{M} = \\dfrac{\\dfrac{256}{3}}{32} = \\dfrac{2\\cdot 4}{3} = \\dfrac{8}{3}$.",
+  "topic": "tb",
+  "type": "mcq",
+  "id": "tb-040"
+ },
+ {
+  "q": "Một bản kim loại phẳng mỏng chiếm miền hình vuông $D = [0;\\, 6] \\times [0;\\, 6]$ có mật độ khối lượng diện tích biến thiên $\\rho(x, y) = x$. Hoành độ trọng tâm $\\bar{x} = \\dfrac{1}{M}\\displaystyle\\iint_D x\\rho(x,y)\\,dxdy$ của bản kim loại này bằng",
+  "options": [
+   "$4$.",
+   "$3$.",
+   "$2$.",
+   "$\\dfrac{9}{2}$."
+  ],
+  "answer": 0,
+  "explain": "Khối lượng tổng cộng của bản mỏng: $M = \\displaystyle\\int_0^{6} dy \\int_0^{6} x\\,dx = 6\\left[\\dfrac{x^2}{2}\\right]_0^{6} = 108$.<br>Mômen tĩnh đối với trục $Oy$: $M_y = \\displaystyle\\iint_D x^2\\,dxdy = \\int_0^{6} dy \\int_0^{6} x^2\\,dx = 6\\cdot\\dfrac{6^3}{3} = 432$.<br>Hoành độ trọng tâm: $\\bar{x} = \\dfrac{M_y}{M} = \\dfrac{432}{108} = \\dfrac{2\\cdot 6}{3} = 4$.",
+  "topic": "tb",
+  "type": "mcq",
+  "id": "tb-041"
+ },
+ {
+  "q": "Một bản kim loại phẳng mỏng chiếm miền hình vuông $D = [0;\\, 8] \\times [0;\\, 8]$ có mật độ khối lượng diện tích biến thiên $\\rho(x, y) = x$. Hoành độ trọng tâm $\\bar{x} = \\dfrac{1}{M}\\displaystyle\\iint_D x\\rho(x,y)\\,dxdy$ của bản kim loại này bằng",
+  "options": [
+   "$\\dfrac{16}{3}$.",
+   "$4$.",
+   "$\\dfrac{8}{3}$.",
+   "$6$."
+  ],
+  "answer": 0,
+  "explain": "Khối lượng tổng cộng của bản mỏng: $M = \\displaystyle\\int_0^{8} dy \\int_0^{8} x\\,dx = 8\\left[\\dfrac{x^2}{2}\\right]_0^{8} = 256$.<br>Mômen tĩnh đối với trục $Oy$: $M_y = \\displaystyle\\iint_D x^2\\,dxdy = \\int_0^{8} dy \\int_0^{8} x^2\\,dx = 8\\cdot\\dfrac{8^3}{3} = \\dfrac{4096}{3}$.<br>Hoành độ trọng tâm: $\\bar{x} = \\dfrac{M_y}{M} = \\dfrac{\\dfrac{4096}{3}}{256} = \\dfrac{2\\cdot 8}{3} = \\dfrac{16}{3}$.",
+  "topic": "tb",
+  "type": "mcq",
+  "id": "tb-042"
+ },
+ {
+  "q": "Cho $C$ là đường elip $\\dfrac{x^2}{9} + \\dfrac{y^2}{4} = 1$ được định hướng ngược chiều kim đồng hồ. Dùng định lý Green, tính tích phân đường $I = \\displaystyle\\oint_C (-y)\\,dx + x\\,dy$.",
+  "options": [
+   "$12 \\pi$.",
+   "$6 \\pi$.",
+   "$24 \\pi$.",
+   "$- 12 \\pi$."
+  ],
+  "answer": 0,
+  "explain": "Đặt $P(x,y) = -y,\\; Q(x,y) = x$. Ta có $\\dfrac{\\partial Q}{\\partial x} - \\dfrac{\\partial P}{\\partial y} = 1 - (-1) = 2$.<br>Theo định lý Green: $I = \\displaystyle\\iint_D \\left(\\dfrac{\\partial Q}{\\partial x} - \\dfrac{\\partial P}{\\partial y}\\right)dxdy = 2\\iint_D dxdy = 2\\cdot S_{\\text{elip}}$.<br>Diện tích hình elip là $S_{\\text{elip}} = \\pi \\cdot 3 \\cdot 2 = 6\\pi$.<br>Vậy tích phân bằng $I = 2 \\cdot (6\\pi) = 12 \\pi$.",
+  "topic": "td",
+  "type": "mcq",
+  "id": "td-134"
+ },
+ {
+  "q": "Cho $C$ là đường elip $\\dfrac{x^2}{16} + \\dfrac{y^2}{9} = 1$ được định hướng ngược chiều kim đồng hồ. Dùng định lý Green, tính tích phân đường $I = \\displaystyle\\oint_C (-y)\\,dx + x\\,dy$.",
+  "options": [
+   "$24 \\pi$.",
+   "$12 \\pi$.",
+   "$48 \\pi$.",
+   "$- 24 \\pi$."
+  ],
+  "answer": 0,
+  "explain": "Đặt $P(x,y) = -y,\\; Q(x,y) = x$. Ta có $\\dfrac{\\partial Q}{\\partial x} - \\dfrac{\\partial P}{\\partial y} = 1 - (-1) = 2$.<br>Theo định lý Green: $I = \\displaystyle\\iint_D \\left(\\dfrac{\\partial Q}{\\partial x} - \\dfrac{\\partial P}{\\partial y}\\right)dxdy = 2\\iint_D dxdy = 2\\cdot S_{\\text{elip}}$.<br>Diện tích hình elip là $S_{\\text{elip}} = \\pi \\cdot 4 \\cdot 3 = 12\\pi$.<br>Vậy tích phân bằng $I = 2 \\cdot (12\\pi) = 24 \\pi$.",
+  "topic": "td",
+  "type": "mcq",
+  "id": "td-135"
+ },
+ {
+  "q": "Cho $C$ là đường elip $\\dfrac{x^2}{25} + \\dfrac{y^2}{4} = 1$ được định hướng ngược chiều kim đồng hồ. Dùng định lý Green, tính tích phân đường $I = \\displaystyle\\oint_C (-y)\\,dx + x\\,dy$.",
+  "options": [
+   "$20 \\pi$.",
+   "$10 \\pi$.",
+   "$40 \\pi$.",
+   "$- 20 \\pi$."
+  ],
+  "answer": 0,
+  "explain": "Đặt $P(x,y) = -y,\\; Q(x,y) = x$. Ta có $\\dfrac{\\partial Q}{\\partial x} - \\dfrac{\\partial P}{\\partial y} = 1 - (-1) = 2$.<br>Theo định lý Green: $I = \\displaystyle\\iint_D \\left(\\dfrac{\\partial Q}{\\partial x} - \\dfrac{\\partial P}{\\partial y}\\right)dxdy = 2\\iint_D dxdy = 2\\cdot S_{\\text{elip}}$.<br>Diện tích hình elip là $S_{\\text{elip}} = \\pi \\cdot 5 \\cdot 2 = 10\\pi$.<br>Vậy tích phân bằng $I = 2 \\cdot (10\\pi) = 20 \\pi$.",
+  "topic": "td",
+  "type": "mcq",
+  "id": "td-136"
+ },
+ {
+  "q": "Cho $C$ là đường elip $\\dfrac{x^2}{4} + \\dfrac{y^2}{1} = 1$ được định hướng ngược chiều kim đồng hồ. Dùng định lý Green, tính tích phân đường $I = \\displaystyle\\oint_C (-y)\\,dx + x\\,dy$.",
+  "options": [
+   "$4 \\pi$.",
+   "$2 \\pi$.",
+   "$8 \\pi$.",
+   "$- 4 \\pi$."
+  ],
+  "answer": 0,
+  "explain": "Đặt $P(x,y) = -y,\\; Q(x,y) = x$. Ta có $\\dfrac{\\partial Q}{\\partial x} - \\dfrac{\\partial P}{\\partial y} = 1 - (-1) = 2$.<br>Theo định lý Green: $I = \\displaystyle\\iint_D \\left(\\dfrac{\\partial Q}{\\partial x} - \\dfrac{\\partial P}{\\partial y}\\right)dxdy = 2\\iint_D dxdy = 2\\cdot S_{\\text{elip}}$.<br>Diện tích hình elip là $S_{\\text{elip}} = \\pi \\cdot 2 \\cdot 1 = 2\\pi$.<br>Vậy tích phân bằng $I = 2 \\cdot (2\\pi) = 4 \\pi$.",
+  "topic": "td",
+  "type": "mcq",
+  "id": "td-137"
+ },
+ {
+  "q": "Cho $C$ là đường elip $\\dfrac{x^2}{36} + \\dfrac{y^2}{16} = 1$ được định hướng ngược chiều kim đồng hồ. Dùng định lý Green, tính tích phân đường $I = \\displaystyle\\oint_C (-y)\\,dx + x\\,dy$.",
+  "options": [
+   "$48 \\pi$.",
+   "$24 \\pi$.",
+   "$96 \\pi$.",
+   "$- 48 \\pi$."
+  ],
+  "answer": 0,
+  "explain": "Đặt $P(x,y) = -y,\\; Q(x,y) = x$. Ta có $\\dfrac{\\partial Q}{\\partial x} - \\dfrac{\\partial P}{\\partial y} = 1 - (-1) = 2$.<br>Theo định lý Green: $I = \\displaystyle\\iint_D \\left(\\dfrac{\\partial Q}{\\partial x} - \\dfrac{\\partial P}{\\partial y}\\right)dxdy = 2\\iint_D dxdy = 2\\cdot S_{\\text{elip}}$.<br>Diện tích hình elip là $S_{\\text{elip}} = \\pi \\cdot 6 \\cdot 4 = 24\\pi$.<br>Vậy tích phân bằng $I = 2 \\cdot (24\\pi) = 48 \\pi$.",
+  "topic": "td",
+  "type": "mcq",
+  "id": "td-138"
+ },
+ {
+  "q": "Xét chuỗi đan dấu Leibniz $S = \\displaystyle\\sum_{n=1}^{+\\infty} \\dfrac{(-1)^{n-1}}{n^{2}}$. Theo định lý ước lượng phần dư chuỗi đan dấu $|R_N| \\le a_{N+1}$, để tổng riêng thứ $N$ xấp xỉ tổng chuỗi với sai số $|S - S_N| \\le \\dfrac{1}{121}$, số số hạng $N$ tối thiểu cần lấy bằng",
+  "options": [
+   "$10$.",
+   "$11$.",
+   "$9$.",
+   "$20$."
+  ],
+  "answer": 0,
+  "explain": "Chuỗi đan dấu thỏa mãn điều kiện Leibniz với $a_n = \\dfrac{1}{n^{2}}$ giảm dần về $0$.<br>Phần dư thỏa mãn bất đẳng thức: $|R_N| = |S - S_N| \\le a_{N+1} = \\dfrac{1}{(N + 1)^{2}}$.<br>Yêu cầu $\\dfrac{1}{(N + 1)^{2}} \\le \\dfrac{1}{121} \\Leftrightarrow (N + 1)^{2} \\ge 121 \\Leftrightarrow N + 1 \\ge 11 \\Rightarrow N \\ge 10$.<br>Vậy số số hạng tối thiểu cần lấy là $N = 10$.",
+  "topic": "ch",
+  "type": "mcq",
+  "id": "ch-009"
+ },
+ {
+  "q": "Xét chuỗi đan dấu Leibniz $S = \\displaystyle\\sum_{n=1}^{+\\infty} \\dfrac{(-1)^{n-1}}{n^{3}}$. Theo định lý ước lượng phần dư chuỗi đan dấu $|R_N| \\le a_{N+1}$, để tổng riêng thứ $N$ xấp xỉ tổng chuỗi với sai số $|S - S_N| \\le \\dfrac{1}{216}$, số số hạng $N$ tối thiểu cần lấy bằng",
+  "options": [
+   "$5$.",
+   "$6$.",
+   "$4$.",
+   "$10$."
+  ],
+  "answer": 0,
+  "explain": "Chuỗi đan dấu thỏa mãn điều kiện Leibniz với $a_n = \\dfrac{1}{n^{3}}$ giảm dần về $0$.<br>Phần dư thỏa mãn bất đẳng thức: $|R_N| = |S - S_N| \\le a_{N+1} = \\dfrac{1}{(N + 1)^{3}}$.<br>Yêu cầu $\\dfrac{1}{(N + 1)^{3}} \\le \\dfrac{1}{216} \\Leftrightarrow (N + 1)^{3} \\ge 216 \\Leftrightarrow N + 1 \\ge 6 \\Rightarrow N \\ge 5$.<br>Vậy số số hạng tối thiểu cần lấy là $N = 5$.",
+  "topic": "ch",
+  "type": "mcq",
+  "id": "ch-010"
+ },
+ {
+  "q": "Xét chuỗi đan dấu Leibniz $S = \\displaystyle\\sum_{n=1}^{+\\infty} \\dfrac{(-1)^{n-1}}{n^{4}}$. Theo định lý ước lượng phần dư chuỗi đan dấu $|R_N| \\le a_{N+1}$, để tổng riêng thứ $N$ xấp xỉ tổng chuỗi với sai số $|S - S_N| \\le \\dfrac{1}{625}$, số số hạng $N$ tối thiểu cần lấy bằng",
+  "options": [
+   "$4$.",
+   "$5$.",
+   "$3$.",
+   "$8$."
+  ],
+  "answer": 0,
+  "explain": "Chuỗi đan dấu thỏa mãn điều kiện Leibniz với $a_n = \\dfrac{1}{n^{4}}$ giảm dần về $0$.<br>Phần dư thỏa mãn bất đẳng thức: $|R_N| = |S - S_N| \\le a_{N+1} = \\dfrac{1}{(N + 1)^{4}}$.<br>Yêu cầu $\\dfrac{1}{(N + 1)^{4}} \\le \\dfrac{1}{625} \\Leftrightarrow (N + 1)^{4} \\ge 625 \\Leftrightarrow N + 1 \\ge 5 \\Rightarrow N \\ge 4$.<br>Vậy số số hạng tối thiểu cần lấy là $N = 4$.",
+  "topic": "ch",
+  "type": "mcq",
+  "id": "ch-011"
+ },
+ {
+  "q": "Xét chuỗi đan dấu Leibniz $S = \\displaystyle\\sum_{n=1}^{+\\infty} \\dfrac{(-1)^{n-1}}{n^{1}}$. Theo định lý ước lượng phần dư chuỗi đan dấu $|R_N| \\le a_{N+1}$, để tổng riêng thứ $N$ xấp xỉ tổng chuỗi với sai số $|S - S_N| \\le \\dfrac{1}{21}$, số số hạng $N$ tối thiểu cần lấy bằng",
+  "options": [
+   "$20$.",
+   "$21$.",
+   "$19$.",
+   "$40$."
+  ],
+  "answer": 0,
+  "explain": "Chuỗi đan dấu thỏa mãn điều kiện Leibniz với $a_n = \\dfrac{1}{n^{1}}$ giảm dần về $0$.<br>Phần dư thỏa mãn bất đẳng thức: $|R_N| = |S - S_N| \\le a_{N+1} = \\dfrac{1}{(N + 1)^{1}}$.<br>Yêu cầu $\\dfrac{1}{(N + 1)^{1}} \\le \\dfrac{1}{21} \\Leftrightarrow (N + 1)^{1} \\ge 21 \\Leftrightarrow N + 1 \\ge 21 \\Rightarrow N \\ge 20$.<br>Vậy số số hạng tối thiểu cần lấy là $N = 20$.",
+  "topic": "ch",
+  "type": "mcq",
+  "id": "ch-012"
+ },
+ {
+  "q": "Một khoản tiền gửi tiết kiệm $P_0 = 100\\,\\text{triệu đồng}$ được tính lãi kép liên tục với lãi suất danh nghĩa $r = 6\\,\\%/\\text{năm}$. Công thức số tiền nhận được sau $t$ năm là $P(t) = \\lim\\limits_{n\\to\\infty} P_0\\left(1 + \\dfrac{r}{n}\\right)^{nt} = P_0 e^{rt}$. Thời gian cần thiết để số tiền ban đầu tăng gấp đôi (làm tròn đến hàng phần mười) bằng",
+  "options": [
+   "11,6 năm.",
+   "12,8 năm.",
+   "10,1 năm.",
+   "23,2 năm."
+  ],
+  "answer": 0,
+  "explain": "Phương trình tăng gấp đôi: $P(t) = 2P_0 \\Leftrightarrow P_0 e^{\\dfrac{3}{50}t} = 2P_0 \\Leftrightarrow e^{\\dfrac{3}{50}t} = 2$.<br>Lấy lôgarit tự nhiên hai vế: $\\dfrac{3}{50}t = \\ln 2 \\Rightarrow t = \\dfrac{\\ln 2}{\\dfrac{3}{50}} = \\dfrac{100\\ln 2}{6}$.<br>Với $\\ln 2 \\approx 0{,}69315$, ta tính được: $t \\approx \\dfrac{69.315}{6} \\approx 11,6\\,\\text{năm}$.",
+  "topic": "gh",
+  "type": "mcq",
+  "id": "gh-072"
+ },
+ {
+  "q": "Một khoản tiền gửi tiết kiệm $P_0 = 200\\,\\text{triệu đồng}$ được tính lãi kép liên tục với lãi suất danh nghĩa $r = 8\\,\\%/\\text{năm}$. Công thức số tiền nhận được sau $t$ năm là $P(t) = \\lim\\limits_{n\\to\\infty} P_0\\left(1 + \\dfrac{r}{n}\\right)^{nt} = P_0 e^{rt}$. Thời gian cần thiết để số tiền ban đầu tăng gấp đôi (làm tròn đến hàng phần mười) bằng",
+  "options": [
+   "8,7 năm.",
+   "9,9 năm.",
+   "7,2 năm.",
+   "17,4 năm."
+  ],
+  "answer": 0,
+  "explain": "Phương trình tăng gấp đôi: $P(t) = 2P_0 \\Leftrightarrow P_0 e^{\\dfrac{2}{25}t} = 2P_0 \\Leftrightarrow e^{\\dfrac{2}{25}t} = 2$.<br>Lấy lôgarit tự nhiên hai vế: $\\dfrac{2}{25}t = \\ln 2 \\Rightarrow t = \\dfrac{\\ln 2}{\\dfrac{2}{25}} = \\dfrac{100\\ln 2}{8}$.<br>Với $\\ln 2 \\approx 0{,}69315$, ta tính được: $t \\approx \\dfrac{69.315}{8} \\approx 8,7\\,\\text{năm}$.",
+  "topic": "gh",
+  "type": "mcq",
+  "id": "gh-073"
+ },
+ {
+  "q": "Một khoản tiền gửi tiết kiệm $P_0 = 50\\,\\text{triệu đồng}$ được tính lãi kép liên tục với lãi suất danh nghĩa $r = 5\\,\\%/\\text{năm}$. Công thức số tiền nhận được sau $t$ năm là $P(t) = \\lim\\limits_{n\\to\\infty} P_0\\left(1 + \\dfrac{r}{n}\\right)^{nt} = P_0 e^{rt}$. Thời gian cần thiết để số tiền ban đầu tăng gấp đôi (làm tròn đến hàng phần mười) bằng",
+  "options": [
+   "13,9 năm.",
+   "15,1 năm.",
+   "12,4 năm.",
+   "27,8 năm."
+  ],
+  "answer": 0,
+  "explain": "Phương trình tăng gấp đôi: $P(t) = 2P_0 \\Leftrightarrow P_0 e^{\\dfrac{1}{20}t} = 2P_0 \\Leftrightarrow e^{\\dfrac{1}{20}t} = 2$.<br>Lấy lôgarit tự nhiên hai vế: $\\dfrac{1}{20}t = \\ln 2 \\Rightarrow t = \\dfrac{\\ln 2}{\\dfrac{1}{20}} = \\dfrac{100\\ln 2}{5}$.<br>Với $\\ln 2 \\approx 0{,}69315$, ta tính được: $t \\approx \\dfrac{69.315}{5} \\approx 13,9\\,\\text{năm}$.",
+  "topic": "gh",
+  "type": "mcq",
+  "id": "gh-074"
+ },
+ {
+  "q": "Một khoản tiền gửi tiết kiệm $P_0 = 1000\\,\\text{triệu đồng}$ được tính lãi kép liên tục với lãi suất danh nghĩa $r = 10\\,\\%/\\text{năm}$. Công thức số tiền nhận được sau $t$ năm là $P(t) = \\lim\\limits_{n\\to\\infty} P_0\\left(1 + \\dfrac{r}{n}\\right)^{nt} = P_0 e^{rt}$. Thời gian cần thiết để số tiền ban đầu tăng gấp đôi (làm tròn đến hàng phần mười) bằng",
+  "options": [
+   "6,9 năm.",
+   "8,1 năm.",
+   "5,4 năm.",
+   "13,8 năm."
+  ],
+  "answer": 0,
+  "explain": "Phương trình tăng gấp đôi: $P(t) = 2P_0 \\Leftrightarrow P_0 e^{\\dfrac{1}{10}t} = 2P_0 \\Leftrightarrow e^{\\dfrac{1}{10}t} = 2$.<br>Lấy lôgarit tự nhiên hai vế: $\\dfrac{1}{10}t = \\ln 2 \\Rightarrow t = \\dfrac{\\ln 2}{\\dfrac{1}{10}} = \\dfrac{100\\ln 2}{10}$.<br>Với $\\ln 2 \\approx 0{,}69315$, ta tính được: $t \\approx \\dfrac{69.315}{10} \\approx 6,9\\,\\text{năm}$.",
+  "topic": "gh",
+  "type": "mcq",
+  "id": "gh-075"
+ },
+ {
+  "q": "Quá trình sinh sản của một quần thể sinh vật được mô tả bởi hệ phương trình sai phân $\\begin{pmatrix} x_{n+1} \\\\ y_{n+1} \\end{pmatrix} = \\begin{pmatrix} 1 & 1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} x_n \\\\ y_n \\end{pmatrix}$. Tốc độ tăng trưởng dài hạn của quần thể được xác định bởi trị riêng lớn nhất (trị riêng trội) của ma trận chuyển dịch. Trị riêng đó có giá trị bằng",
+  "options": [
+   "$\\dfrac{1 + \\sqrt{5}}{2}$.",
+   "$\\dfrac{1 - \\sqrt{5}}{2}$.",
+   "$\\dfrac{1 + \\sqrt{3}}{2}$.",
+   "$\\sqrt{5}$."
+  ],
+  "answer": 0,
+  "explain": "Phương trình đặc trưng của ma trận $A = \\begin{pmatrix} 1 & 1 \\\\ 1 & 0 \\end{pmatrix}$: $\\det(A - \\lambda I) = \\begin{vmatrix} 1 - \\lambda & 1 \\\\ 1 & -\\lambda \\end{vmatrix} = \\lambda^2 - \\lambda - 1 = 0$.<br>Giải phương trình bậc hai: $\\Delta = (-1)^2 - 4(1)(-1) = 5 > 0$.<br>Hai trị riêng là $\\lambda_1 = \\dfrac{1 + \\sqrt{5}}{2}$ và $\\lambda_2 = \\dfrac{1 - \\sqrt{5}}{2}$.<br>Trị riêng trội quyết định tốc độ tăng trưởng dài hạn (tỉ lệ vàng $\\varphi$) là $\\lambda_1 = \\dfrac{1 + \\sqrt{5}}{2}$.",
+  "topic": "tr",
+  "type": "mcq",
+  "id": "tr-104"
+ },
+ {
+  "q": "Một bể chứa ban đầu có $100\\,\\text{lít}$ nước tinh khiết. Người ta bơm vào bể dung dịch nước muối có nồng độ $c_{\\text{vào}} = 2\\,\\text{g/L}$ với lưu lượng $r = 5\\,\\text{lít/phút}$. Dung dịch trong bể được khuấy đều liên tục và chảy ra ngoài với cùng lưu lượng $r = 5\\,\\text{lít/phút}$. Lập phương trình vi phân $\\dfrac{dy}{dt} = c_{\\text{vào}}r - \\dfrac{r}{V_0}y$, lượng muối tối đa trong bể khi thời gian $t \\to +\\infty$ đạt giá trị bằng",
+  "options": [
+   "$200$\\,\\text{g}.",
+   "$100.0$\\,\\text{g}.",
+   "$400$\\,\\text{g}.",
+   "$150$\\,\\text{g}."
+  ],
+  "answer": 0,
+  "explain": "Phương trình vi phân mô tả lượng muối $y(t)$: $\\dfrac{dy}{dt} + \\dfrac{5}{100}y = 10$.<br>Nghiệm tổng quát: $y(t) = 200\\left(1 - e^{-\\frac{5}{100}t}\\right)\\,\\text{g}$.<br>Khi $t \\to +\\infty$, số hạng $e^{-\\frac{5}{100}t} \\to 0$, lượng muối tiến tới trạng thái bão hòa: $\\lim\\limits_{t\\to+\\infty} y(t) = 200\\,\\text{g}$.",
+  "topic": "v1",
+  "type": "mcq",
+  "id": "v1-014"
+ },
+ {
+  "q": "Một bể chứa ban đầu có $200\\,\\text{lít}$ nước tinh khiết. Người ta bơm vào bể dung dịch nước muối có nồng độ $c_{\\text{vào}} = 3\\,\\text{g/L}$ với lưu lượng $r = 10\\,\\text{lít/phút}$. Dung dịch trong bể được khuấy đều liên tục và chảy ra ngoài với cùng lưu lượng $r = 10\\,\\text{lít/phút}$. Lập phương trình vi phân $\\dfrac{dy}{dt} = c_{\\text{vào}}r - \\dfrac{r}{V_0}y$, lượng muối tối đa trong bể khi thời gian $t \\to +\\infty$ đạt giá trị bằng",
+  "options": [
+   "$600$\\,\\text{g}.",
+   "$300.0$\\,\\text{g}.",
+   "$1200$\\,\\text{g}.",
+   "$550$\\,\\text{g}."
+  ],
+  "answer": 0,
+  "explain": "Phương trình vi phân mô tả lượng muối $y(t)$: $\\dfrac{dy}{dt} + \\dfrac{10}{200}y = 30$.<br>Nghiệm tổng quát: $y(t) = 600\\left(1 - e^{-\\frac{10}{200}t}\\right)\\,\\text{g}$.<br>Khi $t \\to +\\infty$, số hạng $e^{-\\frac{10}{200}t} \\to 0$, lượng muối tiến tới trạng thái bão hòa: $\\lim\\limits_{t\\to+\\infty} y(t) = 600\\,\\text{g}$.",
+  "topic": "v1",
+  "type": "mcq",
+  "id": "v1-015"
+ },
+ {
+  "q": "Một bể chứa ban đầu có $50\\,\\text{lít}$ nước tinh khiết. Người ta bơm vào bể dung dịch nước muối có nồng độ $c_{\\text{vào}} = 4\\,\\text{g/L}$ với lưu lượng $r = 2\\,\\text{lít/phút}$. Dung dịch trong bể được khuấy đều liên tục và chảy ra ngoài với cùng lưu lượng $r = 2\\,\\text{lít/phút}$. Lập phương trình vi phân $\\dfrac{dy}{dt} = c_{\\text{vào}}r - \\dfrac{r}{V_0}y$, lượng muối tối đa trong bể khi thời gian $t \\to +\\infty$ đạt giá trị bằng",
+  "options": [
+   "$200$\\,\\text{g}.",
+   "$100.0$\\,\\text{g}.",
+   "$400$\\,\\text{g}.",
+   "$150$\\,\\text{g}."
+  ],
+  "answer": 0,
+  "explain": "Phương trình vi phân mô tả lượng muối $y(t)$: $\\dfrac{dy}{dt} + \\dfrac{2}{50}y = 8$.<br>Nghiệm tổng quát: $y(t) = 200\\left(1 - e^{-\\frac{2}{50}t}\\right)\\,\\text{g}$.<br>Khi $t \\to +\\infty$, số hạng $e^{-\\frac{2}{50}t} \\to 0$, lượng muối tiến tới trạng thái bão hòa: $\\lim\\limits_{t\\to+\\infty} y(t) = 200\\,\\text{g}$.",
+  "topic": "v1",
+  "type": "mcq",
+  "id": "v1-016"
+ },
+ {
+  "q": "Một bể chứa ban đầu có $150\\,\\text{lít}$ nước tinh khiết. Người ta bơm vào bể dung dịch nước muối có nồng độ $c_{\\text{vào}} = 2\\,\\text{g/L}$ với lưu lượng $r = 5\\,\\text{lít/phút}$. Dung dịch trong bể được khuấy đều liên tục và chảy ra ngoài với cùng lưu lượng $r = 5\\,\\text{lít/phút}$. Lập phương trình vi phân $\\dfrac{dy}{dt} = c_{\\text{vào}}r - \\dfrac{r}{V_0}y$, lượng muối tối đa trong bể khi thời gian $t \\to +\\infty$ đạt giá trị bằng",
+  "options": [
+   "$300$\\,\\text{g}.",
+   "$150.0$\\,\\text{g}.",
+   "$600$\\,\\text{g}.",
+   "$250$\\,\\text{g}."
+  ],
+  "answer": 0,
+  "explain": "Phương trình vi phân mô tả lượng muối $y(t)$: $\\dfrac{dy}{dt} + \\dfrac{5}{150}y = 10$.<br>Nghiệm tổng quát: $y(t) = 300\\left(1 - e^{-\\frac{5}{150}t}\\right)\\,\\text{g}$.<br>Khi $t \\to +\\infty$, số hạng $e^{-\\frac{5}{150}t} \\to 0$, lượng muối tiến tới trạng thái bão hòa: $\\lim\\limits_{t\\to+\\infty} y(t) = 300\\,\\text{g}$.",
+  "topic": "v1",
+  "type": "mcq",
+  "id": "v1-017"
+ },
+ {
+  "q": "Một bể chứa ban đầu có $300\\,\\text{lít}$ nước tinh khiết. Người ta bơm vào bể dung dịch nước muối có nồng độ $c_{\\text{vào}} = 1\\,\\text{g/L}$ với lưu lượng $r = 10\\,\\text{lít/phút}$. Dung dịch trong bể được khuấy đều liên tục và chảy ra ngoài với cùng lưu lượng $r = 10\\,\\text{lít/phút}$. Lập phương trình vi phân $\\dfrac{dy}{dt} = c_{\\text{vào}}r - \\dfrac{r}{V_0}y$, lượng muối tối đa trong bể khi thời gian $t \\to +\\infty$ đạt giá trị bằng",
+  "options": [
+   "$300$\\,\\text{g}.",
+   "$150.0$\\,\\text{g}.",
+   "$600$\\,\\text{g}.",
+   "$250$\\,\\text{g}."
+  ],
+  "answer": 0,
+  "explain": "Phương trình vi phân mô tả lượng muối $y(t)$: $\\dfrac{dy}{dt} + \\dfrac{10}{300}y = 10$.<br>Nghiệm tổng quát: $y(t) = 300\\left(1 - e^{-\\frac{10}{300}t}\\right)\\,\\text{g}$.<br>Khi $t \\to +\\infty$, số hạng $e^{-\\frac{10}{300}t} \\to 0$, lượng muối tiến tới trạng thái bão hòa: $\\lim\\limits_{t\\to+\\infty} y(t) = 300\\,\\text{g}$.",
+  "topic": "v1",
+  "type": "mcq",
+  "id": "v1-018"
+ },
+ {
+  "q": "Người ta cần thiết kế một bồn chứa nước bằng kim loại có dạng hình hộp chữ nhật không nắp, đáy hình vuông cạnh $x$, chiều cao $y$, có thể tích cố định $V = 32\\,\\text{m}^3$. Để tiết kiệm chi phí vật liệu nhất (diện tích toàn phần $S(x, y) = x^2 + 4xy$ đạt giá trị nhỏ nhất), cạnh đáy $x$ của bồn nước cần bằng",
+  "options": [
+   "$4$\\,\\text{m}.",
+   "$6$\\,\\text{m}.",
+   "$3$\\,\\text{m}.",
+   "$2$\\,\\text{m}."
+  ],
+  "answer": 0,
+  "explain": "Rút $y$ theo $x$: $V = x^2 y = 32 \\Rightarrow y = \\dfrac{32}{x^2}$.<br>Diện tích vật liệu cần dùng: $S(x) = x^2 + 4x\\left(\\dfrac{32}{x^2}\\right) = x^2 + \\dfrac{128}{x}$.<br>Đạo hàm tìm cực trị: $S^\\prime(x) = 2x - \\dfrac{128}{x^2} = 0 \\Leftrightarrow 2x^3 = 128 \\Leftrightarrow x^3 = 64$.<br>Suy ra kích thước đáy tối ưu: $x = \\sqrt[3]{64} = 4\\,\\text{m}$.",
+  "topic": "nb",
+  "type": "mcq",
+  "id": "nb-005"
+ },
+ {
+  "q": "Người ta cần thiết kế một bồn chứa nước bằng kim loại có dạng hình hộp chữ nhật không nắp, đáy hình vuông cạnh $x$, chiều cao $y$, có thể tích cố định $V = 108\\,\\text{m}^3$. Để tiết kiệm chi phí vật liệu nhất (diện tích toàn phần $S(x, y) = x^2 + 4xy$ đạt giá trị nhỏ nhất), cạnh đáy $x$ của bồn nước cần bằng",
+  "options": [
+   "$6$\\,\\text{m}.",
+   "$8$\\,\\text{m}.",
+   "$5$\\,\\text{m}.",
+   "$3$\\,\\text{m}."
+  ],
+  "answer": 0,
+  "explain": "Rút $y$ theo $x$: $V = x^2 y = 108 \\Rightarrow y = \\dfrac{108}{x^2}$.<br>Diện tích vật liệu cần dùng: $S(x) = x^2 + 4x\\left(\\dfrac{108}{x^2}\\right) = x^2 + \\dfrac{432}{x}$.<br>Đạo hàm tìm cực trị: $S^\\prime(x) = 2x - \\dfrac{432}{x^2} = 0 \\Leftrightarrow 2x^3 = 432 \\Leftrightarrow x^3 = 216$.<br>Suy ra kích thước đáy tối ưu: $x = \\sqrt[3]{216} = 6\\,\\text{m}$.",
+  "topic": "nb",
+  "type": "mcq",
+  "id": "nb-006"
+ },
+ {
+  "q": "Người ta cần thiết kế một bồn chứa nước bằng kim loại có dạng hình hộp chữ nhật không nắp, đáy hình vuông cạnh $x$, chiều cao $y$, có thể tích cố định $V = 256\\,\\text{m}^3$. Để tiết kiệm chi phí vật liệu nhất (diện tích toàn phần $S(x, y) = x^2 + 4xy$ đạt giá trị nhỏ nhất), cạnh đáy $x$ của bồn nước cần bằng",
+  "options": [
+   "$8$\\,\\text{m}.",
+   "$10$\\,\\text{m}.",
+   "$7$\\,\\text{m}.",
+   "$4$\\,\\text{m}."
+  ],
+  "answer": 0,
+  "explain": "Rút $y$ theo $x$: $V = x^2 y = 256 \\Rightarrow y = \\dfrac{256}{x^2}$.<br>Diện tích vật liệu cần dùng: $S(x) = x^2 + 4x\\left(\\dfrac{256}{x^2}\\right) = x^2 + \\dfrac{1024}{x}$.<br>Đạo hàm tìm cực trị: $S^\\prime(x) = 2x - \\dfrac{1024}{x^2} = 0 \\Leftrightarrow 2x^3 = 1024 \\Leftrightarrow x^3 = 512$.<br>Suy ra kích thước đáy tối ưu: $x = \\sqrt[3]{512} = 8\\,\\text{m}$.",
+  "topic": "nb",
+  "type": "mcq",
+  "id": "nb-007"
+ },
+ {
+  "q": "Người ta cần thiết kế một bồn chứa nước bằng kim loại có dạng hình hộp chữ nhật không nắp, đáy hình vuông cạnh $x$, chiều cao $y$, có thể tích cố định $V = 500\\,\\text{m}^3$. Để tiết kiệm chi phí vật liệu nhất (diện tích toàn phần $S(x, y) = x^2 + 4xy$ đạt giá trị nhỏ nhất), cạnh đáy $x$ của bồn nước cần bằng",
+  "options": [
+   "$10$\\,\\text{m}.",
+   "$12$\\,\\text{m}.",
+   "$9$\\,\\text{m}.",
+   "$5$\\,\\text{m}."
+  ],
+  "answer": 0,
+  "explain": "Rút $y$ theo $x$: $V = x^2 y = 500 \\Rightarrow y = \\dfrac{500}{x^2}$.<br>Diện tích vật liệu cần dùng: $S(x) = x^2 + 4x\\left(\\dfrac{500}{x^2}\\right) = x^2 + \\dfrac{2000}{x}$.<br>Đạo hàm tìm cực trị: $S^\\prime(x) = 2x - \\dfrac{2000}{x^2} = 0 \\Leftrightarrow 2x^3 = 2000 \\Leftrightarrow x^3 = 1000$.<br>Suy ra kích thước đáy tối ưu: $x = \\sqrt[3]{1000} = 10\\,\\text{m}$.",
+  "topic": "nb",
+  "type": "mcq",
+  "id": "nb-008"
+ },
+ {
+  "q": "Người ta cần thiết kế một bồn chứa nước bằng kim loại có dạng hình hộp chữ nhật không nắp, đáy hình vuông cạnh $x$, chiều cao $y$, có thể tích cố định $V = 4\\,\\text{m}^3$. Để tiết kiệm chi phí vật liệu nhất (diện tích toàn phần $S(x, y) = x^2 + 4xy$ đạt giá trị nhỏ nhất), cạnh đáy $x$ của bồn nước cần bằng",
+  "options": [
+   "$2$\\,\\text{m}.",
+   "$4$\\,\\text{m}.",
+   "$1$\\,\\text{m}.",
+   "$3$\\,\\text{m}."
+  ],
+  "answer": 0,
+  "explain": "Rút $y$ theo $x$: $V = x^2 y = 4 \\Rightarrow y = \\dfrac{4}{x^2}$.<br>Diện tích vật liệu cần dùng: $S(x) = x^2 + 4x\\left(\\dfrac{4}{x^2}\\right) = x^2 + \\dfrac{16}{x}$.<br>Đạo hàm tìm cực trị: $S^\\prime(x) = 2x - \\dfrac{16}{x^2} = 0 \\Leftrightarrow 2x^3 = 16 \\Leftrightarrow x^3 = 8$.<br>Suy ra kích thước đáy tối ưu: $x = \\sqrt[3]{8} = 2\\,\\text{m}$.",
+  "topic": "nb",
+  "type": "mcq",
+  "id": "nb-009"
+ },
+ {
+  "q": "Trong mô hình cân bằng thị trường hai loại hàng hóa thay thế, giá cân bằng $(P_1;\\, P_2)$ thỏa mãn hệ phương trình cung cầu: $\\begin{cases} 3P_1 - P_2 = 13 \\\\ -P_1 + 4P_2 = 14\\end{cases}$. Tổng mức giá cân bằng của hai mặt hàng $(P_1 + P_2)$ bằng",
+  "options": [
+   "$11$.",
+   "$10$.",
+   "$12$.",
+   "$13$."
+  ],
+  "answer": 0,
+  "explain": "Ma trận hệ số của hệ: $A = \\begin{pmatrix}3 & -1 \\\\ -1 & 4\\end{pmatrix}$, $\\det A = 3(4) - (-1)(-1) = 11 \\ne 0$.<br>Áp dụng quy tắc Cramer: $D_{P_1} = \\begin{vmatrix} 13 & -1 \\\\ 14 & 4 \\end{vmatrix} = 4(13) - (-1)(14) = 66$.<br>Giá mặt hàng 1: $P_1 = \\dfrac{66}{11} = 6$.<br>Thay vào phương trình đầu: $P_2 = 3(6) - 13 = 5$.<br>Tổng mức giá: $P_1 + P_2 = 6 + 5 = 11$.",
+  "topic": "he",
+  "type": "mcq",
+  "id": "he-107"
+ },
+ {
+  "q": "Một lực $\\vec{F}(x,y) = (4xy + 3)\\vec{i} + (2x^2 + 2y)\\vec{j}$ tác dụng lên một chất điểm di chuyển từ gốc tọa độ $O(0;\\,0)$ đến điểm $M(2;\\,1)$. Biết $\\vec{F}$ là trường lực thế, công do lực $\\vec{F}$ sinh ra bằng",
+  "options": [
+   "$15$\\,\\text{J}.",
+   "$11$\\,\\text{J}.",
+   "$21$\\,\\text{J}.",
+   "$30$\\,\\text{J}."
+  ],
+  "answer": 0,
+  "explain": "Kiểm tra điều kiện trường thế: $\\dfrac{\\partial Q}{\\partial x} = 2(2)x = 4x = \\dfrac{\\partial P}{\\partial y}$, do đó lực $\\vec{F}$ là lực bảo toàn (lực thế).<br>Hàm thế vị $U(x,y) = \\displaystyle\\int (4xy + 3)\\,dx = 2x^2y + 3x + C(y)$.<br>Đạo hàm theo $y$: $U^\\prime_y = 2x^2 + C^\\prime(y) = 2x^2 + 2y \\Rightarrow C(y) = y^2$.<br>Hàm thế vị: $U(x,y) = 2x^2y + 3x + y^2$.<br>Công sinh ra: $W = U(M) - U(O) = 2(2)^2(1) + 3(2) + (1)^2 = 15\\,\\text{J}$.",
+  "topic": "td",
+  "type": "mcq",
+  "id": "td-139"
+ },
+ {
+  "q": "Một lực $\\vec{F}(x,y) = (2xy + 2)\\vec{i} + (1x^2 + 2y)\\vec{j}$ tác dụng lên một chất điểm di chuyển từ gốc tọa độ $O(0;\\,0)$ đến điểm $M(3;\\,2)$. Biết $\\vec{F}$ là trường lực thế, công do lực $\\vec{F}$ sinh ra bằng",
+  "options": [
+   "$28$\\,\\text{J}.",
+   "$24$\\,\\text{J}.",
+   "$34$\\,\\text{J}.",
+   "$56$\\,\\text{J}."
+  ],
+  "answer": 0,
+  "explain": "Kiểm tra điều kiện trường thế: $\\dfrac{\\partial Q}{\\partial x} = 2(1)x = 2x = \\dfrac{\\partial P}{\\partial y}$, do đó lực $\\vec{F}$ là lực bảo toàn (lực thế).<br>Hàm thế vị $U(x,y) = \\displaystyle\\int (2xy + 2)\\,dx = 1x^2y + 2x + C(y)$.<br>Đạo hàm theo $y$: $U^\\prime_y = 1x^2 + C^\\prime(y) = 1x^2 + 2y \\Rightarrow C(y) = y^2$.<br>Hàm thế vị: $U(x,y) = 1x^2y + 2x + y^2$.<br>Công sinh ra: $W = U(M) - U(O) = 1(3)^2(2) + 2(3) + (2)^2 = 28\\,\\text{J}$.",
+  "topic": "td",
+  "type": "mcq",
+  "id": "td-140"
+ },
+ {
+  "q": "Một lực $\\vec{F}(x,y) = (6xy + 1)\\vec{i} + (3x^2 + 2y)\\vec{j}$ tác dụng lên một chất điểm di chuyển từ gốc tọa độ $O(0;\\,0)$ đến điểm $M(1;\\,2)$. Biết $\\vec{F}$ là trường lực thế, công do lực $\\vec{F}$ sinh ra bằng",
+  "options": [
+   "$11$\\,\\text{J}.",
+   "$7$\\,\\text{J}.",
+   "$17$\\,\\text{J}.",
+   "$22$\\,\\text{J}."
+  ],
+  "answer": 0,
+  "explain": "Kiểm tra điều kiện trường thế: $\\dfrac{\\partial Q}{\\partial x} = 2(3)x = 6x = \\dfrac{\\partial P}{\\partial y}$, do đó lực $\\vec{F}$ là lực bảo toàn (lực thế).<br>Hàm thế vị $U(x,y) = \\displaystyle\\int (6xy + 1)\\,dx = 3x^2y + 1x + C(y)$.<br>Đạo hàm theo $y$: $U^\\prime_y = 3x^2 + C^\\prime(y) = 3x^2 + 2y \\Rightarrow C(y) = y^2$.<br>Hàm thế vị: $U(x,y) = 3x^2y + 1x + y^2$.<br>Công sinh ra: $W = U(M) - U(O) = 3(1)^2(2) + 1(1) + (2)^2 = 11\\,\\text{J}$.",
+  "topic": "td",
+  "type": "mcq",
+  "id": "td-141"
+ },
+ {
+  "q": "Một lực $\\vec{F}(x,y) = (4xy + 2)\\vec{i} + (2x^2 + 2y)\\vec{j}$ tác dụng lên một chất điểm di chuyển từ gốc tọa độ $O(0;\\,0)$ đến điểm $M(2;\\,3)$. Biết $\\vec{F}$ là trường lực thế, công do lực $\\vec{F}$ sinh ra bằng",
+  "options": [
+   "$37$\\,\\text{J}.",
+   "$33$\\,\\text{J}.",
+   "$43$\\,\\text{J}.",
+   "$74$\\,\\text{J}."
+  ],
+  "answer": 0,
+  "explain": "Kiểm tra điều kiện trường thế: $\\dfrac{\\partial Q}{\\partial x} = 2(2)x = 4x = \\dfrac{\\partial P}{\\partial y}$, do đó lực $\\vec{F}$ là lực bảo toàn (lực thế).<br>Hàm thế vị $U(x,y) = \\displaystyle\\int (4xy + 2)\\,dx = 2x^2y + 2x + C(y)$.<br>Đạo hàm theo $y$: $U^\\prime_y = 2x^2 + C^\\prime(y) = 2x^2 + 2y \\Rightarrow C(y) = y^2$.<br>Hàm thế vị: $U(x,y) = 2x^2y + 2x + y^2$.<br>Công sinh ra: $W = U(M) - U(O) = 2(2)^2(3) + 2(2) + (3)^2 = 37\\,\\text{J}$.",
+  "topic": "td",
+  "type": "mcq",
+  "id": "td-142"
+ },
+ {
+  "q": "Một công ty độc quyền sản xuất có hàm doanh thu $R(x) = 100x - 2x^2$ và hàm chi phí tổng cộng $C(x) = 20x + 50$ (với $x$ là số lượng sản phẩm, đơn vị tính: triệu đồng). Mức sản lượng $x$ để công ty đạt lợi nhuận tối đa bằng",
+  "options": [
+   "$20$.",
+   "$22$.",
+   "$17$.",
+   "$40$."
+  ],
+  "answer": 0,
+  "explain": "Hàm lợi nhuận: $\\Pi(x) = R(x) - C(x) = (100x - 2x^2) - (20x + 50) = 80x - 2x^2 - 50$.<br>Doanh thu cận biên bằng chi phí cận biên $MR = MC \\Leftrightarrow R^\\prime(x) = C^\\prime(x) \\Leftrightarrow 100 - 4x = 20$.<br>Giải phương trình: $4x = 80 \\Rightarrow x = 20$.<br>Vì $\\Pi^{\\prime\\prime}(x) = -4 < 0$ nên mức sản lượng $x = 20$ tối đa hóa lợi nhuận.",
+  "topic": "dh",
+  "type": "mcq",
+  "id": "dh-139"
+ },
+ {
+  "q": "Một công ty độc quyền sản xuất có hàm doanh thu $R(x) = 120x - 3x^2$ và hàm chi phí tổng cộng $C(x) = 30x + 50$ (với $x$ là số lượng sản phẩm, đơn vị tính: triệu đồng). Mức sản lượng $x$ để công ty đạt lợi nhuận tối đa bằng",
+  "options": [
+   "$15$.",
+   "$17$.",
+   "$12$.",
+   "$30$."
+  ],
+  "answer": 0,
+  "explain": "Hàm lợi nhuận: $\\Pi(x) = R(x) - C(x) = (120x - 3x^2) - (30x + 50) = 90x - 3x^2 - 50$.<br>Doanh thu cận biên bằng chi phí cận biên $MR = MC \\Leftrightarrow R^\\prime(x) = C^\\prime(x) \\Leftrightarrow 120 - 6x = 30$.<br>Giải phương trình: $6x = 90 \\Rightarrow x = 15$.<br>Vì $\\Pi^{\\prime\\prime}(x) = -6 < 0$ nên mức sản lượng $x = 15$ tối đa hóa lợi nhuận.",
+  "topic": "dh",
+  "type": "mcq",
+  "id": "dh-140"
+ },
+ {
+  "q": "Một công ty độc quyền sản xuất có hàm doanh thu $R(x) = 80x - 1x^2$ và hàm chi phí tổng cộng $C(x) = 20x + 50$ (với $x$ là số lượng sản phẩm, đơn vị tính: triệu đồng). Mức sản lượng $x$ để công ty đạt lợi nhuận tối đa bằng",
+  "options": [
+   "$30$.",
+   "$32$.",
+   "$27$.",
+   "$60$."
+  ],
+  "answer": 0,
+  "explain": "Hàm lợi nhuận: $\\Pi(x) = R(x) - C(x) = (80x - 1x^2) - (20x + 50) = 60x - 1x^2 - 50$.<br>Doanh thu cận biên bằng chi phí cận biên $MR = MC \\Leftrightarrow R^\\prime(x) = C^\\prime(x) \\Leftrightarrow 80 - 2x = 20$.<br>Giải phương trình: $2x = 60 \\Rightarrow x = 30$.<br>Vì $\\Pi^{\\prime\\prime}(x) = -2 < 0$ nên mức sản lượng $x = 30$ tối đa hóa lợi nhuận.",
+  "topic": "dh",
+  "type": "mcq",
+  "id": "dh-141"
+ },
+ {
+  "q": "Một công ty độc quyền sản xuất có hàm doanh thu $R(x) = 150x - 5x^2$ và hàm chi phí tổng cộng $C(x) = 25x + 50$ (với $x$ là số lượng sản phẩm, đơn vị tính: triệu đồng). Mức sản lượng $x$ để công ty đạt lợi nhuận tối đa bằng",
+  "options": [
+   "$\\dfrac{25}{2}$.",
+   "$\\dfrac{29}{2}$.",
+   "$\\dfrac{19}{2}$.",
+   "$25$."
+  ],
+  "answer": 0,
+  "explain": "Hàm lợi nhuận: $\\Pi(x) = R(x) - C(x) = (150x - 5x^2) - (25x + 50) = 125x - 5x^2 - 50$.<br>Doanh thu cận biên bằng chi phí cận biên $MR = MC \\Leftrightarrow R^\\prime(x) = C^\\prime(x) \\Leftrightarrow 150 - 10x = 25$.<br>Giải phương trình: $10x = 125 \\Rightarrow x = \\dfrac{25}{2}$.<br>Vì $\\Pi^{\\prime\\prime}(x) = -10 < 0$ nên mức sản lượng $x = \\dfrac{25}{2}$ tối đa hóa lợi nhuận.",
+  "topic": "dh",
+  "type": "mcq",
+  "id": "dh-142"
+ },
+ {
+  "q": "Trong thực nghiệm phân tích số liệu điều tra, người ta thu được 4 điểm dữ liệu: $(0;\\,1),\\; (1;\\,3),\\; (2;\\,4),\\; (3;\\,6)$. Áp dụng phương pháp bình phương tối thiểu (hình chiếu trực giao giải hệ phương trình chuẩn $A^T A \\hat{x} = A^T b$), hệ số góc $a$ của đường hồi quy tuyến tính thực nghiệm $y = ax + b$ bằng",
+  "options": [
+   "$\\dfrac{8}{5}$.",
+   "$\\dfrac{13}{5}$.",
+   "$\\dfrac{11}{10}$.",
+   "$\\dfrac{16}{5}$."
+  ],
+  "answer": 0,
+  "explain": "Lập hệ phương trình không tương thích: $Ax = b$ với $A = \\begin{pmatrix}0 & 1 \\\\ 1 & 1 \\\\ 2 & 1 \\\\ 3 & 1\\end{pmatrix},\\; b = \\begin{pmatrix}1 \\\\ 3 \\\\ 4 \\\\ 6\\end{pmatrix}$.<br>Phương trình chuẩn: $A^T A \\begin{pmatrix} a \\\\ b \\end{pmatrix} = A^T b \\Leftrightarrow \\begin{pmatrix} 14 & 6 \\\\ 6 & 4\\end{pmatrix} \\begin{pmatrix} a \\\\ b \\end{pmatrix} = \\begin{pmatrix} 29 \\\\ 14\\end{pmatrix}$.<br>Hệ số góc của đường xu hướng: $a = \\dfrac{4(29) - (6)(14)}{4(14) - (6)^2} = \\dfrac{8}{5}$.",
+  "topic": "vt",
+  "type": "mcq",
+  "id": "vt-081"
+ },
+ {
+  "q": "Trong thực nghiệm phân tích số liệu điều tra, người ta thu được 4 điểm dữ liệu: $(1;\\,2),\\; (2;\\,3),\\; (3;\\,5),\\; (4;\\,6)$. Áp dụng phương pháp bình phương tối thiểu (hình chiếu trực giao giải hệ phương trình chuẩn $A^T A \\hat{x} = A^T b$), hệ số góc $a$ của đường hồi quy tuyến tính thực nghiệm $y = ax + b$ bằng",
+  "options": [
+   "$\\dfrac{7}{5}$.",
+   "$\\dfrac{12}{5}$.",
+   "$\\dfrac{9}{10}$.",
+   "$\\dfrac{14}{5}$."
+  ],
+  "answer": 0,
+  "explain": "Lập hệ phương trình không tương thích: $Ax = b$ với $A = \\begin{pmatrix}1 & 1 \\\\ 2 & 1 \\\\ 3 & 1 \\\\ 4 & 1\\end{pmatrix},\\; b = \\begin{pmatrix}2 \\\\ 3 \\\\ 5 \\\\ 6\\end{pmatrix}$.<br>Phương trình chuẩn: $A^T A \\begin{pmatrix} a \\\\ b \\end{pmatrix} = A^T b \\Leftrightarrow \\begin{pmatrix} 30 & 10 \\\\ 10 & 4\\end{pmatrix} \\begin{pmatrix} a \\\\ b \\end{pmatrix} = \\begin{pmatrix} 47 \\\\ 16\\end{pmatrix}$.<br>Hệ số góc của đường xu hướng: $a = \\dfrac{4(47) - (10)(16)}{4(30) - (10)^2} = \\dfrac{7}{5}$.",
+  "topic": "vt",
+  "type": "mcq",
+  "id": "vt-082"
+ },
+ {
+  "q": "Trong thực nghiệm phân tích số liệu điều tra, người ta thu được 4 điểm dữ liệu: $(0;\\,2),\\; (1;\\,4),\\; (2;\\,5),\\; (3;\\,7)$. Áp dụng phương pháp bình phương tối thiểu (hình chiếu trực giao giải hệ phương trình chuẩn $A^T A \\hat{x} = A^T b$), hệ số góc $a$ của đường hồi quy tuyến tính thực nghiệm $y = ax + b$ bằng",
+  "options": [
+   "$\\dfrac{8}{5}$.",
+   "$\\dfrac{13}{5}$.",
+   "$\\dfrac{11}{10}$.",
+   "$\\dfrac{16}{5}$."
+  ],
+  "answer": 0,
+  "explain": "Lập hệ phương trình không tương thích: $Ax = b$ với $A = \\begin{pmatrix}0 & 1 \\\\ 1 & 1 \\\\ 2 & 1 \\\\ 3 & 1\\end{pmatrix},\\; b = \\begin{pmatrix}2 \\\\ 4 \\\\ 5 \\\\ 7\\end{pmatrix}$.<br>Phương trình chuẩn: $A^T A \\begin{pmatrix} a \\\\ b \\end{pmatrix} = A^T b \\Leftrightarrow \\begin{pmatrix} 14 & 6 \\\\ 6 & 4\\end{pmatrix} \\begin{pmatrix} a \\\\ b \\end{pmatrix} = \\begin{pmatrix} 35 \\\\ 18\\end{pmatrix}$.<br>Hệ số góc của đường xu hướng: $a = \\dfrac{4(35) - (6)(18)}{4(14) - (6)^2} = \\dfrac{8}{5}$.",
+  "topic": "vt",
+  "type": "mcq",
+  "id": "vt-083"
+ },
+ {
+  "q": "Trong thực nghiệm phân tích số liệu điều tra, người ta thu được 4 điểm dữ liệu: $(1;\\,1),\\; (2;\\,2),\\; (3;\\,4),\\; (4;\\,5)$. Áp dụng phương pháp bình phương tối thiểu (hình chiếu trực giao giải hệ phương trình chuẩn $A^T A \\hat{x} = A^T b$), hệ số góc $a$ của đường hồi quy tuyến tính thực nghiệm $y = ax + b$ bằng",
+  "options": [
+   "$\\dfrac{7}{5}$.",
+   "$\\dfrac{12}{5}$.",
+   "$\\dfrac{9}{10}$.",
+   "$\\dfrac{14}{5}$."
+  ],
+  "answer": 0,
+  "explain": "Lập hệ phương trình không tương thích: $Ax = b$ với $A = \\begin{pmatrix}1 & 1 \\\\ 2 & 1 \\\\ 3 & 1 \\\\ 4 & 1\\end{pmatrix},\\; b = \\begin{pmatrix}1 \\\\ 2 \\\\ 4 \\\\ 5\\end{pmatrix}$.<br>Phương trình chuẩn: $A^T A \\begin{pmatrix} a \\\\ b \\end{pmatrix} = A^T b \\Leftrightarrow \\begin{pmatrix} 30 & 10 \\\\ 10 & 4\\end{pmatrix} \\begin{pmatrix} a \\\\ b \\end{pmatrix} = \\begin{pmatrix} 37 \\\\ 12\\end{pmatrix}$.<br>Hệ số góc của đường xu hướng: $a = \\dfrac{4(37) - (10)(12)}{4(30) - (10)^2} = \\dfrac{7}{5}$.",
+  "topic": "vt",
+  "type": "mcq",
+  "id": "vt-084"
+ },
+ {
+  "q": "Một mạch dao động điện từ $RLC$ nối tiếp gồm điện trở $R = 4\\,\\Omega$, cuộn cảm thuần $L = 1\\,\\text{H}$ và tụ điện có điện dung $C = \\dfrac{1}{13}\\,\\text{F}$. Điện tích $q(t)$ trên bản tụ thỏa mãn phương trình vi phân $L q^{\\prime\\prime} + R q^\\prime + \\dfrac{1}{C}q = 0$. Tần số góc dao động tắt dần của mạch $\\omega_d = \\sqrt{\\dfrac{1}{LC} - \\left(\\dfrac{R}{2L}\\right)^2}$ bằng",
+  "options": [
+   "$3$\\,\\text{rad/s}.",
+   "$4$\\,\\text{rad/s}.",
+   "$2$\\,\\text{rad/s}.",
+   "$6$\\,\\text{rad/s}."
+  ],
+  "answer": 0,
+  "explain": "Phương trình vi phân: $q^{\\prime\\prime} + 4q^\\prime + 13q = 0$.<br>Phương trình đặc trưng: $k^2 + 4k + 13 = 0$.<br>Biệt thức: $\\Delta = 4^2 - 4(13) = -36 < 0$.<br>Nghiệm phức đặc trưng: $k = -\\dfrac{4}{2} \\pm i \\sqrt{13 - \\left(\\dfrac{4}{2}\\right)^2} = -2 \\pm 3i$.<br>Tần số góc dao động tắt dần: $\\omega_d = 3\\,\\text{rad/s}$.",
+  "topic": "v2",
+  "type": "mcq",
+  "id": "v2-136"
+ },
+ {
+  "q": "Một mạch dao động điện từ $RLC$ nối tiếp gồm điện trở $R = 6\\,\\Omega$, cuộn cảm thuần $L = 1\\,\\text{H}$ và tụ điện có điện dung $C = \\dfrac{1}{25}\\,\\text{F}$. Điện tích $q(t)$ trên bản tụ thỏa mãn phương trình vi phân $L q^{\\prime\\prime} + R q^\\prime + \\dfrac{1}{C}q = 0$. Tần số góc dao động tắt dần của mạch $\\omega_d = \\sqrt{\\dfrac{1}{LC} - \\left(\\dfrac{R}{2L}\\right)^2}$ bằng",
+  "options": [
+   "$4$\\,\\text{rad/s}.",
+   "$5$\\,\\text{rad/s}.",
+   "$3$\\,\\text{rad/s}.",
+   "$8$\\,\\text{rad/s}."
+  ],
+  "answer": 0,
+  "explain": "Phương trình vi phân: $q^{\\prime\\prime} + 6q^\\prime + 25q = 0$.<br>Phương trình đặc trưng: $k^2 + 6k + 25 = 0$.<br>Biệt thức: $\\Delta = 6^2 - 4(25) = -64 < 0$.<br>Nghiệm phức đặc trưng: $k = -\\dfrac{6}{2} \\pm i \\sqrt{25 - \\left(\\dfrac{6}{2}\\right)^2} = -3 \\pm 4i$.<br>Tần số góc dao động tắt dần: $\\omega_d = 4\\,\\text{rad/s}$.",
+  "topic": "v2",
+  "type": "mcq",
+  "id": "v2-137"
+ },
+ {
+  "q": "Một mạch dao động điện từ $RLC$ nối tiếp gồm điện trở $R = 2\\,\\Omega$, cuộn cảm thuần $L = 1\\,\\text{H}$ và tụ điện có điện dung $C = \\dfrac{1}{10}\\,\\text{F}$. Điện tích $q(t)$ trên bản tụ thỏa mãn phương trình vi phân $L q^{\\prime\\prime} + R q^\\prime + \\dfrac{1}{C}q = 0$. Tần số góc dao động tắt dần của mạch $\\omega_d = \\sqrt{\\dfrac{1}{LC} - \\left(\\dfrac{R}{2L}\\right)^2}$ bằng",
+  "options": [
+   "$3$\\,\\text{rad/s}.",
+   "$4$\\,\\text{rad/s}.",
+   "$2$\\,\\text{rad/s}.",
+   "$6$\\,\\text{rad/s}."
+  ],
+  "answer": 0,
+  "explain": "Phương trình vi phân: $q^{\\prime\\prime} + 2q^\\prime + 10q = 0$.<br>Phương trình đặc trưng: $k^2 + 2k + 10 = 0$.<br>Biệt thức: $\\Delta = 2^2 - 4(10) = -36 < 0$.<br>Nghiệm phức đặc trưng: $k = -\\dfrac{2}{2} \\pm i \\sqrt{10 - \\left(\\dfrac{2}{2}\\right)^2} = -1 \\pm 3i$.<br>Tần số góc dao động tắt dần: $\\omega_d = 3\\,\\text{rad/s}$.",
+  "topic": "v2",
+  "type": "mcq",
+  "id": "v2-138"
+ },
+ {
+  "q": "Một mạch dao động điện từ $RLC$ nối tiếp gồm điện trở $R = 8\\,\\Omega$, cuộn cảm thuần $L = 1\\,\\text{H}$ và tụ điện có điện dung $C = \\dfrac{1}{25}\\,\\text{F}$. Điện tích $q(t)$ trên bản tụ thỏa mãn phương trình vi phân $L q^{\\prime\\prime} + R q^\\prime + \\dfrac{1}{C}q = 0$. Tần số góc dao động tắt dần của mạch $\\omega_d = \\sqrt{\\dfrac{1}{LC} - \\left(\\dfrac{R}{2L}\\right)^2}$ bằng",
+  "options": [
+   "$3$\\,\\text{rad/s}.",
+   "$4$\\,\\text{rad/s}.",
+   "$2$\\,\\text{rad/s}.",
+   "$6$\\,\\text{rad/s}."
+  ],
+  "answer": 0,
+  "explain": "Phương trình vi phân: $q^{\\prime\\prime} + 8q^\\prime + 25q = 0$.<br>Phương trình đặc trưng: $k^2 + 8k + 25 = 0$.<br>Biệt thức: $\\Delta = 8^2 - 4(25) = -36 < 0$.<br>Nghiệm phức đặc trưng: $k = -\\dfrac{8}{2} \\pm i \\sqrt{25 - \\left(\\dfrac{8}{2}\\right)^2} = -4 \\pm 3i$.<br>Tần số góc dao động tắt dần: $\\omega_d = 3\\,\\text{rad/s}$.",
+  "topic": "v2",
+  "type": "mcq",
+  "id": "v2-139"
+ },
+ {
+  "q": "Trong tài chính định giá dự án, một khoản đầu tư mang lại dòng tiền đều đặn vĩnh viễn $C = 100\\,\\text{triệu đồng}$ vào cuối mỗi năm, bắt đầu từ năm thứ nhất với lãi suất chiết khấu thị trường $r = 5\\,\\%/\\text{năm}$. Giá trị hiện tại ròng của dòng tiền vĩnh viễn $NPV = \\displaystyle\\sum_{n=1}^{+\\infty} \\dfrac{C}{(1+r)^n} = \\dfrac{C}{r}$ bằng",
+  "options": [
+   "$2000$\\,\\text{triệu đồng}.",
+   "$2200$\\,\\text{triệu đồng}.",
+   "$1700$\\,\\text{triệu đồng}.",
+   "$4000$\\,\\text{triệu đồng}."
+  ],
+  "answer": 0,
+  "explain": "Chuỗi giá trị hiện tại là một chuỗi cấp số nhân lùi vô hạn: $NPV = \\displaystyle\\sum_{n=1}^{+\\infty} \\dfrac{100}{(1 + \\dfrac{1}{20})^n}$.<br>Số hạng đầu: $u_1 = \\dfrac{100}{1 + \\dfrac{1}{20}}$, công bội $q = \\dfrac{1}{1 + \\dfrac{1}{20}} < 1$.<br>Tổng cấp số nhân: $NPV = \\dfrac{u_1}{1 - q} = \\dfrac{\\frac{100}{1 + \\dfrac{1}{20}}}{1 - \\frac{1}{1 + \\dfrac{1}{20}}} = \\dfrac{100}{\\dfrac{1}{20}} = 2000\\,\\text{triệu đồng}$.",
+  "topic": "ch",
+  "type": "mcq",
+  "id": "ch-013"
+ },
+ {
+  "q": "Trong tài chính định giá dự án, một khoản đầu tư mang lại dòng tiền đều đặn vĩnh viễn $C = 60\\,\\text{triệu đồng}$ vào cuối mỗi năm, bắt đầu từ năm thứ nhất với lãi suất chiết khấu thị trường $r = 4\\,\\%/\\text{năm}$. Giá trị hiện tại ròng của dòng tiền vĩnh viễn $NPV = \\displaystyle\\sum_{n=1}^{+\\infty} \\dfrac{C}{(1+r)^n} = \\dfrac{C}{r}$ bằng",
+  "options": [
+   "$1500$\\,\\text{triệu đồng}.",
+   "$1700$\\,\\text{triệu đồng}.",
+   "$1200$\\,\\text{triệu đồng}.",
+   "$3000$\\,\\text{triệu đồng}."
+  ],
+  "answer": 0,
+  "explain": "Chuỗi giá trị hiện tại là một chuỗi cấp số nhân lùi vô hạn: $NPV = \\displaystyle\\sum_{n=1}^{+\\infty} \\dfrac{60}{(1 + \\dfrac{1}{25})^n}$.<br>Số hạng đầu: $u_1 = \\dfrac{60}{1 + \\dfrac{1}{25}}$, công bội $q = \\dfrac{1}{1 + \\dfrac{1}{25}} < 1$.<br>Tổng cấp số nhân: $NPV = \\dfrac{u_1}{1 - q} = \\dfrac{\\frac{60}{1 + \\dfrac{1}{25}}}{1 - \\frac{1}{1 + \\dfrac{1}{25}}} = \\dfrac{60}{\\dfrac{1}{25}} = 1500\\,\\text{triệu đồng}$.",
+  "topic": "ch",
+  "type": "mcq",
+  "id": "ch-014"
+ },
+ {
+  "q": "Trong tài chính định giá dự án, một khoản đầu tư mang lại dòng tiền đều đặn vĩnh viễn $C = 120\\,\\text{triệu đồng}$ vào cuối mỗi năm, bắt đầu từ năm thứ nhất với lãi suất chiết khấu thị trường $r = 6\\,\\%/\\text{năm}$. Giá trị hiện tại ròng của dòng tiền vĩnh viễn $NPV = \\displaystyle\\sum_{n=1}^{+\\infty} \\dfrac{C}{(1+r)^n} = \\dfrac{C}{r}$ bằng",
+  "options": [
+   "$2000$\\,\\text{triệu đồng}.",
+   "$2200$\\,\\text{triệu đồng}.",
+   "$1700$\\,\\text{triệu đồng}.",
+   "$4000$\\,\\text{triệu đồng}."
+  ],
+  "answer": 0,
+  "explain": "Chuỗi giá trị hiện tại là một chuỗi cấp số nhân lùi vô hạn: $NPV = \\displaystyle\\sum_{n=1}^{+\\infty} \\dfrac{120}{(1 + \\dfrac{3}{50})^n}$.<br>Số hạng đầu: $u_1 = \\dfrac{120}{1 + \\dfrac{3}{50}}$, công bội $q = \\dfrac{1}{1 + \\dfrac{3}{50}} < 1$.<br>Tổng cấp số nhân: $NPV = \\dfrac{u_1}{1 - q} = \\dfrac{\\frac{120}{1 + \\dfrac{3}{50}}}{1 - \\frac{1}{1 + \\dfrac{3}{50}}} = \\dfrac{120}{\\dfrac{3}{50}} = 2000\\,\\text{triệu đồng}$.",
+  "topic": "ch",
+  "type": "mcq",
+  "id": "ch-015"
+ },
+ {
+  "q": "Trong tài chính định giá dự án, một khoản đầu tư mang lại dòng tiền đều đặn vĩnh viễn $C = 200\\,\\text{triệu đồng}$ vào cuối mỗi năm, bắt đầu từ năm thứ nhất với lãi suất chiết khấu thị trường $r = 8\\,\\%/\\text{năm}$. Giá trị hiện tại ròng của dòng tiền vĩnh viễn $NPV = \\displaystyle\\sum_{n=1}^{+\\infty} \\dfrac{C}{(1+r)^n} = \\dfrac{C}{r}$ bằng",
+  "options": [
+   "$2500$\\,\\text{triệu đồng}.",
+   "$2700$\\,\\text{triệu đồng}.",
+   "$2200$\\,\\text{triệu đồng}.",
+   "$5000$\\,\\text{triệu đồng}."
+  ],
+  "answer": 0,
+  "explain": "Chuỗi giá trị hiện tại là một chuỗi cấp số nhân lùi vô hạn: $NPV = \\displaystyle\\sum_{n=1}^{+\\infty} \\dfrac{200}{(1 + \\dfrac{2}{25})^n}$.<br>Số hạng đầu: $u_1 = \\dfrac{200}{1 + \\dfrac{2}{25}}$, công bội $q = \\dfrac{1}{1 + \\dfrac{2}{25}} < 1$.<br>Tổng cấp số nhân: $NPV = \\dfrac{u_1}{1 - q} = \\dfrac{\\frac{200}{1 + \\dfrac{2}{25}}}{1 - \\frac{1}{1 + \\dfrac{2}{25}}} = \\dfrac{200}{\\dfrac{2}{25}} = 2500\\,\\text{triệu đồng}$.",
+  "topic": "ch",
+  "type": "mcq",
+  "id": "ch-016"
+ },
+ {
+  "q": "Trong tài chính định giá dự án, một khoản đầu tư mang lại dòng tiền đều đặn vĩnh viễn $C = 50\\,\\text{triệu đồng}$ vào cuối mỗi năm, bắt đầu từ năm thứ nhất với lãi suất chiết khấu thị trường $r = 2\\,\\%/\\text{năm}$. Giá trị hiện tại ròng của dòng tiền vĩnh viễn $NPV = \\displaystyle\\sum_{n=1}^{+\\infty} \\dfrac{C}{(1+r)^n} = \\dfrac{C}{r}$ bằng",
+  "options": [
+   "$2500$\\,\\text{triệu đồng}.",
+   "$2700$\\,\\text{triệu đồng}.",
+   "$2200$\\,\\text{triệu đồng}.",
+   "$5000$\\,\\text{triệu đồng}."
+  ],
+  "answer": 0,
+  "explain": "Chuỗi giá trị hiện tại là một chuỗi cấp số nhân lùi vô hạn: $NPV = \\displaystyle\\sum_{n=1}^{+\\infty} \\dfrac{50}{(1 + \\dfrac{1}{50})^n}$.<br>Số hạng đầu: $u_1 = \\dfrac{50}{1 + \\dfrac{1}{50}}$, công bội $q = \\dfrac{1}{1 + \\dfrac{1}{50}} < 1$.<br>Tổng cấp số nhân: $NPV = \\dfrac{u_1}{1 - q} = \\dfrac{\\frac{50}{1 + \\dfrac{1}{50}}}{1 - \\frac{1}{1 + \\dfrac{1}{50}}} = \\dfrac{50}{\\dfrac{1}{50}} = 2500\\,\\text{triệu đồng}$.",
+  "topic": "ch",
+  "type": "mcq",
+  "id": "ch-017"
+ },
+ {
+  "q": "Một bồn chứa nhiên liệu có dạng khối tròn xoay tạo bởi mặt paraboloid $z = \\dfrac{4}{4}(x^2 + y^2)$ và mặt phẳng nắp trên $z = 4$ (đơn vị: mét). Thể tích của bồn chứa nhiên liệu có dạng $k\\pi\\,\\text{m}^3$. Hệ số $k$ bằng",
+  "options": [
+   "$8$.",
+   "$16$.",
+   "$4$.",
+   "$9$."
+  ],
+  "answer": 0,
+  "explain": "Chuyển sang tọa độ trụ: $x = r\\cos\\varphi,\\; y = r\\sin\\varphi,\\; z = z$ với $0 \\le r \\le 2$, $0 \\le \\varphi \\le 2\\pi$.<br>Miền giới hạn theo $z$: $\\dfrac{4}{4}r^2 \\le z \\le 4$.<br>Thể tích: $V = \\displaystyle\\int_0^{2\\pi}d\\varphi \\int_0^{2} r\\,dr \\int_{\\frac{4}{4}r^2}^{4} dz = 2\\pi \\int_0^{2} \\left(4r - \\dfrac{4}{4}r^3\\right)dr$.<br>Tính tích phân: $V = 2\\pi \\left[\\dfrac{4r^2}{2} - \\dfrac{4r^4}{16}\\right]_0^{2} = 2\\pi\\cdot \\dfrac{16}{4} = 8\\pi\\,\\text{m}^3$.<br>Hệ số $k = 8$.",
+  "topic": "tb",
+  "type": "mcq",
+  "id": "tb-043"
+ },
+ {
+  "q": "Một bồn chứa nhiên liệu có dạng khối tròn xoay tạo bởi mặt paraboloid $z = \\dfrac{9}{9}(x^2 + y^2)$ và mặt phẳng nắp trên $z = 9$ (đơn vị: mét). Thể tích của bồn chứa nhiên liệu có dạng $k\\pi\\,\\text{m}^3$. Hệ số $k$ bằng",
+  "options": [
+   "$\\dfrac{81}{2}$.",
+   "$81$.",
+   "$\\dfrac{81}{4}$.",
+   "$\\dfrac{83}{2}$."
+  ],
+  "answer": 0,
+  "explain": "Chuyển sang tọa độ trụ: $x = r\\cos\\varphi,\\; y = r\\sin\\varphi,\\; z = z$ với $0 \\le r \\le 3$, $0 \\le \\varphi \\le 2\\pi$.<br>Miền giới hạn theo $z$: $\\dfrac{9}{9}r^2 \\le z \\le 9$.<br>Thể tích: $V = \\displaystyle\\int_0^{2\\pi}d\\varphi \\int_0^{3} r\\,dr \\int_{\\frac{9}{9}r^2}^{9} dz = 2\\pi \\int_0^{3} \\left(9r - \\dfrac{9}{9}r^3\\right)dr$.<br>Tính tích phân: $V = 2\\pi \\left[\\dfrac{9r^2}{2} - \\dfrac{9r^4}{36}\\right]_0^{3} = 2\\pi\\cdot \\dfrac{81}{4} = \\dfrac{81}{2}\\pi\\,\\text{m}^3$.<br>Hệ số $k = \\dfrac{81}{2}$.",
+  "topic": "tb",
+  "type": "mcq",
+  "id": "tb-044"
+ },
+ {
+  "q": "Một bồn chứa nhiên liệu có dạng khối tròn xoay tạo bởi mặt paraboloid $z = \\dfrac{8}{16}(x^2 + y^2)$ và mặt phẳng nắp trên $z = 8$ (đơn vị: mét). Thể tích của bồn chứa nhiên liệu có dạng $k\\pi\\,\\text{m}^3$. Hệ số $k$ bằng",
+  "options": [
+   "$64$.",
+   "$128$.",
+   "$32$.",
+   "$65$."
+  ],
+  "answer": 0,
+  "explain": "Chuyển sang tọa độ trụ: $x = r\\cos\\varphi,\\; y = r\\sin\\varphi,\\; z = z$ với $0 \\le r \\le 4$, $0 \\le \\varphi \\le 2\\pi$.<br>Miền giới hạn theo $z$: $\\dfrac{8}{16}r^2 \\le z \\le 8$.<br>Thể tích: $V = \\displaystyle\\int_0^{2\\pi}d\\varphi \\int_0^{4} r\\,dr \\int_{\\frac{8}{16}r^2}^{8} dz = 2\\pi \\int_0^{4} \\left(8r - \\dfrac{8}{16}r^3\\right)dr$.<br>Tính tích phân: $V = 2\\pi \\left[\\dfrac{8r^2}{2} - \\dfrac{8r^4}{64}\\right]_0^{4} = 2\\pi\\cdot \\dfrac{128}{4} = 64\\pi\\,\\text{m}^3$.<br>Hệ số $k = 64$.",
+  "topic": "tb",
+  "type": "mcq",
+  "id": "tb-045"
+ },
+ {
+  "q": "Một bồn chứa nhiên liệu có dạng khối tròn xoay tạo bởi mặt paraboloid $z = \\dfrac{2}{1}(x^2 + y^2)$ và mặt phẳng nắp trên $z = 2$ (đơn vị: mét). Thể tích của bồn chứa nhiên liệu có dạng $k\\pi\\,\\text{m}^3$. Hệ số $k$ bằng",
+  "options": [
+   "$1$.",
+   "$2$.",
+   "$\\dfrac{1}{2}$.",
+   "$0$."
+  ],
+  "answer": 0,
+  "explain": "Chuyển sang tọa độ trụ: $x = r\\cos\\varphi,\\; y = r\\sin\\varphi,\\; z = z$ với $0 \\le r \\le 1$, $0 \\le \\varphi \\le 2\\pi$.<br>Miền giới hạn theo $z$: $\\dfrac{2}{1}r^2 \\le z \\le 2$.<br>Thể tích: $V = \\displaystyle\\int_0^{2\\pi}d\\varphi \\int_0^{1} r\\,dr \\int_{\\frac{2}{1}r^2}^{2} dz = 2\\pi \\int_0^{1} \\left(2r - \\dfrac{2}{1}r^3\\right)dr$.<br>Tính tích phân: $V = 2\\pi \\left[\\dfrac{2r^2}{2} - \\dfrac{2r^4}{4}\\right]_0^{1} = 2\\pi\\cdot \\dfrac{2}{4} = 1\\pi\\,\\text{m}^3$.<br>Hệ số $k = 1$.",
+  "topic": "tb",
+  "type": "mcq",
+  "id": "tb-046"
+ },
+ {
+  "q": "Trong sinh thái học bảo tồn, cấu trúc tuổi của một quần thể động vật được mô hình hóa bằng ma trận Leslie $L = \\begin{pmatrix} 0 & 4 \\\\ \\dfrac{1}{2} & 0 \\end{pmatrix}$, trong đó hàng đầu thể hiện mức sinh sản của từng nhóm tuổi và $s_1$ là tỷ lệ sống sót chuyển giai đoạn. Tốc độ tăng trưởng dài hạn của quần thể (trị riêng dương trội $\\lambda_1$) bằng",
+  "options": [
+   "$\\sqrt{2}$.",
+   "$1 + \\sqrt{2}$.",
+   "$2 \\sqrt{2}$.",
+   "$2$."
+  ],
+  "answer": 0,
+  "explain": "Phương trình đặc trưng: $\\det(L - \\lambda I) = \\begin{vmatrix} 0 - \\lambda & 4 \\\\ \\dfrac{1}{2} & -\\lambda \\end{vmatrix} = \\lambda^2 - 0\\lambda - 2 = 0$.<br>Biệt thức: $\\Delta = (0)^2 - 4(1)(-2) = 0 + 8 = 8$.<br>Trị riêng dương trội: $\\lambda_1 = \\dfrac{0 + \\sqrt{8}}{2} = \\sqrt{2}$.",
+  "topic": "tr",
+  "type": "mcq",
+  "id": "tr-105"
+ },
+ {
+  "q": "Trong sinh thái học bảo tồn, cấu trúc tuổi của một quần thể động vật được mô hình hóa bằng ma trận Leslie $L = \\begin{pmatrix} 0 & 6 \\\\ \\dfrac{1}{3} & 0 \\end{pmatrix}$, trong đó hàng đầu thể hiện mức sinh sản của từng nhóm tuổi và $s_1$ là tỷ lệ sống sót chuyển giai đoạn. Tốc độ tăng trưởng dài hạn của quần thể (trị riêng dương trội $\\lambda_1$) bằng",
+  "options": [
+   "$\\sqrt{2}$.",
+   "$1 + \\sqrt{2}$.",
+   "$2 \\sqrt{2}$.",
+   "$2$."
+  ],
+  "answer": 0,
+  "explain": "Phương trình đặc trưng: $\\det(L - \\lambda I) = \\begin{vmatrix} 0 - \\lambda & 6 \\\\ \\dfrac{1}{3} & -\\lambda \\end{vmatrix} = \\lambda^2 - 0\\lambda - 2 = 0$.<br>Biệt thức: $\\Delta = (0)^2 - 4(1)(-2) = 0 + 8 = 8$.<br>Trị riêng dương trội: $\\lambda_1 = \\dfrac{0 + \\sqrt{8}}{2} = \\sqrt{2}$.",
+  "topic": "tr",
+  "type": "mcq",
+  "id": "tr-106"
+ },
+ {
+  "q": "Trong sinh thái học bảo tồn, cấu trúc tuổi của một quần thể động vật được mô hình hóa bằng ma trận Leslie $L = \\begin{pmatrix} 0 & 8 \\\\ \\dfrac{1}{2} & 0 \\end{pmatrix}$, trong đó hàng đầu thể hiện mức sinh sản của từng nhóm tuổi và $s_1$ là tỷ lệ sống sót chuyển giai đoạn. Tốc độ tăng trưởng dài hạn của quần thể (trị riêng dương trội $\\lambda_1$) bằng",
+  "options": [
+   "$2$.",
+   "$3$.",
+   "$4$.",
+   "$\\dfrac{1}{2}$."
+  ],
+  "answer": 0,
+  "explain": "Phương trình đặc trưng: $\\det(L - \\lambda I) = \\begin{vmatrix} 0 - \\lambda & 8 \\\\ \\dfrac{1}{2} & -\\lambda \\end{vmatrix} = \\lambda^2 - 0\\lambda - 4 = 0$.<br>Biệt thức: $\\Delta = (0)^2 - 4(1)(-4) = 0 + 16 = 16$.<br>Trị riêng dương trội: $\\lambda_1 = \\dfrac{0 + \\sqrt{16}}{2} = 2$.",
+  "topic": "tr",
+  "type": "mcq",
+  "id": "tr-107"
+ },
+ {
+  "q": "Trong sinh thái học bảo tồn, cấu trúc tuổi của một quần thể động vật được mô hình hóa bằng ma trận Leslie $L = \\begin{pmatrix} 1 & 2 \\\\ \\dfrac{1}{2} & 0 \\end{pmatrix}$, trong đó hàng đầu thể hiện mức sinh sản của từng nhóm tuổi và $s_1$ là tỷ lệ sống sót chuyển giai đoạn. Tốc độ tăng trưởng dài hạn của quần thể (trị riêng dương trội $\\lambda_1$) bằng",
+  "options": [
+   "$\\dfrac{1}{2} + \\dfrac{\\sqrt{5}}{2}$.",
+   "$\\dfrac{\\sqrt{5}}{2} + \\dfrac{3}{2}$.",
+   "$1 + \\sqrt{5}$.",
+   "$1$."
+  ],
+  "answer": 0,
+  "explain": "Phương trình đặc trưng: $\\det(L - \\lambda I) = \\begin{vmatrix} 1 - \\lambda & 2 \\\\ \\dfrac{1}{2} & -\\lambda \\end{vmatrix} = \\lambda^2 - 1\\lambda - 1 = 0$.<br>Biệt thức: $\\Delta = (1)^2 - 4(1)(-1) = 1 + 4 = 5$.<br>Trị riêng dương trội: $\\lambda_1 = \\dfrac{1 + \\sqrt{5}}{2} = \\dfrac{1}{2} + \\dfrac{\\sqrt{5}}{2}$.",
+  "topic": "tr",
+  "type": "mcq",
+  "id": "tr-108"
+ },
+ {
+  "q": "Trong phân tích độ phức tạp thuật toán, xét hai thuật toán $A_1$ có thời gian chạy $f(n) = n^2$ và $A_2$ có thời gian chạy hàm mũ $g(n) = 2^n$ khi kích thước đầu vào $n \\to +\\infty$. Giới hạn tỷ số thời gian chạy $L = \\lim\\limits_{n\\to +\\infty} \\dfrac{n^2}{2^n}$ bằng",
+  "options": [
+   "$0$.",
+   "$1$.",
+   "$2$.",
+   "$\\infty$."
+  ],
+  "answer": 0,
+  "explain": "Áp dụng quy tắc L'Hôpital liên tiếp $2$ lần đối với dạng vô định $\\left[\\dfrac{\\infty}{\\infty}\\right]$:<br>Đạo hàm tử số $2$ lần thu được: $(n^2)^{(2)} = 2!$.<br>Đạo hàm mẫu số $2$ lần: $(2^n)^{(2)} = 2^n (\\ln 2)^2$.<br>Do đó: $L = \\lim\\limits_{n\\to +\\infty} \\dfrac{2!}{2^n (\\ln 2)^2} = 0$.",
+  "topic": "gh",
+  "type": "mcq",
+  "id": "gh-076"
+ },
+ {
+  "q": "Trong phân tích độ phức tạp thuật toán, xét hai thuật toán $A_1$ có thời gian chạy $f(n) = n^3$ và $A_2$ có thời gian chạy hàm mũ $g(n) = 3^n$ khi kích thước đầu vào $n \\to +\\infty$. Giới hạn tỷ số thời gian chạy $L = \\lim\\limits_{n\\to +\\infty} \\dfrac{n^3}{3^n}$ bằng",
+  "options": [
+   "$0$.",
+   "$1$.",
+   "$3$.",
+   "$\\infty$."
+  ],
+  "answer": 0,
+  "explain": "Áp dụng quy tắc L'Hôpital liên tiếp $3$ lần đối với dạng vô định $\\left[\\dfrac{\\infty}{\\infty}\\right]$:<br>Đạo hàm tử số $3$ lần thu được: $(n^3)^{(3)} = 3!$.<br>Đạo hàm mẫu số $3$ lần: $(3^n)^{(3)} = 3^n (\\ln 3)^3$.<br>Do đó: $L = \\lim\\limits_{n\\to +\\infty} \\dfrac{3!}{3^n (\\ln 3)^3} = 0$.",
+  "topic": "gh",
+  "type": "mcq",
+  "id": "gh-077"
+ },
+ {
+  "q": "Trong phân tích độ phức tạp thuật toán, xét hai thuật toán $A_1$ có thời gian chạy $f(n) = n^5$ và $A_2$ có thời gian chạy hàm mũ $g(n) = 5^n$ khi kích thước đầu vào $n \\to +\\infty$. Giới hạn tỷ số thời gian chạy $L = \\lim\\limits_{n\\to +\\infty} \\dfrac{n^5}{5^n}$ bằng",
+  "options": [
+   "$0$.",
+   "$1$.",
+   "$5$.",
+   "$\\infty$."
+  ],
+  "answer": 0,
+  "explain": "Áp dụng quy tắc L'Hôpital liên tiếp $5$ lần đối với dạng vô định $\\left[\\dfrac{\\infty}{\\infty}\\right]$:<br>Đạo hàm tử số $5$ lần thu được: $(n^5)^{(5)} = 5!$.<br>Đạo hàm mẫu số $5$ lần: $(5^n)^{(5)} = 5^n (\\ln 5)^5$.<br>Do đó: $L = \\lim\\limits_{n\\to +\\infty} \\dfrac{5!}{5^n (\\ln 5)^5} = 0$.",
+  "topic": "gh",
+  "type": "mcq",
+  "id": "gh-078"
+ },
+ {
+  "q": "Trong phân tích độ phức tạp thuật toán, xét hai thuật toán $A_1$ có thời gian chạy $f(n) = n^10$ và $A_2$ có thời gian chạy hàm mũ $g(n) = 10^n$ khi kích thước đầu vào $n \\to +\\infty$. Giới hạn tỷ số thời gian chạy $L = \\lim\\limits_{n\\to +\\infty} \\dfrac{n^10}{10^n}$ bằng",
+  "options": [
+   "$0$.",
+   "$1$.",
+   "$10$.",
+   "$\\infty$."
+  ],
+  "answer": 0,
+  "explain": "Áp dụng quy tắc L'Hôpital liên tiếp $10$ lần đối với dạng vô định $\\left[\\dfrac{\\infty}{\\infty}\\right]$:<br>Đạo hàm tử số $10$ lần thu được: $(n^10)^{(10)} = 10!$.<br>Đạo hàm mẫu số $10$ lần: $(10^n)^{(10)} = 10^n (\\ln 10)^10$.<br>Do đó: $L = \\lim\\limits_{n\\to +\\infty} \\dfrac{10!}{10^n (\\ln 10)^10} = 0$.",
+  "topic": "gh",
+  "type": "mcq",
+  "id": "gh-079"
+ },
+ {
+  "q": "Một hệ dao động cơ học không cản chịu ngoại lực kích thích tuần hoàn điều hòa đúng bằng tần số riêng (hiện tượng cộng hưởng cơ học): $y'' + 4y = 12\\cos(2t)$. Biết nghiệm riêng của bài toán có dạng dao động biên độ tăng dần theo thời gian $y^*(t) = A\\,t\\sin(2t)$, giá trị của hệ số biên độ $A$ bằng",
+  "options": [
+   "$3$.",
+   "$6$.",
+   "$\\dfrac{3}{2}$.",
+   "$4$."
+  ],
+  "answer": 0,
+  "explain": "Phương trình thuần nhất có nghiệm đặc trưng $k = \\pm 2i$.<br>Vì vế phải có dạng $\\cos(2t)$ nên xảy ra hiện tượng cộng hưởng, nghiệm riêng có dạng $y^* = A\\,t\\sin(2t)$.<br>Đạo hàm cấp 1: $(y^*)^\\prime = A\\sin(2t) + 2At\\cos(2t)$.<br>Đạo hàm cấp 2: $(y^*)^{\\prime\\prime} = 4A\\cos(2t) - 4At\\sin(2t)$.<br>Thế vào phương trình: $(y^*)^{\\prime\\prime} + 4y^* = 4A\\cos(2t) = 12\\cos(2t)$.<br>Suy ra: $4A = 12 \\Rightarrow A = \\dfrac{12}{4} = 3$.",
+  "topic": "v2",
+  "type": "mcq",
+  "id": "v2-140"
+ },
+ {
+  "q": "Một hệ dao động cơ học không cản chịu ngoại lực kích thích tuần hoàn điều hòa đúng bằng tần số riêng (hiện tượng cộng hưởng cơ học): $y'' + 9y = 18\\cos(3t)$. Biết nghiệm riêng của bài toán có dạng dao động biên độ tăng dần theo thời gian $y^*(t) = A\\,t\\sin(3t)$, giá trị của hệ số biên độ $A$ bằng",
+  "options": [
+   "$3$.",
+   "$6$.",
+   "$\\dfrac{3}{2}$.",
+   "$4$."
+  ],
+  "answer": 0,
+  "explain": "Phương trình thuần nhất có nghiệm đặc trưng $k = \\pm 3i$.<br>Vì vế phải có dạng $\\cos(3t)$ nên xảy ra hiện tượng cộng hưởng, nghiệm riêng có dạng $y^* = A\\,t\\sin(3t)$.<br>Đạo hàm cấp 1: $(y^*)^\\prime = A\\sin(3t) + 3At\\cos(3t)$.<br>Đạo hàm cấp 2: $(y^*)^{\\prime\\prime} = 6A\\cos(3t) - 9At\\sin(3t)$.<br>Thế vào phương trình: $(y^*)^{\\prime\\prime} + 9y^* = 6A\\cos(3t) = 18\\cos(3t)$.<br>Suy ra: $6A = 18 \\Rightarrow A = \\dfrac{18}{6} = 3$.",
+  "topic": "v2",
+  "type": "mcq",
+  "id": "v2-141"
+ },
+ {
+  "q": "Một hệ dao động cơ học không cản chịu ngoại lực kích thích tuần hoàn điều hòa đúng bằng tần số riêng (hiện tượng cộng hưởng cơ học): $y'' + 16y = 16\\cos(4t)$. Biết nghiệm riêng của bài toán có dạng dao động biên độ tăng dần theo thời gian $y^*(t) = A\\,t\\sin(4t)$, giá trị của hệ số biên độ $A$ bằng",
+  "options": [
+   "$2$.",
+   "$4$.",
+   "$1$.",
+   "$3$."
+  ],
+  "answer": 0,
+  "explain": "Phương trình thuần nhất có nghiệm đặc trưng $k = \\pm 4i$.<br>Vì vế phải có dạng $\\cos(4t)$ nên xảy ra hiện tượng cộng hưởng, nghiệm riêng có dạng $y^* = A\\,t\\sin(4t)$.<br>Đạo hàm cấp 1: $(y^*)^\\prime = A\\sin(4t) + 4At\\cos(4t)$.<br>Đạo hàm cấp 2: $(y^*)^{\\prime\\prime} = 8A\\cos(4t) - 16At\\sin(4t)$.<br>Thế vào phương trình: $(y^*)^{\\prime\\prime} + 16y^* = 8A\\cos(4t) = 16\\cos(4t)$.<br>Suy ra: $8A = 16 \\Rightarrow A = \\dfrac{16}{8} = 2$.",
+  "topic": "v2",
+  "type": "mcq",
+  "id": "v2-142"
+ },
+ {
+  "q": "Một hệ dao động cơ học không cản chịu ngoại lực kích thích tuần hoàn điều hòa đúng bằng tần số riêng (hiện tượng cộng hưởng cơ học): $y'' + 25y = 25\\cos(5t)$. Biết nghiệm riêng của bài toán có dạng dao động biên độ tăng dần theo thời gian $y^*(t) = A\\,t\\sin(5t)$, giá trị của hệ số biên độ $A$ bằng",
+  "options": [
+   "$\\dfrac{5}{2}$.",
+   "$5$.",
+   "$\\dfrac{5}{4}$.",
+   "$\\dfrac{7}{2}$."
+  ],
+  "answer": 0,
+  "explain": "Phương trình thuần nhất có nghiệm đặc trưng $k = \\pm 5i$.<br>Vì vế phải có dạng $\\cos(5t)$ nên xảy ra hiện tượng cộng hưởng, nghiệm riêng có dạng $y^* = A\\,t\\sin(5t)$.<br>Đạo hàm cấp 1: $(y^*)^\\prime = A\\sin(5t) + 5At\\cos(5t)$.<br>Đạo hàm cấp 2: $(y^*)^{\\prime\\prime} = 10A\\cos(5t) - 25At\\sin(5t)$.<br>Thế vào phương trình: $(y^*)^{\\prime\\prime} + 25y^* = 10A\\cos(5t) = 25\\cos(5t)$.<br>Suy ra: $10A = 25 \\Rightarrow A = \\dfrac{25}{10} = \\dfrac{5}{2}$.",
+  "topic": "v2",
+  "type": "mcq",
+  "id": "v2-143"
+ },
+ {
+  "q": "Một hệ dao động cơ học không cản chịu ngoại lực kích thích tuần hoàn điều hòa đúng bằng tần số riêng (hiện tượng cộng hưởng cơ học): $y'' + 1y = 6\\cos(1t)$. Biết nghiệm riêng của bài toán có dạng dao động biên độ tăng dần theo thời gian $y^*(t) = A\\,t\\sin(1t)$, giá trị của hệ số biên độ $A$ bằng",
+  "options": [
+   "$3$.",
+   "$6$.",
+   "$\\dfrac{3}{2}$.",
+   "$4$."
+  ],
+  "answer": 0,
+  "explain": "Phương trình thuần nhất có nghiệm đặc trưng $k = \\pm 1i$.<br>Vì vế phải có dạng $\\cos(1t)$ nên xảy ra hiện tượng cộng hưởng, nghiệm riêng có dạng $y^* = A\\,t\\sin(1t)$.<br>Đạo hàm cấp 1: $(y^*)^\\prime = A\\sin(1t) + 1At\\cos(1t)$.<br>Đạo hàm cấp 2: $(y^*)^{\\prime\\prime} = 2A\\cos(1t) - 1At\\sin(1t)$.<br>Thế vào phương trình: $(y^*)^{\\prime\\prime} + 1y^* = 2A\\cos(1t) = 6\\cos(1t)$.<br>Suy ra: $2A = 6 \\Rightarrow A = \\dfrac{6}{2} = 3$.",
+  "topic": "v2",
+  "type": "mcq",
+  "id": "v2-144"
  }
 ];

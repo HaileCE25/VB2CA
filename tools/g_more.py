@@ -1320,7 +1320,7 @@ def n10a(rng, j):
         # Đạo hàm hàm f(x) = arcsin(ax) tại x=x0
         a = rng.choice([1, 2])
         # Chọn x0 sao cho a*x0 < 1 (tránh biên, tránh chia cho 0)
-        candidates = [(1, 3), (1, 4)] if a == 2 else [(1, 3), (1, 4), (1, 2)]
+        candidates = [(3, 10), (2, 5), (5, 26), (6, 13)] if a == 2 else [(3, 5), (4, 5), (5, 13), (12, 13)]
         p, qq = rng.choice(candidates)
         inner = 1 - a * a * sp.Rational(p, qq) ** 2
         if inner <= 0:
@@ -1340,8 +1340,10 @@ def n10a(rng, j):
         n, a = rng.choice([2, 3]), rng.choice([1, -1, 2])
         x0 = rng.choice([0, 1])
         ok = sp.nsimplify(diff(x**n * exp(a*x), x).subs(x, x0))
+        operator = '-' if a == -1 else '+'
+        coefficient = '' if abs(a) == 1 else abs(a)
         q = T(r'Cho hàm số $f(x) = x^{\u003cn\u003e}e^{\u003ca\u003ex}$. Giá trị của $f\'(\u003cx0\u003e)$ bằng', n=n, a='' if a==1 else ('-' if a==-1 else a), x0=x0)
-        ex = steps(T(r"$f'(x) = \u003cn\u003ex^{\u003cn1\u003e}e^{\u003ca\u003ex} + \u003ca\u003ex^{\u003cn\u003ee^{\u003ca\u003ex}}$", n=n, n1=n-1, a='' if a==1 else ('-' if a==-1 else a)),
+        ex = steps(T(r"$f'(x) = \u003cn\u003ex^{\u003cn1\u003e}e^{\u003ca\u003ex} \u003cop\u003e \u003ccoef\u003ex^{\u003cn\u003e}e^{\u003ca\u003ex}$", n=n, n1=n-1, a='' if a==1 else ('-' if a==-1 else a), op=operator, coef=coefficient),
                    T(r"$f'(\u003cx0\u003e) = \u003cok\u003e$", x0=x0, ok=ok))
         return NQ(q, ok, [ok+1, ok*2, -ok if ok!=0 else 1, diff(x**n * exp(a*x), x, 2).subs(x, x0)], ex)
     # v == 3: đạo hàm hàm hợp f(g(x))
@@ -1398,7 +1400,7 @@ def n28a(rng, j):
     v = j % 3
     if v == 0:
         # Độ dài cung parabol y = ax^2 trên [0, b] (công thức đơn giản cho a=1/2)
-        b = rng.choice([2, 4])
+        b = rng.choice(range(1, 11))
         # y = x^2/2, ds = sqrt(1+x^2)dx
         ok = sp.nsimplify(integrate(sqrt(1 + x**2), (x, 0, b)))
         q = T(r'Tính độ dài cung của đường cong $y = \dfrac{x^2}{2}$ từ $x = 0$ đến $x = \u003cb\u003e$. Biết $\int\sqrt{1+x^2}\,dx = \dfrac{x\sqrt{1+x^2}}{2} + \dfrac{\ln(x+\sqrt{1+x^2})}{2} + C$.', b=b)
@@ -1409,7 +1411,7 @@ def n28a(rng, j):
         return NQ(q, ok_v, [ok_v/2, 2*ok_v, ok_v+1, integrate(x, (x,0,b))], ex)
     if v == 1:
         # Diện tích vùng phẳng giới hạn bởi parabol và đường thẳng
-        a = rng.choice([1, 2, 3])
+        a = rng.choice(range(1, 11))
         # y = x^2, y = ax: giao nhau tại 0 và a
         ok = sp.nsimplify(integrate(a*x - x**2, (x, 0, a)))
         q = T(r'Tính diện tích hình phẳng giới hạn bởi parabol $y = x^2$ và đường thẳng $y = \u003ca\u003ex$.', a=a)
@@ -1417,7 +1419,7 @@ def n28a(rng, j):
                    T(r'$S = \displaystyle\int_0^{\u003ca\u003e}(\u003ca\u003ex - x^2)\,dx = \left[\dfrac{\u003ca\u003ex^2}{2} - \dfrac{x^3}{3}\right]_0^{\u003ca\u003e} = \u003cok\u003e$', a=a, ok=ok))
         return NQ(q, ok, [ok/2, 2*ok, ok+1, sp.Rational(a**2, 2)], ex)
     # v == 2: Thể tích vật tròn xoay
-    a = rng.choice([1, 2, 3])
+    a = rng.choice(range(1, 11))
     # Xoay y = sqrt(x) quanh Ox, từ 0 đến a^2 → V = pi*integral(x dx, 0, a^2) = pi*a^4/2
     ok = sp.nsimplify(sp.pi * integrate(x, (x, 0, a**2)))
     q = T(r'Tính thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y = \sqrt{x}$, $x = \u003ca2\u003e$ và trục $Ox$ xung quanh trục $Ox$.', a2=a**2)
@@ -1440,7 +1442,7 @@ def n28b(rng, j):
                    T(r'$F = \displaystyle\int_0^{\u003cbb\u003e} 9800 \cdot \u003caa\u003e \cdot (\u003cd\u003e + y)\,dy = 9800\u003caa\u003e\left[\u003cd\u003ey + \dfrac{y^2}{2}\right]_0^{\u003cbb\u003e} = \u003cok\u003e\,N = \u003ckN\u003e\,kN$', bb=bb, aa=aa, d=d, ok=ok, kN=ok_kN))
         return NQ(q, ok, [ok/2, 2*ok, 1000*G98*aa*bb*(d + bb), ok - 1000*G98*aa*bb], ex, fmt=lambda v: str(v), unit=' <i>N</i>')
     # v == 1: Trọng tâm (mô men tĩnh)
-    a = rng.choice([1, 2, 3])
+    a = rng.choice(range(1, 11))
     # Trọng tâm hình phẳng giới hạn y=0, x=0, y=x (tam giác), từ x=0 đến a
     # x_c = integral(x*(x)*dx, 0,a) / integral(x*dx, 0,a) = (a^3/3)/(a^2/2) = 2a/3
     ok = sp.Rational(2*a, 3)

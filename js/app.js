@@ -3,8 +3,24 @@
   const LS_HISTORY = 'vb2ca_history_v1';
   const LS_STATS = 'vb2ca_stats_v1';
   const LS_SEEN = 'vb2ca_seen_v1';
+  const LS_SEEN_PRACTICE = 'vb2ca_seen_practice_v1';
   const TOP = window.TOPICS || { names: {}, order: [], slots: [] };
-  const PRACTICE_BANK_TARGET = 200;
+
+  function loadSeenPractice() {
+    try { return JSON.parse(localStorage.getItem(LS_SEEN_PRACTICE)) || {}; } catch (e) { return {}; }
+  }
+  function saveSeenPractice(seen) {
+    try { localStorage.setItem(LS_SEEN_PRACTICE, JSON.stringify(seen)); } catch (e) { /* ignore */ }
+  }
+  function markPracticeSeen(refs, topicId) {
+    if (!refs || !refs.length) return;
+    const seen = loadSeenPractice();
+    const key = topicId || 'mixed';
+    const list = seen[key] || [];
+    refs.forEach(r => { if (!list.includes(r)) list.push(r); });
+    seen[key] = list;
+    saveSeenPractice(seen);
+  }
 
   // Các đề từng mang mã ca1-vd-NN / ca1-nc-NN nay là ca1-so-NN: chuyển dữ liệu đã lưu (đề đang chọn, sổ câu sai, câu đã báo lỗi)
   (function migrateIds() {
@@ -133,7 +149,8 @@
     return {
       screen: 'login', examId: MIX_ID, mix: null, perm: {}, profile: null,
       essay: '', answers: {}, flags: {}, p1End: 0, p2End: 0, savedAt: 0,
-      imeOk: false, imeMode: 'auto', fs: 15, dark: false, result: null, lock: true, viol: []
+      imeOk: false, imeMode: 'auto', fs: 15, dark: false, result: null, lock: true, viol: [],
+      speedRun: null
     };
   }
   function load() {
@@ -169,6 +186,7 @@
   }
   const ALL = {}, REF = {};
   EXAMS.forEach(ex => {
+    if (ALL[ex.id]) throw new Error('Duplicate exam id: ' + ex.id);
     ALL[ex.id] = itemsOf(ex);
     ALL[ex.id].forEach(it => { REF[it.ref] = { item: it, exam: ex }; });
   });
@@ -180,8 +198,8 @@
   (window.PRACTICE_BANK || []).forEach(source => {
     const topic = source.topic;
     if (!TOP.order.includes(topic)) throw new Error('Unknown practice-bank topic: ' + topic);
-    if ((practicePoolCounts[topic] || 0) >= PRACTICE_BANK_TARGET) return;
     const ref = 'practice-bank-' + source.id;
+    if (REF[ref]) throw new Error('Duplicate question reference: ' + ref);
     const item = Object.assign({}, source, {
       no: (practicePoolCounts[topic] || 0) + 1,
       ref,
@@ -189,11 +207,6 @@
     });
     REF[ref] = { item, exam: { title: 'Ngân hàng bổ sung · ' + (TOP.names[topic] || topic) } };
     practicePoolCounts[topic] = item.no;
-  });
-  TOP.order.forEach(topic => {
-    if ((practicePoolCounts[topic] || 0) < PRACTICE_BANK_TARGET) {
-      throw new Error('Practice bank for "' + topic + '" has fewer than ' + PRACTICE_BANK_TARGET + ' questions');
-    }
   });
 
   function setExam() {
@@ -400,6 +413,19 @@
             </div>
           </details>
           <div class="login-note">Chế độ luyện tập: nhập SBD và PIN bất kỳ để vào thi.</div>
+          <div class="speed-practice-launch">
+            <label for="speed-limit">⚡ Luyện liên hoàn — trộn câu mọi chủ đề</label>
+            <div class="speed-practice-controls">
+              <select id="speed-limit" aria-label="Thời gian cho mỗi câu">
+                <option value="15">15 giây / câu</option>
+                <option value="30" selected>30 giây / câu</option>
+                <option value="45">45 giây / câu</option>
+                <option value="60">60 giây / câu</option>
+              </select>
+              <button class="btn-start" type="button" data-act="speed-start">Bắt đầu luyện liên hoàn</button>
+            </div>
+            <small>Câu tự chuyển khi trả lời hoặc hết giờ. Có thể kết thúc bất cứ lúc nào.</small>
+          </div>
           <button class="btn-ghost btn-wide" type="button" data-act="open-exams" style="margin-top:10px">📚 Thư viện 32 đề thi & Tiến độ</button>
           <button class="btn-ghost btn-wide" type="button" data-act="open-theory" style="margin-top:6px">📖 Cẩm nang lý thuyết & Công thức trọng tâm</button>
           <button class="btn-ghost btn-wide" type="button" data-act="open-essays" style="margin-top:6px">📝 Cẩm nang nghị luận xã hội 500 chữ</button>
@@ -735,18 +761,29 @@
       .sort((u, v) => (u.p === null) - (v.p === null) || u.p - v.p);
     const total = rows.reduce((s, r) => [s[0] + r.a, s[1] + r.b], [0, 0]);
     const reports = Object.keys(st.reports);
-    const back = S.result && S.profile ? '← Về kết quả bài thi' : '← Về trang đăng nhập';
+    const back = '← Về trang chủ';
     return `
       <div class="page">
         <div class="page-head">
           <button class="btn-ghost" data-act="stats-back">${back}</button>
           <div class="small">LUYỆN TẬP</div>
           <h2>THỐNG KÊ VÀ LUYỆN THEO CHỦ ĐỀ</h2>
-          <div style="margin-top:8px"><button class="btn-ghost" data-act="open-theory" style="font-size:13px">📖 Mở Cẩm nang lý thuyết & Công thức trọng tâm</button></div>
         </div>
         <div class="card accent">
           <h3>Tỉ lệ làm đúng theo chủ đề</h3>
-          <p>Cộng dồn từ các lần thi đã nộp và các lượt luyện tập trên máy này (tổng ${total[0]} / ${total[1]} câu đúng). Chủ đề yếu nhất xếp trên cùng. Bấm <b>Luyện 10 câu</b> để làm không tính giờ, xem lời giải ngay sau từng câu.</p>
+          <p>Cộng dồn từ các lần thi đã nộp và các lượt luyện tập trên máy này (tổng ${total[0]} / ${total[1]} câu đúng). Chủ đề yếu nhất xếp trên cùng. Chọn số câu cho mỗi lượt; câu hỏi lấy ngẫu nhiên từ toàn bộ ngân hàng hiện có.</p>
+          <div class="practice-pool-controls">
+            <label for="practice-size">Số câu mỗi lượt</label>
+            <select id="practice-size">
+              <option value="10" ${practiceCountSelected(10)}>10 câu</option>
+              <option value="20" ${practiceCountSelected(20)}>20 câu</option>
+              <option value="30" ${practiceCountSelected(30)}>30 câu</option>
+              <option value="50" ${practiceCountSelected(50)}>50 câu</option>
+              <option value="100" ${practiceCountSelected(100)}>100 câu</option>
+              <option value="all" ${practiceCountSelected('all')}>Tất cả câu trong kho</option>
+            </select>
+            <button class="btn-start" data-act="p-mix">Luyện ngẫu nhiên mọi chủ đề</button>
+          </div>
           <table class="history topics">
             <tr><th>Chủ đề</th><th>Đúng</th><th>Tỉ lệ</th><th>Đang sai</th><th></th></tr>
             ${rows.map(r => `<tr>
@@ -761,13 +798,13 @@
               <td>${r.b ? r.a + ' / ' + r.b : '—'}</td>
               <td>${barHtml(r.p)}</td>
               <td>${wrongBy[r.id] || 0}</td>
-              <td><button class="btn-small" data-practice-topic="${r.id}" ${pool[r.id] ? '' : 'disabled'}>Luyện 10 câu</button></td></tr>`).join('')}
+              <td><button class="btn-small" data-practice-topic="${r.id}" ${pool[r.id] ? '' : 'disabled'}>Luyện ${esc(practiceCountLabel(pool[r.id] || 0))}</button></td></tr>`).join('')}
           </table>
         </div>
         <div class="card">
           <h3>Sổ câu sai</h3>
           <p>Hiện có <b>${wrongRefs.length}</b> câu bạn làm sai (hoặc bỏ trống trong một lần thi đã làm từ nửa đề trở lên) và chưa làm lại đúng. Mỗi câu sẽ được gỡ khỏi sổ khi bạn làm đúng.</p>
-          <button class="btn-start" data-act="p-wrong" ${wrongRefs.length ? '' : 'disabled'}>Luyện lại câu sai (tối đa 15 câu mỗi lượt)</button>
+          <button class="btn-start" data-act="p-wrong" ${wrongRefs.length ? '' : 'disabled'}>Luyện lại ${esc(practiceCountLabel(wrongRefs.length))} câu sai</button>
         </div>
         <div class="card">
           <h3>Câu đã báo có vấn đề (${reports.length})</h3>
@@ -1039,24 +1076,59 @@
   }
 
   // ---------- Luyện tập không tính giờ (từng câu, có lời giải ngay) ----------
-  function startPractice(title, refs, topic) {
+  let practiceQuestionCount = 20;
+  const practiceCountLabel = poolSize => {
+    if (practiceQuestionCount === 'all') return poolSize == null ? 'tất cả câu' : `${poolSize} câu`;
+    return `${poolSize == null ? practiceQuestionCount : Math.min(practiceQuestionCount, poolSize)} câu`;
+  };
+  const selectedPracticeCount = poolSize => practiceQuestionCount === 'all' ? poolSize : Math.min(practiceQuestionCount, poolSize);
+  const practiceCountSelected = value => String(practiceQuestionCount) === String(value) ? 'selected' : '';
+  function startPractice(title, refs, topic, mixed) {
     const perm = {};
     refs.forEach(ref => { const it = REF[ref].item; if (it.type === 'mcq') perm[ref] = shuffle(it.options.map((o, i) => i)); });
-    S.practice = { title, refs, i: 0, perm, ans: {}, topic: topic || null };
+    S.practice = { title, refs, i: 0, perm, ans: {}, topic: topic || null, mixed: !!mixed };
     go('practice');
   }
-  // Chọn câu cho một chủ đề: ưu tiên các câu đang nằm trong sổ câu sai, còn lại lấy ngẫu nhiên
+  // Chọn câu cho một chủ đề: ưu tiên câu trong sổ câu sai + câu mới chưa luyện gần đây
   function pickTopic(id, n) {
     const st = loadStats();
     const all = Object.keys(REF).filter(r => REF[r].item.topic === id);
-    const wrong = shuffle(all.filter(r => st.wrong[r])).slice(0, Math.ceil(n / 2));
-    // phần còn lại: mỗi dạng bài chỉ lấy một câu, để một lượt luyện không gặp hai câu chỉ khác số
+    const target = Number.isFinite(n) ? Math.min(Math.max(0, n), all.length) : all.length;
+    const wrong = shuffle(all.filter(r => st.wrong[r])).slice(0, Math.ceil(target / 2));
+
+    const seenData = loadSeenPractice();
+    let seenList = seenData[id] || [];
+    // Nếu đã xem gần hết câu trong kho (ví dụ >= 80% kho), tự động xoay vòng chu kỳ mới
+    if (seenList.length >= Math.max(1, all.length - target)) {
+      seenList = [];
+      seenData[id] = [];
+      saveSeenPractice(seenData);
+    }
+    const seenSet = new Set(seenList);
+
+    // Phân tách pool chưa làm và đã làm trong chu kỳ này
+    const unseenPool = all.filter(r => !wrong.includes(r) && !seenSet.has(r));
+    const seenPool = all.filter(r => !wrong.includes(r) && seenSet.has(r));
+
+    // Lọc theo dạng bài (kindOf) để tối đa hóa tính đa dạng
     const kinds = new Set(wrong.map(r => kindOf(REF[r].item))), rest = [], spare = [];
-    shuffle(all.filter(r => !wrong.includes(r))).forEach(r => {
+
+    // Trước tiên ưu tiên bốc câu chưa luyện gần đây
+    shuffle(unseenPool).forEach(r => {
       const k = kindOf(REF[r].item);
       if (kinds.has(k)) spare.push(r); else { kinds.add(k); rest.push(r); }
     });
-    return shuffle(wrong.concat(rest.concat(spare).slice(0, n - wrong.length)));
+    // Nếu chưa đủ số lượng, bốc tiếp từ phần còn lại
+    if (rest.length + spare.length < target - wrong.length) {
+      shuffle(seenPool).forEach(r => {
+        const k = kindOf(REF[r].item);
+        if (kinds.has(k)) spare.push(r); else { kinds.add(k); rest.push(r); }
+      });
+    }
+
+    const chosen = wrong.concat(rest.concat(spare).slice(0, target - wrong.length));
+    markPracticeSeen(chosen, id);
+    return shuffle(chosen);
   }
   function answerPractice(val) {
     const P = S.practice, ref = P.refs[P.i], it = REF[ref].item;
@@ -1068,11 +1140,148 @@
     save();
     render();
   }
+  const SPEED_FEEDBACK_MS = 8000;
+  function speedCurrent() {
+    const P = S.speedRun;
+    return P && P.refs[P.i] ? REF[P.refs[P.i]].item : null;
+  }
+  function prepareSpeedQuestion() {
+    const P = S.speedRun, it = speedCurrent();
+    P.questionStartedAt = Date.now();
+    P.deadline = P.questionStartedAt + P.limitSec * 1000;
+    P.nextAt = 0;
+    if (it && it.type === 'mcq') P.perm[P.i] = shuffle(it.options.map((o, i) => i));
+  }
+  function startSpeedPractice(limitSec) {
+    const refs = Object.keys(REF);
+    if (!refs.length) return;
+    if (S.examId === MIX_ID && !validMix(S.mix)) S.mix = newMix();
+    const startedAt = Date.now();
+    S.speedRun = {
+      refs: shuffle(refs), i: 0, limitSec, startedAt, questionStartedAt: startedAt,
+      deadline: startedAt + limitSec * 1000, nextAt: 0, responses: [], perm: {}, endedAt: 0
+    };
+    prepareSpeedQuestion();
+    go('speed-practice');
+  }
+  function finishSpeedPractice() {
+    const P = S.speedRun;
+    if (!P || P.endedAt) return;
+    P.endedAt = Date.now();
+    go('speed-result');
+  }
+  function advanceSpeedPractice() {
+    const P = S.speedRun;
+    if (!P || P.responses[P.i] === undefined) return;
+    P.i++;
+    if (P.i >= P.refs.length) { finishSpeedPractice(); return; }
+    prepareSpeedQuestion();
+    save();
+    render();
+  }
+  function answerSpeedPractice(val, timedOut) {
+    const P = S.speedRun, it = speedCurrent();
+    if (!P || !it || P.responses[P.i] !== undefined) return;
+    const missed = !!timedOut || Date.now() >= P.deadline;
+    const answer = missed ? null : val;
+    const right = !missed && check(it, answer);
+    P.responses[P.i] = { value: answer, correct: right, timedOut: missed };
+    P.nextAt = Date.now() + SPEED_FEEDBACK_MS;
+    const st = loadStats();
+    record(st, it, right);
+    saveStats(st);
+    save();
+    render();
+  }
+  function speedElapsed(P) {
+    const seconds = Math.max(0, Math.floor(((P.endedAt || Date.now()) - P.startedAt) / 1000));
+    return `${pad(Math.floor(seconds / 60))}:${pad(seconds % 60)}`;
+  }
+  function viewSpeedPractice() {
+    const P = S.speedRun, it = speedCurrent();
+    if (!P || !it) return viewLogin();
+    const response = P.responses[P.i], ord = it.type === 'mcq' ? P.perm[P.i] || it.options.map((o, i) => i) : [];
+    let body;
+    if (it.type === 'mcq') {
+      body = ord.map((option, d) => `
+        <button class="opt ${response ? (keys(it).includes(option) ? 'correct' : response.value === option ? 'wrongsel' : '') : ''}"
+          data-speed-opt="${option}" ${response ? 'disabled' : ''}>
+          <span class="letter">${LETTERS[d]}</span><span>${it.options[option]}</span>
+        </button>`).join('');
+    } else {
+      body = `<div class="short-box ${response && !response.timedOut ? 'filled' : ''}">
+          <label for="speed-short">Câu trả lời ngắn</label>
+          <input id="speed-short" placeholder="Nhập đáp án..." autocomplete="off" ${response ? 'disabled' : ''}>
+        </div>
+        ${response ? '' : '<div class="actions" style="justify-content:flex-start"><button class="btn-start" data-act="speed-check">Trả lời</button></div>'}`;
+    }
+    const correctAnswer = it.type === 'mcq'
+      ? keys(it).map(k => LETTERS[ord.indexOf(k)]).join(' hoặc ')
+      : esc(it.answer[0]);
+    const feedbackLeft = response ? Math.max(0, Math.ceil((P.nextAt - Date.now()) / 1000)) : 0;
+    const feedback = !response ? '' : `<div class="rv ${response.correct ? 'right' : 'wrong'} speed-feedback">
+        <div class="res"><b>${response.timedOut ? 'Hết giờ' : response.correct ? '✔ Chính xác' : '✘ Chưa đúng'}</b>
+          · Đáp án: <b>${correctAnswer}</b></div>
+        ${explainHtml(it)}
+        <div class="exp">Nguồn: ${esc(refLabel(it.ref))}</div>
+        ${reportBtn(it, loadStats())}
+        <div class="speed-feedback-actions">
+          <small>Tự chuyển câu sau <b id="speed-feedback-countdown">${feedbackLeft}</b> giây</small>
+          <button class="btn-start" data-act="speed-next">Câu tiếp theo ➜</button>
+        </div>
+      </div>`;
+    return `<div class="page speed-page">
+      <div class="page-head">
+        <button class="btn-ghost" data-act="speed-stop">Kết thúc lượt</button>
+        <div class="small">LUYỆN LIÊN HOÀN · ${P.limitSec} GIÂY / CÂU</div>
+        <h2>Câu ${P.i + 1} · ${esc(topicName(it.topic))}</h2>
+      </div>
+      <div class="speed-run-meta">
+        <span>Đã trả lời: ${P.responses.filter(r => r && !r.timedOut).length}</span>
+        <span>Thời gian luyện: <b id="speed-elapsed">${speedElapsed(P)}</b></span>
+        <span class="speed-countdown" id="speed-countdown">${response ? '✓' : P.limitSec}</span>
+      </div>
+      <div class="exam-like">
+        ${it.group ? `<div class="group-stem"><small>Thông tin chung</small>${it.group.stem}</div>` : ''}
+        <div class="q"><div class="q-text">${it.q}</div>${body}</div>
+        ${feedback}
+      </div>
+    </div>`;
+  }
+  function viewSpeedResult() {
+    const P = S.speedRun;
+    if (!P) return viewLogin();
+    const responses = P.responses.filter(Boolean);
+    const correct = responses.filter(r => r.correct).length;
+    const timedOut = responses.filter(r => r.timedOut).length;
+    const attempted = responses.length - timedOut;
+    return `<div class="page speed-page">
+      <div class="page-head">
+        <div class="small">TỔNG KẾT LUYỆN LIÊN HOÀN</div>
+        <h2>Kết quả của bạn</h2>
+      </div>
+      <div class="card">
+        <div class="score"><small>Thời gian luyện</small><b>${speedElapsed(P)}</b><span> · ${P.limitSec} giây cho mỗi câu</span></div>
+        <div class="speed-result-grid">
+          <div><b>${responses.length}</b><span>Tổng câu đã qua</span></div>
+          <div><b>${attempted}</b><span>Đã trả lời</span></div>
+          <div><b>${correct}</b><span>Trả lời đúng</span></div>
+          <div><b>${attempted - correct}</b><span>Trả lời sai</span></div>
+          <div><b>${timedOut}</b><span>Hết giờ</span></div>
+        </div>
+        ${P.i >= P.refs.length ? '<p class="pending" style="text-align:center">Bạn đã luyện hết lượt câu hỏi hiện có.</p>' : ''}
+        <div class="actions">
+          <button class="btn-start" data-act="speed-again">Luyện lượt mới</button>
+          <button class="btn-ghost" data-act="speed-home">Về trang chính</button>
+        </div>
+      </div>
+    </div>`;
+  }
   function viewPractice() {
     const P = S.practice;
     if (!P || !P.refs.length || !P.refs.every(r => REF[r])) return viewStats();
     const n = P.refs.length, st = loadStats();
-    const head = `<div class="page-head"><button class="btn-ghost" data-act="p-quit">✕ Kết thúc</button>
+    const head = `<div class="page-head"><button class="btn-ghost" data-act="p-quit">← Về trang chủ</button>
       <div class="small">LUYỆN TẬP KHÔNG TÍNH GIỜ</div><h2>${esc(P.title)}</h2></div>`;
     if (P.i >= n) {
       const right = P.refs.filter(r => check(REF[r].item, P.ans[r])).length;
@@ -1080,8 +1289,8 @@
         <div class="card"><div class="score"><small>Kết quả lượt luyện</small><b>${right}</b> <span>/ ${n} câu đúng</span></div>
           <table class="history">${P.refs.map((r, i) => `<tr><td>Câu ${i + 1}</td><td>${esc(refLabel(r))}</td><td>${check(REF[r].item, P.ans[r]) ? '<span class="ok">✔ Đúng</span>' : '<span style="color:var(--red)">✘ Sai</span>'}</td></tr>`).join('')}</table>
           <div class="actions">
-            ${P.topic ? `<button class="btn-start" data-practice-topic="${P.topic}">Luyện tiếp 10 câu chủ đề này</button>` : '<button class="btn-start" data-act="p-wrong">Luyện tiếp câu sai</button>'}
-            <button class="btn-ghost" data-act="p-quit">Về trang đăng nhập</button>
+            ${P.topic ? `<button class="btn-start" data-practice-topic="${P.topic}">Luyện tiếp ${esc(practiceCountLabel(Object.keys(REF).filter(r => REF[r].item.topic === P.topic).length))} chủ đề này</button>` : P.mixed ? '<button class="btn-start" data-act="p-mix">Luyện tiếp câu trộn</button>' : '<button class="btn-start" data-act="p-wrong">Luyện tiếp câu sai</button>'}
+            <button class="btn-ghost" data-act="p-quit">← Về trang chủ</button>
           </div></div></div>`;
     }
     const ref = P.refs[P.i], it = REF[ref].item, a = P.ans[ref], done = a !== undefined, right = done && check(it, a);
@@ -1729,9 +1938,9 @@
     setExam();
     applyPrefs();
     closeModal();
-    const free = S.screen === 'stats' || S.screen === 'practice' || S.screen === 'exams' || S.screen === 'theory' || S.screen === 'essays';   // các màn hình này không cần đăng nhập
+    const free = S.screen === 'stats' || S.screen === 'practice' || S.screen === 'speed-practice' || S.screen === 'speed-result' || S.screen === 'exams' || S.screen === 'theory' || S.screen === 'essays';   // các màn hình này không cần đăng nhập
     if (!exam || (!S.profile && !free)) S.screen = 'login';
-    const views = { login: viewLogin, precheck: viewPrecheck, p1: viewPart1, p2: viewPart2, result: viewResult, stats: viewStats, practice: viewPractice, exams: viewExamList, theory: viewTheory, essays: viewEssayGuides };
+    const views = { login: viewLogin, precheck: viewPrecheck, p1: viewPart1, p2: viewPart2, result: viewResult, stats: viewStats, practice: viewPractice, 'speed-practice': viewSpeedPractice, 'speed-result': viewSpeedResult, exams: viewExamList, theory: viewTheory, essays: viewEssayGuides };
     app.innerHTML = views[S.screen]();
     typeset(app);
     if (S.screen === 'precheck') updatePrecheck();
@@ -1836,6 +2045,25 @@
   }
 
   function tick() {
+    if (S.screen === 'speed-practice' && S.speedRun) {
+      const P = S.speedRun, response = P.responses[P.i];
+      const elapsed = document.getElementById('speed-elapsed');
+      if (elapsed) elapsed.textContent = speedElapsed(P);
+      if (response) {
+        const feedbackCountdown = document.getElementById('speed-feedback-countdown');
+        if (feedbackCountdown) feedbackCountdown.textContent = Math.max(0, Math.ceil((P.nextAt - Date.now()) / 1000));
+        if (Date.now() >= P.nextAt) advanceSpeedPractice();
+        return;
+      }
+      const left = Math.max(0, Math.ceil((P.deadline - Date.now()) / 1000));
+      const countdown = document.getElementById('speed-countdown');
+      if (countdown) {
+        countdown.textContent = left;
+        countdown.classList.toggle('low', left <= 5);
+      }
+      if (left <= 0) answerSpeedPractice(null, true);
+      return;
+    }
     const end = S.screen === 'p1' ? S.p1End : S.screen === 'p2' ? S.p2End : 0;
     if (!end) return;
     const left = Math.max(0, Math.ceil((end - Date.now()) / 1000));
@@ -2018,8 +2246,20 @@
     'essays-back'() { go(S.profile ? 'precheck' : 'login'); },
     'exams-back'() { go(S.profile ? 'precheck' : 'login'); },
     'open-stats'() { go('stats'); },
-    'stats-back'() { go(S.result && S.profile ? 'result' : 'login'); },
+    'stats-back'() { go('login'); },
     'p-quit'() { go('login'); },
+    'speed-start'() {
+      const selected = Number(document.getElementById('speed-limit').value);
+      startSpeedPractice([15, 30, 45, 60].includes(selected) ? selected : 30);
+    },
+    'speed-check'() {
+      const input = document.getElementById('speed-short');
+      if (input && input.value.trim()) answerSpeedPractice(input.value.trim(), false);
+    },
+    'speed-next'() { advanceSpeedPractice(); },
+    'speed-stop'() { finishSpeedPractice(); },
+    'speed-again'() { startSpeedPractice(S.speedRun ? S.speedRun.limitSec : 30); },
+    'speed-home'() { go('login'); },
     'p-prev'() { if (S.practice && S.practice.i > 0) { S.practice.i--; go('practice'); } },
     'p-next'() {
       const P = S.practice;
@@ -2033,8 +2273,39 @@
     },
     'p-wrong'() {
       const st = loadStats();
-      const refs = Object.keys(st.wrong).filter(r => REF[r]).sort((u, v) => (st.wrong[u].t || 0) - (st.wrong[v].t || 0)).slice(0, 15);
+      const pool = shuffle(Object.keys(st.wrong).filter(r => REF[r]));
+      const refs = pool.slice(0, selectedPracticeCount(pool.length));
       if (refs.length) startPractice('Luyện lại câu sai', refs, null); else go('stats');
+    },
+    'p-mix'() {
+      const totalCount = selectedPracticeCount(Object.keys(REF).length) || 20;
+      const topics = TOP.order.slice();
+      const perTopic = Math.max(1, Math.floor(totalCount / topics.length));
+      let chosen = [];
+      const seenData = loadSeenPractice();
+      let seenMixed = seenData['mixed'] || [];
+      if (seenMixed.length >= Object.keys(REF).length - totalCount) {
+        seenMixed = [];
+        seenData['mixed'] = [];
+        saveSeenPractice(seenData);
+      }
+      const seenSet = new Set(seenMixed);
+
+      shuffle(topics).forEach(t => {
+        const pool = Object.keys(REF).filter(r => REF[r].item.topic === t);
+        const unseen = pool.filter(r => !seenSet.has(r));
+        const src = unseen.length >= perTopic ? unseen : pool;
+        chosen = chosen.concat(shuffle(src).slice(0, perTopic));
+      });
+
+      if (chosen.length < totalCount) {
+        const remaining = shuffle(Object.keys(REF).filter(r => !chosen.includes(r)));
+        chosen = chosen.concat(remaining.slice(0, totalCount - chosen.length));
+      } else if (chosen.length > totalCount) {
+        chosen = shuffle(chosen).slice(0, totalCount);
+      }
+      markPracticeSeen(chosen, 'mixed');
+      if (chosen.length) startPractice('Luyện ngẫu nhiên tổng hợp mọi chủ đề (' + chosen.length + ' câu)', shuffle(chosen), null, true);
     },
     'copy-reports'() {
       const el = document.getElementById('report-out');
@@ -2205,7 +2476,8 @@
     const pt = e.target.closest('[data-practice-topic]');
     if (pt) {
       const id = pt.dataset.practiceTopic;
-      startPractice('Chủ đề: ' + topicName(id), pickTopic(id, 10), id);
+      const refs = pickTopic(id, selectedPracticeCount(Object.keys(REF).filter(r => REF[r].item.topic === id).length));
+      startPractice('Chủ đề: ' + topicName(id), refs, id);
       return;
     }
     const rp = e.target.closest('[data-report]');
@@ -2222,6 +2494,11 @@
     if (popt && S.screen === 'practice') { answerPractice(Number(popt.dataset.opt)); return; }
 
     const opt = e.target.closest('.opt');
+    const speedOpt = e.target.closest('[data-speed-opt]');
+    if (speedOpt && S.screen === 'speed-practice') {
+      answerSpeedPractice(Number(speedOpt.dataset.speedOpt), false);
+      return;
+    }
     if (opt && S.screen === 'p2') {
       const no = Number(opt.closest('.q').dataset.no), i = Number(opt.dataset.opt);
       if (S.answers[no] === i) delete S.answers[no]; else S.answers[no] = i;
@@ -2231,6 +2508,7 @@
 
   app.addEventListener('keydown', e => {
     if (e.key === 'Enter' && e.target.id === 'p-short') { e.preventDefault(); actions['p-check'](); return; }
+    if (e.key === 'Enter' && e.target.id === 'speed-short') { e.preventDefault(); actions['speed-check'](); return; }
     if (S.screen === 'practice' && !['input', 'textarea'].includes((e.target.tagName || '').toLowerCase())) {
       if (e.key === 'ArrowLeft') { actions['p-prev'](); return; }
       if (e.key === 'ArrowRight' || e.key === 'Enter') { actions['p-next'](); return; }
@@ -2285,6 +2563,11 @@
     }
   });
   app.addEventListener('change', e => {
+    if (e.target.id === 'practice-size') {
+      practiceQuestionCount = e.target.value === 'all' ? 'all' : Number(e.target.value);
+      render();
+      return;
+    }
     if (e.target.id === 'practice-prompt-select') {
       essayPracticeId = e.target.value;
       render();

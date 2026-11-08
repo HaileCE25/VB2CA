@@ -47,6 +47,7 @@ def vec(v):
 
 def T(_tpl, **kw):
     """Điền tham số vào mẫu câu: 'cho <a>' -> giá trị (đã chuyển sang LaTeX)."""
+    _tpl = _tpl.replace(r'\u003c', '<').replace(r'\u003e', '>')
     for k, v in kw.items():
         _tpl = _tpl.replace('<' + k + '>', v if isinstance(v, str) else tx(v))
     return _tpl

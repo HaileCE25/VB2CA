@@ -86,6 +86,25 @@ button:disabled { cursor: not-allowed; opacity: .55; }
   border-top: 1px dashed var(--line);
 }
 .practice-box summary { cursor: pointer; color: var(--blue); font-size: 13px; margin-bottom: 10px; }
+.speed-practice-launch {
+  margin-top: 16px;
+  padding: 14px;
+  border: 1px solid #bfdbfe;
+  border-radius: 9px;
+  background: var(--blue-soft);
+  text-align: left;
+}
+.speed-practice-launch > label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+.speed-practice-controls { display: flex; gap: 8px; }
+.speed-practice-controls select {
+  min-width: 120px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--card);
+}
+.speed-practice-controls .btn-start { flex: 1; padding: 8px 10px; font-size: 13px; }
+.speed-practice-launch small { display: block; color: var(--muted); font-size: 11.5px; line-height: 1.45; margin-top: 7px; }
 .login-note { color: var(--muted); font-size: 12px; margin-top: 12px; }
 .error { color: var(--red); font-size: 13px; min-height: 18px; margin: 6px 0; }
 
@@ -751,6 +770,25 @@ body.dark .topic-sample-head { color: #bfdbfe; }
 .btn-wide { width: 100%; margin-top: 12px; padding: 9px 12px; }
 .btn-small { border: 1px solid var(--blue); background: var(--card); color: var(--blue); border-radius: 6px; padding: 4px 10px; font-size: 13px; white-space: nowrap; }
 .btn-small:not(:disabled):hover { background: var(--blue-soft); }
+.practice-pool-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--field);
+}
+.practice-pool-controls label { font-size: 13px; font-weight: 600; }
+.practice-pool-controls select {
+  min-width: 150px;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--card);
+}
+.practice-pool-controls .btn-start { padding: 8px 12px; font-size: 13px; }
 .topics td { vertical-align: middle; }
 .bar { display: inline-block; width: 110px; height: 9px; background: var(--field); border-radius: 5px; overflow: hidden; vertical-align: middle; margin-right: 6px; }
 .bar i { display: block; height: 100%; }
@@ -853,6 +891,64 @@ body.dark .rs-wrong { background: #3b1717; }
 }
 .p-nav .pending { text-align: center; flex: 1; font-size: 13px; }
 .p-nav .btn-ghost { flex-shrink: 0; }
+.speed-page { max-width: 800px; }
+.speed-page .page-head .btn-ghost { padding: 7px 12px; }
+.speed-run-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 12px 16px;
+  margin-bottom: 14px;
+  border-radius: 9px;
+  background: var(--card);
+  box-shadow: 0 1px 4px rgba(15, 23, 42, .08);
+  font-size: 13px;
+}
+.speed-countdown {
+  min-width: 44px;
+  color: var(--blue);
+  font-size: 23px;
+  font-weight: 800;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.speed-countdown.low { color: var(--red); }
+.speed-feedback { margin-top: 12px; }
+.speed-feedback-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+.speed-feedback-actions small { color: var(--muted); }
+.speed-feedback-actions .btn-start { padding: 8px 14px; }
+.speed-result-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin: 16px 0;
+}
+.speed-result-grid > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 13px 8px;
+  border-radius: 8px;
+  background: var(--field);
+  text-align: center;
+}
+.speed-result-grid b { color: var(--blue); font-size: 24px; }
+.speed-result-grid span { color: var(--muted); font-size: 12px; }
+@media (max-width: 520px) {
+  .speed-practice-controls { flex-direction: column; }
+  .speed-practice-controls select { width: 100%; }
+  .speed-result-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 
 /* #12 — In / xuất kết quả bài thi */
 @media print {
@@ -1109,66 +1205,81 @@ body.dark .formula-section-title { color: #93c5fd; }
   background: var(--field);
   border-left: 3.5px solid var(--blue);
   border-radius: 0 8px 8px 0;
-  padding: 10px 14px;
-  margin-bottom: 10px;
-  line-height: 1.8;
-  font-size: 14px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  line-height: 1.85;
+  font-size: 15.5px;
   overflow-x: auto;
 }
 .formula-box b.f-name {
   color: var(--blue);
   display: block;
-  font-size: 13.5px;
-  margin-bottom: 4px;
+  font-size: 15.5px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+.formula-box .katex,
+.concept-box .katex {
+  font-size: 1.16em;
 }
 .formula-exercises {
-  margin-top: 12px;
-  padding-top: 10px;
+  margin-top: 14px;
+  padding-top: 12px;
   border-top: 1px dashed var(--line);
 }
 .formula-exercises-title {
   display: block;
   color: var(--green);
-  font-size: 13px;
-  margin-bottom: 7px;
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: 700;
 }
 .formula-exercise {
-  padding: 8px 10px;
-  margin-top: 6px;
+  padding: 10px 12px;
+  margin-top: 8px;
   border-radius: 7px;
   background: var(--card);
-  line-height: 1.7;
+  line-height: 1.75;
+  font-size: 15px;
+}
+.formula-exercise .katex {
+  font-size: 1.14em;
 }
 .exercise-level {
   display: inline-block;
-  margin-right: 4px;
+  margin-right: 5px;
   color: var(--blue);
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 700;
   text-transform: uppercase;
 }
-.formula-exercise details { margin-top: 5px; }
+.formula-exercise details { margin-top: 6px; }
 .formula-exercise summary {
   color: var(--green);
   cursor: pointer;
-  font-size: 12.5px;
+  font-size: 13.5px;
   font-weight: 600;
 }
-.formula-exercise-solution { padding: 6px 0 0; }
+.formula-exercise-solution {
+  padding: 8px 0 0;
+  font-size: 14.5px;
+  line-height: 1.8;
+}
 .trap-box {
   background: rgba(245, 158, 11, 0.08);
   border-left: 3.5px solid #d97706;
   border-radius: 0 8px 8px 0;
-  padding: 10px 14px;
-  margin-top: 10px;
-  font-size: 13.5px;
-  line-height: 1.65;
+  padding: 12px 16px;
+  margin-top: 12px;
+  font-size: 14.5px;
+  line-height: 1.75;
 }
 .trap-box b.t-title {
   color: #b45309;
   display: block;
   margin-bottom: 6px;
-  font-size: 13.5px;
+  font-size: 14.5px;
+  font-weight: 700;
 }
 .trap-list {
   margin: 0;
@@ -1185,16 +1296,17 @@ body.dark .formula-section-title { color: #93c5fd; }
   border: 1px solid var(--line);
   border-left: 3.5px solid #0284c7;
   border-radius: 0 8px 8px 0;
-  padding: 10px 14px;
-  margin-bottom: 10px;
-  line-height: 1.75;
-  font-size: 14px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  line-height: 1.8;
+  font-size: 15.5px;
 }
 .concept-box b.c-title {
   color: #0284c7;
   display: block;
-  font-size: 13.5px;
-  margin-bottom: 4px;
+  font-size: 15px;
+  margin-bottom: 5px;
+  font-weight: 700;
 }
 
 /* Khung ví dụ minh họa có lời giải từng bước */
@@ -1219,16 +1331,20 @@ body.dark .formula-section-title { color: #93c5fd; }
 }
 body.dark .example-head { color: #4ade80; }
 .example-prob {
-  padding: 12px 14px 10px;
-  font-size: 14px;
-  line-height: 1.7;
+  padding: 12px 16px 10px;
+  font-size: 15px;
+  line-height: 1.75;
   border-bottom: 1px dashed var(--line);
 }
 .example-sol {
-  padding: 12px 14px;
-  font-size: 13.5px;
-  line-height: 1.8;
+  padding: 12px 16px;
+  font-size: 14.5px;
+  line-height: 1.85;
   background: rgba(22, 163, 74, 0.04);
+}
+.example-prob .katex,
+.example-sol .katex {
+  font-size: 1.14em;
 }
 .example-sol b { color: #15803d; }
 body.dark .example-sol b { color: #4ade80; }
