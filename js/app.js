@@ -383,54 +383,188 @@
 
   // ---------- Màn hình ----------
   function viewLogin() {
-    if (!EXAMS.length) return '<div class="login-wrap"><div class="login-card">Chưa có đề nào. Hãy thêm file đề vào thư mục <b>data/</b>.</div></div>';
+    if (!EXAMS.length) return '<div class="dash-wrap"><div class="dash-card">Chưa có đề nào. Hãy thêm file đề vào thư mục <b>data/</b>.</div></div>';
     const last = S.profile || {};
     return `
-      <div class="login-wrap">
-        <form class="login-card" id="login-form" autocomplete="off">
-          <div class="login-logo">🎓</div>
-          <h1>Luyện thi Văn bằng 2</h1>
-          <div class="login-sub">Mô phỏng bài thi đánh giá trên máy tính — bản luyện tập cá nhân, không phải hệ thống thi chính thức</div>
-          <div class="field">
-            <label for="sbd">Số báo danh (SBD)</label>
-            <input id="sbd" placeholder="Nhập số báo danh" value="${esc(last.sbd || '')}">
+      <div class="dash-wrap">
+        <!-- Header Dashboard -->
+        <header class="dash-header">
+          <div class="dash-brand">
+            <div class="dash-badge-cst">BỘ CÔNG AN · MÃ ĐỀ CA1</div>
+            <h1 class="dash-title">CỔNG ÔN THI CHÍNH QUY VB2</h1>
+            <p class="dash-subtitle">Toán cao cấp & Nghị luận xã hội · Ngân hàng 2.200+ câu hỏi chuẩn hóa 2026</p>
           </div>
-          <div class="field">
-            <label for="pin">Mã xác thực (PIN)</label>
-            <input id="pin" type="password" placeholder="Nhập mã PIN...">
+          <div class="dash-top-actions">
+            <button class="dash-pill-btn" type="button" data-act="dark" title="Chuyển chế độ Sáng / Tối">
+              ${S.dark ? '☀️ Giao diện sáng' : '🌙 Giao diện tối'}
+            </button>
+            <button class="dash-pill-btn" type="button" data-act="fs-up" title="Đổi cỡ chữ">
+              A+ Cỡ chữ: ${S.fs}px
+            </button>
           </div>
-          <div class="error" id="login-err"></div>
-          <button class="btn-login" type="submit">➜ ĐĂNG NHẬP VÀO THI</button>
-          <details class="practice-box" open>
-            <summary>Thiết lập luyện tập</summary>
-            <div class="field">
-              <label for="name">Họ và tên</label>
-              <input id="name" placeholder="Thí sinh luyện tập" value="${esc(last.name || '')}">
+        </header>
+
+        <!-- Khối 1: PHÒNG THI CHUẨN CA1 (Hero Card) -->
+        <section class="dash-hero-card">
+          <form id="login-form" autocomplete="off">
+            <div class="hero-card-head">
+              <div class="hero-card-badge">🏆 PHÒNG THI MÔ PHỎNG CHUẨN BỘ CÔNG AN</div>
+              <div class="hero-card-stats">150 phút · 100 điểm · 51 câu</div>
             </div>
-            <div class="field">
-              <label for="exam">Chọn đề</label>
-              <select id="exam"><option value="${MIX_ID}" ${S.examId === MIX_ID ? 'selected' : ''}>Đề trộn ngẫu nhiên (giữ ma trận đề, mỗi lần một đề mới)</option>${EXAMS.map(e => `<option value="${esc(e.id)}" ${e.id === S.examId ? 'selected' : ''}>${esc(e.title)}</option>`).join('')}</select>
+            
+            <div class="hero-body">
+              <div class="hero-info">
+                <h3>Bài thi Đánh giá Tuyển sinh CA1</h3>
+                <p>Mô phỏng 100% quy trình phòng thi thật: <b>Phần 1:</b> 01 bài văn Nghị luận xã hội (500 chữ, 30 điểm, tối đa 60 phút) + <b>Phần 2:</b> 50 câu Toán cao cấp (70 điểm, 90 phút) chuẩn ma trận.</p>
+              </div>
+
+              <div class="hero-inputs">
+                <div class="hero-field">
+                  <label for="exam">Chọn đề thi</label>
+                  <select id="exam" class="dash-select">
+                    <option value="${MIX_ID}" ${S.examId === MIX_ID ? 'selected' : ''}>★ Đề trộn ngẫu nhiên (Vô hạn đề mới, đúng ma trận CA1)</option>
+                    ${EXAMS.map(e => `<option value="${esc(e.id)}" ${e.id === S.examId ? 'selected' : ''}>${esc(e.title)}</option>`).join('')}
+                  </select>
+                </div>
+                
+                <div class="hero-field">
+                  <label for="name">Họ và tên thí sinh</label>
+                  <input id="name" class="dash-input" placeholder="Nhập họ và tên thí sinh..." value="${esc(last.name || 'Thí sinh luyện tập')}">
+                </div>
+              </div>
+
+              <details class="hero-sbd-details">
+                <summary>Tùy chọn: Nhập Số báo danh & Mã PIN (nếu muốn mô phỏng)</summary>
+                <div class="sbd-pin-grid">
+                  <div class="field">
+                    <label for="sbd">Số báo danh (SBD)</label>
+                    <input id="sbd" class="dash-input" placeholder="Ví dụ: CA1-2026-001" value="${esc(last.sbd || '')}">
+                  </div>
+                  <div class="field">
+                    <label for="pin">Mã PIN phòng thi</label>
+                    <input id="pin" type="password" class="dash-input" placeholder="Mặc định: 123456" value="${esc(last.pin || '')}">
+                  </div>
+                </div>
+              </details>
+              <div class="error" id="login-err"></div>
+
+              <div class="hero-actions">
+                <button class="btn-hero-start" type="submit">
+                  <span class="btn-hero-text">➜ VÀO THI CHUẨN CA1 NGAY</span>
+                  <span class="btn-hero-sub">Thời gian 150 phút · Thang điểm 100</span>
+                </button>
+                <button class="btn-hero-secondary" type="button" data-act="open-exams">
+                  📚 Thư viện 32 đề thi & Lịch sử điểm
+                </button>
+              </div>
             </div>
-          </details>
-          <div class="login-note">Chế độ luyện tập: nhập SBD và PIN bất kỳ để vào thi.</div>
-          <div class="speed-practice-launch">
-            <label for="speed-limit">⚡ Luyện liên hoàn — trộn câu mọi chủ đề</label>
-            <div class="speed-practice-controls">
-              <select id="speed-limit" aria-label="Thời gian cho mỗi câu">
-                <option value="15">15 giây / câu</option>
-                <option value="30" selected>30 giây / câu</option>
-                <option value="45">45 giây / câu</option>
-                <option value="60">60 giây / câu</option>
-              </select>
-              <button class="btn-start" type="button" data-act="speed-start">Bắt đầu luyện liên hoàn</button>
+          </form>
+        </section>
+
+        <!-- Khối 2: HAI KHỐI LUYỆN TẬP BẮT MẮT (Luyện Tốc độ & Chuyên đề) -->
+        <div class="dash-grid-2">
+          <!-- Card Luyện Liên Hoàn -->
+          <div class="dash-card card-speed">
+            <div class="dash-card-badge badge-speed">⚡ PHẢN XẠ NHANH</div>
+            <div class="dash-card-icon">⚡</div>
+            <h3>Luyện Tốc Độ Liên Hoàn</h3>
+            <p>Rèn phản xạ giải nhanh trắc nghiệm từng câu hỏi. Tự động chuyển câu sau mỗi lượt, đếm chuỗi streak câu trả lời đúng.</p>
+            
+            <div class="dash-card-controls">
+              <label for="speed-limit">Thời gian cho mỗi câu:</label>
+              <div class="speed-controls-row">
+                <select id="speed-limit" class="dash-select" aria-label="Thời gian cho mỗi câu">
+                  <option value="15">15 giây / câu</option>
+                  <option value="30" selected>30 giây / câu (Chuẩn)</option>
+                  <option value="45">45 giây / câu</option>
+                  <option value="60">60 giây / câu</option>
+                </select>
+                <button class="btn-start btn-speed-cta" type="button" data-act="speed-start">
+                  Luyện ngay ➔
+                </button>
+              </div>
             </div>
-            <small>Câu tự chuyển khi trả lời hoặc hết giờ. Có thể kết thúc bất cứ lúc nào.</small>
+            <div class="dash-card-tip">💡 Tự động chuyển câu khi trả lời. Kết thúc bất cứ lúc nào.</div>
           </div>
-          <button class="btn-ghost btn-wide" type="button" data-act="open-exams" style="margin-top:10px">📚 Thư viện 32 đề thi & Tiến độ</button>
-          <button class="btn-ghost btn-wide" type="button" data-act="open-theory" style="margin-top:6px">📖 Cẩm nang lý thuyết & Công thức trọng tâm</button>
-          <button class="btn-ghost btn-wide" type="button" data-act="open-essays" style="margin-top:6px">📝 Cẩm nang nghị luận xã hội 500 chữ</button>
-          <button class="btn-ghost btn-wide" type="button" data-act="open-stats" style="margin-top:6px">📊 Thống kê · Luyện theo chủ đề · Sổ câu sai${wrongCount() ? ' (' + wrongCount() + ')' : ''}</button>
-        </form>
+
+          <!-- Card Luyện Chuyên Đề & Sổ Sai -->
+          <div class="dash-card card-topic">
+            <div class="dash-card-badge badge-topic">🎯 ÔN TẬP CÓ TRỌNG TÂM</div>
+            <div class="dash-card-icon">🎯</div>
+            <h3>Luyện Chuyên Đề & Sổ Sai</h3>
+            <p>Luyện sâu theo 12 chủ đề Toán cao cấp từ ngân hàng 917 câu hỏi thực chiến có lời giải chi tiết. Quản lý sổ câu sai.</p>
+            
+            <div class="dash-topic-status">
+              ${wrongCount() 
+                ? `<span class="badge-wrong-alert">⚠️ Có <b>${wrongCount()}</b> câu sai cần luyện</span>` 
+                : `<span class="badge-clean-alert">✔ Sổ câu sai đang sạch</span>`}
+              <span class="badge-bank-count">Kho 917 câu bổ sung</span>
+            </div>
+
+            <div class="dash-topic-actions">
+              <button class="btn-start btn-topic-cta" type="button" data-act="open-stats">
+                📊 Vào luyện theo chuyên đề
+              </button>
+              ${wrongCount() ? `
+                <button class="btn-ghost btn-wrong-cta" type="button" data-act="p-wrong">
+                  🔁 Luyện lại ${wrongCount()} câu sai
+                </button>
+              ` : ''}
+            </div>
+          </div>
+        </div>
+
+        <!-- Khối 3: TỦ SÁCH TÀI LIỆU HỌC TẬP -->
+        <div class="dash-section-head">
+          <div class="section-title">📚 TỦ SÁCH TÀI LIỆU & BÍ QUYẾT ÔN THI</div>
+          <div class="section-sub">Được biên soạn chuẩn hóa bám sát cấu trúc đề tuyển sinh Bộ Công an 2026</div>
+        </div>
+
+        <div class="dash-grid-2">
+          <!-- Card Cẩm nang Toán -->
+          <div class="dash-card card-resource" data-act="open-theory">
+            <div class="resource-icon">📖</div>
+            <div class="resource-content">
+              <h4>Cẩm Nang Lý Thuyết & Công Thức Toán CA1</h4>
+              <p>Tổng hợp 12 chuyên đề, định lý cốt lõi, công thức trọng tâm, bẫy đề thi & bài tập vận dụng cao có lời giải.</p>
+              <div class="resource-link">Khám phá cẩm nang toán ➔</div>
+            </div>
+          </div>
+
+          <!-- Card Cẩm nang NLXH -->
+          <div class="dash-card card-resource" data-act="open-essays">
+            <div class="resource-icon">📝</div>
+            <div class="resource-content">
+              <h4>Sổ Tay Nghị Luận Xã Hội 500 Chữ</h4>
+              <p>10 bộ mở/kết bài, 22 dẫn chứng thời sự Báo CAND, 12 bài mẫu xuất sắc & Studio luyện viết có bấm giờ.</p>
+              <div class="resource-link">Khám phá sổ tay nghị luận ➔</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Bottom Navigation Bar -->
+        <nav class="mobile-bottom-nav">
+          <button class="mobile-nav-btn active" type="button" data-act="nav-home">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-text">Trang chủ</span>
+          </button>
+          <button class="mobile-nav-btn" type="button" data-act="speed-start">
+            <span class="nav-icon">⚡</span>
+            <span class="nav-text">Liên hoàn</span>
+          </button>
+          <button class="mobile-nav-btn" type="button" data-act="open-theory">
+            <span class="nav-icon">📖</span>
+            <span class="nav-text">Lý thuyết</span>
+          </button>
+          <button class="mobile-nav-btn" type="button" data-act="open-essays">
+            <span class="nav-icon">📝</span>
+            <span class="nav-text">Luyện viết</span>
+          </button>
+          <button class="mobile-nav-btn" type="button" data-act="open-stats">
+            <span class="nav-icon">📊</span>
+            <span class="nav-text">Chuyên đề</span>
+          </button>
+        </nav>
       </div>`;
   }
 
@@ -2248,6 +2382,7 @@
     'open-stats'() { go('stats'); },
     'stats-back'() { go('login'); },
     'p-quit'() { go('login'); },
+    'nav-home'() { go('login'); },
     'speed-start'() {
       const selected = Number(document.getElementById('speed-limit').value);
       startSpeedPractice([15, 30, 45, 60].includes(selected) ? selected : 30);
@@ -2583,16 +2718,20 @@
   app.addEventListener('submit', e => {
     if (e.target.id !== 'login-form') return;
     e.preventDefault();
-    const sbd = document.getElementById('sbd').value.trim();
-    const pin = document.getElementById('pin').value.trim();
-    if (!sbd || !pin) {
-      document.getElementById('login-err').textContent = 'Vui lòng nhập số báo danh và mã PIN.';
-      return;
-    }
+    const sbdEl = document.getElementById('sbd');
+    const pinEl = document.getElementById('pin');
+    const nameEl = document.getElementById('name');
+    const examEl = document.getElementById('exam');
+
+    const last = S.profile || {};
+    const sbd = (sbdEl && sbdEl.value.trim()) || last.sbd || ('CA1-2026-' + Math.floor(100 + Math.random() * 900));
+    const pin = (pinEl && pinEl.value.trim()) || last.pin || '123456';
+    const name = (nameEl && nameEl.value.trim()) || last.name || 'Thí sinh luyện tập';
+
     S = Object.assign(fresh(), { imeMode: S.imeMode, fs: S.fs, dark: S.dark, lock: S.lock });
-    S.examId = document.getElementById('exam').value;
+    S.examId = (examEl && examEl.value) || S.examId || MIX_ID;
     if (S.examId === MIX_ID) S.mix = newMix();
-    S.profile = { sbd, name: document.getElementById('name').value.trim() || 'Thí sinh luyện tập' };
+    S.profile = { sbd, pin, name };
     go('precheck');
   });
   // Lưu ngay bài tự luận khi đóng / tải lại trang
