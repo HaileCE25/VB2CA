@@ -325,7 +325,7 @@
     "$\\dfrac{69}{2}$."
    ],
    "answer": 0,
-   "explain": "$\\sin u = u - \\dfrac{u^3}{6} + o(u^3)$, với $u=3x$, ta có $u^2=9x^2$ và $u^3=27x^3$.<br>Tử số sau khai triển là $(3-a)x+(0-b)x^2+(- \\dfrac{9}{2})x^3+o(x^3)$. Chia cho $x^3$: $\\dfrac{3-a}{x^2}+\\dfrac{0-b}{x}+- \\dfrac{9}{2}+o(1)$.<br>Để giới hạn hữu hạn, các hệ số phân kỳ triệt tiêu: $a=3$ và $b=0$; hệ số còn lại cho $L=- \\dfrac{9}{2}$.<br>3+0-6(- \\dfrac{9}{2})=3+0+27=30",
+   "explain": "$\\sin u = u - \\dfrac{u^3}{6} + o(u^3)$, với $u=3x$, ta có $u^2=9x^2$ và $u^3=27x^3$.<br>Tử số sau khai triển là $(3-a)x+(0-b)x^2+(- \\dfrac{9}{2})x^3+o(x^3)$. Chia cho $x^3$: $\\dfrac{3-a}{x^2}+\\dfrac{0-b}{x}+- \\dfrac{9}{2}+o(1)$.<br>Để giới hạn hữu hạn, các hệ số phân kỳ triệt tiêu: $a=3$ và $b=0$; hệ số còn lại cho $L=- \\dfrac{9}{2}$.<br>$3+0-6(- \\dfrac{9}{2})=3+0+27=30$",
    "note": "Trong khai triển Maclaurin của tử, mọi hệ số có bậc thấp hơn bậc của mẫu phải bằng 0; hệ số cùng bậc với mẫu cho giá trị $L$."
   },
   {

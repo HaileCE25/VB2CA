@@ -325,7 +325,7 @@
     "$\\dfrac{220}{3}$."
    ],
    "answer": 0,
-   "explain": "$e^{u} = 1 + u + \\dfrac{u^2}{2} + \\dfrac{u^3}{6} + o(u^3)$, với $u=4x$, ta có $u^2=16x^2$ và $u^3=64x^3$.<br>Tử số sau khai triển là $(4-a)x+(8-b)x^2+(\\dfrac{32}{3})x^3+o(x^3)$. Chia cho $x^3$: $\\dfrac{4-a}{x^2}+\\dfrac{8-b}{x}+\\dfrac{32}{3}+o(1)$.<br>Để giới hạn hữu hạn, các hệ số phân kỳ triệt tiêu: $a=4$ và $b=8$; hệ số còn lại cho $L=\\dfrac{32}{3}$.<br>4+2(8)+6(\\dfrac{32}{3})=4+16+64=84",
+   "explain": "$e^{u} = 1 + u + \\dfrac{u^2}{2} + \\dfrac{u^3}{6} + o(u^3)$, với $u=4x$, ta có $u^2=16x^2$ và $u^3=64x^3$.<br>Tử số sau khai triển là $(4-a)x+(8-b)x^2+(\\dfrac{32}{3})x^3+o(x^3)$. Chia cho $x^3$: $\\dfrac{4-a}{x^2}+\\dfrac{8-b}{x}+\\dfrac{32}{3}+o(1)$.<br>Để giới hạn hữu hạn, các hệ số phân kỳ triệt tiêu: $a=4$ và $b=8$; hệ số còn lại cho $L=\\dfrac{32}{3}$.<br>$4+2(8)+6(\\dfrac{32}{3})=4+16+64=84$",
    "note": "Trong khai triển Maclaurin của tử, mọi hệ số có bậc thấp hơn bậc của mẫu phải bằng 0; hệ số cùng bậc với mẫu cho giá trị $L$."
   },
   {

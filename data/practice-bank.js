@@ -12281,10 +12281,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Cho mạch điện hai mắt lưới có hai nguồn suất điện động $E_1 = 24\\,\\text{V}$, $E_2 = 12\\,\\text{V}$ và ba điện trở $R_1 = 4\\,\\Omega$, $R_2 = 2\\,\\Omega$, $R_3 = 6\\,\\Omega$. Theo định luật Kirchhoff, cường độ dòng điện $I_3$ chạy qua điện trở chung $R_3$ (biết $I_3 = I_1 + I_2$) bằng",
   "options": [
-   "$\\dfrac{24}{11}$\\,\\text{A}.",
-   "$\\dfrac{30}{11}$\\,\\text{A}.",
-   "$- \\dfrac{6}{11}$\\,\\text{A}.",
-   "$\\dfrac{35}{11}$\\,\\text{A}."
+   "$\\dfrac{24}{11}\\,\\text{A}$.",
+   "$\\dfrac{30}{11}\\,\\text{A}$.",
+   "$- \\dfrac{6}{11}\\,\\text{A}$.",
+   "$\\dfrac{35}{11}\\,\\text{A}$."
   ],
   "answer": 0,
   "explain": "Áp dụng định luật 2 Kirchhoff cho hai vòng mắt lưới: $\\begin{cases} (4 + 6)I_1 + 6I_2 = 24 \\\\ 6I_1 + (2 + 6)I_2 = 12\\end{cases}$<br>Ta được hệ: $\\begin{cases} 10I_1 + 6I_2 = 24 \\\\ 6I_1 + 8I_2 = 12\\end{cases}$<br>Giải hệ Cramer hoặc khử Gauss được: $I_1 = \\dfrac{30}{11}\\,\\text{A},\\; I_2 = - \\dfrac{6}{11}\\,\\text{A}$.<br>Dòng điện qua nhánh chung: $I_3 = I_1 + I_2 = \\dfrac{24}{11}\\,\\text{A}$.",
@@ -12295,10 +12295,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Cho mạch điện hai mắt lưới có hai nguồn suất điện động $E_1 = 36\\,\\text{V}$, $E_2 = 18\\,\\text{V}$ và ba điện trở $R_1 = 6\\,\\Omega$, $R_2 = 3\\,\\Omega$, $R_3 = 9\\,\\Omega$. Theo định luật Kirchhoff, cường độ dòng điện $I_3$ chạy qua điện trở chung $R_3$ (biết $I_3 = I_1 + I_2$) bằng",
   "options": [
-   "$\\dfrac{24}{11}$\\,\\text{A}.",
-   "$\\dfrac{30}{11}$\\,\\text{A}.",
-   "$- \\dfrac{6}{11}$\\,\\text{A}.",
-   "$\\dfrac{35}{11}$\\,\\text{A}."
+   "$\\dfrac{24}{11}\\,\\text{A}$.",
+   "$\\dfrac{30}{11}\\,\\text{A}$.",
+   "$- \\dfrac{6}{11}\\,\\text{A}$.",
+   "$\\dfrac{35}{11}\\,\\text{A}$."
   ],
   "answer": 0,
   "explain": "Áp dụng định luật 2 Kirchhoff cho hai vòng mắt lưới: $\\begin{cases} (6 + 9)I_1 + 9I_2 = 36 \\\\ 9I_1 + (3 + 9)I_2 = 18\\end{cases}$<br>Ta được hệ: $\\begin{cases} 15I_1 + 9I_2 = 36 \\\\ 9I_1 + 12I_2 = 18\\end{cases}$<br>Giải hệ Cramer hoặc khử Gauss được: $I_1 = \\dfrac{30}{11}\\,\\text{A},\\; I_2 = - \\dfrac{6}{11}\\,\\text{A}$.<br>Dòng điện qua nhánh chung: $I_3 = I_1 + I_2 = \\dfrac{24}{11}\\,\\text{A}$.",
@@ -12309,10 +12309,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Cho mạch điện hai mắt lưới có hai nguồn suất điện động $E_1 = 20\\,\\text{V}$, $E_2 = 10\\,\\text{V}$ và ba điện trở $R_1 = 5\\,\\Omega$, $R_2 = 2\\,\\Omega$, $R_3 = 4\\,\\Omega$. Theo định luật Kirchhoff, cường độ dòng điện $I_3$ chạy qua điện trở chung $R_3$ (biết $I_3 = I_1 + I_2$) bằng",
   "options": [
-   "$\\dfrac{45}{19}$\\,\\text{A}.",
-   "$\\dfrac{40}{19}$\\,\\text{A}.",
-   "$\\dfrac{5}{19}$\\,\\text{A}.",
-   "$\\dfrac{64}{19}$\\,\\text{A}."
+   "$\\dfrac{45}{19}\\,\\text{A}$.",
+   "$\\dfrac{40}{19}\\,\\text{A}$.",
+   "$\\dfrac{5}{19}\\,\\text{A}$.",
+   "$\\dfrac{64}{19}\\,\\text{A}$."
   ],
   "answer": 0,
   "explain": "Áp dụng định luật 2 Kirchhoff cho hai vòng mắt lưới: $\\begin{cases} (5 + 4)I_1 + 4I_2 = 20 \\\\ 4I_1 + (2 + 4)I_2 = 10\\end{cases}$<br>Ta được hệ: $\\begin{cases} 9I_1 + 4I_2 = 20 \\\\ 4I_1 + 6I_2 = 10\\end{cases}$<br>Giải hệ Cramer hoặc khử Gauss được: $I_1 = \\dfrac{40}{19}\\,\\text{A},\\; I_2 = \\dfrac{5}{19}\\,\\text{A}$.<br>Dòng điện qua nhánh chung: $I_3 = I_1 + I_2 = \\dfrac{45}{19}\\,\\text{A}$.",
@@ -12323,10 +12323,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Cho mạch điện hai mắt lưới có hai nguồn suất điện động $E_1 = 30\\,\\text{V}$, $E_2 = 15\\,\\text{V}$ và ba điện trở $R_1 = 3\\,\\Omega$, $R_2 = 3\\,\\Omega$, $R_3 = 6\\,\\Omega$. Theo định luật Kirchhoff, cường độ dòng điện $I_3$ chạy qua điện trở chung $R_3$ (biết $I_3 = I_1 + I_2$) bằng",
   "options": [
-   "$3$\\,\\text{A}.",
-   "$4$\\,\\text{A}.",
-   "$-1$\\,\\text{A}.",
-   "$\\dfrac{3}{2}$\\,\\text{A}."
+   "$3\\,\\text{A}$.",
+   "$4\\,\\text{A}$.",
+   "$-1\\,\\text{A}$.",
+   "$\\dfrac{3}{2}\\,\\text{A}$."
   ],
   "answer": 0,
   "explain": "Áp dụng định luật 2 Kirchhoff cho hai vòng mắt lưới: $\\begin{cases} (3 + 6)I_1 + 6I_2 = 30 \\\\ 6I_1 + (3 + 6)I_2 = 15\\end{cases}$<br>Ta được hệ: $\\begin{cases} 9I_1 + 6I_2 = 30 \\\\ 6I_1 + 9I_2 = 15\\end{cases}$<br>Giải hệ Cramer hoặc khử Gauss được: $I_1 = 4\\,\\text{A},\\; I_2 = -1\\,\\text{A}$.<br>Dòng điện qua nhánh chung: $I_3 = I_1 + I_2 = 3\\,\\text{A}$.",
@@ -12337,10 +12337,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Cho mạch điện hai mắt lưới có hai nguồn suất điện động $E_1 = 48\\,\\text{V}$, $E_2 = 24\\,\\text{V}$ và ba điện trở $R_1 = 8\\,\\Omega$, $R_2 = 4\\,\\Omega$, $R_3 = 12\\,\\Omega$. Theo định luật Kirchhoff, cường độ dòng điện $I_3$ chạy qua điện trở chung $R_3$ (biết $I_3 = I_1 + I_2$) bằng",
   "options": [
-   "$\\dfrac{24}{11}$\\,\\text{A}.",
-   "$\\dfrac{30}{11}$\\,\\text{A}.",
-   "$- \\dfrac{6}{11}$\\,\\text{A}.",
-   "$\\dfrac{35}{11}$\\,\\text{A}."
+   "$\\dfrac{24}{11}\\,\\text{A}$.",
+   "$\\dfrac{30}{11}\\,\\text{A}$.",
+   "$- \\dfrac{6}{11}\\,\\text{A}$.",
+   "$\\dfrac{35}{11}\\,\\text{A}$."
   ],
   "answer": 0,
   "explain": "Áp dụng định luật 2 Kirchhoff cho hai vòng mắt lưới: $\\begin{cases} (8 + 12)I_1 + 12I_2 = 48 \\\\ 12I_1 + (4 + 12)I_2 = 24\\end{cases}$<br>Ta được hệ: $\\begin{cases} 20I_1 + 12I_2 = 48 \\\\ 12I_1 + 16I_2 = 24\\end{cases}$<br>Giải hệ Cramer hoặc khử Gauss được: $I_1 = \\dfrac{30}{11}\\,\\text{A},\\; I_2 = - \\dfrac{6}{11}\\,\\text{A}$.<br>Dòng điện qua nhánh chung: $I_3 = I_1 + I_2 = \\dfrac{24}{11}\\,\\text{A}$.",
@@ -12547,10 +12547,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Theo định luật làm nguội của Newton, tốc độ giảm nhiệt độ của một vật tỷ lệ với hiệu số giữa nhiệt độ của vật và môi trường xung quanh: $\\dfrac{dT}{dt} = -k(T - T_m)$. Một chiếc bánh mì lấy từ lò nướng ra ở $T_0 = 100^\\circ\\text{C}$ đặt trong phòng có nhiệt độ không đổi $T_m = 20^\\circ\\text{C}$. Sau $10$ phút, nhiệt độ của bánh giảm còn $60^\\circ\\text{C}$. Nhiệt độ của bánh sau $20$ phút kể từ khi lấy ra khỏi lò bằng",
   "options": [
-   "$40$^\\circ\\text{C}.",
-   "$35$^\\circ\\text{C}.",
-   "$50$^\\circ\\text{C}.",
-   "$20$^\\circ\\text{C}."
+   "$40^\\circ\\text{C}$.",
+   "$35^\\circ\\text{C}$.",
+   "$50^\\circ\\text{C}$.",
+   "$20^\\circ\\text{C}$."
   ],
   "answer": 0,
   "explain": "Nghiệm của phương trình vi phân: $T(t) = T_m + (T_0 - T_m)e^{-kt} = 20 + 80e^{-kt}$.<br>Tại $t = 10$: $60 = 20 + 80e^{-10k} \\Rightarrow e^{-10k} = \\dfrac{40}{80} = \\dfrac{1}{2}$.<br>Tại $t = 20 = 2\\cdot 10$: $e^{-20k} = \\left(e^{-10k}\\right)^2 = \\left(\\dfrac{1}{2}\\right)^2 = \\dfrac{1}{4}$.<br>Nhiệt độ sau $20$ phút: $T(20) = 20 + 80\\cdot \\dfrac{1}{4} = 40^\\circ\\text{C}$.",
@@ -12561,10 +12561,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Theo định luật làm nguội của Newton, tốc độ giảm nhiệt độ của một vật tỷ lệ với hiệu số giữa nhiệt độ của vật và môi trường xung quanh: $\\dfrac{dT}{dt} = -k(T - T_m)$. Một chiếc bánh mì lấy từ lò nướng ra ở $T_0 = 90^\\circ\\text{C}$ đặt trong phòng có nhiệt độ không đổi $T_m = 30^\\circ\\text{C}$. Sau $15$ phút, nhiệt độ của bánh giảm còn $60^\\circ\\text{C}$. Nhiệt độ của bánh sau $30$ phút kể từ khi lấy ra khỏi lò bằng",
   "options": [
-   "$45$^\\circ\\text{C}.",
-   "$40$^\\circ\\text{C}.",
-   "$55$^\\circ\\text{C}.",
-   "$30$^\\circ\\text{C}."
+   "$45^\\circ\\text{C}$.",
+   "$40^\\circ\\text{C}$.",
+   "$55^\\circ\\text{C}$.",
+   "$30^\\circ\\text{C}$."
   ],
   "answer": 0,
   "explain": "Nghiệm của phương trình vi phân: $T(t) = T_m + (T_0 - T_m)e^{-kt} = 30 + 60e^{-kt}$.<br>Tại $t = 15$: $60 = 30 + 60e^{-15k} \\Rightarrow e^{-15k} = \\dfrac{30}{60} = \\dfrac{1}{2}$.<br>Tại $t = 30 = 2\\cdot 15$: $e^{-30k} = \\left(e^{-15k}\\right)^2 = \\left(\\dfrac{1}{2}\\right)^2 = \\dfrac{1}{4}$.<br>Nhiệt độ sau $30$ phút: $T(30) = 30 + 60\\cdot \\dfrac{1}{4} = 45^\\circ\\text{C}$.",
@@ -12575,10 +12575,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Theo định luật làm nguội của Newton, tốc độ giảm nhiệt độ của một vật tỷ lệ với hiệu số giữa nhiệt độ của vật và môi trường xung quanh: $\\dfrac{dT}{dt} = -k(T - T_m)$. Một chiếc bánh mì lấy từ lò nướng ra ở $T_0 = 80^\\circ\\text{C}$ đặt trong phòng có nhiệt độ không đổi $T_m = 20^\\circ\\text{C}$. Sau $12$ phút, nhiệt độ của bánh giảm còn $50^\\circ\\text{C}$. Nhiệt độ của bánh sau $24$ phút kể từ khi lấy ra khỏi lò bằng",
   "options": [
-   "$35$^\\circ\\text{C}.",
-   "$30$^\\circ\\text{C}.",
-   "$45$^\\circ\\text{C}.",
-   "$20$^\\circ\\text{C}."
+   "$35^\\circ\\text{C}$.",
+   "$30^\\circ\\text{C}$.",
+   "$45^\\circ\\text{C}$.",
+   "$20^\\circ\\text{C}$."
   ],
   "answer": 0,
   "explain": "Nghiệm của phương trình vi phân: $T(t) = T_m + (T_0 - T_m)e^{-kt} = 20 + 60e^{-kt}$.<br>Tại $t = 12$: $50 = 20 + 60e^{-12k} \\Rightarrow e^{-12k} = \\dfrac{30}{60} = \\dfrac{1}{2}$.<br>Tại $t = 24 = 2\\cdot 12$: $e^{-24k} = \\left(e^{-12k}\\right)^2 = \\left(\\dfrac{1}{2}\\right)^2 = \\dfrac{1}{4}$.<br>Nhiệt độ sau $24$ phút: $T(24) = 20 + 60\\cdot \\dfrac{1}{4} = 35^\\circ\\text{C}$.",
@@ -12589,10 +12589,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Theo định luật làm nguội của Newton, tốc độ giảm nhiệt độ của một vật tỷ lệ với hiệu số giữa nhiệt độ của vật và môi trường xung quanh: $\\dfrac{dT}{dt} = -k(T - T_m)$. Một chiếc bánh mì lấy từ lò nướng ra ở $T_0 = 100^\\circ\\text{C}$ đặt trong phòng có nhiệt độ không đổi $T_m = 25^\\circ\\text{C}$. Sau $8$ phút, nhiệt độ của bánh giảm còn $55^\\circ\\text{C}$. Nhiệt độ của bánh sau $16$ phút kể từ khi lấy ra khỏi lò bằng",
   "options": [
-   "$37$^\\circ\\text{C}.",
-   "$32$^\\circ\\text{C}.",
-   "$47$^\\circ\\text{C}.",
-   "$10$^\\circ\\text{C}."
+   "$37^\\circ\\text{C}$.",
+   "$32^\\circ\\text{C}$.",
+   "$47^\\circ\\text{C}$.",
+   "$10^\\circ\\text{C}$."
   ],
   "answer": 0,
   "explain": "Nghiệm của phương trình vi phân: $T(t) = T_m + (T_0 - T_m)e^{-kt} = 25 + 75e^{-kt}$.<br>Tại $t = 8$: $55 = 25 + 75e^{-8k} \\Rightarrow e^{-8k} = \\dfrac{30}{75} = \\dfrac{2}{5}$.<br>Tại $t = 16 = 2\\cdot 8$: $e^{-16k} = \\left(e^{-8k}\\right)^2 = \\left(\\dfrac{2}{5}\\right)^2 = \\dfrac{4}{25}$.<br>Nhiệt độ sau $16$ phút: $T(16) = 25 + 75\\cdot \\dfrac{4}{25} = 37^\\circ\\text{C}$.",
@@ -12869,10 +12869,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Một bể chứa ban đầu có $100\\,\\text{lít}$ nước tinh khiết. Người ta bơm vào bể dung dịch nước muối có nồng độ $c_{\\text{vào}} = 2\\,\\text{g/L}$ với lưu lượng $r = 5\\,\\text{lít/phút}$. Dung dịch trong bể được khuấy đều liên tục và chảy ra ngoài với cùng lưu lượng $r = 5\\,\\text{lít/phút}$. Lập phương trình vi phân $\\dfrac{dy}{dt} = c_{\\text{vào}}r - \\dfrac{r}{V_0}y$, lượng muối tối đa trong bể khi thời gian $t \\to +\\infty$ đạt giá trị bằng",
   "options": [
-   "$200$\\,\\text{g}.",
-   "$100.0$\\,\\text{g}.",
-   "$400$\\,\\text{g}.",
-   "$150$\\,\\text{g}."
+   "$200\\,\\text{g}$.",
+   "$100.0\\,\\text{g}$.",
+   "$400\\,\\text{g}$.",
+   "$150\\,\\text{g}$."
   ],
   "answer": 0,
   "explain": "Phương trình vi phân mô tả lượng muối $y(t)$: $\\dfrac{dy}{dt} + \\dfrac{5}{100}y = 10$.<br>Nghiệm tổng quát: $y(t) = 200\\left(1 - e^{-\\frac{5}{100}t}\\right)\\,\\text{g}$.<br>Khi $t \\to +\\infty$, số hạng $e^{-\\frac{5}{100}t} \\to 0$, lượng muối tiến tới trạng thái bão hòa: $\\lim\\limits_{t\\to+\\infty} y(t) = 200\\,\\text{g}$.",
@@ -12883,10 +12883,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Một bể chứa ban đầu có $200\\,\\text{lít}$ nước tinh khiết. Người ta bơm vào bể dung dịch nước muối có nồng độ $c_{\\text{vào}} = 3\\,\\text{g/L}$ với lưu lượng $r = 10\\,\\text{lít/phút}$. Dung dịch trong bể được khuấy đều liên tục và chảy ra ngoài với cùng lưu lượng $r = 10\\,\\text{lít/phút}$. Lập phương trình vi phân $\\dfrac{dy}{dt} = c_{\\text{vào}}r - \\dfrac{r}{V_0}y$, lượng muối tối đa trong bể khi thời gian $t \\to +\\infty$ đạt giá trị bằng",
   "options": [
-   "$600$\\,\\text{g}.",
-   "$300.0$\\,\\text{g}.",
-   "$1200$\\,\\text{g}.",
-   "$550$\\,\\text{g}."
+   "$600\\,\\text{g}$.",
+   "$300.0\\,\\text{g}$.",
+   "$1200\\,\\text{g}$.",
+   "$550\\,\\text{g}$."
   ],
   "answer": 0,
   "explain": "Phương trình vi phân mô tả lượng muối $y(t)$: $\\dfrac{dy}{dt} + \\dfrac{10}{200}y = 30$.<br>Nghiệm tổng quát: $y(t) = 600\\left(1 - e^{-\\frac{10}{200}t}\\right)\\,\\text{g}$.<br>Khi $t \\to +\\infty$, số hạng $e^{-\\frac{10}{200}t} \\to 0$, lượng muối tiến tới trạng thái bão hòa: $\\lim\\limits_{t\\to+\\infty} y(t) = 600\\,\\text{g}$.",
@@ -12897,10 +12897,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Một bể chứa ban đầu có $50\\,\\text{lít}$ nước tinh khiết. Người ta bơm vào bể dung dịch nước muối có nồng độ $c_{\\text{vào}} = 4\\,\\text{g/L}$ với lưu lượng $r = 2\\,\\text{lít/phút}$. Dung dịch trong bể được khuấy đều liên tục và chảy ra ngoài với cùng lưu lượng $r = 2\\,\\text{lít/phút}$. Lập phương trình vi phân $\\dfrac{dy}{dt} = c_{\\text{vào}}r - \\dfrac{r}{V_0}y$, lượng muối tối đa trong bể khi thời gian $t \\to +\\infty$ đạt giá trị bằng",
   "options": [
-   "$200$\\,\\text{g}.",
-   "$100.0$\\,\\text{g}.",
-   "$400$\\,\\text{g}.",
-   "$150$\\,\\text{g}."
+   "$200\\,\\text{g}$.",
+   "$100.0\\,\\text{g}$.",
+   "$400\\,\\text{g}$.",
+   "$150\\,\\text{g}$."
   ],
   "answer": 0,
   "explain": "Phương trình vi phân mô tả lượng muối $y(t)$: $\\dfrac{dy}{dt} + \\dfrac{2}{50}y = 8$.<br>Nghiệm tổng quát: $y(t) = 200\\left(1 - e^{-\\frac{2}{50}t}\\right)\\,\\text{g}$.<br>Khi $t \\to +\\infty$, số hạng $e^{-\\frac{2}{50}t} \\to 0$, lượng muối tiến tới trạng thái bão hòa: $\\lim\\limits_{t\\to+\\infty} y(t) = 200\\,\\text{g}$.",
@@ -12911,10 +12911,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Một bể chứa ban đầu có $150\\,\\text{lít}$ nước tinh khiết. Người ta bơm vào bể dung dịch nước muối có nồng độ $c_{\\text{vào}} = 2\\,\\text{g/L}$ với lưu lượng $r = 5\\,\\text{lít/phút}$. Dung dịch trong bể được khuấy đều liên tục và chảy ra ngoài với cùng lưu lượng $r = 5\\,\\text{lít/phút}$. Lập phương trình vi phân $\\dfrac{dy}{dt} = c_{\\text{vào}}r - \\dfrac{r}{V_0}y$, lượng muối tối đa trong bể khi thời gian $t \\to +\\infty$ đạt giá trị bằng",
   "options": [
-   "$300$\\,\\text{g}.",
-   "$150.0$\\,\\text{g}.",
-   "$600$\\,\\text{g}.",
-   "$250$\\,\\text{g}."
+   "$300\\,\\text{g}$.",
+   "$150.0\\,\\text{g}$.",
+   "$600\\,\\text{g}$.",
+   "$250\\,\\text{g}$."
   ],
   "answer": 0,
   "explain": "Phương trình vi phân mô tả lượng muối $y(t)$: $\\dfrac{dy}{dt} + \\dfrac{5}{150}y = 10$.<br>Nghiệm tổng quát: $y(t) = 300\\left(1 - e^{-\\frac{5}{150}t}\\right)\\,\\text{g}$.<br>Khi $t \\to +\\infty$, số hạng $e^{-\\frac{5}{150}t} \\to 0$, lượng muối tiến tới trạng thái bão hòa: $\\lim\\limits_{t\\to+\\infty} y(t) = 300\\,\\text{g}$.",
@@ -12925,10 +12925,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Một bể chứa ban đầu có $300\\,\\text{lít}$ nước tinh khiết. Người ta bơm vào bể dung dịch nước muối có nồng độ $c_{\\text{vào}} = 1\\,\\text{g/L}$ với lưu lượng $r = 10\\,\\text{lít/phút}$. Dung dịch trong bể được khuấy đều liên tục và chảy ra ngoài với cùng lưu lượng $r = 10\\,\\text{lít/phút}$. Lập phương trình vi phân $\\dfrac{dy}{dt} = c_{\\text{vào}}r - \\dfrac{r}{V_0}y$, lượng muối tối đa trong bể khi thời gian $t \\to +\\infty$ đạt giá trị bằng",
   "options": [
-   "$300$\\,\\text{g}.",
-   "$150.0$\\,\\text{g}.",
-   "$600$\\,\\text{g}.",
-   "$250$\\,\\text{g}."
+   "$300\\,\\text{g}$.",
+   "$150.0\\,\\text{g}$.",
+   "$600\\,\\text{g}$.",
+   "$250\\,\\text{g}$."
   ],
   "answer": 0,
   "explain": "Phương trình vi phân mô tả lượng muối $y(t)$: $\\dfrac{dy}{dt} + \\dfrac{10}{300}y = 10$.<br>Nghiệm tổng quát: $y(t) = 300\\left(1 - e^{-\\frac{10}{300}t}\\right)\\,\\text{g}$.<br>Khi $t \\to +\\infty$, số hạng $e^{-\\frac{10}{300}t} \\to 0$, lượng muối tiến tới trạng thái bão hòa: $\\lim\\limits_{t\\to+\\infty} y(t) = 300\\,\\text{g}$.",
@@ -12939,10 +12939,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Người ta cần thiết kế một bồn chứa nước bằng kim loại có dạng hình hộp chữ nhật không nắp, đáy hình vuông cạnh $x$, chiều cao $y$, có thể tích cố định $V = 32\\,\\text{m}^3$. Để tiết kiệm chi phí vật liệu nhất (diện tích toàn phần $S(x, y) = x^2 + 4xy$ đạt giá trị nhỏ nhất), cạnh đáy $x$ của bồn nước cần bằng",
   "options": [
-   "$4$\\,\\text{m}.",
-   "$6$\\,\\text{m}.",
-   "$3$\\,\\text{m}.",
-   "$2$\\,\\text{m}."
+   "$4\\,\\text{m}$.",
+   "$6\\,\\text{m}$.",
+   "$3\\,\\text{m}$.",
+   "$2\\,\\text{m}$."
   ],
   "answer": 0,
   "explain": "Rút $y$ theo $x$: $V = x^2 y = 32 \\Rightarrow y = \\dfrac{32}{x^2}$.<br>Diện tích vật liệu cần dùng: $S(x) = x^2 + 4x\\left(\\dfrac{32}{x^2}\\right) = x^2 + \\dfrac{128}{x}$.<br>Đạo hàm tìm cực trị: $S^\\prime(x) = 2x - \\dfrac{128}{x^2} = 0 \\Leftrightarrow 2x^3 = 128 \\Leftrightarrow x^3 = 64$.<br>Suy ra kích thước đáy tối ưu: $x = \\sqrt[3]{64} = 4\\,\\text{m}$.",
@@ -12953,10 +12953,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Người ta cần thiết kế một bồn chứa nước bằng kim loại có dạng hình hộp chữ nhật không nắp, đáy hình vuông cạnh $x$, chiều cao $y$, có thể tích cố định $V = 108\\,\\text{m}^3$. Để tiết kiệm chi phí vật liệu nhất (diện tích toàn phần $S(x, y) = x^2 + 4xy$ đạt giá trị nhỏ nhất), cạnh đáy $x$ của bồn nước cần bằng",
   "options": [
-   "$6$\\,\\text{m}.",
-   "$8$\\,\\text{m}.",
-   "$5$\\,\\text{m}.",
-   "$3$\\,\\text{m}."
+   "$6\\,\\text{m}$.",
+   "$8\\,\\text{m}$.",
+   "$5\\,\\text{m}$.",
+   "$3\\,\\text{m}$."
   ],
   "answer": 0,
   "explain": "Rút $y$ theo $x$: $V = x^2 y = 108 \\Rightarrow y = \\dfrac{108}{x^2}$.<br>Diện tích vật liệu cần dùng: $S(x) = x^2 + 4x\\left(\\dfrac{108}{x^2}\\right) = x^2 + \\dfrac{432}{x}$.<br>Đạo hàm tìm cực trị: $S^\\prime(x) = 2x - \\dfrac{432}{x^2} = 0 \\Leftrightarrow 2x^3 = 432 \\Leftrightarrow x^3 = 216$.<br>Suy ra kích thước đáy tối ưu: $x = \\sqrt[3]{216} = 6\\,\\text{m}$.",
@@ -12967,10 +12967,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Người ta cần thiết kế một bồn chứa nước bằng kim loại có dạng hình hộp chữ nhật không nắp, đáy hình vuông cạnh $x$, chiều cao $y$, có thể tích cố định $V = 256\\,\\text{m}^3$. Để tiết kiệm chi phí vật liệu nhất (diện tích toàn phần $S(x, y) = x^2 + 4xy$ đạt giá trị nhỏ nhất), cạnh đáy $x$ của bồn nước cần bằng",
   "options": [
-   "$8$\\,\\text{m}.",
-   "$10$\\,\\text{m}.",
-   "$7$\\,\\text{m}.",
-   "$4$\\,\\text{m}."
+   "$8\\,\\text{m}$.",
+   "$10\\,\\text{m}$.",
+   "$7\\,\\text{m}$.",
+   "$4\\,\\text{m}$."
   ],
   "answer": 0,
   "explain": "Rút $y$ theo $x$: $V = x^2 y = 256 \\Rightarrow y = \\dfrac{256}{x^2}$.<br>Diện tích vật liệu cần dùng: $S(x) = x^2 + 4x\\left(\\dfrac{256}{x^2}\\right) = x^2 + \\dfrac{1024}{x}$.<br>Đạo hàm tìm cực trị: $S^\\prime(x) = 2x - \\dfrac{1024}{x^2} = 0 \\Leftrightarrow 2x^3 = 1024 \\Leftrightarrow x^3 = 512$.<br>Suy ra kích thước đáy tối ưu: $x = \\sqrt[3]{512} = 8\\,\\text{m}$.",
@@ -12981,10 +12981,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Người ta cần thiết kế một bồn chứa nước bằng kim loại có dạng hình hộp chữ nhật không nắp, đáy hình vuông cạnh $x$, chiều cao $y$, có thể tích cố định $V = 500\\,\\text{m}^3$. Để tiết kiệm chi phí vật liệu nhất (diện tích toàn phần $S(x, y) = x^2 + 4xy$ đạt giá trị nhỏ nhất), cạnh đáy $x$ của bồn nước cần bằng",
   "options": [
-   "$10$\\,\\text{m}.",
-   "$12$\\,\\text{m}.",
-   "$9$\\,\\text{m}.",
-   "$5$\\,\\text{m}."
+   "$10\\,\\text{m}$.",
+   "$12\\,\\text{m}$.",
+   "$9\\,\\text{m}$.",
+   "$5\\,\\text{m}$."
   ],
   "answer": 0,
   "explain": "Rút $y$ theo $x$: $V = x^2 y = 500 \\Rightarrow y = \\dfrac{500}{x^2}$.<br>Diện tích vật liệu cần dùng: $S(x) = x^2 + 4x\\left(\\dfrac{500}{x^2}\\right) = x^2 + \\dfrac{2000}{x}$.<br>Đạo hàm tìm cực trị: $S^\\prime(x) = 2x - \\dfrac{2000}{x^2} = 0 \\Leftrightarrow 2x^3 = 2000 \\Leftrightarrow x^3 = 1000$.<br>Suy ra kích thước đáy tối ưu: $x = \\sqrt[3]{1000} = 10\\,\\text{m}$.",
@@ -12995,10 +12995,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Người ta cần thiết kế một bồn chứa nước bằng kim loại có dạng hình hộp chữ nhật không nắp, đáy hình vuông cạnh $x$, chiều cao $y$, có thể tích cố định $V = 4\\,\\text{m}^3$. Để tiết kiệm chi phí vật liệu nhất (diện tích toàn phần $S(x, y) = x^2 + 4xy$ đạt giá trị nhỏ nhất), cạnh đáy $x$ của bồn nước cần bằng",
   "options": [
-   "$2$\\,\\text{m}.",
-   "$4$\\,\\text{m}.",
-   "$1$\\,\\text{m}.",
-   "$3$\\,\\text{m}."
+   "$2\\,\\text{m}$.",
+   "$4\\,\\text{m}$.",
+   "$1\\,\\text{m}$.",
+   "$3\\,\\text{m}$."
   ],
   "answer": 0,
   "explain": "Rút $y$ theo $x$: $V = x^2 y = 4 \\Rightarrow y = \\dfrac{4}{x^2}$.<br>Diện tích vật liệu cần dùng: $S(x) = x^2 + 4x\\left(\\dfrac{4}{x^2}\\right) = x^2 + \\dfrac{16}{x}$.<br>Đạo hàm tìm cực trị: $S^\\prime(x) = 2x - \\dfrac{16}{x^2} = 0 \\Leftrightarrow 2x^3 = 16 \\Leftrightarrow x^3 = 8$.<br>Suy ra kích thước đáy tối ưu: $x = \\sqrt[3]{8} = 2\\,\\text{m}$.",
@@ -13023,10 +13023,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Một lực $\\vec{F}(x,y) = (4xy + 3)\\vec{i} + (2x^2 + 2y)\\vec{j}$ tác dụng lên một chất điểm di chuyển từ gốc tọa độ $O(0;\\,0)$ đến điểm $M(2;\\,1)$. Biết $\\vec{F}$ là trường lực thế, công do lực $\\vec{F}$ sinh ra bằng",
   "options": [
-   "$15$\\,\\text{J}.",
-   "$11$\\,\\text{J}.",
-   "$21$\\,\\text{J}.",
-   "$30$\\,\\text{J}."
+   "$15\\,\\text{J}$.",
+   "$11\\,\\text{J}$.",
+   "$21\\,\\text{J}$.",
+   "$30\\,\\text{J}$."
   ],
   "answer": 0,
   "explain": "Kiểm tra điều kiện trường thế: $\\dfrac{\\partial Q}{\\partial x} = 2(2)x = 4x = \\dfrac{\\partial P}{\\partial y}$, do đó lực $\\vec{F}$ là lực bảo toàn (lực thế).<br>Hàm thế vị $U(x,y) = \\displaystyle\\int (4xy + 3)\\,dx = 2x^2y + 3x + C(y)$.<br>Đạo hàm theo $y$: $U^\\prime_y = 2x^2 + C^\\prime(y) = 2x^2 + 2y \\Rightarrow C(y) = y^2$.<br>Hàm thế vị: $U(x,y) = 2x^2y + 3x + y^2$.<br>Công sinh ra: $W = U(M) - U(O) = 2(2)^2(1) + 3(2) + (1)^2 = 15\\,\\text{J}$.",
@@ -13037,10 +13037,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Một lực $\\vec{F}(x,y) = (2xy + 2)\\vec{i} + (1x^2 + 2y)\\vec{j}$ tác dụng lên một chất điểm di chuyển từ gốc tọa độ $O(0;\\,0)$ đến điểm $M(3;\\,2)$. Biết $\\vec{F}$ là trường lực thế, công do lực $\\vec{F}$ sinh ra bằng",
   "options": [
-   "$28$\\,\\text{J}.",
-   "$24$\\,\\text{J}.",
-   "$34$\\,\\text{J}.",
-   "$56$\\,\\text{J}."
+   "$28\\,\\text{J}$.",
+   "$24\\,\\text{J}$.",
+   "$34\\,\\text{J}$.",
+   "$56\\,\\text{J}$."
   ],
   "answer": 0,
   "explain": "Kiểm tra điều kiện trường thế: $\\dfrac{\\partial Q}{\\partial x} = 2(1)x = 2x = \\dfrac{\\partial P}{\\partial y}$, do đó lực $\\vec{F}$ là lực bảo toàn (lực thế).<br>Hàm thế vị $U(x,y) = \\displaystyle\\int (2xy + 2)\\,dx = 1x^2y + 2x + C(y)$.<br>Đạo hàm theo $y$: $U^\\prime_y = 1x^2 + C^\\prime(y) = 1x^2 + 2y \\Rightarrow C(y) = y^2$.<br>Hàm thế vị: $U(x,y) = 1x^2y + 2x + y^2$.<br>Công sinh ra: $W = U(M) - U(O) = 1(3)^2(2) + 2(3) + (2)^2 = 28\\,\\text{J}$.",
@@ -13051,10 +13051,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Một lực $\\vec{F}(x,y) = (6xy + 1)\\vec{i} + (3x^2 + 2y)\\vec{j}$ tác dụng lên một chất điểm di chuyển từ gốc tọa độ $O(0;\\,0)$ đến điểm $M(1;\\,2)$. Biết $\\vec{F}$ là trường lực thế, công do lực $\\vec{F}$ sinh ra bằng",
   "options": [
-   "$11$\\,\\text{J}.",
-   "$7$\\,\\text{J}.",
-   "$17$\\,\\text{J}.",
-   "$22$\\,\\text{J}."
+   "$11\\,\\text{J}$.",
+   "$7\\,\\text{J}$.",
+   "$17\\,\\text{J}$.",
+   "$22\\,\\text{J}$."
   ],
   "answer": 0,
   "explain": "Kiểm tra điều kiện trường thế: $\\dfrac{\\partial Q}{\\partial x} = 2(3)x = 6x = \\dfrac{\\partial P}{\\partial y}$, do đó lực $\\vec{F}$ là lực bảo toàn (lực thế).<br>Hàm thế vị $U(x,y) = \\displaystyle\\int (6xy + 1)\\,dx = 3x^2y + 1x + C(y)$.<br>Đạo hàm theo $y$: $U^\\prime_y = 3x^2 + C^\\prime(y) = 3x^2 + 2y \\Rightarrow C(y) = y^2$.<br>Hàm thế vị: $U(x,y) = 3x^2y + 1x + y^2$.<br>Công sinh ra: $W = U(M) - U(O) = 3(1)^2(2) + 1(1) + (2)^2 = 11\\,\\text{J}$.",
@@ -13065,10 +13065,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Một lực $\\vec{F}(x,y) = (4xy + 2)\\vec{i} + (2x^2 + 2y)\\vec{j}$ tác dụng lên một chất điểm di chuyển từ gốc tọa độ $O(0;\\,0)$ đến điểm $M(2;\\,3)$. Biết $\\vec{F}$ là trường lực thế, công do lực $\\vec{F}$ sinh ra bằng",
   "options": [
-   "$37$\\,\\text{J}.",
-   "$33$\\,\\text{J}.",
-   "$43$\\,\\text{J}.",
-   "$74$\\,\\text{J}."
+   "$37\\,\\text{J}$.",
+   "$33\\,\\text{J}$.",
+   "$43\\,\\text{J}$.",
+   "$74\\,\\text{J}$."
   ],
   "answer": 0,
   "explain": "Kiểm tra điều kiện trường thế: $\\dfrac{\\partial Q}{\\partial x} = 2(2)x = 4x = \\dfrac{\\partial P}{\\partial y}$, do đó lực $\\vec{F}$ là lực bảo toàn (lực thế).<br>Hàm thế vị $U(x,y) = \\displaystyle\\int (4xy + 2)\\,dx = 2x^2y + 2x + C(y)$.<br>Đạo hàm theo $y$: $U^\\prime_y = 2x^2 + C^\\prime(y) = 2x^2 + 2y \\Rightarrow C(y) = y^2$.<br>Hàm thế vị: $U(x,y) = 2x^2y + 2x + y^2$.<br>Công sinh ra: $W = U(M) - U(O) = 2(2)^2(3) + 2(2) + (3)^2 = 37\\,\\text{J}$.",
@@ -13191,10 +13191,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Một mạch dao động điện từ $RLC$ nối tiếp gồm điện trở $R = 4\\,\\Omega$, cuộn cảm thuần $L = 1\\,\\text{H}$ và tụ điện có điện dung $C = \\dfrac{1}{13}\\,\\text{F}$. Điện tích $q(t)$ trên bản tụ thỏa mãn phương trình vi phân $L q^{\\prime\\prime} + R q^\\prime + \\dfrac{1}{C}q = 0$. Tần số góc dao động tắt dần của mạch $\\omega_d = \\sqrt{\\dfrac{1}{LC} - \\left(\\dfrac{R}{2L}\\right)^2}$ bằng",
   "options": [
-   "$3$\\,\\text{rad/s}.",
-   "$4$\\,\\text{rad/s}.",
-   "$2$\\,\\text{rad/s}.",
-   "$6$\\,\\text{rad/s}."
+   "$3\\,\\text{rad/s}$.",
+   "$4\\,\\text{rad/s}$.",
+   "$2\\,\\text{rad/s}$.",
+   "$6\\,\\text{rad/s}$."
   ],
   "answer": 0,
   "explain": "Phương trình vi phân: $q^{\\prime\\prime} + 4q^\\prime + 13q = 0$.<br>Phương trình đặc trưng: $k^2 + 4k + 13 = 0$.<br>Biệt thức: $\\Delta = 4^2 - 4(13) = -36 < 0$.<br>Nghiệm phức đặc trưng: $k = -\\dfrac{4}{2} \\pm i \\sqrt{13 - \\left(\\dfrac{4}{2}\\right)^2} = -2 \\pm 3i$.<br>Tần số góc dao động tắt dần: $\\omega_d = 3\\,\\text{rad/s}$.",
@@ -13205,10 +13205,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Một mạch dao động điện từ $RLC$ nối tiếp gồm điện trở $R = 6\\,\\Omega$, cuộn cảm thuần $L = 1\\,\\text{H}$ và tụ điện có điện dung $C = \\dfrac{1}{25}\\,\\text{F}$. Điện tích $q(t)$ trên bản tụ thỏa mãn phương trình vi phân $L q^{\\prime\\prime} + R q^\\prime + \\dfrac{1}{C}q = 0$. Tần số góc dao động tắt dần của mạch $\\omega_d = \\sqrt{\\dfrac{1}{LC} - \\left(\\dfrac{R}{2L}\\right)^2}$ bằng",
   "options": [
-   "$4$\\,\\text{rad/s}.",
-   "$5$\\,\\text{rad/s}.",
-   "$3$\\,\\text{rad/s}.",
-   "$8$\\,\\text{rad/s}."
+   "$4\\,\\text{rad/s}$.",
+   "$5\\,\\text{rad/s}$.",
+   "$3\\,\\text{rad/s}$.",
+   "$8\\,\\text{rad/s}$."
   ],
   "answer": 0,
   "explain": "Phương trình vi phân: $q^{\\prime\\prime} + 6q^\\prime + 25q = 0$.<br>Phương trình đặc trưng: $k^2 + 6k + 25 = 0$.<br>Biệt thức: $\\Delta = 6^2 - 4(25) = -64 < 0$.<br>Nghiệm phức đặc trưng: $k = -\\dfrac{6}{2} \\pm i \\sqrt{25 - \\left(\\dfrac{6}{2}\\right)^2} = -3 \\pm 4i$.<br>Tần số góc dao động tắt dần: $\\omega_d = 4\\,\\text{rad/s}$.",
@@ -13219,10 +13219,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Một mạch dao động điện từ $RLC$ nối tiếp gồm điện trở $R = 2\\,\\Omega$, cuộn cảm thuần $L = 1\\,\\text{H}$ và tụ điện có điện dung $C = \\dfrac{1}{10}\\,\\text{F}$. Điện tích $q(t)$ trên bản tụ thỏa mãn phương trình vi phân $L q^{\\prime\\prime} + R q^\\prime + \\dfrac{1}{C}q = 0$. Tần số góc dao động tắt dần của mạch $\\omega_d = \\sqrt{\\dfrac{1}{LC} - \\left(\\dfrac{R}{2L}\\right)^2}$ bằng",
   "options": [
-   "$3$\\,\\text{rad/s}.",
-   "$4$\\,\\text{rad/s}.",
-   "$2$\\,\\text{rad/s}.",
-   "$6$\\,\\text{rad/s}."
+   "$3\\,\\text{rad/s}$.",
+   "$4\\,\\text{rad/s}$.",
+   "$2\\,\\text{rad/s}$.",
+   "$6\\,\\text{rad/s}$."
   ],
   "answer": 0,
   "explain": "Phương trình vi phân: $q^{\\prime\\prime} + 2q^\\prime + 10q = 0$.<br>Phương trình đặc trưng: $k^2 + 2k + 10 = 0$.<br>Biệt thức: $\\Delta = 2^2 - 4(10) = -36 < 0$.<br>Nghiệm phức đặc trưng: $k = -\\dfrac{2}{2} \\pm i \\sqrt{10 - \\left(\\dfrac{2}{2}\\right)^2} = -1 \\pm 3i$.<br>Tần số góc dao động tắt dần: $\\omega_d = 3\\,\\text{rad/s}$.",
@@ -13233,10 +13233,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Một mạch dao động điện từ $RLC$ nối tiếp gồm điện trở $R = 8\\,\\Omega$, cuộn cảm thuần $L = 1\\,\\text{H}$ và tụ điện có điện dung $C = \\dfrac{1}{25}\\,\\text{F}$. Điện tích $q(t)$ trên bản tụ thỏa mãn phương trình vi phân $L q^{\\prime\\prime} + R q^\\prime + \\dfrac{1}{C}q = 0$. Tần số góc dao động tắt dần của mạch $\\omega_d = \\sqrt{\\dfrac{1}{LC} - \\left(\\dfrac{R}{2L}\\right)^2}$ bằng",
   "options": [
-   "$3$\\,\\text{rad/s}.",
-   "$4$\\,\\text{rad/s}.",
-   "$2$\\,\\text{rad/s}.",
-   "$6$\\,\\text{rad/s}."
+   "$3\\,\\text{rad/s}$.",
+   "$4\\,\\text{rad/s}$.",
+   "$2\\,\\text{rad/s}$.",
+   "$6\\,\\text{rad/s}$."
   ],
   "answer": 0,
   "explain": "Phương trình vi phân: $q^{\\prime\\prime} + 8q^\\prime + 25q = 0$.<br>Phương trình đặc trưng: $k^2 + 8k + 25 = 0$.<br>Biệt thức: $\\Delta = 8^2 - 4(25) = -36 < 0$.<br>Nghiệm phức đặc trưng: $k = -\\dfrac{8}{2} \\pm i \\sqrt{25 - \\left(\\dfrac{8}{2}\\right)^2} = -4 \\pm 3i$.<br>Tần số góc dao động tắt dần: $\\omega_d = 3\\,\\text{rad/s}$.",
@@ -13247,10 +13247,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Trong tài chính định giá dự án, một khoản đầu tư mang lại dòng tiền đều đặn vĩnh viễn $C = 100\\,\\text{triệu đồng}$ vào cuối mỗi năm, bắt đầu từ năm thứ nhất với lãi suất chiết khấu thị trường $r = 5\\,\\%/\\text{năm}$. Giá trị hiện tại ròng của dòng tiền vĩnh viễn $NPV = \\displaystyle\\sum_{n=1}^{+\\infty} \\dfrac{C}{(1+r)^n} = \\dfrac{C}{r}$ bằng",
   "options": [
-   "$2000$\\,\\text{triệu đồng}.",
-   "$2200$\\,\\text{triệu đồng}.",
-   "$1700$\\,\\text{triệu đồng}.",
-   "$4000$\\,\\text{triệu đồng}."
+   "$2000\\,\\text{triệu đồng}$.",
+   "$2200\\,\\text{triệu đồng}$.",
+   "$1700\\,\\text{triệu đồng}$.",
+   "$4000\\,\\text{triệu đồng}$."
   ],
   "answer": 0,
   "explain": "Chuỗi giá trị hiện tại là một chuỗi cấp số nhân lùi vô hạn: $NPV = \\displaystyle\\sum_{n=1}^{+\\infty} \\dfrac{100}{(1 + \\dfrac{1}{20})^n}$.<br>Số hạng đầu: $u_1 = \\dfrac{100}{1 + \\dfrac{1}{20}}$, công bội $q = \\dfrac{1}{1 + \\dfrac{1}{20}} < 1$.<br>Tổng cấp số nhân: $NPV = \\dfrac{u_1}{1 - q} = \\dfrac{\\frac{100}{1 + \\dfrac{1}{20}}}{1 - \\frac{1}{1 + \\dfrac{1}{20}}} = \\dfrac{100}{\\dfrac{1}{20}} = 2000\\,\\text{triệu đồng}$.",
@@ -13261,10 +13261,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Trong tài chính định giá dự án, một khoản đầu tư mang lại dòng tiền đều đặn vĩnh viễn $C = 60\\,\\text{triệu đồng}$ vào cuối mỗi năm, bắt đầu từ năm thứ nhất với lãi suất chiết khấu thị trường $r = 4\\,\\%/\\text{năm}$. Giá trị hiện tại ròng của dòng tiền vĩnh viễn $NPV = \\displaystyle\\sum_{n=1}^{+\\infty} \\dfrac{C}{(1+r)^n} = \\dfrac{C}{r}$ bằng",
   "options": [
-   "$1500$\\,\\text{triệu đồng}.",
-   "$1700$\\,\\text{triệu đồng}.",
-   "$1200$\\,\\text{triệu đồng}.",
-   "$3000$\\,\\text{triệu đồng}."
+   "$1500\\,\\text{triệu đồng}$.",
+   "$1700\\,\\text{triệu đồng}$.",
+   "$1200\\,\\text{triệu đồng}$.",
+   "$3000\\,\\text{triệu đồng}$."
   ],
   "answer": 0,
   "explain": "Chuỗi giá trị hiện tại là một chuỗi cấp số nhân lùi vô hạn: $NPV = \\displaystyle\\sum_{n=1}^{+\\infty} \\dfrac{60}{(1 + \\dfrac{1}{25})^n}$.<br>Số hạng đầu: $u_1 = \\dfrac{60}{1 + \\dfrac{1}{25}}$, công bội $q = \\dfrac{1}{1 + \\dfrac{1}{25}} < 1$.<br>Tổng cấp số nhân: $NPV = \\dfrac{u_1}{1 - q} = \\dfrac{\\frac{60}{1 + \\dfrac{1}{25}}}{1 - \\frac{1}{1 + \\dfrac{1}{25}}} = \\dfrac{60}{\\dfrac{1}{25}} = 1500\\,\\text{triệu đồng}$.",
@@ -13275,10 +13275,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Trong tài chính định giá dự án, một khoản đầu tư mang lại dòng tiền đều đặn vĩnh viễn $C = 120\\,\\text{triệu đồng}$ vào cuối mỗi năm, bắt đầu từ năm thứ nhất với lãi suất chiết khấu thị trường $r = 6\\,\\%/\\text{năm}$. Giá trị hiện tại ròng của dòng tiền vĩnh viễn $NPV = \\displaystyle\\sum_{n=1}^{+\\infty} \\dfrac{C}{(1+r)^n} = \\dfrac{C}{r}$ bằng",
   "options": [
-   "$2000$\\,\\text{triệu đồng}.",
-   "$2200$\\,\\text{triệu đồng}.",
-   "$1700$\\,\\text{triệu đồng}.",
-   "$4000$\\,\\text{triệu đồng}."
+   "$2000\\,\\text{triệu đồng}$.",
+   "$2200\\,\\text{triệu đồng}$.",
+   "$1700\\,\\text{triệu đồng}$.",
+   "$4000\\,\\text{triệu đồng}$."
   ],
   "answer": 0,
   "explain": "Chuỗi giá trị hiện tại là một chuỗi cấp số nhân lùi vô hạn: $NPV = \\displaystyle\\sum_{n=1}^{+\\infty} \\dfrac{120}{(1 + \\dfrac{3}{50})^n}$.<br>Số hạng đầu: $u_1 = \\dfrac{120}{1 + \\dfrac{3}{50}}$, công bội $q = \\dfrac{1}{1 + \\dfrac{3}{50}} < 1$.<br>Tổng cấp số nhân: $NPV = \\dfrac{u_1}{1 - q} = \\dfrac{\\frac{120}{1 + \\dfrac{3}{50}}}{1 - \\frac{1}{1 + \\dfrac{3}{50}}} = \\dfrac{120}{\\dfrac{3}{50}} = 2000\\,\\text{triệu đồng}$.",
@@ -13289,10 +13289,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Trong tài chính định giá dự án, một khoản đầu tư mang lại dòng tiền đều đặn vĩnh viễn $C = 200\\,\\text{triệu đồng}$ vào cuối mỗi năm, bắt đầu từ năm thứ nhất với lãi suất chiết khấu thị trường $r = 8\\,\\%/\\text{năm}$. Giá trị hiện tại ròng của dòng tiền vĩnh viễn $NPV = \\displaystyle\\sum_{n=1}^{+\\infty} \\dfrac{C}{(1+r)^n} = \\dfrac{C}{r}$ bằng",
   "options": [
-   "$2500$\\,\\text{triệu đồng}.",
-   "$2700$\\,\\text{triệu đồng}.",
-   "$2200$\\,\\text{triệu đồng}.",
-   "$5000$\\,\\text{triệu đồng}."
+   "$2500\\,\\text{triệu đồng}$.",
+   "$2700\\,\\text{triệu đồng}$.",
+   "$2200\\,\\text{triệu đồng}$.",
+   "$5000\\,\\text{triệu đồng}$."
   ],
   "answer": 0,
   "explain": "Chuỗi giá trị hiện tại là một chuỗi cấp số nhân lùi vô hạn: $NPV = \\displaystyle\\sum_{n=1}^{+\\infty} \\dfrac{200}{(1 + \\dfrac{2}{25})^n}$.<br>Số hạng đầu: $u_1 = \\dfrac{200}{1 + \\dfrac{2}{25}}$, công bội $q = \\dfrac{1}{1 + \\dfrac{2}{25}} < 1$.<br>Tổng cấp số nhân: $NPV = \\dfrac{u_1}{1 - q} = \\dfrac{\\frac{200}{1 + \\dfrac{2}{25}}}{1 - \\frac{1}{1 + \\dfrac{2}{25}}} = \\dfrac{200}{\\dfrac{2}{25}} = 2500\\,\\text{triệu đồng}$.",
@@ -13303,10 +13303,10 @@ window.PRACTICE_BANK = [
  {
   "q": "Trong tài chính định giá dự án, một khoản đầu tư mang lại dòng tiền đều đặn vĩnh viễn $C = 50\\,\\text{triệu đồng}$ vào cuối mỗi năm, bắt đầu từ năm thứ nhất với lãi suất chiết khấu thị trường $r = 2\\,\\%/\\text{năm}$. Giá trị hiện tại ròng của dòng tiền vĩnh viễn $NPV = \\displaystyle\\sum_{n=1}^{+\\infty} \\dfrac{C}{(1+r)^n} = \\dfrac{C}{r}$ bằng",
   "options": [
-   "$2500$\\,\\text{triệu đồng}.",
-   "$2700$\\,\\text{triệu đồng}.",
-   "$2200$\\,\\text{triệu đồng}.",
-   "$5000$\\,\\text{triệu đồng}."
+   "$2500\\,\\text{triệu đồng}$.",
+   "$2700\\,\\text{triệu đồng}$.",
+   "$2200\\,\\text{triệu đồng}$.",
+   "$5000\\,\\text{triệu đồng}$."
   ],
   "answer": 0,
   "explain": "Chuỗi giá trị hiện tại là một chuỗi cấp số nhân lùi vô hạn: $NPV = \\displaystyle\\sum_{n=1}^{+\\infty} \\dfrac{50}{(1 + \\dfrac{1}{50})^n}$.<br>Số hạng đầu: $u_1 = \\dfrac{50}{1 + \\dfrac{1}{50}}$, công bội $q = \\dfrac{1}{1 + \\dfrac{1}{50}} < 1$.<br>Tổng cấp số nhân: $NPV = \\dfrac{u_1}{1 - q} = \\dfrac{\\frac{50}{1 + \\dfrac{1}{50}}}{1 - \\frac{1}{1 + \\dfrac{1}{50}}} = \\dfrac{50}{\\dfrac{1}{50}} = 2500\\,\\text{triệu đồng}$.",

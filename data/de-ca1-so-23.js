@@ -325,7 +325,7 @@
     "$\\dfrac{34}{3}$."
    ],
    "answer": 0,
-   "explain": "$\\sin u = u - \\dfrac{u^3}{6} + o(u^3)$, với $u=2x$, ta có $u^2=4x^2$ và $u^3=8x^3$.<br>Tử số sau khai triển là $(2-a)x+(0-b)x^2+(- \\dfrac{4}{3})x^3+o(x^3)$. Chia cho $x^3$: $\\dfrac{2-a}{x^2}+\\dfrac{0-b}{x}+- \\dfrac{4}{3}+o(1)$.<br>Để giới hạn hữu hạn, các hệ số phân kỳ triệt tiêu: $a=2$ và $b=0$; hệ số còn lại cho $L=- \\dfrac{4}{3}$.<br>2+0-6(- \\dfrac{4}{3})=2+0+8=10",
+   "explain": "$\\sin u = u - \\dfrac{u^3}{6} + o(u^3)$, với $u=2x$, ta có $u^2=4x^2$ và $u^3=8x^3$.<br>Tử số sau khai triển là $(2-a)x+(0-b)x^2+(- \\dfrac{4}{3})x^3+o(x^3)$. Chia cho $x^3$: $\\dfrac{2-a}{x^2}+\\dfrac{0-b}{x}+- \\dfrac{4}{3}+o(1)$.<br>Để giới hạn hữu hạn, các hệ số phân kỳ triệt tiêu: $a=2$ và $b=0$; hệ số còn lại cho $L=- \\dfrac{4}{3}$.<br>$2+0-6(- \\dfrac{4}{3})=2+0+8=10$",
    "note": "Trong khai triển Maclaurin của tử, mọi hệ số có bậc thấp hơn bậc của mẫu phải bằng 0; hệ số cùng bậc với mẫu cho giá trị $L$."
   },
   {

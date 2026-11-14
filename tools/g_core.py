@@ -71,6 +71,14 @@ def theory(q, ok, why, wrongs):
     return Q(q, ok, [w for w, _ in wrongs], ex)
 
 
+def _with_unit(s, u):
+    if not u:
+        return s
+    if s.startswith('$') and s.endswith('$'):
+        return s[:-1] + u + '$'
+    return s + u
+
+
 def NQ(q, ok, cands, explain='', fmt=M, unit=''):
     """Câu trắc nghiệm đáp án số: cands là các kết quả sai điển hình; tự bổ sung nếu thiếu/trùng."""
     conv = lambda v_: sp.Float(v_) if isinstance(v_, float) else sp.nsimplify(v_)
@@ -87,8 +95,8 @@ def NQ(q, ok, cands, explain='', fmt=M, unit=''):
     if len(wrongs) < 3:
         raise Retry
     if explain and '<br>' not in explain:   # lời giải một dòng: thêm dòng kết quả cho rõ
-        explain = steps(explain.rstrip('.'), 'Kết quả: ' + fmt(ok) + unit)
-    return Q(q, fmt(ok) + unit + '.', [w + unit + '.' for w in wrongs], explain)
+        explain = steps(explain.rstrip('.'), 'Kết quả: ' + _with_unit(fmt(ok), unit))
+    return Q(q, _with_unit(fmt(ok), unit) + '.', [_with_unit(w, unit) + '.' for w in wrongs], explain)
 
 
 def SQ(q, answer, explain=''):

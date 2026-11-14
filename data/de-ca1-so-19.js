@@ -325,7 +325,7 @@
     "$\\dfrac{8}{3}$."
    ],
    "answer": 0,
-   "explain": "$\\ln(1 + u) = u - \\dfrac{u^2}{2} + \\dfrac{u^3}{3} + o(u^3)$, với $u=x$, ta có $u^2=1x^2$ và $u^3=1x^3$.<br>Tử số sau khai triển là $(1-a)x+(- \\dfrac{1}{2}-b)x^2+(\\dfrac{1}{3})x^3+o(x^3)$. Chia cho $x^3$: $\\dfrac{1-a}{x^2}+\\dfrac{- \\dfrac{1}{2}-b}{x}+\\dfrac{1}{3}+o(1)$.<br>Để giới hạn hữu hạn, các hệ số phân kỳ triệt tiêu: $a=1$ và $b=- \\dfrac{1}{2}$; hệ số còn lại cho $L=\\dfrac{1}{3}$.<br>1-2(- \\dfrac{1}{2})+3(\\dfrac{1}{3})=1+1+1=3",
+   "explain": "$\\ln(1 + u) = u - \\dfrac{u^2}{2} + \\dfrac{u^3}{3} + o(u^3)$, với $u=x$, ta có $u^2=1x^2$ và $u^3=1x^3$.<br>Tử số sau khai triển là $(1-a)x+(- \\dfrac{1}{2}-b)x^2+(\\dfrac{1}{3})x^3+o(x^3)$. Chia cho $x^3$: $\\dfrac{1-a}{x^2}+\\dfrac{- \\dfrac{1}{2}-b}{x}+\\dfrac{1}{3}+o(1)$.<br>Để giới hạn hữu hạn, các hệ số phân kỳ triệt tiêu: $a=1$ và $b=- \\dfrac{1}{2}$; hệ số còn lại cho $L=\\dfrac{1}{3}$.<br>$1-2(- \\dfrac{1}{2})+3(\\dfrac{1}{3})=1+1+1=3$",
    "note": "Trong khai triển Maclaurin của tử, mọi hệ số có bậc thấp hơn bậc của mẫu phải bằng 0; hệ số cùng bậc với mẫu cho giá trị $L$."
   },
   {

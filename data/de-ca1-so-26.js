@@ -324,7 +324,7 @@
     "$\\dfrac{34}{3}$."
    ],
    "answer": 0,
-   "explain": "$\\ln(1 + u) = u - \\dfrac{u^2}{2} + \\dfrac{u^3}{3} + o(u^3)$, với $u=2x$, ta có $u^2=4x^2$ và $u^3=8x^3$.<br>Tử số sau khai triển là $(2-a)x+(-2-b)x^2+(\\dfrac{8}{3})x^3+o(x^3)$. Chia cho $x^3$: $\\dfrac{2-a}{x^2}+\\dfrac{-2-b}{x}+\\dfrac{8}{3}+o(1)$.<br>Để giới hạn hữu hạn, các hệ số phân kỳ triệt tiêu: $a=2$ và $b=-2$; hệ số còn lại cho $L=\\dfrac{8}{3}$.<br>2-2(-2)+3(\\dfrac{8}{3})=2+4+8=14",
+   "explain": "$\\ln(1 + u) = u - \\dfrac{u^2}{2} + \\dfrac{u^3}{3} + o(u^3)$, với $u=2x$, ta có $u^2=4x^2$ và $u^3=8x^3$.<br>Tử số sau khai triển là $(2-a)x+(-2-b)x^2+(\\dfrac{8}{3})x^3+o(x^3)$. Chia cho $x^3$: $\\dfrac{2-a}{x^2}+\\dfrac{-2-b}{x}+\\dfrac{8}{3}+o(1)$.<br>Để giới hạn hữu hạn, các hệ số phân kỳ triệt tiêu: $a=2$ và $b=-2$; hệ số còn lại cho $L=\\dfrac{8}{3}$.<br>$2-2(-2)+3(\\dfrac{8}{3})=2+4+8=14$",
    "note": "Trong khai triển Maclaurin của tử, mọi hệ số có bậc thấp hơn bậc của mẫu phải bằng 0; hệ số cùng bậc với mẫu cho giá trị $L$."
   },
   {
