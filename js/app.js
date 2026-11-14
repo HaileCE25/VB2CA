@@ -524,30 +524,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Mobile Bottom Navigation Bar -->
-        <nav class="mobile-bottom-nav">
-          <button class="mobile-nav-btn active" type="button" data-act="nav-home">
-            <span class="nav-icon">🏠</span>
-            <span class="nav-text">Trang chủ</span>
-          </button>
-          <button class="mobile-nav-btn" type="button" data-act="speed-start">
-            <span class="nav-icon">⚡</span>
-            <span class="nav-text">Liên hoàn</span>
-          </button>
-          <button class="mobile-nav-btn" type="button" data-act="open-theory">
-            <span class="nav-icon">📖</span>
-            <span class="nav-text">Lý thuyết</span>
-          </button>
-          <button class="mobile-nav-btn" type="button" data-act="open-essays">
-            <span class="nav-icon">📝</span>
-            <span class="nav-text">Luyện viết</span>
-          </button>
-          <button class="mobile-nav-btn" type="button" data-act="open-stats">
-            <span class="nav-icon">📊</span>
-            <span class="nav-text">Chuyên đề</span>
-          </button>
-        </nav>
       </div>`;
   }
 

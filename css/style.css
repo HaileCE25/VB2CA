@@ -42,7 +42,7 @@ button:disabled { cursor: not-allowed; opacity: .55; }
 .dash-wrap {
   max-width: 960px;
   margin: 0 auto;
-  padding: 24px 16px 80px;
+  padding: 24px 16px 40px;
 }
 .dash-header {
   display: flex;
@@ -450,10 +450,6 @@ body.dark .badge-topic {
   border-color: #60a5fa;
 }
 
-/* Mobile Bottom Navigation Bar */
-.mobile-bottom-nav {
-  display: none;
-}
 @media (max-width: 680px) {
   .hero-inputs {
     grid-template-columns: 1fr;
@@ -469,43 +465,6 @@ body.dark .badge-topic {
   }
   .dash-title {
     font-size: 20px;
-  }
-  .dash-wrap {
-    padding-bottom: 90px;
-  }
-  .mobile-bottom-nav {
-    display: flex;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: var(--card);
-    border-top: 1px solid var(--line);
-    padding: 6px 4px 8px;
-    z-index: 999;
-    box-shadow: 0 -4px 15px rgba(0,0,0,0.06);
-    justify-content: space-around;
-  }
-  .mobile-nav-btn {
-    background: transparent;
-    border: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3px;
-    padding: 4px 6px;
-    min-width: 58px;
-    color: var(--muted);
-    font-size: 10px;
-    font-weight: 600;
-    transition: color .15s;
-  }
-  .mobile-nav-btn .nav-icon {
-    font-size: 18px;
-    line-height: 1;
-  }
-  .mobile-nav-btn.active, .mobile-nav-btn:hover {
-    color: #059669;
   }
 }
 
