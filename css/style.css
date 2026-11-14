@@ -306,7 +306,7 @@ body.dark .badge-topic {
 }
 .dash-card h3 {
   font-size: 16.5px;
-  margin: 0 0 6px;
+  margin: 0 0 12px;
   color: var(--text);
 }
 .dash-card p {
@@ -1332,14 +1332,18 @@ body.dark .rs-wrong { background: #3b1717; }
 .speed-feedback { margin-top: 12px; }
 .speed-feedback-actions {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 12px;
+  margin-top: 14px;
 }
 .speed-feedback-actions small { color: var(--muted); }
-.speed-feedback-actions .btn-start { padding: 8px 14px; }
+.speed-feedback-actions .btn-start {
+  padding: 10px 22px;
+  font-size: 14.5px;
+  font-weight: 700;
+}
 .speed-result-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));

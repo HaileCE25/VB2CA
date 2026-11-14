@@ -390,16 +390,14 @@
         <!-- Header Dashboard -->
         <header class="dash-header">
           <div class="dash-brand">
-            <div class="dash-badge-cst">BỘ CÔNG AN · MÃ ĐỀ CA1</div>
-            <h1 class="dash-title">CỔNG ÔN THI CHÍNH QUY VB2</h1>
-            <p class="dash-subtitle">Toán cao cấp & Nghị luận xã hội · Ngân hàng 2.200+ câu hỏi chuẩn hóa 2026</p>
+            <h1 class="dash-title">CỔNG ÔN THI VĂN BẰNG 2 — CA1</h1>
           </div>
           <div class="dash-top-actions">
             <button class="dash-pill-btn" type="button" data-act="dark" title="Chuyển chế độ Sáng / Tối">
-              ${S.dark ? '☀️ Giao diện sáng' : '🌙 Giao diện tối'}
+              ${S.dark ? '☀️ Sáng' : '🌙 Tối'}
             </button>
             <button class="dash-pill-btn" type="button" data-act="fs-up" title="Đổi cỡ chữ">
-              A+ Cỡ chữ: ${S.fs}px
+              A+ (${S.fs}px)
             </button>
           </div>
         </header>
@@ -408,37 +406,31 @@
         <section class="dash-hero-card">
           <form id="login-form" autocomplete="off">
             <div class="hero-card-head">
-              <div class="hero-card-badge">🏆 PHÒNG THI MÔ PHỎNG CHUẨN BỘ CÔNG AN</div>
-              <div class="hero-card-stats">150 phút · 100 điểm · 51 câu</div>
+              <div class="hero-card-badge">🏆 THI THỬ CHUẨN CA1 (150 PHÚT)</div>
             </div>
             
             <div class="hero-body">
-              <div class="hero-info">
-                <h3>Bài thi Đánh giá Tuyển sinh CA1</h3>
-                <p>Mô phỏng 100% quy trình phòng thi thật: <b>Phần 1:</b> 01 bài văn Nghị luận xã hội (500 chữ, 30 điểm, tối đa 60 phút) + <b>Phần 2:</b> 50 câu Toán cao cấp (70 điểm, 90 phút) chuẩn ma trận.</p>
-              </div>
-
               <div class="hero-inputs">
                 <div class="hero-field">
                   <label for="exam">Chọn đề thi</label>
                   <select id="exam" class="dash-select">
-                    <option value="${MIX_ID}" ${S.examId === MIX_ID ? 'selected' : ''}>★ Đề trộn ngẫu nhiên (Vô hạn đề mới, đúng ma trận CA1)</option>
+                    <option value="${MIX_ID}" ${S.examId === MIX_ID ? 'selected' : ''}>★ Đề trộn ngẫu nhiên (Chuẩn ma trận CA1)</option>
                     ${EXAMS.map(e => `<option value="${esc(e.id)}" ${e.id === S.examId ? 'selected' : ''}>${esc(e.title)}</option>`).join('')}
                   </select>
                 </div>
                 
                 <div class="hero-field">
                   <label for="name">Họ và tên thí sinh</label>
-                  <input id="name" class="dash-input" placeholder="Nhập họ và tên thí sinh..." value="${esc(last.name || 'Thí sinh luyện tập')}">
+                  <input id="name" class="dash-input" placeholder="Nhập họ và tên..." value="${esc(last.name || 'Thí sinh luyện tập')}">
                 </div>
               </div>
 
               <details class="hero-sbd-details">
-                <summary>Tùy chọn: Nhập Số báo danh & Mã PIN (nếu muốn mô phỏng)</summary>
+                <summary>Tùy chọn: Nhập SBD & PIN</summary>
                 <div class="sbd-pin-grid">
                   <div class="field">
                     <label for="sbd">Số báo danh (SBD)</label>
-                    <input id="sbd" class="dash-input" placeholder="Ví dụ: CA1-2026-001" value="${esc(last.sbd || '')}">
+                    <input id="sbd" class="dash-input" placeholder="Mặc định tự sinh" value="${esc(last.sbd || '')}">
                   </div>
                   <div class="field">
                     <label for="pin">Mã PIN phòng thi</label>
@@ -450,28 +442,26 @@
 
               <div class="hero-actions">
                 <button class="btn-hero-start" type="submit">
-                  <span class="btn-hero-text">➜ VÀO THI CHUẨN CA1 NGAY</span>
-                  <span class="btn-hero-sub">Thời gian 150 phút · Thang điểm 100</span>
+                  <span class="btn-hero-text">➜ VÀO THI CHUẨN CA1</span>
                 </button>
                 <button class="btn-hero-secondary" type="button" data-act="open-exams">
-                  📚 Thư viện 32 đề thi & Lịch sử điểm
+                  📚 Thư viện 32 đề thi
                 </button>
               </div>
             </div>
           </form>
         </section>
 
-        <!-- Khối 2: HAI KHỐI LUYỆN TẬP BẮT MẮT (Luyện Tốc độ & Chuyên đề) -->
+        <!-- Khối 2: HAI KHỐI LUYỆN TẬP -->
         <div class="dash-grid-2">
           <!-- Card Luyện Liên Hoàn -->
           <div class="dash-card card-speed">
-            <div class="dash-card-badge badge-speed">⚡ PHẢN XẠ NHANH</div>
+            <div class="dash-card-badge badge-speed">⚡ TỐC ĐỘ</div>
             <div class="dash-card-icon">⚡</div>
             <h3>Luyện Tốc Độ Liên Hoàn</h3>
-            <p>Rèn phản xạ giải nhanh trắc nghiệm từng câu hỏi. Tự động chuyển câu sau mỗi lượt, đếm chuỗi streak câu trả lời đúng.</p>
             
             <div class="dash-card-controls">
-              <label for="speed-limit">Thời gian cho mỗi câu:</label>
+              <label for="speed-limit">Thời gian mỗi câu:</label>
               <div class="speed-controls-row">
                 <select id="speed-limit" class="dash-select" aria-label="Thời gian cho mỗi câu">
                   <option value="15">15 giây / câu</option>
@@ -480,45 +470,40 @@
                   <option value="60">60 giây / câu</option>
                 </select>
                 <button class="btn-start btn-speed-cta" type="button" data-act="speed-start">
-                  Luyện ngay ➔
+                  Bắt đầu ➔
                 </button>
               </div>
             </div>
-            <div class="dash-card-tip">💡 Tự động chuyển câu khi trả lời. Kết thúc bất cứ lúc nào.</div>
           </div>
 
           <!-- Card Luyện Chuyên Đề & Sổ Sai -->
           <div class="dash-card card-topic">
-            <div class="dash-card-badge badge-topic">🎯 ÔN TẬP CÓ TRỌNG TÂM</div>
+            <div class="dash-card-badge badge-topic">🎯 CHUYÊN ĐỀ</div>
             <div class="dash-card-icon">🎯</div>
             <h3>Luyện Chuyên Đề & Sổ Sai</h3>
-            <p>Luyện sâu theo 12 chủ đề Toán cao cấp từ ngân hàng 917 câu hỏi thực chiến có lời giải chi tiết. Quản lý sổ câu sai.</p>
             
             <div class="dash-topic-status">
               ${wrongCount() 
-                ? `<span class="badge-wrong-alert">⚠️ Có <b>${wrongCount()}</b> câu sai cần luyện</span>` 
-                : `<span class="badge-clean-alert">✔ Sổ câu sai đang sạch</span>`}
-              <span class="badge-bank-count">Kho 917 câu bổ sung</span>
+                ? `<span class="badge-wrong-alert">⚠️ Có <b>${wrongCount()}</b> câu sai</span>` 
+                : `<span class="badge-clean-alert">✔ Sổ câu sai sạch</span>`}
+              <span class="badge-bank-count">12 chuyên đề</span>
             </div>
 
             <div class="dash-topic-actions">
               <button class="btn-start btn-topic-cta" type="button" data-act="open-stats">
-                📊 Vào luyện theo chuyên đề
+                📊 Luyện chuyên đề
               </button>
               ${wrongCount() ? `
                 <button class="btn-ghost btn-wrong-cta" type="button" data-act="p-wrong">
-                  🔁 Luyện lại ${wrongCount()} câu sai
+                  🔁 Làm lại câu sai (${wrongCount()})
                 </button>
               ` : ''}
             </div>
           </div>
         </div>
 
-        <!-- Khối 3: TỦ SÁCH TÀI LIỆU HỌC TẬP -->
-        <div class="dash-section-head">
-          <div class="section-title">📚 TỦ SÁCH TÀI LIỆU & BÍ QUYẾT ÔN THI</div>
-          <div class="section-sub">Được biên soạn chuẩn hóa bám sát cấu trúc đề tuyển sinh Bộ Công an 2026</div>
-        </div>
+        <!-- Khối 3: TỦ SÁCH TÀI LIỆU -->
+        <div class="section-title" style="margin:12px 0 10px; font-size:13.5px; font-weight:700; color:var(--muted); letter-spacing:.5px">TÀI LIỆU ÔN TẬP</div>
 
         <div class="dash-grid-2">
           <!-- Card Cẩm nang Toán -->
@@ -526,8 +511,7 @@
             <div class="resource-icon">📖</div>
             <div class="resource-content">
               <h4>Cẩm Nang Lý Thuyết & Công Thức Toán CA1</h4>
-              <p>Tổng hợp 12 chuyên đề, định lý cốt lõi, công thức trọng tâm, bẫy đề thi & bài tập vận dụng cao có lời giải.</p>
-              <div class="resource-link">Khám phá cẩm nang toán ➔</div>
+              <div class="resource-link">Khám phá cẩm nang ➔</div>
             </div>
           </div>
 
@@ -536,8 +520,7 @@
             <div class="resource-icon">📝</div>
             <div class="resource-content">
               <h4>Sổ Tay Nghị Luận Xã Hội 500 Chữ</h4>
-              <p>10 bộ mở/kết bài, 22 dẫn chứng thời sự Báo CAND, 12 bài mẫu xuất sắc & Studio luyện viết có bấm giờ.</p>
-              <div class="resource-link">Khám phá sổ tay nghị luận ➔</div>
+              <div class="resource-link">Khám phá sổ tay ➔</div>
             </div>
           </div>
         </div>
@@ -1320,7 +1303,7 @@
     const answer = missed ? null : val;
     const right = !missed && check(it, answer);
     P.responses[P.i] = { value: answer, correct: right, timedOut: missed };
-    P.nextAt = Date.now() + SPEED_FEEDBACK_MS;
+    P.nextAt = 0;
     const st = loadStats();
     record(st, it, right);
     saveStats(st);
@@ -1352,15 +1335,13 @@
     const correctAnswer = it.type === 'mcq'
       ? keys(it).map(k => LETTERS[ord.indexOf(k)]).join(' hoặc ')
       : esc(it.answer[0]);
-    const feedbackLeft = response ? Math.max(0, Math.ceil((P.nextAt - Date.now()) / 1000)) : 0;
     const feedback = !response ? '' : `<div class="rv ${response.correct ? 'right' : 'wrong'} speed-feedback">
-        <div class="res"><b>${response.timedOut ? 'Hết giờ' : response.correct ? '✔ Chính xác' : '✘ Chưa đúng'}</b>
+        <div class="res"><b>${response.timedOut ? '⏰ Hết giờ' : response.correct ? '✔ Chính xác' : '✘ Chưa đúng'}</b>
           · Đáp án: <b>${correctAnswer}</b></div>
         ${explainHtml(it)}
         <div class="exp">Nguồn: ${esc(refLabel(it.ref))}</div>
         ${reportBtn(it, loadStats())}
         <div class="speed-feedback-actions">
-          <small>Tự chuyển câu sau <b id="speed-feedback-countdown">${feedbackLeft}</b> giây</small>
           <button class="btn-start" data-act="speed-next">Câu tiếp theo ➜</button>
         </div>
       </div>`;
@@ -1371,9 +1352,9 @@
         <h2>Câu ${P.i + 1} · ${esc(topicName(it.topic))}</h2>
       </div>
       <div class="speed-run-meta">
-        <span>Đã trả lời: ${P.responses.filter(r => r && !r.timedOut).length}</span>
-        <span>Thời gian luyện: <b id="speed-elapsed">${speedElapsed(P)}</b></span>
-        <span class="speed-countdown" id="speed-countdown">${response ? '✓' : P.limitSec}</span>
+        <span>Đã làm: ${P.responses.filter(r => r && !r.timedOut).length}</span>
+        <span>Thời gian: <b id="speed-elapsed">${speedElapsed(P)}</b></span>
+        <span class="speed-countdown" id="speed-countdown">${response ? (response.timedOut ? '⏰' : '✓') : P.limitSec}</span>
       </div>
       <div class="exam-like">
         ${it.group ? `<div class="group-stem"><small>Thông tin chung</small>${it.group.stem}</div>` : ''}
@@ -2184,9 +2165,7 @@
       const elapsed = document.getElementById('speed-elapsed');
       if (elapsed) elapsed.textContent = speedElapsed(P);
       if (response) {
-        const feedbackCountdown = document.getElementById('speed-feedback-countdown');
-        if (feedbackCountdown) feedbackCountdown.textContent = Math.max(0, Math.ceil((P.nextAt - Date.now()) / 1000));
-        if (Date.now() >= P.nextAt) advanceSpeedPractice();
+        // Đã có đáp án (hoặc hết giờ): không tự động chuyển câu để thí sinh xem đáp án và đọc lời giải
         return;
       }
       const left = Math.max(0, Math.ceil((P.deadline - Date.now()) / 1000));
@@ -2644,6 +2623,29 @@
   app.addEventListener('keydown', e => {
     if (e.key === 'Enter' && e.target.id === 'p-short') { e.preventDefault(); actions['p-check'](); return; }
     if (e.key === 'Enter' && e.target.id === 'speed-short') { e.preventDefault(); actions['speed-check'](); return; }
+    if (S.screen === 'speed-practice' && !['input', 'textarea'].includes((e.target.tagName || '').toLowerCase())) {
+      const P = S.speedRun;
+      if (P) {
+        const response = P.responses[P.i];
+        if (response) {
+          if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowRight') {
+            e.preventDefault();
+            advanceSpeedPractice();
+            return;
+          }
+        } else {
+          const keyMap = { '1': 0, '2': 1, '3': 2, '4': 3, 'a': 0, 'b': 1, 'c': 2, 'd': 3 };
+          const idx = keyMap[(e.key || '').toLowerCase()];
+          const it = speedCurrent();
+          if (idx !== undefined && it && it.type === 'mcq') {
+            e.preventDefault();
+            const ord = P.perm[P.i] || it.options.map((o, i) => i);
+            if (ord[idx] !== undefined) answerSpeedPractice(ord[idx], false);
+            return;
+          }
+        }
+      }
+    }
     if (S.screen === 'practice' && !['input', 'textarea'].includes((e.target.tagName || '').toLowerCase())) {
       if (e.key === 'ArrowLeft') { actions['p-prev'](); return; }
       if (e.key === 'ArrowRight' || e.key === 'Enter') { actions['p-next'](); return; }
