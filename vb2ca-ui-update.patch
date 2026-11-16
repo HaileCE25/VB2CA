@@ -1,0 +1,618 @@
+diff --git a/css/style.css b/css/style.css
+index 8bf975b..5633d00 100644
+--- a/css/style.css
++++ b/css/style.css
+@@ -29,7 +29,7 @@ html { scroll-behavior: smooth; }
+ body {
+   margin: 0;
+   font-family: "Segoe UI", Roboto, Arial, sans-serif;
+-  font-size: 15px;
++  font-size: var(--fs);
+   color: var(--text);
+   background: var(--bg);
+   min-height: 100vh;
+@@ -88,7 +88,7 @@ body.dark .dash-badge-cst {
+   background: var(--card);
+   border: 1px solid var(--line);
+   color: var(--text);
+-  padding: 6px 12px;
++  padding: 6px 14px;
+   border-radius: 20px;
+   font-size: 12.5px;
+   font-weight: 600;
+@@ -99,6 +99,55 @@ body.dark .dash-badge-cst {
+   background: var(--field);
+   border-color: #94a3b8;
+ }
++.dash-theme-toggle {
++  background: #1f2937;
++  border-color: #1f2937;
++  color: #f9fafb;
++}
++.dash-theme-toggle:hover {
++  background: #374151;
++  border-color: #374151;
++}
++body.dark .dash-theme-toggle {
++  background: #f9fafb;
++  border-color: #e5e7eb;
++  color: #111827;
++}
++body.dark .dash-theme-toggle:hover {
++  background: #e5e7eb;
++  border-color: #d1d5db;
++}
++.dash-fs-group {
++  display: inline-flex;
++  align-items: center;
++  background: var(--card);
++  border: 1px solid var(--line);
++  border-radius: 20px;
++  overflow: hidden;
++  box-shadow: 0 1px 3px rgba(0,0,0,.04);
++}
++.dash-fs-btn {
++  background: transparent;
++  border: 0;
++  color: var(--text);
++  padding: 6px 10px;
++  font-size: 12.5px;
++  font-weight: 700;
++  transition: background .15s ease;
++}
++.dash-fs-btn:not(:disabled):hover {
++  background: var(--field);
++}
++.dash-fs-val {
++  font-size: 12px;
++  font-weight: 600;
++  color: var(--muted);
++  padding: 0 8px;
++  border-left: 1px solid var(--line);
++  border-right: 1px solid var(--line);
++  font-variant-numeric: tabular-nums;
++  user-select: none;
++}
+ 
+ /* Hero Card: Phòng Thi Chuẩn CA1 */
+ .dash-hero-card {
+@@ -390,10 +439,18 @@ body.dark .badge-topic {
+   font-size: 13px;
+ }
+ .btn-wrong-cta {
+-  padding: 9px 12px;
++  padding: 9px 14px;
+   font-size: 13px;
+-  color: var(--red);
+-  border-color: rgba(220, 38, 38, 0.3);
++  font-weight: 700;
++  background: var(--red);
++  color: #fff;
++  border: 1px solid var(--red);
++  border-radius: 8px;
++  transition: background .15s ease;
++}
++.btn-wrong-cta:not(:disabled):hover {
++  background: #b91c1c;
++  border-color: #b91c1c;
+ }
+ 
+ /* Tủ Sách Tài Liệu */
+diff --git a/index.html b/index.html
+index 51b08ed..dcbe47d 100644
+--- a/index.html
++++ b/index.html
+@@ -18,7 +18,7 @@
+   <meta name="theme-color" content="#1f3350">
+ 
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+-  <link rel="stylesheet" href="css/style.css?v=25">
++  <link rel="stylesheet" href="css/style.css?v=26">
+ </head>
+ <body>
+   <div id="app"></div>
+@@ -73,6 +73,6 @@
+   <script defer src="js/theory-formula-practice.js?v=3"></script>
+   <script defer src="data/practice-bank.js?v=6"></script>
+   <script defer src="js/ime.js"></script>
+-  <script defer src="js/app.js?v=30"></script>
++  <script defer src="js/app.js?v=31"></script>
+ </body>
+ </html>
+diff --git a/js/app.js b/js/app.js
+index 8f3751a..b147410 100644
+--- a/js/app.js
++++ b/js/app.js
+@@ -250,6 +250,18 @@
+     document.body.classList.toggle('dark', !!S.dark);
+     document.documentElement.style.setProperty('--fs', S.fs + 'px');
+     VnIme.mode = S.imeMode;
++    document.querySelectorAll('[data-act="dark"]').forEach(btn => {
++      if (btn.classList.contains('tb-btn')) {
++        btn.textContent = S.dark ? '☀ Sáng' : '☾ Tối';
++        btn.title = S.dark ? 'Chuyển sang giao diện Sáng' : 'Chuyển sang giao diện Tối';
++      } else {
++        btn.textContent = S.dark ? '☀ Sáng' : '☾ Tối';
++      }
++    });
++    const fsVal = document.getElementById('dash-fs-val');
++    if (fsVal) fsVal.textContent = S.fs + 'px';
++    document.querySelectorAll('[data-act="fs-down"]').forEach(btn => { btn.disabled = S.fs <= 12; });
++    document.querySelectorAll('[data-act="fs-up"]').forEach(btn => { btn.disabled = S.fs >= 22; });
+   }
+   function wrapWideMath(el) {
+     el.querySelectorAll('.katex').forEach(math => {
+@@ -362,9 +374,9 @@
+           ${S.lock ? `<span class="pill" id="lock-pill">${lockText()}</span>` : ''}
+           <span class="pill" id="ime-pill">⌨ Bộ gõ tích hợp · ${imeText()}</span>
+           <span>
+-            <button class="tb-btn" data-act="fs-down" title="Thu nhỏ chữ">A−</button>
+-            <button class="tb-btn" data-act="fs-up" title="Phóng to chữ">A+</button>
+-            <button class="tb-btn" data-act="dark" title="Chế độ tối">☾</button>
++            <button class="tb-btn" data-act="fs-down" title="Thu nhỏ chữ" ${S.fs <= 12 ? 'disabled' : ''}>A−</button>
++            <button class="tb-btn" data-act="fs-up" title="Phóng to chữ" ${S.fs >= 22 ? 'disabled' : ''}>A+</button>
++            <button class="tb-btn tb-theme-btn" data-act="dark" title="${S.dark ? 'Chuyển sang giao diện Sáng' : 'Chuyển sang giao diện Tối'}">${S.dark ? '☀ Sáng' : '☾ Tối'}</button>
+           </span>
+           ${part === 1
+             ? '<button class="btn-next" data-act="to-p2">Sang Phần 2</button>'
+@@ -385,6 +397,7 @@
+   function viewLogin() {
+     if (!EXAMS.length) return '<div class="dash-wrap"><div class="dash-card">Chưa có đề nào. Hãy thêm file đề vào thư mục <b>data/</b>.</div></div>';
+     const last = S.profile || {};
++    const savedName = last.name && last.name !== 'Thí sinh luyện tập' ? last.name : '';
+     return `
+       <div class="dash-wrap">
+         <!-- Header Dashboard -->
+@@ -393,12 +406,14 @@
+             <h1 class="dash-title">CỔNG ÔN THI VĂN BẰNG 2 — CA1</h1>
+           </div>
+           <div class="dash-top-actions">
+-            <button class="dash-pill-btn" type="button" data-act="dark" title="Chuyển chế độ Sáng / Tối">
+-              ${S.dark ? '☀️ Sáng' : '🌙 Tối'}
+-            </button>
+-            <button class="dash-pill-btn" type="button" data-act="fs-up" title="Đổi cỡ chữ">
+-              A+ (${S.fs}px)
++            <button class="dash-pill-btn dash-theme-toggle" type="button" data-act="dark" title="Chuyển chế độ Sáng / Tối">
++              ${S.dark ? '☀ Sáng' : '☾ Tối'}
+             </button>
++            <div class="dash-fs-group" role="group" aria-label="Chỉnh cỡ chữ">
++              <button class="dash-fs-btn" type="button" data-act="fs-down" title="Thu nhỏ chữ" ${S.fs <= 12 ? 'disabled' : ''}>A−</button>
++              <span class="dash-fs-val" id="dash-fs-val">${S.fs}px</span>
++              <button class="dash-fs-btn" type="button" data-act="fs-up" title="Phóng to chữ" ${S.fs >= 22 ? 'disabled' : ''}>A+</button>
++            </div>
+           </div>
+         </header>
+ 
+@@ -406,7 +421,7 @@
+         <section class="dash-hero-card">
+           <form id="login-form" autocomplete="off">
+             <div class="hero-card-head">
+-              <div class="hero-card-badge">🏆 THI THỬ CHUẨN CA1 (150 PHÚT)</div>
++              <div class="hero-card-badge">THI THỬ CHUẨN CA1 (150 PHÚT)</div>
+             </div>
+             
+             <div class="hero-body">
+@@ -421,7 +436,7 @@
+                 
+                 <div class="hero-field">
+                   <label for="name">Họ và tên thí sinh</label>
+-                  <input id="name" class="dash-input" placeholder="Nhập họ và tên..." value="${esc(last.name || 'Thí sinh luyện tập')}">
++                  <input id="name" class="dash-input" spellcheck="false" placeholder="Ví dụ: Thí sinh luyện tập" value="${esc(savedName)}">
+                 </div>
+               </div>
+ 
+@@ -430,7 +445,7 @@
+                 <div class="sbd-pin-grid">
+                   <div class="field">
+                     <label for="sbd">Số báo danh (SBD)</label>
+-                    <input id="sbd" class="dash-input" placeholder="Mặc định tự sinh" value="${esc(last.sbd || '')}">
++                    <input id="sbd" class="dash-input" spellcheck="false" placeholder="Mặc định tự sinh" value="${esc(last.sbd || '')}">
+                   </div>
+                   <div class="field">
+                     <label for="pin">Mã PIN phòng thi</label>
+@@ -442,10 +457,10 @@
+ 
+               <div class="hero-actions">
+                 <button class="btn-hero-start" type="submit">
+-                  <span class="btn-hero-text">➜ VÀO THI CHUẨN CA1</span>
++                  <span class="btn-hero-text">VÀO THI CHUẨN CA1 →</span>
+                 </button>
+                 <button class="btn-hero-secondary" type="button" data-act="open-exams">
+-                  📚 Thư viện 32 đề thi
++                  Thư viện 32 đề thi
+                 </button>
+               </div>
+             </div>
+@@ -456,8 +471,7 @@
+         <div class="dash-grid-2">
+           <!-- Card Luyện Liên Hoàn -->
+           <div class="dash-card card-speed">
+-            <div class="dash-card-badge badge-speed">⚡ TỐC ĐỘ</div>
+-            <div class="dash-card-icon">⚡</div>
++            <div class="dash-card-badge badge-speed">TỐC ĐỘ</div>
+             <h3>Luyện Tốc Độ Liên Hoàn</h3>
+             
+             <div class="dash-card-controls">
+@@ -470,7 +484,7 @@
+                   <option value="60">60 giây / câu</option>
+                 </select>
+                 <button class="btn-start btn-speed-cta" type="button" data-act="speed-start">
+-                  Bắt đầu ➔
++                  Bắt đầu →
+                 </button>
+               </div>
+             </div>
+@@ -478,24 +492,23 @@
+ 
+           <!-- Card Luyện Chuyên Đề & Sổ Sai -->
+           <div class="dash-card card-topic">
+-            <div class="dash-card-badge badge-topic">🎯 CHUYÊN ĐỀ</div>
+-            <div class="dash-card-icon">🎯</div>
++            <div class="dash-card-badge badge-topic">CHUYÊN ĐỀ</div>
+             <h3>Luyện Chuyên Đề & Sổ Sai</h3>
+             
+             <div class="dash-topic-status">
+               ${wrongCount() 
+-                ? `<span class="badge-wrong-alert">⚠️ Có <b>${wrongCount()}</b> câu sai</span>` 
+-                : `<span class="badge-clean-alert">✔ Sổ câu sai sạch</span>`}
++                ? `<span class="badge-wrong-alert">Có <b>${wrongCount()}</b> câu sai cần ôn lại</span>` 
++                : `<span class="badge-clean-alert">Sổ câu sai sạch</span>`}
+               <span class="badge-bank-count">12 chuyên đề</span>
+             </div>
+ 
+             <div class="dash-topic-actions">
+               <button class="btn-start btn-topic-cta" type="button" data-act="open-stats">
+-                📊 Luyện chuyên đề
++                Luyện chuyên đề
+               </button>
+               ${wrongCount() ? `
+-                <button class="btn-ghost btn-wrong-cta" type="button" data-act="p-wrong">
+-                  🔁 Làm lại câu sai (${wrongCount()})
++                <button class="btn-wrong-cta" type="button" data-act="p-wrong">
++                  Làm lại câu sai
+                 </button>
+               ` : ''}
+             </div>
+@@ -508,19 +521,17 @@
+         <div class="dash-grid-2">
+           <!-- Card Cẩm nang Toán -->
+           <div class="dash-card card-resource" data-act="open-theory">
+-            <div class="resource-icon">📖</div>
+             <div class="resource-content">
+               <h4>Cẩm Nang Lý Thuyết & Công Thức Toán CA1</h4>
+-              <div class="resource-link">Khám phá cẩm nang ➔</div>
++              <div class="resource-link">Xem cẩm nang →</div>
+             </div>
+           </div>
+ 
+           <!-- Card Cẩm nang NLXH -->
+           <div class="dash-card card-resource" data-act="open-essays">
+-            <div class="resource-icon">📝</div>
+             <div class="resource-content">
+               <h4>Sổ Tay Nghị Luận Xã Hội 500 Chữ</h4>
+-              <div class="resource-link">Khám phá sổ tay ➔</div>
++              <div class="resource-link">Xem sổ tay →</div>
+             </div>
+           </div>
+         </div>
+@@ -542,9 +553,9 @@
+         </div>
+         <div class="banner"><small>BÀI THI ĐĂNG KÝ</small><b>${esc(exam.code)}</b></div>
+         <div style="display:flex;gap:8px;justify-content:center;margin-bottom:16px;flex-wrap:wrap">
+-          <button class="btn-ghost" data-act="open-exams">📚 Thư viện 32 đề thi</button>
+-          <button class="btn-ghost" data-act="open-theory">📖 Cẩm nang lý thuyết & Công thức</button>
+-          <button class="btn-ghost" data-act="open-essays">📝 Ôn nghị luận xã hội</button>
++          <button class="btn-ghost" data-act="open-exams">Thư viện 32 đề thi</button>
++          <button class="btn-ghost" data-act="open-theory">Cẩm nang lý thuyết & Công thức</button>
++          <button class="btn-ghost" data-act="open-essays">Ôn nghị luận xã hội</button>
+         </div>
+ 
+         <div class="card accent">
+@@ -883,7 +894,7 @@
+               <td>
+                 <div style="display:flex;align-items:center;gap:6px">
+                   <b>${esc(topicName(r.id))}</b>
+-                  ${TOPIC_HINTS[r.id] ? `<button type="button" class="link-btn" data-toggle-hint="${r.id}" style="font-size:12px" title="Bấm để xem/ẩn gợi ý trọng tâm">💡 Gợi ý</button>` : ''}
++                  ${TOPIC_HINTS[r.id] ? `<button type="button" class="link-btn" data-toggle-hint="${r.id}" style="font-size:12px" title="Bấm để xem/ẩn gợi ý trọng tâm">Gợi ý</button>` : ''}
+                 </div>
+                 <div class="pending">${pool[r.id] || 0} câu trong kho</div>
+                 ${TOPIC_HINTS[r.id] ? `<div class="topic-hint" id="hint-${r.id}"><b>Trọng tâm:</b> ${esc(TOPIC_HINTS[r.id])}</div>` : ''}
+@@ -897,7 +908,7 @@
+         <div class="card">
+           <h3>Sổ câu sai</h3>
+           <p>Hiện có <b>${wrongRefs.length}</b> câu bạn làm sai (hoặc bỏ trống trong một lần thi đã làm từ nửa đề trở lên) và chưa làm lại đúng. Mỗi câu sẽ được gỡ khỏi sổ khi bạn làm đúng.</p>
+-          <button class="btn-start" data-act="p-wrong" ${wrongRefs.length ? '' : 'disabled'}>Luyện lại ${esc(practiceCountLabel(wrongRefs.length))} câu sai</button>
++          <button class="btn-start btn-wrong-cta" data-act="p-wrong" ${wrongRefs.length ? '' : 'disabled'}>Làm lại câu sai</button>
+         </div>
+         <div class="card">
+           <h3>Câu đã báo có vấn đề (${reports.length})</h3>
+@@ -1045,7 +1056,7 @@
+         </div>
+ 
+         <div class="theory-search-wrap">
+-          <input class="theory-search-input" id="theory-search" placeholder="🔍 Tìm kiếm công thức, định lý, ví dụ, từ khóa (ví dụ: Gauss, Leontief, Cramer, Green, Hessian...)" value="${esc(theoryQuery)}">
++          <input class="theory-search-input" id="theory-search" placeholder="Tìm kiếm công thức, định lý, ví dụ, từ khóa (ví dụ: Gauss, Leontief, Cramer, Green, Hessian...)" value="${esc(theoryQuery)}">
+         </div>
+ 
+         <div class="theory-outline">
+@@ -1072,8 +1083,7 @@
+ 
+         ${!topicIds.length ? `
+           <div class="card" style="text-align:center;padding:30px 20px">
+-            <div style="font-size:32px;margin-bottom:8px">🔍</div>
+-            <b>Không tìm thấy nội dung nào khớp với từ khóa "${esc(theoryQuery)}"</b>
++                        <b>Không tìm thấy nội dung nào khớp với từ khóa "${esc(theoryQuery)}"</b>
+             <div class="pending" style="margin-top:6px">Thử tìm kiếm với từ khóa khác hoặc bấm nút "Tất cả" ở trên.</div>
+           </div>
+         ` : topicIds.map(id => {
+@@ -1093,11 +1103,11 @@
+               </summary>
+               <div class="theory-topic-content">
+                 <div class="theory-topic-head">
+-                <button class="btn-small" data-practice-topic="${id}">🎯 Luyện 10 câu chuyên đề này</button>
++                <button class="btn-small" data-practice-topic="${id}">Luyện 10 câu chuyên đề này</button>
+                 </div>
+ 
+               ${formulas.length ? `
+-                <div class="formula-section-title">📌 Công thức trọng tâm & cách áp dụng</div>
++                <div class="formula-section-title">Công thức trọng tâm & cách áp dụng</div>
+                 ${formulas.map(f => `
+                   <div class="formula-box">
+                     <b class="f-name">• ${f.name}</b>
+@@ -1121,7 +1131,7 @@
+               ` : ''}
+ 
+               ${examples.length ? `
+-                <div class="formula-section-title">💡 Ví dụ theo dạng bài</div>
++                <div class="formula-section-title">Ví dụ theo dạng bài</div>
+                 ${examples.map((ex, idx) => `
+                   <div class="example-card">
+                     <div class="example-head">
+@@ -1140,7 +1150,7 @@
+ 
+               ${knowledge.length ? `
+                 <details class="theory-details">
+-                  <summary>📖 Lý thuyết nền & giải thích chi tiết (${knowledge.length} mục)</summary>
++                  <summary>Lý thuyết nền & giải thích chi tiết (${knowledge.length} mục)</summary>
+                   <div class="theory-details-content">
+                     ${knowledge.map((section, idx) => `
+                       <div class="concept-box">
+@@ -1154,7 +1164,7 @@
+ 
+               ${top.traps && top.traps.length ? `
+                 <details class="theory-details trap-details">
+-                  <summary>⚠️ Lỗi thường gặp & lưu ý (${top.traps.length})</summary>
++                  <summary>Lỗi thường gặp & lưu ý (${top.traps.length})</summary>
+                   <div class="trap-box">
+                     <ul class="trap-list">
+                       ${top.traps.map(t => `<li>${t}</li>`).join('')}
+@@ -1595,7 +1605,7 @@
+ 
+     const saveSt = document.getElementById('studio-save-status');
+     if (saveSt) {
+-      saveSt.textContent = '💾 Đã lưu nháp lúc ' + clock(Date.now());
++      saveSt.textContent = 'Đã lưu nháp lúc ' + clock(Date.now());
+     }
+   }
+ 
+@@ -1694,7 +1704,7 @@
+         <div class="page-head">
+           <button class="btn-ghost" data-act="essays-back">${back}</button>
+           <div style="text-align:center">
+-            <div class="essay-badge-pill">🛡️ TÀI LIỆU ÔN THI ĐẶC QUYỀN • BỘ CÔNG AN (CA1)</div>
++            <div class="essay-badge-pill">TÀI LIỆU ÔN THI • BỘ CÔNG AN (CA1)</div>
+             <h2>CẨM NANG ÔN THI NGHỊ LUẬN XÃ HỘI (TỐI THIỂU 500 CHỮ)</h2>
+             <p class="essay-header-desc">
+               ${guides.length} dẫn chứng thời sự từ Báo CAND • ${samples.length} bài mẫu nghị luận • Phòng luyện viết trực tuyến.
+@@ -1705,23 +1715,23 @@
+         <!-- Tab Navigation -->
+         <nav class="essay-tab-bar" aria-label="Tabs nghị luận xã hội">
+           <button class="essay-tab-btn ${essayTab === 'method' ? 'active' : ''}" data-essay-tab="method">
+-            ✨ Mẫu mở bài, kết bài & từ nối
++            Mẫu mở bài, kết bài & từ nối
+           </button>
+           <button class="essay-tab-btn ${essayTab === 'evidence' ? 'active' : ''}" data-essay-tab="evidence">
+-            📰 Sổ tay Dẫn chứng Báo CAND <span class="tab-badge">${guides.length}</span>
++            Sổ tay Dẫn chứng Báo CAND <span class="tab-badge">${guides.length}</span>
+           </button>
+           <button class="essay-tab-btn ${essayTab === 'samples' ? 'active' : ''}" data-essay-tab="samples">
+-            📚 Bài mẫu Chuẩn 500+ Chữ <span class="tab-badge">${samples.length}</span>
++            Bài mẫu Chuẩn 500+ Chữ <span class="tab-badge">${samples.length}</span>
+           </button>
+           <button class="essay-tab-btn ${essayTab === 'practice' ? 'active' : ''}" data-essay-tab="practice">
+-            ✍️ Phòng Luyện Viết Studio
++            Phòng Luyện Viết Studio
+           </button>
+         </nav>
+ 
+         <!-- TAB 1: MẪU MỞ BÀI, KẾT BÀI & TỪ NỐI -->
+         ${essayTab === 'method' ? `
+           <div class="essay-tab-content">
+-            <h3 style="color:var(--navy);margin:24px 0 10px">✨ Mẫu mở bài & kết bài theo chủ đề</h3>
++            <h3 style="color:var(--navy);margin:24px 0 10px">Mẫu mở bài & kết bài theo chủ đề</h3>
+             <p style="margin:-4px 0 14px;color:var(--muted);font-size:13px">
+               Được biên soạn chuẩn mực văn phong chính luận hành chính, bám sát các đề thi Bộ Công An và thời sự 2024 - 2026. Có thể ứng dụng ngay cho từng dạng đề cụ thể.
+             </p>
+@@ -1731,19 +1741,19 @@
+                   <div class="topic-template-title">
+                     <span>${esc(tt.topic)}</span>
+                     <button class="btn-ghost" style="font-size:12px;padding:3px 8px" data-act="essay-load-template-prompt" data-idx="${idx}">
+-                      ✍️ Luyện viết chủ đề này
++                      Luyện viết chủ đề này
+                     </button>
+                   </div>
+                   <div class="topic-sample-box">
+                     <div class="topic-sample-head">
+-                      <span>✨ Mẫu Mở bài trực tiếp:</span>
++                      <span>Mẫu Mở bài trực tiếp:</span>
+                       <button class="btn-ghost" style="padding:2px 8px;font-size:11.5px" data-act="essay-copy-text" data-text="${esc(tt.opening)}">Sao chép mở bài</button>
+                     </div>
+                     <div>${esc(tt.opening)}</div>
+                   </div>
+                   <div class="topic-sample-box ending">
+                     <div class="topic-sample-head">
+-                      <span>🔥 Mẫu Kết bài hào hùng (Liên hệ CAND):</span>
++                      <span>Mẫu Kết bài (Liên hệ CAND):</span>
+                       <button class="btn-ghost" style="padding:2px 8px;font-size:11.5px" data-act="essay-copy-text" data-text="${esc(tt.ending)}">Sao chép kết bài</button>
+                     </div>
+                     <div>${esc(tt.ending)}</div>
+@@ -1752,7 +1762,7 @@
+               `).join('')}
+             </div>
+ 
+-            <h3 style="color:var(--navy);margin:24px 0 10px">🔗 Bộ Từ Nối & Cụm Từ Chính Luận Đắt Giá</h3>
++            <h3 style="color:var(--navy);margin:24px 0 10px">Bộ Từ Nối & Cụm Từ Chính Luận</h3>
+             <div class="card" style="margin-bottom:20px">
+               ${(M.transitionPhrases || []).map(tp => `
+                 <div style="margin-bottom:12px">
+@@ -1772,22 +1782,21 @@
+           <div class="essay-tab-content">
+             <!-- Search & Filter bar -->
+             <div class="essay-search-bar">
+-              <input class="essay-search-input" id="essay-search" placeholder="🔍 Tìm kiếm dẫn chứng (VNeID, Yagi, Lừa đảo, Ma túy, Tô Lâm, Phú Quốc...)" value="${esc(essayQuery)}">
++              <input class="essay-search-input" id="essay-search" placeholder="Tìm kiếm dẫn chứng (VNeID, Yagi, Lừa đảo, Ma túy, Tô Lâm, Phú Quốc...)" value="${esc(essayQuery)}">
+             </div>
+ 
+             <!-- Theme Chips -->
+             <div class="essay-chips-bar">
+               ${themes.map(th => `
+                 <button class="essay-chip ${essayTheme === th.id ? 'active' : ''}" data-essay-theme="${th.id}">
+-                  ${th.icon} ${esc(th.name)}
++                  ${esc(th.name)}
+                 </button>
+               `).join('')}
+             </div>
+ 
+             ${!filteredGuides.length ? `
+               <div class="card" style="text-align:center;padding:30px 20px">
+-                <div style="font-size:32px;margin-bottom:8px">🔍</div>
+-                <b>Không tìm thấy dẫn chứng nào khớp với từ khóa "${esc(essayQuery)}"</b>
++                                <b>Không tìm thấy dẫn chứng nào khớp với từ khóa "${esc(essayQuery)}"</b>
+                 <div class="pending" style="margin-top:6px">Thử tìm kiếm với từ khóa khác hoặc bấm nút "Tất cả chuyên đề".</div>
+               </div>
+             ` : `
+@@ -1804,7 +1813,7 @@
+                     </div>
+ 
+                     <div class="evidence-highlight-box">
+-                      <b>📌 Sự kiện & Dẫn chứng cốt lõi:</b><br>
++                      <b>Sự kiện & Dẫn chứng cốt lõi:</b><br>
+                       ${esc(g.evidence)}
+                     </div>
+ 
+@@ -1837,11 +1846,11 @@
+                     <div class="evidence-actions">
+                       ${g.sampleQuote ? `
+                         <button class="btn-ghost" style="font-size:12px;padding:4px 10px" data-act="essay-copy-text" data-text="${esc(g.sampleQuote)}">
+-                          📋 Sao chép câu trích dẫn
++                          Sao chép câu trích dẫn
+                         </button>
+                       ` : ''}
+                       <button class="btn-ghost" style="font-size:12px;padding:4px 10px" data-act="essay-load-prompt" data-prompt="${esc(g.prompt)}" data-title="${esc(g.sourceTitle)}">
+-                        ✍️ Luyện viết đề này
++                        Luyện viết đề này
+                       </button>
+                     </div>
+                   </article>
+@@ -1858,7 +1867,7 @@
+             <div class="essay-chips-bar">
+               ${themes.map(th => `
+                 <button class="essay-chip ${essayTheme === th.id ? 'active' : ''}" data-essay-theme="${th.id}">
+-                  ${th.icon} ${esc(th.name)}
++                  ${esc(th.name)}
+                 </button>
+               `).join('')}
+             </div>
+@@ -1873,10 +1882,10 @@
+                   <span class="sample-words-pill">Bài mẫu 0${idx + 1} • ${s.wordCount || countWords(s.text)} từ (Chuẩn CA)</span>
+                   <div>
+                     <button class="btn-ghost" style="font-size:12px;padding:4px 10px;margin-right:6px" data-act="essay-copy-text" data-text="${esc(s.text)}">
+-                      📋 Sao chép bài
++                      Sao chép bài
+                     </button>
+                     <button class="btn-ghost" style="font-size:12px;padding:4px 10px" data-act="essay-load-sample-prompt" data-idx="${idx}">
+-                      ✍️ Luyện viết đề này
++                      Luyện viết đề này
+                     </button>
+                   </div>
+                 </div>
+@@ -1889,14 +1898,14 @@
+ 
+                 ${s.evidencesUsed ? `
+                   <div style="font-size:13px;color:var(--green);font-weight:600;margin-bottom:10px">
+-                    📌 Dẫn chứng phối hợp trong bài: ${esc(s.evidencesUsed)}
++                    Dẫn chứng phối hợp trong bài: ${esc(s.evidencesUsed)}
+                   </div>
+                 ` : ''}
+ 
+                 ${s.outline && s.outline.length ? `
+                   <details style="margin-bottom:12px">
+                     <summary style="cursor:pointer;color:var(--blue);font-weight:600;font-size:13px">
+-                      💡 Xem phân tích dàn ý 6 bước của bài này
++                      Xem phân tích dàn ý 6 bước của bài này
+                     </summary>
+                     <div class="sample-outline-box" style="margin-top:8px">
+                       <ol style="margin:0;padding-left:20px">
+@@ -1923,9 +1932,9 @@
+                 <!-- Row 1: Header + Dropdown Full Width -->
+                 <div class="studio-prompt-header">
+                   <div class="studio-prompt-label-row">
+-                    <span class="studio-prompt-label">📝 Chọn đề bài luyện viết:</span>
++                    <span class="studio-prompt-label">Chọn đề bài luyện viết:</span>
+                     <button class="btn-ghost" style="font-size:12.5px;padding:4px 10px" data-act="essay-random-prompt" title="Đổi sang một đề thi ngẫu nhiên khác">
+-                      🎲 Đổi ngẫu nhiên
++                      Đổi đề ngẫu nhiên
+                     </button>
+                   </div>
+                   <select id="practice-prompt-select" class="studio-select">
+@@ -1963,13 +1972,13 @@
+               <!-- Prompt display box -->
+               <div class="studio-prompt-display">
+                 <div style="font-weight:700;color:var(--navy);margin-bottom:6px">
+-                  📝 ĐỀ BÀI: ${esc(curPrompt.title || 'Nghị luận xã hội')}
++                  ĐỀ BÀI: ${esc(curPrompt.title || 'Nghị luận xã hội')}
+                 </div>
+                 <div style="margin-bottom:8px">
+                   ${esc(curPrompt.prompt)}
+                 </div>
+                 <div style="font-weight:600;color:var(--blue)">
+-                  👉 Yêu cầu: ${esc(curPrompt.task || 'Anh/chị hãy viết một bài nghị luận (tối thiểu 500 chữ) trình bày suy nghĩ của mình.')}
++                  Yêu cầu: ${esc(curPrompt.task || 'Anh/chị hãy viết một bài nghị luận (tối thiểu 500 chữ) trình bày suy nghĩ của mình.')}
+                 </div>
+               </div>
+ 
+@@ -1977,7 +1986,7 @@
+               ${curPrompt.outline && curPrompt.outline.length ? `
+                 <div style="margin-bottom:12px">
+                   <button class="btn-ghost" style="font-size:12.5px;padding:4px 10px" data-act="essay-toggle-outline">
+-                    ${essayShowOutline ? 'Ẩn dàn ý gợi ý' : '💡 Xem dàn ý gợi ý cho đề này'}
++                    ${essayShowOutline ? 'Ẩn dàn ý gợi ý' : 'Xem dàn ý gợi ý cho đề này'}
+                   </button>
+                   ${essayShowOutline ? `
+                     <div class="sample-outline-box" style="margin-top:8px">
+@@ -2011,12 +2020,12 @@
+               <!-- Bottom Actions -->
+               <div class="studio-bottom-actions">
+                 <div style="font-size:12.5px;color:var(--muted)">
+-                  <span id="studio-save-status">💾 Tự động lưu bản nháp</span>
++                  <span id="studio-save-status">Tự động lưu bản nháp</span>
+                 </div>
+                 <div>
+-                  <button class="btn-ghost" data-act="essay-copy-draft">📋 Sao chép bài</button>
+-                  <button class="btn-ghost" data-act="essay-print-draft">🖨️ In / Xuất PDF</button>
+-                  <button class="btn-ghost" data-act="essay-clear-draft" style="color:var(--red)">🗑️ Xóa nháp</button>
++                  <button class="btn-ghost" data-act="essay-copy-draft">Sao chép bài</button>
++                  <button class="btn-ghost" data-act="essay-print-draft">In / Xuất PDF</button>
++                  <button class="btn-ghost" data-act="essay-clear-draft" style="color:var(--red)">Xóa nháp</button>
+                 </div>
+               </div>
+             </div>
+@@ -2704,7 +2713,7 @@
+     const last = S.profile || {};
+     const sbd = (sbdEl && sbdEl.value.trim()) || last.sbd || ('CA1-2026-' + Math.floor(100 + Math.random() * 900));
+     const pin = (pinEl && pinEl.value.trim()) || last.pin || '123456';
+-    const name = (nameEl && nameEl.value.trim()) || last.name || 'Thí sinh luyện tập';
++    const name = (nameEl && nameEl.value.trim()) || 'Thí sinh luyện tập';
+ 
+     S = Object.assign(fresh(), { imeMode: S.imeMode, fs: S.fs, dark: S.dark, lock: S.lock });
+     S.examId = (examEl && examEl.value) || S.examId || MIX_ID;
