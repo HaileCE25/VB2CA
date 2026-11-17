@@ -2731,70 +2731,87 @@
 })();
 
 
+
 /* TOPICS_FILTER_ENHANCER */
 (function(){
   var dsKeys = ['ma trận', 'định thức', 'véc tơ', 'vectơ', 'hạng', 'trị riêng', 'chéo hóa', 'tuyến tính'];
+  var isRunning = false;
   function syncTheme() {
+    if (!document.body) return;
     var bg = getComputedStyle(document.body).backgroundColor;
     var m = bg.match(/\d+/g);
     if (m && m.length >= 3) {
       var lum = 0.299*Number(m[0]) + 0.587*Number(m[1]) + 0.114*Number(m[2]);
-      document.documentElement.classList.toggle('is-dark-ui', lum < 128);
+      var dark = lum < 128;
+      if (document.documentElement.classList.contains('is-dark-ui') !== dark) {
+        document.documentElement.classList.toggle('is-dark-ui', dark);
+      }
     }
   }
   function enhanceTopics() {
-    syncTheme();
-    var tbody = document.querySelector('table tbody');
-    if (!tbody || !tbody.rows[1]) return;
-    Array.from(tbody.rows).forEach(function(tr) {
-      var txt = tr.innerText.toLowerCase();
-      if (tr.querySelector('th') || (txt.includes('chủ đề') && txt.includes('đang sai'))) {
-        tr.classList.add('topic-header-row');
-        return;
-      }
-      var isDS = dsKeys.some(function(w) { return txt.includes(w); });
-      if (txt.includes('vi phân')) isDS = false;
-      tr.classList.remove('topic-gt', 'topic-ds');
-      tr.classList.add(isDS ? 'topic-ds' : 'topic-gt');
-      var firstTd = tr.cells[0];
-      if (firstTd && !firstTd.querySelector('.topic-tag')) {
-        var tag = document.createElement('span');
-        tag.className = 'topic-tag';
-        tag.textContent = isDS ? 'Đại số tuyến tính' : 'Giải tích';
-        firstTd.insertBefore(tag, firstTd.firstChild);
-      }
-    });
-    if (document.getElementById('topic-filter-bar')) return;
-    var table = tbody.closest('table');
-    var bar = document.createElement('div');
-    bar.id = 'topic-filter-bar';
-    var filters = [['all', 'Tất cả'], ['gt', 'Giải tích'], ['ds', 'Đại số tuyến tính'], ['weak', 'Cần ôn gấp (dưới 50%)']];
-    filters.forEach(function(item, idx) {
-      var k = item[0], label = item[1];
-      var b = document.createElement('button');
-      b.type = 'button';
-      b.className = 'topic-filter-btn' + (idx === 0 ? ' active' : '');
-      b.textContent = label;
-      b.onclick = function() {
-        bar.querySelectorAll('.topic-filter-btn').forEach(function(x) { x.classList.remove('active'); });
-        b.classList.add('active');
-        Array.from(tbody.rows).forEach(function(tr) {
-          if (tr.classList.contains('topic-header-row')) return;
-          var txt = tr.innerText.toLowerCase();
-          var isDS = tr.classList.contains('topic-ds');
-          var pctMatch = txt.match(/(\d+)%/);
-          var pct = pctMatch ? parseInt(pctMatch[1], 10) : 0;
-          var show = true;
-          if (k === 'gt') show = !isDS;
-          else if (k === 'ds') show = isDS;
-          else if (k === 'weak') show = (Math.floor(pct / 50) === 0);
-          tr.style.setProperty('display', show ? 'flex' : 'none', 'important');
-        });
-      };
-      bar.appendChild(b);
-    });
-    table.parentNode.insertBefore(bar, table);
+    if (isRunning) return;
+    isRunning = true;
+    try {
+      syncTheme();
+      var tbody = document.querySelector('table tbody');
+      if (!tbody || !tbody.rows[1]) return;
+      Array.from(tbody.rows).forEach(function(tr) {
+        var txt = tr.innerText.toLowerCase();
+        if (tr.querySelector('th') || (txt.includes('chủ đề') && txt.includes('đang sai'))) {
+          if (!tr.classList.contains('topic-header-row')) tr.classList.add('topic-header-row');
+          return;
+        }
+        var isDS = dsKeys.some(function(w) { return txt.includes(w); });
+        if (txt.includes('vi phân')) isDS = false;
+        var cls = isDS ? 'topic-ds' : 'topic-gt';
+        if (!tr.classList.contains(cls)) {
+          tr.classList.remove('topic-gt', 'topic-ds');
+          tr.classList.add(cls);
+        }
+        var firstTd = tr.cells[0];
+        if (firstTd && !firstTd.querySelector('.topic-tag')) {
+          var tag = document.createElement('span');
+          tag.className = 'topic-tag';
+          tag.textContent = isDS ? 'Đại số tuyến tính' : 'Giải tích';
+          firstTd.insertBefore(tag, firstTd.firstChild);
+        }
+      });
+      if (document.getElementById('topic-filter-bar')) return;
+      var table = tbody.closest('table');
+      var bar = document.createElement('div');
+      bar.id = 'topic-filter-bar';
+      var filters = [['all', 'Tất cả'], ['gt', 'Giải tích'], ['ds', 'Đại số tuyến tính'], ['weak', 'Cần ôn gấp (dưới 50%)']];
+      filters.forEach(function(item, idx) {
+        var k = item[0], label = item[1];
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'topic-filter-btn' + (idx === 0 ? ' active' : '');
+        b.textContent = label;
+        b.onclick = function() {
+          bar.querySelectorAll('.topic-filter-btn').forEach(function(x) { x.classList.remove('active'); });
+          b.classList.add('active');
+          Array.from(tbody.rows).forEach(function(tr) {
+            if (tr.classList.contains('topic-header-row')) return;
+            var txt = tr.innerText.toLowerCase();
+            var isDS = tr.classList.contains('topic-ds');
+            var pctMatch = txt.match(/(\d+)%/);
+            var pct = pctMatch ? parseInt(pctMatch[1], 10) : 0;
+            var show = true;
+            if (k === 'gt') show = !isDS;
+            else if (k === 'ds') show = isDS;
+            else if (k === 'weak') show = (Math.floor(pct / 50) === 0);
+            tr.style.setProperty('display', show ? 'flex' : 'none', 'important');
+          });
+        };
+        bar.appendChild(b);
+      });
+      table.parentNode.insertBefore(bar, table);
+    } finally {
+      isRunning = false;
+    }
   }
-  new MutationObserver(enhanceTopics).observe(document.documentElement, { attributes: true, childList: true, subtree: true });
-  window.addEventListener('DOMContentLoaded', enhanceTopics);
+  window.addEventListener('DOMContentLoaded', function() {
+    enhanceTopics();
+    new MutationObserver(enhanceTopics).observe(document.body, { attributes: true, attributeFilter: ['class', 'data-theme'], childList: true, subtree: true });
+  });
 })();
