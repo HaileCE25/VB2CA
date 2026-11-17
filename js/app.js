@@ -2729,3 +2729,44 @@
 
   render();
 })();
+/* TOPICS_FILTER_ENHANCER */
+(function(){
+  var dsKeys = ['ma trận', 'định thức', 'véc tơ', 'vectơ', 'hạng', 'trị riêng', 'chéo hóa', 'tuyến tính'];
+  function enhanceTopics() {
+    var tbody = document.querySelector('table tbody');
+    if (!tbody) return;
+    if (!tbody.rows[2]) return;
+    if (document.getElementById('topic-filter-bar')) return;
+    var table = tbody.closest('table');
+    var bar = document.createElement('div');
+    bar.id = 'topic-filter-bar';
+    var filters = [['all', 'Tất cả'], ['gt', 'Giải tích'], ['ds', 'Đại số tuyến tính'], ['weak', 'Cần ôn gấp (dưới 50%)']];
+    filters.forEach(function(item, idx) {
+      var k = item[0], label = item[1];
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'topic-filter-btn' + (idx === 0 ? ' active' : '');
+      b.textContent = label;
+      b.onclick = function() {
+        bar.querySelectorAll('.topic-filter-btn').forEach(function(x) { x.classList.remove('active'); });
+        b.classList.add('active');
+        Array.from(tbody.rows).forEach(function(tr) {
+          var txt = tr.innerText.toLowerCase();
+          var isDS = dsKeys.some(function(w) { return txt.includes(w); });
+          if (txt.includes('vi phân')) isDS = false;
+          var pctMatch = txt.match(/(\d+)%/);
+          var pct = pctMatch ? parseInt(pctMatch[1], 10) : 0;
+          var show = true;
+          if (k === 'gt') show = !isDS;
+          else if (k === 'ds') show = isDS;
+          else if (k === 'weak') show = (Math.floor(pct / 50) === 0);
+          tr.style.display = show ? 'flex' : 'none';
+        });
+      };
+      bar.appendChild(b);
+    });
+    table.parentNode.insertBefore(bar, table);
+  }
+  new MutationObserver(enhanceTopics).observe(document.body, { childList: true, subtree: true });
+  window.addEventListener('DOMContentLoaded', enhanceTopics);
+})();
