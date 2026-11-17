@@ -118,12 +118,12 @@
    "q": "Cho hai hàm số $f, g$ xác định trong một lân cận của $x_0$ (có thể trừ điểm $x_0$). Phát biểu nào sau đây là đúng?",
    "options": [
     "Nếu $\\lim\\limits_{x\\to x_0}f(x) = 0$ và $g$ bị chặn trong lân cận đó thì $\\lim\\limits_{x\\to x_0}f(x)g(x) = 0$.",
-    "Nếu $\\lim\\limits_{x\\to x_0}f(x) = 0$ và $\\lim\\limits_{x\\to x_0}g(x) = +\\infty$ thì $\\lim\\limits_{x\\to x_0}f(x)g(x) = 0$.",
+    "Nếu $\\lim\\limits_{x\\to x_0}f(x) = 0$ và $\\lim\\limits_{x\\to x_0}g(x) = \\infty$ thì $\\lim\\limits_{x\\to x_0}f(x)g(x) = 0$.",
     "Nếu $f$ và $g$ đều không có giới hạn khi $x \\to x_0$ thì $f + g$ cũng không có giới hạn.",
     "Nếu $f(x) < g(x)$ với mọi $x$ và hai giới hạn tồn tại thì $\\lim f(x) < \\lim g(x)$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> Nếu $\\lim\\limits_{x\\to x_0}f(x) = 0$ và $g$ bị chặn trong lân cận đó thì $\\lim\\limits_{x\\to x_0}f(x)g(x) = 0$. $|f(x)g(x)| \\le M|f(x)| \\to 0$ (nguyên lí kẹp).<br><b>Sai:</b> Nếu $\\lim\\limits_{x\\to x_0}f(x) = 0$ và $\\lim\\limits_{x\\to x_0}g(x) = +\\infty$ thì $\\lim\\limits_{x\\to x_0}f(x)g(x) = 0$. Đây là dạng vô định $0\\cdot\\infty$: với $f = x^2$, $g = \\dfrac{1}{x^4}$ khi $x \\to 0$ thì $fg \\to +\\infty$.<br><b>Sai:</b> Nếu $f$ và $g$ đều không có giới hạn khi $x \\to x_0$ thì $f + g$ cũng không có giới hạn. $f = \\sin\\dfrac1x$, $g = -\\sin\\dfrac1x$ đều không có giới hạn khi $x \\to 0$ nhưng $f + g = 0$.<br><b>Sai:</b> Nếu $f(x) < g(x)$ với mọi $x$ và hai giới hạn tồn tại thì $\\lim f(x) < \\lim g(x)$. Chỉ suy ra được dấu $\\le$: $f = 0$, $g = x^2$ khi $x \\to 0$ có hai giới hạn bằng nhau."
+   "explain": "<b>Đúng:</b> Nếu $\\lim\\limits_{x\\to x_0}f(x) = 0$ và $g$ bị chặn trong lân cận đó thì $\\lim\\limits_{x\\to x_0}f(x)g(x) = 0$. $|f(x)g(x)| \\le M|f(x)| \\to 0$ (nguyên lí kẹp).<br><b>Sai:</b> Nếu $\\lim\\limits_{x\\to x_0}f(x) = 0$ và $\\lim\\limits_{x\\to x_0}g(x) = \\infty$ thì $\\lim\\limits_{x\\to x_0}f(x)g(x) = 0$. Đây là dạng vô định $0\\cdot\\infty$: với $f = x^2$, $g = \\dfrac{1}{x^4}$ khi $x \\to 0$ thì $fg \\to +\\infty$.<br><b>Sai:</b> Nếu $f$ và $g$ đều không có giới hạn khi $x \\to x_0$ thì $f + g$ cũng không có giới hạn. $f = \\sin\\dfrac1x$, $g = -\\sin\\dfrac1x$ đều không có giới hạn khi $x \\to 0$ nhưng $f + g = 0$.<br><b>Sai:</b> Nếu $f(x) < g(x)$ với mọi $x$ và hai giới hạn tồn tại thì $\\lim f(x) < \\lim g(x)$. Chỉ suy ra được dấu $\\le$: $f = 0$, $g = x^2$ khi $x \\to 0$ có hai giới hạn bằng nhau."
   },
   {
    "q": "Cho đường cong $y = 3 x^{2} + 2 x$. Tiếp tuyến với đường cong tại điểm có hoành độ $x_0 = 2$ cắt trục $Oy$ tại điểm có tung độ bằng",

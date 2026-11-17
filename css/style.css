@@ -1902,3 +1902,21 @@ body.dark .example-sol b { color: #4ade80; }
     white-space: normal;
   }
 }
+
+/* IOS_UI_UPGRADE */
+* { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+html, body { min-height: 100dvh; padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom); overscroll-behavior-y: none; -webkit-overflow-scrolling: touch; }
+.katex { font-size: 1.04em !important; line-height: 1.45; }
+.katex-display { margin: 0.65em 0 !important; overflow-x: auto; overflow-y: hidden; padding: 4px 0; }
+table { border-collapse: separate; border-spacing: 0 8px; }
+tbody tr { transition: transform 0.18s ease, background-color 0.18s ease; }
+tbody tr:active { transform: scale(0.99); }
+button, .btn, select { min-height: 40px; border-radius: 10px; transition: transform 0.15s ease, opacity 0.15s ease; }
+button:active, .btn:active { transform: scale(0.96); }
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr { display: block; width: 100%; }
+  thead { display: none; }
+  tbody tr { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 12px 14px; margin-bottom: 12px; }
+  tbody td { padding: 4px 0 !important; border: none !important; text-align: left !important; }
+  tbody td:last-child button, tbody td:last-child .btn { width: 100%; margin-top: 8px; min-height: 44px; font-weight: 600; }
+}

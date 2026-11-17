@@ -12,7 +12,7 @@ THEORY = {
           (r'Nếu $f\'(x_0) = 0$ thì $f$ đạt cực trị tại $x_0$.', r'$f(x) = x^3$ có $f\'(0) = 0$ nhưng không đạt cực trị tại $0$.')]),
         (r'Cho hai hàm số $f, g$ xác định trong một lân cận của $x_0$ (có thể trừ điểm $x_0$). ' + D,
          r'Nếu $\lim\limits_{x\to x_0}f(x) = 0$ và $g$ bị chặn trong lân cận đó thì $\lim\limits_{x\to x_0}f(x)g(x) = 0$.', r'$|f(x)g(x)| \le M|f(x)| \to 0$ (nguyên lí kẹp).',
-         [(r'Nếu $\lim\limits_{x\to x_0}f(x) = 0$ và $\lim\limits_{x\to x_0}g(x) = +\infty$ thì $\lim\limits_{x\to x_0}f(x)g(x) = 0$.', r'Đây là dạng vô định $0\cdot\infty$: với $f = x^2$, $g = \dfrac{1}{x^4}$ khi $x \to 0$ thì $fg \to +\infty$.'),
+         [(r'Nếu $\lim\limits_{x\to x_0}f(x) = 0$ và $\lim\limits_{x\to x_0}g(x) = \infty$ thì $\lim\limits_{x\to x_0}f(x)g(x) = 0$.', r'Đây là dạng vô định $0\cdot\infty$: với $f = x^2$, $g = \dfrac{1}{x^4}$ khi $x \to 0$ thì $fg \to +\infty$.'),
           (r'Nếu $f$ và $g$ đều không có giới hạn khi $x \to x_0$ thì $f + g$ cũng không có giới hạn.', r'$f = \sin\dfrac1x$, $g = -\sin\dfrac1x$ đều không có giới hạn khi $x \to 0$ nhưng $f + g = 0$.'),
           (r'Nếu $f(x) < g(x)$ với mọi $x$ và hai giới hạn tồn tại thì $\lim f(x) < \lim g(x)$.', r'Chỉ suy ra được dấu $\le$: $f = 0$, $g = x^2$ khi $x \to 0$ có hai giới hạn bằng nhau.')]),
         (r'Khi $x \to 0$, phát biểu nào sau đây về các vô cùng bé là đúng?',

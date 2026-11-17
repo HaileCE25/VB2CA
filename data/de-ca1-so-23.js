@@ -157,7 +157,7 @@
     "2%."
    ],
    "answer": 0,
-   "explain": "Từ công thức đã cho, viết dạng lũy thừa theo hai đại lượng đo: $\\ln P=C+2\\ln u-1\\ln v$ (hằng số $C$ không đổi).<br>Vi phân: $\\dfrac{dP}{P}=+2\\dfrac{du}{u}-1\\dfrac{dv}{v}$. Lấy trị tuyệt đối và dùng các cận đo: $\\dfrac{|\\DeltaP|}{|P|}\\le 2\\dfrac{|\\Delta u|}{u}+1\\dfrac{|\\Delta v|}{v}$.<br>$= 2\\cdot1\\% + 1\\cdot2\\% = 4\\%$.",
+   "explain": "Từ công thức đã cho, viết dạng lũy thừa theo hai đại lượng đo: $\\ln P=C+2\\ln u-1\\ln v$ (hằng số $C$ không đổi).<br>Vi phân: $\\dfrac{dP}{P}=+2\\dfrac{du}{u}-1\\dfrac{dv}{v}$. Lấy trị tuyệt đối và dùng các cận đo: $\\dfrac{|\\Delta P|}{|P|}\\le 2\\dfrac{|\\Delta u|}{u}+1\\dfrac{|\\Delta v|}{v}$.<br>$= 2\\cdot1\\% + 1\\cdot2\\% = 4\\%$.",
    "note": "Lấy lôgarit rồi vi phân: sai số tương đối của tích, thương bằng tổng các sai số tương đối nhân với trị tuyệt đối của số mũ."
   },
   {

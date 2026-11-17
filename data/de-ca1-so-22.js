@@ -158,7 +158,7 @@
     "3%."
    ],
    "answer": 0,
-   "explain": "Từ công thức đã cho, viết dạng lũy thừa theo hai đại lượng đo: $\\ln W=C+1\\ln u+2\\ln v$ (hằng số $C$ không đổi).<br>Vi phân: $\\dfrac{dW}{W}=+1\\dfrac{du}{u}+2\\dfrac{dv}{v}$. Lấy trị tuyệt đối và dùng các cận đo: $\\dfrac{|\\DeltaW|}{|W|}\\le 1\\dfrac{|\\Delta u|}{u}+2\\dfrac{|\\Delta v|}{v}$.<br>$= 1\\cdot0{,}5\\% + 2\\cdot0{,}5\\% = 1{,}5\\%$.",
+   "explain": "Từ công thức đã cho, viết dạng lũy thừa theo hai đại lượng đo: $\\ln W=C+1\\ln u+2\\ln v$ (hằng số $C$ không đổi).<br>Vi phân: $\\dfrac{dW}{W}=+1\\dfrac{du}{u}+2\\dfrac{dv}{v}$. Lấy trị tuyệt đối và dùng các cận đo: $\\dfrac{|\\Delta W|}{|W|}\\le 1\\dfrac{|\\Delta u|}{u}+2\\dfrac{|\\Delta v|}{v}$.<br>$= 1\\cdot0{,}5\\% + 2\\cdot0{,}5\\% = 1{,}5\\%$.",
    "note": "Lấy lôgarit rồi vi phân: sai số tương đối của tích, thương bằng tổng các sai số tương đối nhân với trị tuyệt đối của số mũ."
   },
   {

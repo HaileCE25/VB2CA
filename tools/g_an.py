@@ -263,7 +263,7 @@ P15 = [(S(r'\dfrac{(-1)^n}{n}'), 1, 0), (S(r'\dfrac{(-1)^n}{n\sqrt n}'), 1, 1), 
        (S(r'\dfrac{(-1)^n n^2}{n^2+1}'), 0, 0), (S(r'\dfrac{(-1)^n}{n!}'), 1, 1), (S(r'\dfrac{(-1)^n}{2n+1}'), 1, 0), (S(r'(-1)^n\left(1 - \cos\dfrac1n\right)'), 1, 1)]
 
 
-R14 = [r'u_n \sim \dfrac{1}{n^2}', r'\dfrac{u_{n+1}}{u_n} = \dfrac{2}{n+1} \to 0 < 1', r'\displaystyle\int_2^{+\infty}\dfrac{dx}{x\ln x} = \left[\ln\ln x\right]_2^{+\infty} = +\infty', r'u_n \sim \dfrac1n',
+R14 = [r'u_n \sim \dfrac{1}{n^2}', r'\dfrac{u_{n+1}}{u_n} = \dfrac{2}{n+1} \to 0 < 1', r'\displaystyle\int_2^{+\infty}\dfrac{dx}{x\ln x} = \left[\ln\ln x\right]_2^{+\infty} = \infty', r'u_n \sim \dfrac1n',
        r'\sqrt[n]{u_n} = \dfrac{n}{2n+1} \to \dfrac12 < 1', r'u_n \sim \dfrac1n', r'\dfrac{u_{n+1}}{u_n} \to \dfrac13 < 1', r'u_n \le \dfrac{1}{n^{3/2}}\ (n \text{ đủ lớn})',
        r'\dfrac{u_{n+1}}{u_n} = \dfrac{(n+1)^2}{(2n+1)(2n+2)} \to \dfrac14 < 1', r'u_n \sim \dfrac{1}{2n^2}', r'\sqrt[n]{n} \to 1 \Rightarrow u_n \sim \dfrac1n', r'u_n \sim \dfrac1n',
        r'u_n \sim \dfrac{1}{n^{3/2}}', r'\dfrac{u_{n+1}}{u_n} = \left(\dfrac{n}{n+1}\right)^n \to \dfrac1e < 1', r'u_n \sim \left(\dfrac32\right)^n \not\to 0', r'u_n \le \dfrac{\pi}{2n^2}',
