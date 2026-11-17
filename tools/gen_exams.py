@@ -31,7 +31,7 @@ from g_essays import ESSAYS
 from g_notes import NOTES
 
 SEED = 2027
-N_EXAMS = 26        # 10 đề đầu (số 01–10): các dạng cơ bản; 16 đề sau (số 15–30): thay bằng các dạng khó hơn trong g_hard.py
+N_EXAMS = 36        # 10 đề đầu (số 01–10): các dạng cơ bản; 16 đề sau (số 15–30): thay bằng các dạng khó hơn trong g_hard.py
 N_BASE = 10
 SLOW = 30           # một câu sinh lâu hơn chừng này giây thì coi như treo: dừng và in chỗ đang chạy
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
