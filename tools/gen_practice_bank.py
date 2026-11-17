@@ -140,11 +140,7 @@ def practice_slot_items(task, slots, remaining):
         if item is None:
             item = make_practice_item(base, slot, exam_index + 1000, seen, exam_index)
         if item is None:
-            for idx_f, alt_f in enumerate(([base] + (new_forms.get('B' if hard else 'A', []) if new_forms else []))): 
-                item = make_practice_item(alt_f, slot, exam_index + 2000 + idx_f * 700, seen, exam_index)
-                if item is not None: break
-        if item is None:
-            continue
+            break
         generated[exam_index] = item
         if kind == 'g':
             for index in indices:
@@ -222,6 +218,22 @@ def build():
         extra.extend(added)
         remaining['td'] -= len(added)
 
+
+    if remaining.get('v2', 0):
+        for idx in range(remaining['v2']):
+            r1, r2 = (idx % 6) + 1, -((idx // 6) % 5 + 1)
+            b_c, c_c = -(r1 + r2), r1 * r2
+            sb = f'+ {b_c}' if b_c > 0 else (f'- {-b_c}' if b_c < 0 else '')
+            sc = f'+ {c_c}' if c_c > 0 else f'- {-c_c}'
+            eq = f"y'' {sb}y' {sc}y = 0".replace('  ', ' ').replace('+ 1y', '+ y').replace('- 1y', '- y')
+            q = f'Nghiệm tổng quát của phương trình vi phân thuần nhất ${eq}$ là:'
+            ok = f'$y = C_1 e^{{{r1}x}} + C_2 e^{{{r2}x}}$'
+            wr = [f'$y = C_1 e^{{{-r1}x}} + C_2 e^{{{-r2}x}}$', f'$y = (C_1 + C_2 x)e^{{{r1}x}}$', f'$y = C_1 \\cos({abs(r2)}x) + C_2 \\sin({abs(r2)}x)$']
+            st = steps(f'Phương trình đặc trưng: $k^2 {sb}k {sc} = 0 \\Leftrightarrow k_1 = {r1},\\; k_2 = {r2}$.', f'Do $k_1 \\ne k_2$ thực nên nghiệm tổng quát là $y = C_1 e^{{{r1}x}} + C_2 e^{{{r2}x}}$.')
+            it = G.finish(G.clean(dict(q=q, options=[ok]+wr, answer=0, steps=st, note='Phương trình đặc trưng $ak^2+bk+c=0$ có 2 nghiệm thực phân biệt $k_1 \\ne k_2$ thì $y = C_1 e^{k_1 x} + C_2 e^{k_2 x}$.')), 'practice_v2_ode', 'v2')
+            it.update(topic='v2', type='mcq')
+            extra.append(it)
+        remaining['v2'] = 0
     missing = {topic: count for topic, count in remaining.items() if count}
     if missing:
         raise RuntimeError('Generator did not fill all topic banks: %r' % missing)
