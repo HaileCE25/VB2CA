@@ -2730,10 +2730,20 @@
   render();
 })();
 
+
 /* TOPICS_FILTER_ENHANCER */
 (function(){
   var dsKeys = ['ma trận', 'định thức', 'véc tơ', 'vectơ', 'hạng', 'trị riêng', 'chéo hóa', 'tuyến tính'];
+  function syncTheme() {
+    var bg = getComputedStyle(document.body).backgroundColor;
+    var m = bg.match(/\d+/g);
+    if (m && m.length >= 3) {
+      var lum = 0.299*Number(m[0]) + 0.587*Number(m[1]) + 0.114*Number(m[2]);
+      document.documentElement.classList.toggle('is-dark-ui', lum < 128);
+    }
+  }
   function enhanceTopics() {
+    syncTheme();
     var tbody = document.querySelector('table tbody');
     if (!tbody || !tbody.rows[1]) return;
     Array.from(tbody.rows).forEach(function(tr) {
@@ -2785,6 +2795,6 @@
     });
     table.parentNode.insertBefore(bar, table);
   }
-  new MutationObserver(enhanceTopics).observe(document.body, { childList: true, subtree: true });
+  new MutationObserver(enhanceTopics).observe(document.documentElement, { attributes: true, childList: true, subtree: true });
   window.addEventListener('DOMContentLoaded', enhanceTopics);
 })();
