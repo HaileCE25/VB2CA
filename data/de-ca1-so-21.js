@@ -234,16 +234,16 @@
    "note": "Thay $t = 0$ để tìm hằng số trong công thức nghiệm; với $k = \\dfrac{\\ln 2}{T}$ thì $e^{-kT} = \\dfrac12$."
   },
   {
-   "q": "Theo phương pháp hệ số bất định, một nghiệm riêng của phương trình $y'' + 9y = \\sin 3x$ được tìm dưới dạng nào sau đây ($A, B, C$ là các hằng số cần xác định)?",
+   "q": "Gọi $y = y(x)$ là nghiệm của bài toán $y'' + 2y' + y = 2e^{-x}$ với điều kiện $y(0) = 1;\\ y'(0) = 1$. Chú ý $k = -1$ là nghiệm kép của phương trình đặc trưng, giá trị của $y(1)$ bằng",
    "options": [
-    "$y^* = x(A\\cos 3x + B\\sin 3x)$.",
-    "$y^* = A\\sin 3x$.",
-    "$y^* = A\\cos 3x + B\\sin 3x$.",
-    "$y^* = Ax\\sin 3x$."
+    "$\\dfrac{4}{e}$.",
+    "$\\dfrac{3}{e}$.",
+    "$\\dfrac{5}{e}$.",
+    "$4$."
    ],
    "answer": 0,
-   "explain": "$k^2+9=0\\Rightarrow k=\\pm3i$, trùng với tần số $3$ của $\\sin3x$. Dạng chưa cộng hưởng là $A\\cos3x+B\\sin3x$; nhân thêm $x$.<br>Dạng cần tìm: $y^* = x(A\\cos 3x + B\\sin 3x)$",
-   "note": "Bội của số mũ (hoặc của $\\alpha \\pm i\\beta$) trong phương trình đặc trưng quyết định nhân thêm $1$, $x$ hay $x^2$."
+   "explain": "Phương trình đặc trưng: $k^{2} + 2 k + 1 = 0$, nghiệm kép $k = -1$<br>$y^* = ax^2e^{-x}$; đặt $y^* = ue^{-x}$ thì vế trái bằng $u^{\\prime\\prime}e^{-x} = 2ae^{-x}$; so với vế phải: $2a = 2 \\Rightarrow a = 1$<br>$y = (C_1 + C_2x + x^2)e^{-x}$<br>$y(0) = C_1 = 1;\\quad y'(0) = - C_{1} + C_2 = 1 \\Rightarrow C_2 = 2$<br>$y(1) = (1 + (2) + 1)e^{-1} = \\dfrac{4}{e}$",
+   "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$)."
   },
   {
    "q": "Cho miền $D = \\{(x,y): 4 \\le x^2 + y^2 \\le 16,\\ y \\ge x,\\ x \\ge 0\\}$. Khi chuyển sang tọa độ cực $x = r\\cos\\varphi,\\ y = r\\sin\\varphi$, tích phân $\\displaystyle\\iint_D f(x,y)\\,dxdy$ được viết là",

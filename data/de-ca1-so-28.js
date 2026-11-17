@@ -126,15 +126,15 @@
    "note": "Tiệm cận đứng: nghiệm của mẫu không bị rút gọn với tử; tiệm cận ngang: xét riêng $x \\to +\\infty$ và $x \\to -\\infty$ (với căn thức, hai phía có thể khác nhau)."
   },
   {
-   "q": "Cho hàm số $f$ có đạo hàm cấp hai liên tục trên khoảng $(a;b)$ và $x_0 \\in (a;b)$. Phát biểu nào sau đây là đúng?",
+   "q": "Cho hàm số $f(x) = x^{3} - 2 x$. Vi phân $dy$ tại $x_0 = 1$ với $dx = \\dfrac{1}{10}$ bằng",
    "options": [
-    "Nếu $f'(x_0) = 0$ và $f''(x_0) > 0$ thì $f$ đạt cực tiểu tại $x_0$.",
-    "Nếu $f'(x_0) = 0$ và $f''(x_0) > 0$ thì $f$ đạt cực đại tại $x_0$.",
-    "Nếu $f''(x_0) = 0$ thì $x_0$ là hoành độ điểm uốn của đồ thị.",
-    "Nếu $f$ đạt cực tiểu tại $x_0$ thì $f''(x_0) > 0$."
+    "$\\dfrac{1}{10}$.",
+    "$- \\dfrac{1}{10}$.",
+    "$\\dfrac{1}{5}$.",
+    "$\\dfrac{131}{1000}$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> Nếu $f'(x_0) = 0$ và $f''(x_0) > 0$ thì $f$ đạt cực tiểu tại $x_0$. Đây là điều kiện đủ của cực trị theo đạo hàm cấp hai.<br><b>Sai:</b> Nếu $f'(x_0) = 0$ và $f''(x_0) > 0$ thì $f$ đạt cực đại tại $x_0$. $f(x) = x^2$ có $f'(0) = 0$, $f''(0) = 2 > 0$ và đạt cực tiểu tại $0$.<br><b>Sai:</b> Nếu $f''(x_0) = 0$ thì $x_0$ là hoành độ điểm uốn của đồ thị. $f(x) = x^4$ có $f''(0) = 0$ nhưng $f'' = 12x^2$ không đổi dấu khi qua $0$.<br><b>Sai:</b> Nếu $f$ đạt cực tiểu tại $x_0$ thì $f''(x_0) > 0$. $f(x) = x^4$ đạt cực tiểu tại $0$ mà $f''(0) = 0$."
+   "explain": "$f'(x) = 3 x^{2} - 2$<br>$dy = f'(1)\\\\cdot dx = 1\\\\cdot\\dfrac{1}{10} = \\dfrac{1}{10}$"
   },
   {
    "q": "Cho mặt cong $z = x^{2} y$. Mặt phẳng tiếp xúc với mặt cong tại điểm $M(2;1;4)$ có phương trình $z = z_0 + f'_x(M)(x - x_0) + f'_y(M)(y - y_0)$. Mặt phẳng này cắt trục $Oz$ tại điểm có cao độ bằng",
@@ -185,15 +185,15 @@
    "note": "Tiêu chuẩn Cauchy: lấy căn bậc $n$ làm mất số mũ $n$; số mũ $2n$ thì còn lại bình phương."
   },
   {
-   "q": "Xét chuỗi đan dấu $S = \\displaystyle\\sum_{n=1}^{+\\infty}\\dfrac{(-1)^{n+1}}{n}$ và gọi $S_n$ là tổng riêng thứ $n$. Theo đánh giá sai số của chuỗi Leibniz, $|S - S_n| \\le a_{n+1}$ với $a_n = \\dfrac{1}{n}$. Số $n$ nhỏ nhất để đánh giá này bảo đảm $|S - S_n| \\le 0{,}01$ là",
+   "q": "Xét chuỗi đan dấu $S = \\displaystyle\\sum_{n=1}^{+\\infty}\\dfrac{(-1)^{n+1}}{n^{3}}$ và gọi $S_n$ là tổng riêng thứ $n$. Theo đánh giá sai số của chuỗi Leibniz, $|S - S_n| \\le a_{n+1}$ với $a_n = \\dfrac{1}{n^{3}}$. Số $n$ nhỏ nhất để đánh giá này bảo đảm $|S - S_n| \\le 0{,}001$ là",
    "options": [
-    "$99$.",
-    "$100$.",
-    "$98$.",
-    "$999$."
+    "$9$.",
+    "$10$.",
+    "$8$.",
+    "$99$."
    ],
    "answer": 0,
-   "explain": "Leibniz: $|S-S_n|\\le a_{n+1}=\\dfrac1{(n+1)^{1}}$. Muốn sai số không quá $\\varepsilon=0{,}01$, cần $\\dfrac1{(n+1)^{1}}\\le0{,}01$.<br>Biến đổi bất đẳng thức: $(n+1)^{1}\\ge100 \\Rightarrow n+1\\ge100\\approx100$.<br>$n$ nguyên nên $n\\ge99$; số nguyên nhỏ nhất là $n=99$.",
+   "explain": "Leibniz: $|S-S_n|\\le a_{n+1}=\\dfrac1{(n+1)^{3}}$. Muốn sai số không quá $\\varepsilon=0{,}001$, cần $\\dfrac1{(n+1)^{3}}\\le0{,}001$.<br>Biến đổi bất đẳng thức: $(n+1)^{3}\\ge1000 \\Rightarrow n+1\\ge10\\approx10$.<br>$n$ nguyên nên $n\\ge9$; số nguyên nhỏ nhất là $n=9$.",
    "note": "Leibniz: $a_n$ giảm về 0 thì chuỗi đan dấu hội tụ; hội tụ tuyệt đối phải xét thêm $\\sum a_n$; nếu $a_n \\not\\to 0$ thì chuỗi phân kỳ."
   },
   {
@@ -339,16 +339,15 @@
    "note": "Có đạo hàm cấp hai tại điểm nối: giá trị, đạo hàm cấp một và đạo hàm cấp hai ở hai phía đều phải khớp nhau."
   },
   {
-   "q": "Thể tích của khối tròn xoay tạo thành khi quay quanh trục $Ox$ hình phẳng giới hạn bởi các đường $y = \\sqrt{x}$, $y = 0$, $x = 0$ và $x = 2$ bằng",
+   "q": "Tìm hoành độ trọng tâm $\\bar{x}$ của hình phẳng giới hạn bởi $y = x$, $y = 0$ và $x = 8$ (tam giác vuông). Biết $\\bar{x} = \\dfrac{\\iint_D x\\,dA}{\\iint_D dA}$, giá trị $\\bar{x}$ bằng",
    "options": [
-    "$2 \\pi$.",
-    "$2$.",
-    "$\\dfrac{4 \\sqrt{2} \\pi}{3}$.",
-    "$4 \\pi$."
+    "$\\dfrac{16}{3}$.",
+    "$4$.",
+    "$\\dfrac{8}{3}$.",
+    "$6$."
    ],
    "answer": 0,
-   "explain": "$V=\\pi\\int_0^{2}y^2dx=\\pi\\int_0^{2}xdx$; bình phương hàm số cho biểu thức dưới dấu tích phân như trên.<br>Nguyên hàm là $\\dfrac{x^{2}}{2}$. Thế cận: $V=\\pi(2-0)=2 \\pi$.",
-   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$."
+   "explain": "Diện tích $S = \\dfrac{1}{2} \\cdot 8^2 = 32$<br>$\\iint_D x\\,dA = \\displaystyle\\int_0^{8} x \\cdot x\\,dx = \\left[\\dfrac{x^3}{3}\\right]_0^{8} = \\dfrac{512}{3}$<br>$\\bar{x} = \\dfrac{\\dfrac{512}{3}}{32} = \\dfrac{16}{3}$"
   },
   {
    "q": "Một đêm nhạc gây quỹ bán ba hạng vé: hạng thường giá 40 nghìn đồng, hạng trung giá 60 nghìn đồng và hạng VIP giá 100 nghìn đồng. Ban tổ chức bán được tổng cộng 160 vé, thu về 8000 nghìn đồng; số vé hạng thường nhiều hơn tổng số vé hai hạng còn lại là 40 vé. Số vé hạng VIP đã bán bằng",

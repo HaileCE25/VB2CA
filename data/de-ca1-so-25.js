@@ -232,15 +232,15 @@
    "note": "Thay $t = 0$ để tìm hằng số trong công thức nghiệm; với $k = \\dfrac{\\ln 2}{T}$ thì $e^{-kT} = \\dfrac12$."
   },
   {
-   "q": "Theo phương pháp hệ số bất định, một nghiệm riêng của phương trình $y'' - 4y = e^{2x} + 1$ được tìm dưới dạng nào sau đây ($A, B, C$ là các hằng số cần xác định)?",
+   "q": "Theo phương pháp hệ số bất định, một nghiệm riêng của phương trình $y'' + 2y' + 5y = e^{-x}\\cos 2x$ được tìm dưới dạng nào sau đây ($A, B, C$ là các hằng số cần xác định)?",
    "options": [
-    "$y^* = Axe^{2x} + B$.",
-    "$y^* = Ae^{2x} + B$.",
-    "$y^* = Axe^{2x} + Bx$.",
-    "$y^* = Ax^2e^{2x} + B$."
+    "$y^* = xe^{-x}(A\\cos 2x + B\\sin 2x)$.",
+    "$y^* = e^{-x}(A\\cos 2x + B\\sin 2x)$.",
+    "$y^* = Axe^{-x}\\cos 2x$.",
+    "$y^* = x^2e^{-x}(A\\cos 2x + B\\sin 2x)$."
    ],
    "answer": 0,
-   "explain": "$k^2-4=(k-2)(k+2)=0$. Hạng $e^{2x}$ cộng hưởng với nghiệm đơn $2$, nên dùng $Axe^{2x}$; hạng hằng $1$ ứng với $k=0$ không là nghiệm, nên dùng $B$.<br>Dạng cần tìm: $y^* = Axe^{2x} + B$",
+   "explain": "$k^2+2k+5=0\\Rightarrow k=-1\\pm2i$, đúng bằng cặp số mũ phức của $e^{-x}\\cos2x$. Dạng $e^{-x}(A\\cos2x+B\\sin2x)$ cộng hưởng bậc 1 nên nhân thêm $x$.<br>Dạng cần tìm: $y^* = xe^{-x}(A\\cos 2x + B\\sin 2x)$",
    "note": "Bội của số mũ (hoặc của $\\alpha \\pm i\\beta$) trong phương trình đặc trưng quyết định nhân thêm $1$, $x$ hay $x^2$."
   },
   {
@@ -340,15 +340,15 @@
    "note": "Có đạo hàm cấp hai tại điểm nối: giá trị, đạo hàm cấp một và đạo hàm cấp hai ở hai phía đều phải khớp nhau."
   },
   {
-   "q": "Tính độ dài cung của đường cong $y = \\dfrac{x^2}{2}$ từ $x = 0$ đến $x = 8$. Biết $\\int\\sqrt{1+x^2}\\,dx = \\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2} + C$.",
+   "q": "Một tấm phẳng hình chữ nhật chiều rộng 3 m, chiều cao 3 m được nhúng thẳng đứng vào nước sao cho cạnh trên ở độ sâu 0 m. Lấy $g = 9{,}8\\,m/s^2$. Áp lực của nước lên tấm bằng",
    "options": [
-    "$\\dfrac{\\operatorname{asinh}{\\left(8 \\right)}}{2} + 4 \\sqrt{65}$.",
-    "$\\dfrac{\\operatorname{asinh}{\\left(8 \\right)}}{4} + 2 \\sqrt{65}$.",
-    "$\\operatorname{asinh}{\\left(8 \\right)} + 8 \\sqrt{65}$.",
-    "$1 + \\dfrac{\\operatorname{asinh}{\\left(8 \\right)}}{2} + 4 \\sqrt{65}$."
+    "132300 <i>N</i>.",
+    "66150 <i>N</i>.",
+    "264600 <i>N</i>.",
+    "44100 <i>N</i>."
    ],
    "answer": 0,
-   "explain": "$y' = x$, $L = \\displaystyle\\int_0^{8}\\sqrt{1 + x^2}\\,dx$<br>$L = \\left[\\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2}\\right]_0^{8} = \\dfrac{\\operatorname{asinh}{\\left(8 \\right)}}{2} + 4 \\sqrt{65}$"
+   "explain": "Dải ngang ở độ sâu $(0 + y)$ m, diện tích $3\\,dy$, áp lực $1000 \\cdot 9{,}8 \\cdot (0 + y) \\cdot 3\\,dy$<br>$F = \\displaystyle\\int_0^{3} 9800 \\cdot 3 \\cdot (0 + y)\\,dy = 98003\\left[0y + \\dfrac{y^2}{2}\\right]_0^{3} = 132300\\,N = \\dfrac{1323}{10}\\,kN$"
   },
   {
    "q": "Khảo sát thị trường của 3 loại hàng hóa có liên quan được đánh số 1, 2, 3. Lượng cung $s_i$ và lượng cầu $d_i$ của hàng hóa thứ $i$ phụ thuộc vào giá $p_1, p_2, p_3$ của cả ba loại theo các hệ thức: $$\\begin{cases}s_1 = 3 p_{1} + p_{2} - 70\\\\ s_2 = - p_{1} + 2 p_{2} - p_{3} + 75\\\\ s_3 = - p_{1} + 3 p_{3} - 45\\end{cases}\\ \\text{và}\\ \\begin{cases}d_1 = - p_{1} + p_{2} + 70\\\\ d_2 = 60 - 2 p_{2}\\\\ d_3 = p_{1} - p_{3} + 45\\end{cases}.$$ Thị trường cân bằng khi $s_i = d_i$ với mọi $i = \\overline{1,3}$. Tổng lượng cung của cả ba loại hàng hóa tại trạng thái cân bằng bằng",

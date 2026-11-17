@@ -115,16 +115,15 @@
    "note": "Thay vô cùng bé tương đương chỉ dùng được trong tích và thương; với hiệu hai vô cùng bé cùng bậc phải khai triển Maclaurin đến bậc cao hơn."
   },
   {
-   "q": "Biết hàm số $f(x) = \\begin{cases}\\dfrac{x^2 + ax + b}{x - 3} & \\text{khi } x \\ne 3\\\\[2mm] 7 & \\text{khi } x = 3\\end{cases}$ liên tục trên $\\mathbb{R}$. Giá trị của $a - b$ bằng",
+   "q": "Xét việc dùng quy tắc L’Hôpital để tính $\\lim\\limits_{x\\to x_0}\\dfrac{f(x)}{g(x)}$. Phát biểu nào sau đây là đúng?",
    "options": [
-    "$13$.",
-    "$-11$.",
-    "$1$.",
-    "$-12$."
+    "Quy tắc chỉ áp dụng trực tiếp cho các dạng vô định $\\dfrac00$ và $\\dfrac{\\infty}{\\infty}$.",
+    "Với mọi $f, g$ khả vi luôn có $\\lim\\dfrac{f(x)}{g(x)} = \\lim\\dfrac{f'(x)}{g'(x)}$.",
+    "$\\lim\\dfrac{f(x)}{g(x)} = \\lim\\left(\\dfrac{f(x)}{g(x)}\\right)'$.",
+    "Nếu $\\lim\\dfrac{f'(x)}{g'(x)}$ không tồn tại thì $\\lim\\dfrac{f(x)}{g(x)}$ cũng không tồn tại."
    ],
    "answer": 0,
-   "explain": "Giới hạn tại $x = 3$ hữu hạn nên tử số bằng 0 tại đó: $9 + (3)a + b = 0$<br>Khi đó $x^2 + ax + b = (x - 3)(x + a + (3))$ nên $\\displaystyle \\lim\\limits_{x\\to3} f(x) = 2\\cdot(3) + a$<br>$2\\cdot(3) + a = 7 \\Rightarrow a = 1,\\ b = -12$<br>$a - b = 13$",
-   "note": "Liên tục tại $x_0$ $\\Leftrightarrow$ giới hạn trái = giới hạn phải = $f(x_0)$; giới hạn hữu hạn mà mẫu tiến về 0 thì tử cũng phải tiến về 0."
+   "explain": "<b>Đúng:</b> Quy tắc chỉ áp dụng trực tiếp cho các dạng vô định $\\dfrac00$ và $\\dfrac{\\infty}{\\infty}$. Đó là giả thiết của định lí; các dạng vô định khác phải được biến đổi về một trong hai dạng này.<br><b>Sai:</b> Với mọi $f, g$ khả vi luôn có $\\displaystyle \\lim\\dfrac{f(x)}{g(x)} = \\displaystyle \\lim\\dfrac{f'(x)}{g'(x)}$. $\\displaystyle \\lim\\limits_{x\\to0}\\dfrac{x + 1}{x + 2} = \\dfrac12$, trong khi $\\dfrac{f'}{g'} = 1$.<br><b>Sai:</b> $\\displaystyle \\lim\\dfrac{f(x)}{g(x)} = \\displaystyle \\lim\\left(\\dfrac{f(x)}{g(x)}\\right)'$. Phải lấy đạo hàm riêng tử và riêng mẫu, không phải đạo hàm của thương.<br><b>Sai:</b> Nếu $\\displaystyle \\lim\\dfrac{f'(x)}{g'(x)}$ không tồn tại thì $\\displaystyle \\lim\\dfrac{f(x)}{g(x)}$ cũng không tồn tại. $\\displaystyle \\lim\\limits_{x\\to+\\infty}\\dfrac{x + \\sin x}{x} = 1$ dù $\\dfrac{1 + \\cos x}{1}$ không có giới hạn."
   },
   {
    "q": "Cho hàm số $f$ có đạo hàm trên khoảng $(a;b)$ và $x_0 \\in (a;b)$. Phát biểu nào sau đây là đúng?",
@@ -459,15 +458,16 @@
    "note": "Tọa độ trụ hợp với paraboloid, mặt nón; tọa độ cầu hợp với hình cầu; không quên định thức Jacobi."
   },
   {
-   "q": "Cho $L$ là một cung trơn nối điểm $A$ với điểm $B$. Phát biểu nào sau đây là đúng?",
+   "q": "Trong mặt phẳng $Oxy$, cho $L$ là đoạn thẳng nối từ $A(1;1)$ đến $B(5;4)$. Giá trị của tích phân $\\displaystyle\\int_L (3 x + y)\\,ds$ bằng",
    "options": [
-    "Tích phân đường loại một $\\displaystyle\\int_L f\\,ds$ không phụ thuộc chiều đi trên $L$, còn tích phân đường loại hai đổi dấu khi đổi chiều.",
-    "Cả hai loại tích phân đường đều đổi dấu khi đổi chiều đi trên $L$.",
-    "Cả hai loại tích phân đường đều không phụ thuộc chiều đi trên $L$.",
-    "Nếu $L$ là đường cong kín thì $\\displaystyle\\int_L 1\\,ds = 0$."
+    "$\\dfrac{115}{2}$.",
+    "$\\dfrac{23}{2}$.",
+    "$115$.",
+    "$95$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> Tích phân đường loại một $\\displaystyle\\int_L f\\,ds$ không phụ thuộc chiều đi trên $L$, còn tích phân đường loại hai đổi dấu khi đổi chiều. $ds > 0$ theo cả hai chiều, còn $dx, dy$ đổi dấu khi đổi chiều.<br><b>Sai:</b> Cả hai loại tích phân đường đều đổi dấu khi đổi chiều đi trên $L$. Tích phân loại một không đổi vì $ds$ là độ dài, luôn dương.<br><b>Sai:</b> Cả hai loại tích phân đường đều không phụ thuộc chiều đi trên $L$. Tích phân loại hai đổi dấu vì $dx, dy$ đổi dấu.<br><b>Sai:</b> Nếu $L$ là đường cong kín thì $\\displaystyle\\int_L 1\\,ds = 0$. $\\displaystyle\\int_L 1\\,ds$ bằng độ dài của $L$, luôn dương."
+   "explain": "Tham số hóa $x=1+4t,\\ y=1+3t$, $0\\le t\\le1$; $ds=\\sqrt{4^2+3^2}\\,dt=5\\,dt$.<br>$px+qy=p(<x1>+<dx>t)+q(<y1>+<dy>t)=4+15t$.<br>Do đó $\\displaystyle I=5\\int_0^1(4+15t)\\,dt=5(4+15/2)=\\dfrac{115}{2}$.",
+   "note": "Tích phân đường loại một: $ds = \\sqrt{x'^2 + y'^2}\\,dt$, không phụ thuộc chiều đi trên đường cong."
   },
   {
    "q": "Cho $L$ là đoạn thẳng nối điểm $A(2;-2)$ với điểm $B(-1;2)$. Giá trị của tích phân đường loại một $\\displaystyle\\int_L (2 x + y + 2)\\,ds$ bằng",

@@ -233,15 +233,15 @@
    "note": "Thay $t = 0$ để tìm hằng số trong công thức nghiệm; với $k = \\dfrac{\\ln 2}{T}$ thì $e^{-kT} = \\dfrac12$."
   },
   {
-   "q": "Gọi $y = y(x)$ là nghiệm của bài toán $y'' + 4y = 16\\cos 2x$ với điều kiện $y(0) = 1;\\ y'(0) = 6$. Chú ý vế phải cộng hưởng với nghiệm của phương trình thuần nhất, giá trị của $y\\left(\\dfrac{\\pi}{4}\\right)$ bằng",
+   "q": "Gọi $y = y(x)$ là nghiệm của bài toán $y'' - 4y' + 4y = 4e^{2x}$ với điều kiện $y(0) = 0;\\ y'(0) = 1$. Chú ý $k = 2$ là nghiệm kép của phương trình đặc trưng, giá trị của $y(1)$ bằng",
    "options": [
-    "$3 + \\pi$.",
-    "$3$.",
-    "$\\pi$.",
-    "$3 - \\pi$."
+    "$3 e^{2}$.",
+    "$e^{2}$.",
+    "$5 e^{2}$.",
+    "$3$."
    ],
    "answer": 0,
-   "explain": "Phương trình đặc trưng: $k^2 + 4 = 0 \\Rightarrow k = \\pm 2i$ (trùng tần số của vế phải)<br>$y^*=x(a\\cos 2x + b\\sin 2x)$. Tính đạo hàm hai lần và cộng $4y^*$: $y^{*\\prime\\prime}+4y^*=-4a\\sin 2x + 4b\\cos 2x$.<br>Đối chiếu hệ số với vế phải $16\\cos 2x$: hệ số của $\\sin(wx)$ bằng $-2wa=0$ nên $a=0$; hệ số của $\\cos(wx)$ là $2wb=c$, do đó $b=\\dfrac{c}{2w}=4$.<br>$y = C_1\\cos 2x + C_2\\sin 2x + 4x\\sin 2x$<br>$y(0)=C_1=1$. Also $y^\\prime(0)=wC_2=6$, so $C_2=3$.<br>At $x_0=\\dfrac{\\pi}{2w}$, $\\cos(wx_0)=0$ and $\\sin(wx_0)=1$. Thus the homogeneous part is $3$ and the particular part is $4\\cdot\\dfrac{\\pi}{2w}=\\pi$; hence $y(x_0)=3+\\pi=3 + \\pi$.",
+   "explain": "Phương trình đặc trưng: $k^{2} - 4 k + 4 = 0$, nghiệm kép $k = 2$<br>$y^* = ax^2e^{2x}$; đặt $y^* = ue^{2x}$ thì vế trái bằng $u^{\\prime\\prime}e^{2x} = 2ae^{2x}$; so với vế phải: $2a = 4 \\Rightarrow a = 2$<br>$y = (C_1 + C_2x + 2x^2)e^{2x}$<br>$y(0) = C_1 = 0;\\quad y'(0) = 2 C_{1} + C_2 = 1 \\Rightarrow C_2 = 1$<br>$y(1) = (0 + (1) + 2)e^{2} = 3 e^{2}$",
    "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$)."
   },
   {
@@ -341,15 +341,16 @@
    "note": "Có đạo hàm cấp hai tại điểm nối: giá trị, đạo hàm cấp một và đạo hàm cấp hai ở hai phía đều phải khớp nhau."
   },
   {
-   "q": "Tính diện tích hình phẳng giới hạn bởi parabol $y = x^2$ và đường thẳng $y = 6x$.",
+   "q": "Thể tích của khối tròn xoay tạo thành khi quay quanh trục $Ox$ hình phẳng giới hạn bởi các đường $y = \\sqrt{x}$, $y = 0$, $x = 0$ và $x = 2$ bằng",
    "options": [
-    "$36$.",
-    "$18$.",
-    "$72$.",
-    "$37$."
+    "$2 \\pi$.",
+    "$2$.",
+    "$\\dfrac{4 \\sqrt{2} \\pi}{3}$.",
+    "$4 \\pi$."
    ],
    "answer": 0,
-   "explain": "Giao điểm: $x^2 = 6x \\Rightarrow x = 0$ và $x = 6$<br>$S = \\displaystyle\\int_0^{6}(6x - x^2)\\,dx = \\left[\\dfrac{6x^2}{2} - \\dfrac{x^3}{3}\\right]_0^{6} = 36$"
+   "explain": "$V=\\pi\\int_0^{2}y^2dx=\\pi\\int_0^{2}xdx$; bình phương hàm số cho biểu thức dưới dấu tích phân như trên.<br>Nguyên hàm là $\\dfrac{x^{2}}{2}$. Thế cận: $V=\\pi(2-0)=2 \\pi$.",
+   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$."
   },
   {
    "q": "Xét mô hình cân bằng thu nhập quốc dân: $Y = C + I_0 + G_0$; $C = 60 + 0{,}75(Y - T)$; $T = 0{,}2Y$, trong đó $Y$ là thu nhập, $C$ là tiêu dùng, $T$ là thuế, đầu tư $I_0 = 100$ và chi tiêu chính phủ $G_0 = 100$. Giá trị của số thuế $T^*$ tại trạng thái cân bằng bằng",

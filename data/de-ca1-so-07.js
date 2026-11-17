@@ -115,15 +115,15 @@
    "note": "Thay vô cùng bé tương đương chỉ dùng được trong tích và thương; với hiệu hai vô cùng bé cùng bậc phải khai triển Maclaurin đến bậc cao hơn."
   },
   {
-   "q": "Cho hàm số $f(x) = \\begin{cases}\\dfrac{1 - \\cos ax}{x^2} & \\text{khi } x < 0\\\\[2mm] b & \\text{khi } x = 0\\\\[1mm] \\dfrac{e^{8x} - 1}{x} & \\text{khi } x > 0\\end{cases}$ liên tục trên $\\mathbb{R}$. Giá trị của $a^2 + b$ bằng",
+   "q": "Cho hàm số $f(x) = \\begin{cases}\\dfrac{1 - \\cos ax}{x^2} & \\text{khi } x < 0\\\\[2mm] b & \\text{khi } x = 0\\\\[1mm] \\dfrac{e^{4x} - 1}{x} & \\text{khi } x > 0\\end{cases}$ liên tục trên $\\mathbb{R}$. Giá trị của $a^2 + b$ bằng",
    "options": [
-    "$24$.",
-    "$16$.",
     "$12$.",
-    "$64$."
+    "$8$.",
+    "$5$.",
+    "$16$."
    ],
    "answer": 0,
-   "explain": "$\\displaystyle \\lim\\limits_{x\\to0^+}\\dfrac{e^{8x} - 1}{x} = 8$<br>$\\displaystyle \\lim\\limits_{x\\to0^-}\\dfrac{1 - \\cos ax}{x^2} = \\dfrac{a^2}{2}$<br>Liên tục tại 0: $\\dfrac{a^2}{2} = b = 8 \\Rightarrow a^2 = 16,\\ b = 8$<br>$a^2 + b = 24$",
+   "explain": "$\\displaystyle \\lim\\limits_{x\\to0^+}\\dfrac{e^{4x} - 1}{x} = 4$<br>$\\displaystyle \\lim\\limits_{x\\to0^-}\\dfrac{1 - \\cos ax}{x^2} = \\dfrac{a^2}{2}$<br>Liên tục tại 0: $\\dfrac{a^2}{2} = b = 4 \\Rightarrow a^2 = 8,\\ b = 4$<br>$a^2 + b = 12$",
    "note": "Liên tục tại $x_0$ $\\Leftrightarrow$ giới hạn trái = giới hạn phải = $f(x_0)$; giới hạn hữu hạn mà mẫu tiến về 0 thì tử cũng phải tiến về 0."
   },
   {

@@ -197,15 +197,15 @@
    "note": "Leibniz: $a_n$ giảm về 0 thì chuỗi đan dấu hội tụ; hội tụ tuyệt đối phải xét thêm $\\sum a_n$; nếu $a_n \\not\\to 0$ thì chuỗi phân kỳ."
   },
   {
-   "q": "Xét bài toán Cauchy $y' = f(x,y),\\ y(x_0) = y_0$, trong đó $f$ và $f'_y$ liên tục trong một lân cận của điểm $(x_0;y_0)$. Phát biểu nào sau đây là đúng?",
+   "q": "Phương trình nào sau đây là phương trình Bernoulli (với $\\alpha \\ne 0,\\ \\alpha \\ne 1$)?",
    "options": [
-    "Trong một lân cận của $x_0$, bài toán có đúng một nghiệm.",
-    "Bài toán có vô số nghiệm, phụ thuộc một hằng số tùy ý.",
-    "Bài toán có thể vô nghiệm.",
-    "Nghiệm của bài toán luôn xác định với mọi $x \\in \\mathbb{R}$."
+    "$y' + \\dfrac{y}{x} = xy^3$.",
+    "$(3x^2 + 2xy^2)dx + (2x^2y + 4y^3)dy = 0$.",
+    "$y' = \\dfrac{1 + y^2}{1 + x^2}$.",
+    "$xy' - 2y = x^3$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> Trong một lân cận của $x_0$, bài toán có đúng một nghiệm. Đây là định lí tồn tại và duy nhất nghiệm.<br><b>Sai:</b> Bài toán có vô số nghiệm, phụ thuộc một hằng số tùy ý. Nghiệm tổng quát của phương trình mới phụ thuộc hằng số $C$; điều kiện đầu đã xác định $C$.<br><b>Sai:</b> Bài toán có thể vô nghiệm. Với giả thiết $f$ liên tục, nghiệm luôn tồn tại trong một lân cận của $x_0$.<br><b>Sai:</b> Nghiệm của bài toán luôn xác định với mọi $x \\in \\mathbb{R}$. $y' = y^2,\\ y(0) = 1$ có nghiệm $y = \\dfrac{1}{1 - x}$, chỉ xác định khi $x < 1$."
+   "explain": "<b>Đúng:</b> $y' + \\dfrac{y}{x} = xy^3$ — Dạng $y' + p(x)y = q(x)y^{\\alpha}$; $y'+\\dfracx y=xy^3$: dạng Bernoulli với $\\alpha=3$.<br><b>Sai:</b> $(3x^2 + 2xy^2)dx + (2x^2y + 4y^3)dy = 0$ — $P=(3x^2 + 2xy^2),\\ Q=2x^2y + 4y^3$: $\\frac{\\partial P}{\\partial y}=4xy$ và $\\frac{\\partial Q}{\\partial x}=4xy$; bằng nhau, nên toàn phần.; đây là là phương trình vi phân toàn phần, không phải dạng đang hỏi.<br><b>Sai:</b> $y' = \\dfrac{1 + y^2}{1 + x^2}$ — $\\dfrac{dy}{1+y^2}=\\dfrac{dx}{1+x^2}$, tách được biến.; đây là là phương trình có biến số phân ly (tách được $x$ và $y$ về hai vế), không phải dạng đang hỏi.<br><b>Sai:</b> $xy' - 2y = x^3$ — Chia cho $x\\ne0$: $y'-\\dfrac2x y=x^2$, đúng dạng $y'+p(x)y=q(x)$.; đây là là phương trình tuyến tính cấp một (bậc nhất đối với $y$ và $y'$), không phải dạng đang hỏi."
   },
   {
    "q": "Gọi $y = y(x)$ là nghiệm của phương trình đẳng cấp $y' = \\dfrac{y}{x} + 2\\dfrac{y^2}{x^2}$ $(x > 0)$ thỏa mãn $y(1) = 1$. Bằng phép đặt $y = ux$, giá trị của $y\\left(\\sqrt[4]{e}\\right)$ bằng",

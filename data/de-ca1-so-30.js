@@ -127,15 +127,15 @@
    "note": "Tiệm cận đứng: nghiệm của mẫu không bị rút gọn với tử; tiệm cận ngang: xét riêng $x \\to +\\infty$ và $x \\to -\\infty$ (với căn thức, hai phía có thể khác nhau)."
   },
   {
-   "q": "Cho hàm số $f(x) = \\arcsin(x)$. Giá trị của $f'(x_0)$ tại $x_0 = \\dfrac{5}{13}$ bằng",
+   "q": "Dùng vi phân để ước tính sai số tương đối $\\dfrac{|\\Delta V|}{V}$ của thể tích hình cầu bán kính $r = 5$ cm khi sai số đo bán kính là $|\\Delta r| \\le \\dfrac{1}{10}$ cm",
    "options": [
-    "$\\dfrac{13}{12}$.",
-    "$- \\dfrac{13}{12}$.",
-    "$\\dfrac{13}{6}$.",
-    "$1$."
+    "$\\dfrac{3}{50}$.",
+    "$\\dfrac{3}{100}$.",
+    "$\\dfrac{3}{25}$.",
+    "$\\dfrac{1}{50}$."
    ],
    "answer": 0,
-   "explain": "$f'(x) = \\dfrac{1}{\\sqrt{1 - x^2}}$<br>Tại $x_0 = \\dfrac{5}{13}$: $\\sqrt{1 - x_0^2} = \\dfrac{12}{13}$; $f'(x_0) = \\dfrac{13}{12}$"
+   "explain": "$V = \\dfrac{4}{3}\\pi r^3 \\Rightarrow dV = 4\\pi r^2\\\\,dr$<br>$\\dfrac{|dV|}{V} = \\dfrac{4\\pi r^2\\\\,|dr|}{\\frac{4}{3}\\pi r^3} = \\dfrac{3|dr|}{r} = \\dfrac{3\\cdot\\dfrac{1}{10}}{5} = \\dfrac{3}{50}$"
   },
   {
    "q": "Cho hàm số $f(x,y) = x^{3} - 3 x y + y^{2}$. Đạo hàm của $f$ tại điểm $M(2;1)$ theo hướng của véc tơ $\\vec l = (3;4)$, tính bởi $\\dfrac{\\partial f}{\\partial \\vec l} = \\nabla f(M)\\cdot\\dfrac{\\vec l}{|\\vec l|}$, bằng",
@@ -150,15 +150,16 @@
    "note": "Phải chia cho độ dài $|\\vec l|$: đạo hàm theo hướng dùng véc tơ đơn vị."
   },
   {
-   "q": "Xét bài toán tìm cực trị của $f(x,y)$ với điều kiện $g(x,y) = 0$ (giả sử $\\nabla g \\ne \\vec 0$) bằng hàm Lagrange $L = f + \\lambda g$. Phát biểu nào sau đây là đúng?",
+   "q": "Người ta tính công suất $P = \\dfrac{U^2}{R}$ của một điện trở từ hai đại lượng đo được. Biết hiệu điện thế $U$ được đo với sai số tương đối không quá 1% và điện trở $R$ với sai số tương đối không quá 0,5%. Dùng vi phân toàn phần của $\\ln P$, sai số tương đối lớn nhất của $P$ xấp xỉ bằng",
    "options": [
-    "Điểm cực trị có điều kiện (nếu có) phải thỏa mãn hệ $L'_x = 0,\\ L'_y = 0,\\ g = 0$.",
-    "Mọi nghiệm của hệ $L'_x = 0,\\ L'_y = 0,\\ g = 0$ đều là điểm cực trị có điều kiện.",
-    "Điểm cực trị có điều kiện phải là điểm dừng của $f$, tức $f'_x = f'_y = 0$.",
-    "Tại điểm cực trị có điều kiện, $\\nabla f$ vuông góc với $\\nabla g$."
+    "2,5%.",
+    "1,5%.",
+    "1%.",
+    "5%."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> Điểm cực trị có điều kiện (nếu có) phải thỏa mãn hệ $L'_x = 0,\\ L'_y = 0,\\ g = 0$. Đây là điều kiện cần của cực trị có điều kiện.<br><b>Sai:</b> Mọi nghiệm của hệ $L'_x = 0,\\ L'_y = 0,\\ g = 0$ đều là điểm cực trị có điều kiện. Hệ chỉ là điều kiện cần: $f = x^3$ với điều kiện $y = 0$ cho nghiệm $(0;0)$, nhưng trên đường $y = 0$ hàm $x^3$ không có cực trị.<br><b>Sai:</b> Điểm cực trị có điều kiện phải là điểm dừng của $f$, tức $f'_x = f'_y = 0$. $f = x + y$ với $x^2 + y^2 = 1$ có cực trị dù $\\nabla f = (1;1)$ không bao giờ bằng $\\vec 0$.<br><b>Sai:</b> Tại điểm cực trị có điều kiện, $\\nabla f$ vuông góc với $\\nabla g$. Hai gradient cùng phương: $\\nabla f = -\\lambda\\nabla g$."
+   "explain": "Từ công thức đã cho, viết dạng lũy thừa theo hai đại lượng đo: $\\ln P=C+2\\ln u-1\\ln v$ (hằng số $C$ không đổi).<br>Vi phân: $\\dfrac{dP}{P}=+2\\dfrac{du}{u}-1\\dfrac{dv}{v}$. Lấy trị tuyệt đối và dùng các cận đo: $\\dfrac{|\\Delta P|}{|P|}\\le 2\\dfrac{|\\Delta u|}{u}+1\\dfrac{|\\Delta v|}{v}$.<br>$= 2\\cdot1\\% + 1\\cdot0{,}5\\% = 2{,}5\\%$.",
+   "note": "Lấy lôgarit rồi vi phân: sai số tương đối của tích, thương bằng tổng các sai số tương đối nhân với trị tuyệt đối của số mũ."
   },
   {
    "q": "Giá trị nhỏ nhất của hàm số $f(x,y) = x^2 + y^2$ với điều kiện $3 x + 4 y = 75$ bằng<span class=\"q-hint\">Gợi ý: có thể dùng phương pháp nhân tử Lagrange.</span>",
@@ -232,15 +233,15 @@
    "note": "Thay $t = 0$ để tìm hằng số trong công thức nghiệm; với $k = \\dfrac{\\ln 2}{T}$ thì $e^{-kT} = \\dfrac12$."
   },
   {
-   "q": "Gọi $y = y(x)$ là nghiệm của bài toán $y'' + y = 12\\cos x$ với điều kiện $y(0) = 3;\\ y'(0) = 3$. Chú ý vế phải cộng hưởng với nghiệm của phương trình thuần nhất, giá trị của $y\\left(\\dfrac{\\pi}{2}\\right)$ bằng",
+   "q": "Gọi $y = y(x)$ là nghiệm của bài toán $y'' - 2y' + y = 4e^{x}$ với điều kiện $y(0) = 0;\\ y'(0) = -1$. Chú ý $k = 1$ là nghiệm kép của phương trình đặc trưng, giá trị của $y(1)$ bằng",
    "options": [
-    "$3 + 3 \\pi$.",
-    "$3$.",
-    "$3 \\pi$.",
-    "$3 - 3 \\pi$."
+    "$e$.",
+    "$- e$.",
+    "$3 e$.",
+    "$1$."
    ],
    "answer": 0,
-   "explain": "Phương trình đặc trưng: $k^2 + 1 = 0 \\Rightarrow k = \\pm i$ (trùng tần số của vế phải)<br>$y^*=x(a\\cos x + b\\sin x)$. Tính đạo hàm hai lần và cộng $y^*$: $y^{*\\prime\\prime}+y^*=-2a\\sin x + 2b\\cos x$.<br>Đối chiếu hệ số với vế phải $12\\cos x$: hệ số của $\\sin(wx)$ bằng $-2wa=0$ nên $a=0$; hệ số của $\\cos(wx)$ là $2wb=c$, do đó $b=\\dfrac{c}{2w}=6$.<br>$y = C_1\\cos x + C_2\\sin x + 6x\\sin x$<br>$y(0)=C_1=3$. Also $y^\\prime(0)=wC_2=3$, so $C_2=3$.<br>At $x_0=\\dfrac{\\pi}{2w}$, $\\cos(wx_0)=0$ and $\\sin(wx_0)=1$. Thus the homogeneous part is $3$ and the particular part is $6\\cdot\\dfrac{\\pi}{2w}=3 \\pi$; hence $y(x_0)=3+3 \\pi=3 + 3 \\pi$.",
+   "explain": "Phương trình đặc trưng: $k^{2} - 2 k + 1 = 0$, nghiệm kép $k = 1$<br>$y^* = ax^2e^{x}$; đặt $y^* = ue^{x}$ thì vế trái bằng $u^{\\prime\\prime}e^{x} = 2ae^{x}$; so với vế phải: $2a = 4 \\Rightarrow a = 2$<br>$y = (C_1 + C_2x + 2x^2)e^{x}$<br>$y(0) = C_1 = 0;\\quad y'(0) = C_{1} + C_2 = -1 \\Rightarrow C_2 = -1$<br>$y(1) = (0 + (-1) + 2)e = e$",
    "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$)."
   },
   {

@@ -149,15 +149,15 @@
    "note": "Tính $f'_x$ trước rồi đạo hàm tiếp theo $y$; với hàm đa thức, $f''_{xy} = f''_{yx}$."
   },
   {
-   "q": "Cho hàm số $f(x,y) = \\ln(x^2 + y^2)$. Vi phân toàn phần của hàm số tại điểm $(1;3)$ là",
+   "q": "Cho hàm số $f(x,y) = \\ln(x^2 + y^2)$. Vi phân toàn phần của hàm số tại điểm $(2;1)$ là",
    "options": [
-    "$\\dfrac{1}{5}dx + \\dfrac{3}{5}dy$.",
-    "$\\dfrac{1}{10}dx + \\dfrac{3}{10}dy$.",
-    "$2dx + 6dy$.",
-    "$\\dfrac{3}{5}dx + \\dfrac{1}{5}dy$."
+    "$\\dfrac{4}{5}dx + \\dfrac{2}{5}dy$.",
+    "$\\dfrac{2}{5}dx + \\dfrac{1}{5}dy$.",
+    "$4dx + 2dy$.",
+    "$\\dfrac{2}{5}dx + \\dfrac{4}{5}dy$."
    ],
    "answer": 0,
-   "explain": "$f'_x = \\dfrac{2x}{x^2 + y^2},\\quad f'_y = \\dfrac{2y}{x^2 + y^2}$<br>Tại $(1;3)$: $f'_x = \\dfrac{1}{5},\\ f'_y = \\dfrac{3}{5}$<br>$df = \\dfrac{1}{5}dx + \\dfrac{3}{5}dy$",
+   "explain": "$f'_x = \\dfrac{2x}{x^2 + y^2},\\quad f'_y = \\dfrac{2y}{x^2 + y^2}$<br>Tại $(2;1)$: $f'_x = \\dfrac{4}{5},\\ f'_y = \\dfrac{2}{5}$<br>$df = \\dfrac{4}{5}dx + \\dfrac{2}{5}dy$",
    "note": "$df = f'_xdx + f'_ydy$; khi tính gần đúng, $\\Delta x$ và $\\Delta y$ có thể mang dấu âm."
   },
   {
@@ -185,15 +185,16 @@
    "note": "So sánh với $\\sum\\dfrac{1}{n^\\alpha}$ (hội tụ khi $\\alpha > 1$); có $n!$ hoặc $a^n$ thì dùng D’Alembert; có lũy thừa bậc $n$ thì dùng Cauchy."
   },
   {
-   "q": "Cho chuỗi lũy thừa $\\displaystyle\\sum_{n=0}^{+\\infty}a_nx^n$ có bán kính hội tụ $R$ với $0 < R < +\\infty$. Phát biểu nào sau đây là đúng?",
+   "q": "Xét bốn chuỗi đan dấu $\\displaystyle\\sum_{n=1}^{+\\infty}\\dfrac{(-1)^n}{n\\sqrt n}$, $\\displaystyle\\sum_{n=1}^{+\\infty}\\dfrac{(-1)^n n}{2^n}$, $\\displaystyle\\sum_{n=1}^{+\\infty}\\dfrac{(-1)^n}{n!}$ và $\\displaystyle\\sum_{n=1}^{+\\infty}\\dfrac{(-1)^n}{n^2+1}$. Có bao nhiêu chuỗi hội tụ tuyệt đối trong bốn chuỗi trên?",
    "options": [
-    "Chuỗi hội tụ tuyệt đối tại mọi $x$ thỏa mãn $|x| < R$.",
-    "Chuỗi luôn hội tụ tại $x = R$ và $x = -R$.",
-    "Chuỗi luôn phân kỳ tại $x = R$ và $x = -R$.",
-    "Chuỗi có thể hội tụ tại một điểm $x$ với $|x| > R$."
+    "$4$.",
+    "$0$.",
+    "$1$.",
+    "$2$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> Chuỗi hội tụ tuyệt đối tại mọi $x$ thỏa mãn $|x| < R$. Đây là nội dung của định lí Abel.<br><b>Sai:</b> Chuỗi luôn hội tụ tại $x = R$ và $x = -R$. Tại hai đầu mút phải xét riêng: $\\displaystyle \\sum x^n$ có $R = 1$ và phân kỳ tại $x = \\pm1$.<br><b>Sai:</b> Chuỗi luôn phân kỳ tại $x = R$ và $x = -R$. $\\displaystyle \\sum\\dfrac{x^n}{n^2}$ có $R = 1$ và hội tụ tại $x = \\pm1$.<br><b>Sai:</b> Chuỗi có thể hội tụ tại một điểm $x$ với $|x| > R$. Theo định nghĩa của bán kính hội tụ, chuỗi phân kỳ tại mọi $x$ có $|x| > R$."
+   "explain": "Chuỗi thứ 1: $a_n=n^{-3/2}\\downarrow0$ và $\\displaystyle \\sum|u_n|=\\displaystyle \\sum n^{-3/2}$ hội tụ ($p=3/2>1$), nên hội tụ tuyệt đối. Kết luận: hội tụ tuyệt đối.<br>Chuỗi thứ 2: $\\dfrac{|u_{n+1}|}{|u_n|}=\\dfrac{n+1}{2^{n+1}}\\dfrac{2^n}{n}=\\dfrac{n+1}{2n}\\to1/2<1$, nên hội tụ tuyệt đối. Kết luận: hội tụ tuyệt đối.<br>Chuỗi thứ 3: $\\displaystyle \\sum|u_n|=\\sum1/n!$; tỉ số $|u_{n+1}|/|u_n|=1/(n+1)\\to0<1$, nên hội tụ tuyệt đối. Kết luận: hội tụ tuyệt đối.<br>Chuỗi thứ 4: $0<1/(n^2+1)\\le1/n^2$; so sánh với $\\sum1/n^2$ chứng minh hội tụ tuyệt đối. Kết luận: hội tụ tuyệt đối.<br>Số chuỗi hội tụ tuyệt đối: $4$",
+   "note": "Leibniz: $a_n$ giảm về 0 thì chuỗi đan dấu hội tụ; hội tụ tuyệt đối phải xét thêm $\\sum a_n$; nếu $a_n \\not\\to 0$ thì chuỗi phân kỳ."
   },
   {
    "q": "Phương trình nào sau đây là phương trình vi phân toàn phần?",

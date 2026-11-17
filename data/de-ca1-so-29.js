@@ -127,15 +127,15 @@
    "note": "Tiệm cận đứng: nghiệm của mẫu không bị rút gọn với tử; tiệm cận ngang: xét riêng $x \\to +\\infty$ và $x \\to -\\infty$ (với căn thức, hai phía có thể khác nhau)."
   },
   {
-   "q": "Cho hàm số $f(x) = x + \\sin{\\left(x \\right)}$. Vi phân $dy$ tại $x_0 = 0$ với $dx = \\dfrac{1}{10}$ bằng",
+   "q": "Cho hàm số $f(x) = \\arcsin(x)$. Giá trị của $f'(x_0)$ tại $x_0 = \\dfrac{5}{13}$ bằng",
    "options": [
-    "$\\dfrac{1}{5}$.",
-    "$- \\dfrac{1}{5}$.",
-    "$\\dfrac{2}{5}$.",
-    "$\\sin{\\left(\\dfrac{1}{10} \\right)} + \\dfrac{1}{10}$."
+    "$\\dfrac{13}{12}$.",
+    "$- \\dfrac{13}{12}$.",
+    "$\\dfrac{13}{6}$.",
+    "$1$."
    ],
    "answer": 0,
-   "explain": "$f'(x) = \\cos{\\left(x \\right)} + 1$<br>$dy = f'(0)\\\\cdot dx = 2\\\\cdot\\dfrac{1}{10} = \\dfrac{1}{5}$"
+   "explain": "$f'(x) = \\dfrac{1}{\\sqrt{1 - x^2}}$<br>Tại $x_0 = \\dfrac{5}{13}$: $\\sqrt{1 - x_0^2} = \\dfrac{12}{13}$; $f'(x_0) = \\dfrac{13}{12}$"
   },
   {
    "q": "Cho hàm số $f(x,y,z) = x y z + z^{2}$. Đạo hàm của $f$ tại điểm $M(1;1;2)$ theo hướng của véc tơ $\\vec l = (2;3;6)$, tính bởi $\\dfrac{\\partial f}{\\partial \\vec l} = \\nabla f(M)\\cdot\\dfrac{\\vec l}{|\\vec l|}$, bằng",
@@ -233,15 +233,15 @@
    "note": "Thay $t = 0$ để tìm hằng số trong công thức nghiệm; với $k = \\dfrac{\\ln 2}{T}$ thì $e^{-kT} = \\dfrac12$."
   },
   {
-   "q": "Gọi $y = y(x)$ là nghiệm của bài toán $y'' + 2y' + y = 4e^{-x}$ với điều kiện $y(0) = 1;\\ y'(0) = 0$. Chú ý $k = -1$ là nghiệm kép của phương trình đặc trưng, giá trị của $y(1)$ bằng",
+   "q": "Gọi $y = y(x)$ là nghiệm của bài toán $y'' + y = 8\\cos x$ với điều kiện $y(0) = 2;\\ y'(0) = 3$. Chú ý vế phải cộng hưởng với nghiệm của phương trình thuần nhất, giá trị của $y\\left(\\dfrac{\\pi}{2}\\right)$ bằng",
    "options": [
-    "$\\dfrac{4}{e}$.",
-    "$\\dfrac{2}{e}$.",
-    "$\\dfrac{6}{e}$.",
-    "$4$."
+    "$3 + 2 \\pi$.",
+    "$3$.",
+    "$2 \\pi$.",
+    "$3 - 2 \\pi$."
    ],
    "answer": 0,
-   "explain": "Phương trình đặc trưng: $k^{2} + 2 k + 1 = 0$, nghiệm kép $k = -1$<br>$y^* = ax^2e^{-x}$; đặt $y^* = ue^{-x}$ thì vế trái bằng $u^{\\prime\\prime}e^{-x} = 2ae^{-x}$; so với vế phải: $2a = 4 \\Rightarrow a = 2$<br>$y = (C_1 + C_2x + 2x^2)e^{-x}$<br>$y(0) = C_1 = 1;\\quad y'(0) = - C_{1} + C_2 = 0 \\Rightarrow C_2 = 1$<br>$y(1) = (1 + (1) + 2)e^{-1} = \\dfrac{4}{e}$",
+   "explain": "Phương trình đặc trưng: $k^2 + 1 = 0 \\Rightarrow k = \\pm i$ (trùng tần số của vế phải)<br>$y^*=x(a\\cos x + b\\sin x)$. Tính đạo hàm hai lần và cộng $y^*$: $y^{*\\prime\\prime}+y^*=-2a\\sin x + 2b\\cos x$.<br>Đối chiếu hệ số với vế phải $8\\cos x$: hệ số của $\\sin(wx)$ bằng $-2wa=0$ nên $a=0$; hệ số của $\\cos(wx)$ là $2wb=c$, do đó $b=\\dfrac{c}{2w}=4$.<br>$y = C_1\\cos x + C_2\\sin x + 4x\\sin x$<br>$y(0)=C_1=2$. Also $y^\\prime(0)=wC_2=3$, so $C_2=3$.<br>At $x_0=\\dfrac{\\pi}{2w}$, $\\cos(wx_0)=0$ and $\\sin(wx_0)=1$. Thus the homogeneous part is $3$ and the particular part is $4\\cdot\\dfrac{\\pi}{2w}=2 \\pi$; hence $y(x_0)=3+2 \\pi=3 + 2 \\pi$.",
    "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$)."
   },
   {
@@ -340,15 +340,15 @@
    "note": "Có đạo hàm cấp hai tại điểm nối: giá trị, đạo hàm cấp một và đạo hàm cấp hai ở hai phía đều phải khớp nhau."
   },
   {
-   "q": "Tìm hoành độ trọng tâm $\\bar{x}$ của hình phẳng giới hạn bởi $y = x$, $y = 0$ và $x = 4$ (tam giác vuông). Biết $\\bar{x} = \\dfrac{\\iint_D x\\,dA}{\\iint_D dA}$, giá trị $\\bar{x}$ bằng",
+   "q": "Tính thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y = \\sqrt{x}$, $x = 16$ và trục $Ox$ xung quanh trục $Ox$.",
    "options": [
-    "$\\dfrac{8}{3}$.",
-    "$2$.",
-    "$\\dfrac{4}{3}$.",
-    "$3$."
+    "$128 \\pi$.",
+    "$64 \\pi$.",
+    "$256 \\pi$.",
+    "$16 \\pi$."
    ],
    "answer": 0,
-   "explain": "Diện tích $S = \\dfrac{1}{2} \\cdot 4^2 = 8$<br>$\\iint_D x\\,dA = \\displaystyle\\int_0^{4} x \\cdot x\\,dx = \\left[\\dfrac{x^3}{3}\\right]_0^{4} = \\dfrac{64}{3}$<br>$\\bar{x} = \\dfrac{\\dfrac{64}{3}}{8} = \\dfrac{8}{3}$"
+   "explain": "$V = \\pi\\displaystyle\\int_0^{16} y^2\\,dx = \\pi\\int_0^{16} x\\,dx = \\pi\\left[\\dfrac{x^2}{2}\\right]_0^{16} = 128 \\pi$<br>Kết quả: $128 \\pi$"
   },
   {
    "q": "Khảo sát thị trường của 3 loại hàng hóa có liên quan được đánh số 1, 2, 3. Lượng cung $s_i$ và lượng cầu $d_i$ của hàng hóa thứ $i$ phụ thuộc vào giá $p_1, p_2, p_3$ của cả ba loại theo các hệ thức: $$\\begin{cases}s_1 = 3 p_{1} - p_{2} + 35\\\\ s_2 = - p_{1} + 3 p_{2} - p_{3} + 10\\\\ s_3 = p_{2} + 2 p_{3} - 5\\end{cases}\\ \\text{và}\\ \\begin{cases}d_1 = - p_{1} + p_{2} + p_{3} + 30\\\\ d_2 = p_{1} - p_{2} + p_{3} + 20\\\\ d_3 = 70 - 2 p_{3}\\end{cases}.$$ Thị trường cân bằng khi $s_i = d_i$ với mọi $i = \\overline{1,3}$. Gọi $p_1^*, p_2^*, p_3^*$ là các mức giá cân bằng, giá trị của $p_1^* + p_2^* + p_3^*$ bằng",

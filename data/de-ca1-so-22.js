@@ -233,16 +233,16 @@
    "note": "Thay $t = 0$ để tìm hằng số trong công thức nghiệm; với $k = \\dfrac{\\ln 2}{T}$ thì $e^{-kT} = \\dfrac12$."
   },
   {
-   "q": "Gọi $y = y(x)$ là nghiệm của bài toán $y'' + 2y' + y = 6e^{-x}$ với điều kiện $y(0) = 2;\\ y'(0) = 0$. Chú ý $k = -1$ là nghiệm kép của phương trình đặc trưng, giá trị của $y(1)$ bằng",
+   "q": "Theo phương pháp hệ số bất định, một nghiệm riêng của phương trình $y'' - y = e^{2x}\\sin x$ được tìm dưới dạng nào sau đây ($A, B, C$ là các hằng số cần xác định)?",
    "options": [
-    "$\\dfrac{7}{e}$.",
-    "$\\dfrac{4}{e}$.",
-    "$\\dfrac{10}{e}$.",
-    "$7$."
+    "$y^* = e^{2x}(A\\cos x + B\\sin x)$.",
+    "$y^* = xe^{2x}(A\\cos x + B\\sin x)$.",
+    "$y^* = Ae^{2x}\\sin x$.",
+    "$y^* = Ae^{2x}\\cos x$."
    ],
    "answer": 0,
-   "explain": "Phương trình đặc trưng: $k^{2} + 2 k + 1 = 0$, nghiệm kép $k = -1$<br>$y^* = ax^2e^{-x}$; đặt $y^* = ue^{-x}$ thì vế trái bằng $u^{\\prime\\prime}e^{-x} = 2ae^{-x}$; so với vế phải: $2a = 6 \\Rightarrow a = 3$<br>$y = (C_1 + C_2x + 3x^2)e^{-x}$<br>$y(0) = C_1 = 2;\\quad y'(0) = - C_{1} + C_2 = 0 \\Rightarrow C_2 = 2$<br>$y(1) = (2 + (2) + 3)e^{-1} = \\dfrac{7}{e}$",
-   "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$)."
+   "explain": "$k^2-1=(k-1)(k+1)=0$ có nghiệm $\\pm1$, còn vế phải $e^{2x}\\sin x$ ứng với $2\\pm i$. Không trùng nghiệm nên không nhân $x$; cần đủ cặp $A\\cos x+B\\sin x$.<br>Dạng cần tìm: $y^* = e^{2x}(A\\cos x + B\\sin x)$",
+   "note": "Bội của số mũ (hoặc của $\\alpha \\pm i\\beta$) trong phương trình đặc trưng quyết định nhân thêm $1$, $x$ hay $x^2$."
   },
   {
    "q": "Cho miền $D = \\{(x,y): 1 \\le x^2 + y^2 \\le 9,\\ y \\le 0\\}$. Khi chuyển sang tọa độ cực $x = r\\cos\\varphi,\\ y = r\\sin\\varphi$, tích phân $\\displaystyle\\iint_D f(x,y)\\,dxdy$ được viết là",
@@ -257,15 +257,16 @@
    "note": "Cận của $r$ là căn bậc hai của các số ở hai vế; không quên định thức Jacobi $r$."
   },
   {
-   "q": "Trong tọa độ cầu $x = \\rho\\sin\\theta\\cos\\varphi,\\ y = \\rho\\sin\\theta\\sin\\varphi,\\ z = \\rho\\cos\\theta$, phát biểu nào sau đây là đúng?",
+   "q": "Cho $V$ là vật thể nằm trong hình cầu $x^2 + y^2 + z^2 \\le 4$ và phía trên mặt nón $z = \\sqrt{x^2 + y^2}$. Trong tọa độ cầu $x = \\rho\\sin\\theta\\cos\\varphi,\\ y = \\rho\\sin\\theta\\sin\\varphi,\\ z = \\rho\\cos\\theta$, miền $V$ ứng với $0 \\le \\rho \\le 2,\\ 0 \\le \\theta \\le \\dfrac{\\pi}{4},\\ 0 \\le \\varphi \\le 2\\pi$. Giá trị của tích phân $\\displaystyle\\iiint_V z\\,dxdydz$ bằng",
    "options": [
-    "$dxdydz = \\rho^2\\sin\\theta\\,d\\rho\\,d\\theta\\,d\\varphi$.",
-    "$dxdydz = \\rho\\,d\\rho\\,d\\theta\\,d\\varphi$.",
-    "$dxdydz = \\rho^2\\cos\\theta\\,d\\rho\\,d\\theta\\,d\\varphi$.",
-    "Toàn bộ hình cầu tâm $O$ ứng với $0 \\le \\theta \\le 2\\pi$ và $0 \\le \\varphi \\le 2\\pi$."
+    "$2 \\pi$.",
+    "$4 \\pi$.",
+    "$\\pi$.",
+    "$4 \\sqrt{2} \\pi$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> $dxdydz = \\rho^2\\sin\\theta\\,d\\rho\\,d\\theta\\,d\\varphi$. Định thức Jacobi của phép đổi biến có trị tuyệt đối bằng $\\rho^2\\sin\\theta$.<br><b>Sai:</b> $dxdydz = \\rho\\,d\\rho\\,d\\theta\\,d\\varphi$. Thừa số bậc nhất là của tọa độ trụ: $dxdydz = r\\,dr\\,d\\varphi\\,dz$.<br><b>Sai:</b> $dxdydz = \\rho^2\\cos\\theta\\,d\\rho\\,d\\theta\\,d\\varphi$. Với $\\theta$ là góc tính từ trục $Oz$ thì thừa số là $\\sin\\theta$.<br><b>Sai:</b> Toàn bộ hình cầu tâm $O$ ứng với $0 \\le \\theta \\le 2\\pi$ và $0 \\le \\varphi \\le 2\\pi$. $\\theta$ chỉ chạy từ $0$ đến $\\pi$; nếu không mỗi điểm bị tính hai lần."
+   "explain": "Vì $z=\\rho\\cos\\theta$ và $dV=\\rho^2\\sin\\theta\\,d\\rho\\,d\\theta\\,d\\varphi$, $I=\\displaystyle\\int_0^{2\\pi}d\\varphi\\int_0^{\\dfrac{\\pi}{4}}\\cos\\theta\\sin\\theta\\,d\\theta\\int_0^{2}\\rho^3\\,d\\rho$.<br>Các tích phân bằng $2\\pi$, $[\\sin^2\\theta/2]_0^{\\dfrac{\\pi}{4}}=\\sin^2\\dfrac{\\pi}{4}/2$, và $[\\rh\\frac{o^4}{4}]_0^{2}=16/4$. Vậy $I=2\\pi\\cdot\\dfrac{\\sin^2\\dfrac{\\pi}{4}}{2}\\cdot\\dfrac{16}{4}=2 \\pi$.",
+   "note": "Góc $\\theta$ tính từ trục $Oz$: mặt nón $z = c\\sqrt{x^2 + y^2}$ ứng với $\\tan\\theta = \\dfrac1c$."
   },
   {
    "q": "Một thị trường chỉ có hai ứng dụng gọi xe X và Y với tổng cộng 2100 nghìn người dùng, tổng số không đổi. Mỗi tháng có 30% người dùng của X chuyển sang Y và 40% người dùng của Y chuyển sang X. Hiện tại X có 1050 nghìn người dùng. Nếu quy luật này duy trì lâu dài thì số người dùng của X sẽ ổn định (tức là không đổi từ tháng này sang tháng sau) ở mức",
@@ -340,15 +341,15 @@
    "note": "Có đạo hàm cấp hai tại điểm nối: giá trị, đạo hàm cấp một và đạo hàm cấp hai ở hai phía đều phải khớp nhau."
   },
   {
-   "q": "Tìm hoành độ trọng tâm $\\bar{x}$ của hình phẳng giới hạn bởi $y = x$, $y = 0$ và $x = 3$ (tam giác vuông). Biết $\\bar{x} = \\dfrac{\\iint_D x\\,dA}{\\iint_D dA}$, giá trị $\\bar{x}$ bằng",
+   "q": "Tính thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y = \\sqrt{x}$, $x = 9$ và trục $Ox$ xung quanh trục $Ox$.",
    "options": [
-    "$2$.",
-    "$\\dfrac{3}{2}$.",
-    "$1$.",
-    "$\\dfrac{9}{4}$."
+    "$\\dfrac{81 \\pi}{2}$.",
+    "$\\dfrac{81 \\pi}{4}$.",
+    "$81 \\pi$.",
+    "$9 \\pi$."
    ],
    "answer": 0,
-   "explain": "Diện tích $S = \\dfrac{1}{2} \\cdot 3^2 = \\dfrac{9}{2}$<br>$\\iint_D x\\,dA = \\displaystyle\\int_0^{3} x \\cdot x\\,dx = \\left[\\dfrac{x^3}{3}\\right]_0^{3} = 9$<br>$\\bar{x} = \\dfrac{9}{\\dfrac{9}{2}} = 2$"
+   "explain": "$V = \\pi\\displaystyle\\int_0^{9} y^2\\,dx = \\pi\\int_0^{9} x\\,dx = \\pi\\left[\\dfrac{x^2}{2}\\right]_0^{9} = \\dfrac{81 \\pi}{2}$<br>Kết quả: $\\dfrac{81 \\pi}{2}$"
   },
   {
    "q": "Một xưởng sản xuất 3 loại sản phẩm từ 3 loại nguyên liệu I, II, III. Mỗi đơn vị sản phẩm loại 1, 2, 3 cần lần lượt $3, 2, 1$ đơn vị nguyên liệu I; $1, 3, 3$ đơn vị nguyên liệu II và $3, 3, 2$ đơn vị nguyên liệu III. Kho hiện có $160$, $150$ và $200$ đơn vị nguyên liệu I, II, III. Nếu xưởng lập kế hoạch dùng vừa hết cả ba loại nguyên liệu thì tổng số sản phẩm làm ra bằng",

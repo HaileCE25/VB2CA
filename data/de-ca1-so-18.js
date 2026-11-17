@@ -233,15 +233,16 @@
    "note": "Thay $t = 0$ để tìm hằng số trong công thức nghiệm; với $k = \\dfrac{\\ln 2}{T}$ thì $e^{-kT} = \\dfrac12$."
   },
   {
-   "q": "Cho phương trình $y'' + \\omega^2y = 0$ với $\\omega > 0$. Phát biểu nào sau đây là đúng?",
+   "q": "Theo phương pháp hệ số bất định, một nghiệm riêng của phương trình $y'' + y' = x^2$ được tìm dưới dạng nào sau đây ($A, B, C$ là các hằng số cần xác định)?",
    "options": [
-    "Mọi nghiệm của phương trình đều có dạng $y = C_1\\cos\\omega x + C_2\\sin\\omega x$.",
-    "Nghiệm tổng quát là $y = C_1e^{\\omega x} + C_2e^{-\\omega x}$.",
-    "Mọi nghiệm khác không đều tiến về $0$ khi $x \\to +\\infty$.",
-    "Phương trình đặc trưng có hai nghiệm thực phân biệt."
+    "$y^* = x(Ax^2 + Bx + C)$.",
+    "$y^* = Ax^2 + Bx + C$.",
+    "$y^* = x^2(Ax^2 + Bx + C)$.",
+    "$y^* = Ax^2$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> Mọi nghiệm của phương trình đều có dạng $y = C_1\\cos\\omega x + C_2\\sin\\omega x$. Phương trình đặc trưng $k^2 + \\omega^2 = 0$ có nghiệm $k = \\pm i\\omega$.<br><b>Sai:</b> Nghiệm tổng quát là $y = C_1e^{\\omega x} + C_2e^{-\\omega x}$. Đó là nghiệm tổng quát của $y'' - \\omega^2y = 0$.<br><b>Sai:</b> Mọi nghiệm khác không đều tiến về $0$ khi $x \\to +\\infty$. Nghiệm dao động với biên độ $\\sqrt{C_1^2 + C_2^2}$ không đổi.<br><b>Sai:</b> Phương trình đặc trưng có hai nghiệm thực phân biệt. $k^2 = -\\omega^2 < 0$ nên hai nghiệm là số phức $\\pm i\\omega$."
+   "explain": "$k^2+k=k(k+1)=0$, có nghiệm $k=0$ đơn. Đa thức vế phải bậc 2 cho dạng $Ax^2+Bx+C$; do cộng hưởng tại $k=0$, nhân thêm $x$.<br>Dạng cần tìm: $y^* = x(Ax^2 + Bx + C)$",
+   "note": "Bội của số mũ (hoặc của $\\alpha \\pm i\\beta$) trong phương trình đặc trưng quyết định nhân thêm $1$, $x$ hay $x^2$."
   },
   {
    "q": "Cho miền $D = \\{(x,y): 1 \\le x^2 + y^2 \\le 4,\\ y \\ge |x|\\}$. Khi chuyển sang tọa độ cực $x = r\\cos\\varphi,\\ y = r\\sin\\varphi$, tích phân $\\displaystyle\\iint_D f(x,y)\\,dxdy$ được viết là",

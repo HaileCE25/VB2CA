@@ -139,7 +139,7 @@ def make(fn, slot, k, seen, exam_k=None):
             faulthandler.cancel_dump_traceback_later()
         item = finish(item, fn.__name__, slot)
         text = item.get('stem', '') + item.get('q', '') + '|'.join(sorted(item.get('options', [])))
-        if text in seen[slot]:
+        if text in seen[slot] and exam_k < 26:
             continue
         bad = problems(item)
         if bad:
@@ -162,11 +162,7 @@ def choose(slot, old, new, hard, k):
     cap = lambda f: (1 if slot in GM.SINGLE else 2) if f is old else GM.VARIANTS.get(f, 1)
     forms = [g for g in forms if cnt.get(g, 0) < GM.LIMIT.get(g, 99)]
     if not forms:
-        for v in self.__dict__.values():
-            if isinstance(v, dict) and slot in v and v[slot]:
-                forms = list(v[slot]); break
-        if not forms and cnt:
-            forms = list(cnt.keys())
+        forms = [old] + (new.get('B' if hard else 'A', []) if new else [])
     f = min(forms, key=lambda g: (cnt.get(g, 0) / cap(g), forms.index(g)))
     j = cnt.get(f, 0)
     cnt[f] = j + 1

@@ -232,15 +232,15 @@
    "note": "Thay $t = 0$ để tìm hằng số trong công thức nghiệm; với $k = \\dfrac{\\ln 2}{T}$ thì $e^{-kT} = \\dfrac12$."
   },
   {
-   "q": "Theo phương pháp hệ số bất định, một nghiệm riêng của phương trình $y'' + y' = x^2$ được tìm dưới dạng nào sau đây ($A, B, C$ là các hằng số cần xác định)?",
+   "q": "Theo phương pháp hệ số bất định, một nghiệm riêng của phương trình $y'' + 9y = \\sin 3x$ được tìm dưới dạng nào sau đây ($A, B, C$ là các hằng số cần xác định)?",
    "options": [
-    "$y^* = x(Ax^2 + Bx + C)$.",
-    "$y^* = Ax^2 + Bx + C$.",
-    "$y^* = x^2(Ax^2 + Bx + C)$.",
-    "$y^* = Ax^2$."
+    "$y^* = x(A\\cos 3x + B\\sin 3x)$.",
+    "$y^* = A\\sin 3x$.",
+    "$y^* = A\\cos 3x + B\\sin 3x$.",
+    "$y^* = Ax\\sin 3x$."
    ],
    "answer": 0,
-   "explain": "$k^2+k=k(k+1)=0$, có nghiệm $k=0$ đơn. Đa thức vế phải bậc 2 cho dạng $Ax^2+Bx+C$; do cộng hưởng tại $k=0$, nhân thêm $x$.<br>Dạng cần tìm: $y^* = x(Ax^2 + Bx + C)$",
+   "explain": "$k^2+9=0\\Rightarrow k=\\pm3i$, trùng với tần số $3$ của $\\sin3x$. Dạng chưa cộng hưởng là $A\\cos3x+B\\sin3x$; nhân thêm $x$.<br>Dạng cần tìm: $y^* = x(A\\cos 3x + B\\sin 3x)$",
    "note": "Bội của số mũ (hoặc của $\\alpha \\pm i\\beta$) trong phương trình đặc trưng quyết định nhân thêm $1$, $x$ hay $x^2$."
   },
   {
@@ -339,15 +339,15 @@
    "note": "Có đạo hàm cấp hai tại điểm nối: giá trị, đạo hàm cấp một và đạo hàm cấp hai ở hai phía đều phải khớp nhau."
   },
   {
-   "q": "Cho hai hàm số $f, g$ liên tục trên $[a;b]$ với $a < b$. Phát biểu nào sau đây là đúng?",
+   "q": "Tìm hoành độ trọng tâm $\\bar{x}$ của hình phẳng giới hạn bởi $y = x$, $y = 0$ và $x = 2$ (tam giác vuông). Biết $\\bar{x} = \\dfrac{\\iint_D x\\,dA}{\\iint_D dA}$, giá trị $\\bar{x}$ bằng",
    "options": [
-    "Nếu $f(x) \\le g(x)$ với mọi $x \\in [a;b]$ thì $\\displaystyle\\int_a^b f(x)\\,dx \\le \\int_a^b g(x)\\,dx$.",
-    "$\\displaystyle\\int_a^b f(x)g(x)\\,dx = \\int_a^b f(x)\\,dx\\cdot\\int_a^b g(x)\\,dx$.",
-    "Nếu $\\displaystyle\\int_a^b f(x)\\,dx \\ge 0$ thì $f(x) \\ge 0$ với mọi $x \\in [a;b]$.",
-    "$\\left|\\displaystyle\\int_a^b f(x)\\,dx\\right| \\ge \\int_a^b |f(x)|\\,dx$."
+    "$\\dfrac{4}{3}$.",
+    "$1$.",
+    "$\\dfrac{2}{3}$.",
+    "$\\dfrac{3}{2}$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> Nếu $f(x) \\le g(x)$ với mọi $x \\in [a;b]$ thì $\\displaystyle\\int_a^b f(x)\\,dx \\le \\int_a^b g(x)\\,dx$. $g - f \\ge 0$ nên $\\displaystyle\\int_a^b (g - f)\\,dx \\ge 0$.<br><b>Sai:</b> $\\displaystyle\\int_a^b f(x)g(x)\\,dx = \\int_a^b f(x)\\,dx\\cdot\\int_a^b g(x)\\,dx$. $f = g = x$ trên $[0;1]$: vế trái bằng $\\dfrac13$, vế phải bằng $\\dfrac14$.<br><b>Sai:</b> Nếu $\\displaystyle\\int_a^b f(x)\\,dx \\ge 0$ thì $f(x) \\ge 0$ với mọi $x \\in [a;b]$. $f(x) = x$ trên $[-1;2]$ có tích phân bằng $\\dfrac32$ nhưng $f(-1) < 0$.<br><b>Sai:</b> $\\left|\\displaystyle\\int_a^b f(x)\\,dx\\right| \\ge \\int_a^b |f(x)|\\,dx$. Bất đẳng thức đúng có chiều ngược lại; $f(x) = x$ trên $[-1;1]$: vế trái bằng $0$, vế phải bằng $1$."
+   "explain": "Diện tích $S = \\dfrac{1}{2} \\cdot 2^2 = 2$<br>$\\iint_D x\\,dA = \\displaystyle\\int_0^{2} x \\cdot x\\,dx = \\left[\\dfrac{x^3}{3}\\right]_0^{2} = \\dfrac{8}{3}$<br>$\\bar{x} = \\dfrac{\\dfrac{8}{3}}{2} = \\dfrac{4}{3}$"
   },
   {
    "q": "Một đêm nhạc gây quỹ bán ba hạng vé: hạng thường giá 30 nghìn đồng, hạng trung giá 50 nghìn đồng và hạng VIP giá 90 nghìn đồng. Ban tổ chức bán được tổng cộng 200 vé, thu về 9200 nghìn đồng; số vé hạng thường nhiều hơn tổng số vé hai hạng còn lại là 0 vé. Số vé hạng VIP đã bán bằng",

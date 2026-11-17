@@ -140,7 +140,11 @@ def practice_slot_items(task, slots, remaining):
         if item is None:
             item = make_practice_item(base, slot, exam_index + 1000, seen, exam_index)
         if item is None:
-            break
+            for idx_f, alt_f in enumerate(([base] + (new_forms.get('B' if hard else 'A', []) if new_forms else []))): 
+                item = make_practice_item(alt_f, slot, exam_index + 2000 + idx_f * 700, seen, exam_index)
+                if item is not None: break
+        if item is None:
+            continue
         generated[exam_index] = item
         if kind == 'g':
             for index in indices:

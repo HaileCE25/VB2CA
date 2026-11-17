@@ -232,15 +232,15 @@
    "note": "Thay $t = 0$ để tìm hằng số trong công thức nghiệm; với $k = \\dfrac{\\ln 2}{T}$ thì $e^{-kT} = \\dfrac12$."
   },
   {
-   "q": "Theo phương pháp hệ số bất định, một nghiệm riêng của phương trình $y'' - y = e^{2x}\\sin x$ được tìm dưới dạng nào sau đây ($A, B, C$ là các hằng số cần xác định)?",
+   "q": "Theo phương pháp hệ số bất định, một nghiệm riêng của phương trình $y'' + 4y' + 4y = x + e^{-2x}$ được tìm dưới dạng nào sau đây ($A, B, C$ là các hằng số cần xác định)?",
    "options": [
-    "$y^* = e^{2x}(A\\cos x + B\\sin x)$.",
-    "$y^* = xe^{2x}(A\\cos x + B\\sin x)$.",
-    "$y^* = Ae^{2x}\\sin x$.",
-    "$y^* = Ae^{2x}\\cos x$."
+    "$y^* = Ax + B + Cx^2e^{-2x}$.",
+    "$y^* = Ax + B + Ce^{-2x}$.",
+    "$y^* = Ax + B + Cxe^{-2x}$.",
+    "$y^* = x(Ax + B) + Ce^{-2x}$."
    ],
    "answer": 0,
-   "explain": "$k^2-1=(k-1)(k+1)=0$ có nghiệm $\\pm1$, còn vế phải $e^{2x}\\sin x$ ứng với $2\\pm i$. Không trùng nghiệm nên không nhân $x$; cần đủ cặp $A\\cos x+B\\sin x$.<br>Dạng cần tìm: $y^* = e^{2x}(A\\cos x + B\\sin x)$",
+   "explain": "$k^2+4k+4=(k+2)^2=0$. Vế $x$ có dạng đa thức $Ax+B$ (số mũ $0$ không là nghiệm); vế $e^{-2x}$ cộng hưởng với nghiệm kép $-2$, nên có hạng $Cx^2e^{-2x}$.<br>Dạng cần tìm: $y^* = Ax + B + Cx^2e^{-2x}$",
    "note": "Bội của số mũ (hoặc của $\\alpha \\pm i\\beta$) trong phương trình đặc trưng quyết định nhân thêm $1$, $x$ hay $x^2$."
   },
   {
@@ -340,15 +340,16 @@
    "note": "Có đạo hàm cấp hai tại điểm nối: giá trị, đạo hàm cấp một và đạo hàm cấp hai ở hai phía đều phải khớp nhau."
   },
   {
-   "q": "Tính thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y = \\sqrt{x}$, $x = 1$ và trục $Ox$ xung quanh trục $Ox$.",
+   "q": "Một đoạn đường ống uốn theo đường cong $y = \\dfrac23x^{3/2}$ với $0 \\le x \\le 3$ (đơn vị: mét). Dùng công thức độ dài cung $L = \\displaystyle\\int_a^b\\sqrt{1 + (y')^2}\\,dx$, độ dài đoạn ống bằng",
    "options": [
-    "$\\dfrac{\\pi}{2}$.",
-    "$\\dfrac{\\pi}{4}$.",
-    "$\\pi$.",
-    "$1 + \\dfrac{\\pi}{2}$."
+    "$\\dfrac{14}{3} m$.",
+    "$\\dfrac{16}{3} m$.",
+    "$3 m$.",
+    "$\\dfrac{7}{3} m$."
    ],
    "answer": 0,
-   "explain": "$V = \\pi\\displaystyle\\int_0^{1} y^2\\,dx = \\pi\\int_0^{1} x\\,dx = \\pi\\left[\\dfrac{x^2}{2}\\right]_0^{1} = \\dfrac{\\pi}{2}$<br>Kết quả: $\\dfrac{\\pi}{2}$"
+   "explain": "$y' = \\sqrt{x} \\Rightarrow 1 + (y')^2 = 1 + x$<br>$L = \\displaystyle\\int_0^{3}\\sqrt{1 + x}\\,dx = \\left[\\dfrac23(1 + x)^{3/2}\\right]_0^{3}$<br>$= \\dfrac23\\left(4^{3/2} - 1\\right) = \\dfrac{14}{3}$",
+   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$."
   },
   {
    "q": "Xét mô hình cân bằng thu nhập quốc dân: $Y = C + I_0 + G_0$; $C = 40 + 0{,}8(Y - T)$; $T = 0{,}5Y$, trong đó $Y$ là thu nhập, $C$ là tiêu dùng, $T$ là thuế, đầu tư $I_0 = 150$ và chi tiêu chính phủ $G_0 = 140$. Giá trị của mức tiêu dùng $C^*$ tại trạng thái cân bằng bằng",

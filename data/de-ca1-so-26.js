@@ -115,15 +115,16 @@
    "note": "Khai triển tử và mẫu đến bậc đầu tiên khác 0; dừng sớm sẽ lại gặp dạng $\\dfrac00$."
   },
   {
-   "q": "Xét việc dùng quy tắc L’Hôpital để tính $\\lim\\limits_{x\\to x_0}\\dfrac{f(x)}{g(x)}$. Phát biểu nào sau đây là đúng?",
+   "q": "Tổng số đường tiệm cận (đứng, ngang và xiên) của đồ thị hàm số $y = \\dfrac{x^{3} + 5 x^{2} + 4 x}{x^{2} - 1}$ là",
    "options": [
-    "Quy tắc chỉ áp dụng trực tiếp cho các dạng vô định $\\dfrac00$ và $\\dfrac{\\infty}{\\infty}$.",
-    "Với mọi $f, g$ khả vi luôn có $\\lim\\dfrac{f(x)}{g(x)} = \\lim\\dfrac{f'(x)}{g'(x)}$.",
-    "$\\lim\\dfrac{f(x)}{g(x)} = \\lim\\left(\\dfrac{f(x)}{g(x)}\\right)'$.",
-    "Nếu $\\lim\\dfrac{f'(x)}{g'(x)}$ không tồn tại thì $\\lim\\dfrac{f(x)}{g(x)}$ cũng không tồn tại."
+    "$2$.",
+    "$1$.",
+    "$3$.",
+    "$4$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> Quy tắc chỉ áp dụng trực tiếp cho các dạng vô định $\\dfrac00$ và $\\dfrac{\\infty}{\\infty}$. Đó là giả thiết của định lí; các dạng vô định khác phải được biến đổi về một trong hai dạng này.<br><b>Sai:</b> Với mọi $f, g$ khả vi luôn có $\\displaystyle \\lim\\dfrac{f(x)}{g(x)} = \\displaystyle \\lim\\dfrac{f'(x)}{g'(x)}$. $\\displaystyle \\lim\\limits_{x\\to0}\\dfrac{x + 1}{x + 2} = \\dfrac12$, trong khi $\\dfrac{f'}{g'} = 1$.<br><b>Sai:</b> $\\displaystyle \\lim\\dfrac{f(x)}{g(x)} = \\displaystyle \\lim\\left(\\dfrac{f(x)}{g(x)}\\right)'$. Phải lấy đạo hàm riêng tử và riêng mẫu, không phải đạo hàm của thương.<br><b>Sai:</b> Nếu $\\displaystyle \\lim\\dfrac{f'(x)}{g'(x)}$ không tồn tại thì $\\displaystyle \\lim\\dfrac{f(x)}{g(x)}$ cũng không tồn tại. $\\displaystyle \\lim\\limits_{x\\to+\\infty}\\dfrac{x + \\sin x}{x} = 1$ dù $\\dfrac{1 + \\cos x}{1}$ không có giới hạn."
+   "explain": "Phân tích rồi khử nhân tử chung: $y=\\dfrac{x \\left(x + 1\\right) \\left(x + 4\\right)}{\\left(x - 1\\right) \\left(x + 1\\right)}=\\dfrac{x \\left(x + 4\\right)}{x - 1}$.<br>Kiểm tra điểm làm mẫu bằng $0$: Tại $x=-1$, tử cũng bằng $0$ nên nhân tử $(x--1)$ bị khử; giới hạn hữu hạn, không là TCĐ.; Tại $x=1$, tử khác $0$; mẫu tiến về $0$ nên có TCĐ $x=1$..<br>Chia đa thức: $\\dfrac{x^{2} + 4 x}{x - 1}=x + 5+\\dfrac{5}{x - 1}$. Vì thương có bậc 1, đường thẳng $y=<q>$ là tiệm cận xiên.<br>Số đường tiệm cận: 2.",
+   "note": "Tiệm cận đứng: nghiệm của mẫu không bị rút gọn với tử; tiệm cận ngang: xét riêng $x \\to +\\infty$ và $x \\to -\\infty$ (với căn thức, hai phía có thể khác nhau)."
   },
   {
    "q": "Hệ số của $x^{3}$ trong khai triển Maclaurin của hàm số $f(x) = \\sin 3x\\cos x$ bằng<span class=\"q-hint\">Gợi ý: nhân hai khai triển cơ bản rồi gom các số hạng cùng bậc.</span>",
@@ -232,16 +233,16 @@
    "note": "Thay $t = 0$ để tìm hằng số trong công thức nghiệm; với $k = \\dfrac{\\ln 2}{T}$ thì $e^{-kT} = \\dfrac12$."
   },
   {
-   "q": "Theo phương pháp hệ số bất định, một nghiệm riêng của phương trình $y'' + 2y' + 5y = e^{-x}\\cos 2x$ được tìm dưới dạng nào sau đây ($A, B, C$ là các hằng số cần xác định)?",
+   "q": "Gọi $y = y(x)$ là nghiệm của bài toán $y'' + y = 12\\cos x$ với điều kiện $y(0) = -1;\\ y'(0) = -2$. Chú ý vế phải cộng hưởng với nghiệm của phương trình thuần nhất, giá trị của $y\\left(\\dfrac{\\pi}{2}\\right)$ bằng",
    "options": [
-    "$y^* = xe^{-x}(A\\cos 2x + B\\sin 2x)$.",
-    "$y^* = e^{-x}(A\\cos 2x + B\\sin 2x)$.",
-    "$y^* = Axe^{-x}\\cos 2x$.",
-    "$y^* = x^2e^{-x}(A\\cos 2x + B\\sin 2x)$."
+    "$3 \\pi - 2$.",
+    "$-2$.",
+    "$3 \\pi$.",
+    "$- 3 \\pi - 2$."
    ],
    "answer": 0,
-   "explain": "$k^2+2k+5=0\\Rightarrow k=-1\\pm2i$, đúng bằng cặp số mũ phức của $e^{-x}\\cos2x$. Dạng $e^{-x}(A\\cos2x+B\\sin2x)$ cộng hưởng bậc 1 nên nhân thêm $x$.<br>Dạng cần tìm: $y^* = xe^{-x}(A\\cos 2x + B\\sin 2x)$",
-   "note": "Bội của số mũ (hoặc của $\\alpha \\pm i\\beta$) trong phương trình đặc trưng quyết định nhân thêm $1$, $x$ hay $x^2$."
+   "explain": "Phương trình đặc trưng: $k^2 + 1 = 0 \\Rightarrow k = \\pm i$ (trùng tần số của vế phải)<br>$y^*=x(a\\cos x + b\\sin x)$. Tính đạo hàm hai lần và cộng $y^*$: $y^{*\\prime\\prime}+y^*=-2a\\sin x + 2b\\cos x$.<br>Đối chiếu hệ số với vế phải $12\\cos x$: hệ số của $\\sin(wx)$ bằng $-2wa=0$ nên $a=0$; hệ số của $\\cos(wx)$ là $2wb=c$, do đó $b=\\dfrac{c}{2w}=6$.<br>$y = C_1\\cos x + C_2\\sin x + 6x\\sin x$<br>$y(0)=C_1=-1$. Also $y^\\prime(0)=wC_2=-2$, so $C_2=-2$.<br>At $x_0=\\dfrac{\\pi}{2w}$, $\\cos(wx_0)=0$ and $\\sin(wx_0)=1$. Thus the homogeneous part is $-2$ and the particular part is $6\\cdot\\dfrac{\\pi}{2w}=3 \\pi$; hence $y(x_0)=-2+3 \\pi=3 \\pi - 2$.",
+   "note": "Cộng hưởng: khi số mũ (hoặc tần số) của vế phải trùng nghiệm đặc trưng, nghiệm riêng phải nhân thêm $x$ (nghiệm kép: $x^2$)."
   },
   {
    "q": "Cho miền $D = \\{(x,y): 4 \\le x^2 + y^2 \\le 9,\\ y \\ge |x|\\}$. Khi chuyển sang tọa độ cực $x = r\\cos\\varphi,\\ y = r\\sin\\varphi$, tích phân $\\displaystyle\\iint_D f(x,y)\\,dxdy$ được viết là",
@@ -340,15 +341,15 @@
    "note": "Có đạo hàm cấp hai tại điểm nối: giá trị, đạo hàm cấp một và đạo hàm cấp hai ở hai phía đều phải khớp nhau."
   },
   {
-   "q": "Một tấm phẳng hình chữ nhật chiều rộng 2 m, chiều cao 2 m được nhúng thẳng đứng vào nước sao cho cạnh trên ở độ sâu 1 m. Lấy $g = 9{,}8\\,m/s^2$. Áp lực của nước lên tấm bằng",
+   "q": "Tính diện tích hình phẳng giới hạn bởi parabol $y = x^2$ và đường thẳng $y = 4x$.",
    "options": [
-    "78400 <i>N</i>.",
-    "39200 <i>N</i>.",
-    "156800 <i>N</i>.",
-    "117600 <i>N</i>."
+    "$\\dfrac{32}{3}$.",
+    "$\\dfrac{16}{3}$.",
+    "$\\dfrac{64}{3}$.",
+    "$\\dfrac{35}{3}$."
    ],
    "answer": 0,
-   "explain": "Dải ngang ở độ sâu $(1 + y)$ m, diện tích $2\\,dy$, áp lực $1000 \\cdot 9{,}8 \\cdot (1 + y) \\cdot 2\\,dy$<br>$F = \\displaystyle\\int_0^{2} 9800 \\cdot 2 \\cdot (1 + y)\\,dy = 98002\\left[y + \\dfrac{y^2}{2}\\right]_0^{2} = 78400\\,N = \\dfrac{392}{5}\\,kN$"
+   "explain": "Giao điểm: $x^2 = 4x \\Rightarrow x = 0$ và $x = 4$<br>$S = \\displaystyle\\int_0^{4}(4x - x^2)\\,dx = \\left[\\dfrac{4x^2}{2} - \\dfrac{x^3}{3}\\right]_0^{4} = \\dfrac{32}{3}$"
   },
   {
    "q": "Một xưởng sản xuất 3 loại sản phẩm từ 3 loại nguyên liệu I, II, III. Mỗi đơn vị sản phẩm loại 1, 2, 3 cần lần lượt $2, 1, 1$ đơn vị nguyên liệu I; $2, 2, 1$ đơn vị nguyên liệu II và $3, 2, 2$ đơn vị nguyên liệu III. Kho hiện có $120$, $140$ và $210$ đơn vị nguyên liệu I, II, III. Nếu xưởng lập kế hoạch dùng vừa hết cả ba loại nguyên liệu thì tổng số sản phẩm làm ra bằng",

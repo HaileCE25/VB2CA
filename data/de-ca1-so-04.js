@@ -115,26 +115,27 @@
    "note": "Thay vô cùng bé tương đương chỉ dùng được trong tích và thương; với hiệu hai vô cùng bé cùng bậc phải khai triển Maclaurin đến bậc cao hơn."
   },
   {
-   "q": "Cho hàm số $f$ liên tục trên đoạn $[a;b]$. Phát biểu nào sau đây là đúng?",
+   "q": "Cho hàm số $f(x) = \\begin{cases}\\dfrac{1 - \\cos ax}{x^2} & \\text{khi } x < 0\\\\[2mm] b & \\text{khi } x = 0\\\\[1mm] \\dfrac{e^{8x} - 1}{x} & \\text{khi } x > 0\\end{cases}$ liên tục trên $\\mathbb{R}$. Giá trị của $a^2 + b$ bằng",
    "options": [
-    "Nếu $f(a)\\cdot f(b) < 0$ thì phương trình $f(x) = 0$ có ít nhất một nghiệm thuộc $(a;b)$.",
-    "Nếu $f(a)\\cdot f(b) > 0$ thì phương trình $f(x) = 0$ vô nghiệm trên $(a;b)$.",
-    "$f$ có đạo hàm tại mọi điểm thuộc $(a;b)$.",
-    "$f$ có thể không bị chặn trên $[a;b]$."
+    "$24$.",
+    "$16$.",
+    "$12$.",
+    "$64$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> Nếu $f(a)\\cdot f(b) < 0$ thì phương trình $f(x) = 0$ có ít nhất một nghiệm thuộc $(a;b)$. Đây là định lí giá trị trung gian (Bolzano – Cauchy).<br><b>Sai:</b> Nếu $f(a)\\cdot f(b) > 0$ thì phương trình $f(x) = 0$ vô nghiệm trên $(a;b)$. $f(x) = x^2 - 1$ trên $[-2;2]$ có $f(-2)f(2) > 0$ nhưng vẫn có nghiệm $x = \\pm1$.<br><b>Sai:</b> $f$ có đạo hàm tại mọi điểm thuộc $(a;b)$. $f(x) = |x|$ liên tục trên $[-1;1]$ nhưng không có đạo hàm tại $0$.<br><b>Sai:</b> $f$ có thể không bị chặn trên $[a;b]$. Hàm liên tục trên một đoạn thì bị chặn và đạt giá trị lớn nhất, nhỏ nhất (định lí Weierstrass)."
+   "explain": "$\\displaystyle \\lim\\limits_{x\\to0^+}\\dfrac{e^{8x} - 1}{x} = 8$<br>$\\displaystyle \\lim\\limits_{x\\to0^-}\\dfrac{1 - \\cos ax}{x^2} = \\dfrac{a^2}{2}$<br>Liên tục tại 0: $\\dfrac{a^2}{2} = b = 8 \\Rightarrow a^2 = 16,\\ b = 8$<br>$a^2 + b = 24$",
+   "note": "Liên tục tại $x_0$ $\\Leftrightarrow$ giới hạn trái = giới hạn phải = $f(x_0)$; giới hạn hữu hạn mà mẫu tiến về 0 thì tử cũng phải tiến về 0."
   },
   {
-   "q": "Cho hàm số $f(x) = x^{4} + x$. Vi phân $dy$ tại $x_0 = 1$ với $dx = \\dfrac{1}{100}$ bằng",
+   "q": "Cho hàm số $f$ có đạo hàm cấp hai liên tục trên khoảng $(a;b)$ và $x_0 \\in (a;b)$. Phát biểu nào sau đây là đúng?",
    "options": [
-    "$\\dfrac{1}{20}$.",
-    "$- \\dfrac{1}{20}$.",
-    "$\\dfrac{1}{10}$.",
-    "$\\dfrac{5060401}{100000000}$."
+    "Nếu $f'(x_0) = 0$ và $f''(x_0) > 0$ thì $f$ đạt cực tiểu tại $x_0$.",
+    "Nếu $f'(x_0) = 0$ và $f''(x_0) > 0$ thì $f$ đạt cực đại tại $x_0$.",
+    "Nếu $f''(x_0) = 0$ thì $x_0$ là hoành độ điểm uốn của đồ thị.",
+    "Nếu $f$ đạt cực tiểu tại $x_0$ thì $f''(x_0) > 0$."
    ],
    "answer": 0,
-   "explain": "$f'(x) = 4 x^{3} + 1$<br>$dy = f'(1)\\\\cdot dx = 5\\\\cdot\\dfrac{1}{100} = \\dfrac{1}{20}$"
+   "explain": "<b>Đúng:</b> Nếu $f'(x_0) = 0$ và $f''(x_0) > 0$ thì $f$ đạt cực tiểu tại $x_0$. Đây là điều kiện đủ của cực trị theo đạo hàm cấp hai.<br><b>Sai:</b> Nếu $f'(x_0) = 0$ và $f''(x_0) > 0$ thì $f$ đạt cực đại tại $x_0$. $f(x) = x^2$ có $f'(0) = 0$, $f''(0) = 2 > 0$ và đạt cực tiểu tại $0$.<br><b>Sai:</b> Nếu $f''(x_0) = 0$ thì $x_0$ là hoành độ điểm uốn của đồ thị. $f(x) = x^4$ có $f''(0) = 0$ nhưng $f'' = 12x^2$ không đổi dấu khi qua $0$.<br><b>Sai:</b> Nếu $f$ đạt cực tiểu tại $x_0$ thì $f''(x_0) > 0$. $f(x) = x^4$ đạt cực tiểu tại $0$ mà $f''(0) = 0$."
   },
   {
    "q": "Cho hàm ẩn $z = z(x,y)$ xác định bởi phương trình $2 x z - y + z^{3} = 0$. Biết tại $(x;y) = (2;5)$ thì $z = 1$, giá trị của $z'_x(2;5)$ bằng",

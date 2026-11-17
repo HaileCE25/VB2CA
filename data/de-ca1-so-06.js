@@ -127,15 +127,15 @@
    "note": "Liên tục tại $x_0$ $\\Leftrightarrow$ giới hạn trái = giới hạn phải = $f(x_0)$; giới hạn hữu hạn mà mẫu tiến về 0 thì tử cũng phải tiến về 0."
   },
   {
-   "q": "Cho $u = u(x)$, $v = v(x)$ là hai hàm khả vi. Phát biểu nào sau đây về vi phân là đúng?",
+   "q": "Cho hàm số $f(x) = \\arcsin(x)$. Giá trị của $f'(x_0)$ tại $x_0 = \\dfrac{4}{5}$ bằng",
    "options": [
-    "$d(uv) = v\\,du + u\\,dv$.",
-    "$d(uv) = du\\cdot dv$.",
-    "$d\\left(\\dfrac{u}{v}\\right) = \\dfrac{du}{dv}$.",
-    "$d(u^2) = 2u$."
+    "$\\dfrac{5}{3}$.",
+    "$- \\dfrac{5}{3}$.",
+    "$\\dfrac{10}{3}$.",
+    "$1$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> $d(uv) = v\\,du + u\\,dv$. $(uv)' = u'v + uv'$, nhân hai vế với $dx$.<br><b>Sai:</b> $d(uv) = du\\cdot dv$. Với $u = v = x$: $d(x^2) = 2x\\,dx$, khác $dx\\cdot dx$.<br><b>Sai:</b> $d\\left(\\dfrac{u}{v}\\right) = \\dfrac{du}{dv}$. $d\\left(\\dfrac{u}{v}\\right) = \\dfrac{v\\,du - u\\,dv}{v^2}$.<br><b>Sai:</b> $d(u^2) = 2u$. Thiếu vi phân của $u$: $d(u^2) = 2u\\,du$."
+   "explain": "$f'(x) = \\dfrac{1}{\\sqrt{1 - x^2}}$<br>Tại $x_0 = \\dfrac{4}{5}$: $\\sqrt{1 - x_0^2} = \\dfrac{3}{5}$; $f'(x_0) = \\dfrac{5}{3}$"
   },
   {
    "q": "Cho hàm số $f(x,y) = x^{3} y^{2} + 3 x y + y^{2}$. Giá trị của đạo hàm riêng hỗn hợp $f''_{xy}$ tại điểm $(2;2)$ bằng",
@@ -150,16 +150,15 @@
    "note": "Tính $f'_x$ trước rồi đạo hàm tiếp theo $y$; với hàm đa thức, $f''_{xy} = f''_{yx}$."
   },
   {
-   "q": "Cho hàm số $f(x,y) = \\ln(x^2 + y^2)$. Vi phân toàn phần của hàm số tại điểm $(2;1)$ là",
+   "q": "Xét bài toán tìm cực trị của $f(x,y)$ với điều kiện $g(x,y) = 0$ (giả sử $\\nabla g \\ne \\vec 0$) bằng hàm Lagrange $L = f + \\lambda g$. Phát biểu nào sau đây là đúng?",
    "options": [
-    "$\\dfrac{4}{5}dx + \\dfrac{2}{5}dy$.",
-    "$\\dfrac{2}{5}dx + \\dfrac{1}{5}dy$.",
-    "$4dx + 2dy$.",
-    "$\\dfrac{2}{5}dx + \\dfrac{4}{5}dy$."
+    "Điểm cực trị có điều kiện (nếu có) phải thỏa mãn hệ $L'_x = 0,\\ L'_y = 0,\\ g = 0$.",
+    "Mọi nghiệm của hệ $L'_x = 0,\\ L'_y = 0,\\ g = 0$ đều là điểm cực trị có điều kiện.",
+    "Điểm cực trị có điều kiện phải là điểm dừng của $f$, tức $f'_x = f'_y = 0$.",
+    "Tại điểm cực trị có điều kiện, $\\nabla f$ vuông góc với $\\nabla g$."
    ],
    "answer": 0,
-   "explain": "$f'_x = \\dfrac{2x}{x^2 + y^2},\\quad f'_y = \\dfrac{2y}{x^2 + y^2}$<br>Tại $(2;1)$: $f'_x = \\dfrac{4}{5},\\ f'_y = \\dfrac{2}{5}$<br>$df = \\dfrac{4}{5}dx + \\dfrac{2}{5}dy$",
-   "note": "$df = f'_xdx + f'_ydy$; khi tính gần đúng, $\\Delta x$ và $\\Delta y$ có thể mang dấu âm."
+   "explain": "<b>Đúng:</b> Điểm cực trị có điều kiện (nếu có) phải thỏa mãn hệ $L'_x = 0,\\ L'_y = 0,\\ g = 0$. Đây là điều kiện cần của cực trị có điều kiện.<br><b>Sai:</b> Mọi nghiệm của hệ $L'_x = 0,\\ L'_y = 0,\\ g = 0$ đều là điểm cực trị có điều kiện. Hệ chỉ là điều kiện cần: $f = x^3$ với điều kiện $y = 0$ cho nghiệm $(0;0)$, nhưng trên đường $y = 0$ hàm $x^3$ không có cực trị.<br><b>Sai:</b> Điểm cực trị có điều kiện phải là điểm dừng của $f$, tức $f'_x = f'_y = 0$. $f = x + y$ với $x^2 + y^2 = 1$ có cực trị dù $\\nabla f = (1;1)$ không bao giờ bằng $\\vec 0$.<br><b>Sai:</b> Tại điểm cực trị có điều kiện, $\\nabla f$ vuông góc với $\\nabla g$. Hai gradient cùng phương: $\\nabla f = -\\lambda\\nabla g$."
   },
   {
    "q": "Cho hàm số $f(x,y) = x^{3} - 3 x + y^{3} - 12 y$. Hàm số có bao nhiêu điểm dừng không phải là điểm cực trị?<span class=\"q-hint\">Lưu ý: điểm dừng là điểm mà $f'_x = f'_y = 0$. Tại điểm dừng, đặt $A = f''_{xx},\\ B = f''_{xy},\\ C = f''_{yy}$: nếu $AC - B^2 > 0$ thì đó là điểm cực trị, nếu $AC - B^2 < 0$ thì không phải.</span>",

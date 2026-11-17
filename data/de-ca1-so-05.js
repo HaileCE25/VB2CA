@@ -127,15 +127,15 @@
    "note": "Liên tục tại $x_0$ $\\Leftrightarrow$ giới hạn trái = giới hạn phải = $f(x_0)$; giới hạn hữu hạn mà mẫu tiến về 0 thì tử cũng phải tiến về 0."
   },
   {
-   "q": "Cho hàm số $f(x) = \\arcsin(2x)$. Giá trị của $f'(x_0)$ tại $x_0 = \\dfrac{2}{5}$ bằng",
+   "q": "Cho hàm số $f(x) = x^{4} + x$. Vi phân $dy$ tại $x_0 = 1$ với $dx = \\dfrac{1}{10}$ bằng",
    "options": [
-    "$\\dfrac{10}{3}$.",
-    "$- \\dfrac{10}{3}$.",
-    "$\\dfrac{20}{3}$.",
-    "$2$."
+    "$\\dfrac{1}{2}$.",
+    "$- \\dfrac{1}{2}$.",
+    "$1$.",
+    "$\\dfrac{5641}{10000}$."
    ],
    "answer": 0,
-   "explain": "$f'(x) = \\dfrac{2}{\\sqrt{1 - 4\\cdotx^2}}$<br>Tại $x_0 = \\dfrac{2}{5}$: $\\sqrt{1 - 4\\cdotx_0^2} = \\dfrac{3}{5}$; $f'(x_0) = \\dfrac{10}{3}$"
+   "explain": "$f'(x) = 4 x^{3} + 1$<br>$dy = f'(1)\\\\cdot dx = 5\\\\cdot\\dfrac{1}{10} = \\dfrac{1}{2}$"
   },
   {
    "q": "Cho hàm số $f(x,y,z) = xe^{yz} + y\\ln(xz)$. Giá trị của $f'_z(1;1;1)$ bằng",

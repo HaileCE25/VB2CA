@@ -151,15 +151,16 @@
    "note": "Đạo hàm riêng theo một biến thì coi biến kia là hằng số; với hàm ẩn $F(x,y,z) = 0$: $z'_x = -\\dfrac{F'_x}{F'_z}$."
   },
   {
-   "q": "Cho hàm số $f(x,y)$ có các đạo hàm riêng đến cấp hai trong miền $D$. Phát biểu nào sau đây là đúng?",
+   "q": "Cho hàm số $f(x,y) = x^y$ $(x > 0)$. Vi phân toàn phần của hàm số tại điểm $(3;1)$ là",
    "options": [
-    "Nếu $f''_{xy}$ và $f''_{yx}$ liên tục trong $D$ thì $f''_{xy} = f''_{yx}$ trong $D$.",
-    "$f''_{xy} = f'_x\\cdot f'_y$.",
-    "$f''_{xx} = \\left(f'_x\\right)^2$.",
-    "$f''_{xy} = f''_{xx} + f''_{yy}$."
+    "$dx + 3\\ln 3\\,dy$.",
+    "$3dx + \\ln 3\\,dy$.",
+    "$dx + \\ln 3\\,dy$.",
+    "$dx + 3\\,dy$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> Nếu $f''_{xy}$ và $f''_{yx}$ liên tục trong $D$ thì $f''_{xy} = f''_{yx}$ trong $D$. Đây là định lí Schwarz.<br><b>Sai:</b> $f''_{xy} = f'_x\\cdot f'_y$. $f = xy$ có $f''_{xy} = 1$ còn $f'_x\\cdot f'_y = xy$.<br><b>Sai:</b> $f''_{xx} = \\left(f'_x\\right)^2$. $f = x$ có $f''_{xx} = 0$ còn $\\left(f'_x\\right)^2 = 1$.<br><b>Sai:</b> $f''_{xy} = f''_{xx} + f''_{yy}$. $f = x^2$ có $f''_{xy} = 0$ còn $f''_{xx} + f''_{yy} = 2$."
+   "explain": "$f'_x = yx^{y-1},\\quad f'_y = x^y\\ln x$<br>Tại $(3;1)$: $f'_x = 1,\\ f'_y = 3\\ln 3$<br>$df = dx + 3\\ln 3\\,dy$",
+   "note": "$df = f'_xdx + f'_ydy$; khi tính gần đúng, $\\Delta x$ và $\\Delta y$ có thể mang dấu âm."
   },
   {
    "q": "Cho hàm số $f(x,y) = x^{3} - 6 x y - 39 x + y^{2} + 18 y + 20$. Số điểm cực trị của hàm số bằng<span class=\"q-hint\">Lưu ý: điểm dừng là điểm mà $f'_x = f'_y = 0$. Tại điểm dừng, đặt $A = f''_{xx},\\ B = f''_{xy},\\ C = f''_{yy}$: nếu $AC - B^2 > 0$ thì đó là điểm cực trị, nếu $AC - B^2 < 0$ thì không phải.</span>",
@@ -185,16 +186,15 @@
    "explain": "<b>Đúng:</b> $\\displaystyle\\sum_{n=1}^{+\\infty}\\sin\\dfrac1n$ — $u_n \\sim \\dfrac1n$ nên chuỗi phân kỳ<br><b>Sai:</b> $\\displaystyle\\sum_{n=1}^{+\\infty}\\tan\\dfrac{1}{n^2}$ — $u_n \\sim \\dfrac{1}{n^2}$ nên chuỗi hội tụ<br><b>Sai:</b> $\\displaystyle\\sum_{n=1}^{+\\infty}\\dfrac{\\arctan n}{n^2}$ — $u_n \\le \\dfrac{\\pi}{2n^2}$ nên chuỗi hội tụ<br><b>Sai:</b> $\\displaystyle\\sum_{n=1}^{+\\infty}\\dfrac{2n+1}{n\\cdot 3^n}$ — $\\dfrac{u_{n+1}}{u_n} \\to \\dfrac13 < 1$ nên chuỗi hội tụ"
   },
   {
-   "q": "Xét chuỗi đan dấu $S = \\displaystyle\\sum_{n=1}^{+\\infty}\\dfrac{(-1)^{n+1}}{n^{3}}$ và gọi $S_n$ là tổng riêng thứ $n$. Theo đánh giá sai số của chuỗi Leibniz, $|S - S_n| \\le a_{n+1}$ với $a_n = \\dfrac{1}{n^{3}}$. Số $n$ nhỏ nhất để đánh giá này bảo đảm $|S - S_n| \\le 0{,}001$ là",
+   "q": "Cho hai chuỗi số dương $\\sum u_n$ và $\\sum v_n$ thỏa mãn $u_n \\le v_n$ với mọi $n$. Phát biểu nào sau đây là đúng?",
    "options": [
-    "$9$.",
-    "$10$.",
-    "$8$.",
-    "$99$."
+    "Nếu $\\sum v_n$ hội tụ thì $\\sum u_n$ hội tụ.",
+    "Nếu $\\sum u_n$ hội tụ thì $\\sum v_n$ hội tụ.",
+    "Nếu $\\sum v_n$ phân kỳ thì $\\sum u_n$ phân kỳ.",
+    "Hai chuỗi luôn cùng hội tụ hoặc cùng phân kỳ."
    ],
    "answer": 0,
-   "explain": "Leibniz: $|S-S_n|\\le a_{n+1}=\\dfrac1{(n+1)^{3}}$. Muốn sai số không quá $\\varepsilon=0{,}001$, cần $\\dfrac1{(n+1)^{3}}\\le0{,}001$.<br>Biến đổi bất đẳng thức: $(n+1)^{3}\\ge1000 \\Rightarrow n+1\\ge10\\approx10$.<br>$n$ nguyên nên $n\\ge9$; số nguyên nhỏ nhất là $n=9$.",
-   "note": "Leibniz: $a_n$ giảm về 0 thì chuỗi đan dấu hội tụ; hội tụ tuyệt đối phải xét thêm $\\sum a_n$; nếu $a_n \\not\\to 0$ thì chuỗi phân kỳ."
+   "explain": "<b>Đúng:</b> Nếu $\\displaystyle \\sum v_n$ hội tụ thì $\\displaystyle \\sum u_n$ hội tụ. Tổng riêng của $\\displaystyle \\sum u_n$ tăng và bị chặn trên bởi tổng của $\\displaystyle \\sum v_n$.<br><b>Sai:</b> Nếu $\\displaystyle \\sum u_n$ hội tụ thì $\\displaystyle \\sum v_n$ hội tụ. $u_n = \\dfrac{1}{n^2} \\le v_n = \\dfrac1n$: $\\displaystyle \\sum u_n$ hội tụ nhưng $\\displaystyle \\sum v_n$ phân kỳ.<br><b>Sai:</b> Nếu $\\displaystyle \\sum v_n$ phân kỳ thì $\\displaystyle \\sum u_n$ phân kỳ. Cùng ví dụ $u_n = \\dfrac{1}{n^2}$, $v_n = \\dfrac1n$.<br><b>Sai:</b> Hai chuỗi luôn cùng hội tụ hoặc cùng phân kỳ. Điều đó chỉ đúng khi $\\displaystyle \\lim\\dfrac{u_n}{v_n}$ hữu hạn và khác $0$; ví dụ trên là phản ví dụ."
   },
   {
    "q": "Phương trình nào sau đây là phương trình vi phân đẳng cấp (thuần nhất) cấp một?",

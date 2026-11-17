@@ -232,15 +232,15 @@
    "note": "Thay $t = 0$ để tìm hằng số trong công thức nghiệm; với $k = \\dfrac{\\ln 2}{T}$ thì $e^{-kT} = \\dfrac12$."
   },
   {
-   "q": "Theo phương pháp hệ số bất định, một nghiệm riêng của phương trình $y'' + 4y' + 4y = x + e^{-2x}$ được tìm dưới dạng nào sau đây ($A, B, C$ là các hằng số cần xác định)?",
+   "q": "Theo phương pháp hệ số bất định, một nghiệm riêng của phương trình $y'' - 4y = e^{2x} + 1$ được tìm dưới dạng nào sau đây ($A, B, C$ là các hằng số cần xác định)?",
    "options": [
-    "$y^* = Ax + B + Cx^2e^{-2x}$.",
-    "$y^* = Ax + B + Ce^{-2x}$.",
-    "$y^* = Ax + B + Cxe^{-2x}$.",
-    "$y^* = x(Ax + B) + Ce^{-2x}$."
+    "$y^* = Axe^{2x} + B$.",
+    "$y^* = Ae^{2x} + B$.",
+    "$y^* = Axe^{2x} + Bx$.",
+    "$y^* = Ax^2e^{2x} + B$."
    ],
    "answer": 0,
-   "explain": "$k^2+4k+4=(k+2)^2=0$. Vế $x$ có dạng đa thức $Ax+B$ (số mũ $0$ không là nghiệm); vế $e^{-2x}$ cộng hưởng với nghiệm kép $-2$, nên có hạng $Cx^2e^{-2x}$.<br>Dạng cần tìm: $y^* = Ax + B + Cx^2e^{-2x}$",
+   "explain": "$k^2-4=(k-2)(k+2)=0$. Hạng $e^{2x}$ cộng hưởng với nghiệm đơn $2$, nên dùng $Axe^{2x}$; hạng hằng $1$ ứng với $k=0$ không là nghiệm, nên dùng $B$.<br>Dạng cần tìm: $y^* = Axe^{2x} + B$",
    "note": "Bội của số mũ (hoặc của $\\alpha \\pm i\\beta$) trong phương trình đặc trưng quyết định nhân thêm $1$, $x$ hay $x^2$."
   },
   {
@@ -256,15 +256,15 @@
    "note": "Cận của $r$ là căn bậc hai của các số ở hai vế; không quên định thức Jacobi $r$."
   },
   {
-   "q": "Cho $V$ là vật thể nằm trong hình cầu $x^2 + y^2 + z^2 \\le 4$ và phía trên mặt nón $z = \\sqrt{x^2 + y^2}$. Trong tọa độ cầu $x = \\rho\\sin\\theta\\cos\\varphi,\\ y = \\rho\\sin\\theta\\sin\\varphi,\\ z = \\rho\\cos\\theta$, miền $V$ ứng với $0 \\le \\rho \\le 2,\\ 0 \\le \\theta \\le \\dfrac{\\pi}{4},\\ 0 \\le \\varphi \\le 2\\pi$. Giá trị của tích phân $\\displaystyle\\iiint_V z\\,dxdydz$ bằng",
+   "q": "Cho $V$ là vật thể nằm trong hình cầu $x^2 + y^2 + z^2 \\le 9$ và phía trên mặt nón $z = \\sqrt{\\dfrac{x^2 + y^2}{3}}$. Trong tọa độ cầu $x = \\rho\\sin\\theta\\cos\\varphi,\\ y = \\rho\\sin\\theta\\sin\\varphi,\\ z = \\rho\\cos\\theta$, miền $V$ ứng với $0 \\le \\rho \\le 3,\\ 0 \\le \\theta \\le \\dfrac{\\pi}{3},\\ 0 \\le \\varphi \\le 2\\pi$. Giá trị của tích phân $\\displaystyle\\iiint_V z\\,dxdydz$ bằng",
    "options": [
-    "$2 \\pi$.",
-    "$4 \\pi$.",
-    "$\\pi$.",
-    "$4 \\sqrt{2} \\pi$."
+    "$\\dfrac{243 \\pi}{16}$.",
+    "$\\dfrac{243 \\pi}{8}$.",
+    "$\\dfrac{243 \\pi}{32}$.",
+    "$\\dfrac{81 \\pi}{4}$."
    ],
    "answer": 0,
-   "explain": "Vì $z=\\rho\\cos\\theta$ và $dV=\\rho^2\\sin\\theta\\,d\\rho\\,d\\theta\\,d\\varphi$, $I=\\displaystyle\\int_0^{2\\pi}d\\varphi\\int_0^{\\dfrac{\\pi}{4}}\\cos\\theta\\sin\\theta\\,d\\theta\\int_0^{2}\\rho^3\\,d\\rho$.<br>Các tích phân bằng $2\\pi$, $[\\sin^2\\theta/2]_0^{\\dfrac{\\pi}{4}}=\\sin^2\\dfrac{\\pi}{4}/2$, và $[\\rh\\frac{o^4}{4}]_0^{2}=16/4$. Vậy $I=2\\pi\\cdot\\dfrac{\\sin^2\\dfrac{\\pi}{4}}{2}\\cdot\\dfrac{16}{4}=2 \\pi$.",
+   "explain": "Vì $z=\\rho\\cos\\theta$ và $dV=\\rho^2\\sin\\theta\\,d\\rho\\,d\\theta\\,d\\varphi$, $I=\\displaystyle\\int_0^{2\\pi}d\\varphi\\int_0^{\\dfrac{\\pi}{3}}\\cos\\theta\\sin\\theta\\,d\\theta\\int_0^{3}\\rho^3\\,d\\rho$.<br>Các tích phân bằng $2\\pi$, $[\\sin^2\\theta/2]_0^{\\dfrac{\\pi}{3}}=\\sin^2\\dfrac{\\pi}{3}/2$, và $[\\rh\\frac{o^4}{4}]_0^{3}=81/4$. Vậy $I=2\\pi\\cdot\\dfrac{\\sin^2\\dfrac{\\pi}{3}}{2}\\cdot\\dfrac{81}{4}=\\dfrac{243 \\pi}{16}$.",
    "note": "Góc $\\theta$ tính từ trục $Oz$: mặt nón $z = c\\sqrt{x^2 + y^2}$ ứng với $\\tan\\theta = \\dfrac1c$."
   },
   {
@@ -340,16 +340,15 @@
    "note": "Có đạo hàm cấp hai tại điểm nối: giá trị, đạo hàm cấp một và đạo hàm cấp hai ở hai phía đều phải khớp nhau."
   },
   {
-   "q": "Một đoạn đường ống uốn theo đường cong $y = \\dfrac23x^{3/2}$ với $0 \\le x \\le 8$ (đơn vị: mét). Dùng công thức độ dài cung $L = \\displaystyle\\int_a^b\\sqrt{1 + (y')^2}\\,dx$, độ dài đoạn ống bằng",
+   "q": "Tính độ dài cung của đường cong $y = \\dfrac{x^2}{2}$ từ $x = 0$ đến $x = 4$. Biết $\\int\\sqrt{1+x^2}\\,dx = \\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2} + C$.",
    "options": [
-    "$\\dfrac{52}{3} m$.",
-    "$18 m$.",
-    "$8 m$.",
-    "$\\dfrac{26}{3} m$."
+    "$\\dfrac{\\operatorname{asinh}{\\left(4 \\right)}}{2} + 2 \\sqrt{17}$.",
+    "$\\dfrac{\\operatorname{asinh}{\\left(4 \\right)}}{4} + \\sqrt{17}$.",
+    "$\\operatorname{asinh}{\\left(4 \\right)} + 4 \\sqrt{17}$.",
+    "$1 + \\dfrac{\\operatorname{asinh}{\\left(4 \\right)}}{2} + 2 \\sqrt{17}$."
    ],
    "answer": 0,
-   "explain": "$y' = \\sqrt{x} \\Rightarrow 1 + (y')^2 = 1 + x$<br>$L = \\displaystyle\\int_0^{8}\\sqrt{1 + x}\\,dx = \\left[\\dfrac23(1 + x)^{3/2}\\right]_0^{8}$<br>$= \\dfrac23\\left(9^{3/2} - 1\\right) = \\dfrac{52}{3}$",
-   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$."
+   "explain": "$y' = x$, $L = \\displaystyle\\int_0^{4}\\sqrt{1 + x^2}\\,dx$<br>$L = \\left[\\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2}\\right]_0^{4} = \\dfrac{\\operatorname{asinh}{\\left(4 \\right)}}{2} + 2 \\sqrt{17}$"
   },
   {
    "q": "Một đêm nhạc gây quỹ bán ba hạng vé: hạng thường giá 60 nghìn đồng, hạng trung giá 90 nghìn đồng và hạng VIP giá 150 nghìn đồng. Ban tổ chức bán được tổng cộng 240 vé, thu về 18900 nghìn đồng; số vé hạng thường nhiều hơn tổng số vé hai hạng còn lại là 60 vé. Số vé hạng VIP đã bán bằng",
@@ -460,15 +459,16 @@
    "note": "Trong tọa độ cầu $\\sqrt{x^2 + y^2 + z^2} = \\rho$ và $dV = \\rho^2\\sin\\theta\\,d\\rho\\,d\\theta\\,d\\varphi$."
   },
   {
-   "q": "Cho $C$ là đường cong kín, trơn từng khúc, lấy theo chiều dương và bao quanh miền $D$ có diện tích $S$. Phát biểu nào sau đây là đúng?",
+   "q": "Cho $L$ là cung parabol $y = \\dfrac{x^2}{2}$ đi từ $O(0;0)$ đến $A\\left(\\sqrt3;\\dfrac32\\right)$. Giá trị của tích phân $\\displaystyle\\int_L x\\,ds$ bằng",
    "options": [
-    "$S = \\dfrac12\\displaystyle\\oint_C x\\,dy - y\\,dx$.",
-    "$S = \\displaystyle\\oint_C x\\,dx + y\\,dy$.",
-    "$S = \\displaystyle\\oint_C y\\,dx$.",
-    "$S = \\displaystyle\\oint_C x\\,dy - y\\,dx$."
+    "$\\dfrac{7}{3}$.",
+    "$\\dfrac{8}{3}$.",
+    "$\\dfrac{7}{6}$.",
+    "$\\dfrac{7}{2}$."
    ],
    "answer": 0,
-   "explain": "<b>Đúng:</b> $S = \\dfrac12\\displaystyle\\oint_C x\\,dy - y\\,dx$. Theo công thức Green: $\\displaystyle\\oint_C x\\,dy - y\\,dx = \\iint_D(1 + 1)\\,dxdy = 2S$.<br><b>Sai:</b> $S = \\displaystyle\\oint_C x\\,dx + y\\,dy$. $x\\,dx + y\\,dy = d\\left(\\dfrac{x^2 + y^2}{2}\\right)$ nên tích phân theo đường kín bằng $0$.<br><b>Sai:</b> $S = \\displaystyle\\oint_C y\\,dx$. Theo công thức Green: $\\displaystyle\\oint_C y\\,dx = \\iint_D(0 - 1)\\,dxdy = -S$.<br><b>Sai:</b> $S = \\displaystyle\\oint_C x\\,dy - y\\,dx$. Tích phân này bằng $2S$."
+   "explain": "Đặt $x=t,\\ y=\\frac{t^2}{2}$ với $0\\le t\\le\\sqrt3$; $ds=\\sqrt{(dx/dt)^2+(dy/dt)^2}\\,dt=\\sqrt{1+t^2}\\,dt$, nên $x\\,ds=t\\sqrt{1+t^2}\\,dt$.<br>Đặt $u=1+t^2$, $du=2t\\,dt$: $\\displaystyle I=\\frac12\\int_1^{1+\\sqrt3^2}u^{1/2}\\,du=\\frac13[u^{3/2}]_1^{1+\\sqrt3^2}$.<br>$I=\\dfrac{(1+\\sqrt3^2)^{3/2}-1}{3}=\\dfrac{7}{3}$.",
+   "note": "Tích phân đường loại một: $ds = \\sqrt{x'^2 + y'^2}\\,dt$, không phụ thuộc chiều đi trên đường cong."
   },
   {
    "q": "Cho $C$ là biên của tam giác có ba đỉnh $O(0;0),\\ A(3;0),\\ B(0;1)$, lấy theo chiều ngược chiều kim đồng hồ. Dùng công thức Green, giá trị của tích phân $\\displaystyle\\oint_C (- y^{2})\\,dx + x y\\,dy$ bằng",
