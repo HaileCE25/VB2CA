@@ -106,7 +106,7 @@ def problems(item):
     for t in texts:
         if t.count('$') % 2 or t.count('$$') % 2:
             bad.append('lẻ dấu $: ' + t[:60])
-        odd = re.search(r'\bNone\b|\bnan\b|\bzoo\b|\\text\{NaN\}|\^\{\}|\- |- -', t)
+        odd = re.search(r'\bNone\b|\bnan\b|\bzoo\b|\\text\{NaN\}|\^\{\}|\+ -|- -', t)
         if odd:
             bad.append('chuỗi lạ "%s" trong: %s' % (odd.group(0), t[max(0, odd.start() - 50):odd.end() + 30]))
     return bad
@@ -161,13 +161,13 @@ def choose(slot, old, new, hard, k):
     cnt = USED.setdefault((slot, hard), {})
     cap = lambda f: (1 if slot in GM.SINGLE else 2) if f is old else GM.VARIANTS.get(f, 1)
     forms = [g for g in forms if cnt.get(g, 0) < GM.LIMIT.get(g, 99)]
-        if not forms:
-            for v in self.__dict__.values():
-                if isinstance(v, dict) and slot in v and v[slot]:
-                    forms = list(v[slot]); break
-            if not forms and cnt:
-                forms = list(cnt.keys())
-        f = min(forms, key=lambda g: (cnt.get(g, 0) / cap(g), forms.index(g)))
+    if not forms:
+        for v in self.__dict__.values():
+            if isinstance(v, dict) and slot in v and v[slot]:
+                forms = list(v[slot]); break
+        if not forms and cnt:
+            forms = list(cnt.keys())
+    f = min(forms, key=lambda g: (cnt.get(g, 0) / cap(g), forms.index(g)))
     j = cnt.get(f, 0)
     cnt[f] = j + 1
     return f, (j + (N_BASE if hard else 0) if f is old else j)
