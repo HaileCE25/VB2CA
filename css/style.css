@@ -1952,3 +1952,7 @@ table tbody td:last-child button, table tbody td:last-child .btn { width: 100% !
 .topic-gt td:last-child button, .topic-gt td:last-child .btn { background: #0284c7 !important; color: #fff !important; border: none !important; }
 .topic-ds td:last-child button, .topic-ds td:last-child .btn { background: #7c3aed !important; color: #fff !important; border: none !important; }
 @media (max-width: 768px) { table tbody { grid-template-columns: 1fr !important; } }
+
+/* IOS_NO_ZOOM */
+input, textarea, select { font-size: 16px !important; max-width: 100%; }
+[class*='explain'], [class*='solution'] { line-height: 1.85 !important; }
