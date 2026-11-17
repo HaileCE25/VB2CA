@@ -127,16 +127,15 @@
    "note": "Tiệm cận đứng: nghiệm của mẫu không bị rút gọn với tử; tiệm cận ngang: xét riêng $x \\to +\\infty$ và $x \\to -\\infty$ (với căn thức, hai phía có thể khác nhau)."
   },
   {
-   "q": "Hệ số của $x^{3}$ trong khai triển Maclaurin của hàm số $f(x) = e^{x}\\ln(1 + 2x)$ bằng<span class=\"q-hint\">Gợi ý: nhân hai khai triển cơ bản rồi gom các số hạng cùng bậc.</span>",
+   "q": "Cho hàm số $f(x) = \\sin(3x^2 + 2)$. Giá trị của $f'(1)$ bằng",
    "options": [
-    "$\\dfrac{5}{3}$.",
-    "$0$.",
-    "$10$.",
-    "$- \\dfrac{5}{3}$."
+    "$6 \\cos{\\left(5 \\right)}$.",
+    "$- 6 \\cos{\\left(5 \\right)}$.",
+    "$1 + 6 \\cos{\\left(5 \\right)}$.",
+    "$6 \\cos{\\left(5 \\right)} - 36 \\sin{\\left(5 \\right)}$."
    ],
    "answer": 0,
-   "explain": "$e^{x} = 1 + x + \\dfrac{1}{2}x^{2} + \\dfrac{1}{6}x^{3} + o(x^{3})$<br>$\\ln\\left(2 x + 1\\right) = 2x - 2x^{2} + \\dfrac{8}{3}x^{3} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=2x + \\dfrac{5}{3}x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $\\dfrac{5}{3}$.",
-   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$."
+   "explain": "$f'(x) = \\cos(3x^2 + 2)\\cdot 6x$<br>$f'(1) = \\cos(5)\\cdot6 = 6 \\cos{\\left(5 \\right)}$"
   },
   {
    "q": "Cho hàm số $f(x,y) = x^{2} y + y^{3}$. Đạo hàm của $f$ tại điểm $M(2;2)$ theo hướng của véc tơ $\\vec l = (12;5)$, tính bởi $\\dfrac{\\partial f}{\\partial \\vec l} = \\nabla f(M)\\cdot\\dfrac{\\vec l}{|\\vec l|}$, bằng",
@@ -341,16 +340,15 @@
    "note": "Có đạo hàm cấp hai tại điểm nối: giá trị, đạo hàm cấp một và đạo hàm cấp hai ở hai phía đều phải khớp nhau."
   },
   {
-   "q": "Giá trị của tích phân suy rộng $\\displaystyle\\int_0^{+\\infty} xe^{-4x}\\,dx$ bằng",
+   "q": "Tính độ dài cung của đường cong $y = \\dfrac{x^2}{2}$ từ $x = 0$ đến $x = 8$. Biết $\\int\\sqrt{1+x^2}\\,dx = \\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2} + C$.",
    "options": [
-    "$\\dfrac{1}{16}$.",
-    "$\\dfrac{1}{4}$.",
-    "$4$.",
-    "$\\dfrac{1}{8}$."
+    "$\\dfrac{\\operatorname{asinh}{\\left(8 \\right)}}{2} + 4 \\sqrt{65}$.",
+    "$\\dfrac{\\operatorname{asinh}{\\left(8 \\right)}}{4} + 2 \\sqrt{65}$.",
+    "$\\operatorname{asinh}{\\left(8 \\right)} + 8 \\sqrt{65}$.",
+    "$1 + \\dfrac{\\operatorname{asinh}{\\left(8 \\right)}}{2} + 4 \\sqrt{65}$."
    ],
    "answer": 0,
-   "explain": "Từng phần trên $[0,R]$ với $u=x$, $dv=e^{-4x}dx$, $v=-e^{-4x}/4$: $\\int_0^Rxe^{-4x}dx=[-xe^{-4x}/4]_0^R+\\frac1{4}\\int_0^Re^{-4x}dx$.<br>Cho $R\\to\\infty$, $Re^{-4R}\\to0$; tích phân còn lại là $[-e^{-4x}/4]_0^\\infty=1/4$. Vậy $I=0+\\dfrac1{4}\\cdot\\dfrac1{4}=\\dfrac{1}{16}$.",
-   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$."
+   "explain": "$y' = x$, $L = \\displaystyle\\int_0^{8}\\sqrt{1 + x^2}\\,dx$<br>$L = \\left[\\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2}\\right]_0^{8} = \\dfrac{\\operatorname{asinh}{\\left(8 \\right)}}{2} + 4 \\sqrt{65}$"
   },
   {
    "q": "Khảo sát thị trường của 3 loại hàng hóa có liên quan được đánh số 1, 2, 3. Lượng cung $s_i$ và lượng cầu $d_i$ của hàng hóa thứ $i$ phụ thuộc vào giá $p_1, p_2, p_3$ của cả ba loại theo các hệ thức: $$\\begin{cases}s_1 = 3 p_{1} + p_{2} - 70\\\\ s_2 = - p_{1} + 2 p_{2} - p_{3} + 75\\\\ s_3 = - p_{1} + 3 p_{3} - 45\\end{cases}\\ \\text{và}\\ \\begin{cases}d_1 = - p_{1} + p_{2} + 70\\\\ d_2 = 60 - 2 p_{2}\\\\ d_3 = p_{1} - p_{3} + 45\\end{cases}.$$ Thị trường cân bằng khi $s_i = d_i$ với mọi $i = \\overline{1,3}$. Tổng lượng cung của cả ba loại hàng hóa tại trạng thái cân bằng bằng",

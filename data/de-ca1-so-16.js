@@ -126,15 +126,15 @@
    "note": "Tiệm cận đứng: nghiệm của mẫu không bị rút gọn với tử; tiệm cận ngang: xét riêng $x \\to +\\infty$ và $x \\to -\\infty$ (với căn thức, hai phía có thể khác nhau)."
   },
   {
-   "q": "Hệ số của $x^{4}$ trong khai triển Maclaurin của hàm số $f(x) = \\dfrac{1}{(1 - x)(1 - 2x)}$ bằng<span class=\"q-hint\">Gợi ý: nhân hai khai triển cơ bản rồi gom các số hạng cùng bậc.</span>",
+   "q": "Hệ số của $x^{3}$ trong khai triển Maclaurin của hàm số $f(x) = e^{x}\\cos x$ bằng<span class=\"q-hint\">Gợi ý: nhân hai khai triển cơ bản rồi gom các số hạng cùng bậc.</span>",
    "options": [
-    "$31$.",
-    "$15$.",
-    "$744$.",
-    "$-31$."
+    "$- \\dfrac{1}{3}$.",
+    "$0$.",
+    "$-2$.",
+    "$\\dfrac{1}{3}$."
    ],
    "answer": 0,
-   "explain": "$\\dfrac{1}{1 - 2 x} = 1 + 2x + 4x^{2} + 8x^{3} + 16x^{4} + o(x^{4})$<br>$\\dfrac{1}{1 - x} = 1 + x + x^{2} + x^{3} + x^{4} + o(x^{4})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 4: $f(x)=1 + 3x + 7x^{2} + 15x^{3} + 31x^{4}+o(x^{4})$.<br>Đọc hệ số của $x^{4}$ từ tổng các tích cùng bậc vừa thu được: $31$.",
+   "explain": "$e^{x} = 1 + x + \\dfrac{1}{2}x^{2} + \\dfrac{1}{6}x^{3} + o(x^{3})$<br>$\\cos{\\left(x \\right)} = 1 - \\dfrac{1}{2}x^{2} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=1 + x - \\dfrac{1}{3}x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $- \\dfrac{1}{3}$.",
    "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$."
   },
   {
@@ -340,16 +340,15 @@
    "note": "Có đạo hàm cấp hai tại điểm nối: giá trị, đạo hàm cấp một và đạo hàm cấp hai ở hai phía đều phải khớp nhau."
   },
   {
-   "q": "Giá trị của tích phân suy rộng $\\displaystyle\\int_0^{+\\infty} e^{-x}\\sin x\\,dx$ bằng",
+   "q": "Tính độ dài cung của đường cong $y = \\dfrac{x^2}{2}$ từ $x = 0$ đến $x = 1$. Biết $\\int\\sqrt{1+x^2}\\,dx = \\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2} + C$.",
    "options": [
-    "$\\dfrac{1}{2}$.",
-    "$1$.",
-    "$\\dfrac{3}{2}$.",
-    "$- \\dfrac{1}{2}$."
+    "$\\dfrac{\\ln\\left(1 + \\sqrt{2}\\right)}{2} + \\dfrac{\\sqrt{2}}{2}$.",
+    "$\\dfrac{\\ln\\left(1 + \\sqrt{2}\\right)}{4} + \\dfrac{\\sqrt{2}}{4}$.",
+    "$\\ln\\left(1 + \\sqrt{2}\\right) + \\sqrt{2}$.",
+    "$\\dfrac{\\ln\\left(1 + \\sqrt{2}\\right)}{2} + \\dfrac{\\sqrt{2}}{2} + 1$."
    ],
    "answer": 0,
-   "explain": "Đặt $I=\\int_0^\\infty e^{-ax}\\sin bx\\,dx$, $J=\\int_0^\\infty e^{-ax}\\cos bx\\,dx$. Từng phần cho $I=[-e^{-ax}\\cos bx/b]_0^\\infty-(a/b)J=1/b-(a/b)J$.<br>Từng phần với $J$: $J=[e^{-ax}\\sin bx/b]_0^\\infty+(a/b)I=(a/b)I$. Thế vào phương trình đầu: $I=1/b-(a^2/b^2)I$, nên $I(1+a^2/b^2)=1/b$ và $I=b/(a^2+b^2)=\\dfrac{1}{2}$.",
-   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$."
+   "explain": "$y' = x$, $L = \\displaystyle\\int_0^{1}\\sqrt{1 + x^2}\\,dx$<br>$L = \\left[\\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2}\\right]_0^{1} = \\dfrac{\\ln\\left(1 + \\sqrt{2}\\right)}{2} + \\dfrac{\\sqrt{2}}{2}$"
   },
   {
    "q": "Một đêm nhạc gây quỹ bán ba hạng vé: hạng thường giá 30 nghìn đồng, hạng trung giá 50 nghìn đồng và hạng VIP giá 90 nghìn đồng. Ban tổ chức bán được tổng cộng 220 vé, thu về 8800 nghìn đồng; số vé hạng thường nhiều hơn tổng số vé hai hạng còn lại là 80 vé. Số vé hạng VIP đã bán bằng",

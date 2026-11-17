@@ -222,10 +222,10 @@
   {
    "q": "Trong một mạch điện RL, cường độ dòng điện $y(t)$ (ampe) sau $t$ mili giây kể từ khi đóng mạch thỏa mãn phương trình $y' = k(4 - y)$ với $k = \\dfrac{\\ln 2}{2}$ và $y(0) = 0$. Cường độ dòng điện sau 6 mili giây bằng",
    "options": [
-    "$3{,}5$ A.",
-    "$3{,}75$ A.",
-    "$0{,}5$ A.",
-    "$4$ A."
+    "$3{,}5 A$.",
+    "$3{,}75 A$.",
+    "$0{,}5 A$.",
+    "$4 A$."
    ],
    "answer": 0,
    "explain": "$y' + ky = 4k$ (tuyến tính cấp một) $\\Rightarrow y = 4 + Ce^{-kt}$<br>$y(0) = 0 \\Rightarrow C = -4$<br>$e^{-kt} = e^{-\\frac{\\ln 2}{2}\\cdot6} = 2^{-3} = \\dfrac{1}{8}$<br>$y(6) = 4 + \\dfrac{-4}{8} = \\dfrac{7}{2}$",
@@ -339,16 +339,15 @@
    "note": "Có đạo hàm tại điểm nối cần hai điều kiện: liên tục, và đạo hàm trái bằng đạo hàm phải."
   },
   {
-   "q": "Một bể chứa hình trụ đứng có bán kính đáy 2 mét, chiều cao 4 mét, chứa đầy nước. Biết khối lượng riêng của nước là $1000\\,kg/m^3$ và gia tốc trọng trường $g = 9{,}8\\,m/s^2$. Công cần thiết để bơm hết nước trong bể lên một bồn chứa đặt cao hơn miệng bể 2 mét (làm tròn đến hàng phần chục) bằng",
+   "q": "Tìm hoành độ trọng tâm $\\bar{x}$ của hình phẳng giới hạn bởi $y = x$, $y = 0$ và $x = 5$ (tam giác vuông). Biết $\\bar{x} = \\dfrac{\\iint_D x\\,dA}{\\iint_D dA}$, giá trị $\\bar{x}$ bằng",
    "options": [
-    "1970,4 <i>kJ</i>.",
-    "985,2 <i>kJ</i>.",
-    "2955,6 <i>kJ</i>.",
-    "1601,0 <i>kJ</i>."
+    "$\\dfrac{10}{3}$.",
+    "$\\dfrac{5}{2}$.",
+    "$\\dfrac{5}{3}$.",
+    "$\\dfrac{15}{4}$."
    ],
    "answer": 0,
-   "explain": "Lớp nước dày $dh$ ở độ sâu $h$ có khối lượng $1000\\cdot\\pi\\cdot4\\,dh$, phải nâng lên $h + 2$ mét<br>$W = \\displaystyle\\int_0^{4} 9800\\pi\\cdot4\\,(h + 2)\\,dh = 39200\\pi\\left[\\dfrac{h^2}{2} + 2h\\right]_0^{4}$<br>$= 39200\\pi\\cdot16 \\approx 1970407\\ J = 1970{,}4\\ kJ$",
-   "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau."
+   "explain": "Diện tích $S = \\dfrac{1}{2} \\cdot 5^2 = \\dfrac{25}{2}$<br>$\\iint_D x\\,dA = \\displaystyle\\int_0^{5} x \\cdot x\\,dx = \\left[\\dfrac{x^3}{3}\\right]_0^{5} = \\dfrac{125}{3}$<br>$\\bar{x} = \\dfrac{\\dfrac{125}{3}}{\\dfrac{25}{2}} = \\dfrac{10}{3}$"
   },
   {
    "q": "Một xưởng sản xuất 3 loại sản phẩm từ 3 loại nguyên liệu I, II, III. Mỗi đơn vị sản phẩm loại 1, 2, 3 cần lần lượt $1, 1, 3$ đơn vị nguyên liệu I; $1, 2, 1$ đơn vị nguyên liệu II và $3, 1, 2$ đơn vị nguyên liệu III. Kho hiện có $110$, $60$ và $100$ đơn vị nguyên liệu I, II, III. Nếu xưởng lập kế hoạch dùng vừa hết cả ba loại nguyên liệu thì tổng số sản phẩm làm ra bằng",

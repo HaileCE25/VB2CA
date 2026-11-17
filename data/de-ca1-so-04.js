@@ -126,16 +126,15 @@
    "explain": "<b>Đúng:</b> Nếu $f(a)\\cdot f(b) < 0$ thì phương trình $f(x) = 0$ có ít nhất một nghiệm thuộc $(a;b)$. Đây là định lí giá trị trung gian (Bolzano – Cauchy).<br><b>Sai:</b> Nếu $f(a)\\cdot f(b) > 0$ thì phương trình $f(x) = 0$ vô nghiệm trên $(a;b)$. $f(x) = x^2 - 1$ trên $[-2;2]$ có $f(-2)f(2) > 0$ nhưng vẫn có nghiệm $x = \\pm1$.<br><b>Sai:</b> $f$ có đạo hàm tại mọi điểm thuộc $(a;b)$. $f(x) = |x|$ liên tục trên $[-1;1]$ nhưng không có đạo hàm tại $0$.<br><b>Sai:</b> $f$ có thể không bị chặn trên $[a;b]$. Hàm liên tục trên một đoạn thì bị chặn và đạt giá trị lớn nhất, nhỏ nhất (định lí Weierstrass)."
   },
   {
-   "q": "Một chất điểm chuyển động trong mặt phẳng $Oxy$ theo quỹ đạo có phương trình tham số $x = t^2 + 2t,\\ y = t^3 - 3t$ ($t$ là thời gian). Hệ số góc $\\dfrac{dy}{dx}$ của tiếp tuyến với quỹ đạo tại thời điểm $t = 1$ bằng",
+   "q": "Cho hàm số $f(x) = x^{4} + x$. Vi phân $dy$ tại $x_0 = 1$ với $dx = \\dfrac{1}{100}$ bằng",
    "options": [
-    "$0$.",
-    "$2$.",
-    "$\\dfrac{3}{2}$.",
-    "$1$."
+    "$\\dfrac{1}{20}$.",
+    "$- \\dfrac{1}{20}$.",
+    "$\\dfrac{1}{10}$.",
+    "$\\dfrac{5060401}{100000000}$."
    ],
    "answer": 0,
-   "explain": "$x'(t) = 2t + 2,\\quad y'(t) = 3t^2 - 3$<br>$\\dfrac{dy}{dx} = \\dfrac{y'(t)}{x'(t)} = \\dfrac{3t^2 - 3}{2t + 2}$<br>Tại $t = 1$: $\\dfrac{0}{4} = 0$",
-   "note": "Chọn đúng công cụ: Leibniz cho đạo hàm cấp cao của tích; đạo hàm hai vế cho hàm ẩn; lấy lôgarit cho $u^v$; $\\dfrac{dy}{dx} = \\dfrac{y'_t}{x'_t}$ cho đường cong tham số."
+   "explain": "$f'(x) = 4 x^{3} + 1$<br>$dy = f'(1)\\\\cdot dx = 5\\\\cdot\\dfrac{1}{100} = \\dfrac{1}{20}$"
   },
   {
    "q": "Cho hàm ẩn $z = z(x,y)$ xác định bởi phương trình $2 x z - y + z^{3} = 0$. Biết tại $(x;y) = (2;5)$ thì $z = 1$, giá trị của $z'_x(2;5)$ bằng",
@@ -222,10 +221,10 @@
   {
    "q": "Một bệnh nhân được truyền thuốc liên tục qua đường tĩnh mạch. Nồng độ thuốc trong máu $y(t)$ (mg/lít) sau $t$ giờ thỏa mãn phương trình $y' = k(48 - y)$ với $k = \\dfrac{\\ln 2}{2}$ và $y(0) = 0$. Nồng độ thuốc trong máu sau 4 giờ bằng",
    "options": [
-    "$36$ mg/lít.",
-    "$42$ mg/lít.",
-    "$12$ mg/lít.",
-    "$48$ mg/lít."
+    "$36 mg/lít$.",
+    "$42 mg/lít$.",
+    "$12 mg/lít$.",
+    "$48 mg/lít$."
    ],
    "answer": 0,
    "explain": "$y' + ky = 48k$ (tuyến tính cấp một) $\\Rightarrow y = 48 + Ce^{-kt}$<br>$y(0) = 0 \\Rightarrow C = -48$<br>$e^{-kt} = e^{-\\frac{\\ln 2}{2}\\cdot4} = 2^{-2} = \\dfrac{1}{4}$<br>$y(4) = 48 + \\dfrac{-48}{4} = 36$",
@@ -340,16 +339,15 @@
    "note": "Có đạo hàm tại điểm nối cần hai điều kiện: liên tục, và đạo hàm trái bằng đạo hàm phải."
   },
   {
-   "q": "Một sợi cáp dài 20 mét, nặng 3 kg mỗi mét, được treo thẳng đứng từ nóc một tòa nhà cao. Lấy $g = 9{,}8\\,m/s^2$. Công cần thiết để kéo toàn bộ sợi cáp lên nóc tòa nhà (làm tròn đến hàng phần chục) bằng",
+   "q": "Tính diện tích hình phẳng giới hạn bởi parabol $y = x^2$ và đường thẳng $y = 1x$.",
    "options": [
-    "5,9 <i>kJ</i>.",
-    "11,8 <i>kJ</i>.",
-    "2,9 <i>kJ</i>.",
-    "6,9 <i>kJ</i>."
+    "$\\dfrac{1}{6}$.",
+    "$\\dfrac{1}{12}$.",
+    "$\\dfrac{1}{3}$.",
+    "$\\dfrac{7}{6}$."
    ],
    "answer": 0,
-   "explain": "Đoạn cáp dài $dx$ ở độ sâu $x$ nặng $3\\,dx$ kg, phải nâng lên $x$ mét<br>$W = \\displaystyle\\int_0^{20} 3\\cdot9{,}8\\cdot x\\,dx = 29{,}4\\cdot\\dfrac{20^2}{2}$<br>$= 5880\\ J = 5{,}9\\ kJ$",
-   "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau."
+   "explain": "Giao điểm: $x^2 = 1x \\Rightarrow x = 0$ và $x = 1$<br>$S = \\displaystyle\\int_0^{1}(1x - x^2)\\,dx = \\left[\\dfrac{1x^2}{2} - \\dfrac{x^3}{3}\\right]_0^{1} = \\dfrac{1}{6}$"
   },
   {
    "q": "Một đêm nhạc gây quỹ bán ba hạng vé: hạng thường giá 30 nghìn đồng, hạng trung giá 50 nghìn đồng và hạng VIP giá 90 nghìn đồng. Ban tổ chức bán được tổng cộng 210 vé, thu về 9300 nghìn đồng; số vé hạng thường nhiều hơn tổng số vé hai hạng còn lại là 30 vé. Số vé hạng VIP đã bán bằng",

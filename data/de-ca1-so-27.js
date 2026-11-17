@@ -127,16 +127,15 @@
    "note": "Tiệm cận đứng: nghiệm của mẫu không bị rút gọn với tử; tiệm cận ngang: xét riêng $x \\to +\\infty$ và $x \\to -\\infty$ (với căn thức, hai phía có thể khác nhau)."
   },
   {
-   "q": "Hệ số của $x^{3}$ trong khai triển Maclaurin của hàm số $f(x) = \\sin 3x\\cos x$ bằng<span class=\"q-hint\">Gợi ý: nhân hai khai triển cơ bản rồi gom các số hạng cùng bậc.</span>",
+   "q": "Cho hàm số $f(x) = \\ln(x^2 + 4x + 10)$. Giá trị của $f'(2)$ bằng",
    "options": [
-    "$-6$.",
-    "$0$.",
-    "$-36$.",
-    "$6$."
+    "$\\dfrac{4}{11}$.",
+    "$\\dfrac{2}{11}$.",
+    "$\\dfrac{4}{7}$.",
+    "$- \\dfrac{4}{11}$."
    ],
    "answer": 0,
-   "explain": "$\\sin{\\left(3 x \\right)} = 3x - \\dfrac{9}{2}x^{3} + o(x^{3})$<br>$\\cos{\\left(x \\right)} = 1 - \\dfrac{1}{2}x^{2} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=3x - 6x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $-6$.",
-   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$."
+   "explain": "$f'(x) = \\dfrac{2x + 4}{x^2 + 4x + 10}$<br>$f'(2) = \\dfrac{8}{22} = \\dfrac{4}{11}$"
   },
   {
    "q": "Cho hàm số $f(x,y) = x^{3} - y^{2}$. Tại điểm $M(-1;-2)$, hàm số tăng nhanh nhất theo hướng của véc tơ gradient $\\nabla f(M) = (f'_x(M); f'_y(M))$ và tốc độ tăng lớn nhất bằng $|\\nabla f(M)|$. Giá trị của $|\\nabla f(M)|$ bằng",
@@ -326,7 +325,7 @@
     "$\\dfrac{17}{6}$."
    ],
    "answer": 0,
-   "explain": "$e^{u} = 1 + u + \\dfrac{u^2}{2} + \\dfrac{u^3}{6} + o(u^3)$, với $u=x$, ta có $u^2=1x^2$ và $u^3=1x^3$.<br>Tử số sau khai triển là $(1-a)x+(\\dfrac{1}{2}-b)x^2+(\\dfrac{1}{6})x^3+o(x^3)$. Chia cho $x^3$: $\\dfrac{1-a}{x^2}+\\dfrac{\\dfrac{1}{2}-b}{x}+\\dfrac{1}{6}+o(1)$.<br>Để giới hạn hữu hạn, các hệ số phân kỳ triệt tiêu: $a=1$ và $b=\\dfrac{1}{2}$; hệ số còn lại cho $L=\\dfrac{1}{6}$.<br>$1+2(\\dfrac{1}{2})+6(\\dfrac{1}{6})=1+1+1=3$",
+   "explain": "$e^{u} = 1 + u + \\dfrac{u^2}{2} + \\dfrac{u^3}{6} + o(u^3)$, với $u=x$, ta có $u^2=1x^2$ và $u^3=1x^3$.<br>Tử số sau khai triển là $(1-a)x+(\\dfrac{1}{2}-b)x^2+(\\dfrac{1}{6})x^3+o(x^3)$. Chia cho $x^3$: $\\dfrac{1-a}{x^2}+\\dfrac{\\dfrac{1}{2}-b}{x}+\\dfrac{1}{6}+o(1)$.<br>Để giới hạn hữu hạn, các hệ số phân kỳ triệt tiêu: $a=1$ và $b=\\dfrac{1}{2}$; hệ số còn lại cho $L=\\dfrac{1}{6}$.<br>1+2(\\dfrac{1}{2})+6(\\dfrac{1}{6})=1+1+1=3",
    "note": "Trong khai triển Maclaurin của tử, mọi hệ số có bậc thấp hơn bậc của mẫu phải bằng 0; hệ số cùng bậc với mẫu cho giá trị $L$."
   },
   {
@@ -342,16 +341,15 @@
    "note": "Có đạo hàm cấp hai tại điểm nối: giá trị, đạo hàm cấp một và đạo hàm cấp hai ở hai phía đều phải khớp nhau."
   },
   {
-   "q": "Giá trị của tích phân suy rộng $\\displaystyle\\int_1^{+\\infty}\\dfrac{dx}{x(x + 3)}$ bằng",
+   "q": "Tính diện tích hình phẳng giới hạn bởi parabol $y = x^2$ và đường thẳng $y = 6x$.",
    "options": [
-    "$\\dfrac{2 \\ln 2}{3}$.",
-    "$\\ln 4$.",
-    "$\\ln 16$.",
-    "$\\dfrac{1}{3}$."
+    "$36$.",
+    "$18$.",
+    "$72$.",
+    "$37$."
    ],
    "answer": 0,
-   "explain": "Phân tích phân thức: $\\dfrac1{x(x+3)}=\\dfrac1{3}\\left(\\dfrac1x-\\dfrac1{x+3}\\right)$ vì $\\dfrac{(x+3)-x}{3x(x+3)}=\\dfrac1{x(x+3)}$.<br>$I_R=\\dfrac1{3}\\left[\\ln x-\\ln(x+3)\\right]_1^R=\\dfrac1{3}\\ln\\dfrac{4R}{R+3}\\to\\dfrac1{3}\\ln4=\\dfrac{2 \\ln 2}{3}$.",
-   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$."
+   "explain": "Giao điểm: $x^2 = 6x \\Rightarrow x = 0$ và $x = 6$<br>$S = \\displaystyle\\int_0^{6}(6x - x^2)\\,dx = \\left[\\dfrac{6x^2}{2} - \\dfrac{x^3}{3}\\right]_0^{6} = 36$"
   },
   {
    "q": "Xét mô hình cân bằng thu nhập quốc dân: $Y = C + I_0 + G_0$; $C = 60 + 0{,}75(Y - T)$; $T = 0{,}2Y$, trong đó $Y$ là thu nhập, $C$ là tiêu dùng, $T$ là thuế, đầu tư $I_0 = 100$ và chi tiêu chính phủ $G_0 = 100$. Giá trị của số thuế $T^*$ tại trạng thái cân bằng bằng",

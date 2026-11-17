@@ -127,16 +127,15 @@
    "note": "Liên tục tại $x_0$ $\\Leftrightarrow$ giới hạn trái = giới hạn phải = $f(x_0)$; giới hạn hữu hạn mà mẫu tiến về 0 thì tử cũng phải tiến về 0."
   },
   {
-   "q": "Cho hàm số $f(x) = x^2e^{3x}$. Dùng công thức Leibniz $(uv)^{(n)} = \\sum_{k=0}^{n} C_n^k u^{(k)}v^{(n-k)}$, giá trị của đạo hàm cấp mười $f^{(10)}(0)$ bằng",
+   "q": "Cho hàm số $f(x) = x^{3}e^{2x}$. Giá trị của $f'(1)$ bằng",
    "options": [
-    "$590490$.",
-    "$295245$.",
-    "$1180980$.",
-    "$59049$."
+    "$5 e^{2}$.",
+    "$1 + 5 e^{2}$.",
+    "$10 e^{2}$.",
+    "$- 5 e^{2}$."
    ],
    "answer": 0,
-   "explain": "$u = x^2$: $u(0) = 0,\\ u'(0) = 0,\\ u''(0) = 2,\\ u^{(k)} = 0\\ (k \\ge 3)$; $v = e^{3x}$: $v^{(m)}(0) = (3)^m$<br>$f^{(10)}(0) = C_{10}^2\\cdot u''(0)\\cdot v^{(8)}(0) = 45\\cdot2\\cdot(3)^{8} = 590490$",
-   "note": "Chọn đúng công cụ: Leibniz cho đạo hàm cấp cao của tích; đạo hàm hai vế cho hàm ẩn; lấy lôgarit cho $u^v$; $\\dfrac{dy}{dx} = \\dfrac{y'_t}{x'_t}$ cho đường cong tham số."
+   "explain": "$f'(x) = 3x^{2}e^{2x} + 2x^{3}e^{2x}$<br>$f'(1) = 5 e^{2}$"
   },
   {
    "q": "Cho hàm số $f(x,y) = \\arctan\\dfrac{y}{x}$. Giá trị của $f''_{xx}(1;2)$ bằng",
@@ -224,10 +223,10 @@
   {
    "q": "Trong một mạch điện RL, cường độ dòng điện $y(t)$ (ampe) sau $t$ mili giây kể từ khi đóng mạch thỏa mãn phương trình $y' = k(16 - y)$ với $k = \\dfrac{\\ln 2}{2}$ và $y(0) = 0$. Cường độ dòng điện sau 4 mili giây bằng",
    "options": [
-    "$12$ A.",
-    "$14$ A.",
-    "$4$ A.",
-    "$16$ A."
+    "$12 A$.",
+    "$14 A$.",
+    "$4 A$.",
+    "$16 A$."
    ],
    "answer": 0,
    "explain": "$y' + ky = 16k$ (tuyến tính cấp một) $\\Rightarrow y = 16 + Ce^{-kt}$<br>$y(0) = 0 \\Rightarrow C = -16$<br>$e^{-kt} = e^{-\\frac{\\ln 2}{2}\\cdot4} = 2^{-2} = \\dfrac{1}{4}$<br>$y(4) = 16 + \\dfrac{-16}{4} = 12$",
@@ -342,15 +341,15 @@
    "note": "Có đạo hàm tại điểm nối cần hai điều kiện: liên tục, và đạo hàm trái bằng đạo hàm phải."
   },
   {
-   "q": "Một sợi cáp dài 40 mét, nặng 2 kg mỗi mét, được treo thẳng đứng từ nóc một tòa nhà cao, đầu dưới có gắn một vật nặng 20 kg. Lấy $g = 9{,}8\\,m/s^2$. Công cần thiết để kéo toàn bộ sợi cáp cùng vật nặng lên nóc tòa nhà (làm tròn đến hàng phần chục) bằng",
+   "q": "Một lò xo tuân theo định luật Hooke $F = kx$ bị giãn 5 cm khi chịu lực kéo 30 N. Công cần thiết để kéo lò xo từ độ giãn 10 cm đến độ giãn 20 cm bằng",
    "options": [
-    "23,5 <i>kJ</i>.",
-    "39,2 <i>kJ</i>.",
-    "15,7 <i>kJ</i>.",
-    "11,8 <i>kJ</i>."
+    "9 <i>J</i>.",
+    "3 <i>J</i>.",
+    "24 <i>J</i>.",
+    "900 <i>J</i>."
    ],
    "answer": 0,
-   "explain": "Đoạn cáp dài $dx$ ở độ sâu $x$ nặng $2\\,dx$ kg, phải nâng lên $x$ mét<br>$W = \\displaystyle\\int_0^{40} 2\\cdot9{,}8\\cdot x\\,dx + 20\\cdot9{,}8\\cdot40 = 19{,}6\\cdot\\dfrac{40^2}{2} + 7840$<br>$= 23520\\ J = 23{,}5\\ kJ$",
+   "explain": "$F = kx \\Rightarrow k = \\dfrac{30}{0{,}05} = 600\\ N/m$<br>$W = \\displaystyle\\int_{0{,}10}^{0{,}20} 600x\\,dx = 300\\left(0{,}20^2 - 0{,}10^2\\right) = 9\\ J$",
    "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau."
   },
   {

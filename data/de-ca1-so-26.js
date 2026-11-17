@@ -126,15 +126,15 @@
    "explain": "<b>Đúng:</b> Quy tắc chỉ áp dụng trực tiếp cho các dạng vô định $\\dfrac00$ và $\\dfrac{\\infty}{\\infty}$. Đó là giả thiết của định lí; các dạng vô định khác phải được biến đổi về một trong hai dạng này.<br><b>Sai:</b> Với mọi $f, g$ khả vi luôn có $\\lim\\dfrac{f(x)}{g(x)} = \\lim\\dfrac{f'(x)}{g'(x)}$. $\\lim\\limits_{x\\to0}\\dfrac{x + 1}{x + 2} = \\dfrac12$, trong khi $\\dfrac{f'}{g'} = 1$.<br><b>Sai:</b> $\\lim\\dfrac{f(x)}{g(x)} = \\lim\\left(\\dfrac{f(x)}{g(x)}\\right)'$. Phải lấy đạo hàm riêng tử và riêng mẫu, không phải đạo hàm của thương.<br><b>Sai:</b> Nếu $\\lim\\dfrac{f'(x)}{g'(x)}$ không tồn tại thì $\\lim\\dfrac{f(x)}{g(x)}$ cũng không tồn tại. $\\lim\\limits_{x\\to+\\infty}\\dfrac{x + \\sin x}{x} = 1$ dù $\\dfrac{1 + \\cos x}{1}$ không có giới hạn."
   },
   {
-   "q": "Hệ số của $x^{3}$ trong khai triển Maclaurin của hàm số $f(x) = e^{x}\\ln(1 + 3x)$ bằng<span class=\"q-hint\">Gợi ý: nhân hai khai triển cơ bản rồi gom các số hạng cùng bậc.</span>",
+   "q": "Hệ số của $x^{3}$ trong khai triển Maclaurin của hàm số $f(x) = \\sin 3x\\cos x$ bằng<span class=\"q-hint\">Gợi ý: nhân hai khai triển cơ bản rồi gom các số hạng cùng bậc.</span>",
    "options": [
-    "$6$.",
-    "$- \\dfrac{3}{2}$.",
-    "$36$.",
-    "$-6$."
+    "$-6$.",
+    "$0$.",
+    "$-36$.",
+    "$6$."
    ],
    "answer": 0,
-   "explain": "$e^{x} = 1 + x + \\dfrac{1}{2}x^{2} + \\dfrac{1}{6}x^{3} + o(x^{3})$<br>$\\ln\\left(3 x + 1\\right) = 3x - \\dfrac{9}{2}x^{2} + 9x^{3} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=3x - \\dfrac{3}{2}x^{2} + 6x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $6$.",
+   "explain": "$\\sin{\\left(3 x \\right)} = 3x - \\dfrac{9}{2}x^{3} + o(x^{3})$<br>$\\cos{\\left(x \\right)} = 1 - \\dfrac{1}{2}x^{2} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=3x - 6x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $-6$.",
    "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$."
   },
   {
@@ -324,7 +324,7 @@
     "$\\dfrac{34}{3}$."
    ],
    "answer": 0,
-   "explain": "$\\ln(1 + u) = u - \\dfrac{u^2}{2} + \\dfrac{u^3}{3} + o(u^3)$, với $u=2x$, ta có $u^2=4x^2$ và $u^3=8x^3$.<br>Tử số sau khai triển là $(2-a)x+(-2-b)x^2+(\\dfrac{8}{3})x^3+o(x^3)$. Chia cho $x^3$: $\\dfrac{2-a}{x^2}+\\dfrac{-2-b}{x}+\\dfrac{8}{3}+o(1)$.<br>Để giới hạn hữu hạn, các hệ số phân kỳ triệt tiêu: $a=2$ và $b=-2$; hệ số còn lại cho $L=\\dfrac{8}{3}$.<br>$2-2(-2)+3(\\dfrac{8}{3})=2+4+8=14$",
+   "explain": "$\\ln(1 + u) = u - \\dfrac{u^2}{2} + \\dfrac{u^3}{3} + o(u^3)$, với $u=2x$, ta có $u^2=4x^2$ và $u^3=8x^3$.<br>Tử số sau khai triển là $(2-a)x+(-2-b)x^2+(\\dfrac{8}{3})x^3+o(x^3)$. Chia cho $x^3$: $\\dfrac{2-a}{x^2}+\\dfrac{-2-b}{x}+\\dfrac{8}{3}+o(1)$.<br>Để giới hạn hữu hạn, các hệ số phân kỳ triệt tiêu: $a=2$ và $b=-2$; hệ số còn lại cho $L=\\dfrac{8}{3}$.<br>2-2(-2)+3(\\dfrac{8}{3})=2+4+8=14",
    "note": "Trong khai triển Maclaurin của tử, mọi hệ số có bậc thấp hơn bậc của mẫu phải bằng 0; hệ số cùng bậc với mẫu cho giá trị $L$."
   },
   {
@@ -340,16 +340,15 @@
    "note": "Có đạo hàm cấp hai tại điểm nối: giá trị, đạo hàm cấp một và đạo hàm cấp hai ở hai phía đều phải khớp nhau."
   },
   {
-   "q": "Giá trị của tích phân suy rộng $\\displaystyle\\int_0^{+\\infty}\\dfrac{dx}{x^2 + 4}$ bằng",
+   "q": "Một tấm phẳng hình chữ nhật chiều rộng 2 m, chiều cao 2 m được nhúng thẳng đứng vào nước sao cho cạnh trên ở độ sâu 1 m. Lấy $g = 9{,}8\\,m/s^2$. Áp lực của nước lên tấm bằng",
    "options": [
-    "$\\dfrac{\\pi}{4}$.",
-    "$\\dfrac{\\pi}{2}$.",
-    "$\\dfrac{\\pi}{8}$.",
-    "$\\dfrac{\\pi}{4} + 1$."
+    "78400 <i>N</i>.",
+    "39200 <i>N</i>.",
+    "156800 <i>N</i>.",
+    "117600 <i>N</i>."
    ],
    "answer": 0,
-   "explain": "Đặt $x=2t$, $dx=2dt$, $x^2+4=4(1+t^2)$: $\\int_0^\\infty\\dfrac{dx}{x^2+4}=\\dfrac1{2}\\int_0^\\infty\\dfrac{dt}{1+t^2}$.<br>$=\\dfrac1{2}[\\arctan t]_0^\\infty=\\dfrac1{2}(\\dfrac\\pi2-0)=\\dfrac{\\pi}{4}$.",
-   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$."
+   "explain": "Dải ngang ở độ sâu $(1 + y)$ m, diện tích $2\\,dy$, áp lực $1000 \\cdot 9{,}8 \\cdot (1 + y) \\cdot 2\\,dy$<br>$F = \\displaystyle\\int_0^{2} 9800 \\cdot 2 \\cdot (1 + y)\\,dy = 98002\\left[1y + \\dfrac{y^2}{2}\\right]_0^{2} = 78400\\,N = \\dfrac{392}{5}\\,kN$"
   },
   {
    "q": "Một xưởng sản xuất 3 loại sản phẩm từ 3 loại nguyên liệu I, II, III. Mỗi đơn vị sản phẩm loại 1, 2, 3 cần lần lượt $2, 1, 1$ đơn vị nguyên liệu I; $2, 2, 1$ đơn vị nguyên liệu II và $3, 2, 2$ đơn vị nguyên liệu III. Kho hiện có $120$, $140$ và $210$ đơn vị nguyên liệu I, II, III. Nếu xưởng lập kế hoạch dùng vừa hết cả ba loại nguyên liệu thì tổng số sản phẩm làm ra bằng",

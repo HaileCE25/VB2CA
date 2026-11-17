@@ -223,10 +223,10 @@
   {
    "q": "Một bệnh nhân được truyền thuốc liên tục qua đường tĩnh mạch. Nồng độ thuốc trong máu $y(t)$ (mg/lít) sau $t$ giờ thỏa mãn phương trình $y' = k(64 - y)$ với $k = \\dfrac{\\ln 2}{6}$ và $y(0) = 0$. Nồng độ thuốc trong máu sau 18 giờ bằng",
    "options": [
-    "$56$ mg/lít.",
-    "$60$ mg/lít.",
-    "$8$ mg/lít.",
-    "$64$ mg/lít."
+    "$56 mg/lít$.",
+    "$60 mg/lít$.",
+    "$8 mg/lít$.",
+    "$64 mg/lít$."
    ],
    "answer": 0,
    "explain": "$y' + ky = 64k$ (tuyến tính cấp một) $\\Rightarrow y = 64 + Ce^{-kt}$<br>$y(0) = 0 \\Rightarrow C = -64$<br>$e^{-kt} = e^{-\\frac{\\ln 2}{6}\\cdot18} = 2^{-3} = \\dfrac{1}{8}$<br>$y(18) = 64 + \\dfrac{-64}{8} = 56$",

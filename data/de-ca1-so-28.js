@@ -339,15 +339,15 @@
    "note": "Có đạo hàm cấp hai tại điểm nối: giá trị, đạo hàm cấp một và đạo hàm cấp hai ở hai phía đều phải khớp nhau."
   },
   {
-   "q": "Giá trị của tích phân suy rộng $\\displaystyle\\int_0^{+\\infty} e^{-3x}\\sin 4x\\,dx$ bằng",
+   "q": "Thể tích của khối tròn xoay tạo thành khi quay quanh trục $Ox$ hình phẳng giới hạn bởi các đường $y = \\sqrt{x}$, $y = 0$, $x = 0$ và $x = 2$ bằng",
    "options": [
-    "$\\dfrac{4}{25}$.",
-    "$\\dfrac{3}{25}$.",
-    "$\\dfrac{1}{25}$.",
-    "$\\dfrac{4}{3}$."
+    "$2 \\pi$.",
+    "$2$.",
+    "$\\dfrac{4 \\sqrt{2} \\pi}{3}$.",
+    "$4 \\pi$."
    ],
    "answer": 0,
-   "explain": "Đặt $I=\\int_0^\\infty e^{-ax}\\sin bx\\,dx$, $J=\\int_0^\\infty e^{-ax}\\cos bx\\,dx$. Từng phần cho $I=[-e^{-ax}\\cos bx/b]_0^\\infty-(a/b)J=1/b-(a/b)J$.<br>Từng phần với $J$: $J=[e^{-ax}\\sin bx/b]_0^\\infty+(a/b)I=(a/b)I$. Thế vào phương trình đầu: $I=1/b-(a^2/b^2)I$, nên $I(1+a^2/b^2)=1/b$ và $I=b/(a^2+b^2)=\\dfrac{4}{25}$.",
+   "explain": "$V=\\pi\\int_0^{2}y^2dx=\\pi\\int_0^{2}xdx$; bình phương hàm số cho biểu thức dưới dấu tích phân như trên.<br>Nguyên hàm là $\\dfrac{x^{2}}{2}$. Thế cận: $V=\\pi(2-0)=2 \\pi$.",
    "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$."
   },
   {

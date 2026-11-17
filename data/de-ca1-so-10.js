@@ -126,16 +126,15 @@
    "explain": "<b>Đúng:</b> Nếu $\\lim\\limits_{x\\to x_0}f(x) = 0$ và $g$ bị chặn trong lân cận đó thì $\\lim\\limits_{x\\to x_0}f(x)g(x) = 0$. $|f(x)g(x)| \\le M|f(x)| \\to 0$ (nguyên lí kẹp).<br><b>Sai:</b> Nếu $\\lim\\limits_{x\\to x_0}f(x) = 0$ và $\\lim\\limits_{x\\to x_0}g(x) = +\\infty$ thì $\\lim\\limits_{x\\to x_0}f(x)g(x) = 0$. Đây là dạng vô định $0\\cdot\\infty$: với $f = x^2$, $g = \\dfrac{1}{x^4}$ khi $x \\to 0$ thì $fg \\to +\\infty$.<br><b>Sai:</b> Nếu $f$ và $g$ đều không có giới hạn khi $x \\to x_0$ thì $f + g$ cũng không có giới hạn. $f = \\sin\\dfrac1x$, $g = -\\sin\\dfrac1x$ đều không có giới hạn khi $x \\to 0$ nhưng $f + g = 0$.<br><b>Sai:</b> Nếu $f(x) < g(x)$ với mọi $x$ và hai giới hạn tồn tại thì $\\lim f(x) < \\lim g(x)$. Chỉ suy ra được dấu $\\le$: $f = 0$, $g = x^2$ khi $x \\to 0$ có hai giới hạn bằng nhau."
   },
   {
-   "q": "Cho hàm ẩn $y = y(x)$ xác định bởi phương trình $x^{2} + 3 x y + y^{2} = 31$. Hệ số góc của tiếp tuyến với đường cong tại điểm $(3;2)$, tức giá trị $y'(3)$, bằng",
+   "q": "Cho đường cong $y = 3 x^{2} + 2 x$. Tiếp tuyến với đường cong tại điểm có hoành độ $x_0 = 2$ cắt trục $Oy$ tại điểm có tung độ bằng",
    "options": [
-    "$- \\dfrac{12}{13}$.",
-    "$\\dfrac{12}{13}$.",
-    "$3$.",
-    "$- \\dfrac{13}{12}$."
+    "$-12$.",
+    "$12$.",
+    "$16$.",
+    "$14$."
    ],
    "answer": 0,
-   "explain": "Đạo hàm hai vế theo $x$: $2x + 3(y + xy') + 2yy' = 0$<br>$y' = -\\dfrac{2x + 3y}{3x + 2y}$<br>Tại $(3;2)$: $y' = -\\dfrac{12}{13} = - \\dfrac{12}{13}$",
-   "note": "Chọn đúng công cụ: Leibniz cho đạo hàm cấp cao của tích; đạo hàm hai vế cho hàm ẩn; lấy lôgarit cho $u^v$; $\\dfrac{dy}{dx} = \\dfrac{y'_t}{x'_t}$ cho đường cong tham số."
+   "explain": "$y(2) = 16$, $y'(x) = 6 x + 2$, $y'(2) = 14$<br>Tiếp tuyến: $y = 14(x - 2) + 16$<br>Tại $x = 0$: $y = -12$"
   },
   {
    "q": "Cho hàm số $f(x,y) = x^{3} y^{3} + 3 x y + y^{2}$. Giá trị của đạo hàm riêng hỗn hợp $f''_{xy}$ tại điểm $(-1;2)$ bằng",
@@ -222,10 +221,10 @@
   {
    "q": "Một bệnh nhân được truyền thuốc liên tục qua đường tĩnh mạch. Nồng độ thuốc trong máu $y(t)$ (mg/lít) sau $t$ giờ thỏa mãn phương trình $y' = k(40 - y)$ với $k = \\dfrac{\\ln 2}{4}$ và $y(0) = 0$. Nồng độ thuốc trong máu sau 12 giờ bằng",
    "options": [
-    "$35$ mg/lít.",
-    "$37{,}5$ mg/lít.",
-    "$5$ mg/lít.",
-    "$40$ mg/lít."
+    "$35 mg/lít$.",
+    "$37{,}5 mg/lít$.",
+    "$5 mg/lít$.",
+    "$40 mg/lít$."
    ],
    "answer": 0,
    "explain": "$y' + ky = 40k$ (tuyến tính cấp một) $\\Rightarrow y = 40 + Ce^{-kt}$<br>$y(0) = 0 \\Rightarrow C = -40$<br>$e^{-kt} = e^{-\\frac{\\ln 2}{4}\\cdot12} = 2^{-3} = \\dfrac{1}{8}$<br>$y(12) = 40 + \\dfrac{-40}{8} = 35$",
@@ -340,16 +339,15 @@
    "note": "Có đạo hàm tại điểm nối cần hai điều kiện: liên tục, và đạo hàm trái bằng đạo hàm phải."
   },
   {
-   "q": "Một bể chứa nước hình hộp chữ nhật có chiều dài, chiều rộng và chiều cao lần lượt là 2 mét, 1,5 mét và 2 mét được chứa đầy nước. Biết khối lượng riêng của nước là $1000\\,kg/m^3$ và gia tốc trọng trường $g = 9{,}8\\,m/s^2$. Công cần thiết để bơm nửa lượng nước phía trên ra khỏi bể qua mặt trên của bể bằng",
+   "q": "Tính độ dài cung của đường cong $y = \\dfrac{x^2}{2}$ từ $x = 0$ đến $x = 2$. Biết $\\int\\sqrt{1+x^2}\\,dx = \\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2} + C$.",
    "options": [
-    "14,7 <i>kJ</i>.",
-    "58,8 <i>kJ</i>.",
-    "29,4 <i>kJ</i>.",
-    "117,6 <i>kJ</i>."
+    "$\\dfrac{\\operatorname{asinh}{\\left(2 \\right)}}{2} + \\sqrt{5}$.",
+    "$\\dfrac{\\operatorname{asinh}{\\left(2 \\right)}}{4} + \\dfrac{\\sqrt{5}}{2}$.",
+    "$\\operatorname{asinh}{\\left(2 \\right)} + 2 \\sqrt{5}$.",
+    "$\\dfrac{\\operatorname{asinh}{\\left(2 \\right)}}{2} + 1 + \\sqrt{5}$."
    ],
    "answer": 0,
-   "explain": "Lớp nước dày $dy$ ở độ sâu $y$ có khối lượng $1000\\cdot2\\cdot1{,}5\\,dy$, phải nâng lên $y$ mét<br>$W = \\displaystyle\\int_0^{1} 9800\\cdot2\\cdot1{,}5\\cdot y\\,dy = 29400\\cdot\\dfrac{1^2}{2}$<br>$= 14700\\ J = 14{,}7\\ kJ$",
-   "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau."
+   "explain": "$y' = x$, $L = \\displaystyle\\int_0^{2}\\sqrt{1 + x^2}\\,dx$<br>$L = \\left[\\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2}\\right]_0^{2} = \\dfrac{\\operatorname{asinh}{\\left(2 \\right)}}{2} + \\sqrt{5}$"
   },
   {
    "q": "Một xưởng sản xuất 3 loại sản phẩm từ 3 loại nguyên liệu I, II, III. Mỗi đơn vị sản phẩm loại 1, 2, 3 cần lần lượt $3, 2, 3$ đơn vị nguyên liệu I; $1, 1, 1$ đơn vị nguyên liệu II và $3, 3, 1$ đơn vị nguyên liệu III. Kho hiện có $80$, $30$ và $70$ đơn vị nguyên liệu I, II, III. Nếu xưởng lập kế hoạch dùng vừa hết cả ba loại nguyên liệu thì tổng số sản phẩm làm ra bằng",

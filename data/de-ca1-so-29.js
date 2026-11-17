@@ -127,16 +127,15 @@
    "note": "Tiệm cận đứng: nghiệm của mẫu không bị rút gọn với tử; tiệm cận ngang: xét riêng $x \\to +\\infty$ và $x \\to -\\infty$ (với căn thức, hai phía có thể khác nhau)."
   },
   {
-   "q": "Hệ số của $x^{3}$ trong khai triển Maclaurin của hàm số $f(x) = (1 + x)\\sqrt{1 + 3x}$ bằng<span class=\"q-hint\">Gợi ý: nhân hai khai triển cơ bản rồi gom các số hạng cùng bậc.</span>",
+   "q": "Cho hàm số $f(x) = x + \\sin{\\left(x \\right)}$. Vi phân $dy$ tại $x_0 = 0$ với $dx = \\dfrac{1}{10}$ bằng",
    "options": [
-    "$\\dfrac{9}{16}$.",
-    "$\\dfrac{3}{8}$.",
-    "$\\dfrac{27}{8}$.",
-    "$- \\dfrac{9}{16}$."
+    "$\\dfrac{1}{5}$.",
+    "$- \\dfrac{1}{5}$.",
+    "$\\dfrac{2}{5}$.",
+    "$\\sin{\\left(\\dfrac{1}{10} \\right)} + \\dfrac{1}{10}$."
    ],
    "answer": 0,
-   "explain": "$x + 1 = 1 + x + o(x^{3})$<br>$\\sqrt{3 x + 1} = 1 + \\dfrac{3}{2}x - \\dfrac{9}{8}x^{2} + \\dfrac{27}{16}x^{3} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=1 + \\dfrac{5}{2}x + \\dfrac{3}{8}x^{2} + \\dfrac{9}{16}x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $\\dfrac{9}{16}$.",
-   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$."
+   "explain": "$f'(x) = \\cos{\\left(x \\right)} + 1$<br>$dy = f'(0)\\\\cdot dx = 2\\\\cdot\\dfrac{1}{10} = \\dfrac{1}{5}$"
   },
   {
    "q": "Cho hàm số $f(x,y,z) = x y z + z^{2}$. Đạo hàm của $f$ tại điểm $M(1;1;2)$ theo hướng của véc tơ $\\vec l = (2;3;6)$, tính bởi $\\dfrac{\\partial f}{\\partial \\vec l} = \\nabla f(M)\\cdot\\dfrac{\\vec l}{|\\vec l|}$, bằng",
@@ -341,16 +340,15 @@
    "note": "Có đạo hàm cấp hai tại điểm nối: giá trị, đạo hàm cấp một và đạo hàm cấp hai ở hai phía đều phải khớp nhau."
   },
   {
-   "q": "Một đoạn đường ống uốn theo đường cong $y = \\dfrac23x^{3/2}$ với $0 \\le x \\le 8$ (đơn vị: mét). Dùng công thức độ dài cung $L = \\displaystyle\\int_a^b\\sqrt{1 + (y')^2}\\,dx$, độ dài đoạn ống bằng",
+   "q": "Tìm hoành độ trọng tâm $\\bar{x}$ của hình phẳng giới hạn bởi $y = x$, $y = 0$ và $x = 4$ (tam giác vuông). Biết $\\bar{x} = \\dfrac{\\iint_D x\\,dA}{\\iint_D dA}$, giá trị $\\bar{x}$ bằng",
    "options": [
-    "$\\dfrac{52}{3}$ m.",
-    "$18$ m.",
-    "$8$ m.",
-    "$\\dfrac{26}{3}$ m."
+    "$\\dfrac{8}{3}$.",
+    "$2$.",
+    "$\\dfrac{4}{3}$.",
+    "$3$."
    ],
    "answer": 0,
-   "explain": "$y' = \\sqrt{x} \\Rightarrow 1 + (y')^2 = 1 + x$<br>$L = \\displaystyle\\int_0^{8}\\sqrt{1 + x}\\,dx = \\left[\\dfrac23(1 + x)^{3/2}\\right]_0^{8}$<br>$= \\dfrac23\\left(9^{3/2} - 1\\right) = \\dfrac{52}{3}$",
-   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$."
+   "explain": "Diện tích $S = \\dfrac{1}{2} \\cdot 4^2 = 8$<br>$\\iint_D x\\,dA = \\displaystyle\\int_0^{4} x \\cdot x\\,dx = \\left[\\dfrac{x^3}{3}\\right]_0^{4} = \\dfrac{64}{3}$<br>$\\bar{x} = \\dfrac{\\dfrac{64}{3}}{8} = \\dfrac{8}{3}$"
   },
   {
    "q": "Khảo sát thị trường của 3 loại hàng hóa có liên quan được đánh số 1, 2, 3. Lượng cung $s_i$ và lượng cầu $d_i$ của hàng hóa thứ $i$ phụ thuộc vào giá $p_1, p_2, p_3$ của cả ba loại theo các hệ thức: $$\\begin{cases}s_1 = 3 p_{1} - p_{2} + 35\\\\ s_2 = - p_{1} + 3 p_{2} - p_{3} + 10\\\\ s_3 = p_{2} + 2 p_{3} - 5\\end{cases}\\ \\text{và}\\ \\begin{cases}d_1 = - p_{1} + p_{2} + p_{3} + 30\\\\ d_2 = p_{1} - p_{2} + p_{3} + 20\\\\ d_3 = 70 - 2 p_{3}\\end{cases}.$$ Thị trường cân bằng khi $s_i = d_i$ với mọi $i = \\overline{1,3}$. Gọi $p_1^*, p_2^*, p_3^*$ là các mức giá cân bằng, giá trị của $p_1^* + p_2^* + p_3^*$ bằng",

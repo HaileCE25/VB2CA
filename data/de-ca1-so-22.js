@@ -127,16 +127,15 @@
    "note": "Tiệm cận đứng: nghiệm của mẫu không bị rút gọn với tử; tiệm cận ngang: xét riêng $x \\to +\\infty$ và $x \\to -\\infty$ (với căn thức, hai phía có thể khác nhau)."
   },
   {
-   "q": "Hệ số của $x^{3}$ trong khai triển Maclaurin của hàm số $f(x) = e^{x}\\cos 2x$ bằng<span class=\"q-hint\">Gợi ý: nhân hai khai triển cơ bản rồi gom các số hạng cùng bậc.</span>",
+   "q": "Cho hàm số $f(x) = x^{2}e^{-x}$. Giá trị của $f'(1)$ bằng",
    "options": [
-    "$- \\dfrac{11}{6}$.",
-    "$- \\dfrac{3}{2}$.",
-    "$-11$.",
-    "$\\dfrac{11}{6}$."
+    "$e^{-1}$.",
+    "$e^{-1} + 1$.",
+    "$\\dfrac{2}{e}$.",
+    "$- \\dfrac{1}{e}$."
    ],
    "answer": 0,
-   "explain": "$e^{x} = 1 + x + \\dfrac{1}{2}x^{2} + \\dfrac{1}{6}x^{3} + o(x^{3})$<br>$\\cos{\\left(2 x \\right)} = 1 - 2x^{2} + o(x^{3})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=1 + x - \\dfrac{3}{2}x^{2} - \\dfrac{11}{6}x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $- \\dfrac{11}{6}$.",
-   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$."
+   "explain": "$f'(x) = 2x^{1}e^{-x} - x^{2}e^{-x}$<br>$f'(1) = e^{-1}$"
   },
   {
    "q": "Cho hàm số $f(x,y) = x^{3} - y^{2}$. Tại điểm $M(1;2)$, hàm số tăng nhanh nhất theo hướng của véc tơ gradient $\\nabla f(M) = (f'_x(M); f'_y(M))$ và tốc độ tăng lớn nhất bằng $|\\nabla f(M)|$. Giá trị của $|\\nabla f(M)|$ bằng",
@@ -325,7 +324,7 @@
     "$\\dfrac{220}{3}$."
    ],
    "answer": 0,
-   "explain": "$e^{u} = 1 + u + \\dfrac{u^2}{2} + \\dfrac{u^3}{6} + o(u^3)$, với $u=4x$, ta có $u^2=16x^2$ và $u^3=64x^3$.<br>Tử số sau khai triển là $(4-a)x+(8-b)x^2+(\\dfrac{32}{3})x^3+o(x^3)$. Chia cho $x^3$: $\\dfrac{4-a}{x^2}+\\dfrac{8-b}{x}+\\dfrac{32}{3}+o(1)$.<br>Để giới hạn hữu hạn, các hệ số phân kỳ triệt tiêu: $a=4$ và $b=8$; hệ số còn lại cho $L=\\dfrac{32}{3}$.<br>$4+2(8)+6(\\dfrac{32}{3})=4+16+64=84$",
+   "explain": "$e^{u} = 1 + u + \\dfrac{u^2}{2} + \\dfrac{u^3}{6} + o(u^3)$, với $u=4x$, ta có $u^2=16x^2$ và $u^3=64x^3$.<br>Tử số sau khai triển là $(4-a)x+(8-b)x^2+(\\dfrac{32}{3})x^3+o(x^3)$. Chia cho $x^3$: $\\dfrac{4-a}{x^2}+\\dfrac{8-b}{x}+\\dfrac{32}{3}+o(1)$.<br>Để giới hạn hữu hạn, các hệ số phân kỳ triệt tiêu: $a=4$ và $b=8$; hệ số còn lại cho $L=\\dfrac{32}{3}$.<br>4+2(8)+6(\\dfrac{32}{3})=4+16+64=84",
    "note": "Trong khai triển Maclaurin của tử, mọi hệ số có bậc thấp hơn bậc của mẫu phải bằng 0; hệ số cùng bậc với mẫu cho giá trị $L$."
   },
   {
@@ -341,16 +340,15 @@
    "note": "Có đạo hàm cấp hai tại điểm nối: giá trị, đạo hàm cấp một và đạo hàm cấp hai ở hai phía đều phải khớp nhau."
   },
   {
-   "q": "Giá trị của tích phân suy rộng $\\displaystyle\\int_0^{+\\infty} e^{-x}\\sin 2x\\,dx$ bằng",
+   "q": "Tìm hoành độ trọng tâm $\\bar{x}$ của hình phẳng giới hạn bởi $y = x$, $y = 0$ và $x = 3$ (tam giác vuông). Biết $\\bar{x} = \\dfrac{\\iint_D x\\,dA}{\\iint_D dA}$, giá trị $\\bar{x}$ bằng",
    "options": [
-    "$\\dfrac{2}{5}$.",
-    "$\\dfrac{1}{5}$.",
     "$2$.",
-    "$\\dfrac{1}{3}$."
+    "$\\dfrac{3}{2}$.",
+    "$1$.",
+    "$\\dfrac{9}{4}$."
    ],
    "answer": 0,
-   "explain": "Đặt $I=\\int_0^\\infty e^{-ax}\\sin bx\\,dx$, $J=\\int_0^\\infty e^{-ax}\\cos bx\\,dx$. Từng phần cho $I=[-e^{-ax}\\cos bx/b]_0^\\infty-(a/b)J=1/b-(a/b)J$.<br>Từng phần với $J$: $J=[e^{-ax}\\sin bx/b]_0^\\infty+(a/b)I=(a/b)I$. Thế vào phương trình đầu: $I=1/b-(a^2/b^2)I$, nên $I(1+a^2/b^2)=1/b$ và $I=b/(a^2+b^2)=\\dfrac{2}{5}$.",
-   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$."
+   "explain": "Diện tích $S = \\dfrac{1}{2} \\cdot 3^2 = \\dfrac{9}{2}$<br>$\\iint_D x\\,dA = \\displaystyle\\int_0^{3} x \\cdot x\\,dx = \\left[\\dfrac{x^3}{3}\\right]_0^{3} = 9$<br>$\\bar{x} = \\dfrac{9}{\\dfrac{9}{2}} = 2$"
   },
   {
    "q": "Một xưởng sản xuất 3 loại sản phẩm từ 3 loại nguyên liệu I, II, III. Mỗi đơn vị sản phẩm loại 1, 2, 3 cần lần lượt $3, 2, 1$ đơn vị nguyên liệu I; $1, 3, 3$ đơn vị nguyên liệu II và $3, 3, 2$ đơn vị nguyên liệu III. Kho hiện có $160$, $150$ và $200$ đơn vị nguyên liệu I, II, III. Nếu xưởng lập kế hoạch dùng vừa hết cả ba loại nguyên liệu thì tổng số sản phẩm làm ra bằng",

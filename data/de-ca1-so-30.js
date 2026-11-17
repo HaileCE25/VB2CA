@@ -127,16 +127,15 @@
    "note": "Tiệm cận đứng: nghiệm của mẫu không bị rút gọn với tử; tiệm cận ngang: xét riêng $x \\to +\\infty$ và $x \\to -\\infty$ (với căn thức, hai phía có thể khác nhau)."
   },
   {
-   "q": "Hệ số của $x^{3}$ trong khai triển Maclaurin của hàm số $f(x) = \\ln\\dfrac{1 + x}{1 - x}$ bằng<span class=\"q-hint\">Gợi ý: nhân hai khai triển cơ bản rồi gom các số hạng cùng bậc.</span>",
+   "q": "Cho hàm số $f(x) = \\arcsin(x)$. Giá trị của $f'(x_0)$ tại $x_0 = \\dfrac{5}{13}$ bằng",
    "options": [
-    "$\\dfrac{2}{3}$.",
-    "$0$.",
-    "$4$.",
-    "$- \\dfrac{2}{3}$."
+    "$\\dfrac{13}{12}$.",
+    "$- \\dfrac{13}{12}$.",
+    "$\\dfrac{13}{6}$.",
+    "$1$."
    ],
    "answer": 0,
-   "explain": "Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 3: $f(x)=2x + \\dfrac{2}{3}x^{3}+o(x^{3})$.<br>Đọc hệ số của $x^{3}$ từ tổng các tích cùng bậc vừa thu được: $\\dfrac{2}{3}$.",
-   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$."
+   "explain": "$f'(x) = \\dfrac{1}{\\sqrt{1 - x^2}}$<br>Tại $x_0 = \\dfrac{5}{13}$: $\\sqrt{1 - x_0^2} = \\dfrac{12}{13}$; $f'(x_0) = \\dfrac{13}{12}$"
   },
   {
    "q": "Cho hàm số $f(x,y) = x^{3} - 3 x y + y^{2}$. Đạo hàm của $f$ tại điểm $M(2;1)$ theo hướng của véc tơ $\\vec l = (3;4)$, tính bởi $\\dfrac{\\partial f}{\\partial \\vec l} = \\nabla f(M)\\cdot\\dfrac{\\vec l}{|\\vec l|}$, bằng",
@@ -325,7 +324,7 @@
     "$\\dfrac{69}{2}$."
    ],
    "answer": 0,
-   "explain": "$\\sin u = u - \\dfrac{u^3}{6} + o(u^3)$, với $u=3x$, ta có $u^2=9x^2$ và $u^3=27x^3$.<br>Tử số sau khai triển là $(3-a)x+(0-b)x^2+(- \\dfrac{9}{2})x^3+o(x^3)$. Chia cho $x^3$: $\\dfrac{3-a}{x^2}+\\dfrac{0-b}{x}+- \\dfrac{9}{2}+o(1)$.<br>Để giới hạn hữu hạn, các hệ số phân kỳ triệt tiêu: $a=3$ và $b=0$; hệ số còn lại cho $L=- \\dfrac{9}{2}$.<br>$3+0-6(- \\dfrac{9}{2})=3+0+27=30$",
+   "explain": "$\\sin u = u - \\dfrac{u^3}{6} + o(u^3)$, với $u=3x$, ta có $u^2=9x^2$ và $u^3=27x^3$.<br>Tử số sau khai triển là $(3-a)x+(0-b)x^2+(- \\dfrac{9}{2})x^3+o(x^3)$. Chia cho $x^3$: $\\dfrac{3-a}{x^2}+\\dfrac{0-b}{x}+- \\dfrac{9}{2}+o(1)$.<br>Để giới hạn hữu hạn, các hệ số phân kỳ triệt tiêu: $a=3$ và $b=0$; hệ số còn lại cho $L=- \\dfrac{9}{2}$.<br>3+0-6(- \\dfrac{9}{2})=3+0+27=30",
    "note": "Trong khai triển Maclaurin của tử, mọi hệ số có bậc thấp hơn bậc của mẫu phải bằng 0; hệ số cùng bậc với mẫu cho giá trị $L$."
   },
   {

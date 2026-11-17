@@ -127,16 +127,15 @@
    "note": "Tiệm cận đứng: nghiệm của mẫu không bị rút gọn với tử; tiệm cận ngang: xét riêng $x \\to +\\infty$ và $x \\to -\\infty$ (với căn thức, hai phía có thể khác nhau)."
   },
   {
-   "q": "Hệ số của $x^{4}$ trong khai triển Maclaurin của hàm số $f(x) = \\dfrac{x}{- 2 x^{2} - x + 1}$ bằng<span class=\"q-hint\">Gợi ý: nhân hai khai triển cơ bản rồi gom các số hạng cùng bậc.</span>",
+   "q": "Cho hàm số $f(x) = \\ln(x^2 + 2x + 5)$. Giá trị của $f'(2)$ bằng",
    "options": [
-    "$5$.",
-    "$3$.",
-    "$120$.",
-    "$-5$."
+    "$\\dfrac{6}{13}$.",
+    "$\\dfrac{4}{13}$.",
+    "$\\dfrac{2}{3}$.",
+    "$- \\dfrac{6}{13}$."
    ],
    "answer": 0,
-   "explain": "$\\dfrac{1}{- 2 x^{2} - x + 1} = 1 + x + 3x^{2} + 5x^{3} + 11x^{4} + o(x^{4})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 4: $f(x)=x + x^{2} + 3x^{3} + 5x^{4}+o(x^{4})$.<br>Đọc hệ số của $x^{4}$ từ tổng các tích cùng bậc vừa thu được: $5$.",
-   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$."
+   "explain": "$f'(x) = \\dfrac{2x + 2}{x^2 + 2x + 5}$<br>$f'(2) = \\dfrac{6}{13} = \\dfrac{6}{13}$"
   },
   {
    "q": "Cho hàm số $f(x,y) = x^{2} y$. Tại điểm $M(3;2)$, hàm số tăng nhanh nhất theo hướng của véc tơ gradient $\\nabla f(M) = (f'_x(M); f'_y(M))$ và tốc độ tăng lớn nhất bằng $|\\nabla f(M)|$. Giá trị của $|\\nabla f(M)|$ bằng",
@@ -341,16 +340,15 @@
    "note": "Có đạo hàm cấp hai tại điểm nối: giá trị, đạo hàm cấp một và đạo hàm cấp hai ở hai phía đều phải khớp nhau."
   },
   {
-   "q": "Một đoạn đường ống uốn theo đường cong $y = \\dfrac23x^{3/2}$ với $0 \\le x \\le 15$ (đơn vị: mét). Dùng công thức độ dài cung $L = \\displaystyle\\int_a^b\\sqrt{1 + (y')^2}\\,dx$, độ dài đoạn ống bằng",
+   "q": "Một tấm phẳng hình chữ nhật chiều rộng 3 m, chiều cao 1 m được nhúng thẳng đứng vào nước sao cho cạnh trên ở độ sâu 2 m. Lấy $g = 9{,}8\\,m/s^2$. Áp lực của nước lên tấm bằng",
    "options": [
-    "$42$ m.",
-    "$\\dfrac{128}{3}$ m.",
-    "$15$ m.",
-    "$21$ m."
+    "73500 <i>N</i>.",
+    "36750 <i>N</i>.",
+    "147000 <i>N</i>.",
+    "88200 <i>N</i>."
    ],
    "answer": 0,
-   "explain": "$y' = \\sqrt{x} \\Rightarrow 1 + (y')^2 = 1 + x$<br>$L = \\displaystyle\\int_0^{15}\\sqrt{1 + x}\\,dx = \\left[\\dfrac23(1 + x)^{3/2}\\right]_0^{15}$<br>$= \\dfrac23\\left(16^{3/2} - 1\\right) = 42$",
-   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$."
+   "explain": "Dải ngang ở độ sâu $(2 + y)$ m, diện tích $3\\,dy$, áp lực $1000 \\cdot 9{,}8 \\cdot (2 + y) \\cdot 3\\,dy$<br>$F = \\displaystyle\\int_0^{1} 9800 \\cdot 3 \\cdot (2 + y)\\,dy = 98003\\left[2y + \\dfrac{y^2}{2}\\right]_0^{1} = 73500\\,N = \\dfrac{147}{2}\\,kN$"
   },
   {
    "q": "Khảo sát thị trường của 3 loại hàng hóa có liên quan được đánh số 1, 2, 3. Lượng cung $s_i$ và lượng cầu $d_i$ của hàng hóa thứ $i$ phụ thuộc vào giá $p_1, p_2, p_3$ của cả ba loại theo các hệ thức: $$\\begin{cases}s_1 = p_{1} - p_{2} + p_{3} + 40\\\\ s_2 = p_{1} + 3 p_{2} - 75\\\\ s_3 = - p_{1} + p_{3} + 35\\end{cases}\\ \\text{và}\\ \\begin{cases}d_1 = - 2 p_{1} + p_{2} + 75\\\\ d_2 = - 2 p_{2} + p_{3} + 115\\\\ d_3 = 35 - p_{3}\\end{cases}.$$ Thị trường cân bằng khi $s_i = d_i$ với mọi $i = \\overline{1,3}$. Tổng lượng cung của cả ba loại hàng hóa tại trạng thái cân bằng bằng",

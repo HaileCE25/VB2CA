@@ -127,16 +127,15 @@
    "note": "Liên tục tại $x_0$ $\\Leftrightarrow$ giới hạn trái = giới hạn phải = $f(x_0)$; giới hạn hữu hạn mà mẫu tiến về 0 thì tử cũng phải tiến về 0."
   },
   {
-   "q": "Cho hàm số $f(x) = x^{x}$ $(x > 0)$. Bằng cách lấy lôgarit hai vế rồi đạo hàm, giá trị của $f'(e)$ bằng",
+   "q": "Dùng vi phân để ước tính sai số tương đối $\\dfrac{|\\Delta V|}{V}$ của thể tích hình cầu bán kính $r = 5$ cm khi sai số đo bán kính là $|\\Delta r| \\le \\dfrac{1}{2}$ cm",
    "options": [
-    "$2 e^{e}$.",
-    "$e^{e}$.",
-    "$\\left(1 + e\\right) e^{e}$.",
-    "$1 + 2 e^{e}$."
+    "$\\dfrac{3}{10}$.",
+    "$\\dfrac{3}{20}$.",
+    "$\\dfrac{3}{5}$.",
+    "$\\dfrac{1}{10}$."
    ],
    "answer": 0,
-   "explain": "$\\ln f = x\\ln x \\Rightarrow \\dfrac{f'}{f} = (\\ln x + 1)$<br>$f'(x) = x^{x}(\\ln x + 1)$<br>$f'(e) = e^{e}\\cdot2 = 2 e^{e}$",
-   "note": "Chọn đúng công cụ: Leibniz cho đạo hàm cấp cao của tích; đạo hàm hai vế cho hàm ẩn; lấy lôgarit cho $u^v$; $\\dfrac{dy}{dx} = \\dfrac{y'_t}{x'_t}$ cho đường cong tham số."
+   "explain": "$V = \\dfrac{4}{3}\\pi r^3 \\Rightarrow dV = 4\\pi r^2\\\\,dr$<br>$\\dfrac{|dV|}{V} = \\dfrac{4\\pi r^2\\\\,|dr|}{\\frac{4}{3}\\pi r^3} = \\dfrac{3|dr|}{r} = \\dfrac{3\\cdot\\dfrac{1}{2}}{5} = \\dfrac{3}{10}$"
   },
   {
    "q": "Cho hàm số $f(x,y) = x^{2} y^{2} - x^{2}$. Giá trị của biểu thức $\\Delta f = f''_{xx} + f''_{yy}$ tại điểm $(2;2)$ bằng",
@@ -224,10 +223,10 @@
   {
    "q": "Một bệnh nhân được truyền thuốc liên tục qua đường tĩnh mạch. Nồng độ thuốc trong máu $y(t)$ (mg/lít) sau $t$ giờ thỏa mãn phương trình $y' = k(80 - y)$ với $k = \\dfrac{\\ln 2}{4}$ và $y(0) = 0$. Nồng độ thuốc trong máu sau 8 giờ bằng",
    "options": [
-    "$60$ mg/lít.",
-    "$70$ mg/lít.",
-    "$20$ mg/lít.",
-    "$80$ mg/lít."
+    "$60 mg/lít$.",
+    "$70 mg/lít$.",
+    "$20 mg/lít$.",
+    "$80 mg/lít$."
    ],
    "answer": 0,
    "explain": "$y' + ky = 80k$ (tuyến tính cấp một) $\\Rightarrow y = 80 + Ce^{-kt}$<br>$y(0) = 0 \\Rightarrow C = -80$<br>$e^{-kt} = e^{-\\frac{\\ln 2}{4}\\cdot8} = 2^{-2} = \\dfrac{1}{4}$<br>$y(8) = 80 + \\dfrac{-80}{4} = 60$",
@@ -341,16 +340,15 @@
    "note": "Có đạo hàm tại điểm nối cần hai điều kiện: liên tục, và đạo hàm trái bằng đạo hàm phải."
   },
   {
-   "q": "Một bể chứa có dạng hình nón tròn xoay với đỉnh ở phía dưới, bán kính miệng bể 3 mét, chiều cao 4 mét, chứa đầy nước. Biết khối lượng riêng của nước là $1000\\,kg/m^3$ và gia tốc trọng trường $g = 9{,}8\\,m/s^2$. Công cần thiết để bơm hết nước ra khỏi bể qua miệng bể (làm tròn đến hàng phần chục) bằng",
+   "q": "Tính thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y = \\sqrt{x}$, $x = 64$ và trục $Ox$ xung quanh trục $Ox$.",
    "options": [
-    "369,5 <i>kJ</i>.",
-    "1108,4 <i>kJ</i>.",
-    "738,9 <i>kJ</i>.",
-    "1477,8 <i>kJ</i>."
+    "$2048 \\pi$.",
+    "$1024 \\pi$.",
+    "$4096 \\pi$.",
+    "$64 \\pi$."
    ],
    "answer": 0,
-   "explain": "Lớp nước ở độ cao $y$ (tính từ đỉnh) có bán kính $\\dfrac{3y}{4}$, phải nâng lên $4 - y$ mét<br>$W = \\displaystyle\\int_0^{4} 9800\\pi\\left(\\dfrac{3y}{4}\\right)^2(4 - y)\\,dy = 9800\\pi\\cdot\\dfrac{9}{16}\\left[\\dfrac{4y^3}{3} - \\dfrac{y^4}{4}\\right]_0^{4}$<br>$= 9800\\pi\\cdot\\dfrac{9\\cdot16}{12} \\approx 369{,}5\\ kJ$",
-   "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau."
+   "explain": "$V = \\pi\\displaystyle\\int_0^{64} y^2\\,dx = \\pi\\int_0^{64} x\\,dx = \\pi\\left[\\dfrac{x^2}{2}\\right]_0^{64} = 2048 \\pi$<br>Kết quả: $2048 \\pi$"
   },
   {
    "q": "Xét mô hình cân bằng thu nhập quốc dân: $Y = C + I_0 + G_0$; $C = 100 + 0{,}75(Y - T)$; $T = 0{,}2Y$, trong đó $Y$ là thu nhập, $C$ là tiêu dùng, $T$ là thuế, đầu tư $I_0 = 150$ và chi tiêu chính phủ $G_0 = 160$. Giá trị của mức tiêu dùng $C^*$ tại trạng thái cân bằng bằng",

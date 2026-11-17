@@ -462,30 +462,47 @@ def s17(rng, k):
     if v == 0:
         p, c, y0 = rng.choice([2, 3]), rng.choice([1, 2, 3]), rng.choice([2, 3, 4, 5])
         ok = 2 ** p * (c + y0)
+        C = y0 - c
+        C_str = f'+ {C}' if C >= 0 else f'- {-C}'
         q = T(r'Gọi $y = y(x)$ là nghiệm của phương trình $y\' - \dfrac{<p>y}{x} = <c>x^{<p>}$ $(x > 0)$ thỏa mãn $y(1) = <y0>$. Giá trị của $y(2)$ bằng', p=p, c='' if c == 1 else c, y0=y0)
-        ex = steps(T(r"Chia hai vế cho $x^{<p>}$: $\left(\dfrac{y}{x^{<p>}}\right)' = <c>$", p=p, c=c), T(r'$\dfrac{y}{x^{<p>}} = <cx> + C \Rightarrow y = x^{<p>}(<cx> + C)$', p=p, cx=c * x),
-                   T(r'$y(1) = <c> + C = <y0> \Rightarrow C = <C>$', c=c, y0=y0, C=y0 - c), T(r'$y(2) = <q>\cdot(<t> + <C>) = <ok>$', q=2 ** p, t=2 * c, C=y0 - c, ok=ok))
+        ex = steps(
+            T(r"Chia hai vế cho $x^{<p>}$: $\left(\dfrac{y}{x^{<p>}}\right)' = <c>$", p=p, c=c),
+            T(r'$\dfrac{y}{x^{<p>}} = <cx> + C \Rightarrow y = x^{<p>}(<cx> + C)$', p=p, cx=c * x),
+            T(r'$y(1) = <c> + C = <y0> \Rightarrow C = <C>$', c=c, y0=y0, C=C),
+            T(r'$y(2) = <q>\cdot(<t> <C_str>) = <ok>$', q=2 ** p, t=2 * c, C_str=C_str, ok=ok)
+        )
         return NQ(q, ok, [2 ** p * y0, 2 * c + y0, 2 ** p * (2 * c + y0), ok // 2], ex)
     if v == 1:
         a, y0 = rng.choice([1, 2, 3]), rng.choice([1, 2, 3, 4])
         q = T(r'Gọi $y = y(x)$ là nghiệm của phương trình $xy\' = y + <a>x$ $(x > 0)$ thỏa mãn $y(1) = <y0>$. Giá trị của $y(e)$ bằng', a='' if a == 1 else a, y0=y0)
-        ex = steps(T(r"Chia hai vế cho $x^2$: $\dfrac{xy' - y}{x^2} = \dfrac{<a>}{x} \Leftrightarrow \left(\dfrac{y}{x}\right)' = \dfrac{<a>}{x}$", a=a), T(r'$\dfrac{y}{x} = <al> + C \Rightarrow y = x(<al> + C)$', al=a * sp.log(x)),
-                   T(r'$y(1) = C = <y0>$', y0=y0), T(r'$y(e) = e(<a> + <y0>) = <ok>$', a=a, y0=y0, ok=(a + y0) * E))
+        ex = steps(
+            T(r"Chia hai vế cho $x^2$: $\dfrac{xy' - y}{x^2} = \dfrac{<a>}{x} \Leftrightarrow \left(\dfrac{y}{x}\right)' = \dfrac{<a>}{x}$", a=a),
+            T(r'$\dfrac{y}{x} = <al> + C \Rightarrow y = x(<al> + C)$', al=a * sp.log(x)),
+            T(r'$y(1) = C = <y0>$', y0=y0),
+            T(r'$y(e) = e(<a> + <y0>) = <ok>$', a=a, y0=y0, ok=(a + y0) * E)
+        )
         return NQ(q, (a + y0) * E, [y0 * E, a * E + y0, E + a + y0, a + y0], ex)
     if v == 2:
         a, y0 = rng.choice([1, 2, 3, 4]), rng.choice([1, 2, 3, 5])
         q = T(r'Gọi $y = y(x)$ là nghiệm của phương trình $(x^2 + 1)y\' + 2xy = <c>x^3$ thỏa mãn $y(0) = <y0>$. Giá trị của $y(1)$ bằng', c=4 * a, y0=y0)
-        ex = steps(r"Vế trái là $\left[(x^2 + 1)y\right]'$", T(r"$\left[(x^2 + 1)y\right]' = <c>x^3 \Rightarrow (x^2 + 1)y = <ax4> + C$", c=4 * a, ax4=a * x ** 4),
-                   T(r'$y(0) = C = <y0>$', y0=y0), T(r'$y(1) = \dfrac{<a> + <y0>}{2} = <ok>$', a=a, y0=y0, ok=R(a + y0, 2)))
+        ex = steps(
+            r"Vế trái là $\left[(x^2 + 1)y\right]'$",
+            T(r"$\left[(x^2 + 1)y\right]' = <c>x^3 \Rightarrow (x^2 + 1)y = <ax4> + C$", c=4 * a, ax4=a * x ** 4),
+            T(r'$y(0) = C = <y0>$', y0=y0),
+            T(r'$y(1) = \dfrac{<a> + <y0>}{2} = <ok>$', a=a, y0=y0, ok=R(a + y0, 2))
+        )
         return NQ(q, R(a + y0, 2), [a + y0, R(4 * a + y0, 2), R(a, 2) + y0, R(y0, 2)], ex)
     a, b = rng.choice([1, 2, 3, 5]), rng.choice([1, 2, 3])
     Cn = 1 + a + b
     lhs = lambda cy, cb: tx(cy * x ** 2 * y + a * x + cb * y ** 2)
     q = T(r'Nghiệm riêng của phương trình $(2xy + <a>)dx + (x^2 + <b>y)dy = 0$ thỏa mãn $y(1) = 1$ là', a=a, b=2 * b)
-    ex = steps(r'$\dfrac{\partial P}{\partial y} = 2x = \dfrac{\partial Q}{\partial x}$: phương trình vi phân toàn phần', T(r"$u'_x = 2xy + <a> \Rightarrow u = x^2y + <ax> + \varphi(y)$", a=a, ax=a * x),
-               T(r"$u'_y = x^2 + \varphi'(y) = x^2 + <b>y \Rightarrow \varphi(y) = <by2>$", b=2 * b, by2=b * y ** 2), T(r'$<u> = C$; thay $x = y = 1$: $C = <C>$', u=lhs(1, b), C=Cn))
+    ex = steps(
+        r'$\dfrac{\partial P}{\partial y} = 2x = \dfrac{\partial Q}{\partial x}$: phương trình vi phân toàn phần',
+        T(r"$u'_x = 2xy + <a> \Rightarrow u = x^2y + <ax> + \varphi(y)$", a=a, ax=a * x),
+        T(r"$u'_y = x^2 + \varphi'(y) = x^2 + <b>y \Rightarrow \varphi(y) = <by2>$", b=2 * b, by2=b * y ** 2),
+        T(r'$<u> = C$; thay $x = y = 1$: $C = <C>$', u=lhs(1, b), C=Cn)
+    )
     return Q(q, '$%s = %d$.' % (lhs(1, b), Cn), ['$%s = %d$.' % (lhs(1, b), Cn - 1), '$%s = %d$.' % (lhs(1, 2 * b), Cn + b), '$%s = %d$.' % (lhs(2, b), Cn + 1)], ex)
-
 
 # ---------- Câu 18: phương trình tuyến tính cấp một (bài toán thực tế) ----------
 def s18(rng, k):

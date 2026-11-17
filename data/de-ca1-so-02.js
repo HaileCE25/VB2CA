@@ -222,10 +222,10 @@
   {
    "q": "Một chi tiết kim loại có nhiệt độ $60^\\circ C$ được đưa vào lò có nhiệt độ không đổi $220^\\circ C$. Nhiệt độ $y(t)$ của chi tiết sau $t$ phút thỏa mãn phương trình $y' = k(220 - y)$ với $k = \\dfrac{\\ln 2}{5}$. Nhiệt độ của chi tiết sau 5 phút bằng",
    "options": [
-    "$140$ °C.",
-    "$180$ °C.",
-    "$70$ °C.",
-    "$110$ °C."
+    "$140 °C$.",
+    "$180 °C$.",
+    "$70 °C$.",
+    "$110 °C$."
    ],
    "answer": 0,
    "explain": "$y' + ky = 220k$ (tuyến tính cấp một) $\\Rightarrow y = 220 + Ce^{-kt}$<br>$y(0) = 60 \\Rightarrow C = -160$<br>$e^{-kt} = e^{-\\frac{\\ln 2}{5}\\cdot5} = 2^{-1} = \\dfrac{1}{2}$<br>$y(5) = 220 + \\dfrac{-160}{2} = 140$",
@@ -340,16 +340,15 @@
    "note": "Có đạo hàm tại điểm nối cần hai điều kiện: liên tục, và đạo hàm trái bằng đạo hàm phải."
   },
   {
-   "q": "Một bể chứa có dạng hình nón tròn xoay với đỉnh ở phía dưới, bán kính miệng bể 3 mét, chiều cao 6 mét, chứa đầy nước. Biết khối lượng riêng của nước là $1000\\,kg/m^3$ và gia tốc trọng trường $g = 9{,}8\\,m/s^2$. Công cần thiết để bơm hết nước ra khỏi bể qua miệng bể (làm tròn đến hàng phần chục) bằng",
+   "q": "Tính độ dài cung của đường cong $y = \\dfrac{x^2}{2}$ từ $x = 0$ đến $x = 10$. Biết $\\int\\sqrt{1+x^2}\\,dx = \\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2} + C$.",
    "options": [
-    "831,3 <i>kJ</i>.",
-    "2493,8 <i>kJ</i>.",
-    "1662,5 <i>kJ</i>.",
-    "3325,1 <i>kJ</i>."
+    "$\\dfrac{\\operatorname{asinh}{\\left(10 \\right)}}{2} + 5 \\sqrt{101}$.",
+    "$\\dfrac{\\operatorname{asinh}{\\left(10 \\right)}}{4} + \\dfrac{5 \\sqrt{101}}{2}$.",
+    "$\\operatorname{asinh}{\\left(10 \\right)} + 10 \\sqrt{101}$.",
+    "$1 + \\dfrac{\\operatorname{asinh}{\\left(10 \\right)}}{2} + 5 \\sqrt{101}$."
    ],
    "answer": 0,
-   "explain": "Lớp nước ở độ cao $y$ (tính từ đỉnh) có bán kính $\\dfrac{3y}{6}$, phải nâng lên $6 - y$ mét<br>$W = \\displaystyle\\int_0^{6} 9800\\pi\\left(\\dfrac{3y}{6}\\right)^2(6 - y)\\,dy = 9800\\pi\\cdot\\dfrac{9}{36}\\left[\\dfrac{6y^3}{3} - \\dfrac{y^4}{4}\\right]_0^{6}$<br>$= 9800\\pi\\cdot\\dfrac{9\\cdot36}{12} \\approx 831{,}3\\ kJ$",
-   "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau."
+   "explain": "$y' = x$, $L = \\displaystyle\\int_0^{10}\\sqrt{1 + x^2}\\,dx$<br>$L = \\left[\\dfrac{x\\sqrt{1+x^2}}{2} + \\dfrac{\\ln(x+\\sqrt{1+x^2})}{2}\\right]_0^{10} = \\dfrac{\\operatorname{asinh}{\\left(10 \\right)}}{2} + 5 \\sqrt{101}$"
   },
   {
    "q": "Một xưởng sản xuất 3 loại sản phẩm từ 3 loại nguyên liệu I, II, III. Mỗi đơn vị sản phẩm loại 1, 2, 3 cần lần lượt $1, 1, 3$ đơn vị nguyên liệu I; $2, 1, 1$ đơn vị nguyên liệu II và $3, 3, 1$ đơn vị nguyên liệu III. Kho hiện có $150$, $130$ và $210$ đơn vị nguyên liệu I, II, III. Nếu xưởng lập kế hoạch dùng vừa hết cả ba loại nguyên liệu thì tổng số sản phẩm làm ra bằng",

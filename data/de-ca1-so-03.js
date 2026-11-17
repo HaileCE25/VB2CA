@@ -127,16 +127,15 @@
    "note": "Liên tục tại $x_0$ $\\Leftrightarrow$ giới hạn trái = giới hạn phải = $f(x_0)$; giới hạn hữu hạn mà mẫu tiến về 0 thì tử cũng phải tiến về 0."
   },
   {
-   "q": "Cho hàm số $f(x) = x^{3x}$ $(x > 0)$. Bằng cách lấy lôgarit hai vế rồi đạo hàm, giá trị của $f'(e)$ bằng",
+   "q": "Cho hàm số $f(x) = \\ln(x^2 + 4x + 13)$. Giá trị của $f'(3)$ bằng",
    "options": [
-    "$6 e^{3 e}$.",
-    "$3 e^{3 e}$.",
-    "$e^{3 e}$.",
-    "$3 \\left(1 + e\\right) e^{3 e}$."
+    "$\\dfrac{5}{17}$.",
+    "$\\dfrac{3}{17}$.",
+    "$\\dfrac{5}{11}$.",
+    "$- \\dfrac{5}{17}$."
    ],
    "answer": 0,
-   "explain": "$\\ln f = 3x\\ln x \\Rightarrow \\dfrac{f'}{f} = 3(\\ln x + 1)$<br>$f'(x) = 3x^{3x}(\\ln x + 1)$<br>$f'(e) = 3e^{3e}\\cdot2 = 6 e^{3 e}$",
-   "note": "Chọn đúng công cụ: Leibniz cho đạo hàm cấp cao của tích; đạo hàm hai vế cho hàm ẩn; lấy lôgarit cho $u^v$; $\\dfrac{dy}{dx} = \\dfrac{y'_t}{x'_t}$ cho đường cong tham số."
+   "explain": "$f'(x) = \\dfrac{2x + 4}{x^2 + 4x + 13}$<br>$f'(3) = \\dfrac{10}{34} = \\dfrac{5}{17}$"
   },
   {
    "q": "Cho hàm số $f(x,y) = x^{2} y - x y^{2} - \\dfrac{y^{3}}{3}$. Giá trị của biểu thức $\\Delta f = f''_{xx} + f''_{yy}$ tại điểm $(1;1)$ bằng",
@@ -223,10 +222,10 @@
   {
    "q": "Trong một mạch điện RL, cường độ dòng điện $y(t)$ (ampe) sau $t$ mili giây kể từ khi đóng mạch thỏa mãn phương trình $y' = k(16 - y)$ với $k = \\dfrac{\\ln 2}{6}$ và $y(0) = 0$. Cường độ dòng điện sau 12 mili giây bằng",
    "options": [
-    "$12$ A.",
-    "$14$ A.",
-    "$4$ A.",
-    "$16$ A."
+    "$12 A$.",
+    "$14 A$.",
+    "$4 A$.",
+    "$16 A$."
    ],
    "answer": 0,
    "explain": "$y' + ky = 16k$ (tuyến tính cấp một) $\\Rightarrow y = 16 + Ce^{-kt}$<br>$y(0) = 0 \\Rightarrow C = -16$<br>$e^{-kt} = e^{-\\frac{\\ln 2}{6}\\cdot12} = 2^{-2} = \\dfrac{1}{4}$<br>$y(12) = 16 + \\dfrac{-16}{4} = 12$",
@@ -341,16 +340,15 @@
    "note": "Có đạo hàm tại điểm nối cần hai điều kiện: liên tục, và đạo hàm trái bằng đạo hàm phải."
   },
   {
-   "q": "Một lò xo tuân theo định luật Hooke $F = kx$ bị giãn 5 cm khi chịu lực kéo 30 N. Công cần thiết để kéo lò xo từ độ giãn 10 cm đến độ giãn 30 cm bằng",
+   "q": "Một tấm phẳng hình chữ nhật chiều rộng 3 m, chiều cao 1 m được nhúng thẳng đứng vào nước sao cho cạnh trên ở độ sâu 0 m. Lấy $g = 9{,}8\\,m/s^2$. Áp lực của nước lên tấm bằng",
    "options": [
-    "24 <i>J</i>.",
-    "12 <i>J</i>.",
-    "54 <i>J</i>.",
-    "6 <i>J</i>."
+    "14700 <i>N</i>.",
+    "7350 <i>N</i>.",
+    "29400 <i>N</i>.",
+    "-14700 <i>N</i>."
    ],
    "answer": 0,
-   "explain": "$F = kx \\Rightarrow k = \\dfrac{30}{0{,}05} = 600\\ N/m$<br>$W = \\displaystyle\\int_{0{,}10}^{0{,}30} 600x\\,dx = 300\\left(0{,}30^2 - 0{,}10^2\\right) = 24\\ J$",
-   "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau."
+   "explain": "Dải ngang ở độ sâu $(0 + y)$ m, diện tích $3\\,dy$, áp lực $1000 \\cdot 9{,}8 \\cdot (0 + y) \\cdot 3\\,dy$<br>$F = \\displaystyle\\int_0^{1} 9800 \\cdot 3 \\cdot (0 + y)\\,dy = 98003\\left[0y + \\dfrac{y^2}{2}\\right]_0^{1} = 14700\\,N = \\dfrac{147}{10}\\,kN$"
   },
   {
    "q": "Xét mô hình cân bằng thu nhập quốc dân: $Y = C + I_0 + G_0$; $C = 100 + 0{,}75(Y - T)$; $T = 0{,}2Y$, trong đó $Y$ là thu nhập, $C$ là tiêu dùng, $T$ là thuế, đầu tư $I_0 = 100$ và chi tiêu chính phủ $G_0 = 160$. Giá trị của mức thu nhập cân bằng $Y^*$ bằng",

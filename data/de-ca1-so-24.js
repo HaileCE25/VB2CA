@@ -340,15 +340,15 @@
    "note": "Có đạo hàm cấp hai tại điểm nối: giá trị, đạo hàm cấp một và đạo hàm cấp hai ở hai phía đều phải khớp nhau."
   },
   {
-   "q": "Thể tích của khối tròn xoay tạo thành khi quay quanh trục $Ox$ hình phẳng giới hạn bởi các đường $y = e^x$, $y = 0$, $x = 0$ và $x = 1$ bằng",
+   "q": "Một đoạn đường ống uốn theo đường cong $y = \\dfrac23x^{3/2}$ với $0 \\le x \\le 8$ (đơn vị: mét). Dùng công thức độ dài cung $L = \\displaystyle\\int_a^b\\sqrt{1 + (y')^2}\\,dx$, độ dài đoạn ống bằng",
    "options": [
-    "$- \\dfrac{\\pi \\left(1 - e^{2}\\right)}{2}$.",
-    "$- \\dfrac{1}{2} + \\dfrac{e^{2}}{2}$.",
-    "$\\pi \\left(e - 1\\right)$.",
-    "$- \\pi \\left(1 - e^{2}\\right)$."
+    "$\\dfrac{52}{3} m$.",
+    "$18 m$.",
+    "$8 m$.",
+    "$\\dfrac{26}{3} m$."
    ],
    "answer": 0,
-   "explain": "$V=\\pi\\int_0^{1}y^2dx=\\pi\\int_0^{1}e^{2 x}dx$; bình phương hàm số cho biểu thức dưới dấu tích phân như trên.<br>Nguyên hàm là $\\dfrac{e^{2 x}}{2}$. Thế cận: $V=\\pi(\\dfrac{e^{2}}{2}-\\dfrac{1}{2})=- \\dfrac{\\pi \\left(1 - e^{2}\\right)}{2}$.",
+   "explain": "$y' = \\sqrt{x} \\Rightarrow 1 + (y')^2 = 1 + x$<br>$L = \\displaystyle\\int_0^{8}\\sqrt{1 + x}\\,dx = \\left[\\dfrac23(1 + x)^{3/2}\\right]_0^{8}$<br>$= \\dfrac23\\left(9^{3/2} - 1\\right) = \\dfrac{52}{3}$",
    "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$."
   },
   {

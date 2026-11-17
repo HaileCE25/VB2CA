@@ -126,16 +126,15 @@
    "explain": "<b>Đúng:</b> $1 - \\cos x$ là vô cùng bé bậc cao hơn $x$. $\\dfrac{1 - \\cos x}{x} \\sim \\dfrac{x}{2} \\to 0$.<br><b>Sai:</b> $\\sin x$ là vô cùng bé bậc cao hơn $x$. $\\dfrac{\\sin x}{x} \\to 1$ nên $\\sin x$ và $x$ tương đương (cùng bậc).<br><b>Sai:</b> $\\ln(1 + x) \\sim x^2$. $\\ln(1 + x) \\sim x$.<br><b>Sai:</b> $e^x - 1 \\sim \\dfrac{x^2}{2}$. $e^x - 1 \\sim x$; chính $e^x - 1 - x$ mới tương đương $\\dfrac{x^2}{2}$."
   },
   {
-   "q": "Hệ số của $x^{5}$ trong khai triển Maclaurin của hàm số $f(x) = e^{-2x^2}\\sin x$ bằng<span class=\"q-hint\">Gợi ý: nhân hai khai triển cơ bản rồi gom các số hạng cùng bậc.</span>",
+   "q": "Cho đường cong $y = 2 x^{2} + 2 x$. Tiếp tuyến với đường cong tại điểm có hoành độ $x_0 = 1$ cắt trục $Oy$ tại điểm có tung độ bằng",
    "options": [
-    "$\\dfrac{281}{120}$.",
-    "$0$.",
-    "$281$.",
-    "$- \\dfrac{281}{120}$."
+    "$-2$.",
+    "$2$.",
+    "$4$.",
+    "$6$."
    ],
    "answer": 0,
-   "explain": "$e^{- 2 x^{2}} = 1 - 2x^{2} + 2x^{4} + o(x^{5})$<br>$\\sin{\\left(x \\right)} = x - \\dfrac{1}{6}x^{3} + \\dfrac{1}{120}x^{5} + o(x^{5})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 5: $f(x)=x - \\dfrac{13}{6}x^{3} + \\dfrac{281}{120}x^{5}+o(x^{5})$.<br>Đọc hệ số của $x^{5}$ từ tổng các tích cùng bậc vừa thu được: $\\dfrac{281}{120}$.",
-   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$."
+   "explain": "$y(1) = 4$, $y'(x) = 4 x + 2$, $y'(1) = 6$<br>Tiếp tuyến: $y = 6(x - 1) + 4$<br>Tại $x = 0$: $y = -2$"
   },
   {
    "q": "Cho mặt cong $z = x^{2} + x y$. Mặt phẳng tiếp xúc với mặt cong tại điểm $M(-1;-1;2)$ có phương trình $z = z_0 + f'_x(M)(x - x_0) + f'_y(M)(y - y_0)$. Mặt phẳng này cắt trục $Oz$ tại điểm có cao độ bằng",
@@ -325,7 +324,7 @@
     "$\\dfrac{34}{3}$."
    ],
    "answer": 0,
-   "explain": "$\\sin u = u - \\dfrac{u^3}{6} + o(u^3)$, với $u=2x$, ta có $u^2=4x^2$ và $u^3=8x^3$.<br>Tử số sau khai triển là $(2-a)x+(0-b)x^2+(- \\dfrac{4}{3})x^3+o(x^3)$. Chia cho $x^3$: $\\dfrac{2-a}{x^2}+\\dfrac{0-b}{x}+- \\dfrac{4}{3}+o(1)$.<br>Để giới hạn hữu hạn, các hệ số phân kỳ triệt tiêu: $a=2$ và $b=0$; hệ số còn lại cho $L=- \\dfrac{4}{3}$.<br>$2+0-6(- \\dfrac{4}{3})=2+0+8=10$",
+   "explain": "$\\sin u = u - \\dfrac{u^3}{6} + o(u^3)$, với $u=2x$, ta có $u^2=4x^2$ và $u^3=8x^3$.<br>Tử số sau khai triển là $(2-a)x+(0-b)x^2+(- \\dfrac{4}{3})x^3+o(x^3)$. Chia cho $x^3$: $\\dfrac{2-a}{x^2}+\\dfrac{0-b}{x}+- \\dfrac{4}{3}+o(1)$.<br>Để giới hạn hữu hạn, các hệ số phân kỳ triệt tiêu: $a=2$ và $b=0$; hệ số còn lại cho $L=- \\dfrac{4}{3}$.<br>2+0-6(- \\dfrac{4}{3})=2+0+8=10",
    "note": "Trong khai triển Maclaurin của tử, mọi hệ số có bậc thấp hơn bậc của mẫu phải bằng 0; hệ số cùng bậc với mẫu cho giá trị $L$."
   },
   {
@@ -341,16 +340,15 @@
    "note": "Có đạo hàm cấp hai tại điểm nối: giá trị, đạo hàm cấp một và đạo hàm cấp hai ở hai phía đều phải khớp nhau."
   },
   {
-   "q": "Một đoạn đường ống uốn theo đường cong $y = \\dfrac23x^{3/2}$ với $0 \\le x \\le 3$ (đơn vị: mét). Dùng công thức độ dài cung $L = \\displaystyle\\int_a^b\\sqrt{1 + (y')^2}\\,dx$, độ dài đoạn ống bằng",
+   "q": "Tính thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y = \\sqrt{x}$, $x = 1$ và trục $Ox$ xung quanh trục $Ox$.",
    "options": [
-    "$\\dfrac{14}{3}$ m.",
-    "$\\dfrac{16}{3}$ m.",
-    "$3$ m.",
-    "$\\dfrac{7}{3}$ m."
+    "$\\dfrac{\\pi}{2}$.",
+    "$\\dfrac{\\pi}{4}$.",
+    "$\\pi$.",
+    "$1 + \\dfrac{\\pi}{2}$."
    ],
    "answer": 0,
-   "explain": "$y' = \\sqrt{x} \\Rightarrow 1 + (y')^2 = 1 + x$<br>$L = \\displaystyle\\int_0^{3}\\sqrt{1 + x}\\,dx = \\left[\\dfrac23(1 + x)^{3/2}\\right]_0^{3}$<br>$= \\dfrac23\\left(4^{3/2} - 1\\right) = \\dfrac{14}{3}$",
-   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$."
+   "explain": "$V = \\pi\\displaystyle\\int_0^{1} y^2\\,dx = \\pi\\int_0^{1} x\\,dx = \\pi\\left[\\dfrac{x^2}{2}\\right]_0^{1} = \\dfrac{\\pi}{2}$<br>Kết quả: $\\dfrac{\\pi}{2}$"
   },
   {
    "q": "Xét mô hình cân bằng thu nhập quốc dân: $Y = C + I_0 + G_0$; $C = 40 + 0{,}8(Y - T)$; $T = 0{,}5Y$, trong đó $Y$ là thu nhập, $C$ là tiêu dùng, $T$ là thuế, đầu tư $I_0 = 150$ và chi tiêu chính phủ $G_0 = 140$. Giá trị của mức tiêu dùng $C^*$ tại trạng thái cân bằng bằng",

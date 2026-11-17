@@ -127,16 +127,15 @@
    "note": "Liên tục tại $x_0$ $\\Leftrightarrow$ giới hạn trái = giới hạn phải = $f(x_0)$; giới hạn hữu hạn mà mẫu tiến về 0 thì tử cũng phải tiến về 0."
   },
   {
-   "q": "Cho hàm số $f(x) = x^2e^{3x}$. Dùng công thức Leibniz $(uv)^{(n)} = \\sum_{k=0}^{n} C_n^k u^{(k)}v^{(n-k)}$, giá trị của đạo hàm cấp sáu $f^{(6)}(0)$ bằng",
+   "q": "Cho hàm số $f(x) = \\arcsin(2x)$. Giá trị của $f'(x_0)$ tại $x_0 = \\dfrac{2}{5}$ bằng",
    "options": [
-    "$2430$.",
-    "$1215$.",
-    "$4860$.",
-    "$729$."
+    "$\\dfrac{10}{3}$.",
+    "$- \\dfrac{10}{3}$.",
+    "$\\dfrac{20}{3}$.",
+    "$2$."
    ],
    "answer": 0,
-   "explain": "$u = x^2$: $u(0) = 0,\\ u'(0) = 0,\\ u''(0) = 2,\\ u^{(k)} = 0\\ (k \\ge 3)$; $v = e^{3x}$: $v^{(m)}(0) = (3)^m$<br>$f^{(6)}(0) = C_{6}^2\\cdot u''(0)\\cdot v^{(4)}(0) = 15\\cdot2\\cdot(3)^{4} = 2430$",
-   "note": "Chọn đúng công cụ: Leibniz cho đạo hàm cấp cao của tích; đạo hàm hai vế cho hàm ẩn; lấy lôgarit cho $u^v$; $\\dfrac{dy}{dx} = \\dfrac{y'_t}{x'_t}$ cho đường cong tham số."
+   "explain": "$f'(x) = \\dfrac{2}{\\sqrt{1 - 4\\cdotx^2}}$<br>Tại $x_0 = \\dfrac{2}{5}$: $\\sqrt{1 - 4\\cdotx_0^2} = \\dfrac{3}{5}$; $f'(x_0) = \\dfrac{10}{3}$"
   },
   {
    "q": "Cho hàm số $f(x,y,z) = xe^{yz} + y\\ln(xz)$. Giá trị của $f'_z(1;1;1)$ bằng",
@@ -224,10 +223,10 @@
   {
    "q": "Một chi tiết kim loại có nhiệt độ $40^\\circ C$ được đưa vào lò có nhiệt độ không đổi $200^\\circ C$. Nhiệt độ $y(t)$ của chi tiết sau $t$ phút thỏa mãn phương trình $y' = k(200 - y)$ với $k = \\dfrac{\\ln 2}{6}$. Nhiệt độ của chi tiết sau 6 phút bằng",
    "options": [
-    "$120$ °C.",
-    "$160$ °C.",
-    "$60$ °C.",
-    "$100$ °C."
+    "$120 °C$.",
+    "$160 °C$.",
+    "$60 °C$.",
+    "$100 °C$."
    ],
    "answer": 0,
    "explain": "$y' + ky = 200k$ (tuyến tính cấp một) $\\Rightarrow y = 200 + Ce^{-kt}$<br>$y(0) = 40 \\Rightarrow C = -160$<br>$e^{-kt} = e^{-\\frac{\\ln 2}{6}\\cdot6} = 2^{-1} = \\dfrac{1}{2}$<br>$y(6) = 200 + \\dfrac{-160}{2} = 120$",
@@ -342,15 +341,15 @@
    "note": "Có đạo hàm tại điểm nối cần hai điều kiện: liên tục, và đạo hàm trái bằng đạo hàm phải."
   },
   {
-   "q": "Một bể chứa nước hình hộp chữ nhật có chiều dài, chiều rộng và chiều cao lần lượt là 2 mét, 1,5 mét và 4 mét được chứa đầy nước. Biết khối lượng riêng của nước là $1000\\,kg/m^3$ và gia tốc trọng trường $g = 9{,}8\\,m/s^2$. Công cần thiết để bơm hết nước ra khỏi bể qua mặt trên của bể bằng",
+   "q": "Một bể chứa có dạng hình nón tròn xoay với đỉnh ở phía dưới, bán kính miệng bể 1 mét, chiều cao 3 mét, chứa đầy nước. Biết khối lượng riêng của nước là $1000\\,kg/m^3$ và gia tốc trọng trường $g = 9{,}8\\,m/s^2$. Công cần thiết để bơm hết nước ra khỏi bể qua miệng bể (làm tròn đến hàng phần chục) bằng",
    "options": [
-    "235,2 <i>kJ</i>.",
-    "58,8 <i>kJ</i>.",
-    "117,6 <i>kJ</i>.",
-    "470,4 <i>kJ</i>."
+    "23,1 <i>kJ</i>.",
+    "69,3 <i>kJ</i>.",
+    "46,2 <i>kJ</i>.",
+    "92,4 <i>kJ</i>."
    ],
    "answer": 0,
-   "explain": "Lớp nước dày $dy$ ở độ sâu $y$ có khối lượng $1000\\cdot2\\cdot1{,}5\\,dy$, phải nâng lên $y$ mét<br>$W = \\displaystyle\\int_0^{4} 9800\\cdot2\\cdot1{,}5\\cdot y\\,dy = 29400\\cdot\\dfrac{4^2}{2}$<br>$= 235200\\ J = 235{,}2\\ kJ$",
+   "explain": "Lớp nước ở độ cao $y$ (tính từ đỉnh) có bán kính $\\dfrac{1y}{3}$, phải nâng lên $3 - y$ mét<br>$W = \\displaystyle\\int_0^{3} 9800\\pi\\left(\\dfrac{1y}{3}\\right)^2(3 - y)\\,dy = 9800\\pi\\cdot\\dfrac{1}{9}\\left[\\dfrac{3y^3}{3} - \\dfrac{y^4}{4}\\right]_0^{3}$<br>$= 9800\\pi\\cdot\\dfrac{1\\cdot9}{12} \\approx 23{,}1\\ kJ$",
    "note": "Công = $\\displaystyle\\int$ (trọng lượng một lớp nước) $\\times$ (quãng đường nâng lớp đó); các lớp ở độ sâu khác nhau đi quãng đường khác nhau."
   },
   {

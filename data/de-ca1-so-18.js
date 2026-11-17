@@ -127,16 +127,15 @@
    "note": "Tiệm cận đứng: nghiệm của mẫu không bị rút gọn với tử; tiệm cận ngang: xét riêng $x \\to +\\infty$ và $x \\to -\\infty$ (với căn thức, hai phía có thể khác nhau)."
   },
   {
-   "q": "Hệ số của $x^{4}$ trong khai triển Maclaurin của hàm số $f(x) = \\dfrac{x}{- 3 x^{2} - 2 x + 1}$ bằng<span class=\"q-hint\">Gợi ý: nhân hai khai triển cơ bản rồi gom các số hạng cùng bậc.</span>",
+   "q": "Cho hàm số $f(x) = x^{4} + x$. Vi phân $dy$ tại $x_0 = 1$ với $dx = \\dfrac{1}{2}$ bằng",
    "options": [
-    "$20$.",
-    "$7$.",
-    "$480$.",
-    "$-20$."
+    "$\\dfrac{5}{2}$.",
+    "$- \\dfrac{5}{2}$.",
+    "$5$.",
+    "$\\dfrac{73}{16}$."
    ],
    "answer": 0,
-   "explain": "$\\dfrac{1}{- 3 x^{2} - 2 x + 1} = 1 + 2x + 7x^{2} + 20x^{3} + 61x^{4} + o(x^{4})$<br>Nhân các đa thức đã khai triển và giữ các tích có tổng số mũ bằng 4: $f(x)=x + 2x^{2} + 7x^{3} + 20x^{4}+o(x^{4})$.<br>Đọc hệ số của $x^{4}$ từ tổng các tích cùng bậc vừa thu được: $20$.",
-   "note": "Hệ số của $x^n$ trong tích hai khai triển là tổng các tích hệ số có tổng bậc bằng $n$; hệ số Maclaurin bậc $n$ bằng $\\dfrac{f^{(n)}(0)}{n!}$."
+   "explain": "$f'(x) = 4 x^{3} + 1$<br>$dy = f'(1)\\\\cdot dx = 5\\\\cdot\\dfrac{1}{2} = \\dfrac{5}{2}$"
   },
   {
    "q": "Cho mặt cong $z = x^{2} + y^{2}$. Mặt phẳng tiếp xúc với mặt cong tại điểm $M(-1;-1;2)$ có phương trình $z = z_0 + f'_x(M)(x - x_0) + f'_y(M)(y - y_0)$. Mặt phẳng này cắt trục $Oz$ tại điểm có cao độ bằng",
@@ -325,7 +324,7 @@
     "$\\dfrac{236}{3}$."
    ],
    "answer": 0,
-   "explain": "$\\sin u = u - \\dfrac{u^3}{6} + o(u^3)$, với $u=4x$, ta có $u^2=16x^2$ và $u^3=64x^3$.<br>Tử số sau khai triển là $(4-a)x+(0-b)x^2+(- \\dfrac{32}{3})x^3+o(x^3)$. Chia cho $x^3$: $\\dfrac{4-a}{x^2}+\\dfrac{0-b}{x}+- \\dfrac{32}{3}+o(1)$.<br>Để giới hạn hữu hạn, các hệ số phân kỳ triệt tiêu: $a=4$ và $b=0$; hệ số còn lại cho $L=- \\dfrac{32}{3}$.<br>$4+0-6(- \\dfrac{32}{3})=4+0+64=68$",
+   "explain": "$\\sin u = u - \\dfrac{u^3}{6} + o(u^3)$, với $u=4x$, ta có $u^2=16x^2$ và $u^3=64x^3$.<br>Tử số sau khai triển là $(4-a)x+(0-b)x^2+(- \\dfrac{32}{3})x^3+o(x^3)$. Chia cho $x^3$: $\\dfrac{4-a}{x^2}+\\dfrac{0-b}{x}+- \\dfrac{32}{3}+o(1)$.<br>Để giới hạn hữu hạn, các hệ số phân kỳ triệt tiêu: $a=4$ và $b=0$; hệ số còn lại cho $L=- \\dfrac{32}{3}$.<br>4+0-6(- \\dfrac{32}{3})=4+0+64=68",
    "note": "Trong khai triển Maclaurin của tử, mọi hệ số có bậc thấp hơn bậc của mẫu phải bằng 0; hệ số cùng bậc với mẫu cho giá trị $L$."
   },
   {
@@ -341,16 +340,15 @@
    "note": "Có đạo hàm cấp hai tại điểm nối: giá trị, đạo hàm cấp một và đạo hàm cấp hai ở hai phía đều phải khớp nhau."
   },
   {
-   "q": "Thể tích của khối tròn xoay tạo thành khi quay quanh trục $Ox$ hình phẳng giới hạn bởi các đường $y = x\\sqrt{x}$, $y = 0$, $x = 0$ và $x = 2$ bằng",
+   "q": "Tính diện tích hình phẳng giới hạn bởi parabol $y = x^2$ và đường thẳng $y = 8x$.",
    "options": [
-    "$4 \\pi$.",
-    "$4$.",
-    "$\\dfrac{8 \\sqrt{2} \\pi}{5}$.",
-    "$8 \\pi$."
+    "$\\dfrac{256}{3}$.",
+    "$\\dfrac{128}{3}$.",
+    "$\\dfrac{512}{3}$.",
+    "$\\dfrac{259}{3}$."
    ],
    "answer": 0,
-   "explain": "$V=\\pi\\int_0^{2}y^2dx=\\pi\\int_0^{2}x^{3}dx$; bình phương hàm số cho biểu thức dưới dấu tích phân như trên.<br>Nguyên hàm là $\\dfrac{x^{4}}{4}$. Thế cận: $V=\\pi(4-0)=4 \\pi$.",
-   "note": "Tích phân suy rộng: tính $\\displaystyle\\int_a^b$ rồi cho $b \\to +\\infty$; độ dài cung: $L = \\displaystyle\\int\\sqrt{1 + y'^2}\\,dx$."
+   "explain": "Giao điểm: $x^2 = 8x \\Rightarrow x = 0$ và $x = 8$<br>$S = \\displaystyle\\int_0^{8}(8x - x^2)\\,dx = \\left[\\dfrac{8x^2}{2} - \\dfrac{x^3}{3}\\right]_0^{8} = \\dfrac{256}{3}$"
   },
   {
    "q": "Một xưởng sản xuất 3 loại sản phẩm từ 3 loại nguyên liệu I, II, III. Mỗi đơn vị sản phẩm loại 1, 2, 3 cần lần lượt $1, 1, 3$ đơn vị nguyên liệu I; $2, 3, 1$ đơn vị nguyên liệu II và $3, 3, 1$ đơn vị nguyên liệu III. Kho hiện có $130$, $130$ và $150$ đơn vị nguyên liệu I, II, III. Nếu xưởng lập kế hoạch dùng vừa hết cả ba loại nguyên liệu thì tổng số sản phẩm làm ra bằng",

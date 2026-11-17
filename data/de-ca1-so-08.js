@@ -127,15 +127,15 @@
    "note": "Liên tục tại $x_0$ $\\Leftrightarrow$ giới hạn trái = giới hạn phải = $f(x_0)$; giới hạn hữu hạn mà mẫu tiến về 0 thì tử cũng phải tiến về 0."
   },
   {
-   "q": "Một chất điểm chuyển động trong mặt phẳng $Oxy$ theo quỹ đạo có phương trình tham số $x = t^2 + 3t,\\ y = t^3 - 6t$ ($t$ là thời gian). Hệ số góc $\\dfrac{dy}{dx}$ của tiếp tuyến với quỹ đạo tại thời điểm $t = 1$ bằng",
+   "q": "Cho hàm ẩn $y = y(x)$ xác định bởi phương trình $x^{2} + 3 x y + y^{2} = 31$. Hệ số góc của tiếp tuyến với đường cong tại điểm $(3;2)$, tức giá trị $y'(3)$, bằng",
    "options": [
-    "$- \\dfrac{3}{5}$.",
-    "$- \\dfrac{5}{3}$.",
-    "$-3$.",
-    "$\\dfrac{3}{2}$."
+    "$- \\dfrac{12}{13}$.",
+    "$\\dfrac{12}{13}$.",
+    "$3$.",
+    "$- \\dfrac{13}{12}$."
    ],
    "answer": 0,
-   "explain": "$x'(t) = 2t + 3,\\quad y'(t) = 3t^2 - 6$<br>$\\dfrac{dy}{dx} = \\dfrac{y'(t)}{x'(t)} = \\dfrac{3t^2 - 6}{2t + 3}$<br>Tại $t = 1$: $\\dfrac{-3}{5} = - \\dfrac{3}{5}$",
+   "explain": "Đạo hàm hai vế theo $x$: $2x + 3(y + xy') + 2yy' = 0$<br>$y' = -\\dfrac{2x + 3y}{3x + 2y}$<br>Tại $(3;2)$: $y' = -\\dfrac{12}{13} = - \\dfrac{12}{13}$",
    "note": "Chọn đúng công cụ: Leibniz cho đạo hàm cấp cao của tích; đạo hàm hai vế cho hàm ẩn; lấy lôgarit cho $u^v$; $\\dfrac{dy}{dx} = \\dfrac{y'_t}{x'_t}$ cho đường cong tham số."
   },
   {
@@ -222,10 +222,10 @@
   {
    "q": "Một chi tiết kim loại có nhiệt độ $60^\\circ C$ được đưa vào lò có nhiệt độ không đổi $220^\\circ C$. Nhiệt độ $y(t)$ của chi tiết sau $t$ phút thỏa mãn phương trình $y' = k(220 - y)$ với $k = \\dfrac{\\ln 2}{6}$. Nhiệt độ của chi tiết sau 6 phút bằng",
    "options": [
-    "$140$ °C.",
-    "$180$ °C.",
-    "$70$ °C.",
-    "$110$ °C."
+    "$140 °C$.",
+    "$180 °C$.",
+    "$70 °C$.",
+    "$110 °C$."
    ],
    "answer": 0,
    "explain": "$y' + ky = 220k$ (tuyến tính cấp một) $\\Rightarrow y = 220 + Ce^{-kt}$<br>$y(0) = 60 \\Rightarrow C = -160$<br>$e^{-kt} = e^{-\\frac{\\ln 2}{6}\\cdot6} = 2^{-1} = \\dfrac{1}{2}$<br>$y(6) = 220 + \\dfrac{-160}{2} = 140$",
