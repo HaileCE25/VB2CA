@@ -2729,13 +2729,31 @@
 
   render();
 })();
+
 /* TOPICS_FILTER_ENHANCER */
 (function(){
   var dsKeys = ['ma trận', 'định thức', 'véc tơ', 'vectơ', 'hạng', 'trị riêng', 'chéo hóa', 'tuyến tính'];
   function enhanceTopics() {
     var tbody = document.querySelector('table tbody');
-    if (!tbody) return;
-    if (!tbody.rows[2]) return;
+    if (!tbody || !tbody.rows[1]) return;
+    Array.from(tbody.rows).forEach(function(tr) {
+      var txt = tr.innerText.toLowerCase();
+      if (tr.querySelector('th') || (txt.includes('chủ đề') && txt.includes('đang sai'))) {
+        tr.classList.add('topic-header-row');
+        return;
+      }
+      var isDS = dsKeys.some(function(w) { return txt.includes(w); });
+      if (txt.includes('vi phân')) isDS = false;
+      tr.classList.remove('topic-gt', 'topic-ds');
+      tr.classList.add(isDS ? 'topic-ds' : 'topic-gt');
+      var firstTd = tr.cells[0];
+      if (firstTd && !firstTd.querySelector('.topic-tag')) {
+        var tag = document.createElement('span');
+        tag.className = 'topic-tag';
+        tag.textContent = isDS ? 'Đại số tuyến tính' : 'Giải tích';
+        firstTd.insertBefore(tag, firstTd.firstChild);
+      }
+    });
     if (document.getElementById('topic-filter-bar')) return;
     var table = tbody.closest('table');
     var bar = document.createElement('div');
@@ -2751,16 +2769,16 @@
         bar.querySelectorAll('.topic-filter-btn').forEach(function(x) { x.classList.remove('active'); });
         b.classList.add('active');
         Array.from(tbody.rows).forEach(function(tr) {
+          if (tr.classList.contains('topic-header-row')) return;
           var txt = tr.innerText.toLowerCase();
-          var isDS = dsKeys.some(function(w) { return txt.includes(w); });
-          if (txt.includes('vi phân')) isDS = false;
+          var isDS = tr.classList.contains('topic-ds');
           var pctMatch = txt.match(/(\d+)%/);
           var pct = pctMatch ? parseInt(pctMatch[1], 10) : 0;
           var show = true;
           if (k === 'gt') show = !isDS;
           else if (k === 'ds') show = isDS;
           else if (k === 'weak') show = (Math.floor(pct / 50) === 0);
-          tr.style.display = show ? 'flex' : 'none';
+          tr.style.setProperty('display', show ? 'flex' : 'none', 'important');
         });
       };
       bar.appendChild(b);
